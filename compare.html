@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EU CSV Comparison — Old vs New</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1600px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #58a6ff; }
+    .header-stats { display: flex; gap: 12px; font-size: 13px; }
+    .badge { background: #21262d; padding: 3px 10px; border-radius: 12px; color: #8b949e; }
+    .badge.green { color: #3fb950; border: 1px solid #3fb95033; }
+    .badge.red { color: #f85149; border: 1px solid #f8514933; }
+    .badge.blue { color: #58a6ff; border: 1px solid #58a6ff33; }
+    .badge.yellow { color: #d29922; border: 1px solid #d2992233; }
+
+    .controls { background: #161b22; border-bottom: 1px solid #30363d; padding: 10px 24px; }
+    .controls-inner { max-width: 1600px; margin: 0 auto; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .fg { display: flex; align-items: center; gap: 6px; }
+    .fg label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    select, input[type=text] { background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 5px 10px; border-radius: 6px; font-size: 13px; }
+    a.nav { color: #58a6ff; text-decoration: none; font-size: 13px; margin-left: auto; }
+    a.nav:hover { text-decoration: underline; }
+
+    .container { max-width: 1600px; margin: 0 auto; padding: 16px 24px; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 20px; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; }
+    .card-label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    .card-value { font-size: 26px; font-weight: 700; margin-top: 2px; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    thead th { background: #161b22; position: sticky; top: 0; padding: 8px 6px; text-align: center; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3px; color: #8b949e; white-space: nowrap; }
+    thead th.left { text-align: left; }
+    thead th.sep { border-left: 2px solid #30363d; }
+    tbody tr { border-bottom: 1px solid #1c2128; }
+    tbody tr:hover { background: #161b2266; }
+    tbody td { padding: 5px 6px; text-align: center; white-space: nowrap; }
+    td.left { text-align: left; }
+    td.sep { border-left: 2px solid #30363d; }
+
+    .ccy-name { font-weight: 600; font-size: 13px; }
+    .ccy-type { color: #8b949e; font-size: 10px; }
+    .vol { color: #8b949e; text-align: right !important; }
+    .med { font-weight: 500; }
+
+    /* Diff cell */
+    .cell-same { color: #484f58; }
+    .cell-old { color: #f85149; text-decoration: line-through; font-size: 10px; }
+    .cell-new { color: #3fb950; font-weight: 600; }
+    .cell-arrow { color: #8b949e; font-size: 9px; }
+    .cell-tighten { background: #3fb95008; }
+    .cell-loosen { background: #f8514908; }
+
+    .diff-count { display: inline-block; background: #58a6ff22; color: #58a6ff; padding: 1px 6px; border-radius: 8px; font-size: 10px; font-weight: 600; }
+    .diff-count.zero { background: #21262d; color: #484f58; }
+    .time-btn { padding: 6px 14px; border: 1px solid #30363d; background: #0d1117; color: #8b949e; border-radius: 8px; cursor: pointer; font-size: 12px; }
+    .time-btn:hover { border-color: #58a6ff; color: #e1e4e8; }
+    .time-btn.active { background: #58a6ff22; color: #58a6ff; border-color: #58a6ff; }
+    tbody tr { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>EU.csv <span>Old vs New</span></h1>
+      <div class="header-stats" id="stats"></div>
+      <a class="nav" href="index.html">&larr; Back to SLA vs Reality</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="controls-inner">
+      <div class="fg">
+        <label>Search</label>
+        <input type="text" id="search" placeholder="Currency...">
+      </div>
+      <div class="fg">
+        <label>Show</label>
+        <select id="filter-show">
+          <option value="changed">Changed only</option>
+          <option value="all">All currencies</option>
+          <option value="tighten">Tightened only</option>
+          <option value="loosen">Loosened only</option>
+          <option value="inactive">Overridden rows (Exotic when Ria exists)</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Min Vol</label>
+        <select id="filter-vol">
+          <option value="0">All</option>
+          <option value="10">10+</option>
+          <option value="50" selected>50+</option>
+          <option value="100">100+</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Columns</label>
+        <select id="filter-cols">
+          <option value="all">All</option>
+          <option value="in">Business Hours (IN) only</option>
+          <option value="out">After Hours (OUT) only</option>
+          <option value="special">Special (CPO/Wallet/Balance/P2P)</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Send CCY</label>
+        <select id="filter-send">
+          <option value="all">All EU (aggregate)</option>
+          <option value="EUR">EUR (85%)</option>
+          <option value="GBP">GBP (9%)</option>
+          <option value="Other">DKK/SEK/CHF/NOK/PLN</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="summary" id="summary"></div>
+    <div class="table-wrap">
+      <table>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Quote Preview Modal -->
+  <div id="modal-bg" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#000a;z-index:200"></div>
+  <div id="modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;max-width:95vw;max-height:90vh;overflow-y:auto;background:#161b22;border:1px solid #30363d;border-radius:12px;z-index:201;padding:24px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <h2 id="modal-title" style="font-size:18px;margin:0"></h2>
+      <button id="modal-close" style="background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer">&times;</button>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap" id="modal-methods"></div>
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap" id="modal-times"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" id="modal-quotes"></div>
+    <div id="modal-grid" style="margin-top:20px"></div>
+  </div>
+
+<script>
+let DATA = null;
+let AMP = null;
+
+Promise.all([
+  fetch('data/eu-csv-comparison.json').then(r => r.json()),
+  fetch('data/eu-payment-speed.json').then(r => r.json()),
+]).then(([comp, amp]) => {
+  DATA = comp;
+  AMP = amp;
+  render();
+}).catch(e => { document.getElementById('tbody').innerHTML = `<tr><td colspan="20">${e}</td></tr>`; });
+
+const COL_GROUPS = {
+  in: ['IN_BankTransfer','IN_CreditCard','IN_DebitCard','IN_OpenBanking'],
+  out: ['OUT_BankTransfer','OUT_CreditCard','OUT_DebitCard','OUT_OpenBanking'],
+  special: ['CPO','MobileWallet','Balance','PeerToPeer'],
+  ach: ['IN_ACH','OUT_ACH'],
+};
+const COL_LABELS = {
+  'IN_BankTransfer': 'IN Bank', 'IN_CreditCard': 'IN Credit', 'IN_DebitCard': 'IN Debit', 'IN_OpenBanking': 'IN OB',
+  'OUT_BankTransfer': 'OUT Bank', 'OUT_CreditCard': 'OUT Credit', 'OUT_DebitCard': 'OUT Debit', 'OUT_OpenBanking': 'OUT OB',
+  'IN_ACH': 'IN ACH', 'OUT_ACH': 'OUT ACH',
+  'CPO': 'CPO', 'MobileWallet': 'Wallet', 'Balance': 'Balance', 'PeerToPeer': 'P2P',
+};
+
+function slaRank(sla) {
+  const s = (sla || '').toLowerCase().trim();
+  if (/5\s*min/.test(s)) return 1;
+  if (/<\s*30\s*min/.test(s)) return 2;
+  if (/<\s*1\s*hr/.test(s)) return 3;
+  if (/<\s*6\s*hr/.test(s)) return 4;
+  if (/1-12/.test(s)) return 5;
+  if (/same\s*day|next\s*day|<?\s*24/.test(s) || s === '24hrs') return 6;
+  if (/<?\s*48/.test(s) || s === '48hrs') return 7;
+  if (/three\s*day|<?\s*3\s*day|>\s*48/.test(s)) return 8;
+  if (/<?\s*4\s*day/.test(s)) return 9;
+  if (/>\s*4\s*day/.test(s)) return 10;
+  if (s === 'n/a') return 99;
+  return 11;
+}
+
+function fmt(h) {
+  if (h === null || h === undefined) return '-';
+  if (h < 0.08) return '<5m';
+  if (h < 1) return Math.round(h * 60) + 'm';
+  if (h < 24) return h.toFixed(1) + 'h';
+  return (h / 24).toFixed(1) + 'd';
+}
+
+function diffCell(oldVal, newVal) {
+  const o = (oldVal || '').trim();
+  const n = (newVal || '').trim();
+  if (o === n) return `<td class="cell-same">${o}</td>`;
+  const oRank = slaRank(o);
+  const nRank = slaRank(n);
+  const dir = nRank < oRank ? 'tighten' : 'loosen';
+  const arrow = dir === 'tighten' ? '&#9650;' : '&#9660;';
+  const arrowColor = dir === 'tighten' ? '#3fb950' : '#f85149';
+  return `<td class="cell-${dir}">
+    <span class="cell-old">${o}</span><br>
+    <span style="color:${arrowColor};font-size:9px">${arrow}</span>
+    <span class="cell-new">${n}</span>
+  </td>`;
+}
+
+function getVisibleCols() {
+  const f = document.getElementById('filter-cols').value;
+  if (f === 'in') return COL_GROUPS.in;
+  if (f === 'out') return COL_GROUPS.out;
+  if (f === 'special') return COL_GROUPS.special;
+  return [...COL_GROUPS.in, ...COL_GROUPS.out, ...COL_GROUPS.special];
+}
+
+function render() {
+  if (!DATA) return;
+  const search = document.getElementById('search').value.toUpperCase();
+  const showF = document.getElementById('filter-show').value;
+  const volF = parseInt(document.getElementById('filter-vol').value);
+  const cols = getVisibleCols();
+
+  let items = DATA.currencies.filter(c => {
+    if (search && !c.currency.toUpperCase().includes(search)) return false;
+    if (volF && c.volume < volF) return false;
+    if (showF === 'changed' && c.changes === 0) return false;
+    if (showF !== 'all' && showF !== 'inactive' && c.isActive === false) return false;
+    if (showF === 'tighten') {
+      const hasTighten = c.diffs.some(d => slaRank(d.new) < slaRank(d.old));
+      if (!hasTighten) return false;
+    }
+    if (showF === 'loosen') {
+      const hasLoosen = c.diffs.some(d => slaRank(d.new) > slaRank(d.old));
+      if (!hasLoosen) return false;
+    }
+    return true;
+  });
+
+  // Stats
+  const totalChanges = items.reduce((s, c) => s + c.changes, 0);
+  const tightenCount = items.reduce((s, c) => s + c.diffs.filter(d => slaRank(d.new) < slaRank(d.old)).length, 0);
+  const loosenCount = items.reduce((s, c) => s + c.diffs.filter(d => slaRank(d.new) > slaRank(d.old)).length, 0);
+
+  document.getElementById('stats').innerHTML = `
+    <span class="badge blue">${items.length} currencies shown</span>
+    <span class="badge">${totalChanges} cell changes</span>
+    <span class="badge green">${tightenCount} tightened</span>
+    <span class="badge red">${loosenCount} loosened</span>
+  `;
+
+  document.getElementById('summary').innerHTML = `
+    <div class="card"><div class="card-label">Currencies</div><div class="card-value">${DATA.total_currencies}</div></div>
+    <div class="card"><div class="card-label">Changed</div><div class="card-value" style="color:#58a6ff">${DATA.changed_currencies}</div></div>
+    <div class="card"><div class="card-label">Total Cell Changes</div><div class="card-value">${DATA.total_changes}</div></div>
+    <div class="card"><div class="card-label">Tightened</div><div class="card-value" style="color:#3fb950">${tightenCount}</div></div>
+    <div class="card"><div class="card-label">Loosened</div><div class="card-value" style="color:#f85149">${loosenCount}</div></div>
+  `;
+
+  const sendF = document.getElementById('filter-send').value;
+
+  // Header
+  const colHeaders = cols.map(c => `<th class="sep">${COL_LABELS[c] || c}</th>`).join('');
+  const sendLabel = sendF === 'all' ? 'EU' : sendF === 'Other' ? 'DKK/..' : sendF;
+  document.getElementById('thead').innerHTML = `
+    <tr>
+      <th class="left">Corridor</th>
+      <th class="left">Type</th>
+      <th>Vol</th>
+      <th>Actual</th>
+      <th>Diff</th>
+      ${colHeaders}
+    </tr>
+  `;
+
+  // Body
+  document.getElementById('tbody').innerHTML = items.map(c => {
+    // Get actual speed based on send currency filter
+    let actMed = c.median_hrs;
+    let actVol = c.volume;
+    if (sendF !== 'all' && AMP && AMP.by_send_currency && AMP.by_send_currency[c.currency]) {
+      const scData = AMP.by_send_currency[c.currency][sendF];
+      if (scData) {
+        actMed = scData.median_hrs;
+        actVol = scData.volume;
+      } else {
+        actMed = null;
+        actVol = 0;
+      }
+    }
+
+    const medCls = actMed == null ? '' : actMed <= 1 ? 'style="color:#3fb950"' : actMed <= 24 ? '' : 'style="color:#f85149"';
+    const diffBadge = c.changes > 0
+      ? `<span class="diff-count">${c.changes}</span>`
+      : `<span class="diff-count zero">0</span>`;
+
+    const cellsHtml = cols.map(col => {
+      const oldV = (c.old[col] || '').trim();
+      const newV = (c.new[col] || '').trim();
+      return diffCell(oldV, newV);
+    }).join('');
+
+    const activeTag = c.isActive === false ? ' <span style="color:#484f58;font-size:9px">(overridden)</span>' : c.ccyType.toLowerCase().includes('ria') ? ' <span style="color:#d29922;font-size:9px">(active)</span>' : '';
+    const rowOpacity = c.isActive === false ? 'opacity:0.5;' : '';
+
+    return `<tr style="${rowOpacity}" data-ccy="${c.currency}" onclick="openModal('${c.currency}')">
+      <td class="left"><span class="ccy-name">${sendLabel} &rarr; ${c.currency}</span></td>
+      <td class="left"><span class="ccy-type">${c.ccyType}${activeTag}</span></td>
+      <td class="vol">${actVol ? actVol.toLocaleString() : '-'}</td>
+      <td class="med" ${medCls}>${fmt(actMed)}</td>
+      <td>${diffBadge}</td>
+      ${cellsHtml}
+    </tr>`;
+  }).join('');
+}
+
+['search', 'filter-show', 'filter-vol', 'filter-cols', 'filter-send'].forEach(id => {
+  document.getElementById(id).addEventListener(id === 'search' ? 'input' : 'change', render);
+});
+
+// --- Quote Preview Modal ---
+let modalCcy = null;
+let modalMethod = 'DebitCard';
+let modalTime = 'bh'; // bh, ah
+
+function translateSLA(raw) {
+  if (!raw) return raw;
+  const s = raw.trim();
+  if (/^\s*<?\d+\s*(mins|minute|min|minutes)\s*$/i.test(s)) return 'Typically minutes';
+  if (/^\s*>?\d+-<\d+\s*(mins|minute|min|minutes)\s*$/i.test(s)) return 'Typically minutes';
+  if (/^\s*<?\s*24\s*(hrs|hours)\s*$/i.test(s)) return 'Typically within 24 hours';
+  if (/same\s*day/i.test(s)) return 'Typically same day';
+  if (/next\s*day/i.test(s)) return 'Typically next day';
+  if (/^\s*<?\s*48\s*(hrs|hours)\s*$/i.test(s)) return 'Typically within 48 hours';
+  if (/^\s*<?\s*(\d+)\s*(day|days)\s*$/i.test(s)) { const m = s.match(/(\d+)/); return `Up to ${m[1]} days`; }
+  if (/^\s*>\s*48\s*(hrs|hours)\s*$/i.test(s)) return 'More than 3 days';
+  if (/three\s*days/i.test(s)) return 'Typically 3 business days';
+  if (/^\s*<?\d+\s*(hrs|hours|hr|hour)\s*$/i.test(s)) return 'Typically hours';
+  if (/^\s*\d+-\d+\s*(hrs|hours|hr|hour)\s*$/i.test(s)) return 'Typically hours';
+  return s;
+}
+
+function getLeadTime(csvRow, payMethod, isAfterHours) {
+  const prefix = isAfterHours ? 'OUT_' : 'IN_';
+  return csvRow[prefix + payMethod] || 'N/A';
+}
+
+function openModal(ccy) {
+  // Find Ria-priority entry
+  const matches = DATA.currencies.filter(c => c.currency === ccy);
+  const entry = matches.find(c => c.ccyType.toLowerCase().includes('ria')) || matches[0];
+  if (!entry) return;
+
+  modalCcy = entry;
+  document.getElementById('modal-title').textContent = `EU → ${ccy} (${entry.ccyType})`;
+
+  // Method buttons
+  const methods = ['DebitCard', 'CreditCard', 'BankTransfer', 'OpenBanking'];
+  document.getElementById('modal-methods').innerHTML = methods.map(m => {
+    const label = m.replace(/([A-Z])/g, ' $1').trim();
+    const hasChange = entry.diffs.some(d => d.column.includes(m));
+    const dot = hasChange ? '<span style="color:#3fb950;margin-left:4px">●</span>' : '';
+    return `<button class="time-btn ${m === modalMethod ? 'active' : ''}" data-method="${m}">${label}${dot}</button>`;
+  }).join('');
+
+  // Time buttons
+  document.getElementById('modal-times').innerHTML = `
+    <button class="time-btn ${modalTime === 'bh' ? 'active' : ''}" data-time="bh">Weekday Business Hrs (IN)</button>
+    <button class="time-btn ${modalTime === 'ah' ? 'active' : ''}" data-time="ah">After Hrs / Weekend (OUT)</button>
+  `;
+
+  renderModalQuote();
+
+  document.getElementById('modal').style.display = 'block';
+  document.getElementById('modal-bg').style.display = 'block';
+}
+
+function renderModalQuote() {
+  if (!modalCcy) return;
+  const entry = modalCcy;
+  const isAH = modalTime === 'ah';
+  const oldLT = getLeadTime(entry.old, modalMethod, isAH);
+  const newLT = getLeadTime(entry.new, modalMethod, isAH);
+  const oldTr = translateSLA(oldLT);
+  const newTr = translateSLA(newLT);
+  const changed = oldLT.trim() !== newLT.trim();
+  const timeLabel = isAH ? 'After Hours / Weekend' : 'Weekday Business Hours';
+  const methodLabel = modalMethod.replace(/([A-Z])/g, ' $1').trim();
+
+  function quoteCard(lt, translated, label, borderColor, bgColor) {
+    return `<div style="border:2px solid ${borderColor};border-radius:12px;overflow:hidden">
+      <div style="background:${bgColor};padding:10px 16px;font-weight:600;font-size:13px">${label}</div>
+      <div style="background:#0d1117;padding:16px">
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #21262d">
+          <span style="color:#8b949e">Corridor</span><span>EU → ${entry.currency}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #21262d">
+          <span style="color:#8b949e">Payment</span><span>${methodLabel}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #21262d">
+          <span style="color:#8b949e">Time</span><span style="font-size:12px">${timeLabel}</span>
+        </div>
+        <div style="text-align:center;padding:16px;background:#161b22;border-radius:8px;margin-top:12px">
+          <div style="font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px">Estimated Delivery</div>
+          <div style="font-size:22px;font-weight:700;margin:4px 0">${lt}</div>
+          <div style="font-size:13px;color:#8b949e">${translated}</div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  let html = '';
+  html += quoteCard(oldLT, oldTr, 'Current (Old)', '#f8514944', '#f8514922');
+
+  if (changed) {
+    html += quoteCard(newLT, newTr, 'Improved (New) ✓', '#3fb95044', '#3fb95022');
+  } else {
+    html += quoteCard(newLT, newTr, 'No Change', '#30363d', '#21262d');
+  }
+
+  document.getElementById('modal-quotes').innerHTML = html;
+
+  // Full grid: all methods x IN/OUT
+  const allMethods = ['BankTransfer', 'CreditCard', 'DebitCard', 'OpenBanking'];
+  let grid = `<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#8b949e">All Payment Methods</div>`;
+  grid += `<div style="display:grid;grid-template-columns:120px 1fr 1fr 1fr 1fr;gap:1px;background:#30363d;border-radius:8px;overflow:hidden;font-size:12px">`;
+  grid += `<div style="background:#1c2128;padding:8px;font-weight:600;color:#8b949e"></div>`;
+  for (const m of allMethods) {
+    const label = m.replace(/([A-Z])/g, ' $1').trim();
+    grid += `<div style="background:#1c2128;padding:8px;font-weight:600;color:#8b949e;text-align:center">${label}</div>`;
+  }
+
+  for (const [timeKey, timeLabel] of [['IN', 'Business Hrs'], ['OUT', 'After Hrs']]) {
+    grid += `<div style="background:#161b22;padding:8px;font-weight:600;color:#8b949e">${timeLabel}</div>`;
+    for (const m of allMethods) {
+      const col = `${timeKey}_${m}`;
+      const ov = (entry.old[col] || '').trim();
+      const nv = (entry.new[col] || '').trim();
+      if (ov !== nv) {
+        grid += `<div style="background:#3fb95010;padding:8px;text-align:center">
+          <span style="text-decoration:line-through;color:#f85149;font-size:10px">${ov}</span><br>
+          <span style="color:#3fb950;font-weight:600">${nv}</span>
+        </div>`;
+      } else {
+        grid += `<div style="background:#0d1117;padding:8px;text-align:center;color:#484f58">${ov}</div>`;
+      }
+    }
+  }
+  grid += `</div>`;
+
+  document.getElementById('modal-grid').innerHTML = grid;
+}
+
+// Modal event handlers
+document.getElementById('modal-close').addEventListener('click', () => {
+  document.getElementById('modal').style.display = 'none';
+  document.getElementById('modal-bg').style.display = 'none';
+});
+document.getElementById('modal-bg').addEventListener('click', () => {
+  document.getElementById('modal').style.display = 'none';
+  document.getElementById('modal-bg').style.display = 'none';
+});
+
+document.getElementById('modal-methods').addEventListener('click', e => {
+  const btn = e.target.closest('[data-method]');
+  if (!btn) return;
+  modalMethod = btn.dataset.method;
+  document.querySelectorAll('#modal-methods .time-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderModalQuote();
+});
+
+document.getElementById('modal-times').addEventListener('click', e => {
+  const btn = e.target.closest('[data-time]');
+  if (!btn) return;
+  modalTime = btn.dataset.time;
+  document.querySelectorAll('#modal-times .time-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderModalQuote();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,4882 @@
+{
+  "generated": "2026-03-30",
+  "period": "Last 90 Days",
+  "note": "EU consumer only (senderTbu EU codes). Transaction Created -> Transaction Completed, 30-day conversion window.",
+  "currencies": {
+    "INR": {
+      "overall": {
+        "volume": 11425,
+        "completed": 11217,
+        "rate": 98.2,
+        "median_hrs": 0.7,
+        "avg_hrs": 10.0
+      },
+      "debit": {
+        "volume": 4096,
+        "completed": 4075,
+        "rate": 99.5,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.8
+      },
+      "credit": {
+        "volume": 1077,
+        "completed": 1071,
+        "rate": 99.4,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.2
+      },
+      "bank_account": {
+        "volume": 3510,
+        "completed": 3336,
+        "rate": 95.0,
+        "median_hrs": 10.0,
+        "avg_hrs": 27.1
+      },
+      "open_banking": {
+        "volume": 4178,
+        "completed": 4122,
+        "rate": 98.7,
+        "median_hrs": 0.9,
+        "avg_hrs": 6.7
+      }
+    },
+    "EUR": {
+      "overall": {
+        "volume": 3188,
+        "completed": 2918,
+        "rate": 91.5,
+        "median_hrs": 0.7,
+        "avg_hrs": 13.7
+      },
+      "debit": {
+        "volume": 807,
+        "completed": 800,
+        "rate": 99.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.1
+      },
+      "credit": {
+        "volume": 44,
+        "completed": 41,
+        "rate": 93.2,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.6
+      },
+      "bank_account": {
+        "volume": 2216,
+        "completed": 1949,
+        "rate": 88.0,
+        "median_hrs": 1.3,
+        "avg_hrs": 19.3
+      },
+      "open_banking": {
+        "volume": 303,
+        "completed": 303,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 1.8
+      }
+    },
+    "MAD": {
+      "overall": {
+        "volume": 2662,
+        "completed": 2598,
+        "rate": 97.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.8
+      },
+      "debit": {
+        "volume": 1557,
+        "completed": 1551,
+        "rate": 99.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.5
+      },
+      "credit": {
+        "volume": 300,
+        "completed": 299,
+        "rate": 99.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.0
+      },
+      "bank_account": {
+        "volume": 419,
+        "completed": 389,
+        "rate": 92.8,
+        "median_hrs": 16.1,
+        "avg_hrs": 30.6
+      },
+      "open_banking": {
+        "volume": 712,
+        "completed": 670,
+        "rate": 94.1,
+        "median_hrs": 0.9,
+        "avg_hrs": 12.7
+      }
+    },
+    "USD": {
+      "overall": {
+        "volume": 1593,
+        "completed": 1499,
+        "rate": 94.1,
+        "median_hrs": 10.8,
+        "avg_hrs": 23.5
+      },
+      "debit": {
+        "volume": 725,
+        "completed": 697,
+        "rate": 96.1,
+        "median_hrs": 7.1,
+        "avg_hrs": 15.8
+      },
+      "credit": {
+        "volume": 195,
+        "completed": 192,
+        "rate": 98.5,
+        "median_hrs": 3.6,
+        "avg_hrs": 14.1
+      },
+      "bank_account": {
+        "volume": 392,
+        "completed": 347,
+        "rate": 88.5,
+        "median_hrs": 20.9,
+        "avg_hrs": 42.0
+      },
+      "open_banking": {
+        "volume": 458,
+        "completed": 426,
+        "rate": 93.0,
+        "median_hrs": 12.4,
+        "avg_hrs": 25.2
+      }
+    },
+    "GBP": {
+      "overall": {
+        "volume": 765,
+        "completed": 724,
+        "rate": 94.6,
+        "median_hrs": 10.8,
+        "avg_hrs": 24.0
+      },
+      "debit": {
+        "volume": 244,
+        "completed": 242,
+        "rate": 99.2,
+        "median_hrs": 0.4,
+        "avg_hrs": 12.1
+      },
+      "credit": {
+        "volume": 92,
+        "completed": 91,
+        "rate": 98.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 9.9
+      },
+      "bank_account": {
+        "volume": 322,
+        "completed": 293,
+        "rate": 91.0,
+        "median_hrs": 20.0,
+        "avg_hrs": 41.6
+      },
+      "open_banking": {
+        "volume": 171,
+        "completed": 159,
+        "rate": 93.0,
+        "median_hrs": 10.3,
+        "avg_hrs": 18.2
+      }
+    },
+    "THB": {
+      "overall": {
+        "volume": 659,
+        "completed": 630,
+        "rate": 95.6,
+        "median_hrs": 0.7,
+        "avg_hrs": 15.0
+      },
+      "debit": {
+        "volume": 226,
+        "completed": 223,
+        "rate": 98.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 9.7
+      },
+      "credit": {
+        "volume": 130,
+        "completed": 129,
+        "rate": 99.2,
+        "median_hrs": 0.2,
+        "avg_hrs": 11.5
+      },
+      "bank_account": {
+        "volume": 201,
+        "completed": 181,
+        "rate": 90.0,
+        "median_hrs": 10.6,
+        "avg_hrs": 31.1
+      },
+      "open_banking": {
+        "volume": 194,
+        "completed": 182,
+        "rate": 93.8,
+        "median_hrs": 0.9,
+        "avg_hrs": 8.3
+      }
+    },
+    "NAD": {
+      "overall": {
+        "volume": 511,
+        "completed": 504,
+        "rate": 98.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.4
+      },
+      "debit": {
+        "volume": 249,
+        "completed": 249,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.9
+      },
+      "credit": {
+        "volume": 87,
+        "completed": 87,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.3
+      },
+      "bank_account": {
+        "volume": 77,
+        "completed": 72,
+        "rate": 93.5,
+        "median_hrs": 3.5,
+        "avg_hrs": 18.3
+      },
+      "open_banking": {
+        "volume": 163,
+        "completed": 160,
+        "rate": 98.2,
+        "median_hrs": 0.9,
+        "avg_hrs": 9.7
+      }
+    },
+    "COP": {
+      "overall": {
+        "volume": 477,
+        "completed": 467,
+        "rate": 97.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 9.1
+      },
+      "debit": {
+        "volume": 232,
+        "completed": 230,
+        "rate": 99.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.7
+      },
+      "credit": {
+        "volume": 76,
+        "completed": 75,
+        "rate": 98.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.3
+      },
+      "bank_account": {
+        "volume": 95,
+        "completed": 92,
+        "rate": 96.8,
+        "median_hrs": 14.4,
+        "avg_hrs": 40.0
+      },
+      "open_banking": {
+        "volume": 155,
+        "completed": 149,
+        "rate": 96.1,
+        "median_hrs": 0.9,
+        "avg_hrs": 11.6
+      }
+    },
+    "AED": {
+      "overall": {
+        "volume": 367,
+        "completed": 346,
+        "rate": 94.3,
+        "median_hrs": 0.7,
+        "avg_hrs": 13.8
+      },
+      "debit": {
+        "volume": 149,
+        "completed": 147,
+        "rate": 98.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.3
+      },
+      "credit": {
+        "volume": 60,
+        "completed": 58,
+        "rate": 96.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.8
+      },
+      "bank_account": {
+        "volume": 105,
+        "completed": 87,
+        "rate": 82.9,
+        "median_hrs": 21.3,
+        "avg_hrs": 41.4
+      },
+      "open_banking": {
+        "volume": 101,
+        "completed": 99,
+        "rate": 98.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 8.9
+      }
+    },
+    "PHP": {
+      "overall": {
+        "volume": 357,
+        "completed": 331,
+        "rate": 92.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 9.9
+      },
+      "debit": {
+        "volume": 139,
+        "completed": 133,
+        "rate": 95.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 9.4
+      },
+      "credit": {
+        "volume": 69,
+        "completed": 67,
+        "rate": 97.1,
+        "median_hrs": 0.1,
+        "avg_hrs": 2.9
+      },
+      "bank_account": {
+        "volume": 90,
+        "completed": 74,
+        "rate": 82.2,
+        "median_hrs": 8.1,
+        "avg_hrs": 15.1
+      },
+      "open_banking": {
+        "volume": 98,
+        "completed": 93,
+        "rate": 94.9,
+        "median_hrs": 1.1,
+        "avg_hrs": 16.1
+      }
+    },
+    "ETB": {
+      "overall": {
+        "volume": 354,
+        "completed": 346,
+        "rate": 97.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.4
+      },
+      "debit": {
+        "volume": 204,
+        "completed": 203,
+        "rate": 99.5,
+        "median_hrs": 0.1,
+        "avg_hrs": 1.8
+      },
+      "credit": {
+        "volume": 50,
+        "completed": 49,
+        "rate": 98.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 14.8
+      },
+      "bank_account": {
+        "volume": 30,
+        "completed": 23,
+        "rate": 76.7,
+        "median_hrs": 12.7,
+        "avg_hrs": 24.2
+      },
+      "open_banking": {
+        "volume": 135,
+        "completed": 133,
+        "rate": 98.5,
+        "median_hrs": 1.1,
+        "avg_hrs": 12.1
+      }
+    },
+    "ZAR": {
+      "overall": {
+        "volume": 307,
+        "completed": 301,
+        "rate": 98.0,
+        "median_hrs": 0.6,
+        "avg_hrs": 14.5
+      },
+      "debit": {
+        "volume": 121,
+        "completed": 119,
+        "rate": 98.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.6
+      },
+      "credit": {
+        "volume": 68,
+        "completed": 67,
+        "rate": 98.5,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.7
+      },
+      "bank_account": {
+        "volume": 56,
+        "completed": 56,
+        "rate": 100.0,
+        "median_hrs": 16.7,
+        "avg_hrs": 37.7
+      },
+      "open_banking": {
+        "volume": 97,
+        "completed": 94,
+        "rate": 96.9,
+        "median_hrs": 1.2,
+        "avg_hrs": 20.9
+      }
+    },
+    "CAD": {
+      "overall": {
+        "volume": 249,
+        "completed": 242,
+        "rate": 97.2,
+        "median_hrs": 21.1,
+        "avg_hrs": 31.3
+      },
+      "debit": {
+        "volume": 95,
+        "completed": 95,
+        "rate": 100.0,
+        "median_hrs": 17.5,
+        "avg_hrs": 20.3
+      },
+      "credit": {
+        "volume": 35,
+        "completed": 35,
+        "rate": 100.0,
+        "median_hrs": 21.9,
+        "avg_hrs": 24.0
+      },
+      "bank_account": {
+        "volume": 72,
+        "completed": 69,
+        "rate": 95.8,
+        "median_hrs": 24.9,
+        "avg_hrs": 47.9
+      },
+      "open_banking": {
+        "volume": 70,
+        "completed": 66,
+        "rate": 94.3,
+        "median_hrs": 21.4,
+        "avg_hrs": 34.4
+      }
+    },
+    "PEN": {
+      "overall": {
+        "volume": 225,
+        "completed": 218,
+        "rate": 96.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 13.3
+      },
+      "debit": {
+        "volume": 143,
+        "completed": 141,
+        "rate": 98.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.7
+      },
+      "credit": {
+        "volume": 26,
+        "completed": 26,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.4
+      },
+      "bank_account": {
+        "volume": 36,
+        "completed": 31,
+        "rate": 86.1,
+        "median_hrs": 25.2,
+        "avg_hrs": 44.1
+      },
+      "open_banking": {
+        "volume": 59,
+        "completed": 58,
+        "rate": 98.3,
+        "median_hrs": 0.9,
+        "avg_hrs": 26.2
+      }
+    },
+    "AUD": {
+      "overall": {
+        "volume": 217,
+        "completed": 207,
+        "rate": 95.4,
+        "median_hrs": 22.9,
+        "avg_hrs": 35.9
+      },
+      "debit": {
+        "volume": 69,
+        "completed": 67,
+        "rate": 97.1,
+        "median_hrs": 3.1,
+        "avg_hrs": 25.2
+      },
+      "credit": {
+        "volume": 21,
+        "completed": 21,
+        "rate": 100.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 24.4
+      },
+      "bank_account": {
+        "volume": 96,
+        "completed": 88,
+        "rate": 91.7,
+        "median_hrs": 28.3,
+        "avg_hrs": 47.5
+      },
+      "open_banking": {
+        "volume": 49,
+        "completed": 49,
+        "rate": 100.0,
+        "median_hrs": 21.4,
+        "avg_hrs": 34.5
+      }
+    },
+    "XOF": {
+      "overall": {
+        "volume": 215,
+        "completed": 200,
+        "rate": 93.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.2
+      },
+      "debit": {
+        "volume": 150,
+        "completed": 145,
+        "rate": 96.7,
+        "median_hrs": 0.1,
+        "avg_hrs": 1.1
+      },
+      "credit": {
+        "volume": 41,
+        "completed": 36,
+        "rate": 87.8,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.8
+      },
+      "bank_account": {
+        "volume": 14,
+        "completed": 13,
+        "rate": 92.9,
+        "median_hrs": 9.8,
+        "avg_hrs": 62.3
+      },
+      "open_banking": {
+        "volume": 37,
+        "completed": 29,
+        "rate": 78.4,
+        "median_hrs": 1.2,
+        "avg_hrs": 12.8
+      }
+    },
+    "MUR": {
+      "overall": {
+        "volume": 210,
+        "completed": 206,
+        "rate": 98.1,
+        "median_hrs": 20.8,
+        "avg_hrs": 30.9
+      },
+      "debit": {
+        "volume": 91,
+        "completed": 91,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 18.5
+      },
+      "credit": {
+        "volume": 19,
+        "completed": 19,
+        "rate": 100.0,
+        "median_hrs": 1.6,
+        "avg_hrs": 18.9
+      },
+      "bank_account": {
+        "volume": 70,
+        "completed": 65,
+        "rate": 92.9,
+        "median_hrs": 37.0,
+        "avg_hrs": 46.6
+      },
+      "open_banking": {
+        "volume": 57,
+        "completed": 55,
+        "rate": 96.5,
+        "median_hrs": 22.4,
+        "avg_hrs": 33.9
+      }
+    },
+    "TRY": {
+      "overall": {
+        "volume": 208,
+        "completed": 199,
+        "rate": 95.7,
+        "median_hrs": 0.6,
+        "avg_hrs": 4.5
+      },
+      "debit": {
+        "volume": 73,
+        "completed": 71,
+        "rate": 97.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.2
+      },
+      "credit": {
+        "volume": 30,
+        "completed": 30,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 30,
+        "completed": 24,
+        "rate": 80.0,
+        "median_hrs": 6.2,
+        "avg_hrs": 13.8
+      },
+      "open_banking": {
+        "volume": 93,
+        "completed": 91,
+        "rate": 97.8,
+        "median_hrs": 0.9,
+        "avg_hrs": 5.0
+      }
+    },
+    "SAR": {
+      "overall": {
+        "volume": 189,
+        "completed": 185,
+        "rate": 97.9,
+        "median_hrs": 0.4,
+        "avg_hrs": 9.8
+      },
+      "debit": {
+        "volume": 83,
+        "completed": 81,
+        "rate": 97.6,
+        "median_hrs": 0.1,
+        "avg_hrs": 6.0
+      },
+      "credit": {
+        "volume": 31,
+        "completed": 31,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.9
+      },
+      "bank_account": {
+        "volume": 20,
+        "completed": 18,
+        "rate": 90.0,
+        "median_hrs": 12.4,
+        "avg_hrs": 26.6
+      },
+      "open_banking": {
+        "volume": 69,
+        "completed": 69,
+        "rate": 100.0,
+        "median_hrs": 1.0,
+        "avg_hrs": 12.3
+      }
+    },
+    "PKR": {
+      "overall": {
+        "volume": 175,
+        "completed": 170,
+        "rate": 97.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 11.9
+      },
+      "debit": {
+        "volume": 108,
+        "completed": 106,
+        "rate": 98.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.0
+      },
+      "credit": {
+        "volume": 21,
+        "completed": 20,
+        "rate": 95.2,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.1
+      },
+      "bank_account": {
+        "volume": 25,
+        "completed": 23,
+        "rate": 92.0,
+        "median_hrs": 13.7,
+        "avg_hrs": 36.4
+      },
+      "open_banking": {
+        "volume": 33,
+        "completed": 32,
+        "rate": 97.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 7.4
+      }
+    },
+    "LKR": {
+      "overall": {
+        "volume": 161,
+        "completed": 156,
+        "rate": 96.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 5.6
+      },
+      "debit": {
+        "volume": 63,
+        "completed": 63,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.4
+      },
+      "credit": {
+        "volume": 45,
+        "completed": 44,
+        "rate": 97.8,
+        "median_hrs": 0.1,
+        "avg_hrs": 6.1
+      },
+      "bank_account": {
+        "volume": 25,
+        "completed": 20,
+        "rate": 80.0,
+        "median_hrs": 10.0,
+        "avg_hrs": 17.3
+      },
+      "open_banking": {
+        "volume": 51,
+        "completed": 50,
+        "rate": 98.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 6.2
+      }
+    },
+    "IDR": {
+      "overall": {
+        "volume": 155,
+        "completed": 150,
+        "rate": 96.8,
+        "median_hrs": 0.4,
+        "avg_hrs": 9.2
+      },
+      "debit": {
+        "volume": 55,
+        "completed": 54,
+        "rate": 98.2,
+        "median_hrs": 0.1,
+        "avg_hrs": 1.7
+      },
+      "credit": {
+        "volume": 34,
+        "completed": 34,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.9
+      },
+      "bank_account": {
+        "volume": 34,
+        "completed": 31,
+        "rate": 91.2,
+        "median_hrs": 9.4,
+        "avg_hrs": 33.0
+      },
+      "open_banking": {
+        "volume": 62,
+        "completed": 61,
+        "rate": 98.4,
+        "median_hrs": 0.9,
+        "avg_hrs": 7.7
+      }
+    },
+    "MXN": {
+      "overall": {
+        "volume": 145,
+        "completed": 139,
+        "rate": 95.9,
+        "median_hrs": 0.6,
+        "avg_hrs": 12.0
+      },
+      "debit": {
+        "volume": 60,
+        "completed": 59,
+        "rate": 98.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.4
+      },
+      "credit": {
+        "volume": 34,
+        "completed": 33,
+        "rate": 97.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 10.8
+      },
+      "bank_account": {
+        "volume": 37,
+        "completed": 33,
+        "rate": 89.2,
+        "median_hrs": 17.5,
+        "avg_hrs": 28.4
+      },
+      "open_banking": {
+        "volume": 37,
+        "completed": 35,
+        "rate": 94.6,
+        "median_hrs": 1.2,
+        "avg_hrs": 15.6
+      }
+    },
+    "TND": {
+      "overall": {
+        "volume": 123,
+        "completed": 121,
+        "rate": 98.4,
+        "median_hrs": 0.2,
+        "avg_hrs": 10.6
+      },
+      "debit": {
+        "volume": 80,
+        "completed": 80,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.4
+      },
+      "credit": {
+        "volume": 20,
+        "completed": 20,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 10.2
+      },
+      "bank_account": {
+        "volume": 10,
+        "completed": 10,
+        "rate": 100.0,
+        "median_hrs": 23.0,
+        "avg_hrs": 35.0
+      },
+      "open_banking": {
+        "volume": 27,
+        "completed": 24,
+        "rate": 88.9,
+        "median_hrs": 10.9,
+        "avg_hrs": 13.4
+      }
+    },
+    "JOD": {
+      "overall": {
+        "volume": 101,
+        "completed": 97,
+        "rate": 96.0,
+        "median_hrs": 12.9,
+        "avg_hrs": 34.1
+      },
+      "debit": {
+        "volume": 55,
+        "completed": 55,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 24.3
+      },
+      "credit": {
+        "volume": 20,
+        "completed": 20,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 18.6
+      },
+      "bank_account": {
+        "volume": 17,
+        "completed": 14,
+        "rate": 82.4,
+        "median_hrs": 45.8,
+        "avg_hrs": 68.7
+      },
+      "open_banking": {
+        "volume": 23,
+        "completed": 21,
+        "rate": 91.3,
+        "median_hrs": 23.5,
+        "avg_hrs": 55.3
+      }
+    },
+    "DOP": {
+      "overall": {
+        "volume": 101,
+        "completed": 99,
+        "rate": 98.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 10.0
+      },
+      "debit": {
+        "volume": 52,
+        "completed": 52,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.3
+      },
+      "credit": {
+        "volume": 28,
+        "completed": 28,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.7
+      },
+      "bank_account": {
+        "volume": 10,
+        "completed": 9,
+        "rate": 90.0,
+        "median_hrs": 30.8,
+        "avg_hrs": 37.3
+      },
+      "open_banking": {
+        "volume": 19,
+        "completed": 18,
+        "rate": 94.7,
+        "median_hrs": 1.0,
+        "avg_hrs": 30.0
+      }
+    },
+    "BWP": {
+      "overall": {
+        "volume": 98,
+        "completed": 96,
+        "rate": 98.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 5.9
+      },
+      "debit": {
+        "volume": 58,
+        "completed": 57,
+        "rate": 98.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.8
+      },
+      "credit": {
+        "volume": 20,
+        "completed": 20,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.8
+      },
+      "bank_account": {
+        "volume": 21,
+        "completed": 18,
+        "rate": 85.7,
+        "median_hrs": 15.5,
+        "avg_hrs": 29.2
+      },
+      "open_banking": {
+        "volume": 15,
+        "completed": 15,
+        "rate": 100.0,
+        "median_hrs": 1.0,
+        "avg_hrs": 4.0
+      }
+    },
+    "MWK": {
+      "overall": {
+        "volume": 94,
+        "completed": 91,
+        "rate": 96.8,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.8
+      },
+      "debit": {
+        "volume": 61,
+        "completed": 59,
+        "rate": 96.7,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.2
+      },
+      "credit": {
+        "volume": 19,
+        "completed": 19,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "open_banking": {
+        "volume": 19,
+        "completed": 18,
+        "rate": 94.7,
+        "median_hrs": 0.7,
+        "avg_hrs": 3.2
+      }
+    },
+    "NGN": {
+      "overall": {
+        "volume": 92,
+        "completed": 84,
+        "rate": 91.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 10.5
+      },
+      "debit": {
+        "volume": 50,
+        "completed": 47,
+        "rate": 94.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 11.0
+      },
+      "credit": {
+        "volume": 25,
+        "completed": 25,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 4.3
+      },
+      "bank_account": {
+        "volume": 18,
+        "completed": 11,
+        "rate": 61.1,
+        "median_hrs": 19.5,
+        "avg_hrs": 24.3
+      },
+      "open_banking": {
+        "volume": 17,
+        "completed": 16,
+        "rate": 94.1,
+        "median_hrs": 0.8,
+        "avg_hrs": 11.8
+      }
+    },
+    "SEK": {
+      "overall": {
+        "volume": 87,
+        "completed": 81,
+        "rate": 93.1,
+        "median_hrs": 0.9,
+        "avg_hrs": 15.1
+      },
+      "debit": {
+        "volume": 21,
+        "completed": 20,
+        "rate": 95.2,
+        "median_hrs": 0.2,
+        "avg_hrs": 16.1
+      },
+      "credit": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 5.3
+      },
+      "bank_account": {
+        "volume": 45,
+        "completed": 40,
+        "rate": 88.9,
+        "median_hrs": 6.5,
+        "avg_hrs": 18.5
+      },
+      "open_banking": {
+        "volume": 22,
+        "completed": 21,
+        "rate": 95.5,
+        "median_hrs": 0.7,
+        "avg_hrs": 11.9
+      }
+    },
+    "EGP": {
+      "overall": {
+        "volume": 75,
+        "completed": 67,
+        "rate": 89.3,
+        "median_hrs": 0.9,
+        "avg_hrs": 19.2
+      },
+      "debit": {
+        "volume": 27,
+        "completed": 22,
+        "rate": 81.5,
+        "median_hrs": 0.2,
+        "avg_hrs": 33.4
+      },
+      "credit": {
+        "volume": 15,
+        "completed": 15,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 13.5
+      },
+      "bank_account": {
+        "volume": 14,
+        "completed": 13,
+        "rate": 92.9,
+        "median_hrs": 3.4,
+        "avg_hrs": 23.2
+      },
+      "open_banking": {
+        "volume": 28,
+        "completed": 26,
+        "rate": 92.9,
+        "median_hrs": 1.1,
+        "avg_hrs": 6.8
+      }
+    },
+    "NZD": {
+      "overall": {
+        "volume": 74,
+        "completed": 70,
+        "rate": 94.6,
+        "median_hrs": 26.4,
+        "avg_hrs": 44.3
+      },
+      "debit": {
+        "volume": 20,
+        "completed": 20,
+        "rate": 100.0,
+        "median_hrs": 13.4,
+        "avg_hrs": 62.2
+      },
+      "credit": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 11.4
+      },
+      "bank_account": {
+        "volume": 31,
+        "completed": 29,
+        "rate": 93.5,
+        "median_hrs": 24.1,
+        "avg_hrs": 31.6
+      },
+      "open_banking": {
+        "volume": 23,
+        "completed": 21,
+        "rate": 91.3,
+        "median_hrs": 37.6,
+        "avg_hrs": 44.3
+      }
+    },
+    "GMD": {
+      "overall": {
+        "volume": 73,
+        "completed": 72,
+        "rate": 98.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 19.3
+      },
+      "debit": {
+        "volume": 53,
+        "completed": 53,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 15.2
+      },
+      "credit": {
+        "volume": 15,
+        "completed": 15,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 4.7
+      },
+      "bank_account": {
+        "volume": 6,
+        "completed": 5,
+        "rate": 83.3,
+        "median_hrs": 97.9,
+        "avg_hrs": 146.8
+      },
+      "open_banking": {
+        "volume": 13,
+        "completed": 13,
+        "rate": 100.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 1.2
+      }
+    },
+    "CHF": {
+      "overall": {
+        "volume": 67,
+        "completed": 61,
+        "rate": 91.0,
+        "median_hrs": 11.3,
+        "avg_hrs": 16.5
+      },
+      "debit": {
+        "volume": 20,
+        "completed": 20,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.7
+      },
+      "credit": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 2.3,
+        "avg_hrs": 18.2
+      },
+      "bank_account": {
+        "volume": 26,
+        "completed": 19,
+        "rate": 73.1,
+        "median_hrs": 16.6,
+        "avg_hrs": 22.2
+      },
+      "open_banking": {
+        "volume": 16,
+        "completed": 16,
+        "rate": 100.0,
+        "median_hrs": 8.3,
+        "avg_hrs": 13.3
+      }
+    },
+    "PLN": {
+      "overall": {
+        "volume": 67,
+        "completed": 59,
+        "rate": 88.1,
+        "median_hrs": 0.7,
+        "avg_hrs": 8.6
+      },
+      "debit": {
+        "volume": 20,
+        "completed": 18,
+        "rate": 90.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 3.7
+      },
+      "credit": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 2.0
+      },
+      "bank_account": {
+        "volume": 26,
+        "completed": 21,
+        "rate": 80.8,
+        "median_hrs": 3.8,
+        "avg_hrs": 18.9
+      },
+      "open_banking": {
+        "volume": 17,
+        "completed": 16,
+        "rate": 94.1,
+        "median_hrs": 0.9,
+        "avg_hrs": 1.8
+      }
+    },
+    "GHS": {
+      "overall": {
+        "volume": 63,
+        "completed": 59,
+        "rate": 93.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.5
+      },
+      "debit": {
+        "volume": 30,
+        "completed": 29,
+        "rate": 96.7,
+        "median_hrs": 0.1,
+        "avg_hrs": 1.9
+      },
+      "credit": {
+        "volume": 16,
+        "completed": 16,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.5
+      },
+      "bank_account": {
+        "volume": 5,
+        "completed": 3,
+        "rate": 60.0,
+        "median_hrs": 17.5,
+        "avg_hrs": 12.9
+      },
+      "open_banking": {
+        "volume": 22,
+        "completed": 20,
+        "rate": 90.9,
+        "median_hrs": 0.9,
+        "avg_hrs": 8.3
+      }
+    },
+    "ILS": {
+      "overall": {
+        "volume": 61,
+        "completed": 58,
+        "rate": 95.1,
+        "median_hrs": 0.8,
+        "avg_hrs": 12.5
+      },
+      "debit": {
+        "volume": 17,
+        "completed": 17,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 2.9
+      },
+      "credit": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.7
+      },
+      "bank_account": {
+        "volume": 19,
+        "completed": 16,
+        "rate": 84.2,
+        "median_hrs": 22.8,
+        "avg_hrs": 31.6
+      },
+      "open_banking": {
+        "volume": 22,
+        "completed": 22,
+        "rate": 100.0,
+        "median_hrs": 1.2,
+        "avg_hrs": 17.5
+      }
+    },
+    "BDT": {
+      "overall": {
+        "volume": 60,
+        "completed": 56,
+        "rate": 93.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 10.8
+      },
+      "debit": {
+        "volume": 33,
+        "completed": 33,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 3.3
+      },
+      "credit": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 10,
+        "completed": 7,
+        "rate": 70.0,
+        "median_hrs": 46.4,
+        "avg_hrs": 72.6
+      },
+      "open_banking": {
+        "volume": 13,
+        "completed": 12,
+        "rate": 92.3,
+        "median_hrs": 0.9,
+        "avg_hrs": 17.1
+      }
+    },
+    "BOB": {
+      "overall": {
+        "volume": 58,
+        "completed": 57,
+        "rate": 98.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.9
+      },
+      "debit": {
+        "volume": 37,
+        "completed": 37,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.3
+      },
+      "credit": {
+        "volume": 10,
+        "completed": 10,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.8
+      },
+      "bank_account": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 12.6,
+        "avg_hrs": 67.9
+      },
+      "open_banking": {
+        "volume": 12,
+        "completed": 11,
+        "rate": 91.7,
+        "median_hrs": 0.9,
+        "avg_hrs": 3.8
+      }
+    },
+    "KES": {
+      "overall": {
+        "volume": 55,
+        "completed": 52,
+        "rate": 94.5,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.4
+      },
+      "debit": {
+        "volume": 29,
+        "completed": 28,
+        "rate": 96.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.6
+      },
+      "credit": {
+        "volume": 20,
+        "completed": 20,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 12.5
+      },
+      "bank_account": {
+        "volume": 2,
+        "completed": 1,
+        "rate": 50.0,
+        "median_hrs": 22.9,
+        "avg_hrs": 22.9
+      },
+      "open_banking": {
+        "volume": 11,
+        "completed": 10,
+        "rate": 90.9,
+        "median_hrs": 1.2,
+        "avg_hrs": 6.6
+      }
+    },
+    "QAR": {
+      "overall": {
+        "volume": 55,
+        "completed": 53,
+        "rate": 96.4,
+        "median_hrs": 0.3,
+        "avg_hrs": 11.9
+      },
+      "debit": {
+        "volume": 27,
+        "completed": 26,
+        "rate": 96.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.6
+      },
+      "credit": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 12,
+        "completed": 10,
+        "rate": 83.3,
+        "median_hrs": 41.4,
+        "avg_hrs": 44.4
+      },
+      "open_banking": {
+        "volume": 14,
+        "completed": 14,
+        "rate": 100.0,
+        "median_hrs": 1.0,
+        "avg_hrs": 8.6
+      }
+    },
+    "UGX": {
+      "overall": {
+        "volume": 50,
+        "completed": 48,
+        "rate": 96.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 13.3
+      },
+      "debit": {
+        "volume": 25,
+        "completed": 24,
+        "rate": 96.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 6.2
+      },
+      "credit": {
+        "volume": 15,
+        "completed": 15,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.7
+      },
+      "bank_account": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 37.1,
+        "avg_hrs": 53.0
+      },
+      "open_banking": {
+        "volume": 12,
+        "completed": 11,
+        "rate": 91.7,
+        "median_hrs": 2.7,
+        "avg_hrs": 31.3
+      }
+    },
+    "NPR": {
+      "overall": {
+        "volume": 48,
+        "completed": 47,
+        "rate": 97.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.1
+      },
+      "debit": {
+        "volume": 22,
+        "completed": 22,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.7
+      },
+      "credit": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 12,
+        "completed": 11,
+        "rate": 91.7,
+        "median_hrs": 24.0,
+        "avg_hrs": 51.1
+      },
+      "open_banking": {
+        "volume": 13,
+        "completed": 13,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 4.6
+      }
+    },
+    "VND": {
+      "overall": {
+        "volume": 47,
+        "completed": 43,
+        "rate": 91.5,
+        "median_hrs": 0.2,
+        "avg_hrs": 16.7
+      },
+      "debit": {
+        "volume": 24,
+        "completed": 23,
+        "rate": 95.8,
+        "median_hrs": 0.2,
+        "avg_hrs": 17.0
+      },
+      "credit": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 17.4
+      },
+      "bank_account": {
+        "volume": 7,
+        "completed": 6,
+        "rate": 85.7,
+        "median_hrs": 5.7,
+        "avg_hrs": 8.8
+      },
+      "open_banking": {
+        "volume": 12,
+        "completed": 10,
+        "rate": 83.3,
+        "median_hrs": 1.2,
+        "avg_hrs": 23.9
+      }
+    },
+    "OMR": {
+      "overall": {
+        "volume": 46,
+        "completed": 46,
+        "rate": 100.0,
+        "median_hrs": 23.5,
+        "avg_hrs": 42.5
+      },
+      "debit": {
+        "volume": 21,
+        "completed": 21,
+        "rate": 100.0,
+        "median_hrs": 23.4,
+        "avg_hrs": 37.0
+      },
+      "credit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 18.1,
+        "avg_hrs": 29.5
+      },
+      "bank_account": {
+        "volume": 17,
+        "completed": 17,
+        "rate": 100.0,
+        "median_hrs": 27.3,
+        "avg_hrs": 45.7
+      },
+      "open_banking": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 45.3,
+        "avg_hrs": 53.2
+      }
+    },
+    "SLE": {
+      "overall": {
+        "volume": 44,
+        "completed": 44,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 11.1
+      },
+      "debit": {
+        "volume": 35,
+        "completed": 35,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 13.9
+      },
+      "credit": {
+        "volume": 10,
+        "completed": 10,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 6.7
+      },
+      "open_banking": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 0.8
+      }
+    },
+    "CZK": {
+      "overall": {
+        "volume": 43,
+        "completed": 40,
+        "rate": 93.0,
+        "median_hrs": 1.0,
+        "avg_hrs": 16.9
+      },
+      "debit": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.6
+      },
+      "credit": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.1
+      },
+      "bank_account": {
+        "volume": 21,
+        "completed": 18,
+        "rate": 85.7,
+        "median_hrs": 20.1,
+        "avg_hrs": 24.7
+      },
+      "open_banking": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 24.8
+      }
+    },
+    "JPY": {
+      "overall": {
+        "volume": 39,
+        "completed": 34,
+        "rate": 87.2,
+        "median_hrs": 23.9,
+        "avg_hrs": 40.2
+      },
+      "debit": {
+        "volume": 15,
+        "completed": 14,
+        "rate": 93.3,
+        "median_hrs": 23.6,
+        "avg_hrs": 37.7
+      },
+      "credit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 61.4,
+        "avg_hrs": 59.9
+      },
+      "bank_account": {
+        "volume": 12,
+        "completed": 10,
+        "rate": 83.3,
+        "median_hrs": 22.7,
+        "avg_hrs": 40.4
+      },
+      "open_banking": {
+        "volume": 11,
+        "completed": 9,
+        "rate": 81.8,
+        "median_hrs": 25.5,
+        "avg_hrs": 33.3
+      }
+    },
+    "MYR": {
+      "overall": {
+        "volume": 38,
+        "completed": 35,
+        "rate": 92.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.7
+      },
+      "debit": {
+        "volume": 16,
+        "completed": 15,
+        "rate": 93.8,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.7
+      },
+      "credit": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 7,
+        "completed": 5,
+        "rate": 71.4,
+        "median_hrs": 17.0,
+        "avg_hrs": 15.9
+      },
+      "open_banking": {
+        "volume": 13,
+        "completed": 13,
+        "rate": 100.0,
+        "median_hrs": 1.2,
+        "avg_hrs": 10.5
+      }
+    },
+    "MGA": {
+      "overall": {
+        "volume": 37,
+        "completed": 35,
+        "rate": 94.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.0
+      },
+      "debit": {
+        "volume": 17,
+        "completed": 17,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.2
+      },
+      "credit": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.0
+      },
+      "bank_account": {
+        "volume": 3,
+        "completed": 1,
+        "rate": 33.3,
+        "median_hrs": 2.5,
+        "avg_hrs": 2.5
+      },
+      "open_banking": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 1.0,
+        "avg_hrs": 18.1
+      }
+    },
+    "NOK": {
+      "overall": {
+        "volume": 36,
+        "completed": 34,
+        "rate": 94.4,
+        "median_hrs": 3.3,
+        "avg_hrs": 22.5
+      },
+      "debit": {
+        "volume": 11,
+        "completed": 11,
+        "rate": 100.0,
+        "median_hrs": 1.2,
+        "avg_hrs": 7.4
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 9.0,
+        "avg_hrs": 9.0
+      },
+      "bank_account": {
+        "volume": 18,
+        "completed": 16,
+        "rate": 88.9,
+        "median_hrs": 8.1,
+        "avg_hrs": 19.7
+      },
+      "open_banking": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 6.5,
+        "avg_hrs": 49.9
+      }
+    },
+    "BRL": {
+      "overall": {
+        "volume": 34,
+        "completed": 29,
+        "rate": 85.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.2
+      },
+      "debit": {
+        "volume": 15,
+        "completed": 13,
+        "rate": 86.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.6
+      },
+      "credit": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 3,
+        "completed": 1,
+        "rate": 33.3,
+        "median_hrs": 65.4,
+        "avg_hrs": 65.4
+      },
+      "open_banking": {
+        "volume": 12,
+        "completed": 10,
+        "rate": 83.3,
+        "median_hrs": 0.8,
+        "avg_hrs": 4.9
+      }
+    },
+    "ZMW": {
+      "overall": {
+        "volume": 34,
+        "completed": 34,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 8.7
+      },
+      "debit": {
+        "volume": 20,
+        "completed": 20,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 2.6
+      },
+      "credit": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 146.1,
+        "avg_hrs": 146.1
+      },
+      "open_banking": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 11.4,
+        "avg_hrs": 17.0
+      }
+    },
+    "DKK": {
+      "overall": {
+        "volume": 34,
+        "completed": 33,
+        "rate": 97.1,
+        "median_hrs": 9.8,
+        "avg_hrs": 31.8
+      },
+      "debit": {
+        "volume": 11,
+        "completed": 11,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.3
+      },
+      "credit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 20,
+        "completed": 19,
+        "rate": 95.0,
+        "median_hrs": 19.9,
+        "avg_hrs": 50.4
+      },
+      "open_banking": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.6,
+        "avg_hrs": 6.9
+      }
+    },
+    "XAF": {
+      "overall": {
+        "volume": 33,
+        "completed": 31,
+        "rate": 93.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.6
+      },
+      "debit": {
+        "volume": 23,
+        "completed": 22,
+        "rate": 95.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.6
+      },
+      "credit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 16.6,
+        "avg_hrs": 16.6
+      },
+      "open_banking": {
+        "volume": 5,
+        "completed": 4,
+        "rate": 80.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 0.9
+      }
+    },
+    "TZS": {
+      "overall": {
+        "volume": 33,
+        "completed": 32,
+        "rate": 97.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 22.1
+      },
+      "debit": {
+        "volume": 18,
+        "completed": 18,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 25.8
+      },
+      "credit": {
+        "volume": 10,
+        "completed": 9,
+        "rate": 90.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 6.1
+      },
+      "bank_account": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 119.9,
+        "avg_hrs": 119.9
+      },
+      "open_banking": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 5.3,
+        "avg_hrs": 9.7
+      }
+    },
+    "KWD": {
+      "overall": {
+        "volume": 30,
+        "completed": 29,
+        "rate": 96.7,
+        "median_hrs": 38.6,
+        "avg_hrs": 45.7
+      },
+      "debit": {
+        "volume": 17,
+        "completed": 17,
+        "rate": 100.0,
+        "median_hrs": 44.6,
+        "avg_hrs": 47.9
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 1,
+        "rate": 50.0,
+        "median_hrs": 16.0,
+        "avg_hrs": 16.0
+      },
+      "bank_account": {
+        "volume": 2,
+        "completed": 1,
+        "rate": 50.0,
+        "median_hrs": 45.4,
+        "avg_hrs": 45.4
+      },
+      "open_banking": {
+        "volume": 10,
+        "completed": 10,
+        "rate": 100.0,
+        "median_hrs": 23.3,
+        "avg_hrs": 44.9
+      }
+    },
+    "CLP": {
+      "overall": {
+        "volume": 27,
+        "completed": 26,
+        "rate": 96.3,
+        "median_hrs": 0.9,
+        "avg_hrs": 23.5
+      },
+      "debit": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 21.4
+      },
+      "credit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 8,
+        "completed": 7,
+        "rate": 87.5,
+        "median_hrs": 6.1,
+        "avg_hrs": 51.2
+      },
+      "open_banking": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 7.7
+      }
+    },
+    "SGD": {
+      "overall": {
+        "volume": 26,
+        "completed": 25,
+        "rate": 96.2,
+        "median_hrs": 0.8,
+        "avg_hrs": 26.8
+      },
+      "debit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.4
+      },
+      "credit": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 5,
+        "completed": 4,
+        "rate": 80.0,
+        "median_hrs": 8.9,
+        "avg_hrs": 129.7
+      },
+      "open_banking": {
+        "volume": 13,
+        "completed": 13,
+        "rate": 100.0,
+        "median_hrs": 1.0,
+        "avg_hrs": 10.9
+      }
+    },
+    "GTQ": {
+      "overall": {
+        "volume": 23,
+        "completed": 23,
+        "rate": 100.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 7.3
+      },
+      "debit": {
+        "volume": 13,
+        "completed": 13,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.8
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 7.5,
+        "avg_hrs": 20.0
+      },
+      "open_banking": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 3.1,
+        "avg_hrs": 6.2
+      }
+    },
+    "CVE": {
+      "overall": {
+        "volume": 23,
+        "completed": 23,
+        "rate": 100.0,
+        "median_hrs": 1.1,
+        "avg_hrs": 17.2
+      },
+      "debit": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 9.2,
+        "avg_hrs": 34.0
+      },
+      "open_banking": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 7.5,
+        "avg_hrs": 19.5
+      }
+    },
+    "CNY": {
+      "overall": {
+        "volume": 20,
+        "completed": 17,
+        "rate": 85.0,
+        "median_hrs": 16.1,
+        "avg_hrs": 20.0
+      },
+      "debit": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 16.1,
+        "avg_hrs": 28.6
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 5,
+        "completed": 3,
+        "rate": 60.0,
+        "median_hrs": 18.9,
+        "avg_hrs": 19.5
+      },
+      "open_banking": {
+        "volume": 5,
+        "completed": 4,
+        "rate": 80.0,
+        "median_hrs": 3.3,
+        "avg_hrs": 5.9
+      }
+    },
+    "RON": {
+      "overall": {
+        "volume": 18,
+        "completed": 13,
+        "rate": 72.2,
+        "median_hrs": 0.3,
+        "avg_hrs": 2.4
+      },
+      "debit": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 8,
+        "completed": 3,
+        "rate": 37.5,
+        "median_hrs": 5.1,
+        "avg_hrs": 5.9
+      },
+      "open_banking": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 2.6
+      }
+    },
+    "ARS": {
+      "overall": {
+        "volume": 18,
+        "completed": 17,
+        "rate": 94.4,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.1
+      },
+      "debit": {
+        "volume": 10,
+        "completed": 10,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.7
+      },
+      "credit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 1,
+        "completed": 0,
+        "rate": 0.0,
+        "median_hrs": -0.0,
+        "avg_hrs": -0.0
+      },
+      "open_banking": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 11.4
+      }
+    },
+    "BHD": {
+      "overall": {
+        "volume": 17,
+        "completed": 17,
+        "rate": 100.0,
+        "median_hrs": 41.3,
+        "avg_hrs": 52.9
+      },
+      "debit": {
+        "volume": 10,
+        "completed": 10,
+        "rate": 100.0,
+        "median_hrs": 36.2,
+        "avg_hrs": 47.3
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 92.9,
+        "avg_hrs": 92.9
+      },
+      "bank_account": {
+        "volume": 3,
+        "completed": 2,
+        "rate": 66.7,
+        "median_hrs": 67.9,
+        "avg_hrs": 67.9
+      },
+      "open_banking": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 41.3,
+        "avg_hrs": 61.5
+      }
+    },
+    "KRW": {
+      "overall": {
+        "volume": 16,
+        "completed": 16,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 13.5
+      },
+      "debit": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.1
+      },
+      "credit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 105.4,
+        "avg_hrs": 105.4
+      },
+      "open_banking": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 0.7
+      }
+    },
+    "TWD": {
+      "overall": {
+        "volume": 15,
+        "completed": 13,
+        "rate": 86.7,
+        "median_hrs": 98.7,
+        "avg_hrs": 98.2
+      },
+      "debit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 99.6,
+        "avg_hrs": 122.5
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 117.1,
+        "avg_hrs": 117.1
+      },
+      "bank_account": {
+        "volume": 4,
+        "completed": 2,
+        "rate": 50.0,
+        "median_hrs": 66.8,
+        "avg_hrs": 66.8
+      },
+      "open_banking": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 74.1,
+        "avg_hrs": 83.6
+      }
+    },
+    "DZD": {
+      "overall": {
+        "volume": 12,
+        "completed": 5,
+        "rate": 41.7,
+        "median_hrs": 75.0,
+        "avg_hrs": 85.4
+      },
+      "debit": {
+        "volume": 10,
+        "completed": 5,
+        "rate": 50.0,
+        "median_hrs": 69.4,
+        "avg_hrs": 71.3
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 0,
+        "rate": 0.0,
+        "median_hrs": -0.0,
+        "avg_hrs": -0.0
+      },
+      "bank_account": {
+        "volume": 1,
+        "completed": 0,
+        "rate": 0.0,
+        "median_hrs": -0.0,
+        "avg_hrs": -0.0
+      },
+      "open_banking": {
+        "volume": 2,
+        "completed": 1,
+        "rate": 50.0,
+        "median_hrs": 120.0,
+        "avg_hrs": 120.0
+      }
+    },
+    "HNL": {
+      "overall": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 7.7
+      },
+      "debit": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 2.7
+      },
+      "credit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 15.9
+      },
+      "open_banking": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 6.7
+      }
+    },
+    "MZN": {
+      "overall": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.8
+      },
+      "debit": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.2
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "open_banking": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 2.2,
+        "avg_hrs": 5.2
+      }
+    },
+    "BAM": {
+      "overall": {
+        "volume": 11,
+        "completed": 10,
+        "rate": 90.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.2
+      },
+      "debit": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 11.7
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "bank_account": {
+        "volume": 2,
+        "completed": 1,
+        "rate": 50.0,
+        "median_hrs": 67.8,
+        "avg_hrs": 67.8
+      },
+      "open_banking": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 0.7
+      }
+    },
+    "HKD": {
+      "overall": {
+        "volume": 11,
+        "completed": 11,
+        "rate": 100.0,
+        "median_hrs": 7.9,
+        "avg_hrs": 10.8
+      },
+      "debit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 5.0,
+        "avg_hrs": 4.7
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 8.4,
+        "avg_hrs": 8.4
+      },
+      "bank_account": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 13.1,
+        "avg_hrs": 12.6
+      },
+      "open_banking": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 15.3
+      }
+    },
+    "RWF": {
+      "overall": {
+        "volume": 11,
+        "completed": 11,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 19.0
+      },
+      "debit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.3
+      },
+      "credit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 15.6
+      },
+      "bank_account": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 15.3,
+        "avg_hrs": 35.0
+      },
+      "open_banking": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 16.0
+      }
+    },
+    "GNF": {
+      "overall": {
+        "volume": 11,
+        "completed": 10,
+        "rate": 90.9,
+        "median_hrs": 0.1,
+        "avg_hrs": 8.3
+      },
+      "debit": {
+        "volume": 7,
+        "completed": 6,
+        "rate": 85.7,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.2
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "open_banking": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 32.3,
+        "avg_hrs": 27.6
+      }
+    },
+    "HUF": {
+      "overall": {
+        "volume": 11,
+        "completed": 10,
+        "rate": 90.9,
+        "median_hrs": 21.3,
+        "avg_hrs": 28.6
+      },
+      "debit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 72.3,
+        "avg_hrs": 72.3
+      },
+      "bank_account": {
+        "volume": 5,
+        "completed": 4,
+        "rate": 80.0,
+        "median_hrs": 34.9,
+        "avg_hrs": 31.4
+      },
+      "open_banking": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 8.6,
+        "avg_hrs": 21.8
+      }
+    },
+    "KHR": {
+      "overall": {
+        "volume": 10,
+        "completed": 9,
+        "rate": 90.0,
+        "median_hrs": 0.4,
+        "avg_hrs": 16.4
+      },
+      "debit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 23.6
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.4,
+        "avg_hrs": 0.4
+      },
+      "open_banking": {
+        "volume": 4,
+        "completed": 3,
+        "rate": 75.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 17.6
+      }
+    },
+    "JMD": {
+      "overall": {
+        "volume": 9,
+        "completed": 8,
+        "rate": 88.9,
+        "median_hrs": 1.4,
+        "avg_hrs": 18.4
+      },
+      "debit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "credit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 10.8,
+        "avg_hrs": 11.3
+      },
+      "bank_account": {
+        "volume": 3,
+        "completed": 2,
+        "rate": 66.7,
+        "median_hrs": 61.2,
+        "avg_hrs": 61.2
+      },
+      "open_banking": {
+        "volume": 3,
+        "completed": 2,
+        "rate": 66.7,
+        "median_hrs": 1.4,
+        "avg_hrs": 1.4
+      }
+    },
+    "RSD": {
+      "overall": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 2.1,
+        "avg_hrs": 10.3
+      },
+      "debit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 22.0,
+        "avg_hrs": 25.4
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 25.3,
+        "avg_hrs": 25.3
+      },
+      "open_banking": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 1.3
+      }
+    },
+    "XCD": {
+      "overall": {
+        "volume": 7,
+        "completed": 6,
+        "rate": 85.7,
+        "median_hrs": 88.8,
+        "avg_hrs": 79.3
+      },
+      "debit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 90.8,
+        "avg_hrs": 80.3
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 67.4,
+        "avg_hrs": 67.4
+      },
+      "open_banking": {
+        "volume": 2,
+        "completed": 1,
+        "rate": 50.0,
+        "median_hrs": 87.5,
+        "avg_hrs": 87.5
+      }
+    },
+    "TTD": {
+      "overall": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 90.9,
+        "avg_hrs": 67.0
+      },
+      "debit": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 91.4,
+        "avg_hrs": 80.3
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "PYG": {
+      "overall": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 23.6,
+        "avg_hrs": 26.3
+      },
+      "debit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 23.6,
+        "avg_hrs": 23.8
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "open_banking": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 31.5,
+        "avg_hrs": 31.5
+      }
+    },
+    "ALL": {
+      "overall": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 5.0
+      },
+      "debit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "credit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 12.3,
+        "avg_hrs": 12.3
+      }
+    },
+    "AOA": {
+      "overall": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.1
+      },
+      "debit": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "open_banking": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 39.9,
+        "avg_hrs": 39.9
+      }
+    },
+    "MNT": {
+      "overall": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.3
+      },
+      "debit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "bank_account": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 0.8
+      },
+      "open_banking": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 0.9
+      }
+    },
+    "FJD": {
+      "overall": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 31.8
+      },
+      "debit": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 47.4,
+        "avg_hrs": 47.4
+      },
+      "open_banking": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 0.7
+      }
+    },
+    "CRC": {
+      "overall": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 47.5,
+        "avg_hrs": 32.7
+      },
+      "debit": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 47.5,
+        "avg_hrs": 32.7
+      }
+    },
+    "HTG": {
+      "overall": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 0.5
+      },
+      "debit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "open_banking": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.9,
+        "avg_hrs": 0.9
+      }
+    },
+    "WST": {
+      "overall": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 237.5,
+        "avg_hrs": 237.5
+      },
+      "open_banking": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 237.5,
+        "avg_hrs": 237.5
+      }
+    },
+    "VUV": {
+      "overall": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 0.8
+      },
+      "open_banking": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 0.8
+      }
+    },
+    "BBD": {
+      "overall": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 94.8,
+        "avg_hrs": 94.8
+      },
+      "debit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 94.8,
+        "avg_hrs": 94.8
+      }
+    },
+    "KMF": {
+      "overall": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "LSL": {
+      "overall": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "debit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      }
+    },
+    "GEL": {
+      "overall": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "debit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "UYU": {
+      "overall": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 15.9,
+        "avg_hrs": 15.9
+      },
+      "bank_account": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 15.9,
+        "avg_hrs": 15.9
+      }
+    },
+    "PGK": {
+      "overall": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 48.6,
+        "avg_hrs": 48.6
+      },
+      "credit": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 48.6,
+        "avg_hrs": 48.6
+      }
+    }
+  },
+  "by_send_currency": {
+    "INR": {
+      "EUR": {
+        "volume": 11280,
+        "completed": 11079,
+        "rate": 98.2,
+        "median_hrs": 0.7,
+        "avg_hrs": 9.8
+      },
+      "GBP": {
+        "volume": 31,
+        "completed": 31,
+        "rate": 100.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 2.9
+      },
+      "Other": {
+        "volume": 100,
+        "completed": 96,
+        "rate": 96.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 22.6
+      }
+    },
+    "MAD": {
+      "EUR": {
+        "volume": 2600,
+        "completed": 2543,
+        "rate": 97.8,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.2
+      },
+      "GBP": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 9.2
+      },
+      "Other": {
+        "volume": 57,
+        "completed": 51,
+        "rate": 89.5,
+        "median_hrs": 15.0,
+        "avg_hrs": 35.0
+      }
+    },
+    "USD": {
+      "EUR": {
+        "volume": 1355,
+        "completed": 1286,
+        "rate": 94.9,
+        "median_hrs": 10.5,
+        "avg_hrs": 22.4
+      },
+      "GBP": {
+        "volume": 41,
+        "completed": 39,
+        "rate": 95.1,
+        "median_hrs": 6.7,
+        "avg_hrs": 21.1
+      },
+      "Other": {
+        "volume": 198,
+        "completed": 178,
+        "rate": 89.9,
+        "median_hrs": 12.3,
+        "avg_hrs": 27.5
+      }
+    },
+    "GBP": {
+      "EUR": {
+        "volume": 693,
+        "completed": 658,
+        "rate": 94.9,
+        "median_hrs": 10.6,
+        "avg_hrs": 24.3
+      },
+      "Other": {
+        "volume": 48,
+        "completed": 42,
+        "rate": 87.5,
+        "median_hrs": 11.8,
+        "avg_hrs": 24.7
+      }
+    },
+    "THB": {
+      "EUR": {
+        "volume": 599,
+        "completed": 586,
+        "rate": 97.8,
+        "median_hrs": 0.7,
+        "avg_hrs": 12.3
+      },
+      "GBP": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 3.0,
+        "avg_hrs": 25.5
+      },
+      "Other": {
+        "volume": 48,
+        "completed": 33,
+        "rate": 68.8,
+        "median_hrs": 27.9,
+        "avg_hrs": 42.9
+      }
+    },
+    "NAD": {
+      "EUR": {
+        "volume": 497,
+        "completed": 490,
+        "rate": 98.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.8
+      },
+      "GBP": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.5
+      },
+      "Other": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 46.4,
+        "avg_hrs": 44.4
+      }
+    },
+    "COP": {
+      "EUR": {
+        "volume": 457,
+        "completed": 448,
+        "rate": 98.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.1
+      },
+      "GBP": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.4,
+        "avg_hrs": 0.5
+      },
+      "Other": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 57.2
+      }
+    },
+    "ETB": {
+      "EUR": {
+        "volume": 348,
+        "completed": 342,
+        "rate": 98.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.1
+      },
+      "Other": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 23.9
+      }
+    },
+    "AED": {
+      "EUR": {
+        "volume": 335,
+        "completed": 319,
+        "rate": 95.2,
+        "median_hrs": 0.5,
+        "avg_hrs": 10.9
+      },
+      "GBP": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 4.2
+      },
+      "Other": {
+        "volume": 21,
+        "completed": 18,
+        "rate": 85.7,
+        "median_hrs": 18.5,
+        "avg_hrs": 45.8
+      }
+    },
+    "PHP": {
+      "EUR": {
+        "volume": 319,
+        "completed": 305,
+        "rate": 95.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.4
+      },
+      "GBP": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.3
+      },
+      "Other": {
+        "volume": 28,
+        "completed": 20,
+        "rate": 71.4,
+        "median_hrs": 54.2,
+        "avg_hrs": 46.0
+      }
+    },
+    "ZAR": {
+      "EUR": {
+        "volume": 268,
+        "completed": 262,
+        "rate": 97.8,
+        "median_hrs": 0.5,
+        "avg_hrs": 13.5
+      },
+      "GBP": {
+        "volume": 11,
+        "completed": 11,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 26.7
+      },
+      "Other": {
+        "volume": 27,
+        "completed": 27,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 13.4
+      }
+    },
+    "CAD": {
+      "EUR": {
+        "volume": 222,
+        "completed": 217,
+        "rate": 97.7,
+        "median_hrs": 20.9,
+        "avg_hrs": 30.9
+      },
+      "GBP": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 19.8,
+        "avg_hrs": 20.1
+      },
+      "Other": {
+        "volume": 15,
+        "completed": 15,
+        "rate": 100.0,
+        "median_hrs": 27.0,
+        "avg_hrs": 41.4
+      }
+    },
+    "PEN": {
+      "EUR": {
+        "volume": 213,
+        "completed": 208,
+        "rate": 97.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 11.1
+      },
+      "Other": {
+        "volume": 12,
+        "completed": 10,
+        "rate": 83.3,
+        "median_hrs": 49.3,
+        "avg_hrs": 60.2
+      }
+    },
+    "XOF": {
+      "EUR": {
+        "volume": 207,
+        "completed": 193,
+        "rate": 93.2,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.2
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "Other": {
+        "volume": 8,
+        "completed": 7,
+        "rate": 87.5,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "MUR": {
+      "EUR": {
+        "volume": 205,
+        "completed": 201,
+        "rate": 98.0,
+        "median_hrs": 20.8,
+        "avg_hrs": 30.7
+      },
+      "GBP": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 10.8,
+        "avg_hrs": 10.8
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 51.5,
+        "avg_hrs": 52.3
+      }
+    },
+    "TRY": {
+      "EUR": {
+        "volume": 190,
+        "completed": 185,
+        "rate": 97.4,
+        "median_hrs": 0.7,
+        "avg_hrs": 7.5
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 18.8,
+        "avg_hrs": 18.8
+      },
+      "Other": {
+        "volume": 18,
+        "completed": 15,
+        "rate": 83.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 5.9
+      }
+    },
+    "SAR": {
+      "EUR": {
+        "volume": 181,
+        "completed": 179,
+        "rate": 98.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.6
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "Other": {
+        "volume": 6,
+        "completed": 5,
+        "rate": 83.3,
+        "median_hrs": 87.1,
+        "avg_hrs": 84.2
+      }
+    },
+    "AUD": {
+      "EUR": {
+        "volume": 171,
+        "completed": 163,
+        "rate": 95.3,
+        "median_hrs": 22.9,
+        "avg_hrs": 37.6
+      },
+      "GBP": {
+        "volume": 27,
+        "completed": 27,
+        "rate": 100.0,
+        "median_hrs": 20.1,
+        "avg_hrs": 29.2
+      },
+      "Other": {
+        "volume": 17,
+        "completed": 16,
+        "rate": 94.1,
+        "median_hrs": 27.3,
+        "avg_hrs": 32.3
+      }
+    },
+    "PKR": {
+      "EUR": {
+        "volume": 160,
+        "completed": 155,
+        "rate": 96.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.8
+      },
+      "GBP": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 1.3
+      },
+      "Other": {
+        "volume": 11,
+        "completed": 11,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 67.7
+      }
+    },
+    "LKR": {
+      "EUR": {
+        "volume": 154,
+        "completed": 150,
+        "rate": 97.4,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.1
+      },
+      "Other": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 42.7,
+        "avg_hrs": 32.6
+      }
+    },
+    "IDR": {
+      "EUR": {
+        "volume": 148,
+        "completed": 144,
+        "rate": 97.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.0
+      },
+      "GBP": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.6,
+        "avg_hrs": 0.6
+      },
+      "Other": {
+        "volume": 4,
+        "completed": 3,
+        "rate": 75.0,
+        "median_hrs": 65.9,
+        "avg_hrs": 53.6
+      }
+    },
+    "MXN": {
+      "EUR": {
+        "volume": 139,
+        "completed": 134,
+        "rate": 96.4,
+        "median_hrs": 0.6,
+        "avg_hrs": 11.1
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 2,
+        "rate": 66.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      }
+    },
+    "TND": {
+      "EUR": {
+        "volume": 120,
+        "completed": 118,
+        "rate": 98.3,
+        "median_hrs": 0.2,
+        "avg_hrs": 9.8
+      },
+      "Other": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 16.9
+      }
+    },
+    "DOP": {
+      "EUR": {
+        "volume": 97,
+        "completed": 95,
+        "rate": 97.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 10.0
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 0.5
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      }
+    },
+    "BWP": {
+      "EUR": {
+        "volume": 95,
+        "completed": 95,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 6.6
+      },
+      "GBP": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.4,
+        "avg_hrs": 61.5
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 63.0,
+        "avg_hrs": 63.0
+      }
+    },
+    "MWK": {
+      "EUR": {
+        "volume": 93,
+        "completed": 90,
+        "rate": 96.8,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.8
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "JOD": {
+      "EUR": {
+        "volume": 89,
+        "completed": 87,
+        "rate": 97.8,
+        "median_hrs": 0.8,
+        "avg_hrs": 31.7
+      },
+      "GBP": {
+        "volume": 3,
+        "completed": 2,
+        "rate": 66.7,
+        "median_hrs": 12.5,
+        "avg_hrs": 12.5
+      },
+      "Other": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 21.3,
+        "avg_hrs": 37.5
+      }
+    },
+    "NGN": {
+      "EUR": {
+        "volume": 78,
+        "completed": 70,
+        "rate": 89.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.5
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 0,
+        "rate": 0.0,
+        "median_hrs": -0.0,
+        "avg_hrs": -0.0
+      },
+      "Other": {
+        "volume": 13,
+        "completed": 13,
+        "rate": 100.0,
+        "median_hrs": 17.6,
+        "avg_hrs": 20.4
+      }
+    },
+    "EGP": {
+      "EUR": {
+        "volume": 68,
+        "completed": 63,
+        "rate": 92.6,
+        "median_hrs": 0.9,
+        "avg_hrs": 18.1
+      },
+      "GBP": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "Other": {
+        "volume": 4,
+        "completed": 2,
+        "rate": 50.0,
+        "median_hrs": 73.7,
+        "avg_hrs": 73.7
+      }
+    },
+    "NZD": {
+      "EUR": {
+        "volume": 62,
+        "completed": 59,
+        "rate": 95.2,
+        "median_hrs": 29.6,
+        "avg_hrs": 49.3
+      },
+      "GBP": {
+        "volume": 9,
+        "completed": 8,
+        "rate": 88.9,
+        "median_hrs": 8.4,
+        "avg_hrs": 21.6
+      },
+      "Other": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 10.7,
+        "avg_hrs": 11.2
+      }
+    },
+    "CHF": {
+      "EUR": {
+        "volume": 59,
+        "completed": 56,
+        "rate": 94.9,
+        "median_hrs": 11.5,
+        "avg_hrs": 17.7
+      },
+      "GBP": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 2.7
+      }
+    },
+    "ILS": {
+      "EUR": {
+        "volume": 59,
+        "completed": 57,
+        "rate": 96.6,
+        "median_hrs": 0.8,
+        "avg_hrs": 12.4
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 18.9,
+        "avg_hrs": 18.9
+      }
+    },
+    "BOB": {
+      "EUR": {
+        "volume": 57,
+        "completed": 56,
+        "rate": 98.2,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.1
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      }
+    },
+    "BDT": {
+      "EUR": {
+        "volume": 56,
+        "completed": 53,
+        "rate": 94.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 10.1
+      },
+      "Other": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 33.1,
+        "avg_hrs": 33.1
+      }
+    },
+    "GHS": {
+      "EUR": {
+        "volume": 55,
+        "completed": 51,
+        "rate": 92.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 3.6
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "Other": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "GMD": {
+      "EUR": {
+        "volume": 53,
+        "completed": 53,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.7
+      },
+      "Other": {
+        "volume": 19,
+        "completed": 19,
+        "rate": 100.0,
+        "median_hrs": 44.5,
+        "avg_hrs": 68.4
+      }
+    },
+    "QAR": {
+      "EUR": {
+        "volume": 51,
+        "completed": 49,
+        "rate": 96.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.7
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "Other": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 29.8,
+        "avg_hrs": 29.8
+      }
+    },
+    "KES": {
+      "EUR": {
+        "volume": 48,
+        "completed": 46,
+        "rate": 95.8,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.2
+      },
+      "Other": {
+        "volume": 7,
+        "completed": 6,
+        "rate": 85.7,
+        "median_hrs": 10.7,
+        "avg_hrs": 23.2
+      }
+    },
+    "NPR": {
+      "EUR": {
+        "volume": 47,
+        "completed": 46,
+        "rate": 97.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 5.9
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 61.0,
+        "avg_hrs": 61.0
+      }
+    },
+    "SLE": {
+      "EUR": {
+        "volume": 43,
+        "completed": 43,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 11.4
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "PLN": {
+      "EUR": {
+        "volume": 42,
+        "completed": 36,
+        "rate": 85.7,
+        "median_hrs": 1.0,
+        "avg_hrs": 8.0
+      },
+      "GBP": {
+        "volume": 7,
+        "completed": 7,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 0.5
+      },
+      "Other": {
+        "volume": 8,
+        "completed": 8,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "VND": {
+      "EUR": {
+        "volume": 41,
+        "completed": 38,
+        "rate": 92.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 5.8
+      },
+      "Other": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 92.3,
+        "avg_hrs": 99.4
+      }
+    },
+    "UGX": {
+      "EUR": {
+        "volume": 39,
+        "completed": 38,
+        "rate": 97.4,
+        "median_hrs": 0.2,
+        "avg_hrs": 13.0
+      },
+      "GBP": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 10.3,
+        "avg_hrs": 10.3
+      },
+      "Other": {
+        "volume": 10,
+        "completed": 9,
+        "rate": 90.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 14.0
+      }
+    },
+    "OMR": {
+      "EUR": {
+        "volume": 38,
+        "completed": 38,
+        "rate": 100.0,
+        "median_hrs": 23.8,
+        "avg_hrs": 42.3
+      },
+      "Other": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 21.8,
+        "avg_hrs": 41.5
+      }
+    },
+    "MGA": {
+      "EUR": {
+        "volume": 35,
+        "completed": 34,
+        "rate": 97.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.1
+      },
+      "Other": {
+        "volume": 2,
+        "completed": 1,
+        "rate": 50.0,
+        "median_hrs": 2.5,
+        "avg_hrs": 2.5
+      }
+    },
+    "MYR": {
+      "EUR": {
+        "volume": 34,
+        "completed": 32,
+        "rate": 94.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 7.0
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 2,
+        "rate": 66.7,
+        "median_hrs": 22.2,
+        "avg_hrs": 22.2
+      }
+    },
+    "JPY": {
+      "EUR": {
+        "volume": 33,
+        "completed": 30,
+        "rate": 90.9,
+        "median_hrs": 24.7,
+        "avg_hrs": 41.6
+      },
+      "GBP": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 38.1,
+        "avg_hrs": 38.1
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 1,
+        "rate": 33.3,
+        "median_hrs": 22.9,
+        "avg_hrs": 22.9
+      }
+    },
+    "BRL": {
+      "EUR": {
+        "volume": 31,
+        "completed": 26,
+        "rate": 83.9,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.7
+      },
+      "GBP": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      }
+    },
+    "CZK": {
+      "EUR": {
+        "volume": 31,
+        "completed": 30,
+        "rate": 96.8,
+        "median_hrs": 0.8,
+        "avg_hrs": 13.3
+      },
+      "GBP": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 0.6,
+        "avg_hrs": 4.7
+      }
+    },
+    "XAF": {
+      "EUR": {
+        "volume": 29,
+        "completed": 27,
+        "rate": 93.1,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.6
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      },
+      "Other": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "ZMW": {
+      "EUR": {
+        "volume": 29,
+        "completed": 29,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.7
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      },
+      "Other": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 11.3
+      }
+    },
+    "TZS": {
+      "EUR": {
+        "volume": 29,
+        "completed": 28,
+        "rate": 96.6,
+        "median_hrs": 0.2,
+        "avg_hrs": 16.0
+      },
+      "Other": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 68.7,
+        "avg_hrs": 64.3
+      }
+    },
+    "SEK": {
+      "EUR": {
+        "volume": 29,
+        "completed": 25,
+        "rate": 86.2,
+        "median_hrs": 1.7,
+        "avg_hrs": 17.9
+      },
+      "GBP": {
+        "volume": 36,
+        "completed": 36,
+        "rate": 100.0,
+        "median_hrs": 0.7,
+        "avg_hrs": 6.0
+      },
+      "Other": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 30.6
+      }
+    },
+    "KWD": {
+      "EUR": {
+        "volume": 27,
+        "completed": 26,
+        "rate": 96.3,
+        "median_hrs": 42.0,
+        "avg_hrs": 47.2
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 3,
+        "rate": 100.0,
+        "median_hrs": 28.7,
+        "avg_hrs": 32.6
+      }
+    },
+    "GTQ": {
+      "EUR": {
+        "volume": 22,
+        "completed": 22,
+        "rate": 100.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 6.1
+      }
+    },
+    "CVE": {
+      "EUR": {
+        "volume": 21,
+        "completed": 21,
+        "rate": 100.0,
+        "median_hrs": 1.0,
+        "avg_hrs": 16.6
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 2.4,
+        "avg_hrs": 2.4
+      }
+    },
+    "CLP": {
+      "EUR": {
+        "volume": 20,
+        "completed": 20,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 6.8
+      },
+      "GBP": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 3.1,
+        "avg_hrs": 3.1
+      },
+      "Other": {
+        "volume": 4,
+        "completed": 3,
+        "rate": 75.0,
+        "median_hrs": 99.4,
+        "avg_hrs": 126.4
+      }
+    },
+    "SGD": {
+      "EUR": {
+        "volume": 19,
+        "completed": 19,
+        "rate": 100.0,
+        "median_hrs": 1.1,
+        "avg_hrs": 8.9
+      },
+      "GBP": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 0.3
+      },
+      "Other": {
+        "volume": 5,
+        "completed": 4,
+        "rate": 80.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 125.1
+      }
+    },
+    "ARS": {
+      "EUR": {
+        "volume": 17,
+        "completed": 17,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.1
+      }
+    },
+    "CNY": {
+      "EUR": {
+        "volume": 17,
+        "completed": 15,
+        "rate": 88.2,
+        "median_hrs": 4.6,
+        "avg_hrs": 23.4
+      }
+    },
+    "BHD": {
+      "EUR": {
+        "volume": 16,
+        "completed": 16,
+        "rate": 100.0,
+        "median_hrs": 44.7,
+        "avg_hrs": 54.8
+      }
+    },
+    "KRW": {
+      "EUR": {
+        "volume": 16,
+        "completed": 16,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 14.4
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 0.5
+      }
+    },
+    "NOK": {
+      "EUR": {
+        "volume": 14,
+        "completed": 14,
+        "rate": 100.0,
+        "median_hrs": 9.3,
+        "avg_hrs": 41.2
+      },
+      "GBP": {
+        "volume": 11,
+        "completed": 11,
+        "rate": 100.0,
+        "median_hrs": 1.2,
+        "avg_hrs": 4.0
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 2,
+        "rate": 66.7,
+        "median_hrs": 7.4,
+        "avg_hrs": 7.4
+      }
+    },
+    "TWD": {
+      "EUR": {
+        "volume": 13,
+        "completed": 12,
+        "rate": 92.3,
+        "median_hrs": 99.6,
+        "avg_hrs": 100.8
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 0,
+        "rate": 0.0,
+        "median_hrs": -0.0,
+        "avg_hrs": -0.0
+      }
+    },
+    "DKK": {
+      "EUR": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 6.6,
+        "avg_hrs": 17.6
+      },
+      "GBP": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 0.6,
+        "avg_hrs": 11.6
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 2,
+        "rate": 66.7,
+        "median_hrs": 8.4,
+        "avg_hrs": 8.4
+      }
+    },
+    "MZN": {
+      "EUR": {
+        "volume": 12,
+        "completed": 12,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 1.8
+      }
+    },
+    "HNL": {
+      "EUR": {
+        "volume": 11,
+        "completed": 11,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 4.1
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 47.5,
+        "avg_hrs": 47.5
+      }
+    },
+    "GNF": {
+      "EUR": {
+        "volume": 11,
+        "completed": 10,
+        "rate": 90.9,
+        "median_hrs": 0.1,
+        "avg_hrs": 8.3
+      }
+    },
+    "KHR": {
+      "EUR": {
+        "volume": 10,
+        "completed": 9,
+        "rate": 90.0,
+        "median_hrs": 0.3,
+        "avg_hrs": 16.4
+      }
+    },
+    "HKD": {
+      "EUR": {
+        "volume": 10,
+        "completed": 10,
+        "rate": 100.0,
+        "median_hrs": 6.5,
+        "avg_hrs": 11.0
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 8.8,
+        "avg_hrs": 8.8
+      }
+    },
+    "DZD": {
+      "EUR": {
+        "volume": 9,
+        "completed": 5,
+        "rate": 55.6,
+        "median_hrs": 75.0,
+        "avg_hrs": 85.4
+      },
+      "Other": {
+        "volume": 3,
+        "completed": 0,
+        "rate": 0.0,
+        "median_hrs": -0.0,
+        "avg_hrs": -0.0
+      }
+    },
+    "RWF": {
+      "EUR": {
+        "volume": 9,
+        "completed": 9,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 17.2
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 46.4,
+        "avg_hrs": 46.4
+      }
+    },
+    "RON": {
+      "EUR": {
+        "volume": 8,
+        "completed": 6,
+        "rate": 75.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 2.7
+      },
+      "GBP": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.6
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "BAM": {
+      "EUR": {
+        "volume": 7,
+        "completed": 6,
+        "rate": 85.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.3
+      },
+      "Other": {
+        "volume": 4,
+        "completed": 4,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 17.4
+      }
+    },
+    "JMD": {
+      "EUR": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 1.4,
+        "avg_hrs": 8.4
+      },
+      "Other": {
+        "volume": 2,
+        "completed": 1,
+        "rate": 50.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "RSD": {
+      "EUR": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 4.9
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 20.1,
+        "avg_hrs": 20.1
+      },
+      "Other": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 21.8,
+        "avg_hrs": 21.8
+      }
+    },
+    "XCD": {
+      "EUR": {
+        "volume": 6,
+        "completed": 5,
+        "rate": 83.3,
+        "median_hrs": 87.5,
+        "avg_hrs": 77.2
+      },
+      "GBP": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 90.0,
+        "avg_hrs": 90.0
+      }
+    },
+    "TTD": {
+      "EUR": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 90.9,
+        "avg_hrs": 67.0
+      }
+    },
+    "PYG": {
+      "EUR": {
+        "volume": 6,
+        "completed": 6,
+        "rate": 100.0,
+        "median_hrs": 23.6,
+        "avg_hrs": 26.3
+      }
+    },
+    "ALL": {
+      "EUR": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 5.0
+      }
+    },
+    "AOA": {
+      "EUR": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 8.1
+      }
+    },
+    "MNT": {
+      "EUR": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.3
+      }
+    },
+    "HUF": {
+      "EUR": {
+        "volume": 5,
+        "completed": 5,
+        "rate": 100.0,
+        "median_hrs": 16.4,
+        "avg_hrs": 23.3
+      },
+      "GBP": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 56.6,
+        "avg_hrs": 56.6
+      }
+    },
+    "FJD": {
+      "EUR": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.4,
+        "avg_hrs": 0.4
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 94.6,
+        "avg_hrs": 94.6
+      }
+    },
+    "CRC": {
+      "EUR": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 23.8,
+        "avg_hrs": 23.8
+      },
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 50.6,
+        "avg_hrs": 50.6
+      }
+    },
+    "HTG": {
+      "EUR": {
+        "volume": 2,
+        "completed": 2,
+        "rate": 100.0,
+        "median_hrs": 0.5,
+        "avg_hrs": 0.5
+      }
+    },
+    "WST": {
+      "EUR": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 237.5,
+        "avg_hrs": 237.5
+      }
+    },
+    "VUV": {
+      "EUR": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.8,
+        "avg_hrs": 0.8
+      }
+    },
+    "BBD": {
+      "EUR": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 94.8,
+        "avg_hrs": 94.8
+      }
+    },
+    "KMF": {
+      "EUR": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "LSL": {
+      "EUR": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      }
+    },
+    "GEL": {
+      "EUR": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 0.1,
+        "avg_hrs": 0.1
+      }
+    },
+    "UYU": {
+      "EUR": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 15.9,
+        "avg_hrs": 15.9
+      }
+    },
+    "EUR": {
+      "GBP": {
+        "volume": 2380,
+        "completed": 2349,
+        "rate": 98.7,
+        "median_hrs": 0.6,
+        "avg_hrs": 7.9
+      },
+      "Other": {
+        "volume": 158,
+        "completed": 125,
+        "rate": 79.1,
+        "median_hrs": 0.9,
+        "avg_hrs": 15.2
+      }
+    },
+    "PGK": {
+      "Other": {
+        "volume": 1,
+        "completed": 1,
+        "rate": 100.0,
+        "median_hrs": 48.6,
+        "avg_hrs": 48.6
+      }
+    }
+  },
+  "send_currency_volumes": {
+    "EUR": 131331,
+    "GBP": 14598,
+    "DKK": 1717,
+    "SEK": 1580,
+    "CHF": 868,
+    "NOK": 545,
+    "CAD": 548,
+    "AUD": 411,
+    "AED": 265,
+    "PLN": 246,
+    "USD": 2293
+  }
+}
