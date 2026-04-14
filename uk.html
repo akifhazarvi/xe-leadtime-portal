@@ -221,7 +221,7 @@
 let D = null;
 fetch('data/uk-dashboard.json').then(r => r.json()).then(d => { D = d; renderAll(); initFlowBuilder(); });
 
-function fmt(h) { if (h==null) return '-'; if (h < 0.08) return '<5m'; if (h < 1) return Math.round(h*60)+'m'; if (h < 24) return h.toFixed(1)+'h'; if (h < 48) return (h/24).toFixed(1)+'d'; return Math.round(h/24)+'d'; }
+function fmt(h) { if (h==null) return '-'; if (h*3600 < 60) return Math.round(h*3600)+'s'; if (h < 1) return (h*60).toFixed(1)+'m'; if (h < 24) return h.toFixed(1)+'h'; if (h < 48) return (h/24).toFixed(1)+'d'; return Math.round(h/24)+'d'; }
 function fmtRev(n) { if (n >= 1e9) return (n/1e9).toFixed(1)+'B'; if (n >= 1e6) return (n/1e6).toFixed(1)+'M'; if (n >= 1e3) return (n/1e3).toFixed(0)+'K'; return Math.round(n).toLocaleString(); }
 function cls(h) { if (h==null) return 'c-muted'; if (h <= 0.5) return 'c-fast'; if (h <= 24) return 'c-ok'; if (h <= 48) return 'c-warn'; return 'c-slow'; }
 function statusPill(s) {
