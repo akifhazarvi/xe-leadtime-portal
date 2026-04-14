@@ -1,0 +1,619 @@
+{
+  "generated": "2026-04-14",
+  "period": "Last 30 Days",
+  "note": "UK consumer (senderCountry=GB). Transaction Created -> Transaction Completed funnel. Directly filtered per currency - verified correct.",
+  "overall": {
+    "conversion": 0.9741862587458172,
+    "created": 23011,
+    "avg_time_s": 28978,
+    "median_time_s": 5872,
+    "completed": 22417,
+    "median_hrs": 1.63,
+    "avg_hrs": 8.05
+  },
+  "currencies": {
+    "EUR": {
+      "conversion": 0.9809229906017675,
+      "created": 7129,
+      "completed": 6993,
+      "avg_time_s": 22395,
+      "median_time_s": 1015,
+      "median_hrs": 0.28,
+      "avg_hrs": 6.22
+    },
+    "INR": {
+      "conversion": 0.975660931598825,
+      "created": 2383,
+      "completed": 2325,
+      "avg_time_s": 10034,
+      "median_time_s": 739,
+      "median_hrs": 0.21,
+      "avg_hrs": 2.79
+    },
+    "USD": {
+      "conversion": 0.98,
+      "created": 2550,
+      "completed": 2499,
+      "avg_time_s": 49634,
+      "median_time_s": 8683,
+      "median_hrs": 2.41,
+      "avg_hrs": 13.79
+    },
+    "GBP": {
+      "conversion": 0.9050593379138039,
+      "created": 1601,
+      "completed": 1449,
+      "avg_time_s": 82204,
+      "median_time_s": 14194,
+      "median_hrs": 3.94,
+      "avg_hrs": 22.83
+    },
+    "NAD": {
+      "conversion": 0.9920398009950249,
+      "created": 1005,
+      "completed": 997,
+      "avg_time_s": 1912,
+      "median_time_s": 672,
+      "median_hrs": 0.19,
+      "avg_hrs": 0.53
+    },
+    "ZAR": {
+      "conversion": 0.9927611168562565,
+      "created": 967,
+      "completed": 960,
+      "avg_time_s": 16538,
+      "median_time_s": 724,
+      "median_hrs": 0.2,
+      "avg_hrs": 4.59
+    },
+    "AUD": {
+      "conversion": 0.983729662077597,
+      "created": 799,
+      "completed": 786,
+      "avg_time_s": 16943,
+      "median_time_s": 796,
+      "median_hrs": 0.22,
+      "avg_hrs": 4.71
+    },
+    "THB": {
+      "conversion": 0.9793014230271668,
+      "created": 773,
+      "completed": 757,
+      "avg_time_s": 15897,
+      "median_time_s": 722,
+      "median_hrs": 0.2,
+      "avg_hrs": 4.42
+    },
+    "PHP": {
+      "conversion": 0.9876796714579056,
+      "created": 487,
+      "completed": 481,
+      "avg_time_s": 7228,
+      "median_time_s": 692,
+      "median_hrs": 0.19,
+      "avg_hrs": 2.01
+    },
+    "PKR": {
+      "conversion": 0.9655172413793104,
+      "created": 464,
+      "completed": 448,
+      "avg_time_s": 9209,
+      "median_time_s": 695,
+      "median_hrs": 0.19,
+      "avg_hrs": 2.56
+    },
+    "MAD": {
+      "conversion": 0.9852579852579852,
+      "created": 407,
+      "completed": 401,
+      "avg_time_s": 11748,
+      "median_time_s": 682,
+      "median_hrs": 0.19,
+      "avg_hrs": 3.26
+    },
+    "AED": {
+      "conversion": 0.9506849315068493,
+      "created": 365,
+      "completed": 347,
+      "avg_time_s": 16447,
+      "median_time_s": 790,
+      "median_hrs": 0.22,
+      "avg_hrs": 4.57
+    },
+    "NZD": {
+      "conversion": 0.9796610169491525,
+      "created": 295,
+      "completed": 289,
+      "avg_time_s": 20129,
+      "median_time_s": 756,
+      "median_hrs": 0.21,
+      "avg_hrs": 5.59
+    },
+    "TRY": {
+      "conversion": 0.974025974025974,
+      "created": 231,
+      "completed": 225,
+      "avg_time_s": 7180,
+      "median_time_s": 756,
+      "median_hrs": 0.21,
+      "avg_hrs": 1.99
+    },
+    "BWP": {
+      "conversion": 1,
+      "created": 229,
+      "completed": 229,
+      "avg_time_s": 12343,
+      "median_time_s": 641,
+      "median_hrs": 0.18,
+      "avg_hrs": 3.43
+    },
+    "LKR": {
+      "conversion": 0.995049504950495,
+      "created": 202,
+      "completed": 201,
+      "avg_time_s": 5056,
+      "median_time_s": 679,
+      "median_hrs": 0.19,
+      "avg_hrs": 1.4
+    },
+    "SAR": {
+      "conversion": 0.9606741573033708,
+      "created": 178,
+      "completed": 171,
+      "avg_time_s": 9267,
+      "median_time_s": 743,
+      "median_hrs": 0.21,
+      "avg_hrs": 2.57
+    },
+    "PLN": {
+      "conversion": 0.9805194805194806,
+      "created": 154,
+      "completed": 151,
+      "avg_time_s": 13413,
+      "median_time_s": 722,
+      "median_hrs": 0.2,
+      "avg_hrs": 3.73
+    },
+    "MUR": {
+      "conversion": 0.9733333333333334,
+      "created": 150,
+      "completed": 146,
+      "avg_time_s": 62597,
+      "median_time_s": 846,
+      "median_hrs": 0.23,
+      "avg_hrs": 17.39
+    },
+    "XOF": {
+      "conversion": 0.9803921568627451,
+      "created": 102,
+      "completed": 100,
+      "avg_time_s": 9736,
+      "median_time_s": 686,
+      "median_hrs": 0.19,
+      "avg_hrs": 2.7
+    },
+    "COP": {
+      "conversion": 0.968503937007874,
+      "created": 127,
+      "completed": 123,
+      "avg_time_s": 12675,
+      "median_time_s": 708,
+      "median_hrs": 0.2,
+      "avg_hrs": 3.52
+    },
+    "MYR": {
+      "conversion": 0.970873786407767,
+      "created": 103,
+      "completed": 100,
+      "avg_time_s": 7601,
+      "median_time_s": 803,
+      "median_hrs": 0.22,
+      "avg_hrs": 2.11
+    },
+    "ETB": {
+      "conversion": 0.9871794871794872,
+      "created": 78,
+      "completed": 77,
+      "avg_time_s": 6489,
+      "median_time_s": 658,
+      "median_hrs": 0.18,
+      "avg_hrs": 1.8
+    },
+    "IDR": {
+      "conversion": 0.9736842105263158,
+      "created": 76,
+      "completed": 74,
+      "avg_time_s": 17117,
+      "median_time_s": 756,
+      "median_hrs": 0.21,
+      "avg_hrs": 4.75
+    },
+    "GHS": {
+      "conversion": 0.9555555555555556,
+      "created": 45,
+      "completed": 43,
+      "avg_time_s": 7264,
+      "median_time_s": 648,
+      "median_hrs": 0.18,
+      "avg_hrs": 2.02
+    },
+    "NGN": {
+      "conversion": 0.8947368421052632,
+      "created": 57,
+      "completed": 51,
+      "avg_time_s": 3265,
+      "median_time_s": 661,
+      "median_hrs": 0.18,
+      "avg_hrs": 0.91
+    },
+    "MWK": {
+      "conversion": 1,
+      "created": 19,
+      "completed": 19,
+      "avg_time_s": 777,
+      "median_time_s": 649,
+      "median_hrs": 0.18,
+      "avg_hrs": 0.22
+    },
+    "MXN": {
+      "conversion": 1,
+      "created": 59,
+      "completed": 59,
+      "avg_time_s": 3062,
+      "median_time_s": 682,
+      "median_hrs": 0.19,
+      "avg_hrs": 0.85
+    },
+    "SEK": {
+      "conversion": 0.9807692307692307,
+      "created": 104,
+      "completed": 102,
+      "avg_time_s": 56593,
+      "median_time_s": 26051,
+      "median_hrs": 7.24,
+      "avg_hrs": 15.72
+    },
+    "UGX": {
+      "conversion": 1,
+      "created": 45,
+      "completed": 45,
+      "avg_time_s": 16209,
+      "median_time_s": 780,
+      "median_hrs": 0.22,
+      "avg_hrs": 4.5
+    },
+    "ILS": {
+      "conversion": 1,
+      "created": 57,
+      "completed": 57,
+      "avg_time_s": 30478,
+      "median_time_s": 847,
+      "median_hrs": 0.24,
+      "avg_hrs": 8.47
+    },
+    "KES": {
+      "conversion": 0.9672131147540983,
+      "created": 61,
+      "completed": 59,
+      "avg_time_s": 50400,
+      "median_time_s": 897,
+      "median_hrs": 0.25,
+      "avg_hrs": 14
+    },
+    "BDT": {
+      "conversion": 0.9411764705882353,
+      "created": 51,
+      "completed": 48,
+      "avg_time_s": 40872,
+      "median_time_s": 895,
+      "median_hrs": 0.25,
+      "avg_hrs": 11.35
+    },
+    "EGP": {
+      "conversion": 0.9682539682539683,
+      "created": 63,
+      "completed": 61,
+      "avg_time_s": 29939,
+      "median_time_s": 639,
+      "median_hrs": 0.18,
+      "avg_hrs": 8.32
+    },
+    "XAF": {
+      "conversion": 1,
+      "created": 36,
+      "completed": 36,
+      "avg_time_s": 5252,
+      "median_time_s": 627,
+      "median_hrs": 0.17,
+      "avg_hrs": 1.46
+    },
+    "RON": {
+      "conversion": 0.9583333333333334,
+      "created": 48,
+      "completed": 46,
+      "avg_time_s": 27209,
+      "median_time_s": 750,
+      "median_hrs": 0.21,
+      "avg_hrs": 7.56
+    },
+    "JPY": {
+      "conversion": 0.9803921568627451,
+      "created": 102,
+      "completed": 100,
+      "avg_time_s": 62672,
+      "median_time_s": 2401,
+      "median_hrs": 0.67,
+      "avg_hrs": 17.41
+    },
+    "ZMW": {
+      "conversion": 0.9387755102040817,
+      "created": 49,
+      "completed": 46,
+      "avg_time_s": 14434,
+      "median_time_s": 708,
+      "median_hrs": 0.2,
+      "avg_hrs": 4.01
+    },
+    "CHF": {
+      "conversion": 0.9565217391304348,
+      "created": 115,
+      "completed": 110,
+      "avg_time_s": 23652,
+      "median_time_s": 835,
+      "median_hrs": 0.23,
+      "avg_hrs": 6.57
+    },
+    "VND": {
+      "conversion": 0.9714285714285714,
+      "created": 35,
+      "completed": 34,
+      "avg_time_s": 8062,
+      "median_time_s": 665,
+      "median_hrs": 0.18,
+      "avg_hrs": 2.24
+    },
+    "BBD": {
+      "conversion": 0.9767441860465116,
+      "created": 43,
+      "completed": 42,
+      "avg_time_s": 309885,
+      "median_time_s": 322361,
+      "median_hrs": 89.54,
+      "avg_hrs": 86.08
+    },
+    "CZK": {
+      "conversion": 0.9803921568627451,
+      "created": 51,
+      "completed": 50,
+      "avg_time_s": 10178,
+      "median_time_s": 834,
+      "median_hrs": 0.23,
+      "avg_hrs": 2.83
+    },
+    "CAD": {
+      "conversion": 0.9813084112149533,
+      "created": 428,
+      "completed": 420,
+      "avg_time_s": 75353,
+      "median_time_s": 43919,
+      "median_hrs": 12.2,
+      "avg_hrs": 20.93
+    },
+    "HUF": {
+      "conversion": 1,
+      "created": 31,
+      "completed": 31,
+      "avg_time_s": 14452,
+      "median_time_s": 764,
+      "median_hrs": 0.21,
+      "avg_hrs": 4.01
+    },
+    "NPR": {
+      "conversion": 1,
+      "created": 38,
+      "completed": 38,
+      "avg_time_s": 5785,
+      "median_time_s": 799,
+      "median_hrs": 0.22,
+      "avg_hrs": 1.61
+    },
+    "QAR": {
+      "conversion": 0.9574468085106383,
+      "created": 47,
+      "completed": 45,
+      "avg_time_s": 10660,
+      "median_time_s": 800,
+      "median_hrs": 0.22,
+      "avg_hrs": 2.96
+    },
+    "DKK": {
+      "conversion": 1,
+      "created": 49,
+      "completed": 49,
+      "avg_time_s": 75761,
+      "median_time_s": 43513,
+      "median_hrs": 12.09,
+      "avg_hrs": 21.04
+    },
+    "PEN": {
+      "conversion": 1,
+      "created": 29,
+      "completed": 29,
+      "avg_time_s": 33616,
+      "median_time_s": 801,
+      "median_hrs": 0.22,
+      "avg_hrs": 9.34
+    },
+    "SLE": {
+      "conversion": 1,
+      "created": 8,
+      "completed": 8,
+      "avg_time_s": 658,
+      "median_time_s": 580,
+      "median_hrs": 0.16,
+      "avg_hrs": 0.18
+    },
+    "SGD": {
+      "conversion": 0.9487179487179487,
+      "created": 39,
+      "completed": 37,
+      "avg_time_s": 30432,
+      "median_time_s": 770,
+      "median_hrs": 0.21,
+      "avg_hrs": 8.45
+    },
+    "JOD": {
+      "conversion": 0.9130434782608695,
+      "created": 46,
+      "completed": 42,
+      "avg_time_s": 76159,
+      "median_time_s": 53891,
+      "median_hrs": 14.97,
+      "avg_hrs": 21.16
+    },
+    "TTD": {
+      "conversion": 0.8648648648648649,
+      "created": 37,
+      "completed": 32,
+      "avg_time_s": 313329,
+      "median_time_s": 295114,
+      "median_hrs": 81.98,
+      "avg_hrs": 87.04
+    },
+    "NOK": {
+      "conversion": 1,
+      "created": 46,
+      "completed": 46,
+      "avg_time_s": 69663,
+      "median_time_s": 42271,
+      "median_hrs": 11.74,
+      "avg_hrs": 19.35
+    },
+    "JMD": {
+      "conversion": 1,
+      "created": 22,
+      "completed": 22,
+      "avg_time_s": 168079,
+      "median_time_s": 145599,
+      "median_hrs": 40.44,
+      "avg_hrs": 46.69
+    },
+    "BOB": {
+      "conversion": 1,
+      "created": 18,
+      "completed": 18,
+      "avg_time_s": 1049,
+      "median_time_s": 752,
+      "median_hrs": 0.21,
+      "avg_hrs": 0.29
+    },
+    "BRL": {
+      "conversion": 0.9523809523809523,
+      "created": 21,
+      "completed": 20,
+      "avg_time_s": 39558,
+      "median_time_s": 747,
+      "median_hrs": 0.21,
+      "avg_hrs": 10.99
+    },
+    "CVE": {
+      "conversion": 1,
+      "created": 15,
+      "completed": 15,
+      "avg_time_s": 2967,
+      "median_time_s": 777,
+      "median_hrs": 0.22,
+      "avg_hrs": 0.82
+    },
+    "TZS": {
+      "conversion": 0.8823529411764706,
+      "created": 17,
+      "completed": 15,
+      "avg_time_s": 6527,
+      "median_time_s": 788,
+      "median_hrs": 0.22,
+      "avg_hrs": 1.81
+    },
+    "DOP": {
+      "conversion": 0.9333333333333333,
+      "created": 15,
+      "completed": 14,
+      "avg_time_s": 14399,
+      "median_time_s": 758,
+      "median_hrs": 0.21,
+      "avg_hrs": 4
+    },
+    "TND": {
+      "conversion": 0.9473684210526315,
+      "created": 19,
+      "completed": 18,
+      "avg_time_s": 50770,
+      "median_time_s": 724,
+      "median_hrs": 0.2,
+      "avg_hrs": 14.1
+    },
+    "HKD": {
+      "conversion": 0.9722222222222222,
+      "created": 36,
+      "completed": 35,
+      "avg_time_s": 94800,
+      "median_time_s": 63687,
+      "median_hrs": 17.69,
+      "avg_hrs": 26.33
+    },
+    "KRW": {
+      "conversion": 1,
+      "created": 9,
+      "completed": 9,
+      "avg_time_s": 1359,
+      "median_time_s": 587,
+      "median_hrs": 0.16,
+      "avg_hrs": 0.38
+    },
+    "CLP": {
+      "conversion": 1,
+      "created": 13,
+      "completed": 13,
+      "avg_time_s": 749,
+      "median_time_s": 650,
+      "median_hrs": 0.18,
+      "avg_hrs": 0.21
+    },
+    "KWD": {
+      "conversion": 0.9574468085106383,
+      "created": 47,
+      "completed": 45,
+      "avg_time_s": 165244,
+      "median_time_s": 82091,
+      "median_hrs": 22.8,
+      "avg_hrs": 45.9
+    },
+    "OMR": {
+      "conversion": 0.9565217391304348,
+      "created": 23,
+      "completed": 22,
+      "avg_time_s": 115986,
+      "median_time_s": 60348,
+      "median_hrs": 16.76,
+      "avg_hrs": 32.22
+    },
+    "HNL": {
+      "conversion": 1,
+      "created": 10,
+      "completed": 10,
+      "avg_time_s": 615,
+      "median_time_s": 618,
+      "median_hrs": 0.17,
+      "avg_hrs": 0.17
+    },
+    "XCD": {
+      "conversion": 0.8867924528301887,
+      "created": 53,
+      "completed": 47,
+      "avg_time_s": 266014,
+      "median_time_s": 214535,
+      "median_hrs": 59.59,
+      "avg_hrs": 73.89
+    }
+  }
+}

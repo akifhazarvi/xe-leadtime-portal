@@ -1,3 +1,53 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="refresh" content="0;url=compare.html"></head>
-<body><a href="compare.html">Go to comparison</a></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xe Lead Time Portal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .container { max-width: 600px; padding: 40px; text-align: center; }
+    h1 { font-size: 24px; margin-bottom: 8px; }
+    h1 span { color: #58a6ff; }
+    .sub { color: #8b949e; font-size: 14px; margin-bottom: 32px; }
+    .cards { display: grid; gap: 16px; }
+    a.card { display: block; background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; text-decoration: none; color: #e1e4e8; transition: border-color 0.2s; }
+    a.card:hover { border-color: #58a6ff; }
+    .card-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .card-desc { font-size: 13px; color: #8b949e; }
+    .card-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; margin-top: 8px; }
+    .badge-blue { background: #58a6ff22; color: #58a6ff; }
+    .badge-green { background: #3fb95022; color: #3fb950; }
+    .badge-red { background: #f8514922; color: #f85149; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Xe Lead Time <span>Portal</span></h1>
+    <div class="sub">Speed of Payment dashboards — SLA vs Reality</div>
+    <div class="cards">
+      <a class="card" href="uk.html">
+        <div class="card-title">UK Payment Speed — End-to-End</div>
+        <div class="card-desc">Transaction Created &rarr; Payment Sent &rarr; Money Received. Flow explorer, payment method &times; payout channel matrix, revenue by corridor.</div>
+        <span class="card-badge badge-green">67 corridors | Both legs</span>
+      </a>
+      <a class="card" href="uk-payout-report.html">
+        <div class="card-title">UK Payout Deep-Dive</div>
+        <div class="card-desc">Leg 2 analysis: Payment Sent &rarr; Received. P60/P80/P90 by payout method, SLA breach rates, weekend analysis.</div>
+        <span class="card-badge badge-blue">89 corridors | Payout data</span>
+      </a>
+      <a class="card" href="uk-usd-analysis.html">
+        <div class="card-title">GBP &rarr; USD Corridor Analysis</div>
+        <div class="card-desc">Deep investigation: why USD is structurally 2.4h slow, Friday batch processing, destination country impact, 6-month trend.</div>
+        <span class="card-badge badge-red">$347K revenue | 2.4h Leg 1</span>
+      </a>
+      <a class="card" href="compare.html">
+        <div class="card-title">EU Lead Time — SLA vs Reality</div>
+        <div class="card-desc">Original EU dashboard comparing actual payment speed against EU.csv SLA targets.</div>
+        <span class="card-badge badge-blue">97 currencies</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
