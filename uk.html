@@ -221,14 +221,15 @@
 let D = null;
 fetch('data/uk-dashboard.json').then(r => r.json()).then(d => { D = d; renderAll(); initFlowBuilder(); });
 
-function fmt(h) {
-  if (h==null) return '-';
-  const totalSec = Math.round(h * 3600);
-  if (totalSec < 60) return totalSec + 's';
-  if (totalSec < 3600) { const m = Math.floor(totalSec/60); const s = totalSec % 60; return s > 0 ? m + 'm ' + s + 's' : m + 'm'; }
-  if (h < 24) { const hr = Math.floor(h); const m = Math.round((h - hr) * 60); return m > 0 ? hr + 'h ' + m + 'm' : hr + 'h'; }
-  const d = Math.floor(h/24); const hr = Math.round(h - d*24); return hr > 0 ? d + 'd ' + hr + 'h' : d + 'd';
+function fmtSec(sec) {
+  if (sec==null) return '-';
+  sec = Math.round(sec);
+  if (sec < 60) return sec + 's';
+  if (sec < 3600) { const m = Math.floor(sec/60); const s = sec % 60; return s > 0 ? m + 'm ' + s + 's' : m + 'm'; }
+  if (sec < 86400) { const h = Math.floor(sec/3600); const m = Math.round((sec % 3600)/60); return m > 0 ? h + 'h ' + m + 'm' : h + 'h'; }
+  const d = Math.floor(sec/86400); const h = Math.round((sec % 86400)/3600); return h > 0 ? d + 'd ' + h + 'h' : d + 'd';
 }
+function fmt(h) { if (h==null) return '-'; return fmtSec(h * 3600); }
 function fmtRev(n) { if (n >= 1e9) return (n/1e9).toFixed(1)+'B'; if (n >= 1e6) return (n/1e6).toFixed(1)+'M'; if (n >= 1e3) return (n/1e3).toFixed(0)+'K'; return Math.round(n).toLocaleString(); }
 function cls(h) { if (h==null) return 'c-muted'; if (h <= 0.5) return 'c-fast'; if (h <= 24) return 'c-ok'; if (h <= 48) return 'c-warn'; return 'c-slow'; }
 function statusPill(s) {
@@ -396,14 +397,16 @@ function renderTable() {
       }
       expandHtml += '</tr>';
 
-      // One row per payment method
+      // One row per payment method — use raw seconds for Leg 2 precision
       for (const [m, mD] of l1Methods) {
         expandHtml += '<tr><td class="sl">' + (methodLabels[m]||m) + ' <span style="color:#484f58;font-size:10px">(' + mD.volume + ')</span></td>';
         expandHtml += '<td class="' + cls(mD.median_hrs) + '" style="text-align:right;padding-right:12px;font-weight:600">' + fmt(mD.median_hrs) + '</td>';
         for (const [ch, chD] of channels) {
-          const e2e = mD.median_hrs + chD.leg2_median_hrs;
-          expandHtml += '<td class="' + cls(chD.leg2_median_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmt(chD.leg2_median_hrs) + '</td>';
-          expandHtml += '<td class="' + cls(e2e) + '" style="text-align:center;font-weight:700;padding:4px 6px">' + fmt(e2e) + '</td>';
+          const leg2Sec = chD.leg2_median_s != null ? chD.leg2_median_s : chD.leg2_median_hrs * 3600;
+          const leg1Sec = mD.median_hrs * 3600;
+          const e2eSec = leg1Sec + leg2Sec;
+          expandHtml += '<td class="' + cls(chD.leg2_median_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmtSec(leg2Sec) + '</td>';
+          expandHtml += '<td class="' + cls(e2eSec/3600) + '" style="text-align:center;font-weight:700;padding:4px 6px">' + fmtSec(e2eSec) + '</td>';
         }
         expandHtml += '</tr>';
       }
@@ -419,29 +422,32 @@ function renderTable() {
       }
       expandHtml += '</tr>';
 
-      const leg1Med = c.leg1_median_hrs || 0;
+      const leg1MedSec = (c.leg1_median_hrs || 0) * 3600;
 
       // P60 row
       expandHtml += '<tr><td class="sl" style="color:#58a6ff">P60</td><td></td>';
       for (const [ch, chD] of channels) {
-        expandHtml += '<td class="' + cls(chD.leg2_p60_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmt(chD.leg2_p60_hrs) + '</td>';
-        expandHtml += '<td class="' + cls(leg1Med + (chD.leg2_p60_hrs||0)) + '" style="text-align:center;font-weight:600;padding:4px 6px">' + fmt(leg1Med + (chD.leg2_p60_hrs||0)) + '</td>';
+        const l2s = chD.leg2_p60_s != null ? chD.leg2_p60_s : (chD.leg2_p60_hrs||0)*3600;
+        expandHtml += '<td class="' + cls(chD.leg2_p60_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmtSec(l2s) + '</td>';
+        expandHtml += '<td class="' + cls((leg1MedSec+l2s)/3600) + '" style="text-align:center;font-weight:600;padding:4px 6px">' + fmtSec(leg1MedSec+l2s) + '</td>';
       }
       expandHtml += '</tr>';
 
       // P80 row
       expandHtml += '<tr><td class="sl" style="color:#bc8cff;font-weight:600">P80</td><td></td>';
       for (const [ch, chD] of channels) {
-        expandHtml += '<td class="' + cls(chD.leg2_p80_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmt(chD.leg2_p80_hrs) + '</td>';
-        expandHtml += '<td class="' + cls(leg1Med + (chD.leg2_p80_hrs||0)) + '" style="text-align:center;font-weight:600;padding:4px 6px">' + fmt(leg1Med + (chD.leg2_p80_hrs||0)) + '</td>';
+        const l2s = chD.leg2_p80_s != null ? chD.leg2_p80_s : (chD.leg2_p80_hrs||0)*3600;
+        expandHtml += '<td class="' + cls(chD.leg2_p80_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmtSec(l2s) + '</td>';
+        expandHtml += '<td class="' + cls((leg1MedSec+l2s)/3600) + '" style="text-align:center;font-weight:600;padding:4px 6px">' + fmtSec(leg1MedSec+l2s) + '</td>';
       }
       expandHtml += '</tr>';
 
       // P90 row
       expandHtml += '<tr><td class="sl" style="color:#f85149;font-weight:700">P90</td><td></td>';
       for (const [ch, chD] of channels) {
-        expandHtml += '<td class="' + cls(chD.leg2_p90_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px;font-weight:700">' + fmt(chD.leg2_p90_hrs) + '</td>';
-        expandHtml += '<td class="' + cls(leg1Med + (chD.leg2_p90_hrs||0)) + '" style="text-align:center;font-weight:700;padding:4px 6px">' + fmt(leg1Med + (chD.leg2_p90_hrs||0)) + '</td>';
+        const l2s = chD.leg2_p90_s != null ? chD.leg2_p90_s : (chD.leg2_p90_hrs||0)*3600;
+        expandHtml += '<td class="' + cls(chD.leg2_p90_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px;font-weight:700">' + fmtSec(l2s) + '</td>';
+        expandHtml += '<td class="' + cls((leg1MedSec+l2s)/3600) + '" style="text-align:center;font-weight:700;padding:4px 6px">' + fmtSec(leg1MedSec+l2s) + '</td>';
       }
       expandHtml += '</tr>';
 
