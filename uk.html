@@ -374,59 +374,67 @@ function renderTable() {
       // Matrix table: rows = payment methods, columns = payout channels
       expandHtml += '<table class="sub-table" style="width:auto">';
 
-      // Header row: empty + payout channel names with Leg 2 median
+      // Header row: each payout method gets 2 columns (Leg 2 median + E2E)
       expandHtml += '<tr><td class="sl" style="font-weight:600">Customer Pays With</td><td style="font-weight:600;color:#58a6ff;text-align:right;padding-right:12px">Leg 1</td>';
       for (const [ch, chD] of channels) {
-        expandHtml += '<td style="font-weight:600;text-align:center;min-width:90px;border-left:1px solid #21262d;padding:4px 8px"><div style="color:#bc8cff">' + (chLabels[ch]||ch).replace(' (SEPA/Swift/FPS)','') + '</div><div style="font-size:10px;color:#484f58">Leg2: ' + fmt(chD.leg2_median_hrs) + ' (' + chD.volume + ')</div></td>';
+        expandHtml += '<td colspan="2" style="font-weight:600;text-align:center;border-left:2px solid #30363d;padding:4px 8px"><div style="color:#bc8cff">' + (chLabels[ch]||ch) + '</div><div style="font-size:10px;color:#484f58">(' + chD.volume + ' payments)</div></td>';
       }
       expandHtml += '</tr>';
 
-      // One row per payment method — E2E medians + Leg 2 median shown separately
+      // Sub-header: Leg 2 | E2E for each payout method
+      expandHtml += '<tr><td class="sl"></td><td></td>';
+      for (const [ch] of channels) {
+        expandHtml += '<td style="text-align:center;border-left:2px solid #30363d;font-size:10px;color:#bc8cff;padding:2px 6px">Leg 2</td>';
+        expandHtml += '<td style="text-align:center;font-size:10px;color:#3fb950;padding:2px 6px">E2E</td>';
+      }
+      expandHtml += '</tr>';
+
+      // One row per payment method
       for (const [m, mD] of l1Methods) {
         expandHtml += '<tr><td class="sl">' + (methodLabels[m]||m) + ' <span style="color:#484f58;font-size:10px">(' + mD.volume + ')</span></td>';
         expandHtml += '<td class="' + cls(mD.median_hrs) + '" style="text-align:right;padding-right:12px;font-weight:600">' + fmt(mD.median_hrs) + '</td>';
         for (const [ch, chD] of channels) {
           const e2e = mD.median_hrs + chD.leg2_median_hrs;
-          expandHtml += '<td style="text-align:center;border-left:1px solid #21262d;padding:4px 6px;line-height:1.3">'
-            + '<div class="' + cls(e2e) + '" style="font-weight:700;font-size:13px">' + fmt(e2e) + '</div>'
-            + '<div style="font-size:10px;color:#484f58">' + fmt(mD.median_hrs) + ' + ' + fmt(chD.leg2_median_hrs) + '</div>'
-            + '</td>';
+          expandHtml += '<td class="' + cls(chD.leg2_median_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmt(chD.leg2_median_hrs) + '</td>';
+          expandHtml += '<td class="' + cls(e2e) + '" style="text-align:center;font-weight:700;padding:4px 6px">' + fmt(e2e) + '</td>';
         }
         expandHtml += '</tr>';
       }
 
       // Separator
-      expandHtml += '<tr><td colspan="' + (2 + channels.length) + '" style="padding:6px 0;border-bottom:none"><div style="border-top:2px solid #30363d"></div></td></tr>';
+      expandHtml += '<tr><td colspan="' + (2 + channels.length * 2) + '" style="padding:6px 0;border-bottom:none"><div style="border-top:2px solid #30363d"></div></td></tr>';
 
-      // Percentile header — E2E = Leg 1 median + Leg 2 percentile
-      const leg1Med = c.leg1_median_hrs || 0;
-      expandHtml += '<tr><td class="sl" style="font-weight:600;color:#bc8cff">E2E Percentiles</td><td style="font-size:10px;color:#8b949e;text-align:right;padding-right:12px">Leg1 (' + fmt(leg1Med) + ') +</td>';
+      // Percentile header
+      expandHtml += '<tr><td class="sl" style="font-weight:600;color:#bc8cff">Payout Percentiles</td><td></td>';
       for (const [ch] of channels) {
-        expandHtml += '<td style="text-align:center;border-left:1px solid #21262d;font-size:10px;color:#8b949e;padding:2px 8px">Leg1 + Leg2 pctl</td>';
+        expandHtml += '<td style="text-align:center;border-left:2px solid #30363d;font-size:10px;color:#bc8cff;padding:2px 6px">Leg 2</td>';
+        expandHtml += '<td style="text-align:center;font-size:10px;color:#3fb950;padding:2px 6px">E2E</td>';
       }
       expandHtml += '</tr>';
+
+      const leg1Med = c.leg1_median_hrs || 0;
 
       // P60 row
       expandHtml += '<tr><td class="sl" style="color:#58a6ff">P60</td><td></td>';
       for (const [ch, chD] of channels) {
-        const e2eP60 = leg1Med + (chD.leg2_p60_hrs || 0);
-        expandHtml += '<td class="' + cls(e2eP60) + '" style="text-align:center;border-left:1px solid #21262d;padding:4px 8px">' + fmt(e2eP60) + '</td>';
+        expandHtml += '<td class="' + cls(chD.leg2_p60_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmt(chD.leg2_p60_hrs) + '</td>';
+        expandHtml += '<td class="' + cls(leg1Med + (chD.leg2_p60_hrs||0)) + '" style="text-align:center;font-weight:600;padding:4px 6px">' + fmt(leg1Med + (chD.leg2_p60_hrs||0)) + '</td>';
       }
       expandHtml += '</tr>';
 
       // P80 row
       expandHtml += '<tr><td class="sl" style="color:#bc8cff;font-weight:600">P80</td><td></td>';
       for (const [ch, chD] of channels) {
-        const e2eP80 = leg1Med + (chD.leg2_p80_hrs || 0);
-        expandHtml += '<td class="' + cls(e2eP80) + '" style="text-align:center;font-weight:600;border-left:1px solid #21262d;padding:4px 8px">' + fmt(e2eP80) + '</td>';
+        expandHtml += '<td class="' + cls(chD.leg2_p80_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px">' + fmt(chD.leg2_p80_hrs) + '</td>';
+        expandHtml += '<td class="' + cls(leg1Med + (chD.leg2_p80_hrs||0)) + '" style="text-align:center;font-weight:600;padding:4px 6px">' + fmt(leg1Med + (chD.leg2_p80_hrs||0)) + '</td>';
       }
       expandHtml += '</tr>';
 
       // P90 row
       expandHtml += '<tr><td class="sl" style="color:#f85149;font-weight:700">P90</td><td></td>';
       for (const [ch, chD] of channels) {
-        const e2eP90 = leg1Med + (chD.leg2_p90_hrs || 0);
-        expandHtml += '<td class="' + cls(e2eP90) + '" style="text-align:center;font-weight:700;border-left:1px solid #21262d;padding:4px 8px">' + fmt(e2eP90) + '</td>';
+        expandHtml += '<td class="' + cls(chD.leg2_p90_hrs) + '" style="text-align:center;border-left:2px solid #30363d;padding:4px 6px;font-weight:700">' + fmt(chD.leg2_p90_hrs) + '</td>';
+        expandHtml += '<td class="' + cls(leg1Med + (chD.leg2_p90_hrs||0)) + '" style="text-align:center;font-weight:700;padding:4px 6px">' + fmt(leg1Med + (chD.leg2_p90_hrs||0)) + '</td>';
       }
       expandHtml += '</tr>';
 
