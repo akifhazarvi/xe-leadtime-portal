@@ -348,16 +348,16 @@ function renderTable() {
     return 0;
   });
 
-  const totalCols = 15;
+  const totalCols = 17;
   document.getElementById('thead').innerHTML = `<tr>
     <th></th><th>Corridor</th><th>Type</th><th>SLA</th><th>Revenue</th>
     <th class="g1">Vol</th><th class="g1">Median</th><th class="g1">Avg</th>
-    <th class="g2">Vol</th><th class="g2" title="E2E via Bank (SEPA/Swift/FPS)">Bank E2E</th><th class="g2" title="E2E via RIA network">RIA E2E</th><th class="g2" title="E2E via Cash Pickup">Cash E2E</th><th class="g2" title="E2E via Mobile Wallet">Wallet E2E</th>
+    <th class="g2">Vol</th><th class="g2" title="E2E via SEPA">SEPA</th><th class="g2" title="E2E via Swift">Swift</th><th class="g2" title="E2E via RIA network">RIA</th><th class="g2" title="E2E via FPS">FPS</th><th class="g2" title="E2E via Cash Pickup">Cash</th><th class="g2" title="E2E via Mobile Wallet">Wallet</th>
     <th class="ge">E2E Median</th><th class="ge">SLA</th>
   </tr>`;
 
   const methodLabels = { debit: 'Debit Card', bank_account: 'Bank Transfer', open_banking: 'Open Banking', credit: 'Credit Card', balance: 'Balance', direct_debit: 'Direct Debit' };
-  const chLabels = { Bank: 'Bank (SEPA/Swift/FPS)', 'RIA Network': 'RIA Network', 'Cash Pickup': 'Cash Pickup', 'Mobile Wallet': 'Mobile Wallet' };
+  const chLabels = { Sepa: 'SEPA', Swift: 'Swift', RIA: 'RIA', FPS: 'FPS', Cash: 'Cash Pickup', MobileWallet: 'Mobile Wallet', Domestic: 'Domestic' };
 
   document.getElementById('tbody').innerHTML = rows.map(c => {
     const breachPill = c.sla_breach_pct === null ? '' : c.sla_breach_pct > 20 ? `<span class="pill pill-red">${c.sla_breach_pct}%</span>` : c.sla_breach_pct > 5 ? `<span class="pill pill-yellow">${c.sla_breach_pct}%</span>` : c.sla_breach_pct > 0 ? `<span class="pill pill-gray">${c.sla_breach_pct}%</span>` : `<span class="pill pill-green">0%</span>`;
@@ -395,31 +395,35 @@ function renderTable() {
       // Separator
       expandHtml += '<tr><td colspan="' + (2 + channels.length) + '" style="padding:6px 0;border-bottom:none"><div style="border-top:2px solid #30363d"></div></td></tr>';
 
-      // Percentile header
-      expandHtml += '<tr><td class="sl" style="font-weight:600;color:#bc8cff">Payout Percentiles</td><td></td>';
+      // Percentile header — E2E = Leg 1 median + Leg 2 percentile
+      const leg1Med = c.leg1_median_hrs || 0;
+      expandHtml += '<tr><td class="sl" style="font-weight:600;color:#bc8cff">E2E Percentiles</td><td style="font-size:10px;color:#8b949e;text-align:right;padding-right:12px">Leg1 (' + fmt(leg1Med) + ') +</td>';
       for (const [ch] of channels) {
-        expandHtml += '<td style="text-align:center;border-left:1px solid #21262d;font-size:10px;color:#8b949e;padding:2px 8px">Leg 2 only</td>';
+        expandHtml += '<td style="text-align:center;border-left:1px solid #21262d;font-size:10px;color:#8b949e;padding:2px 8px">Leg1 + Leg2 pctl</td>';
       }
       expandHtml += '</tr>';
 
       // P60 row
       expandHtml += '<tr><td class="sl" style="color:#58a6ff">P60</td><td></td>';
       for (const [ch, chD] of channels) {
-        expandHtml += '<td class="' + cls(chD.leg2_p60_hrs) + '" style="text-align:center;border-left:1px solid #21262d;padding:4px 8px">' + fmt(chD.leg2_p60_hrs) + '</td>';
+        const e2eP60 = leg1Med + (chD.leg2_p60_hrs || 0);
+        expandHtml += '<td class="' + cls(e2eP60) + '" style="text-align:center;border-left:1px solid #21262d;padding:4px 8px">' + fmt(e2eP60) + '</td>';
       }
       expandHtml += '</tr>';
 
       // P80 row
       expandHtml += '<tr><td class="sl" style="color:#bc8cff;font-weight:600">P80</td><td></td>';
       for (const [ch, chD] of channels) {
-        expandHtml += '<td class="' + cls(chD.leg2_p80_hrs) + '" style="text-align:center;font-weight:600;border-left:1px solid #21262d;padding:4px 8px">' + fmt(chD.leg2_p80_hrs) + '</td>';
+        const e2eP80 = leg1Med + (chD.leg2_p80_hrs || 0);
+        expandHtml += '<td class="' + cls(e2eP80) + '" style="text-align:center;font-weight:600;border-left:1px solid #21262d;padding:4px 8px">' + fmt(e2eP80) + '</td>';
       }
       expandHtml += '</tr>';
 
       // P90 row
       expandHtml += '<tr><td class="sl" style="color:#f85149;font-weight:700">P90</td><td></td>';
       for (const [ch, chD] of channels) {
-        expandHtml += '<td class="' + cls(chD.leg2_p90_hrs) + '" style="text-align:center;font-weight:700;border-left:1px solid #21262d;padding:4px 8px">' + fmt(chD.leg2_p90_hrs) + '</td>';
+        const e2eP90 = leg1Med + (chD.leg2_p90_hrs || 0);
+        expandHtml += '<td class="' + cls(e2eP90) + '" style="text-align:center;font-weight:700;border-left:1px solid #21262d;padding:4px 8px">' + fmt(e2eP90) + '</td>';
       }
       expandHtml += '</tr>';
 
@@ -455,7 +459,7 @@ function renderTable() {
       <td class="l1 ${cls(c.leg1_median_hrs)}" style="font-weight:600">${fmt(c.leg1_median_hrs)}</td>
       <td class="l1" style="color:#8b949e">${fmt(c.leg1_avg_hrs)}</td>
       <td class="l2 vol">${c.leg2_volume ? c.leg2_volume.toLocaleString() : '-'}</td>
-      ${['Bank','RIA Network','Cash Pickup','Mobile Wallet'].map(ch => {
+      ${['Sepa','Swift','RIA','FPS','Cash','MobileWallet'].map(ch => {
         const d = (c.channels||{})[ch];
         if (!d || d.volume < 3) return '<td class="l2 c-muted" style="font-size:11px;text-align:center">-</td>';
         const e2e = d.e2e_median_hrs;
