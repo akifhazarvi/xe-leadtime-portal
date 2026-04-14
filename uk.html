@@ -131,7 +131,7 @@
   <div class="header">
     <div class="header-inner">
       <div>
-        <h1>UK Speed of Payment <span>End-to-End</span></h1>
+        <h1>UK Speed of Payment <span>End-to-End</span> <span style="font-size:12px;color:#8b949e;font-weight:400">Filtered by senderCountry=GB, grouped by receive currency</span></h1>
         <div class="header-sub" id="header-sub"></div>
       </div>
       <div class="nav">
@@ -200,9 +200,10 @@
     <div class="section">
       <div class="section-header">Corridor Table</div>
       <div class="legend">
-        <div class="legend-item"><span class="legend-dot" style="background:#58a6ff"></span> Leg 1: Txn Created &rarr; Payment Sent</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#bc8cff"></span> Leg 2: Payment Sent &rarr; Received</div>
-        <div class="legend-item"><span class="legend-dot" style="background:#3fb950"></span> E2E: Total time</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#58a6ff"></span> Leg 1: Txn Created &rarr; Txn Completed (Amplitude)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#bc8cff"></span> Leg 2: Payment Sent &rarr; Delivery Confirmed (Payout Report)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#3fb950"></span> E2E: Leg 1 + Leg 2</div>
+        <div class="legend-item" style="color:#8b949e">SLA: compared against Leg 2 only (payout speed promise)</div>
       </div>
       <div class="controls">
         <div class="filter-group"><label>Search</label><input type="text" id="f-search" placeholder="Currency..."></div>
@@ -255,18 +256,18 @@ function renderAll() {
     <div class="context-grid">
       <div class="context-item">
         <div class="context-label">Leg 1 — Our Processing</div>
-        <div class="context-value" style="color:#58a6ff">Transaction Created → Payment Sent</div>
-        <div style="font-size:12px;color:#8b949e">Source: Amplitude (${D.data_sources.leg1.total_volume.toLocaleString()} transactions)</div>
+        <div class="context-value" style="color:#58a6ff">Transaction Created → Transaction Completed</div>
+        <div style="font-size:12px;color:#8b949e">Source: Amplitude funnel, senderCountry=GB (${D.data_sources.leg1.total_volume.toLocaleString()} transactions)</div>
       </div>
       <div class="context-item">
         <div class="context-label">Leg 2 — Payout Network</div>
-        <div class="context-value" style="color:#bc8cff">Payment Sent → Money Received</div>
-        <div style="font-size:12px;color:#8b949e">Source: Jimmy's payout report (${D.data_sources.leg2.total_volume.toLocaleString()} payments)</div>
+        <div class="context-value" style="color:#bc8cff">Last Status Update → Delivery Confirmed/Paid/Processed</div>
+        <div style="font-size:12px;color:#8b949e">Source: Payout Speed Last 30 Days UK.xlsx (${D.data_sources.leg2.total_volume.toLocaleString()} payments)</div>
       </div>
       <div class="context-item">
         <div class="context-label">SLA Targets</div>
         <div class="context-value">UK.csv (launchpad-api)</div>
-        <div style="font-size:12px;color:#8b949e">Ria priority rows. OUT columns = payout SLA.</div>
+        <div style="font-size:12px;color:#8b949e">Ria priority rows. OUT columns = payout SLA. Compared against Leg 2 only.</div>
       </div>
     </div>
   `;
@@ -475,7 +476,7 @@ function renderTable() {
     // Main row
     const mainRow = `<tr data-ccy="${c.currency}" class="main-row">
       <td><span class="toggle-icon">&#9654;</span></td>
-      <td class="ccy">GBP &rarr; ${c.currency}</td>
+      <td class="ccy">UK &rarr; ${c.currency}</td>
       <td style="font-size:11px;color:#8b949e">${c.ccyType}${c.isRia?' *':''}</td>
       <td style="font-size:11px;color:#8b949e">${c.sla_label}</td>
       <td style="font-size:11px;text-align:right" title="Revenue: $${(c.revenue_usd||0).toLocaleString()} | Send Vol: $${(c.send_volume_usd||0).toLocaleString()} | Avg: $${c.revenue_avg_usd||0}/txn">${c.revenue_usd ? '$' + fmtRev(c.revenue_usd) : '-'}</td>
@@ -519,7 +520,7 @@ function renderTable() {
 function showDetail(ccy) {
   const c = D.corridors.find(x => x.currency === ccy);
   if (!c) return;
-  let h = `<h2>GBP &rarr; ${c.currency}</h2><div class="panel-sub">${c.ccyType}${c.isRia?' (Ria priority)':''} | SLA: ${c.sla_label}${c.revenue_usd ? ' | Revenue: $' + c.revenue_usd.toLocaleString() + ' ($' + (c.revenue_avg_usd||0).toLocaleString() + '/txn) | Send Vol: $' + (c.send_volume_usd||0).toLocaleString() : ''}</div>`;
+  let h = `<h2>UK &rarr; ${c.currency}</h2><div class="panel-sub">${c.ccyType}${c.isRia?' (Ria priority)':''} | SLA: ${c.sla_label}${c.revenue_usd ? ' | Revenue: $' + c.revenue_usd.toLocaleString() + ' ($' + (c.revenue_avg_usd||0).toLocaleString() + '/txn) | Send Vol: $' + (c.send_volume_usd||0).toLocaleString() : ''}</div>`;
 
   // E2E speed bar
   if (c.e2e_median_hrs) {
@@ -564,8 +565,8 @@ function showDetail(ccy) {
   if (c.e2e_median_hrs && c.e2e_median_hrs < 0.5) h += `<div class="alert alert-green"><strong>Fast corridor</strong> — E2E median under 30 minutes</div>`;
 
   // Leg 1
-  h += `<div class="box"><div class="box-title" style="color:#58a6ff">Leg 1: Transaction Created &rarr; Payment Sent</div>
-    <div style="font-size:11px;color:#8b949e;margin-bottom:8px">How long from customer confirming to us sending payment. Speed depends on how customer pays.</div>`;
+  h += `<div class="box"><div class="box-title" style="color:#58a6ff">Leg 1: Transaction Created &rarr; Transaction Completed</div>
+    <div style="font-size:11px;color:#8b949e;margin-bottom:8px">Source: Amplitude funnel. Includes funding wait (bank transfer clearing), compliance checks, and processing. Speed depends on payment method.</div>`;
   if (c.leg1_volume) {
     h += `<table class="dtable"><tr><td class="dl">Total Volume</td><td>${c.leg1_volume.toLocaleString()}</td></tr>
       <tr><td class="dl">Completed</td><td>${c.leg1_completed.toLocaleString()} (${c.leg1_conversion}%)</td></tr>
