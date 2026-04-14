@@ -348,11 +348,11 @@ function renderTable() {
     return 0;
   });
 
-  const totalCols = 14;
+  const totalCols = 15;
   document.getElementById('thead').innerHTML = `<tr>
     <th></th><th>Corridor</th><th>Type</th><th>SLA</th><th>Revenue</th>
     <th class="g1">Vol</th><th class="g1">Median</th><th class="g1">Avg</th>
-    <th class="g2">Vol</th><th class="g2">Median</th><th class="g2">Avg</th><th class="g2">P90</th>
+    <th class="g2">Vol</th><th class="g2" title="E2E via Bank (SEPA/Swift/FPS)">Bank E2E</th><th class="g2" title="E2E via RIA network">RIA E2E</th><th class="g2" title="E2E via Cash Pickup">Cash E2E</th><th class="g2" title="E2E via Mobile Wallet">Wallet E2E</th>
     <th class="ge">E2E Median</th><th class="ge">SLA</th>
   </tr>`;
 
@@ -455,9 +455,12 @@ function renderTable() {
       <td class="l1 ${cls(c.leg1_median_hrs)}" style="font-weight:600">${fmt(c.leg1_median_hrs)}</td>
       <td class="l1" style="color:#8b949e">${fmt(c.leg1_avg_hrs)}</td>
       <td class="l2 vol">${c.leg2_volume ? c.leg2_volume.toLocaleString() : '-'}</td>
-      <td class="l2 ${cls(c.leg2_median_hrs)}" style="font-weight:600">${fmt(c.leg2_median_hrs)}</td>
-      <td class="l2" style="color:#8b949e">${fmt(c.leg2_avg_hrs)}</td>
-      <td class="l2 ${cls(c.leg2_p90_hrs)}" style="font-weight:700">${fmt(c.leg2_p90_hrs)}</td>
+      ${['Bank','RIA Network','Cash Pickup','Mobile Wallet'].map(ch => {
+        const d = (c.channels||{})[ch];
+        if (!d || d.volume < 3) return '<td class="l2 c-muted" style="font-size:11px;text-align:center">-</td>';
+        const e2e = d.e2e_median_hrs;
+        return '<td class="l2 ' + cls(e2e) + '" style="font-size:12px;text-align:center;font-weight:600" title="E2E: Leg1 ' + fmt(c.leg1_median_hrs) + ' + Leg2 ' + fmt(d.leg2_median_hrs) + ' = ' + fmt(e2e) + ' | vol=' + d.volume + ', P90=' + fmt(d.leg2_p90_hrs) + '">' + fmt(e2e) + ' <span style="color:#484f58;font-size:9px">(' + d.volume + ')</span></td>';
+      }).join('')}
       <td class="ee ${cls(c.e2e_median_hrs)}" style="font-weight:700;font-size:14px">${fmt(c.e2e_median_hrs)}</td>
       <td class="ee">${breachPill}</td>
     </tr>`;
