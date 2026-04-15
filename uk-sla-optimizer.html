@@ -263,8 +263,8 @@ function render() {
     for (const cb of c.combos) {
       const slaSec = slaBucketSeconds(cb.sla_in);
       const slaOutSec = slaBucketSeconds(cb.sla_out);
-      const suggestedIn = suggestSla(cb.e2e_wd_p90_s || cb.e2e_p90_s);
-      const suggestedOut = suggestSla(cb.e2e_we_p90_s || cb.e2e_p90_s);
+      const suggestedIn = suggestSla(cb.e2e_p90_s);
+      const suggestedOut = suggestSla(cb.e2e_p90_s);
       const sugInSec = slaBucketSeconds(suggestedIn);
       const sugOutSec = slaBucketSeconds(suggestedOut);
       const canImproveIn = slaSec && sugInSec && sugInSec < slaSec;
@@ -280,19 +280,16 @@ function render() {
       rows += '<td class="sep"><span class="sla-current">' + (cb.sla_in || 'N/A') + '</span></td>';
       // Existing SLA OUT
       rows += '<td><span class="sla-current">' + (cb.sla_out || 'N/A') + '</span></td>';
-      // Actual E2E (all)
+      // Actual E2E
       rows += '<td class="sep ' + cls(cb.e2e_median_s) + '" style="font-weight:600">' + fmtSec(cb.e2e_median_s) + '</td>';
       rows += '<td class="' + cls(cb.e2e_p80_s) + '">' + fmtSec(cb.e2e_p80_s) + '</td>';
       rows += '<td class="' + cls(cb.e2e_p90_s) + '" style="font-weight:700">' + fmtSec(cb.e2e_p90_s) + '</td>';
-      // Weekday E2E
-      rows += '<td class="sep ' + cls(cb.e2e_wd_median_s) + '">' + fmtSec(cb.e2e_wd_median_s) + '</td>';
-      rows += '<td class="' + cls(cb.e2e_wd_p90_s) + '">' + fmtSec(cb.e2e_wd_p90_s) + '</td>';
-      // Weekend E2E
-      rows += '<td class="sep ' + cls(cb.e2e_we_median_s) + '">' + fmtSec(cb.e2e_we_median_s) + '</td>';
-      rows += '<td class="' + cls(cb.e2e_we_p90_s) + '">' + fmtSec(cb.e2e_we_p90_s) + '</td>';
-      // Suggested SLA IN
+      // Leg 1 + Leg 2 breakdown
+      rows += '<td class="sep" style="color:#8b949e;font-size:11px">' + fmtSec(cb.leg1_median_s) + '</td>';
+      rows += '<td style="color:#8b949e;font-size:11px">' + fmtSec(cb.leg2_median_s) + '</td>';
+      // Suggested SLA IN (based on overall P90 — same data for both)
       rows += '<td class="sep">' + (canImproveIn ? '<span class="sla-new">' + suggestedIn + '</span>' : isBreachingIn ? '<span class="sla-worse">' + suggestedIn + '</span>' : '<span style="color:#8b949e;font-size:11px">No change</span>') + '</td>';
-      // Suggested SLA OUT
+      // Suggested SLA OUT (same P90 basis since weekday/weekend receipt day is biased)
       rows += '<td>' + (canImproveOut ? '<span class="sla-new">' + suggestedOut + '</span>' : isBreachingOut ? '<span class="sla-worse">' + suggestedOut + '</span>' : '<span style="color:#8b949e;font-size:11px">No change</span>') + '</td>';
       // Quote preview
       rows += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + cb.paymentMethod + '\',\'' + cb.deliveryMethod + '\')">Quote</button></td>';
@@ -311,8 +308,7 @@ function render() {
           '<th>Payment</th><th>Delivery</th><th style="text-align:right">Vol</th>' +
           '<th class="sep">SLA IN</th><th>SLA OUT</th>' +
           '<th class="sep">Median</th><th>P80</th><th>P90</th>' +
-          '<th class="sep">Wkday Med</th><th>Wkday P90</th>' +
-          '<th class="sep">Wkend Med</th><th>Wkend P90</th>' +
+          '<th class="sep" style="color:#58a6ff">Leg 1</th><th style="color:#bc8cff">Leg 2</th>' +
           '<th class="sep" style="color:#3fb950">New IN</th><th style="color:#3fb950">New OUT</th>' +
           '<th>Preview</th>' +
         '</tr>' + rows + '</table>' +
