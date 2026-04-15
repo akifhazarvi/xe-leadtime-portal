@@ -227,8 +227,8 @@ function render() {
     if (show === 'improvable') {
       return c.combos.some(cb => {
         const slaSec = slaBucketSeconds(cb.sla_in);
-        const p90 = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p90_s : cb.e2e_p90_s;
-        const suggested = suggestSla(p90);
+        const p80 = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p80_s : cb.e2e_p80_s;
+        const suggested = suggestSla(p80);
         const sugSec = slaBucketSeconds(suggested);
         return slaSec && sugSec && sugSec < slaSec;
       });
@@ -236,8 +236,8 @@ function render() {
     if (show === 'breaching') {
       return c.combos.some(cb => {
         const slaSec = slaBucketSeconds(cb.sla_in);
-        const p90 = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p90_s : cb.e2e_p90_s;
-        return slaSec && p90 > slaSec;
+        const p80 = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p80_s : cb.e2e_p80_s;
+        return slaSec && p80 > slaSec;
       });
     }
     return true;
@@ -265,17 +265,17 @@ function render() {
     for (const cb of c.combos) {
       const slaSec = slaBucketSeconds(cb.sla_in);
       const slaOutSec = slaBucketSeconds(cb.sla_out);
-      // Bank Account delivery: SLA is payout speed only → use Leg 2 P90
-      // Cash/Wallet delivery: SLA is E2E → use Leg 1 + Leg 2 P90
-      const p90ForSla = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p90_s : cb.e2e_p90_s;
-      const suggestedIn = suggestSla(p90ForSla);
-      const suggestedOut = suggestSla(p90ForSla);
+      // Bank Account delivery: SLA is payout speed only → use Leg 2 P80
+      // Cash/Wallet delivery: SLA is E2E → use Leg 1 + Leg 2 P80
+      const p80ForSla = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p80_s : cb.e2e_p80_s;
+      const suggestedIn = suggestSla(p80ForSla);
+      const suggestedOut = suggestSla(p80ForSla);
       const sugInSec = slaBucketSeconds(suggestedIn);
       const sugOutSec = slaBucketSeconds(suggestedOut);
       const canImproveIn = slaSec && sugInSec && sugInSec < slaSec;
       const canImproveOut = slaOutSec && sugOutSec && sugOutSec < slaOutSec;
-      const isBreachingIn = slaSec && p90ForSla > slaSec;
-      const isBreachingOut = slaOutSec && p90ForSla > slaOutSec;
+      const isBreachingIn = slaSec && p80ForSla > slaSec;
+      const isBreachingOut = slaOutSec && p80ForSla > slaOutSec;
 
       rows += '<tr>';
       rows += '<td>' + PM_LABELS[cb.paymentMethod] + '</td>';
