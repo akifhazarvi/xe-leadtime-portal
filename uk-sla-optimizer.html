@@ -307,11 +307,11 @@ function render() {
           isFirstPm = false;
         }
       } else {
-        // Single destination or no destination data — show overall
+        // Single destination — clean row, no destination column clutter
         const showMed = bankCombo ? bankCombo.leg2_median_s : 0;
+        const showP80Val = bankCombo ? bankCombo.leg2_p80_s : 0;
         const e2eSec = l1Sec + showMed;
         const dest = sortedDests[0];
-        const destCountry = dest ? dest.country : 'All';
         const methods = dest ? Object.keys(dest.methods).join('+') : '-';
         const sugTier = bankCombo ? bankCombo._sugTier : null;
         const currentIdx = tierIndex(currentTier);
@@ -330,13 +330,12 @@ function render() {
 
         body += '<tr style="border-top:2px solid #30363d">';
         body += '<td style="font-weight:600">' + PM[pm] + ' <span style="color:#484f58;font-size:10px">(' + l1.created + ')</span></td>';
-        body += '<td style="font-weight:600">' + destCountry + '</td>';
-        body += '<td style="text-align:right;color:#8b949e">' + (dest ? dest.volume : '-') + '</td>';
+        body += '<td style="color:#8b949e">' + (dest ? dest.country : '-') + '</td>';
+        body += '<td style="text-align:right;color:#8b949e">' + (bankCombo ? bankCombo.leg2_volume : '-') + '</td>';
         body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
-        const showP80 = dest ? dest.p80_s : (bankCombo ? bankCombo.leg2_p80_s : 0);
         body += '<td class="' + cls(l1Sec) + '">' + fmtSec(l1Sec) + '</td>';
         body += '<td class="' + cls(showMed) + '">' + fmtSec(showMed) + '</td>';
-        body += '<td class="' + cls(showP80) + '" style="font-weight:700">' + fmtSec(showP80) + '</td>';
+        body += '<td class="' + cls(showP80Val) + '" style="font-weight:700">' + fmtSec(showP80Val) + '</td>';
         body += '<td class="' + cls(e2eSec) + '">' + fmtSec(e2eSec) + '</td>';
         body += '<td><span class="sla-current">' + currentTier + '</span></td>';
         body += '<td>' + sugCell + '</td>';
