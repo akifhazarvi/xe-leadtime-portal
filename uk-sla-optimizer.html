@@ -285,10 +285,17 @@ function render() {
       rows += '<td class="sep"><span class="sla-current">' + (cb.sla_in || 'N/A') + '</span></td>';
       // Existing SLA OUT
       rows += '<td><span class="sla-current">' + (cb.sla_out || 'N/A') + '</span></td>';
-      // Actual E2E
-      rows += '<td class="sep ' + cls(cb.e2e_median_s) + '" style="font-weight:600">' + fmtSec(cb.e2e_median_s) + '</td>';
-      rows += '<td class="' + cls(cb.e2e_p80_s) + '">' + fmtSec(cb.e2e_p80_s) + '</td>';
-      rows += '<td class="' + cls(cb.e2e_p90_s) + '" style="font-weight:700">' + fmtSec(cb.e2e_p90_s) + '</td>';
+      // Show stats relevant to how SLA is calculated
+      // Bank Account: show Leg 2 stats (SLA is payout speed only)
+      // Cash/Wallet: show E2E stats (SLA is combined)
+      const isBankDelivery = cb.deliveryMethod === 'BankAccount';
+      const showMedian = isBankDelivery ? cb.leg2_median_s : cb.e2e_median_s;
+      const showP80 = isBankDelivery ? cb.leg2_p80_s : cb.e2e_p80_s;
+      const showP90 = isBankDelivery ? cb.leg2_p90_s : cb.e2e_p90_s;
+      const statsLabel = isBankDelivery ? 'Leg 2' : 'E2E';
+      rows += '<td class="sep ' + cls(showMedian) + '" style="font-weight:600" title="' + statsLabel + ' median">' + fmtSec(showMedian) + '</td>';
+      rows += '<td class="' + cls(showP80) + '" title="' + statsLabel + ' P80">' + fmtSec(showP80) + '</td>';
+      rows += '<td class="' + cls(showP90) + '" style="font-weight:700" title="' + statsLabel + ' P90">' + fmtSec(showP90) + '</td>';
       // Leg 1 + Leg 2 breakdown
       rows += '<td class="sep" style="color:#8b949e;font-size:11px">' + fmtSec(cb.leg1_median_s) + '</td>';
       rows += '<td style="color:#8b949e;font-size:11px">' + fmtSec(cb.leg2_median_s) + '</td>';
@@ -312,7 +319,7 @@ function render() {
         '<table><tr>' +
           '<th>Payment</th><th>Delivery</th><th style="text-align:right">Vol</th>' +
           '<th class="sep">SLA IN</th><th>SLA OUT</th>' +
-          '<th class="sep">Median</th><th>P80</th><th>P90</th>' +
+          '<th class="sep" title=\"Bank=Leg2, Cash/Wallet=E2E\">Median*</th><th title=\"Bank=Leg2, Cash/Wallet=E2E\">P80*</th><th title=\"Bank=Leg2, Cash/Wallet=E2E\">P90*</th>' +
           '<th class="sep" style="color:#58a6ff">Leg 1</th><th style="color:#bc8cff">Leg 2</th>' +
           '<th class="sep" style="color:#3fb950">New IN (Biz Hrs)</th><th style="color:#3fb950">New OUT (After Hrs)</th>' +
           '<th>Preview</th>' +
