@@ -357,10 +357,10 @@ function renderTable() {
     return 0;
   });
 
-  const totalCols = 17;
+  const totalCols = 21;
   document.getElementById('thead').innerHTML = `<tr>
     <th></th><th>Corridor</th><th>Type</th><th>SLA</th><th>Revenue</th>
-    <th class="g1">Vol</th><th class="g1">Median</th><th class="g1">Avg</th>
+    <th class="g1">Vol</th><th class="g1">Median</th><th class="g1">Avg</th><th class="g1" title="Debit Card Leg 1">Debit</th><th class="g1" title="Bank Transfer Leg 1">Bank Xfer</th><th class="g1" title="Open Banking Leg 1">Open Bank</th><th class="g1" title="Credit Card Leg 1">Credit</th>
     <th class="g2">Vol</th><th class="g2" title="E2E via SEPA">SEPA</th><th class="g2" title="E2E via Swift">Swift</th><th class="g2" title="E2E via RIA network">RIA</th><th class="g2" title="E2E via FPS">FPS</th><th class="g2" title="E2E via Cash Pickup">Cash</th><th class="g2" title="E2E via Mobile Wallet">Wallet</th>
     <th class="ge">E2E Median</th><th class="ge">SLA</th>
   </tr>`;
@@ -483,6 +483,11 @@ function renderTable() {
       <td class="l1 vol">${c.leg1_volume ? c.leg1_volume.toLocaleString() : '-'}</td>
       <td class="l1 ${cls(c.leg1_median_hrs)}" style="font-weight:600">${fmt(c.leg1_median_hrs)}</td>
       <td class="l1" style="color:#8b949e">${fmt(c.leg1_avg_hrs)}</td>
+      ${['debit','bank_account','open_banking','credit'].map(m => {
+        const d = (c.leg1_methods||{})[m];
+        if (!d || d.volume < 3) return '<td class="l1 c-muted" style="font-size:11px;text-align:center">-</td>';
+        return '<td class="l1 ' + cls(d.median_hrs) + '" style="font-size:11px;text-align:center" title="' + (({debit:'Debit Card',bank_account:'Bank Transfer',open_banking:'Open Banking',credit:'Credit Card'})[m]) + ': vol=' + d.volume + ', avg=' + fmt(d.avg_hrs) + ', conv=' + d.conversion.toFixed(1) + '%">' + fmt(d.median_hrs) + ' <span style="color:#484f58;font-size:9px">(' + d.volume + ')</span></td>';
+      }).join('')}
       <td class="l2 vol">${c.leg2_volume ? c.leg2_volume.toLocaleString() : '-'}</td>
       ${['Sepa','Swift','RIA','FPS','Cash','MobileWallet'].map(ch => {
         const d = (c.channels||{})[ch];
