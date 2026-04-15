@@ -280,7 +280,7 @@ function render() {
       rows += '<tr>';
       rows += '<td>' + PM_LABELS[cb.paymentMethod] + '</td>';
       rows += '<td>' + DM_LABELS[cb.deliveryMethod] + '</td>';
-      rows += '<td class="vol" style="text-align:right">' + cb.leg2_volume + '</td>';
+      rows += '<td class="vol" style="text-align:right" title="Leg 1: ' + cb.leg1_volume + ' txns | Leg 2: ' + cb.leg2_volume + ' payouts">' + cb.leg1_volume + '</td>';
       // Existing SLA IN
       rows += '<td class="sep"><span class="sla-current">' + (cb.sla_in || 'N/A') + '</span></td>';
       // Existing SLA OUT
