@@ -292,10 +292,10 @@ function render() {
       // Leg 1 + Leg 2 breakdown
       rows += '<td class="sep" style="color:#8b949e;font-size:11px">' + fmtSec(cb.leg1_median_s) + '</td>';
       rows += '<td style="color:#8b949e;font-size:11px">' + fmtSec(cb.leg2_median_s) + '</td>';
-      // Suggested SLA IN (based on overall P90 — same data for both)
-      rows += '<td class="sep">' + (canImproveIn ? '<span class="sla-new">' + suggestedIn + '</span>' : isBreachingIn ? '<span class="sla-worse">' + suggestedIn + '</span>' : '<span style="color:#8b949e;font-size:11px">No change</span>') + '</td>';
-      // Suggested SLA OUT (same P90 basis since weekday/weekend receipt day is biased)
-      rows += '<td>' + (canImproveOut ? '<span class="sla-new">' + suggestedOut + '</span>' : isBreachingOut ? '<span class="sla-worse">' + suggestedOut + '</span>' : '<span style="color:#8b949e;font-size:11px">No change</span>') + '</td>';
+      // SLA IN: green = can tighten, red = breaching (keep existing), grey = no change
+      rows += '<td class="sep">' + (canImproveIn ? '<span class="sla-new">' + suggestedIn + '</span>' : isBreachingIn ? '<span class="sla-worse">Breaching ' + cb.sla_in + '</span>' : '<span style="color:#8b949e;font-size:11px">' + cb.sla_in + '</span>') + '</td>';
+      // SLA OUT
+      rows += '<td>' + (canImproveOut ? '<span class="sla-new">' + suggestedOut + '</span>' : isBreachingOut ? '<span class="sla-worse">Breaching ' + cb.sla_out + '</span>' : '<span style="color:#8b949e;font-size:11px">' + cb.sla_out + '</span>') + '</td>';
       // Quote preview
       rows += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + cb.paymentMethod + '\',\'' + cb.deliveryMethod + '\')">Quote</button></td>';
       rows += '</tr>';
