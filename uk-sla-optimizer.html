@@ -135,12 +135,13 @@
   </div>
 
 <script>
-let D = null, DEST = null, LEG1 = null;
+let D = null, DEST = null, LEG1 = null, DASH = null;
 Promise.all([
   fetch('data/uk-sla-optimization.json').then(r => r.json()),
   fetch('data/uk-destination-speed.json').then(r => r.json()),
   fetch('data/uk-leg1-by-method.json').then(r => r.json()),
-]).then(([d, dest, leg1]) => { D = d; DEST = dest; LEG1 = leg1; render(); });
+  fetch('data/uk-dashboard.json').then(r => r.json()),
+]).then(([d, dest, leg1, dash]) => { D = d; DEST = dest; LEG1 = leg1; DASH = dash; render(); });
 
 function fmtSec(s) { if (s==null) return '-'; s=Math.round(s); if (s<60) return s+'s'; if (s<3600){const m=Math.floor(s/60);const r=s%60;return r>0?m+'m '+r+'s':m+'m';} if (s<86400){const h=Math.floor(s/3600);const m=Math.round((s%3600)/60);return m>0?h+'h '+m+'m':h+'h';} const d=Math.floor(s/86400);const h=Math.round((s%86400)/3600);return h>0?d+'d '+h+'h':d+'d';}
 function cls(s) { if (s==null) return 'c-muted'; if (s<=1800) return 'c-fast'; if (s<=86400) return 'c-ok'; if (s<=172800) return 'c-warn'; return 'c-slow'; }
@@ -388,7 +389,7 @@ function render() {
       '<div class="corridor-header" onclick="toggleCorridor(this)">' +
         '<span class="toggle">&#9654;</span>' +
         '<span class="corridor-name">UK &rarr; ' + c.currency + '</span>' +
-        '<span class="corridor-meta">' + c.ccyType + (c.isRia ? ' (Ria)' : '') + '</span>' +
+        '<span class="corridor-meta">' + c.ccyType + (c.isRia ? ' (Ria)' : '') + (function(){ const dc = DASH && DASH.corridors.find(x => x.currency === c.currency); return dc && dc.revenue_usd ? ' | $' + dc.revenue_usd.toLocaleString() + ' revenue' : ''; })() + '</span>' +
         '<span class="corridor-badges">' + badges + '</span>' +
       '</div>' +
       '<div class="corridor-body">' + body + '</div>' +
