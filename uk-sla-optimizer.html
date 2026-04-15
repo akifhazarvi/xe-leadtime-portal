@@ -65,6 +65,10 @@
     .toggle { font-size: 10px; color: #8b949e; transition: transform 0.2s; display: inline-block; }
     .toggle.open { transform: rotate(90deg); }
 
+    .dest-section { margin-top: 16px; padding-top: 16px; border-top: 2px solid #30363d; }
+    .dest-header { font-size: 13px; font-weight: 600; color: #bc8cff; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .bar { display: inline-block; height: 10px; border-radius: 2px; vertical-align: middle; min-width: 2px; }
+
     .quote-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0008; z-index: 300; align-items: center; justify-content: center; }
     .quote-overlay.open { display: flex; }
     .quote-box { background: #fff; color: #333; border-radius: 12px; padding: 32px; max-width: 440px; width: 90%; }
@@ -131,8 +135,11 @@
   </div>
 
 <script>
-let D = null;
-fetch('data/uk-sla-optimization.json').then(r => r.json()).then(d => { D = d; render(); });
+let D = null, DEST = null;
+Promise.all([
+  fetch('data/uk-sla-optimization.json').then(r => r.json()),
+  fetch('data/uk-destination-speed.json').then(r => r.json()),
+]).then(([d, dest]) => { D = d; DEST = dest; render(); });
 
 function fmtSec(s) { if (s==null) return '-'; s=Math.round(s); if (s<60) return s+'s'; if (s<3600){const m=Math.floor(s/60);const r=s%60;return r>0?m+'m '+r+'s':m+'m';} if (s<86400){const h=Math.floor(s/3600);const m=Math.round((s%3600)/60);return m>0?h+'h '+m+'m':h+'h';} const d=Math.floor(s/86400);const h=Math.round((s%86400)/3600);return h>0?d+'d '+h+'h':d+'d';}
 function cls(s) { if (s==null) return 'c-muted'; if (s<=1800) return 'c-fast'; if (s<=86400) return 'c-ok'; if (s<=172800) return 'c-warn'; return 'c-slow'; }
@@ -223,9 +230,19 @@ function render() {
 
   const el = document.getElementById('corridors');
   el.innerHTML = items.map(c => {
+    // Count destination improvements
+    let destFasterCount = 0;
+    const destDataBadge = DEST && DEST.corridors[c.currency];
+    if (destDataBadge && destDataBadge.destinations.length > 1) {
+      const oTier = suggestTier(destDataBadge.overall_p80_s);
+      const oIdx = TIERS.findIndex(t => t.text === oTier.text);
+      destFasterCount = destDataBadge.destinations.filter(d => d.volume >= 3 && TIERS.findIndex(t => t.text === suggestTier(d.p80_s).text) < oIdx).length;
+    }
+
     let badges = '';
     if (c.canImprove > 0) badges += '<span class="pill pill-green">' + c.canImprove + ' can improve</span>';
     if (c.breaching > 0) badges += '<span class="pill pill-red">' + c.breaching + ' breaching</span>';
+    if (destFasterCount > 0) badges += '<span class="pill pill-purple">' + destFasterCount + ' destinations faster</span>';
 
     let body = '';
     for (const [dm, dData] of Object.entries(c.deliveries)) {
@@ -277,6 +294,52 @@ function render() {
       body += '</table>';
       body += '<div style="font-size:10px;color:#484f58;margin-top:4px">*' + (isBankDel ? 'Leg 2 only (payout speed)' : 'E2E (Leg 1 + Leg 2)') + ' | Suggestion based on P80</div>';
       body += '</div>';
+    }
+
+    // Destination country breakdown
+    const destData = DEST && DEST.corridors[c.currency];
+    if (destData && destData.destinations.length > 1) {
+      const overallTier = suggestTier(destData.overall_p80_s);
+      const overallTierIdx = TIERS.findIndex(t => t.text === overallTier.text);
+      const sortedDests = destData.destinations.filter(d => d.volume >= 3).sort((a,b) => a.median_s - b.median_s);
+      const fasterDests = sortedDests.filter(d => { const dt = suggestTier(d.p80_s); return TIERS.findIndex(t => t.text === dt.text) < overallTierIdx; });
+
+      body += '<div class="dest-section">';
+      body += '<div class="dest-header">&#127758; Speed by Destination Country (Leg 2 only)';
+      if (fasterDests.length > 0) body += ' <span class="pill pill-green">' + fasterDests.length + ' can show faster SLA</span>';
+      body += '</div>';
+      body += '<div style="font-size:11px;color:#8b949e;margin-bottom:8px">Current SLA applies to all destinations equally. By setting SLA per destination, fast countries can show a better message.</div>';
+      body += '<table><tr><th>Destination</th><th style="text-align:right">Vol</th><th>Median</th><th>P80</th><th>P90</th><th>Payout Method</th><th>Current SLA</th><th>Per-Destination SLA</th></tr>';
+
+      for (const dest of sortedDests) {
+        const destTier = suggestTier(dest.p80_s);
+        const destTierIdx = TIERS.findIndex(t => t.text === destTier.text);
+        const isFaster = destTierIdx < overallTierIdx;
+        const isSlower = destTierIdx > overallTierIdx;
+        const methods = Object.entries(dest.methods).sort((a,b) => b[1].n - a[1].n).map(([m,s]) => m + '(' + s.n + ')').join(', ');
+
+        body += '<tr>';
+        body += '<td style="font-weight:600">' + dest.country + '</td>';
+        body += '<td style="text-align:right;color:#8b949e">' + dest.volume + '</td>';
+        body += '<td class="' + cls(dest.median_s) + '" style="font-weight:600">' + fmtSec(dest.median_s) + '</td>';
+        body += '<td class="' + cls(dest.p80_s) + '">' + fmtSec(dest.p80_s) + '</td>';
+        body += '<td class="' + cls(dest.p90_s) + '" style="font-weight:700">' + fmtSec(dest.p90_s) + '</td>';
+        body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
+        body += '<td><span class="sla-tag ' + overallTier.cls + '">' + overallTier.text + '</span></td>';
+        body += '<td>';
+        if (isFaster) {
+          body += '<span class="sla-tag ' + overallTier.cls + '" style="text-decoration:line-through;opacity:0.5">' + overallTier.text + '</span>';
+          body += '<span class="arrow">&rarr;</span>';
+          body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
+        } else if (isSlower) {
+          body += '<span class="sla-tag sla-slow">' + destTier.text + ' <span class="pill pill-red">slower</span></span>';
+        } else {
+          body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
+        }
+        body += '</td>';
+        body += '</tr>';
+      }
+      body += '</table></div>';
     }
 
     return '<div class="corridor-card">' +
