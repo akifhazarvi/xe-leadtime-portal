@@ -135,11 +135,12 @@
   </div>
 
 <script>
-let D = null, DEST = null;
+let D = null, DEST = null, LEG1 = null;
 Promise.all([
   fetch('data/uk-sla-optimization.json').then(r => r.json()),
   fetch('data/uk-destination-speed.json').then(r => r.json()),
-]).then(([d, dest]) => { D = d; DEST = dest; render(); });
+  fetch('data/uk-leg1-by-method.json').then(r => r.json()),
+]).then(([d, dest, leg1]) => { D = d; DEST = dest; LEG1 = leg1; render(); });
 
 function fmtSec(s) { if (s==null) return '-'; s=Math.round(s); if (s<60) return s+'s'; if (s<3600){const m=Math.floor(s/60);const r=s%60;return r>0?m+'m '+r+'s':m+'m';} if (s<86400){const h=Math.floor(s/3600);const m=Math.round((s%3600)/60);return m>0?h+'h '+m+'m':h+'h';} const d=Math.floor(s/86400);const h=Math.round((s%86400)/3600);return h>0?d+'d '+h+'h':d+'d';}
 function cls(s) { if (s==null) return 'c-muted'; if (s<=1800) return 'c-fast'; if (s<=86400) return 'c-ok'; if (s<=172800) return 'c-warn'; return 'c-slow'; }
@@ -296,35 +297,53 @@ function render() {
       body += '</div>';
     }
 
-    // Destination country breakdown
+    // Destination country breakdown with E2E per payment method
     const destData = DEST && DEST.corridors[c.currency];
+    const leg1Data = LEG1 && LEG1.corridors[c.currency];
     if (destData && destData.destinations.length > 1) {
       const overallTier = suggestTier(destData.overall_p80_s);
       const overallTierIdx = TIERS.findIndex(t => t.text === overallTier.text);
       const sortedDests = destData.destinations.filter(d => d.volume >= 3).sort((a,b) => a.median_s - b.median_s);
       const fasterDests = sortedDests.filter(d => { const dt = suggestTier(d.p80_s); return TIERS.findIndex(t => t.text === dt.text) < overallTierIdx; });
 
+      // Get available payment methods for this corridor
+      const pmOrder = ['debit', 'bank_account', 'open_banking', 'credit'];
+      const pmAvailable = leg1Data ? pmOrder.filter(pm => leg1Data[pm] && leg1Data[pm].created >= 3) : [];
+
       body += '<div class="dest-section">';
-      body += '<div class="dest-header">&#127758; Speed by Destination Country (Leg 2 only)';
+      body += '<div class="dest-header">&#127758; E2E by Destination Country (all bank payout)';
       if (fasterDests.length > 0) body += ' <span class="pill pill-green">' + fasterDests.length + ' can show faster SLA</span>';
       body += '</div>';
-      body += '<div style="font-size:11px;color:#8b949e;margin-bottom:8px">Current SLA applies to all destinations equally. By setting SLA per destination, fast countries can show a better message.</div>';
-      body += '<table><tr><th>Destination</th><th style="text-align:right">Vol</th><th>Median</th><th>P80</th><th>P90</th><th>Payout Method</th><th>Current SLA</th><th>Per-Destination SLA</th></tr>';
+      body += '<div style="font-size:11px;color:#8b949e;margin-bottom:8px">E2E = Leg 1 (per payment method) + Leg 2 (per destination). All destinations are bank delivery (SEPA/Swift/RIA/FPS). Per-destination SLA based on Leg 2 P80.</div>';
+
+      body += '<table><tr><th>Destination</th><th style="text-align:right">Vol</th><th>Payout</th><th style="color:#bc8cff">Leg 2 Med</th>';
+      for (const pm of pmAvailable) {
+        body += '<th style="color:#58a6ff">' + PM[pm].replace(' Card','').replace(' Transfer','Xfer').replace(' Banking','Bank') + ' E2E</th>';
+      }
+      body += '<th>Current SLA</th><th>Per-Dest SLA</th></tr>';
 
       for (const dest of sortedDests) {
         const destTier = suggestTier(dest.p80_s);
         const destTierIdx = TIERS.findIndex(t => t.text === destTier.text);
         const isFaster = destTierIdx < overallTierIdx;
         const isSlower = destTierIdx > overallTierIdx;
-        const methods = Object.entries(dest.methods).sort((a,b) => b[1].n - a[1].n).map(([m,s]) => m + '(' + s.n + ')').join(', ');
+        const methods = Object.entries(dest.methods).sort((a,b) => b[1].n - a[1].n).map(([m]) => m).join('+');
 
         body += '<tr>';
         body += '<td style="font-weight:600">' + dest.country + '</td>';
         body += '<td style="text-align:right;color:#8b949e">' + dest.volume + '</td>';
-        body += '<td class="' + cls(dest.median_s) + '" style="font-weight:600">' + fmtSec(dest.median_s) + '</td>';
-        body += '<td class="' + cls(dest.p80_s) + '">' + fmtSec(dest.p80_s) + '</td>';
-        body += '<td class="' + cls(dest.p90_s) + '" style="font-weight:700">' + fmtSec(dest.p90_s) + '</td>';
         body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
+        body += '<td class="' + cls(dest.median_s) + '" style="font-weight:600">' + fmtSec(dest.median_s) + '</td>';
+
+        // E2E per payment method
+        for (const pm of pmAvailable) {
+          const l1 = leg1Data[pm];
+          const l1Sec = Math.round(l1.median_hrs * 3600);
+          const e2eSec = l1Sec + dest.median_s;
+          body += '<td class="' + cls(e2eSec) + '" style="font-weight:600">' + fmtSec(e2eSec) + '</td>';
+        }
+
+        // SLA columns
         body += '<td><span class="sla-tag ' + overallTier.cls + '">' + overallTier.text + '</span></td>';
         body += '<td>';
         if (isFaster) {
@@ -336,8 +355,7 @@ function render() {
         } else {
           body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
         }
-        body += '</td>';
-        body += '</tr>';
+        body += '</td></tr>';
       }
       body += '</table></div>';
     }
