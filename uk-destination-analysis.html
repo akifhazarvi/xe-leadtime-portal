@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Destination Country Speed Analysis</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+    a { color: #58a6ff; text-decoration: none; }
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #bc8cff; }
+    .nav { margin-left: auto; display: flex; gap: 16px; font-size: 13px; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px 24px; }
+
+    .insight { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 13px; }
+    .insight h3 { font-size: 14px; margin-bottom: 8px; }
+
+    .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; padding: 12px 16px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
+    .filter-group { display: flex; align-items: center; gap: 6px; }
+    .filter-group label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    select, input[type=text] { background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 6px 10px; border-radius: 6px; font-size: 13px; }
+
+    .corridor-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+    .corridor-header { padding: 12px 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; }
+    .corridor-header:hover { background: #1c2128; }
+    .corridor-name { font-size: 15px; font-weight: 600; min-width: 120px; }
+    .corridor-stats { font-size: 12px; color: #8b949e; display: flex; gap: 16px; }
+    .corridor-badges { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+    .corridor-body { display: none; padding: 0 16px 16px; }
+    .corridor-body.open { display: block; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { padding: 6px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 10px; text-transform: uppercase; color: #8b949e; white-space: nowrap; }
+    td { padding: 5px 6px; border-bottom: 1px solid #21262d; white-space: nowrap; }
+
+    .c-fast { color: #3fb950; } .c-ok { color: #e1e4e8; } .c-warn { color: #d29922; } .c-slow { color: #f85149; font-weight: 700; } .c-muted { color: #484f58; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+    .pill-green { background: #3fb95022; color: #3fb950; }
+    .pill-red { background: #f8514922; color: #f85149; }
+    .pill-blue { background: #58a6ff22; color: #58a6ff; }
+    .pill-purple { background: #bc8cff22; color: #bc8cff; }
+
+    .sla-tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .sla-fast { background: #3fb95022; color: #3fb950; }
+    .sla-ok { background: #21262d; color: #8b949e; }
+    .sla-slow { background: #f8514922; color: #f85149; }
+    .arrow { margin: 0 6px; color: #3fb950; }
+
+    .toggle { font-size: 10px; color: #8b949e; transition: transform 0.2s; display: inline-block; }
+    .toggle.open { transform: rotate(90deg); }
+
+    .bar { display: inline-block; height: 10px; border-radius: 2px; vertical-align: middle; min-width: 2px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>UK Destination Country <span>Speed Analysis</span></h1>
+      <div class="nav"><a href="uk-sla-optimizer.html">SLA Optimizer</a><a href="uk.html">UK Dashboard</a></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="insight">
+      <h3>Why destination matters</h3>
+      <div>The current UK.csv has one SLA per receive currency (e.g. USD → "Typically same day"). But USD payments to US take <strong style="color:#3fb950">16 minutes</strong> while USD to Palestine takes <strong style="color:#f85149">2.2 days</strong>. If we know the destination country, we can show much faster SLAs for fast destinations — a better customer experience without changing our actual speed.</div>
+    </div>
+
+    <div class="controls">
+      <div class="filter-group"><label>Search</label><input type="text" id="f-search" placeholder="Currency..."></div>
+      <div class="filter-group"><label>Show</label><select id="f-show">
+        <option value="all">All</option>
+        <option value="multi">Multi-country (has variance)</option>
+        <option value="opportunity">Big improvement opportunity</option>
+      </select></div>
+      <div class="filter-group"><label>Min Vol</label><select id="f-vol">
+        <option value="0">All</option><option value="50" selected>50+</option><option value="100">100+</option>
+      </select></div>
+      <div class="filter-group">
+        <button onclick="toggleAll(true)" style="background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px">Open All</button>
+        <button onclick="toggleAll(false)" style="background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px">Close All</button>
+      </div>
+    </div>
+    <div id="corridors"></div>
+  </div>
+
+<script>
+let D = null;
+fetch('data/uk-destination-speed.json').then(r => r.json()).then(d => { D = d; render(); });
+
+function fmtSec(s) { if (s==null) return '-'; s=Math.round(s); if (s<60) return s+'s'; if (s<3600){const m=Math.floor(s/60);const r=s%60;return r>0?m+'m '+r+'s':m+'m';} if (s<86400){const h=Math.floor(s/3600);const m=Math.round((s%3600)/60);return m>0?h+'h '+m+'m':h+'h';} const d2=Math.floor(s/86400);const h=Math.round((s%86400)/3600);return h>0?d2+'d '+h+'h':d2+'d';}
+function cls(s) { if (s==null) return 'c-muted'; if (s<=1800) return 'c-fast'; if (s<=86400) return 'c-ok'; if (s<=172800) return 'c-warn'; return 'c-slow'; }
+
+const TIERS = [
+  { text: 'Typically minutes', maxSec: 3600, cls: 'sla-fast' },
+  { text: 'Typically hours', maxSec: 43200, cls: 'sla-fast' },
+  { text: 'Within 24 hours', maxSec: 86400, cls: 'sla-ok' },
+  { text: 'Within 48 hours', maxSec: 172800, cls: 'sla-ok' },
+  { text: 'Up to 3 days', maxSec: 259200, cls: 'sla-slow' },
+  { text: 'Up to 4 days', maxSec: 345600, cls: 'sla-slow' },
+  { text: 'Up to 5 days', maxSec: 432000, cls: 'sla-slow' },
+];
+function suggestTier(p80) { for (const t of TIERS) { if (p80 <= t.maxSec) return t; } return { text: 'Up to 5 days', maxSec: 432000, cls: 'sla-slow' }; }
+
+function render() {
+  if (!D) return;
+  const search = document.getElementById('f-search').value.toUpperCase();
+  const show = document.getElementById('f-show').value;
+  const minVol = parseInt(document.getElementById('f-vol').value);
+
+  let items = Object.entries(D.corridors).map(([ccy, d]) => {
+    const dests = d.destinations.filter(x => x.volume >= 3);
+    const fastDest = dests.length > 0 ? dests.sort((a,b) => a.median_s - b.median_s)[0] : null;
+    const slowDest = dests.length > 0 ? dests.sort((a,b) => b.median_s - a.median_s)[0] : null;
+    const ratio = fastDest && slowDest && fastDest.median_s > 0 ? Math.round(slowDest.median_s / fastDest.median_s) : 0;
+    const overallTier = suggestTier(d.overall_p80_s);
+    const fastTier = fastDest ? suggestTier(fastDest.p80_s) : null;
+
+    // Count how many destinations could show a faster tier than the overall
+    const fasterCount = dests.filter(dest => {
+      const destTier = suggestTier(dest.p80_s);
+      return TIERS.indexOf(destTier) < TIERS.indexOf(overallTier);
+    }).length;
+
+    return { ccy, ...d, dests, fastDest, slowDest, ratio, overallTier, fastTier, fasterCount };
+  });
+
+  items = items.filter(c => {
+    if (search && !c.ccy.toUpperCase().includes(search)) return false;
+    if (minVol && c.volume < minVol) return false;
+    if (show === 'multi' && c.dests.length < 2) return false;
+    if (show === 'opportunity' && c.fasterCount === 0) return false;
+    return true;
+  });
+
+  items.sort((a, b) => b.fasterCount - a.fasterCount || b.ratio - a.ratio || b.volume - a.volume);
+
+  const maxMedian = Math.max(...items.map(c => c.overall_median_s || 0), 86400);
+
+  document.getElementById('corridors').innerHTML = items.map(c => {
+    let badges = '';
+    if (c.fasterCount > 0) badges += '<span class="pill pill-green">' + c.fasterCount + ' destinations can show faster</span>';
+    if (c.ratio > 10) badges += '<span class="pill pill-purple">' + c.ratio + 'x variance</span>';
+    if (c.dests.length === 1) badges += '<span class="pill pill-blue">Single destination</span>';
+
+    // Build destination table
+    let rows = '';
+    const sortedDests = [...c.dests].sort((a,b) => a.median_s - b.median_s);
+    for (const dest of sortedDests) {
+      const tier = suggestTier(dest.p80_s);
+      const isFaster = TIERS.indexOf(tier) < TIERS.indexOf(c.overallTier);
+      const isSlower = TIERS.indexOf(tier) > TIERS.indexOf(c.overallTier);
+      const methods = Object.entries(dest.methods).sort((a,b) => b[1].n - a[1].n).map(([m,s]) => m + ' (' + s.n + ')').join(', ');
+      const barW = Math.max(2, Math.min(300, (dest.median_s / maxMedian) * 300));
+
+      rows += '<tr>';
+      rows += '<td style="font-weight:600">' + dest.country + '</td>';
+      rows += '<td style="text-align:right;color:#8b949e">' + dest.volume + '</td>';
+      rows += '<td class="' + cls(dest.median_s) + '" style="font-weight:600">' + fmtSec(dest.median_s) + '</td>';
+      rows += '<td class="' + cls(dest.p80_s) + '">' + fmtSec(dest.p80_s) + '</td>';
+      rows += '<td class="' + cls(dest.p90_s) + '" style="font-weight:700">' + fmtSec(dest.p90_s) + '</td>';
+      rows += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
+      rows += '<td><span class="sla-tag ' + tier.cls + '">' + tier.text + '</span>' + (isFaster ? ' <span class="pill pill-green">faster</span>' : isSlower ? ' <span class="pill pill-red">slower</span>' : '') + '</td>';
+      rows += '<td><span class="bar ' + cls(dest.median_s) + '" style="width:' + barW + 'px;background:currentColor;opacity:0.5"></span></td>';
+      rows += '</tr>';
+    }
+
+    return '<div class="corridor-card">' +
+      '<div class="corridor-header" onclick="this.nextElementSibling.classList.toggle(\'open\');this.querySelector(\'.toggle\').classList.toggle(\'open\')">' +
+        '<span class="toggle">&#9654;</span>' +
+        '<span class="corridor-name">UK &rarr; ' + c.ccy + '</span>' +
+        '<span class="corridor-stats">' +
+          '<span>' + c.volume + ' payments</span>' +
+          '<span>' + c.dests.length + ' countries</span>' +
+          '<span>Overall: <strong class="' + cls(c.overall_median_s) + '">' + fmtSec(c.overall_median_s) + '</strong> median</span>' +
+          '<span>Current SLA: <span class="sla-tag ' + c.overallTier.cls + '">' + c.overallTier.text + '</span></span>' +
+        '</span>' +
+        '<span class="corridor-badges">' + badges + '</span>' +
+      '</div>' +
+      '<div class="corridor-body">' +
+        '<div style="margin-bottom:8px;font-size:12px;color:#8b949e">If SLA was set per destination country (based on P80), these destinations could show a faster message:</div>' +
+        '<table>' +
+          '<tr><th>Destination</th><th style="text-align:right">Vol</th><th>Median</th><th>P80</th><th>P90</th><th>Payout Method</th><th>Could Show Customer</th><th style="width:300px"></th></tr>' +
+          rows +
+        '</table>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function toggleAll(o) { document.querySelectorAll('.corridor-body').forEach(b => o?b.classList.add('open'):b.classList.remove('open')); document.querySelectorAll('.toggle').forEach(t => o?t.classList.add('open'):t.classList.remove('open')); }
+['f-search','f-show','f-vol'].forEach(id => document.getElementById(id).addEventListener(id==='f-search'?'input':'change', render));
+</script>
+</body>
+</html>
