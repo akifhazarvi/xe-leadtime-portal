@@ -297,65 +297,64 @@ function render() {
       body += '</div>';
     }
 
-    // Destination country breakdown with E2E per payment method
+    // Full E2E matrix: payment method × destination country — every flow on one line
     const destData = DEST && DEST.corridors[c.currency];
     const leg1Data = LEG1 && LEG1.corridors[c.currency];
-    if (destData && destData.destinations.length > 1) {
+    if (destData && leg1Data) {
       const overallTier = suggestTier(destData.overall_p80_s);
       const overallTierIdx = TIERS.findIndex(t => t.text === overallTier.text);
       const sortedDests = destData.destinations.filter(d => d.volume >= 3).sort((a,b) => a.median_s - b.median_s);
-      const fasterDests = sortedDests.filter(d => { const dt = suggestTier(d.p80_s); return TIERS.findIndex(t => t.text === dt.text) < overallTierIdx; });
-
-      // Get available payment methods for this corridor
       const pmOrder = ['debit', 'bank_account', 'open_banking', 'credit'];
-      const pmAvailable = leg1Data ? pmOrder.filter(pm => leg1Data[pm] && leg1Data[pm].created >= 3) : [];
+      const pmAvailable = pmOrder.filter(pm => leg1Data[pm] && leg1Data[pm].created >= 3);
+
+      let fasterCount = 0;
+      sortedDests.forEach(d => { if (TIERS.findIndex(t => t.text === suggestTier(d.p80_s).text) < overallTierIdx) fasterCount++; });
 
       body += '<div class="dest-section">';
-      body += '<div class="dest-header">&#127758; E2E by Destination Country (all bank payout)';
-      if (fasterDests.length > 0) body += ' <span class="pill pill-green">' + fasterDests.length + ' can show faster SLA</span>';
+      body += '<div class="dest-header">&#127758; Every Flow: Payment Method &times; Destination';
+      if (fasterCount > 0) body += ' <span class="pill pill-green">' + fasterCount + ' destinations can show faster</span>';
       body += '</div>';
-      body += '<div style="font-size:11px;color:#8b949e;margin-bottom:8px">E2E = Leg 1 (per payment method) + Leg 2 (per destination). All destinations are bank delivery (SEPA/Swift/RIA/FPS). Per-destination SLA based on Leg 2 P80.</div>';
+      body += '<div style="font-size:11px;color:#8b949e;margin-bottom:8px">Each row = one customer flow. E2E = Leg 1 + Leg 2. SLA suggestion based on Leg 2 P80 (bank delivery).</div>';
 
-      body += '<table><tr><th>Destination</th><th style="text-align:right">Vol</th><th>Payout</th><th style="color:#bc8cff">Leg 2 Med</th>';
+      body += '<table><tr><th>Payment Method</th><th>Destination</th><th style="text-align:right">Vol</th><th>Payout</th>';
+      body += '<th style="color:#58a6ff">Leg 1</th><th style="color:#bc8cff">Leg 2</th><th style="color:#3fb950;font-weight:700">E2E</th>';
+      body += '<th>Current SLA</th><th>Suggested SLA</th></tr>';
+
       for (const pm of pmAvailable) {
-        body += '<th style="color:#58a6ff">' + PM[pm].replace(' Card','').replace(' Transfer','Xfer').replace(' Banking','Bank') + ' E2E</th>';
-      }
-      body += '<th>Current SLA</th><th>Per-Dest SLA</th></tr>';
+        const l1 = leg1Data[pm];
+        const l1Sec = Math.round(l1.median_hrs * 3600);
+        let isFirstRow = true;
 
-      for (const dest of sortedDests) {
-        const destTier = suggestTier(dest.p80_s);
-        const destTierIdx = TIERS.findIndex(t => t.text === destTier.text);
-        const isFaster = destTierIdx < overallTierIdx;
-        const isSlower = destTierIdx > overallTierIdx;
-        const methods = Object.entries(dest.methods).sort((a,b) => b[1].n - a[1].n).map(([m]) => m).join('+');
-
-        body += '<tr>';
-        body += '<td style="font-weight:600">' + dest.country + '</td>';
-        body += '<td style="text-align:right;color:#8b949e">' + dest.volume + '</td>';
-        body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
-        body += '<td class="' + cls(dest.median_s) + '" style="font-weight:600">' + fmtSec(dest.median_s) + '</td>';
-
-        // E2E per payment method
-        for (const pm of pmAvailable) {
-          const l1 = leg1Data[pm];
-          const l1Sec = Math.round(l1.median_hrs * 3600);
+        for (const dest of sortedDests) {
           const e2eSec = l1Sec + dest.median_s;
-          body += '<td class="' + cls(e2eSec) + '" style="font-weight:600">' + fmtSec(e2eSec) + '</td>';
-        }
+          const destTier = suggestTier(dest.p80_s);
+          const destTierIdx = TIERS.findIndex(t => t.text === destTier.text);
+          const isFaster = destTierIdx < overallTierIdx;
+          const isSlower = destTierIdx > overallTierIdx;
+          const methods = Object.entries(dest.methods).sort((a,b) => b[1].n - a[1].n).map(([m]) => m).join('+');
 
-        // SLA columns
-        body += '<td><span class="sla-tag ' + overallTier.cls + '">' + overallTier.text + '</span></td>';
-        body += '<td>';
-        if (isFaster) {
-          body += '<span class="sla-tag ' + overallTier.cls + '" style="text-decoration:line-through;opacity:0.5">' + overallTier.text + '</span>';
-          body += '<span class="arrow">&rarr;</span>';
-          body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
-        } else if (isSlower) {
-          body += '<span class="sla-tag sla-slow">' + destTier.text + ' <span class="pill pill-red">slower</span></span>';
-        } else {
-          body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
+          body += '<tr' + (isFirstRow ? ' style="border-top:2px solid #30363d"' : '') + '>';
+          body += '<td' + (isFirstRow ? ' style="font-weight:600"' : ' style="color:#484f58;font-size:11px"') + '>' + (isFirstRow ? PM[pm] + ' <span style="color:#484f58;font-size:10px">(' + l1.created + ')</span>' : '') + '</td>';
+          body += '<td style="font-weight:600">' + dest.country + '</td>';
+          body += '<td style="text-align:right;color:#8b949e">' + dest.volume + '</td>';
+          body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
+          body += '<td class="' + cls(l1Sec) + '">' + fmtSec(l1Sec) + '</td>';
+          body += '<td class="' + cls(dest.median_s) + '">' + fmtSec(dest.median_s) + '</td>';
+          body += '<td class="' + cls(e2eSec) + '" style="font-weight:700">' + fmtSec(e2eSec) + '</td>';
+          body += '<td><span class="sla-tag ' + overallTier.cls + '">' + overallTier.text + '</span></td>';
+          body += '<td>';
+          if (isFaster) {
+            body += '<span class="sla-tag ' + overallTier.cls + '" style="text-decoration:line-through;opacity:0.5">' + overallTier.text + '</span>';
+            body += '<span class="arrow">&rarr;</span>';
+            body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
+          } else if (isSlower) {
+            body += '<span class="sla-tag sla-slow">' + destTier.text + ' <span class="pill pill-red">slower</span></span>';
+          } else {
+            body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
+          }
+          body += '</td></tr>';
+          isFirstRow = false;
         }
-        body += '</td></tr>';
       }
       body += '</table></div>';
     }
