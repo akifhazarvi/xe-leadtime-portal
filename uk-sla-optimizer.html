@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK SLA Optimizer — Existing vs Actual E2E</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+    a { color: #58a6ff; text-decoration: none; }
+
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #3fb950; }
+    .nav { margin-left: auto; display: flex; gap: 16px; font-size: 13px; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px 24px; }
+
+    .info { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 13px; }
+    .info h3 { font-size: 14px; margin-bottom: 8px; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+    .info-item { font-size: 12px; }
+    .info-label { color: #8b949e; }
+
+    .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; padding: 12px 16px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
+    .filter-group { display: flex; align-items: center; gap: 6px; }
+    .filter-group label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    select, input[type=text] { background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 6px 10px; border-radius: 6px; font-size: 13px; }
+
+    .corridor-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+    .corridor-header { padding: 12px 16px; display: flex; align-items: center; gap: 16px; cursor: pointer; }
+    .corridor-header:hover { background: #1c2128; }
+    .corridor-name { font-size: 15px; font-weight: 600; }
+    .corridor-meta { font-size: 12px; color: #8b949e; }
+    .corridor-badges { display: flex; gap: 8px; margin-left: auto; }
+
+    .corridor-body { display: none; padding: 0 16px 16px; }
+    .corridor-body.open { display: block; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
+    th { padding: 8px 6px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 10px; text-transform: uppercase; color: #8b949e; white-space: nowrap; }
+    td { padding: 6px; border-bottom: 1px solid #21262d; white-space: nowrap; }
+    th.sep, td.sep { border-left: 2px solid #30363d; }
+
+    .c-fast { color: #3fb950; } .c-ok { color: #e1e4e8; } .c-warn { color: #d29922; } .c-slow { color: #f85149; font-weight: 700; } .c-muted { color: #484f58; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+    .pill-green { background: #3fb95022; color: #3fb950; }
+    .pill-yellow { background: #d2992222; color: #d29922; }
+    .pill-red { background: #f8514922; color: #f85149; }
+    .pill-blue { background: #58a6ff22; color: #58a6ff; }
+
+    .sla-current { background: #21262d; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .sla-new { background: #3fb95022; border: 1px solid #3fb95044; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; color: #3fb950; }
+    .sla-worse { background: #f8514922; border: 1px solid #f8514944; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; color: #f85149; }
+
+    .toggle { font-size: 10px; color: #8b949e; transition: transform 0.2s; display: inline-block; }
+    .toggle.open { transform: rotate(90deg); }
+
+    /* Quote preview modal */
+    .quote-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0008; z-index: 300; align-items: center; justify-content: center; }
+    .quote-overlay.open { display: flex; }
+    .quote-box { background: #fff; color: #333; border-radius: 12px; padding: 32px; max-width: 420px; width: 90%; font-family: 'Segoe UI', Roboto, sans-serif; }
+    .quote-title { font-size: 14px; color: #666; margin-bottom: 4px; }
+    .quote-amount { font-size: 28px; font-weight: 700; color: #1a1a2e; margin-bottom: 16px; }
+    .quote-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+    .quote-label { color: #666; }
+    .quote-value { font-weight: 600; color: #1a1a2e; }
+    .quote-delivery { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; }
+    .quote-delivery-old { background: #fef2f2; border-color: #fecaca; }
+    .quote-delivery-icon { font-size: 20px; }
+    .quote-delivery-text { font-size: 13px; }
+    .quote-delivery-time { font-weight: 700; color: #166534; }
+    .quote-delivery-time-old { color: #991b1b; text-decoration: line-through; }
+    .quote-close { margin-top: 16px; text-align: center; }
+    .quote-close button { background: #1a1a2e; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+    .quote-btn { background: none; border: 1px solid #30363d; color: #58a6ff; padding: 2px 8px; border-radius: 4px; font-size: 10px; cursor: pointer; }
+    .quote-btn:hover { background: #58a6ff22; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>UK SLA Optimizer <span>Existing vs Actual</span></h1>
+      <div class="nav">
+        <a href="uk.html">UK Dashboard</a>
+        <a href="index.html">Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="info">
+      <h3>How this works</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Existing SLA</div>
+          <div>Current UK.csv values shown to customers on quote page. IN_ = business hours (Mon-Fri before 2pm GMT), OUT_ = after hours (evenings + weekends).</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Actual E2E</div>
+          <div>Measured: Leg 1 median (Amplitude) + Leg 2 percentiles (payout data). Shown at Median (50%), P80, P90. RIA payout mapped to Bank Account delivery.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="filter-group"><label>Search</label><input type="text" id="f-search" placeholder="Currency..."></div>
+      <div class="filter-group"><label>Show</label><select id="f-show">
+        <option value="all">All Corridors</option>
+        <option value="improvable">Can Improve SLA</option>
+        <option value="breaching">SLA Breach (actual > SLA)</option>
+      </select></div>
+      <div class="filter-group"><label>Min Vol</label><select id="f-vol">
+        <option value="0">All</option>
+        <option value="50" selected>50+</option>
+        <option value="100">100+</option>
+        <option value="500">500+</option>
+      </select></div>
+      <div class="filter-group"><label>Expand</label>
+        <button onclick="toggleAll(true)" style="background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px">Open All</button>
+        <button onclick="toggleAll(false)" style="background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px">Close All</button>
+      </div>
+    </div>
+
+    <div id="corridors"></div>
+  </div>
+
+  <div class="quote-overlay" id="quote-overlay">
+    <div class="quote-box" id="quote-box"></div>
+  </div>
+
+<script>
+let D = null;
+fetch('data/uk-sla-optimization.json').then(r => r.json()).then(d => { D = d; render(); });
+
+const SLA_BUCKETS = ['5mins','<30mins','Same Day','<24hrs','<48 hrs','<3 days','<4days','<5 days'];
+function slaBucketSeconds(sla) {
+  if (!sla || sla === 'N/A') return null;
+  const s = sla.trim().toLowerCase();
+  if (s.includes('5min') || s === '5mins') return 300;
+  if (s.includes('10min')) return 600;
+  if (s.includes('15min')) return 900;
+  if (s.includes('30') && s.includes('min')) return 1800;
+  if (s.includes('>5-<60min') || s.includes('>5-<60minutes')) return 3600;
+  if (s.includes('1hr') || s === '1hr') return 3600;
+  if (s.includes('2hr')) return 7200;
+  if (s.includes('1-12 hour')) return 43200;
+  if (s.includes('same day')) return 43200;
+  if (s.includes('next day')) return 86400;
+  if (s.includes('24hr') || s === '24hrs') return 86400;
+  if (s.includes('48')) return 172800;
+  if (s.includes('3 day') || s === 'three days') return 259200;
+  if (s.includes('4day')) return 345600;
+  if (s.includes('5 day')) return 432000;
+  return null;
+}
+
+function suggestSla(actualP90Sec) {
+  if (actualP90Sec == null) return null;
+  // Find tightest SLA bucket that covers P90
+  const buckets = [
+    { label: '5mins', sec: 300 },
+    { label: '<30mins', sec: 1800 },
+    { label: 'Same Day', sec: 43200 },
+    { label: '<24hrs', sec: 86400 },
+    { label: '<48 hrs', sec: 172800 },
+    { label: '<3 days', sec: 259200 },
+    { label: '<4days', sec: 345600 },
+  ];
+  for (const b of buckets) {
+    if (actualP90Sec <= b.sec) return b.label;
+  }
+  return '<5 days';
+}
+
+function fmtSec(sec) {
+  if (sec==null) return '-';
+  sec = Math.round(sec);
+  if (sec < 60) return sec + 's';
+  if (sec < 3600) { const m = Math.floor(sec/60); const s = sec % 60; return s > 0 ? m + 'm ' + s + 's' : m + 'm'; }
+  if (sec < 86400) { const h = Math.floor(sec/3600); const m = Math.round((sec % 3600)/60); return m > 0 ? h + 'h ' + m + 'm' : h + 'h'; }
+  const d = Math.floor(sec/86400); const h = Math.round((sec % 86400)/3600); return h > 0 ? d + 'd ' + h + 'h' : d + 'd';
+}
+
+function cls(sec) {
+  if (sec == null) return 'c-muted';
+  if (sec <= 1800) return 'c-fast';
+  if (sec <= 86400) return 'c-ok';
+  if (sec <= 172800) return 'c-warn';
+  return 'c-slow';
+}
+
+const PM_LABELS = { debit: 'Debit Card', bank_account: 'Bank Transfer', open_banking: 'Open Banking', credit: 'Credit Card' };
+const DM_LABELS = { BankAccount: 'Bank Account', CashPayout: 'Cash Pickup', MobileWallet: 'Mobile Wallet' };
+const DM_ICONS = { BankAccount: '&#127974;', CashPayout: '&#128181;', MobileWallet: '&#128241;' };
+
+function translateSla(raw) {
+  if (!raw) return '';
+  const s = raw.trim().toLowerCase();
+  if (s.includes('5min')) return 'Typically minutes';
+  if (s.includes('30min')) return 'Typically within 30 minutes';
+  if (s.includes('same day')) return 'Typically same day';
+  if (s.includes('24hr') || s === '<24hrs') return 'Typically within 24 hours';
+  if (s.includes('48')) return 'Typically within 48 hours';
+  if (s.includes('3 day') || s === 'three days') return 'Up to 3 days';
+  if (s.includes('4day')) return 'Up to 4 days';
+  return raw;
+}
+
+function render() {
+  if (!D) return;
+  const search = document.getElementById('f-search').value.toUpperCase();
+  const show = document.getElementById('f-show').value;
+  const minVol = parseInt(document.getElementById('f-vol').value);
+
+  let items = D.corridors.filter(c => {
+    if (search && !c.currency.toUpperCase().includes(search)) return false;
+    const vol = c.combos.reduce((s, cb) => s + cb.leg2_volume, 0);
+    if (minVol && vol < minVol) return false;
+    if (show === 'improvable') {
+      return c.combos.some(cb => {
+        const slaSec = slaBucketSeconds(cb.sla_in);
+        const suggested = suggestSla(cb.e2e_p90_s);
+        const sugSec = slaBucketSeconds(suggested);
+        return slaSec && sugSec && sugSec < slaSec;
+      });
+    }
+    if (show === 'breaching') {
+      return c.combos.some(cb => {
+        const slaSec = slaBucketSeconds(cb.sla_in);
+        return slaSec && cb.e2e_p90_s > slaSec;
+      });
+    }
+    return true;
+  });
+
+  const el = document.getElementById('corridors');
+  el.innerHTML = items.map(c => {
+    const vol = c.combos.reduce((s, cb) => s + cb.leg2_volume, 0);
+    const improvable = c.combos.filter(cb => {
+      const slaSec = slaBucketSeconds(cb.sla_in);
+      const suggested = suggestSla(cb.e2e_p90_s);
+      const sugSec = slaBucketSeconds(suggested);
+      return slaSec && sugSec && sugSec < slaSec;
+    }).length;
+    const breaching = c.combos.filter(cb => {
+      const slaSec = slaBucketSeconds(cb.sla_in);
+      return slaSec && cb.e2e_p90_s > slaSec;
+    }).length;
+
+    let badges = '';
+    if (improvable > 0) badges += '<span class="pill pill-green">' + improvable + ' can improve</span>';
+    if (breaching > 0) badges += '<span class="pill pill-red">' + breaching + ' breaching</span>';
+
+    let rows = '';
+    for (const cb of c.combos) {
+      const slaSec = slaBucketSeconds(cb.sla_in);
+      const slaOutSec = slaBucketSeconds(cb.sla_out);
+      const suggestedIn = suggestSla(cb.e2e_wd_p90_s || cb.e2e_p90_s);
+      const suggestedOut = suggestSla(cb.e2e_we_p90_s || cb.e2e_p90_s);
+      const sugInSec = slaBucketSeconds(suggestedIn);
+      const sugOutSec = slaBucketSeconds(suggestedOut);
+      const canImproveIn = slaSec && sugInSec && sugInSec < slaSec;
+      const canImproveOut = slaOutSec && sugOutSec && sugOutSec < slaOutSec;
+      const isBreachingIn = slaSec && (cb.e2e_wd_p90_s || cb.e2e_p90_s) > slaSec;
+      const isBreachingOut = slaOutSec && (cb.e2e_we_p90_s || cb.e2e_p90_s) > slaOutSec;
+
+      rows += '<tr>';
+      rows += '<td>' + PM_LABELS[cb.paymentMethod] + '</td>';
+      rows += '<td>' + DM_LABELS[cb.deliveryMethod] + '</td>';
+      rows += '<td class="vol" style="text-align:right">' + cb.leg2_volume + '</td>';
+      // Existing SLA IN
+      rows += '<td class="sep"><span class="sla-current">' + (cb.sla_in || 'N/A') + '</span></td>';
+      // Existing SLA OUT
+      rows += '<td><span class="sla-current">' + (cb.sla_out || 'N/A') + '</span></td>';
+      // Actual E2E (all)
+      rows += '<td class="sep ' + cls(cb.e2e_median_s) + '" style="font-weight:600">' + fmtSec(cb.e2e_median_s) + '</td>';
+      rows += '<td class="' + cls(cb.e2e_p80_s) + '">' + fmtSec(cb.e2e_p80_s) + '</td>';
+      rows += '<td class="' + cls(cb.e2e_p90_s) + '" style="font-weight:700">' + fmtSec(cb.e2e_p90_s) + '</td>';
+      // Weekday E2E
+      rows += '<td class="sep ' + cls(cb.e2e_wd_median_s) + '">' + fmtSec(cb.e2e_wd_median_s) + '</td>';
+      rows += '<td class="' + cls(cb.e2e_wd_p90_s) + '">' + fmtSec(cb.e2e_wd_p90_s) + '</td>';
+      // Weekend E2E
+      rows += '<td class="sep ' + cls(cb.e2e_we_median_s) + '">' + fmtSec(cb.e2e_we_median_s) + '</td>';
+      rows += '<td class="' + cls(cb.e2e_we_p90_s) + '">' + fmtSec(cb.e2e_we_p90_s) + '</td>';
+      // Suggested SLA IN
+      rows += '<td class="sep">' + (canImproveIn ? '<span class="sla-new">' + suggestedIn + '</span>' : isBreachingIn ? '<span class="sla-worse">' + suggestedIn + '</span>' : '<span style="color:#8b949e;font-size:11px">No change</span>') + '</td>';
+      // Suggested SLA OUT
+      rows += '<td>' + (canImproveOut ? '<span class="sla-new">' + suggestedOut + '</span>' : isBreachingOut ? '<span class="sla-worse">' + suggestedOut + '</span>' : '<span style="color:#8b949e;font-size:11px">No change</span>') + '</td>';
+      // Quote preview
+      rows += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + cb.paymentMethod + '\',\'' + cb.deliveryMethod + '\')">Quote</button></td>';
+      rows += '</tr>';
+    }
+
+    return '<div class="corridor-card" data-ccy="' + c.currency + '">' +
+      '<div class="corridor-header" onclick="toggleCorridor(this)">' +
+        '<span class="toggle">&#9654;</span>' +
+        '<span class="corridor-name">UK &rarr; ' + c.currency + '</span>' +
+        '<span class="corridor-meta">' + c.ccyType + (c.isRia ? ' (Ria)' : '') + ' | ' + vol + ' payments | ' + c.combos.length + ' combos</span>' +
+        '<span class="corridor-badges">' + badges + '</span>' +
+      '</div>' +
+      '<div class="corridor-body">' +
+        '<table><tr>' +
+          '<th>Payment</th><th>Delivery</th><th style="text-align:right">Vol</th>' +
+          '<th class="sep">SLA IN</th><th>SLA OUT</th>' +
+          '<th class="sep">Median</th><th>P80</th><th>P90</th>' +
+          '<th class="sep">Wkday Med</th><th>Wkday P90</th>' +
+          '<th class="sep">Wkend Med</th><th>Wkend P90</th>' +
+          '<th class="sep" style="color:#3fb950">New IN</th><th style="color:#3fb950">New OUT</th>' +
+          '<th>Preview</th>' +
+        '</tr>' + rows + '</table>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function toggleCorridor(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.toggle');
+  body.classList.toggle('open');
+  toggle.classList.toggle('open');
+}
+
+function toggleAll(open) {
+  document.querySelectorAll('.corridor-body').forEach(b => open ? b.classList.add('open') : b.classList.remove('open'));
+  document.querySelectorAll('.toggle').forEach(t => open ? t.classList.add('open') : t.classList.remove('open'));
+}
+
+function showQuote(ccy, pm, dm) {
+  const c = D.corridors.find(x => x.currency === ccy);
+  const cb = c.combos.find(x => x.paymentMethod === pm && x.deliveryMethod === dm);
+  if (!cb) return;
+
+  const suggestedIn = suggestSla(cb.e2e_wd_p90_s || cb.e2e_p90_s);
+  const oldText = translateSla(cb.sla_in);
+  const newText = translateSla(suggestedIn);
+  const isImproved = slaBucketSeconds(suggestedIn) < slaBucketSeconds(cb.sla_in);
+
+  document.getElementById('quote-box').innerHTML = `
+    <div class="quote-title">You send</div>
+    <div class="quote-amount">1,000.00 GBP</div>
+    <div class="quote-row"><span class="quote-label">Recipient gets</span><span class="quote-value">${ccy}</span></div>
+    <div class="quote-row"><span class="quote-label">Payment method</span><span class="quote-value">${PM_LABELS[pm]}</span></div>
+    <div class="quote-row"><span class="quote-label">Delivery method</span><span class="quote-value">${DM_LABELS[dm]}</span></div>
+    ${isImproved ? `
+    <div class="quote-delivery quote-delivery-old">
+      <div class="quote-delivery-icon">&#9203;</div>
+      <div class="quote-delivery-text">
+        <div style="font-size:11px;color:#991b1b">CURRENT</div>
+        <div class="quote-delivery-time-old">${oldText}</div>
+      </div>
+    </div>
+    <div class="quote-delivery">
+      <div class="quote-delivery-icon">&#9889;</div>
+      <div class="quote-delivery-text">
+        <div style="font-size:11px;color:#166534">IMPROVED</div>
+        <div class="quote-delivery-time">${newText}</div>
+      </div>
+    </div>
+    ` : `
+    <div class="quote-delivery">
+      <div class="quote-delivery-icon">&#9203;</div>
+      <div class="quote-delivery-text">
+        <div style="font-size:11px;color:#166534">Estimated delivery</div>
+        <div class="quote-delivery-time">${oldText}</div>
+      </div>
+    </div>
+    `}
+    <div style="margin-top:12px;padding:10px;background:#f8f9fa;border-radius:6px;font-size:11px;color:#666">
+      <strong>Data behind this:</strong><br>
+      Leg 1: ${fmtSec(cb.leg1_median_s)} (${PM_LABELS[pm]}) | Leg 2: ${fmtSec(cb.leg2_median_s)} (${DM_LABELS[dm]})<br>
+      E2E Median: ${fmtSec(cb.e2e_median_s)} | P80: ${fmtSec(cb.e2e_p80_s)} | P90: ${fmtSec(cb.e2e_p90_s)}
+    </div>
+    <div class="quote-close"><button onclick="document.getElementById('quote-overlay').classList.remove('open')">Close</button></div>
+  `;
+  document.getElementById('quote-overlay').classList.add('open');
+}
+
+document.getElementById('quote-overlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('quote-overlay')) {
+    document.getElementById('quote-overlay').classList.remove('open');
+  }
+});
+
+['f-search', 'f-show', 'f-vol'].forEach(id => {
+  document.getElementById(id).addEventListener(id === 'f-search' ? 'input' : 'change', render);
+});
+</script>
+</body>
+</html>
