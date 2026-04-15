@@ -275,8 +275,8 @@ function render() {
         let isFirstPm = true;
         for (const dest of sortedDests) {
           const e2eSec = l1Sec + dest.median_s;
-          const destTier = suggestTier(dest.p80_s);
-          const destTierIdx = TIERS.findIndex(t => t.text === destTier.text);
+          const destTierText = suggestTier(dest.p80_s);
+          const destTierIdx = tierIndex(destTierText);
           const currentIdx = tierIndex(currentTier);
           const isFaster = currentIdx >= 0 && destTierIdx >= 0 && destTierIdx < currentIdx;
           const isSlower = currentIdx >= 0 && destTierIdx >= 0 && destTierIdx > currentIdx;
@@ -284,11 +284,11 @@ function render() {
 
           let sugCell;
           if (isFaster) {
-            sugCell = '<span class="sla-current" style="text-decoration:line-through;opacity:0.5">' + currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + destTier.text + '</span>';
+            sugCell = '<span class="sla-current" style="text-decoration:line-through;opacity:0.5">' + currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + destTierText + '</span>';
           } else if (isSlower) {
-            sugCell = '<span class="sla-breaching">' + destTier.text + '</span>';
+            sugCell = '<span class="sla-breaching">' + destTierText + '</span>';
           } else {
-            sugCell = '<span class="sla-same">' + destTier.text + '</span>';
+            sugCell = '<span class="sla-same">' + destTierText + '</span>';
           }
 
           body += '<tr' + (isFirstPm ? ' style="border-top:2px solid #30363d"' : '') + '>';
