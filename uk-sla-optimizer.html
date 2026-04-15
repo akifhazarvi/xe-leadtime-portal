@@ -227,7 +227,8 @@ function render() {
     if (show === 'improvable') {
       return c.combos.some(cb => {
         const slaSec = slaBucketSeconds(cb.sla_in);
-        const suggested = suggestSla(cb.e2e_p90_s);
+        const p90 = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p90_s : cb.e2e_p90_s;
+        const suggested = suggestSla(p90);
         const sugSec = slaBucketSeconds(suggested);
         return slaSec && sugSec && sugSec < slaSec;
       });
@@ -235,7 +236,8 @@ function render() {
     if (show === 'breaching') {
       return c.combos.some(cb => {
         const slaSec = slaBucketSeconds(cb.sla_in);
-        return slaSec && cb.e2e_p90_s > slaSec;
+        const p90 = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p90_s : cb.e2e_p90_s;
+        return slaSec && p90 > slaSec;
       });
     }
     return true;
@@ -263,14 +265,17 @@ function render() {
     for (const cb of c.combos) {
       const slaSec = slaBucketSeconds(cb.sla_in);
       const slaOutSec = slaBucketSeconds(cb.sla_out);
-      const suggestedIn = suggestSla(cb.e2e_p90_s);
-      const suggestedOut = suggestSla(cb.e2e_p90_s);
+      // Bank Account delivery: SLA is payout speed only → use Leg 2 P90
+      // Cash/Wallet delivery: SLA is E2E → use Leg 1 + Leg 2 P90
+      const p90ForSla = cb.deliveryMethod === 'BankAccount' ? cb.leg2_p90_s : cb.e2e_p90_s;
+      const suggestedIn = suggestSla(p90ForSla);
+      const suggestedOut = suggestSla(p90ForSla);
       const sugInSec = slaBucketSeconds(suggestedIn);
       const sugOutSec = slaBucketSeconds(suggestedOut);
       const canImproveIn = slaSec && sugInSec && sugInSec < slaSec;
       const canImproveOut = slaOutSec && sugOutSec && sugOutSec < slaOutSec;
-      const isBreachingIn = slaSec && (cb.e2e_wd_p90_s || cb.e2e_p90_s) > slaSec;
-      const isBreachingOut = slaOutSec && (cb.e2e_we_p90_s || cb.e2e_p90_s) > slaOutSec;
+      const isBreachingIn = slaSec && p90ForSla > slaSec;
+      const isBreachingOut = slaOutSec && p90ForSla > slaOutSec;
 
       rows += '<tr>';
       rows += '<td>' + PM_LABELS[cb.paymentMethod] + '</td>';
