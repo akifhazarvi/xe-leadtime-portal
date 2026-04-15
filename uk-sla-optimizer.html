@@ -246,118 +246,138 @@ function render() {
     if (destFasterCount > 0) badges += '<span class="pill pill-purple">' + destFasterCount + ' destinations faster</span>';
 
     let body = '';
-    for (const [dm, dData] of Object.entries(c.deliveries)) {
-      const isBankDel = dm === 'BankAccount';
-      body += '<div class="delivery-section">';
-      body += '<div class="delivery-header"><span class="delivery-icon">' + (DM_ICON[dm]||'') + '</span> ' + (DM[dm]||dm) + '</div>';
-      body += '<div class="delivery-stats">';
-      body += '<span>Leg 2: median ' + fmtSec(dData.leg2_median_s) + ' | P80 ' + fmtSec(dData.leg2_p80_s) + ' | P90 ' + fmtSec(dData.leg2_p90_s) + '</span>';
-      body += '<span>(' + dData.leg2_volume + ' payouts)</span>';
-      body += '</div>';
-
-      body += '<table><tr><th>Payment Method</th><th>Vol</th><th>Leg 1</th>';
-      body += '<th class="sep">Median*</th><th>P80*</th><th>P90*</th>';
-      body += '<th class="sep">Customer Sees Now</th>';
-      body += '<th class="sep">Suggested (P80)</th>';
-      body += '<th></th></tr>';
-
-      for (const cb of dData.combos) {
-        const showMed = isBankDel ? cb.leg2_median_s : cb.e2e_median_s;
-        const showP80 = isBankDel ? cb.leg2_p80_s : cb.e2e_p80_s;
-        const showP90 = isBankDel ? cb.leg2_p90_s : cb.e2e_p90_s;
-
-        const currentIdx = tierIndex(cb._currentTier);
-        const sugIdx = tierIndex(cb._sugTier);
-        const improved = currentIdx >= 0 && sugIdx >= 0 && sugIdx < currentIdx;
-        const breach = cb._currentTier && cb._p80ForSla > (TIERS[currentIdx]||{}).maxSec;
-
-        let sugCell;
-        if (improved) {
-          sugCell = '<span class="sla-current">' + cb._currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + cb._sugTier + '</span>';
-        } else if (breach) {
-          sugCell = '<span class="sla-breaching">Breaching: ' + cb._currentTier + '</span>';
-        } else {
-          sugCell = '<span class="sla-same">' + (cb._currentTier || 'N/A') + '</span>';
-        }
-
-        body += '<tr>';
-        body += '<td>' + (PM[cb.paymentMethod]||cb.paymentMethod) + '</td>';
-        body += '<td style="text-align:right;color:#8b949e">' + cb.leg1_volume + '</td>';
-        body += '<td class="' + cls(cb.leg1_median_s) + '">' + fmtSec(cb.leg1_median_s) + '</td>';
-        body += '<td class="sep ' + cls(showMed) + '" style="font-weight:600">' + fmtSec(showMed) + '</td>';
-        body += '<td class="' + cls(showP80) + '" style="font-weight:600">' + fmtSec(showP80) + '</td>';
-        body += '<td class="' + cls(showP90) + '" style="font-weight:700">' + fmtSec(showP90) + '</td>';
-        body += '<td class="sep"><span class="sla-current">' + (cb._currentTier || 'N/A') + '</span></td>';
-        body += '<td class="sep">' + sugCell + '</td>';
-        body += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + cb.paymentMethod + '\',\'' + cb.deliveryMethod + '\')">Quote</button></td>';
-        body += '</tr>';
-      }
-      body += '</table>';
-      body += '<div style="font-size:10px;color:#484f58;margin-top:4px">*' + (isBankDel ? 'Leg 2 only (payout speed)' : 'E2E (Leg 1 + Leg 2)') + ' | Suggestion based on P80</div>';
-      body += '</div>';
-    }
-
-    // Full E2E matrix: payment method × destination country — every flow on one line
     const destData = DEST && DEST.corridors[c.currency];
     const leg1Data = LEG1 && LEG1.corridors[c.currency];
-    if (destData && leg1Data) {
-      const overallTier = suggestTier(destData.overall_p80_s);
-      const overallTierIdx = TIERS.findIndex(t => t.text === overallTier.text);
-      const sortedDests = destData.destinations.filter(d => d.volume >= 3).sort((a,b) => a.median_s - b.median_s);
-      const pmOrder = ['debit', 'bank_account', 'open_banking', 'credit'];
-      const pmAvailable = pmOrder.filter(pm => leg1Data[pm] && leg1Data[pm].created >= 3);
+    const pmOrder = ['debit', 'bank_account', 'open_banking', 'credit'];
+    const pmAvailable = leg1Data ? pmOrder.filter(pm => leg1Data[pm] && leg1Data[pm].created >= 3) : [];
 
-      let fasterCount = 0;
-      sortedDests.forEach(d => { if (TIERS.findIndex(t => t.text === suggestTier(d.p80_s).text) < overallTierIdx) fasterCount++; });
+    // Get destinations sorted by speed (for bank delivery)
+    const sortedDests = destData ? destData.destinations.filter(d => d.volume >= 3).sort((a,b) => a.median_s - b.median_s) : [];
+    const overallTier = destData ? suggestTier(destData.overall_p80_s) : null;
+    const overallTierIdx = overallTier ? TIERS.findIndex(t => t.text === overallTier.text) : -1;
 
-      body += '<div class="dest-section">';
-      body += '<div class="dest-header">&#127758; Every Flow: Payment Method &times; Destination';
-      if (fasterCount > 0) body += ' <span class="pill pill-green">' + fasterCount + ' destinations can show faster</span>';
-      body += '</div>';
-      body += '<div style="font-size:11px;color:#8b949e;margin-bottom:8px">Each row = one customer flow. E2E = Leg 1 + Leg 2. SLA suggestion based on Leg 2 P80 (bank delivery).</div>';
+    // Single unified table — every flow on one line
+    body += '<table><tr>';
+    body += '<th>Payment Method</th><th>Destination</th><th style="text-align:right">Vol</th><th>Payout</th>';
+    body += '<th style="color:#58a6ff">Leg 1</th><th style="color:#bc8cff">Leg 2 Med</th><th style="color:#bc8cff;font-weight:700">Leg 2 P80</th><th style="color:#3fb950">E2E Med</th>';
+    body += '<th>Customer Sees Now</th><th>Suggested (Leg2 P80)</th><th></th></tr>';
 
-      body += '<table><tr><th>Payment Method</th><th>Destination</th><th style="text-align:right">Vol</th><th>Payout</th>';
-      body += '<th style="color:#58a6ff">Leg 1</th><th style="color:#bc8cff">Leg 2</th><th style="color:#3fb950;font-weight:700">E2E</th>';
-      body += '<th>Current SLA</th><th>Suggested SLA</th></tr>';
+    for (const pm of pmAvailable) {
+      const l1 = leg1Data[pm];
+      const l1Sec = Math.round(l1.median_hrs * 3600);
 
-      for (const pm of pmAvailable) {
-        const l1 = leg1Data[pm];
-        const l1Sec = Math.round(l1.median_hrs * 3600);
-        let isFirstRow = true;
+      // Get the current SLA tier for this payment method from the combos
+      const bankCombo = c.combos.find(cb => cb.paymentMethod === pm && cb.deliveryMethod === 'BankAccount');
+      const currentTier = bankCombo ? bankCombo._currentTier : (overallTier ? overallTier.text : 'N/A');
 
+      if (sortedDests.length > 1) {
+        // Multiple destinations — one row per destination
+        let isFirstPm = true;
         for (const dest of sortedDests) {
           const e2eSec = l1Sec + dest.median_s;
           const destTier = suggestTier(dest.p80_s);
           const destTierIdx = TIERS.findIndex(t => t.text === destTier.text);
-          const isFaster = destTierIdx < overallTierIdx;
-          const isSlower = destTierIdx > overallTierIdx;
+          const currentIdx = tierIndex(currentTier);
+          const isFaster = currentIdx >= 0 && destTierIdx >= 0 && destTierIdx < currentIdx;
+          const isSlower = currentIdx >= 0 && destTierIdx >= 0 && destTierIdx > currentIdx;
           const methods = Object.entries(dest.methods).sort((a,b) => b[1].n - a[1].n).map(([m]) => m).join('+');
 
-          body += '<tr' + (isFirstRow ? ' style="border-top:2px solid #30363d"' : '') + '>';
-          body += '<td' + (isFirstRow ? ' style="font-weight:600"' : ' style="color:#484f58;font-size:11px"') + '>' + (isFirstRow ? PM[pm] + ' <span style="color:#484f58;font-size:10px">(' + l1.created + ')</span>' : '') + '</td>';
+          let sugCell;
+          if (isFaster) {
+            sugCell = '<span class="sla-current" style="text-decoration:line-through;opacity:0.5">' + currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + destTier.text + '</span>';
+          } else if (isSlower) {
+            sugCell = '<span class="sla-breaching">' + destTier.text + '</span>';
+          } else {
+            sugCell = '<span class="sla-same">' + destTier.text + '</span>';
+          }
+
+          body += '<tr' + (isFirstPm ? ' style="border-top:2px solid #30363d"' : '') + '>';
+          body += '<td' + (isFirstPm ? ' style="font-weight:600"' : '') + '>' + (isFirstPm ? PM[pm] + ' <span style="color:#484f58;font-size:10px">(' + l1.created + ')</span>' : '') + '</td>';
           body += '<td style="font-weight:600">' + dest.country + '</td>';
           body += '<td style="text-align:right;color:#8b949e">' + dest.volume + '</td>';
           body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
           body += '<td class="' + cls(l1Sec) + '">' + fmtSec(l1Sec) + '</td>';
           body += '<td class="' + cls(dest.median_s) + '">' + fmtSec(dest.median_s) + '</td>';
-          body += '<td class="' + cls(e2eSec) + '" style="font-weight:700">' + fmtSec(e2eSec) + '</td>';
-          body += '<td><span class="sla-tag ' + overallTier.cls + '">' + overallTier.text + '</span></td>';
-          body += '<td>';
-          if (isFaster) {
-            body += '<span class="sla-tag ' + overallTier.cls + '" style="text-decoration:line-through;opacity:0.5">' + overallTier.text + '</span>';
-            body += '<span class="arrow">&rarr;</span>';
-            body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
-          } else if (isSlower) {
-            body += '<span class="sla-tag sla-slow">' + destTier.text + ' <span class="pill pill-red">slower</span></span>';
-          } else {
-            body += '<span class="sla-tag ' + destTier.cls + '">' + destTier.text + '</span>';
-          }
-          body += '</td></tr>';
-          isFirstRow = false;
+          body += '<td class="' + cls(dest.p80_s) + '" style="font-weight:700">' + fmtSec(dest.p80_s) + '</td>';
+          body += '<td class="' + cls(e2eSec) + '">' + fmtSec(e2eSec) + '</td>';
+          body += '<td><span class="sla-current">' + currentTier + '</span></td>';
+          body += '<td>' + sugCell + '</td>';
+          body += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + pm + '\',\'BankAccount\')">Quote</button></td>';
+          body += '</tr>';
+          isFirstPm = false;
         }
+      } else {
+        // Single destination or no destination data — show overall
+        const showMed = bankCombo ? bankCombo.leg2_median_s : 0;
+        const e2eSec = l1Sec + showMed;
+        const dest = sortedDests[0];
+        const destCountry = dest ? dest.country : 'All';
+        const methods = dest ? Object.keys(dest.methods).join('+') : '-';
+        const sugTier = bankCombo ? bankCombo._sugTier : null;
+        const currentIdx = tierIndex(currentTier);
+        const sugIdx = tierIndex(sugTier);
+        const improved = currentIdx >= 0 && sugIdx >= 0 && sugIdx < currentIdx;
+        const breach = currentTier && bankCombo && bankCombo._p80ForSla > (TIERS[currentIdx]||{}).maxSec;
+
+        let sugCell;
+        if (improved) {
+          sugCell = '<span class="sla-current" style="text-decoration:line-through;opacity:0.5">' + currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + sugTier + '</span>';
+        } else if (breach) {
+          sugCell = '<span class="sla-breaching">Breaching: ' + currentTier + '</span>';
+        } else {
+          sugCell = '<span class="sla-same">' + (currentTier || 'N/A') + '</span>';
+        }
+
+        body += '<tr style="border-top:2px solid #30363d">';
+        body += '<td style="font-weight:600">' + PM[pm] + ' <span style="color:#484f58;font-size:10px">(' + l1.created + ')</span></td>';
+        body += '<td style="font-weight:600">' + destCountry + '</td>';
+        body += '<td style="text-align:right;color:#8b949e">' + (dest ? dest.volume : '-') + '</td>';
+        body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
+        const showP80 = dest ? dest.p80_s : (bankCombo ? bankCombo.leg2_p80_s : 0);
+        body += '<td class="' + cls(l1Sec) + '">' + fmtSec(l1Sec) + '</td>';
+        body += '<td class="' + cls(showMed) + '">' + fmtSec(showMed) + '</td>';
+        body += '<td class="' + cls(showP80) + '" style="font-weight:700">' + fmtSec(showP80) + '</td>';
+        body += '<td class="' + cls(e2eSec) + '">' + fmtSec(e2eSec) + '</td>';
+        body += '<td><span class="sla-current">' + currentTier + '</span></td>';
+        body += '<td>' + sugCell + '</td>';
+        body += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + pm + '\',\'BankAccount\')">Quote</button></td>';
+        body += '</tr>';
       }
-      body += '</table></div>';
+
+      // Also add Cash Pickup and Mobile Wallet rows for this payment method
+      for (const dm of ['CashPayout', 'MobileWallet']) {
+        const cb = c.combos.find(x => x.paymentMethod === pm && x.deliveryMethod === dm);
+        if (!cb) continue;
+        const e2eMed = cb.e2e_median_s;
+        const currentIdx2 = tierIndex(cb._currentTier);
+        const sugIdx2 = tierIndex(cb._sugTier);
+        const improved2 = currentIdx2 >= 0 && sugIdx2 >= 0 && sugIdx2 < currentIdx2;
+        const breach2 = cb._currentTier && cb._p80ForSla > (TIERS[currentIdx2]||{}).maxSec;
+        let sugCell2;
+        if (improved2) {
+          sugCell2 = '<span class="sla-current" style="text-decoration:line-through;opacity:0.5">' + cb._currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + cb._sugTier + '</span>';
+        } else if (breach2) {
+          sugCell2 = '<span class="sla-breaching">Breaching: ' + cb._currentTier + '</span>';
+        } else {
+          sugCell2 = '<span class="sla-same">' + (cb._currentTier || 'N/A') + '</span>';
+        }
+
+        body += '<tr>';
+        body += '<td></td>';
+        body += '<td style="font-weight:600;color:#d29922">' + DM[dm] + '</td>';
+        body += '<td style="text-align:right;color:#8b949e">' + cb.leg2_volume + '</td>';
+        body += '<td style="font-size:11px;color:#8b949e">' + dm.replace('Payout','').replace('Mobile','') + '</td>';
+        body += '<td class="' + cls(cb.leg1_median_s) + '">' + fmtSec(cb.leg1_median_s) + '</td>';
+        body += '<td class="' + cls(cb.leg2_median_s) + '">' + fmtSec(cb.leg2_median_s) + '</td>';
+        body += '<td class="' + cls(cb.leg2_p80_s) + '" style="font-weight:700">' + fmtSec(cb.leg2_p80_s) + '</td>';
+        body += '<td class="' + cls(e2eMed) + '">' + fmtSec(e2eMed) + '</td>';
+        body += '<td><span class="sla-current">' + (cb._currentTier || 'N/A') + '</span></td>';
+        body += '<td>' + sugCell2 + '</td>';
+        body += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + pm + '\',\'' + dm + '\')">Quote</button></td>';
+        body += '</tr>';
+      }
     }
+    body += '</table>';
 
     return '<div class="corridor-card">' +
       '<div class="corridor-header" onclick="toggleCorridor(this)">' +
