@@ -232,18 +232,24 @@ function render() {
   const el = document.getElementById('corridors');
   el.innerHTML = items.map(c => {
     // Count destination improvements
-    let destFasterCount = 0;
+    let destFasterCount = 0, destBreachCount = 0;
     const destDataBadge = DEST && DEST.corridors[c.currency];
     if (destDataBadge && destDataBadge.destinations.length > 1) {
-      const oTier = suggestTier(destDataBadge.overall_p80_s);
-      const oIdx = TIERS.findIndex(t => t.text === oTier.text);
-      destFasterCount = destDataBadge.destinations.filter(d => d.volume >= 3 && TIERS.findIndex(t => t.text === suggestTier(d.p80_s).text) < oIdx).length;
+      const oTierText = suggestTier(destDataBadge.overall_p80_s);
+      const oIdx = tierIndex(oTierText);
+      destDataBadge.destinations.filter(d => d.volume >= 3).forEach(d => {
+        const dTier = suggestTier(d.p80_s);
+        const dIdx = tierIndex(dTier);
+        if (oIdx >= 0 && dIdx >= 0 && dIdx < oIdx) destFasterCount++;
+        if (oIdx >= 0 && dIdx >= 0 && dIdx > oIdx) destBreachCount++;
+      });
     }
 
     let badges = '';
-    if (c.canImprove > 0) badges += '<span class="pill pill-green">' + c.canImprove + ' can improve</span>';
-    if (c.breaching > 0) badges += '<span class="pill pill-red">' + c.breaching + ' breaching</span>';
-    if (destFasterCount > 0) badges += '<span class="pill pill-purple">' + destFasterCount + ' destinations faster</span>';
+    if (c.canImprove > 0) badges += '<span class="pill pill-green">' + c.canImprove + ' SLA can improve</span>';
+    if (c.breaching > 0) badges += '<span class="pill pill-red">' + c.breaching + ' SLA breaching</span>';
+    if (destFasterCount > 0) badges += '<span class="pill pill-green">' + destFasterCount + ' destinations can be faster</span>';
+    if (destBreachCount > 0) badges += '<span class="pill pill-red">' + destBreachCount + ' destinations slower</span>';
 
     let body = '';
     const destData = DEST && DEST.corridors[c.currency];
@@ -254,7 +260,7 @@ function render() {
     // Get destinations sorted by speed (for bank delivery)
     const sortedDests = destData ? destData.destinations.filter(d => d.volume >= 3).sort((a,b) => a.median_s - b.median_s) : [];
     const overallTier = destData ? suggestTier(destData.overall_p80_s) : null;
-    const overallTierIdx = overallTier ? TIERS.findIndex(t => t.text === overallTier.text) : -1;
+    const overallTierIdx = overallTier ? tierIndex(overallTier) : -1;
 
     // Single unified table — every flow on one line
     body += '<table><tr>';
@@ -268,7 +274,7 @@ function render() {
 
       // Get the current SLA tier for this payment method from the combos
       const bankCombo = c.combos.find(cb => cb.paymentMethod === pm && cb.deliveryMethod === 'BankAccount');
-      const currentTier = bankCombo ? bankCombo._currentTier : (overallTier ? overallTier.text : 'N/A');
+      const currentTier = bankCombo ? bankCombo._currentTier : (overallTier || 'N/A');
 
       if (sortedDests.length > 1) {
         // Multiple destinations — one row per destination
