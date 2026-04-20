@@ -1,0 +1,80 @@
+{
+  "org": {
+    "id": "69012",
+    "name": "Ria",
+    "plan": "enterprise2"
+  },
+  "projects": {
+    "prod_web_app": {
+      "id": "295336",
+      "name": "Xe [Prod] Web & App",
+      "description": "Direct Amplitude SDK source of events for Xe web — primary project for all analysis",
+      "timezone": "UTC",
+      "session_timeout": "30 minutes"
+    },
+    "prod_app": {
+      "id": "295341",
+      "name": "Xe [Prod] App",
+      "description": "Segment source for app events"
+    },
+    "dev_web": {
+      "id": "295337",
+      "name": "Xe [Dev] Web",
+      "description": "Experimentation for Xe web client-side events"
+    },
+    "dev_app": {
+      "id": "303134",
+      "name": "Xe [Dev] App"
+    },
+    "staging": {
+      "id": "313612",
+      "name": "XE[Staging] App & Web"
+    }
+  },
+  "default_project": "295336",
+  "dashboards": {
+    "app_dashboard": { "id": "03voyrq", "official": true, "description": "Overall Apollo app performance" },
+    "consumer_platforms": { "id": "exzgz73", "official": true, "description": "Consumer platforms overview" },
+    "consumer_conversion": { "id": "5vkt8c97", "description": "Xe Consumer Conversion" },
+    "consumer_balance": { "id": "ivnlco7j", "description": "Xe Consumer Balance" },
+    "corporate_activation": { "id": "53dxojr4", "description": "Corporate registration to first transaction" },
+    "growth_metrics_corporate": { "id": "zwpsuzaj", "description": "Growth Metrics Corporate" },
+    "nam_kpis": { "id": "rzsgfl3q", "description": "NAM KPIs" },
+    "emea_topline": { "id": "idrgrhkv", "description": "EMEA Marketing Topline metrics" },
+    "ekyc_results": { "id": "77n87qhw", "description": "Consumer eKYC Results and Rates per Region" },
+    "veriff_results": { "id": "6bgaef26", "description": "Veriff Regional Results and Conversion Rates" },
+    "refer_a_friend": { "id": "vsmj714u", "description": "Refer a Friend Performance" },
+    "public_site": { "id": "oddo9hbk", "description": "Public Site Monitoring" },
+    "john_lewis": { "id": "bvrfkuvl", "official": true, "description": "John Lewis Performance" },
+    "britline": { "id": "zzpt2zye", "description": "Britline Performance" },
+    "conversion_dashboard": { "id": "64p6st9b", "description": "Conversion Dashboard" },
+    "payment_speed": { "id": "gtizg86v", "description": "Payment Speed Tracker — time from Transaction Created to Completed by payment method, payout method, corridor, region" }
+  },
+  "key_charts": {
+    "transactions_created": { "id": "f7zaeg0", "type": "eventsSegmentation" },
+    "active_users": { "id": "cvmn241", "type": "growthAccounting" },
+    "mt_profile_created": { "id": "wo2ytol", "type": "eventsSegmentation" },
+    "zero_day_conversions": { "id": "tfmh89d", "type": "eventsSegmentation" },
+    "payment_method_conversion": { "id": "57ornik", "type": "funnels" },
+    "send_money_funnel": { "id": "q6zkbdob", "type": "funnels" },
+    "send_money_conversion_web": { "id": "spm3ef6j", "type": "funnels" },
+    "registration_conversion": { "id": "gb4ye0pp", "type": "funnels" },
+    "card_conversion_by_platform": { "id": "bwvmoe4", "type": "funnels" },
+    "bank_transfer_funnel": { "id": "u5j9qyvx", "type": "funnels" },
+    "open_bank_transfer_funnel": { "id": "mr3ux21q", "type": "funnels" },
+    "login_funnel": { "id": "zxae107e", "type": "funnels" },
+    "card_payment_funnel": { "id": "qpzm2aad", "type": "funnels" },
+    "plaid_conversion_corporate": { "id": "eqd2vvgg", "type": "funnels" },
+    "web_personal_registration": { "id": "70249d3", "type": "funnels" },
+    "galileo_send_money": { "id": "q2oqpy5", "type": "funnels" },
+    "payment_speed_overall": { "id": "hkjqb217", "type": "funnels" },
+    "payment_speed_by_payment_method": { "id": "pto3q21i", "type": "funnels" },
+    "payment_speed_by_payout_method": { "id": "ixrmw0sq", "type": "funnels" },
+    "payment_speed_by_send_currency": { "id": "n1z44uve", "type": "funnels" },
+    "payment_speed_by_payout_currency": { "id": "dxyfpsor", "type": "funnels" },
+    "payment_speed_by_sender_country": { "id": "26y4hep5", "type": "funnels" },
+    "payment_speed_by_dest_country": { "id": "0seh339b", "type": "funnels" },
+    "send_money_conversion_consumer": { "id": "3spwl4ya", "type": "funnels", "description": "Consumer send money funnel: Quote Confirmed → Recipient Selected → Txn Summary Confirmed → Txn Created → Txn Completed. 5-day window. accountType != Corporate." },
+    "zero_day_conversion_consumer": { "id": "qrf86h3i", "type": "funnels", "description": "Consumer 0-day conversion: MT Profile Created → Transaction Created within 24h. accountType != Corporate." }
+  }
+}

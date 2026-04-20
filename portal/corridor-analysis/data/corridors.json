@@ -1,0 +1,1632 @@
+{
+  "metadata": {
+    "generated": "2026-03-27",
+    "source": "Amplitude Project 295336 (Xe [Prod] Web & App)",
+    "period": "Last 30 Days",
+    "methodology": "Funnel: Quote Confirmed -> Transaction Completed (7-day window, same users, ordered)",
+    "corridorDefinition": "TBU Region (gp:TBU user property) + sendCurrency -> payoutCurrency",
+    "filters": "Consumer only (accountType != Corporate), Transfer only (transactionType = Transfer)",
+    "totalCorridors": 50,
+    "totalQuotedUsers": 58138,
+    "totalCompletedUsers": 42958,
+    "overallConversion": 73.9
+  },
+  "regions": [
+    {
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "quoted": 19165,
+      "completed": 16007,
+      "conversion": 83.5,
+      "medianTimeSeconds": 1335,
+      "medianTimeFormatted": "22 min",
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      }
+    },
+    {
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "quoted": 24902,
+      "completed": 15298,
+      "conversion": 61.4,
+      "medianTimeSeconds": 298032,
+      "medianTimeFormatted": "3.4 days",
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      }
+    },
+    {
+      "tbuId": "800",
+      "tbuRegion": "EU",
+      "quoted": 17043,
+      "completed": 12360,
+      "conversion": 72.5,
+      "medianTimeSeconds": 2689,
+      "medianTimeFormatted": "45 min",
+      "trend": {
+        "wow": -14.9,
+        "mom": -17.2
+      }
+    },
+    {
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "quoted": 7936,
+      "completed": 6572,
+      "conversion": 82.8,
+      "medianTimeSeconds": 5411,
+      "medianTimeFormatted": "1.5 hrs",
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      }
+    },
+    {
+      "tbuId": "700",
+      "tbuRegion": "CA",
+      "quoted": 6272,
+      "completed": 4205,
+      "conversion": 67,
+      "medianTimeSeconds": 63081,
+      "medianTimeFormatted": "17.5 hrs",
+      "trend": {
+        "wow": -5.3,
+        "mom": -1.7
+      }
+    },
+    {
+      "tbuId": "90",
+      "tbuRegion": "NZ",
+      "quoted": 2885,
+      "completed": 2443,
+      "conversion": 84.7,
+      "medianTimeSeconds": 8609,
+      "medianTimeFormatted": "2.4 hrs",
+      "trend": {
+        "wow": -4.9,
+        "mom": -11
+      }
+    }
+  ],
+  "corridors": [
+    {
+      "id": "US; USD → INR",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "INR",
+      "quoted": 9356,
+      "completed": 7198,
+      "conversion": 76.9,
+      "medianTimeSeconds": 400310,
+      "medianTimeFormatted": "4.6 days",
+      "avgTimeSeconds": 327995,
+      "demand": 42686,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Multi-day settlement: 4.6 days"
+      ],
+      "severity": 28
+    },
+    {
+      "id": "EU; EUR → INR",
+      "tbuId": "800",
+      "tbuRegion": "EU",
+      "sendCurrency": "EUR",
+      "payoutCurrency": "INR",
+      "quoted": 6256,
+      "completed": 5468,
+      "conversion": 87.4,
+      "medianTimeSeconds": 2706,
+      "medianTimeFormatted": "45 min",
+      "avgTimeSeconds": 33408,
+      "demand": 22257,
+      "trend": {
+        "wow": -14.9,
+        "mom": -17.2
+      },
+      "issues": [
+        "Declining WoW: -14.9%",
+        "Declining MoM: -17.2%"
+      ],
+      "severity": 40
+    },
+    {
+      "id": "UK; GBP → EUR",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "EUR",
+      "quoted": 5589,
+      "completed": 5034,
+      "conversion": 90.1,
+      "medianTimeSeconds": 1259,
+      "medianTimeFormatted": "21 min",
+      "avgTimeSeconds": 27784,
+      "demand": 36622,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "UK; GBP → INR",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "INR",
+      "quoted": 2309,
+      "completed": 1903,
+      "conversion": 82.4,
+      "medianTimeSeconds": 1021,
+      "medianTimeFormatted": "17 min",
+      "avgTimeSeconds": 15279,
+      "demand": 15347,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "AU; AUD → INR",
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "sendCurrency": "AUD",
+      "payoutCurrency": "INR",
+      "quoted": 1766,
+      "completed": 1486,
+      "conversion": 84.1,
+      "medianTimeSeconds": 1765,
+      "medianTimeFormatted": "29 min",
+      "avgTimeSeconds": 39952,
+      "demand": 8726,
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "EU; EUR → MAD",
+      "tbuId": "800",
+      "tbuRegion": "EU",
+      "sendCurrency": "EUR",
+      "payoutCurrency": "MAD",
+      "quoted": 1651,
+      "completed": 1179,
+      "conversion": 71.4,
+      "medianTimeSeconds": 1028,
+      "medianTimeFormatted": "17 min",
+      "avgTimeSeconds": 29065,
+      "demand": 9815,
+      "trend": {
+        "wow": -14.9,
+        "mom": -17.2
+      },
+      "issues": [
+        "Declining WoW: -14.9%",
+        "Declining MoM: -17.2%"
+      ],
+      "severity": 50
+    },
+    {
+      "id": "EU; GBP → EUR",
+      "tbuId": "800",
+      "tbuRegion": "EU",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "EUR",
+      "quoted": 1284,
+      "completed": 1165,
+      "conversion": 90.7,
+      "medianTimeSeconds": 2281,
+      "medianTimeFormatted": "38 min",
+      "avgTimeSeconds": 25997,
+      "demand": 36622,
+      "trend": {
+        "wow": -14.9,
+        "mom": -17.2
+      },
+      "issues": [
+        "Declining WoW: -14.9%",
+        "Declining MoM: -17.2%"
+      ],
+      "severity": 40
+    },
+    {
+      "id": "UK; GBP → USD",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "USD",
+      "quoted": 1440,
+      "completed": 1156,
+      "conversion": 80.3,
+      "medianTimeSeconds": 13239,
+      "medianTimeFormatted": "3.7 hrs",
+      "avgTimeSeconds": 51756,
+      "demand": 13324,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "US; USD → EUR",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "EUR",
+      "quoted": 1768,
+      "completed": 1138,
+      "conversion": 64.4,
+      "medianTimeSeconds": 273060,
+      "medianTimeFormatted": "3.2 days",
+      "avgTimeSeconds": 249725,
+      "demand": 27968,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Below-average conversion: 64.4%",
+        "Multi-day settlement: 3.2 days"
+      ],
+      "severity": 53
+    },
+    {
+      "id": "US; USD → MXN",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "MXN",
+      "quoted": 1542,
+      "completed": 991,
+      "conversion": 64.3,
+      "medianTimeSeconds": 7578,
+      "medianTimeFormatted": "2.1 hrs",
+      "avgTimeSeconds": 162401,
+      "demand": 9047,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Below-average conversion: 64.3%"
+      ],
+      "severity": 33
+    },
+    {
+      "id": "UK; GBP → NAD",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "NAD",
+      "quoted": 1070,
+      "completed": 987,
+      "conversion": 92.2,
+      "medianTimeSeconds": 936,
+      "medianTimeFormatted": "16 min",
+      "avgTimeSeconds": 13904,
+      "demand": 2712,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "UK; GBP → ZAR",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "ZAR",
+      "quoted": 867,
+      "completed": 801,
+      "conversion": 92.4,
+      "medianTimeSeconds": 996,
+      "medianTimeFormatted": "17 min",
+      "avgTimeSeconds": 21612,
+      "demand": 3929,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "CA; CAD → USD",
+      "tbuId": "700",
+      "tbuRegion": "CA",
+      "sendCurrency": "CAD",
+      "payoutCurrency": "USD",
+      "quoted": 1097,
+      "completed": 790,
+      "conversion": 72,
+      "medianTimeSeconds": 271750,
+      "medianTimeFormatted": "3.1 days",
+      "avgTimeSeconds": 248639,
+      "demand": 11651,
+      "trend": {
+        "wow": -5.3,
+        "mom": -1.7
+      },
+      "issues": [
+        "Multi-day settlement: 3.1 days"
+      ],
+      "severity": 38
+    },
+    {
+      "id": "US; USD → PHP",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "PHP",
+      "quoted": 1125,
+      "completed": 753,
+      "conversion": 66.9,
+      "medianTimeSeconds": 16336,
+      "medianTimeFormatted": "4.5 hrs",
+      "avgTimeSeconds": 182280,
+      "demand": 6136,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [],
+      "severity": 18
+    },
+    {
+      "id": "US; USD → CAD",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "CAD",
+      "quoted": 862,
+      "completed": 651,
+      "conversion": 75.5,
+      "medianTimeSeconds": 318641,
+      "medianTimeFormatted": "3.7 days",
+      "avgTimeSeconds": 292477,
+      "demand": 10436,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Multi-day settlement: 3.7 days"
+      ],
+      "severity": 28
+    },
+    {
+      "id": "AU; AUD → NZD",
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "sendCurrency": "AUD",
+      "payoutCurrency": "NZD",
+      "quoted": 710,
+      "completed": 650,
+      "conversion": 91.5,
+      "medianTimeSeconds": 36577,
+      "medianTimeFormatted": "10.2 hrs",
+      "avgTimeSeconds": 56222,
+      "demand": 3853,
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "UK; GBP → THB",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "THB",
+      "quoted": 694,
+      "completed": 629,
+      "conversion": 90.6,
+      "medianTimeSeconds": 1010,
+      "medianTimeFormatted": "17 min",
+      "avgTimeSeconds": 18538,
+      "demand": 4148,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "NZ; NZD → INR",
+      "tbuId": "90",
+      "tbuRegion": "NZ",
+      "sendCurrency": "NZD",
+      "payoutCurrency": "INR",
+      "quoted": 701,
+      "completed": 612,
+      "conversion": 87.3,
+      "medianTimeSeconds": 4798,
+      "medianTimeFormatted": "1.3 hrs",
+      "avgTimeSeconds": 22905,
+      "demand": 2866,
+      "trend": {
+        "wow": -4.9,
+        "mom": -11
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "US; USD → GBP",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "GBP",
+      "quoted": 793,
+      "completed": 605,
+      "conversion": 76.3,
+      "medianTimeSeconds": 261945,
+      "medianTimeFormatted": "3.0 days",
+      "avgTimeSeconds": 241732,
+      "demand": 10879,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Multi-day settlement: 3.0 days"
+      ],
+      "severity": 28
+    },
+    {
+      "id": "UK; GBP → AUD",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "AUD",
+      "quoted": 616,
+      "completed": 558,
+      "conversion": 90.6,
+      "medianTimeSeconds": 1341,
+      "medianTimeFormatted": "22 min",
+      "avgTimeSeconds": 26913,
+      "demand": 8560,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "AU; GBP → AUD",
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "AUD",
+      "quoted": 607,
+      "completed": 552,
+      "conversion": 90.9,
+      "medianTimeSeconds": 2787,
+      "medianTimeFormatted": "46 min",
+      "avgTimeSeconds": 34294,
+      "demand": 8560,
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "EU; EUR → USD",
+      "tbuId": "800",
+      "tbuRegion": "EU",
+      "sendCurrency": "EUR",
+      "payoutCurrency": "USD",
+      "quoted": 1051,
+      "completed": 547,
+      "conversion": 52,
+      "medianTimeSeconds": 47328,
+      "medianTimeFormatted": "13.1 hrs",
+      "avgTimeSeconds": 86618,
+      "demand": 14625,
+      "trend": {
+        "wow": -14.9,
+        "mom": -17.2
+      },
+      "issues": [
+        "Below-average conversion: 52.0%",
+        "Declining WoW: -14.9%",
+        "Declining MoM: -17.2%"
+      ],
+      "severity": 65
+    },
+    {
+      "id": "AU; AUD → USD",
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "sendCurrency": "AUD",
+      "payoutCurrency": "USD",
+      "quoted": 674,
+      "completed": 489,
+      "conversion": 72.5,
+      "medianTimeSeconds": 39332,
+      "medianTimeFormatted": "10.9 hrs",
+      "avgTimeSeconds": 76993,
+      "demand": 8680,
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      },
+      "issues": [],
+      "severity": 18
+    },
+    {
+      "id": "AU; AUD → THB",
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "sendCurrency": "AUD",
+      "payoutCurrency": "THB",
+      "quoted": 535,
+      "completed": 483,
+      "conversion": 90.3,
+      "medianTimeSeconds": 1635,
+      "medianTimeFormatted": "27 min",
+      "avgTimeSeconds": 39226,
+      "demand": 2816,
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "AU; AUD → GBP",
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "sendCurrency": "AUD",
+      "payoutCurrency": "GBP",
+      "quoted": 539,
+      "completed": 482,
+      "conversion": 89.4,
+      "medianTimeSeconds": 3205,
+      "medianTimeFormatted": "53 min",
+      "avgTimeSeconds": 42646,
+      "demand": 3764,
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "US; USD → COP",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "COP",
+      "quoted": 677,
+      "completed": 434,
+      "conversion": 64.1,
+      "medianTimeSeconds": 1594,
+      "medianTimeFormatted": "27 min",
+      "avgTimeSeconds": 139712,
+      "demand": 3589,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Below-average conversion: 64.1%"
+      ],
+      "severity": 33
+    },
+    {
+      "id": "US; USD → USD",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "USD",
+      "quoted": 3796,
+      "completed": 427,
+      "conversion": 11.3,
+      "medianTimeSeconds": 163111,
+      "medianTimeFormatted": "1.9 days",
+      "avgTimeSeconds": 209286,
+      "demand": 23348,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Very low conversion: 11.3%",
+        "Multi-day settlement: 1.9 days"
+      ],
+      "severity": 68
+    },
+    {
+      "id": "UK; GBP → PHP",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "PHP",
+      "quoted": 519,
+      "completed": 408,
+      "conversion": 78.6,
+      "medianTimeSeconds": 982,
+      "medianTimeFormatted": "16 min",
+      "avgTimeSeconds": 22709,
+      "demand": 2409,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "UK; GBP → PKR",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "PKR",
+      "quoted": 542,
+      "completed": 405,
+      "conversion": 74.7,
+      "medianTimeSeconds": 960,
+      "medianTimeFormatted": "16 min",
+      "avgTimeSeconds": 20113,
+      "demand": 4118,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 18
+    },
+    {
+      "id": "CA; CAD → MAD",
+      "tbuId": "700",
+      "tbuRegion": "CA",
+      "sendCurrency": "CAD",
+      "payoutCurrency": "MAD",
+      "quoted": 532,
+      "completed": 400,
+      "conversion": 75.2,
+      "medianTimeSeconds": 11835,
+      "medianTimeFormatted": "3.3 hrs",
+      "avgTimeSeconds": 123723,
+      "demand": 2468,
+      "trend": {
+        "wow": -5.3,
+        "mom": -1.7
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "CA; CAD → INR",
+      "tbuId": "700",
+      "tbuRegion": "CA",
+      "sendCurrency": "CAD",
+      "payoutCurrency": "INR",
+      "quoted": 622,
+      "completed": 388,
+      "conversion": 62.4,
+      "medianTimeSeconds": 74393,
+      "medianTimeFormatted": "20.7 hrs",
+      "avgTimeSeconds": 182410,
+      "demand": 5455,
+      "trend": {
+        "wow": -5.3,
+        "mom": -1.7
+      },
+      "issues": [
+        "Below-average conversion: 62.4%"
+      ],
+      "severity": 33
+    },
+    {
+      "id": "UK; GBP → MAD",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "MAD",
+      "quoted": 422,
+      "completed": 364,
+      "conversion": 86.3,
+      "medianTimeSeconds": 969,
+      "medianTimeFormatted": "16 min",
+      "avgTimeSeconds": 19472,
+      "demand": 1994,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "AU; AUD → EUR",
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "sendCurrency": "AUD",
+      "payoutCurrency": "EUR",
+      "quoted": 433,
+      "completed": 349,
+      "conversion": 80.6,
+      "medianTimeSeconds": 13670,
+      "medianTimeFormatted": "3.8 hrs",
+      "avgTimeSeconds": 57238,
+      "demand": 4032,
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "US; USD → XOF",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "XOF",
+      "quoted": 460,
+      "completed": 343,
+      "conversion": 74.6,
+      "medianTimeSeconds": 858,
+      "medianTimeFormatted": "14 min",
+      "avgTimeSeconds": 77975,
+      "demand": 2349,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [],
+      "severity": 18
+    },
+    {
+      "id": "AU; AUD → PHP",
+      "tbuId": "150",
+      "tbuRegion": "AU",
+      "sendCurrency": "AUD",
+      "payoutCurrency": "PHP",
+      "quoted": 419,
+      "completed": 343,
+      "conversion": 81.9,
+      "medianTimeSeconds": 1540,
+      "medianTimeFormatted": "26 min",
+      "avgTimeSeconds": 27495,
+      "demand": 2363,
+      "trend": {
+        "wow": 2.9,
+        "mom": -9.8
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "US; USD → THB",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "THB",
+      "quoted": 437,
+      "completed": 341,
+      "conversion": 78,
+      "medianTimeSeconds": 280037,
+      "medianTimeFormatted": "3.2 days",
+      "avgTimeSeconds": 237227,
+      "demand": 3530,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Multi-day settlement: 3.2 days"
+      ],
+      "severity": 28
+    },
+    {
+      "id": "UK; EUR → GBP",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "EUR",
+      "payoutCurrency": "GBP",
+      "quoted": 468,
+      "completed": 340,
+      "conversion": 72.7,
+      "medianTimeSeconds": 5767,
+      "medianTimeFormatted": "1.6 hrs",
+      "avgTimeSeconds": 66498,
+      "demand": 8537,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 18
+    },
+    {
+      "id": "NZ; NZD → AUD",
+      "tbuId": "90",
+      "tbuRegion": "NZ",
+      "sendCurrency": "NZD",
+      "payoutCurrency": "AUD",
+      "quoted": 404,
+      "completed": 333,
+      "conversion": 82.4,
+      "medianTimeSeconds": 45716,
+      "medianTimeFormatted": "12.7 hrs",
+      "avgTimeSeconds": 72927,
+      "demand": 3354,
+      "trend": {
+        "wow": -4.9,
+        "mom": -11
+      },
+      "issues": [],
+      "severity": 8
+    },
+    {
+      "id": "EU; EUR → NAD",
+      "tbuId": "800",
+      "tbuRegion": "EU",
+      "sendCurrency": "EUR",
+      "payoutCurrency": "NAD",
+      "quoted": 372,
+      "completed": 312,
+      "conversion": 83.9,
+      "medianTimeSeconds": 1030,
+      "medianTimeFormatted": "17 min",
+      "avgTimeSeconds": 33812,
+      "demand": 951,
+      "trend": {
+        "wow": -14.9,
+        "mom": -17.2
+      },
+      "issues": [
+        "Declining WoW: -14.9%",
+        "Declining MoM: -17.2%"
+      ],
+      "severity": 40
+    },
+    {
+      "id": "EU; EUR → THB",
+      "tbuId": "800",
+      "tbuRegion": "EU",
+      "sendCurrency": "EUR",
+      "payoutCurrency": "THB",
+      "quoted": 388,
+      "completed": 300,
+      "conversion": 77.3,
+      "medianTimeSeconds": 2961,
+      "medianTimeFormatted": "49 min",
+      "avgTimeSeconds": 40000,
+      "demand": 3991,
+      "trend": {
+        "wow": -14.9,
+        "mom": -17.2
+      },
+      "issues": [
+        "Declining WoW: -14.9%",
+        "Declining MoM: -17.2%"
+      ],
+      "severity": 40
+    },
+    {
+      "id": "CA; CAD → EUR",
+      "tbuId": "700",
+      "tbuRegion": "CA",
+      "sendCurrency": "CAD",
+      "payoutCurrency": "EUR",
+      "quoted": 453,
+      "completed": 293,
+      "conversion": 64.7,
+      "medianTimeSeconds": 214723,
+      "medianTimeFormatted": "2.5 days",
+      "avgTimeSeconds": 222397,
+      "demand": 4141,
+      "trend": {
+        "wow": -5.3,
+        "mom": -1.7
+      },
+      "issues": [
+        "Below-average conversion: 64.7%",
+        "Multi-day settlement: 2.5 days"
+      ],
+      "severity": 48
+    },
+    {
+      "id": "UK; USD → GBP",
+      "tbuId": "42",
+      "tbuRegion": "UK",
+      "sendCurrency": "USD",
+      "payoutCurrency": "GBP",
+      "quoted": 376,
+      "completed": 251,
+      "conversion": 66.8,
+      "medianTimeSeconds": 19101,
+      "medianTimeFormatted": "5.3 hrs",
+      "avgTimeSeconds": 75335,
+      "demand": 10879,
+      "trend": {
+        "wow": -7.8,
+        "mom": -3.3
+      },
+      "issues": [],
+      "severity": 18
+    },
+    {
+      "id": "CA; CAD → XOF",
+      "tbuId": "700",
+      "tbuRegion": "CA",
+      "sendCurrency": "CAD",
+      "payoutCurrency": "XOF",
+      "quoted": 367,
+      "completed": 219,
+      "conversion": 59.7,
+      "medianTimeSeconds": 952,
+      "medianTimeFormatted": "16 min",
+      "avgTimeSeconds": 45265,
+      "demand": 1691,
+      "trend": {
+        "wow": -5.3,
+        "mom": -1.7
+      },
+      "issues": [
+        "Below-average conversion: 59.7%"
+      ],
+      "severity": 33
+    },
+    {
+      "id": "US; USD → AUD",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "AUD",
+      "quoted": 375,
+      "completed": 204,
+      "conversion": 54.4,
+      "medianTimeSeconds": 335075,
+      "medianTimeFormatted": "3.9 days",
+      "avgTimeSeconds": 297197,
+      "demand": 10700,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Below-average conversion: 54.4%",
+        "Multi-day settlement: 3.9 days"
+      ],
+      "severity": 53
+    },
+    {
+      "id": "EU; USD → EUR",
+      "tbuId": "800",
+      "tbuRegion": "EU",
+      "sendCurrency": "USD",
+      "payoutCurrency": "EUR",
+      "quoted": 401,
+      "completed": 104,
+      "conversion": 25.9,
+      "medianTimeSeconds": 55839,
+      "medianTimeFormatted": "15.5 hrs",
+      "avgTimeSeconds": 92937,
+      "demand": 27968,
+      "trend": {
+        "wow": -14.9,
+        "mom": -17.2
+      },
+      "issues": [
+        "Low conversion: 25.9%",
+        "Declining WoW: -14.9%",
+        "Declining MoM: -17.2%"
+      ],
+      "severity": 75
+    },
+    {
+      "id": "US; USD → NGN",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "NGN",
+      "quoted": 381,
+      "completed": 48,
+      "conversion": 12.6,
+      "medianTimeSeconds": 1343,
+      "medianTimeFormatted": "22 min",
+      "avgTimeSeconds": 104425,
+      "demand": 2897,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Very low conversion: 12.6%"
+      ],
+      "severity": 53
+    },
+    {
+      "id": "US; USD → DOP",
+      "tbuId": "60",
+      "tbuRegion": "US",
+      "sendCurrency": "USD",
+      "payoutCurrency": "DOP",
+      "quoted": 392,
+      "completed": 45,
+      "conversion": 11.5,
+      "medianTimeSeconds": 1116,
+      "medianTimeFormatted": "19 min",
+      "avgTimeSeconds": 91953,
+      "demand": 1608,
+      "trend": {
+        "wow": -9.6,
+        "mom": 4
+      },
+      "issues": [
+        "Very low conversion: 11.5%"
+      ],
+      "severity": 53
+    },
+    {
+      "id": "(none); AUD → USD",
+      "tbuId": "(none)",
+      "tbuRegion": "(none)",
+      "sendCurrency": "AUD",
+      "payoutCurrency": "USD",
+      "quoted": 605,
+      "completed": 0,
+      "conversion": 0,
+      "medianTimeSeconds": 0,
+      "medianTimeFormatted": "N/A",
+      "avgTimeSeconds": 0,
+      "demand": 8680,
+      "trend": {
+        "wow": 0,
+        "mom": 0
+      },
+      "issues": [
+        "Broken: No TBU set (anonymous/unregistered users)"
+      ],
+      "severity": 45
+    },
+    {
+      "id": "(none); GBP → EUR",
+      "tbuId": "(none)",
+      "tbuRegion": "(none)",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "EUR",
+      "quoted": 550,
+      "completed": 0,
+      "conversion": 0,
+      "medianTimeSeconds": 0,
+      "medianTimeFormatted": "N/A",
+      "avgTimeSeconds": 0,
+      "demand": 36622,
+      "trend": {
+        "wow": 0,
+        "mom": 0
+      },
+      "issues": [
+        "Broken: No TBU set (anonymous/unregistered users)"
+      ],
+      "severity": 45
+    },
+    {
+      "id": "(none); GBP → USD",
+      "tbuId": "(none)",
+      "tbuRegion": "(none)",
+      "sendCurrency": "GBP",
+      "payoutCurrency": "USD",
+      "quoted": 518,
+      "completed": 0,
+      "conversion": 0,
+      "medianTimeSeconds": 0,
+      "medianTimeFormatted": "N/A",
+      "avgTimeSeconds": 0,
+      "demand": 13324,
+      "trend": {
+        "wow": 0,
+        "mom": 0
+      },
+      "issues": [
+        "Broken: No TBU set (anonymous/unregistered users)"
+      ],
+      "severity": 45
+    }
+  ],
+  "mobileWebHealthCheck": {
+    "generated": "2026-03-25",
+    "period": "Last 30 Days",
+    "dataSource": "Amplitude Project 295336 — validated via query_dataset + query_chart",
+    "overview": {
+      "totalUsers": 8903,
+      "totalTransactions": 2578,
+      "shareOfWebTraffic": "25%",
+      "shareOfAllTransactions": "17%",
+      "avgSessionDuration": "4m 12s",
+      "bounceRate": "48%",
+      "note": "Mobile web = platform=Web, device NOT IN (Windows, Mac, Linux, tablets). Phone-only mobile browser sessions on galileo-site."
+    },
+    "funnelPerformance": {
+      "sendMoney": {
+        "mobileWeb": {
+          "quoteAccessed": 8903,
+          "quoteCreated": 7880,
+          "quoteConfirmed": 5458,
+          "paymentMethodSelected": 3369,
+          "transactionSummaryConfirmed": 3132,
+          "transactionCreated": 2578
+        },
+        "desktop": {
+          "quoteAccessed": 27611,
+          "quoteCreated": 21094,
+          "quoteConfirmed": 16433,
+          "paymentMethodSelected": 13515,
+          "transactionSummaryConfirmed": 13071,
+          "transactionCreated": 12355
+        },
+        "overallConversion": "29.0%",
+        "desktopConversion": "44.7%",
+        "gap": "-15.7pp",
+        "note": "Mobile web converts at 28.7% vs desktop 44.7% end-to-end. Same codebase (galileo-site), same login requirement. The gap is pure UX friction.",
+        "stepDropoffs": [
+          {
+            "from": "Quote Accessed",
+            "to": "Quote Created",
+            "rate": "88.5%",
+            "webRate": "76.4%",
+            "gap": "+12.1pp",
+            "diagnosis": "Mobile web actually outperforms here — smaller audience = higher intent users",
+            "severity": "ok"
+          },
+          {
+            "from": "Quote Created",
+            "to": "Quote Confirmed",
+            "rate": "69.3%",
+            "webRate": "77.9%",
+            "gap": "-8.6pp",
+            "diagnosis": "Quote comparison harder on small screens. Fee/rate presentation needs mobile optimization.",
+            "severity": "medium",
+            "usersLost": 2422
+          },
+          {
+            "from": "Quote Confirmed",
+            "to": "Payment Method Selected",
+            "rate": "61.7%",
+            "webRate": "82.2%",
+            "gap": "-20.5pp",
+            "diagnosis": "BIGGEST GAP. 2,093 users abandon between confirming quote and selecting payment. Recipient creation (38.6% completion), KYC prompts, and payment method UI cause massive friction.",
+            "severity": "critical",
+            "usersLost": 2089
+          },
+          {
+            "from": "Payment Method Selected",
+            "to": "Txn Summary Confirmed",
+            "rate": "93.0%",
+            "webRate": "96.7%",
+            "gap": "-3.7pp",
+            "diagnosis": "Minor gap. Most users who select payment proceed to summary.",
+            "severity": "low",
+            "usersLost": 237
+          },
+          {
+            "from": "Txn Summary Confirmed",
+            "to": "Transaction Created",
+            "rate": "82.3%",
+            "webRate": "94.5%",
+            "gap": "-12.2pp",
+            "diagnosis": "552 users confirm summary but transaction never creates. 3DS redirect failures, open banking redirect issues, and session timeouts on mobile.",
+            "severity": "critical",
+            "usersLost": 554
+          }
+        ]
+      },
+      "recipientCreation": {
+        "mobileWeb": {
+          "started": 3638,
+          "infoAdded": 2251,
+          "bankDetailsAdded": 1503,
+          "created": 1413
+        },
+        "desktop": {
+          "started": 7357,
+          "infoAdded": 5373,
+          "bankDetailsAdded": 4296,
+          "created": 4135
+        },
+        "overallConversion": "38.8%",
+        "desktopConversion": "56.2%",
+        "gap": "-17.4pp",
+        "diagnosis": "Recipient creation is a major blocker on mobile web. 61.4% of users drop between Started and Info Added (vs 73.1% on desktop). Bank details entry on mobile is especially painful — form fields, IBAN validation, country-specific formats."
+      },
+      "cardPayment": {
+        "mobileWeb": {
+          "authStarted": 1333,
+          "paymentAttempted": 455,
+          "paymentSuccessful": 346
+        },
+        "desktop": {
+          "authStarted": 4863,
+          "paymentAttempted": 1776,
+          "paymentSuccessful": 1458
+        },
+        "overallConversion": "26.0%",
+        "desktopConversion": "30.0%",
+        "gap": "-4.0pp",
+        "diagnosis": "Card auth → payment attempted is the main drop (34.5% MW vs 36.9% desktop). 3DS popup/redirect failures on mobile browsers are the primary cause.",
+        "note": "Card Auth Failed: 243 events on MW (all with empty error property — error tracking is broken)"
+      },
+      "biometricVerification": {
+        "mobileWeb": {
+          "started": 374,
+          "submitted": 236,
+          "completed": 236
+        },
+        "desktop": {
+          "started": 837,
+          "submitted": 655,
+          "completed": 655
+        },
+        "overallConversion": "63.1%",
+        "desktopConversion": "78.3%",
+        "gap": "-15.2pp",
+        "diagnosis": "ID verification via Veriff/Onfido completes 15pp less on mobile web. Document capture and selfie in mobile browsers is significantly worse than desktop webcams. 138 users start but never submit."
+      },
+      "login": {
+        "mobileWeb": {
+          "accessed": 36672,
+          "started": 17419,
+          "completed": 119
+        },
+        "desktop": {
+          "accessed": 67958,
+          "started": 42334,
+          "completed": 820
+        },
+        "accessedToStarted": "47.5%",
+        "desktopAccessedToStarted": "62.3%",
+        "gap": "-14.8pp",
+        "diagnosis": "19,253 mobile users see the login page but never attempt login. Password entry friction on mobile (no autofill, small keyboard), plus Login Completed event has very low counts on both platforms — likely a tracking issue.",
+        "trackingIssue": true,
+        "trackingNote": "Login Completed: 119 MW, 820 desktop — way too low. Either Login Completed fires under different conditions or is partially broken."
+      },
+      "registration": {
+        "mobileWeb": {
+          "started": 343,
+          "countrySelected": 7,
+          "profileCreated": 3,
+          "completed": 0
+        },
+        "desktop": {
+          "started": 375,
+          "countrySelected": 19,
+          "profileCreated": 13,
+          "completed": 0
+        },
+        "overallConversion": "0%",
+        "desktopConversion": "0%",
+        "gap": "N/A",
+        "diagnosis": "TRACKING BROKEN. 0% completion on both platforms. Account Creation Complete event likely has wrong name or is not firing. But progression is extremely low — only 2% of MW starters even reach Country Selection.",
+        "trackingIssue": true
+      },
+      "errorRecovery": {
+        "recoveryRate": "12.5%",
+        "webRecoveryRate": "41.3%",
+        "gap": "-28.8pp",
+        "diagnosis": "CRITICAL. Mobile web error recovery is abysmal. When a payment fails, only 12.5% retry vs 41.3% on desktop. Error recovery CTA is buried below the fold on mobile screens."
+      }
+    },
+    "errorProfile": {
+      "loginFailed": {
+        "mobileWeb": 11117,
+        "desktop": 15418,
+        "mobileWebRate": "30.3%",
+        "desktopRate": "22.7%",
+        "gap": "+7.6pp",
+        "note": "Login failure rate 7.6pp higher on mobile web. Password entry on mobile keyboards is error-prone."
+      },
+      "cardAuthFailed": {
+        "mobileWeb": 243,
+        "desktop": "N/A",
+        "note": "All 243 events have empty error property — error tracking is broken.",
+        "trackingIssue": true
+      },
+      "biometricAbandoned": {
+        "mobileWeb": 64,
+        "desktop": 53,
+        "note": "Despite lower volume, MW has proportionally higher abandon rate during biometric verification"
+      }
+    },
+    "byCountry": {
+      "note": "Mobile web conversion (QA → TC) varies dramatically by sender country. US is the worst major market at 24.8%.",
+      "countries": [
+        {
+          "country": "United States",
+          "mwUsers": 2869,
+          "mwConversion": 24.8,
+          "transactions": 712,
+          "issue": "Worst major market. US requires Plaid bank linking which has friction on mobile."
+        },
+        {
+          "country": "United Kingdom",
+          "mwUsers": 1835,
+          "mwConversion": 46.6,
+          "transactions": 856,
+          "issue": "Best performing market on MW. Open banking flow is well-optimized."
+        },
+        {
+          "country": "Australia",
+          "mwUsers": 620,
+          "mwConversion": 48.1,
+          "transactions": 298,
+          "issue": "Strong performance."
+        },
+        {
+          "country": "France",
+          "mwUsers": 579,
+          "mwConversion": 34.4,
+          "transactions": 199,
+          "issue": "Below average. SEPA payment friction."
+        },
+        {
+          "country": "Canada",
+          "mwUsers": 518,
+          "mwConversion": 33.2,
+          "transactions": 172,
+          "issue": "Plaid bank linking issues similar to US."
+        },
+        {
+          "country": "Germany",
+          "mwUsers": 302,
+          "mwConversion": 20.5,
+          "transactions": 62,
+          "issue": "Very poor conversion. SEPA + KYC friction on mobile."
+        },
+        {
+          "country": "India",
+          "mwUsers": 213,
+          "mwConversion": 31,
+          "transactions": 66,
+          "issue": ""
+        },
+        {
+          "country": "Spain",
+          "mwUsers": 203,
+          "mwConversion": 22.7,
+          "transactions": 46,
+          "issue": "EU markets generally underperform on mobile web."
+        },
+        {
+          "country": "New Zealand",
+          "mwUsers": 195,
+          "mwConversion": 46.7,
+          "transactions": 91,
+          "issue": "Strong. Similar to AU/UK."
+        },
+        {
+          "country": "Ireland",
+          "mwUsers": 120,
+          "mwConversion": 29.2,
+          "transactions": 35,
+          "issue": ""
+        },
+        {
+          "country": "Nigeria",
+          "mwUsers": 111,
+          "mwConversion": 8.1,
+          "transactions": 9,
+          "issue": "WORST country at 8.1%. Likely KYC + payment method barriers on mobile."
+        },
+        {
+          "country": "Netherlands",
+          "mwUsers": 108,
+          "mwConversion": 17.6,
+          "transactions": 19,
+          "issue": "iDEAL payment redirect issues on mobile?"
+        },
+        {
+          "country": "Italy",
+          "mwUsers": 90,
+          "mwConversion": 21.1,
+          "transactions": 19,
+          "issue": ""
+        },
+        {
+          "country": "Belgium",
+          "mwUsers": 74,
+          "mwConversion": 28.4,
+          "transactions": 21,
+          "issue": ""
+        },
+        {
+          "country": "Mexico",
+          "mwUsers": 74,
+          "mwConversion": 20.3,
+          "transactions": 15,
+          "issue": ""
+        }
+      ]
+    },
+    "platformSpecificIssues": [
+      {
+        "id": "MW-001",
+        "severity": "critical",
+        "title": "Quote Confirmed → Payment Method Selection: 20.7pp gap",
+        "description": "2,093 mobile web users/month confirm a quote but never select a payment method. Root cause: recipient creation (38.6% completion on MW vs 56.5% desktop) and KYC prompts.",
+        "impact": "~1,000 lost transactions/month if brought to desktop parity",
+        "category": "funnel-gap"
+      },
+      {
+        "id": "MW-002",
+        "severity": "critical",
+        "title": "Transaction Summary → Transaction Created: 12.3pp gap",
+        "description": "552 mobile web users/month confirm summary but transaction never creates. 3DS redirect failures, open banking redirect issues, session timeouts.",
+        "impact": "~400 lost transactions/month",
+        "category": "funnel-gap"
+      },
+      {
+        "id": "MW-003",
+        "severity": "critical",
+        "title": "Recipient Creation: 17.9pp gap (38.6% vs 56.5%)",
+        "description": "Mobile web recipient creation converts at 38.6% vs 56.5% on desktop. Bank details forms with IBAN, routing numbers are painful on mobile.",
+        "impact": "~1,100 users blocked from transacting",
+        "category": "funnel-gap"
+      },
+      {
+        "id": "MW-004",
+        "severity": "critical",
+        "title": "Error Recovery: 12.5% vs 41.3% desktop (-28.8pp)",
+        "description": "When payment fails on mobile web, only 12.5% retry vs 41.3% on desktop. Error recovery CTA is below the fold.",
+        "impact": "~500 recoverable transactions lost/month",
+        "category": "error-recovery"
+      },
+      {
+        "id": "MW-005",
+        "severity": "high",
+        "title": "Login Page Bounce: 14.8pp gap (47.5% vs 62.3%)",
+        "description": "19,253 mobile web users see login page but never attempt login.",
+        "impact": "~19,253 abandoned sessions/month at login gate",
+        "category": "funnel-gap"
+      },
+      {
+        "id": "MW-006",
+        "severity": "high",
+        "title": "Login Failure Rate: 30.3% vs 22.7% (+7.6pp)",
+        "description": "11,117 unique mobile web users fail login per month. Mobile keyboards increase password typo rates.",
+        "impact": "11,117 failed login users/month",
+        "category": "error-rate"
+      },
+      {
+        "id": "MW-007",
+        "severity": "high",
+        "title": "3DS Card Auth Failures on Mobile",
+        "description": "Card payment funnel converts at 26.1% on MW vs 30.3% on desktop. Safari blocks popups, Chrome redirect handling loses session.",
+        "impact": "~200 lost card transactions/month",
+        "category": "payment-failure"
+      },
+      {
+        "id": "MW-008",
+        "severity": "high",
+        "title": "US Market: Worst Mobile Web Conversion (24.8%)",
+        "description": "US mobile web converts at only 24.8%. Plaid bank linking + complex recipient forms create friction.",
+        "impact": "US is largest sender market — small improvements drive significant revenue",
+        "category": "geo-specific"
+      },
+      {
+        "id": "MW-009",
+        "severity": "medium",
+        "title": "Card Auth Failed: Error Property Always Empty",
+        "description": "All 243 Card Authorisation Failed events on MW have empty error property. Cannot diagnose failures.",
+        "category": "tracking"
+      },
+      {
+        "id": "MW-010",
+        "severity": "medium",
+        "title": "Login Completed Event: Very Low Counts (Tracking Bug)",
+        "description": "Login Completed shows only 119 on MW and 820 on desktop. Implies 0.68% success rate — clearly a tracking issue.",
+        "category": "tracking"
+      },
+      {
+        "id": "MW-011",
+        "severity": "medium",
+        "title": "Registration Funnel: 0% Completion (Tracking Bug)",
+        "description": "0 completions on both platforms. Account Creation Complete event is broken.",
+        "category": "tracking"
+      },
+      {
+        "id": "MW-012",
+        "severity": "medium",
+        "title": "Nigeria: 8.1% Mobile Web Conversion",
+        "description": "Only 9 transactions from 111 MW users. KYC + limited payment options.",
+        "category": "geo-specific"
+      },
+      {
+        "id": "MW-013",
+        "severity": "medium",
+        "title": "Germany: 20.5% Mobile Web Conversion",
+        "description": "SEPA payment flows + stricter KYC create friction on mobile.",
+        "category": "geo-specific"
+      },
+      {
+        "id": "MW-014",
+        "severity": "low",
+        "title": "EU Markets Underperform: Spain 22.7%, Netherlands 17.6%, Italy 21.1%",
+        "description": "EU countries consistently underperform on mobile web.",
+        "category": "geo-specific"
+      }
+    ],
+    "recommendations": [
+      {
+        "priority": 1,
+        "action": "Fix Quote Confirmed → Payment Method gap: mobile-optimize recipient creation + KYC",
+        "expectedImpact": "+1,000 transactions/month",
+        "effort": "High (3-4 sprints)",
+        "team": "Product + Engineering"
+      },
+      {
+        "priority": 2,
+        "action": "Make error recovery CTA sticky/prominent on mobile error screens",
+        "expectedImpact": "+500 recovered transactions/month",
+        "effort": "Low (< 1 sprint)",
+        "team": "Product"
+      },
+      {
+        "priority": 3,
+        "action": "Fix 3DS redirect/popup for mobile browsers (use inline 3DS2)",
+        "expectedImpact": "+400 transactions/month + 200 card payments",
+        "effort": "Medium (2-3 sprints)",
+        "team": "Payments"
+      },
+      {
+        "priority": 4,
+        "action": "Mobile-optimize recipient bank details forms (IBAN scanner, progressive disclosure)",
+        "expectedImpact": "+1,100 recipient completions/month",
+        "effort": "Medium (2 sprints)",
+        "team": "Product + Engineering"
+      },
+      {
+        "priority": 5,
+        "action": "Fix login page mobile UX (autofill, passkeys, social login)",
+        "expectedImpact": "Unlock 19K+ users/month bouncing from login",
+        "effort": "Medium (1-2 sprints)",
+        "team": "Identity"
+      },
+      {
+        "priority": 6,
+        "action": "Fix tracking: Card Auth Failed error, Login Completed, Registration completion",
+        "expectedImpact": "Enables diagnosis of failures and funnel analysis",
+        "effort": "Low (1 sprint)",
+        "team": "Analytics + Engineering"
+      },
+      {
+        "priority": 7,
+        "action": "US market: Plaid mobile browser testing + simplified recipient forms",
+        "expectedImpact": "Improve US from 24.8% — largest sender market",
+        "effort": "Medium (2 sprints)",
+        "team": "Payments + Product"
+      }
+    ]
+  }
+}

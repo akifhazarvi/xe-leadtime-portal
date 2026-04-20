@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipient First Experience — Dashboard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; white-space: nowrap; }
+    .header h1 span { color: #58a6ff; }
+    .header-stats { display: flex; gap: 12px; font-size: 13px; color: #8b949e; margin-left: auto; }
+    .stat-badge { background: #21262d; padding: 4px 10px; border-radius: 12px; }
+    .stat-badge.green { color: #3fb950; border: 1px solid #3fb95033; }
+    .stat-badge.blue { color: #58a6ff; border: 1px solid #58a6ff33; }
+    .stat-badge.yellow { color: #d29922; border: 1px solid #d2992233; }
+    .stat-badge.red { color: #f85149; border: 1px solid #f8514933; }
+    .stat-badge.purple { color: #bc8cff; border: 1px solid #bc8cff33; }
+
+    .nav { background: #161b22; border-bottom: 1px solid #30363d; padding: 0 24px; }
+    .nav-inner { max-width: 1400px; margin: 0 auto; display: flex; gap: 0; }
+    .nav a { display: block; padding: 10px 16px; font-size: 13px; color: #8b949e; text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.15s; }
+    .nav a:hover { color: #e1e4e8; }
+    .nav a.active { color: #58a6ff; border-bottom-color: #58a6ff; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px 24px; }
+
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+    .card-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .card-value { font-size: 28px; font-weight: 700; }
+    .card-value.green { color: #3fb950; }
+    .card-value.blue { color: #58a6ff; }
+    .card-value.yellow { color: #d29922; }
+    .card-value.red { color: #f85149; }
+    .card-value.purple { color: #bc8cff; }
+    .card-sub { font-size: 12px; color: #8b949e; margin-top: 4px; }
+
+    .section { margin-bottom: 32px; }
+    .section-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .section-title .badge { font-size: 11px; background: #21262d; padding: 2px 8px; border-radius: 10px; color: #8b949e; font-weight: 400; }
+
+    .funnel-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+    .funnel-header { padding: 16px 20px; border-bottom: 1px solid #30363d; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+    .funnel-header:hover { background: #1c2128; }
+    .funnel-header h3 { font-size: 14px; font-weight: 600; }
+    .funnel-header .conv { font-size: 13px; font-weight: 700; }
+    .funnel-header .conv.green { color: #3fb950; }
+    .funnel-header .conv.blue { color: #58a6ff; }
+    .funnel-header .conv.yellow { color: #d29922; }
+    .funnel-body { padding: 20px; display: none; }
+    .funnel-body.open { display: block; }
+
+    .funnel-steps { display: flex; flex-direction: column; gap: 0; }
+    .step { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #21262d; }
+    .step:last-child { border-bottom: none; }
+    .step-num { width: 24px; height: 24px; background: #21262d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #8b949e; flex-shrink: 0; }
+    .step-name { font-size: 13px; font-weight: 500; flex: 1; }
+    .step-bar-wrap { width: 200px; flex-shrink: 0; }
+    .step-bar { height: 8px; border-radius: 4px; transition: width 0.6s ease; }
+    .step-bar.blue { background: #58a6ff; }
+    .step-bar.green { background: #3fb950; }
+    .step-bar.purple { background: #bc8cff; }
+    .step-rate { font-size: 12px; color: #8b949e; width: 48px; text-align: right; flex-shrink: 0; }
+    .step-drop { font-size: 11px; color: #f85149; width: 60px; text-align: right; flex-shrink: 0; }
+    .step-note { font-size: 11px; color: #484f58; margin-left: 36px; margin-top: -6px; margin-bottom: 4px; }
+
+    .amplitude-link { display: inline-flex; align-items: center; gap: 6px; color: #58a6ff; text-decoration: none; font-size: 12px; padding: 4px 10px; background: #58a6ff11; border: 1px solid #58a6ff33; border-radius: 6px; margin-top: 12px; }
+    .amplitude-link:hover { background: #58a6ff22; }
+
+    .code-ref { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: #bc8cff; background: #bc8cff11; padding: 2px 8px; border-radius: 4px; font-family: 'SF Mono', 'Fira Code', monospace; }
+
+    .issue-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 12px; border-left: 3px solid; }
+    .issue-card.high { border-left-color: #f85149; }
+    .issue-card.medium { border-left-color: #d29922; }
+    .issue-card.low { border-left-color: #58a6ff; }
+    .issue-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .issue-card p { font-size: 12px; color: #8b949e; line-height: 1.5; }
+    .issue-severity { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 6px; border-radius: 4px; }
+    .issue-severity.high { background: #f8514922; color: #f85149; }
+    .issue-severity.medium { background: #d2992222; color: #d29922; }
+    .issue-severity.low { background: #58a6ff22; color: #58a6ff; }
+
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: #30363d; }
+    .timeline-item { position: relative; margin-bottom: 16px; }
+    .timeline-item::before { content: ''; position: absolute; left: -20px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: #58a6ff; border: 2px solid #0f1117; }
+    .timeline-item.milestone::before { background: #3fb950; width: 12px; height: 12px; left: -21px; top: 5px; }
+    .timeline-date { font-size: 11px; color: #8b949e; }
+    .timeline-title { font-size: 13px; font-weight: 500; }
+    .timeline-desc { font-size: 12px; color: #8b949e; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { background: #1c2128; padding: 10px 12px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #8b949e; white-space: nowrap; }
+    tbody tr { border-bottom: 1px solid #21262d; }
+    tbody tr:hover { background: #161b2266; }
+    tbody td { padding: 8px 12px; }
+
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+    .pill-green { background: #3fb95022; color: #3fb950; }
+    .pill-blue { background: #58a6ff22; color: #58a6ff; }
+    .pill-yellow { background: #d2992222; color: #d29922; }
+    .pill-red { background: #f8514922; color: #f85149; }
+    .pill-purple { background: #bc8cff22; color: #bc8cff; }
+
+    .tab-group { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 1px solid #30363d; }
+    .tab { padding: 8px 16px; font-size: 13px; color: #8b949e; cursor: pointer; border-bottom: 2px solid transparent; }
+    .tab:hover { color: #e1e4e8; }
+    .tab.active { color: #58a6ff; border-bottom-color: #58a6ff; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .comparison-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #21262d; }
+    .comparison-label { width: 160px; font-size: 13px; color: #8b949e; flex-shrink: 0; }
+    .comparison-bars { flex: 1; display: flex; gap: 8px; align-items: center; }
+    .comparison-bar { height: 24px; border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: 11px; font-weight: 600; color: white; min-width: 40px; }
+
+    .empty-state { text-align: center; padding: 48px 24px; color: #484f58; }
+    .empty-state h3 { font-size: 16px; margin-bottom: 8px; color: #8b949e; }
+    .empty-state p { font-size: 13px; }
+
+    .back-link { display: inline-block; margin-bottom: 0; color: #58a6ff; text-decoration: none; font-size: 13px; }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="back-link">&larr; Portal</a>
+      <h1>Recipient First <span>Experience Dashboard</span></h1>
+      <div class="header-stats">
+        <span class="stat-badge green">41.8% conversion</span>
+        <span class="stat-badge blue">App Native Only (iOS + Android)</span>
+        <span class="stat-badge purple">Launched Feb 2026</span>
+        <span class="stat-badge yellow">Feature-flagged</span>
+        <span class="stat-badge" style="color:#8b949e;border:1px solid #30363d;">Web: Not released</span>
+        <span class="stat-badge" style="color:#8b949e;border:1px solid #30363d;">P2P: Not released</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <div class="nav-inner">
+      <a href="#overview" class="active" data-section="overview">Overview</a>
+      <a href="#funnels" data-section="funnels">Funnels</a>
+      <a href="#code" data-section="code">Code Architecture</a>
+      <a href="#timeline" data-section="timeline">Timeline</a>
+      <a href="#issues" data-section="issues">Issues & Gaps</a>
+      <a href="#amplitude" data-section="amplitude">Amplitude Queries</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- ===== OVERVIEW ===== -->
+    <div id="section-overview" class="section-page">
+      <div class="summary">
+        <div class="card">
+          <div class="card-label">End-to-End Conversion</div>
+          <div class="card-value green">41.8%</div>
+          <div class="card-sub">iOS + Android, 30-day window</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Top-of-Funnel Volume</div>
+          <div class="card-value blue">77,699</div>
+          <div class="card-sub">Recipients Accessed / 30 days</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Transactions Created</div>
+          <div class="card-value green">32,458</div>
+          <div class="card-sub">From recipient-first path</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Best Step Conversion</div>
+          <div class="card-value blue">97%+</div>
+          <div class="card-sub">After Recipient Selected</div>
+        </div>
+        <a href="drop-analysis.html" class="card" style="text-decoration:none;color:inherit;cursor:pointer;border-color:#d29922;">
+          <div class="card-label">Biggest Drop</div>
+          <div class="card-value yellow">-25%</div>
+          <div class="card-sub">Recipients Accessed → Quote Created → Deep analysis</div>
+        </a>
+        <div class="card">
+          <div class="card-label">Platforms</div>
+          <div class="card-value purple">2</div>
+          <div class="card-sub">iOS + Android (App Native only)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Feature Flag</div>
+          <div class="card-value" style="font-size:14px;padding-top:8px;">sendMoneyFlowApp</div>
+          <div class="card-sub">Value: "recipient" = enabled</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">What Is Recipient First?</div>
+        <div class="card" style="padding:20px;line-height:1.7;font-size:14px;">
+          <p>The Recipient First flow flips the traditional send money journey. Instead of <strong>Quote → Recipient → Pay</strong>, users start from their <strong>saved recipient list</strong> and go <strong>Recipient → Quote → Pay</strong>.</p>
+          <br>
+          <p>It's the <strong>highest-converting funnel</strong> at <strong style="color:#3fb950;">41.8%</strong> because users who enter this flow are <strong>returning senders with previous orders</strong> — the recipient list only shows when <code style="color:#58a6ff;">getLastFetchedOrders()</code> returns results. Users with no order history skip straight to the quote page (Quote Created) and never see the recipient list.</p>
+          <br>
+          <p><strong>Entry points (App Native):</strong></p>
+          <ul style="margin-left:20px;margin-top:8px;color:#8b949e;">
+            <li><code style="color:#58a6ff;">recipientFirstHome</code> — Home page recent recipients (tap to send)</li>
+            <li><code style="color:#8b949e;">sendMoneyQuoteFirst</code> — Traditional quote-first (default/comparison)</li>
+          </ul>
+          <br>
+          <p style="font-size:12px;color:#484f58;"><strong>Not yet released:</strong> Web (galileo-site MT-55665 in development) and P2P (xe-apollo MT-60039 in development)</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Flow Comparison</div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-label" style="margin-bottom:12px;">Recipient First (New)</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-green">1</span> <span style="font-size:13px;">Recipients Accessed</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-green">2</span> <span style="font-size:13px;">Quote Created</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-green">3</span> <span style="font-size:13px;">Quote Confirmed</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-green">4</span> <span style="font-size:13px;">Recipient Selected</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-green">5</span> <span style="font-size:13px;">Reason for Transfer</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-green">6</span> <span style="font-size:13px;">Payment Method Selected</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-green">7</span> <span style="font-size:13px;">Transaction Summary Confirmed</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-green">8</span> <span style="font-size:13px;">Transaction Created</span></div>
+            </div>
+            <div style="margin-top:12px;font-size:12px;color:#3fb950;font-weight:600;">41.8% end-to-end conversion</div>
+          </div>
+          <div class="card">
+            <div class="card-label" style="margin-bottom:12px;">Quote First (Traditional)</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-blue">1</span> <span style="font-size:13px;">Quote Accessed</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-blue">2</span> <span style="font-size:13px;">Quote Created</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-blue">3</span> <span style="font-size:13px;">Quote Confirmed</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-blue">4</span> <span style="font-size:13px;">Recipient Selected / Created</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-blue">5</span> <span style="font-size:13px;">Payment Method Selected</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-blue">6</span> <span style="font-size:13px;">CVV Entered (card)</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-blue">7</span> <span style="font-size:13px;">Transaction Summary Confirmed</span></div>
+              <div style="color:#30363d;margin-left:12px;">↓</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span class="pill pill-blue">8</span> <span style="font-size:13px;">Transaction Created</span></div>
+            </div>
+            <div style="margin-top:12px;font-size:12px;color:#58a6ff;font-weight:600;">~0.4% end-to-end (includes anonymous)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FUNNELS ===== -->
+    <div id="section-funnels" class="section-page" style="display:none;">
+      <div class="section">
+        <div class="section-title">Funnel Analysis <span class="badge">7 funnels</span></div>
+
+        <!-- Funnel 1: Core -->
+        <div class="funnel-card">
+          <div class="funnel-header" onclick="toggleFunnel(this)">
+            <h3>1. Core Recipient First Funnel</h3>
+            <div><span class="conv green">41.8% E2E</span> &nbsp; <span class="pill pill-green">PRIMARY</span></div>
+          </div>
+          <div class="funnel-body open">
+            <div class="funnel-steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-name">Recipients Accessed</div>
+                <div class="step-bar-wrap"><div class="step-bar blue" style="width:100%"></div></div>
+                <div class="step-rate">77,699</div>
+                <div class="step-drop">—</div>
+              </div>
+              <div class="step-note">Only fires for users WITH saved recipients (has previous orders). No recipients = skip straight to Quote Created.</div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-name">Quote Created</div>
+                <div class="step-bar-wrap"><div class="step-bar blue" style="width:74.8%"></div></div>
+                <div class="step-rate">58,108</div>
+                <div class="step-drop">-25.2%</div>
+              </div>
+              <div class="step-note">Some users browse recipients without proceeding to quote.</div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-name">Quote Confirmed</div>
+                <div class="step-bar-wrap"><div class="step-bar blue" style="width:50.1%"></div></div>
+                <div class="step-rate">38,957</div>
+                <div class="step-drop">-33.0%</div>
+              </div>
+              <div class="step-note">Rate/fee review. Users who don't like the rate drop here.</div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-name">Recipient Selected</div>
+                <div class="step-bar-wrap"><div class="step-bar green" style="width:49.0%"></div></div>
+                <div class="step-rate">38,073</div>
+                <div class="step-drop">-2.3%</div>
+              </div>
+              <div class="step">
+                <div class="step-num">5</div>
+                <div class="step-name">Reason for Transfer</div>
+                <div class="step-bar-wrap"><div class="step-bar green" style="width:48.2%"></div></div>
+                <div class="step-rate">37,451</div>
+                <div class="step-drop">-1.6%</div>
+              </div>
+              <div class="step">
+                <div class="step-num">6</div>
+                <div class="step-name">Payment Method Selected</div>
+                <div class="step-bar-wrap"><div class="step-bar green" style="width:47.5%"></div></div>
+                <div class="step-rate">36,900</div>
+                <div class="step-drop">-1.5%</div>
+              </div>
+              <div class="step">
+                <div class="step-num">7</div>
+                <div class="step-name">Transaction Summary Confirmed</div>
+                <div class="step-bar-wrap"><div class="step-bar green" style="width:44.0%"></div></div>
+                <div class="step-rate">34,188</div>
+                <div class="step-drop">-7.4%</div>
+              </div>
+              <div class="step">
+                <div class="step-num">8</div>
+                <div class="step-name">Transaction Created</div>
+                <div class="step-bar-wrap"><div class="step-bar green" style="width:41.8%"></div></div>
+                <div class="step-rate">32,458</div>
+                <div class="step-drop">-5.1%</div>
+              </div>
+              <div class="step-note">Transaction submitted. Payment processing begins.</div>
+            </div>
+            <a href="https://app.amplitude.com/analytics/ria/chart/3oociujs" target="_blank" class="amplitude-link">Open in Amplitude &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Funnel 2: By Entry Point -->
+        <div class="funnel-card">
+          <div class="funnel-header" onclick="toggleFunnel(this)">
+            <h3>2. By Entry Point (flowName)</h3>
+            <div><span class="pill pill-purple">SEGMENT BY flowName</span></div>
+          </div>
+          <div class="funnel-body">
+            <p style="font-size:13px;color:#8b949e;margin-bottom:16px;">Split the core funnel by <code style="color:#bc8cff;">flowName</code> on Recipients Accessed to find which entry point converts best.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Entry Point</th>
+                  <th>flowName Value</th>
+                  <th>Platform</th>
+                  <th>Status</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Home page recent recipients</td>
+                  <td><code style="color:#3fb950;">recipientFirstHome</code></td>
+                  <td><span class="pill pill-blue">iOS / Android</span></td>
+                  <td><span class="pill pill-green">LIVE</span></td>
+                  <td>User taps recent recipient on home screen</td>
+                </tr>
+                <tr>
+                  <td>Recipient list ("see all")</td>
+                  <td><code style="color:#3fb950;">recipientFirstHome</code></td>
+                  <td><span class="pill pill-blue">iOS / Android</span></td>
+                  <td><span class="pill pill-green">LIVE</span></td>
+                  <td>User taps "see all" → selects recipient → send</td>
+                </tr>
+                <tr style="opacity:0.5;">
+                  <td>Recipients page (Web)</td>
+                  <td><code style="color:#8b949e;">recipientFirstRecipientsPage</code></td>
+                  <td><span class="pill pill-blue">Web</span></td>
+                  <td><span class="pill pill-yellow">NOT RELEASED</span></td>
+                  <td>Account → Recipients → Send Money (MT-55665)</td>
+                </tr>
+                <tr style="opacity:0.5;">
+                  <td>P2P recipients</td>
+                  <td><code style="color:#8b949e;">recipientFirstHome</code></td>
+                  <td><span class="pill pill-blue">iOS / Android</span></td>
+                  <td><span class="pill pill-yellow">NOT RELEASED</span></td>
+                  <td>Peer-to-peer send flow (MT-60039)</td>
+                </tr>
+                <tr>
+                  <td>Quote-first default</td>
+                  <td><code style="color:#8b949e;">sendMoneyQuoteFirst</code></td>
+                  <td><span class="pill pill-blue">All</span></td>
+                  <td><span class="pill pill-green">LIVE</span></td>
+                  <td>Traditional: Send Money → Quote → Recipient (comparison baseline)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Funnel 3: iOS vs Android -->
+        <div class="funnel-card">
+          <div class="funnel-header" onclick="toggleFunnel(this)">
+            <h3>3. iOS vs Android</h3>
+            <div><span class="pill pill-blue">PLATFORM SPLIT</span></div>
+          </div>
+          <div class="funnel-body">
+            <p style="font-size:13px;color:#8b949e;margin-bottom:16px;">Same funnel grouped by platform. Find where one drops off more than the other.</p>
+            <div class="comparison-row">
+              <div class="comparison-label">Recipients Accessed</div>
+              <div class="comparison-bars">
+                <div class="comparison-bar" style="background:#6b7280;width:50%;">iOS</div>
+                <div class="comparison-bar" style="background:#16a34a;width:50%;">Android</div>
+              </div>
+            </div>
+            <div class="comparison-row">
+              <div class="comparison-label">Quote Created</div>
+              <div class="comparison-bars">
+                <div class="comparison-bar" style="background:#6b7280;width:48%;">iOS 75%</div>
+                <div class="comparison-bar" style="background:#16a34a;width:46%;">Android 74%</div>
+              </div>
+            </div>
+            <div class="comparison-row">
+              <div class="comparison-label">Quote Confirmed</div>
+              <div class="comparison-bars">
+                <div class="comparison-bar" style="background:#6b7280;width:38%;">iOS 67%</div>
+                <div class="comparison-bar" style="background:#16a34a;width:35%;">Android 65%</div>
+              </div>
+            </div>
+            <div class="comparison-row">
+              <div class="comparison-label">Transaction Created</div>
+              <div class="comparison-bars">
+                <div class="comparison-bar" style="background:#6b7280;width:34%;">iOS ~43%</div>
+                <div class="comparison-bar" style="background:#16a34a;width:30%;">Android ~40%</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;font-size:12px;color:#8b949e;">
+              Note: Exact per-platform numbers need live Amplitude query. Bars are estimated from combined 41.8% average.
+            </div>
+          </div>
+        </div>
+
+        <!-- Funnel 4: Payment Method Path -->
+        <div class="funnel-card">
+          <div class="funnel-header" onclick="toggleFunnel(this)">
+            <h3>4. Payment Method Divergence</h3>
+            <div><span class="pill pill-yellow">POST-SELECTION</span></div>
+          </div>
+          <div class="funnel-body">
+            <p style="font-size:13px;color:#8b949e;margin-bottom:16px;">After Payment Method Selected, the flow splits by payment type. Each has different friction.</p>
+            <div class="grid-2">
+              <div class="card">
+                <div class="card-label">Card Payment Path</div>
+                <div style="font-size:13px;margin-top:8px;display:flex;flex-direction:column;gap:4px;">
+                  <div>Payment Method Selected</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div>CVV Entered</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div>Card Auth Started (3DS)</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div>Card Auth Completed</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div style="color:#3fb950;">Transaction Created</div>
+                </div>
+                <div style="margin-top:8px;font-size:11px;color:#d29922;">Key friction: 3DS challenge + CVV entry</div>
+              </div>
+              <div class="card">
+                <div class="card-label">Apple Pay Path (iOS only)</div>
+                <div style="font-size:13px;margin-top:8px;display:flex;flex-direction:column;gap:4px;">
+                  <div>Payment Method Selected</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div>Apple Pay Attempted</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div>Apple Pay Modal Success</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div style="color:#3fb950;">Transaction Created</div>
+                </div>
+                <div style="margin-top:8px;font-size:11px;color:#3fb950;">94% success rate — best path</div>
+              </div>
+              <div class="card">
+                <div class="card-label">Open Banking Path</div>
+                <div style="font-size:13px;margin-top:8px;display:flex;flex-direction:column;gap:4px;">
+                  <div>Payment Method Selected</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div>OB Payment Started</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div>OB Payment Completed</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div style="color:#3fb950;">Transaction Created</div>
+                </div>
+                <div style="margin-top:8px;font-size:11px;color:#58a6ff;">~60% success (bank redirect friction)</div>
+              </div>
+              <div class="card" style="opacity:0.5;">
+                <div class="card-label">P2P Path <span class="pill pill-yellow">NOT RELEASED</span></div>
+                <div style="font-size:13px;margin-top:8px;display:flex;flex-direction:column;gap:4px;">
+                  <div>Recipient clicked (P2P type)</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div>startPeerToPeerSendFlow()</div>
+                  <div style="color:#30363d;">↓</div>
+                  <div style="color:#484f58;">Separate P2P flow (MT-60039)</div>
+                </div>
+                <div style="margin-top:8px;font-size:11px;color:#484f58;">Not yet released — in development</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Funnel 5: Error Recovery -->
+        <div class="funnel-card">
+          <div class="funnel-header" onclick="toggleFunnel(this)">
+            <h3>5. Error Recovery in Recipient First</h3>
+            <div><span class="pill pill-red">RECOVERY</span></div>
+          </div>
+          <div class="funnel-body">
+            <p style="font-size:13px;color:#8b949e;margin-bottom:16px;">When payment fails within the recipient-first flow, how well do users recover?</p>
+            <div class="funnel-steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-name">Payment Failed</div>
+                <div class="step-bar-wrap"><div class="step-bar" style="width:100%;background:#f85149;"></div></div>
+                <div class="step-rate">100%</div>
+                <div class="step-drop">—</div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-name">Change Payment Method Triggered</div>
+                <div class="step-bar-wrap"><div class="step-bar" style="width:17%;background:#d29922;"></div></div>
+                <div class="step-rate">~17%</div>
+                <div class="step-drop">-83%</div>
+              </div>
+              <div class="step-note">Most users abandon instead of retrying. Mobile recovery is 10-12% vs web 41%.</div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-name">Payment Method Selected (new)</div>
+                <div class="step-bar-wrap"><div class="step-bar" style="width:14%;background:#d29922;"></div></div>
+                <div class="step-rate">~14%</div>
+                <div class="step-drop">-18%</div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-name">Transaction Created (retry)</div>
+                <div class="step-bar-wrap"><div class="step-bar" style="width:11%;background:#3fb950;"></div></div>
+                <div class="step-rate">~11%</div>
+                <div class="step-drop">-21%</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;padding:12px;background:#21262d;border-radius:6px;font-size:12px;">
+              <strong style="color:#f85149;">Opportunity:</strong> <span style="color:#8b949e;">Mobile error recovery (10-12%) is 4x worse than web (41%). Improving the mobile retry UX in the recipient-first flow could recapture 20-30% of failed payments.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Funnel 6: By Corridor -->
+        <div class="funnel-card">
+          <div class="funnel-header" onclick="toggleFunnel(this)">
+            <h3>6. By Corridor (Receiver Country)</h3>
+            <div><span class="pill pill-blue">GEOGRAPHY</span></div>
+          </div>
+          <div class="funnel-body">
+            <p style="font-size:13px;color:#8b949e;margin-bottom:16px;">Core funnel grouped by <code style="color:#bc8cff;">receiverCountry</code>. Requires Amplitude query with groupBy on Transaction Created properties.</p>
+            <div style="padding:12px;background:#21262d;border-radius:6px;font-size:12px;color:#8b949e;">
+              <strong>How to analyze:</strong> Run the core funnel query with <code style="color:#58a6ff;">groupBy: receiverCountry</code> on Quote Created to see which corridors convert best from recipient list. Top corridors (INR, EUR, MAD, USD, THB) should be benchmarked individually.
+            </div>
+          </div>
+        </div>
+
+        <!-- Funnel 7: New vs Returning -->
+        <div class="funnel-card">
+          <div class="funnel-header" onclick="toggleFunnel(this)">
+            <h3>7. New vs Returning Senders</h3>
+            <div><span class="pill pill-yellow">DATA QUALITY</span></div>
+          </div>
+          <div class="funnel-body">
+            <p style="font-size:13px;color:#8b949e;margin-bottom:16px;">Filter by <code style="color:#bc8cff;">isFirstTransaction=true</code> on Transaction Created. First-time senders should rarely appear in recipient-first (they have no saved recipients). If they do, it validates P2P flow or indicates data quality issues.</p>
+            <div style="padding:12px;background:#21262d;border-radius:6px;font-size:12px;color:#8b949e;">
+              <strong>Expected:</strong> >95% of recipient-first transactions should be from returning users. If first-time senders appear in significant numbers, investigate whether the P2P flow is creating new recipients inline.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CODE ARCHITECTURE ===== -->
+    <div id="section-code" class="section-page" style="display:none;">
+      <div class="section">
+        <div class="section-title">Code Architecture <span class="badge">2 codebases</span></div>
+
+        <div class="grid-2">
+          <!-- Mobile -->
+          <div class="card" style="padding:20px;">
+            <div style="font-size:14px;font-weight:600;margin-bottom:12px;color:#58a6ff;">xe-apollo (Mobile)</div>
+            <table>
+              <thead>
+                <tr><th>Component</th><th>File</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Flow state</td>
+                  <td><span class="code-ref">resource.ts:2214-2220</span></td>
+                </tr>
+                <tr>
+                  <td>Home entry point</td>
+                  <td><span class="code-ref">home.ts:895-923</span></td>
+                </tr>
+                <tr>
+                  <td>Feature flag check</td>
+                  <td><span class="code-ref">customer.ts:932-939</span></td>
+                </tr>
+                <tr>
+                  <td>Quote routing</td>
+                  <td><span class="code-ref">order.ts:985-1050</span></td>
+                </tr>
+                <tr>
+                  <td>Quote page receiver</td>
+                  <td><span class="code-ref">check-prices-xe.ts:333</span></td>
+                </tr>
+                <tr>
+                  <td>Flow execution</td>
+                  <td><span class="code-ref">send-flow.ts:53-176</span></td>
+                </tr>
+                <tr>
+                  <td>P2P branch</td>
+                  <td><span class="code-ref">home.ts:909-910</span></td>
+                </tr>
+                <tr>
+                  <td>Analytics injection</td>
+                  <td><span class="code-ref">segment.ts:378-380</span></td>
+                </tr>
+                <tr>
+                  <td>Recipient list page</td>
+                  <td><span class="code-ref">recipient-list-xe.ts</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top:12px;padding:12px;background:#21262d;border-radius:6px;font-size:12px;">
+              <strong>Feature toggle:</strong> <code style="color:#3fb950;">featureToggle.sendMoneyFlowApp === 'recipient'</code><br>
+              <strong>Key flag:</strong> <code style="color:#3fb950;">sendFromRecipient: true</code> — skips recipient selection page
+            </div>
+          </div>
+
+          <!-- Web -->
+          <div class="card" style="padding:20px;opacity:0.6;">
+            <div style="font-size:14px;font-weight:600;margin-bottom:12px;color:#3fb950;">galileo-site (Web) <span class="pill pill-yellow">NOT RELEASED</span></div>
+            <table>
+              <thead>
+                <tr><th>Component</th><th>File</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Flow constants</td>
+                  <td><span class="code-ref">sendMoneyFlow.const.ts:165-172</span></td>
+                </tr>
+                <tr>
+                  <td>Home recipients widget</td>
+                  <td><span class="code-ref">HomeRecipients.vue</span></td>
+                </tr>
+                <tr>
+                  <td>Recipients page</td>
+                  <td><span class="code-ref">Recipients.vue:228-245</span></td>
+                </tr>
+                <tr>
+                  <td>Recipients new page</td>
+                  <td><span class="code-ref">RecipientsNew.vue</span></td>
+                </tr>
+                <tr>
+                  <td>Send money default</td>
+                  <td><span class="code-ref">SendMoney.vue:144-147</span></td>
+                </tr>
+                <tr>
+                  <td>Home page (old)</td>
+                  <td><span class="code-ref">HomeScreen.vue:86-91</span></td>
+                </tr>
+                <tr>
+                  <td>Home page (new)</td>
+                  <td><span class="code-ref">HomeNew.vue</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top:12px;padding:12px;background:#21262d;border-radius:6px;font-size:12px;">
+              <strong>Flow values:</strong><br>
+              <code style="color:#3fb950;">RECIPIENT_FIRST_HOME</code> = 'recipientFirstHome'<br>
+              <code style="color:#3fb950;">RECIPIENT_FIRST_RECIPIENTS_PAGE</code> = 'recipientFirstRecipientsPage'<br>
+              <code style="color:#8b949e;">SEND_MONEY_QUOTE_FIRST</code> = 'sendMoneyQuoteFirst'
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:20px;margin-top:16px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px;">Flow Routing Logic (Mobile)</div>
+          <pre style="background:#0d1117;padding:16px;border-radius:6px;font-size:12px;overflow-x:auto;color:#e1e4e8;line-height:1.6;font-family:'SF Mono','Fira Code',monospace;">
+<span style="color:#8b949e;">// home.ts:895 — User clicks recent recipient on home page</span>
+<span style="color:#ff7b72;">async</span> <span style="color:#d2a8ff;">recipientClicked</span>(recipient: IRecipient) {
+  <span style="color:#ff7b72;">if</span> (AuthProvider.isLoggedIn()) {
+    <span style="color:#8b949e;">// Set flow name for analytics</span>
+    <span style="color:#ff7b72;">this</span>.resourceProvider.setSendMoneyFlow(<span style="color:#a5d6ff;">'recipientFirstHome'</span>);
+
+    <span style="color:#8b949e;">// Determine delivery method from recipient type</span>
+    <span style="color:#ff7b72;">const</span> param = {
+      location: <span style="color:#a5d6ff;">'home-recent-recipient'</span>,
+      recipient: recipient,
+      sendFromRecipient: <span style="color:#79c0ff;">true</span>,  <span style="color:#8b949e;">// ← KEY FLAG: skips recipient selection</span>
+    };
+
+    <span style="color:#8b949e;">// P2P recipients get a separate flow</span>
+    <span style="color:#ff7b72;">if</span> (recipient.values?.DELIVERY_METHOD === DeliveryMethodType.PeerToPeer) {
+      <span style="color:#ff7b72;">this</span>.sendFlowProvider.startPeerToPeerSendFlow(recipient);
+    } <span style="color:#ff7b72;">else</span> {
+      <span style="color:#ff7b72;">this</span>.orderProvider.openCheckPrices(<span style="color:#a5d6ff;">'recipient-creation'</span>, ...param);
+    }
+  } <span style="color:#ff7b72;">else</span> {
+    <span style="color:#8b949e;">// Not logged in → login first, then retry</span>
+    <span style="color:#ff7b72;">this</span>.login(() => <span style="color:#ff7b72;">this</span>.recipientClicked(recipient));
+  }
+}</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TIMELINE ===== -->
+    <div id="section-timeline" class="section-page" style="display:none;">
+      <div class="section">
+        <div class="section-title">Development Timeline <span class="badge">Feb — Apr 2026</span></div>
+
+        <div class="grid-2">
+          <div class="card" style="padding:20px;">
+            <div style="font-size:14px;font-weight:600;margin-bottom:16px;color:#3fb950;">galileo-site (Web) — MT-55665</div>
+            <div style="font-size:12px;color:#8b949e;margin-bottom:16px;">Tyler Lewis (lead), Cristian Dudca, Milan Puzic, Aleksa Nesic, Stephen Burrett</div>
+            <div class="timeline">
+              <div class="timeline-item milestone">
+                <div class="timeline-date">Feb 9, 2026</div>
+                <div class="timeline-title">First recipient-first screen introduced</div>
+                <div class="timeline-desc">731ac76f3 — Tyler Lewis</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Feb 12, 2026</div>
+                <div class="timeline-title">Fix recipientFirst P2P</div>
+                <div class="timeline-desc">fc206a3b2 — Cristian Dudca</div>
+              </div>
+              <div class="timeline-item milestone">
+                <div class="timeline-date">Feb 25, 2026</div>
+                <div class="timeline-title">Add recent recipients to Home + Quote from existing recipient</div>
+                <div class="timeline-desc">d1d7ac29f — Tyler Lewis</div>
+              </div>
+              <div class="timeline-item milestone">
+                <div class="timeline-date">Feb 25, 2026</div>
+                <div class="timeline-title">flowName attribute added to ALL Send Money events</div>
+                <div class="timeline-desc">b20fcd58b — Stephen Burrett (MT-61580)</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Mar 9, 2026</div>
+                <div class="timeline-title">Recent recipients epic complete</div>
+                <div class="timeline-desc">623ff0075 — Tyler Lewis</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Mar 11, 2026</div>
+                <div class="timeline-title">Additional properties in Send Money segment events</div>
+                <div class="timeline-desc">8599bb3dc — Stephen Burrett (MT-61876)</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Mar 12, 2026</div>
+                <div class="timeline-title">Track send-money flow in recipients card</div>
+                <div class="timeline-desc">f06400e3e — Tyler Lewis</div>
+              </div>
+              <div class="timeline-item milestone">
+                <div class="timeline-date">Mar 24, 2026</div>
+                <div class="timeline-title">Fix: Preserve flowName for SendMoneyCreating</div>
+                <div class="timeline-desc">3da5ea741 — Tyler Lewis (MT-62862)</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Apr 1, 2026</div>
+                <div class="timeline-title">Migrate to shadcn-vue + P2P currency handling</div>
+                <div class="timeline-desc">93c9a1214, 4de6c45f5 — Milan, Cristian</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Apr 7-8, 2026</div>
+                <div class="timeline-title">Recipient prep + cash delivery optimization</div>
+                <div class="timeline-desc">4de9b8dbb, bd04d23d3 — Cristian Dudca</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:20px;">
+            <div style="font-size:14px;font-weight:600;margin-bottom:16px;color:#58a6ff;">xe-apollo (Mobile) — MT-60039</div>
+            <div style="font-size:12px;color:#8b949e;margin-bottom:16px;">Deepesh Gairola (32 commits), Akif Hazarvi (fixes)</div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">Nov 4, 2025</div>
+                <div class="timeline-title">MT-60039 branch created</div>
+                <div class="timeline-desc">P2P / Recipient First mobile work begins</div>
+              </div>
+              <div class="timeline-item milestone">
+                <div class="timeline-date">Jan 13, 2026</div>
+                <div class="timeline-title">Find me by profile updates</div>
+                <div class="timeline-desc">6146775b3 — Deepesh Gairola</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Jan 21, 2026</div>
+                <div class="timeline-title">P2P search settings update</div>
+                <div class="timeline-desc">6f95cc2b0 — Deepesh Gairola</div>
+              </div>
+              <div class="timeline-item milestone">
+                <div class="timeline-date">Feb 17, 2026</div>
+                <div class="timeline-title">E2E transaction complete</div>
+                <div class="timeline-desc">6207f829a — First full flow working</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Feb 17, 2026</div>
+                <div class="timeline-title">Recipient view and delete options</div>
+                <div class="timeline-desc">535a98d3d — Deepesh Gairola</div>
+              </div>
+              <div class="timeline-item milestone">
+                <div class="timeline-date">Mar 10, 2026</div>
+                <div class="timeline-title">Segment analytics events added</div>
+                <div class="timeline-desc">4d8b86652 — Deepesh Gairola</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Mar 12, 2026</div>
+                <div class="timeline-title">More events</div>
+                <div class="timeline-desc">28bec0d49 — Deepesh Gairola</div>
+              </div>
+              <div class="timeline-item milestone">
+                <div class="timeline-date">Mar 17, 2026</div>
+                <div class="timeline-title">Home recipient flow launched</div>
+                <div class="timeline-desc">69b6f7531 — recipientFirstHome entry point</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Mar 25, 2026</div>
+                <div class="timeline-title">P2P tag in recipients listing</div>
+                <div class="timeline-desc">db08f20ce — Deepesh Gairola</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">Mar 27, 2026</div>
+                <div class="timeline-title">P2P flow fixes + improvements</div>
+                <div class="timeline-desc">b6073b03e, d2e98c63f — Akif Hazarvi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ISSUES ===== -->
+    <div id="section-issues" class="section-page" style="display:none;">
+      <div class="section">
+        <div class="section-title">Known Issues & Gaps <span class="badge">1 live + 2 pre-launch</span></div>
+
+        <div class="issue-card high">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span class="issue-severity high">LIVE — APP</span>
+            <h4>Recipients Accessed → Quote Created: 25% drop analysis</h4>
+          </div>
+          <p style="font-size:12px;padding:8px 12px;background:#21262d;border-radius:6px;margin-bottom:12px;">
+            <strong style="color:#58a6ff;">Key context:</strong> <span style="color:#e1e4e8;">Recipients Accessed only fires for users who HAVE previous orders.</span> Users with no recipients skip straight to Quote Created (order.ts:990-992 checks <code>getLastFetchedOrders()</code>). So this 25% drop is among <strong>returning users with saved recipients</strong> — a high-intent audience.
+          </p>
+          <p>Contributing factors for the drop:</p>
+          <ul style="margin:8px 0 0 20px;font-size:12px;color:#8b949e;line-height:1.8;">
+            <li><strong>Browse-only users</strong> — Recipients Accessed fires on page load; some users open the list to view/edit/delete recipients, not to send money</li>
+            <li><strong>Currency-filtered empty list</strong> — When a currency is set, only matching recipients show. Users may see no matching results and back out</li>
+            <li><strong>Country support check</strong> — After selecting a recipient, openCheckPrices() re-checks country support. Unsupported = dead end to CountryNotSupportedPage</li>
+            <li><strong>Recursive routing failures</strong> — The flow calls openCheckPrices() recursively after recipient selection. Network failures between the two calls are silent drops</li>
+            <li><strong>Loading + async friction</strong> — Multiple async calls (recipients, balances, country check, currency lookup) between tap and quote page render</li>
+          </ul>
+          <p style="margin-top:8px;font-size:12px;"><strong>Since these are all returning users,</strong> the browse-only percentage is lower than a general recipient page. Real loss is likely <strong>15-20%</strong>, making this a more significant optimization opportunity than general browsing would suggest.</p>
+        </div>
+
+        <div class="issue-card medium">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span class="issue-severity medium">LIVE — APP</span>
+            <h4>Mobile Error Recovery is 4x Worse Than Web</h4>
+          </div>
+          <p style="font-size:12px;color:#8b949e;">When payment fails in the recipient-first flow, only 10-12% of mobile users retry vs 41% on web. The <code>Change Payment Method</code> UX on mobile needs improvement to recapture failed payments.</p>
+        </div>
+
+        <div style="margin:24px 0 12px;font-size:13px;font-weight:600;color:#484f58;">PRE-LAUNCH ISSUES (fix before release)</div>
+
+        <div class="issue-card low" style="opacity:0.7;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span class="pill pill-yellow">WEB — NOT RELEASED</span>
+            <h4>HomeRecipients.vue Missing flowName</h4>
+          </div>
+          <p><strong>File:</strong> <span class="code-ref">galileo-site/src/migrated/new/widgets/HomeRecipients.vue:223</span></p>
+          <p style="margin-top:8px;font-size:12px;color:#8b949e;"><code>startSendMoney()</code> does NOT set <code>analyticsStore.context.flowName = FLOW_NAME.RECIPIENT_FIRST_HOME</code>. Fix before web launch or all home-initiated sends will be misattributed as sendMoneyQuoteFirst.</p>
+        </div>
+
+        <div class="issue-card low" style="opacity:0.7;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span class="pill pill-yellow">WEB — NOT RELEASED</span>
+            <h4>New Home Page Missing Recipients Widget</h4>
+          </div>
+          <p><strong>File:</strong> <span class="code-ref">galileo-site/src/views/DashboardNew/HomeNew.vue</span></p>
+          <p style="margin-top:8px;font-size:12px;color:#8b949e;">HomeNew.vue has no recent recipients section. Only the legacy HomeScreen.vue has the carousel. Ensure recipients are added to the new home before rollout.</p>
+        </div>
+
+        <div class="issue-card low" style="opacity:0.7;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span class="pill pill-yellow">P2P — NOT RELEASED</span>
+            <h4>P2P Flow Analytics Not Validated</h4>
+          </div>
+          <p><strong>File:</strong> <span class="code-ref">xe-apollo/src/pages/home/home.ts:909-910</span></p>
+          <p style="margin-top:8px;font-size:12px;color:#8b949e;">P2P recipients branch to <code>startPeerToPeerSendFlow()</code> and bypass the standard funnel. Validate analytics events fire correctly before P2P launch.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== AMPLITUDE QUERIES ===== -->
+    <div id="section-amplitude" class="section-page" style="display:none;">
+      <div class="section">
+        <div class="section-title">Amplitude Query Templates <span class="badge">Copy & paste</span></div>
+
+        <div class="card" style="padding:20px;margin-bottom:16px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px;">1. Core Recipient First Funnel</div>
+          <pre style="background:#0d1117;padding:16px;border-radius:6px;font-size:12px;overflow-x:auto;color:#e1e4e8;line-height:1.6;font-family:'SF Mono','Fira Code',monospace;">{
+  "type": "funnels",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Recipients Accessed", "filters": [], "group_by": [] },
+      { "event_type": "Quote Created", "filters": [], "group_by": [] },
+      { "event_type": "Quote Confirmed", "filters": [], "group_by": [] },
+      { "event_type": "Recipient Selected", "filters": [], "group_by": [] },
+      { "event_type": "Recipient Reason for Transfer", "filters": [], "group_by": [] },
+      { "event_type": "Payment Method Selected", "filters": [], "group_by": [] },
+      { "event_type": "Transaction Summary Confirmed", "filters": [], "group_by": [] },
+      { "event_type": "Transaction Created", "filters": [], "group_by": [] }
+    ],
+    "countGroup": "User",
+    "segments": [{ "conditions": [] }]
+  }
+}</pre>
+          <button onclick="copyQuery(this)" style="margin-top:8px;background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;">Copy JSON</button>
+        </div>
+
+        <div class="card" style="padding:20px;margin-bottom:16px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px;">2. By Entry Point (flowName)</div>
+          <pre style="background:#0d1117;padding:16px;border-radius:6px;font-size:12px;overflow-x:auto;color:#e1e4e8;line-height:1.6;font-family:'SF Mono','Fira Code',monospace;">{
+  "type": "funnels",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Recipients Accessed",
+        "group_by": [{ "type": "event", "value": "flowName" }] },
+      { "event_type": "Quote Created", "group_by": [] },
+      { "event_type": "Quote Confirmed", "group_by": [] },
+      { "event_type": "Payment Method Selected", "group_by": [] },
+      { "event_type": "Transaction Created", "group_by": [] }
+    ],
+    "countGroup": "User",
+    "segments": [{ "conditions": [] }]
+  }
+}</pre>
+          <button onclick="copyQuery(this)" style="margin-top:8px;background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;">Copy JSON</button>
+        </div>
+
+        <div class="card" style="padding:20px;margin-bottom:16px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px;">3. iOS vs Android</div>
+          <pre style="background:#0d1117;padding:16px;border-radius:6px;font-size:12px;overflow-x:auto;color:#e1e4e8;line-height:1.6;font-family:'SF Mono','Fira Code',monospace;">{
+  "type": "funnels",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Recipients Accessed",
+        "group_by": [{ "type": "user", "value": "platform" }] },
+      { "event_type": "Quote Created", "group_by": [] },
+      { "event_type": "Quote Confirmed", "group_by": [] },
+      { "event_type": "Recipient Selected", "group_by": [] },
+      { "event_type": "Payment Method Selected", "group_by": [] },
+      { "event_type": "Transaction Summary Confirmed", "group_by": [] },
+      { "event_type": "Transaction Created", "group_by": [] }
+    ],
+    "countGroup": "User",
+    "segments": [{ "conditions": [] }]
+  }
+}</pre>
+          <button onclick="copyQuery(this)" style="margin-top:8px;background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;">Copy JSON</button>
+        </div>
+
+        <div class="card" style="padding:20px;margin-bottom:16px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px;">4. Payment Method Divergence (Card only)</div>
+          <pre style="background:#0d1117;padding:16px;border-radius:6px;font-size:12px;overflow-x:auto;color:#e1e4e8;line-height:1.6;font-family:'SF Mono','Fira Code',monospace;">{
+  "type": "funnels",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Payment Method Selected", "filters": [], "group_by": [] },
+      { "event_type": "CVV Entered", "filters": [], "group_by": [] },
+      { "event_type": "Card Authorisation Started", "filters": [], "group_by": [] },
+      { "event_type": "Card Authorisation Completed", "filters": [], "group_by": [] },
+      { "event_type": "Transaction Created", "filters": [], "group_by": [] }
+    ],
+    "countGroup": "User",
+    "segments": [{
+      "conditions": [{
+        "type": "property",
+        "group_type": "User",
+        "prop_type": "user",
+        "prop": "platform",
+        "op": "is",
+        "values": ["iOS", "Android"]
+      }]
+    }]
+  }
+}</pre>
+          <button onclick="copyQuery(this)" style="margin-top:8px;background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;">Copy JSON</button>
+        </div>
+
+        <div class="card" style="padding:20px;margin-bottom:16px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px;">5. Error Recovery</div>
+          <pre style="background:#0d1117;padding:16px;border-radius:6px;font-size:12px;overflow-x:auto;color:#e1e4e8;line-height:1.6;font-family:'SF Mono','Fira Code',monospace;">{
+  "type": "funnels",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Payment Failed",
+        "group_by": [{ "type": "user", "value": "platform" }] },
+      { "event_type": "Change Payment Method Triggered", "group_by": [] },
+      { "event_type": "Payment Method Selected", "group_by": [] },
+      { "event_type": "Transaction Summary Confirmed", "group_by": [] },
+      { "event_type": "Transaction Created", "group_by": [] }
+    ],
+    "countGroup": "User",
+    "segments": [{
+      "conditions": [{
+        "type": "property",
+        "group_type": "User",
+        "prop_type": "user",
+        "prop": "platform",
+        "op": "is",
+        "values": ["iOS", "Android"]
+      }]
+    }]
+  }
+}</pre>
+          <button onclick="copyQuery(this)" style="margin-top:8px;background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;">Copy JSON</button>
+        </div>
+
+        <div class="card" style="padding:20px;margin-bottom:16px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px;">6. By Corridor</div>
+          <pre style="background:#0d1117;padding:16px;border-radius:6px;font-size:12px;overflow-x:auto;color:#e1e4e8;line-height:1.6;font-family:'SF Mono','Fira Code',monospace;">{
+  "type": "funnels",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Recipients Accessed", "filters": [], "group_by": [] },
+      { "event_type": "Quote Created",
+        "group_by": [{ "type": "event", "value": "receiveCurrency" }] },
+      { "event_type": "Quote Confirmed", "group_by": [] },
+      { "event_type": "Transaction Created", "group_by": [] }
+    ],
+    "countGroup": "User",
+    "segments": [{
+      "conditions": [{
+        "type": "property",
+        "group_type": "User",
+        "prop_type": "user",
+        "prop": "platform",
+        "op": "is",
+        "values": ["iOS", "Android"]
+      }]
+    }]
+  }
+}</pre>
+          <button onclick="copyQuery(this)" style="margin-top:8px;background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;">Copy JSON</button>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px;">7. Weekly Trend (Event Segmentation)</div>
+          <pre style="background:#0d1117;padding:16px;border-radius:6px;font-size:12px;overflow-x:auto;color:#e1e4e8;line-height:1.6;font-family:'SF Mono','Fira Code',monospace;">{
+  "type": "segmentation",
+  "app": "295336",
+  "params": {
+    "range": "Last 90 Days",
+    "interval": "week",
+    "events": [
+      { "event_type": "Recipients Accessed",
+        "filters": [{ "subprop_type": "event", "subprop_key": "flowName",
+                       "subprop_op": "is", "subprop_value": ["recipientFirstHome"] }],
+        "group_by": [{ "type": "user", "value": "platform" }] }
+    ],
+    "segments": [{ "conditions": [] }]
+  }
+}</pre>
+          <button onclick="copyQuery(this)" style="margin-top:8px;background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;">Copy JSON</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Navigation
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = link.dataset.section;
+
+        document.querySelectorAll('.nav a').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        document.querySelectorAll('.section-page').forEach(s => s.style.display = 'none');
+        document.getElementById('section-' + section).style.display = 'block';
+      });
+    });
+
+    // Funnel toggle
+    function toggleFunnel(header) {
+      const body = header.nextElementSibling;
+      body.classList.toggle('open');
+    }
+
+    // Copy query
+    function copyQuery(btn) {
+      const pre = btn.previousElementSibling;
+      navigator.clipboard.writeText(pre.textContent.trim()).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy JSON', 2000);
+      });
+    }
+  </script>
+</body>
+</html>

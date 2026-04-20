@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Launchpad Changes — Per-Destination SLAs</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; line-height: 1.5; }
+
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #58a6ff; }
+    .header-sub { font-size: 13px; color: #8b949e; margin-left: 12px; }
+    .header-nav { margin-left: auto; display: flex; gap: 16px; }
+    .header-nav a { color: #58a6ff; text-decoration: none; font-size: 13px; }
+    .header-nav a:hover { text-decoration: underline; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+    .section { margin-bottom: 32px; }
+    .section-title { font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: #8b949e; margin-bottom: 12px; font-weight: 600; }
+
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+    .card-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .card-value { font-size: 24px; font-weight: 700; color: #e1e4e8; }
+    .card-value.green { color: #3fb950; }
+    .card-value.blue { color: #58a6ff; }
+    .card-sub { font-size: 12px; color: #8b949e; margin-top: 4px; }
+
+    .callout { background: #0c2d4d; border: 1px solid #1f6feb; border-left: 3px solid #1f6feb; border-radius: 6px; padding: 12px 16px; margin-bottom: 20px; font-size: 13px; }
+    .callout strong { color: #58a6ff; }
+
+    .code-changes { background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; }
+    .code-row { padding: 10px 16px; border-bottom: 1px solid #21262d; display: grid; grid-template-columns: minmax(280px, 1fr) 2fr; gap: 16px; font-size: 13px; }
+    .code-row:last-child { border-bottom: none; }
+    .code-file { font-family: 'SF Mono', Monaco, monospace; color: #58a6ff; font-size: 12px; word-break: break-all; }
+    .code-desc { color: #c9d1d9; }
+
+    .tabs { display: flex; gap: 2px; margin-bottom: 16px; border-bottom: 1px solid #30363d; }
+    .tab { background: none; border: none; color: #8b949e; padding: 10px 16px; font-size: 13px; cursor: pointer; border-bottom: 2px solid transparent; }
+    .tab.active { color: #e1e4e8; border-bottom-color: #58a6ff; }
+    .tab:hover { color: #e1e4e8; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .table-wrap { overflow-x: auto; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { background: #1c2128; padding: 10px 12px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #8b949e; white-space: nowrap; position: sticky; top: 0; z-index: 10; }
+    tbody tr { border-bottom: 1px solid #21262d; }
+    tbody tr:hover { background: #161b2266; }
+    tbody td { padding: 10px 12px; white-space: nowrap; }
+    td.ccy { font-weight: 700; font-size: 14px; color: #58a6ff; }
+    td.dest { font-weight: 600; color: #c9d1d9; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; color: #c9d1d9; }
+    td.rev { text-align: right; color: #3fb950; font-weight: 600; }
+    td.p80 { font-family: 'SF Mono', Monaco, monospace; font-size: 12px; color: #8b949e; text-align: right; }
+
+    .tier-cell { display: flex; align-items: center; gap: 8px; }
+    .tier-old { color: #8b949e; text-decoration: line-through; font-size: 12px; }
+    .tier-new { color: #3fb950; font-weight: 600; }
+    .tier-new.same { color: #8b949e; font-weight: 400; text-decoration: none; }
+    .arrow { color: #484f58; font-size: 12px; }
+
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; white-space: nowrap; }
+    .pill-in { background: #d2992222; color: #d29922; }
+    .pill-out { background: #1f6feb22; color: #58a6ff; }
+    .pill-ria { background: #7c3aed22; color: #a78bfa; }
+    .pill-standard { background: #21262d; color: #8b949e; }
+
+    .probe { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
+    .probe-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .probe-field { display: flex; flex-direction: column; gap: 4px; }
+    .probe-field label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    .probe-field select, .probe-field input { background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 8px 10px; border-radius: 6px; font-size: 13px; }
+    .probe-field select:focus, .probe-field input:focus { outline: none; border-color: #58a6ff; }
+    .probe-result { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 16px; }
+    .probe-result-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .probe-result-value { font-size: 20px; font-weight: 700; color: #3fb950; font-family: 'SF Mono', Monaco, monospace; }
+    .probe-result-before { font-size: 13px; color: #8b949e; margin-top: 8px; }
+    .probe-result-before span { text-decoration: line-through; }
+    .probe-result-note { font-size: 12px; color: #484f58; margin-top: 6px; font-style: italic; }
+
+    .footnote { font-size: 12px; color: #8b949e; margin-top: 12px; }
+    .footnote code { background: #21262d; padding: 2px 6px; border-radius: 4px; font-family: 'SF Mono', Monaco, monospace; font-size: 11px; color: #c9d1d9; }
+
+    .code-block { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 14px 16px; font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 13px; color: #e1e4e8; overflow-x: auto; margin: 12px 0; line-height: 1.6; }
+    .code-block .k { color: #ff7b72; }
+    .code-block .s { color: #a5d6ff; }
+    .code-block .f { color: #d2a8ff; }
+    .code-block .c { color: #8b949e; font-style: italic; }
+    .code-ref { color: #58a6ff; font-family: 'SF Mono', Monaco, monospace; font-size: 12px; }
+    .step-list { margin: 12px 0 0 0; padding-left: 0; list-style: none; }
+    .step-list li { padding: 8px 12px; margin-bottom: 6px; background: #0d1117; border-left: 3px solid #1f6feb; border-radius: 4px; font-size: 13px; }
+    .step-list li strong { color: #58a6ff; }
+
+    .ccy-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; margin-bottom: 10px; }
+    .ccy-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .ccy-card-head .ccy-name { font-size: 18px; font-weight: 700; color: #58a6ff; }
+    .variant-row { display: grid; grid-template-columns: 100px 1fr 1fr 1fr; gap: 12px; padding: 8px 0; border-top: 1px solid #21262d; font-size: 13px; }
+    .variant-row:first-of-type { border-top: none; }
+    .variant-row.active { background: #0a2f1b22; margin: 0 -8px; padding: 8px; border-radius: 4px; border-top-color: transparent; }
+    .variant-row .label { color: #8b949e; font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; }
+    .variant-row .value { color: #c9d1d9; font-family: 'SF Mono', Monaco, monospace; font-size: 12px; }
+    .badge-active { background: #238636; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge-dormant { background: #21262d; color: #8b949e; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>UK Launchpad Changes <span>Per-Destination SLAs</span></h1>
+      <div class="header-sub" id="header-sub">Loading…</div>
+      <div class="header-nav">
+        <a href="uk.html">UK Dashboard</a>
+        <a href="uk-sla-builder.html">SLA Builder</a>
+        <a href="uk-sla-optimizer.html">SLA Optimizer</a>
+        <a href="index.html">EU Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="callout">
+      <strong>Branch:</strong> <code style="color:#58a6ff">feature/uk-leadtime-destination-country</code> · only adds improvement rows, never loosens; all existing rows preserved; zero-config back-compat for other regions.
+    </div>
+
+    <div id="methodology-callout" class="callout" style="background:#0a2f1b;border-color:#238636;border-left-color:#238636">
+      <div style="font-weight:600;color:#3fb950;margin-bottom:6px">Bank-to-Bank SLA Methodology</div>
+      <div id="methodology-body" style="color:#c9d1d9"></div>
+    </div>
+
+    <div class="section">
+      <div class="summary" id="summary"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Code changes</div>
+      <div class="code-changes" id="code-changes"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Tabs</div>
+      <div class="tabs">
+        <button class="tab active" data-panel="improvements">CSV Improvements (35)</button>
+        <button class="tab" data-panel="multirow">Multi-Row Currencies (58)</button>
+        <button class="tab" data-panel="rowlogic">Row-Selection Logic</button>
+        <button class="tab" data-panel="probe">Quote LeadTime Preview</button>
+      </div>
+
+      <div class="tab-panel active" id="panel-improvements">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Corridor</th>
+                <th>Dest</th>
+                <th>Active Route</th>
+                <th class="num">Payments</th>
+                <th class="num">Revenue USD</th>
+                <th class="p80">IN Leg2 P80</th>
+                <th class="p80">IN E2E (L1+L2)</th>
+                <th>IN Tier (current → proposed)</th>
+                <th class="p80">OUT Leg2 P80</th>
+                <th class="p80">OUT E2E (L1+L2)</th>
+                <th>OUT Tier (current → proposed)</th>
+              </tr>
+            </thead>
+            <tbody id="improvements-tbody"></tbody>
+          </table>
+        </div>
+        <div class="footnote">
+          Rows are sorted by payment volume. CCY Type = <code>Ria CCY</code> means the Ria row won over the Standard row in the current CSV (launchpad behaviour). IN = Mon–Fri before 14:00 GMT, OUT = everything else. <strong>E2E (L1+L2)</strong> adds the bank-to-bank Leg 1 median (397s) to the Leg 2 P80 — that\'s the number the proposed tier is based on.
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-multirow">
+        <div style="margin-bottom:12px;font-size:13px;color:#c9d1d9">
+          These currencies have <strong>two rows</strong> in <code style="background:#21262d;padding:2px 6px;border-radius:4px;font-family:monospace;color:#c9d1d9">UK.csv</code>. The launchpad loader keeps only one per currency — the <strong style="color:#a78bfa">Ria CCY</strong> row wins; the other row becomes dormant. See the <em>Row-Selection Logic</em> tab for the exact code.
+        </div>
+        <div id="multirow-list"></div>
+      </div>
+
+      <div class="tab-panel" id="panel-rowlogic">
+        <div style="margin-bottom:20px;font-size:14px;color:#c9d1d9">
+          When <code style="background:#21262d;padding:2px 6px;border-radius:4px;font-family:monospace;color:#c9d1d9">UK.csv</code> contains multiple rows for the same <code style="background:#21262d;padding:2px 6px;border-radius:4px;font-family:monospace;color:#c9d1d9">Currency</code>, the launchpad loader collapses them to one. Here is what actually runs.
+        </div>
+
+        <div class="section-title">Step 1 &mdash; Detect which row is the Ria variant</div>
+        <div id="ria-detect-ref" class="code-ref"></div>
+        <pre class="code-block"><span class="c">// ParseLine: for each CSV row, decide if it&#39;s a Ria row by looking at column 13 (the &quot;CCY&quot; column).</span>
+<span class="c">// c[13] is the CCY cell value: &quot;Major CCY&quot;, &quot;Standard CCY&quot;, &quot;Exotic CCY&quot;, or &quot;Ria CCY&quot;.</span>
+<span class="k">return</span> Traverse(reads).Map(c =&gt;
+    <span class="k">new</span> LeadTimeEntry(
+        c[0]?.Trim(),
+        <span class="c">// ...</span>
+        c[13].<span class="f">Contains</span>(<span class="s">&quot;Ria&quot;</span>, StringComparison.InvariantCultureIgnoreCase)  <span class="c">// IsRia</span>
+    ));</pre>
+
+        <div class="section-title" style="margin-top:20px">Step 2 &mdash; Collapse rows, Ria wins</div>
+        <div id="ria-pick-ref" class="code-ref"></div>
+        <pre class="code-block"><span class="c">// ToMap: group all entries by (Currency, DestinationCountry), then pick one per group.</span>
+<span class="c">// If any row in the group is Ria, take it. Otherwise take the first row.</span>
+entries
+    .<span class="f">GroupBy</span>(e =&gt; (Currency: e.Currency, Country: e.DestinationCountry), ...)
+    .<span class="f">ForEach</span>(g =&gt;
+    {
+        map[key] = g.<span class="f">FirstOrDefault</span>(x =&gt; x.IsRia) ?? g.<span class="f">First</span>();
+        <span class="c">//            ^^^^^^^^^^^^^^^^^^^^^^^^^ Ria wins if it exists, else first row</span>
+    });</pre>
+
+        <div class="section-title" style="margin-top:20px">Concrete example &mdash; INR</div>
+        <div style="font-size:13px;color:#c9d1d9;margin-bottom:10px"><code style="background:#21262d;padding:2px 6px;border-radius:4px;font-family:monospace;color:#c9d1d9">UK.csv</code> has two rows for INR. The Ria row wins, so customers sending GBP → INR see &ldquo;Typically minutes&rdquo;, not &ldquo;Up to 3 days&rdquo;.</div>
+        <ul class="step-list">
+          <li><strong>Row 1:</strong> <code style="color:#c9d1d9;font-family:monospace">INR, &lt;3 days, ..., Exotic CCY, ...</code> &mdash; <span class="badge-dormant">Dormant</span> (loses to Ria)</li>
+          <li><strong>Row 2:</strong> <code style="color:#c9d1d9;font-family:monospace">INR, 5mins, ..., Ria CCY, ...</code> &mdash; <span class="badge-active">Active</span> (<code style="color:#c9d1d9;font-family:monospace">IsRia=true</code>, wins)</li>
+          <li><strong>Loader result:</strong> <code style="color:#c9d1d9;font-family:monospace">map[&quot;INR&quot;] = Row 2</code></li>
+          <li><strong>Quote response:</strong> <code style="color:#c9d1d9;font-family:monospace">q.LeadTime = &quot;Typically minutes&quot;</code></li>
+        </ul>
+
+        <div class="section-title" style="margin-top:20px">What this means for our changes</div>
+        <div style="font-size:13px;color:#c9d1d9;line-height:1.6">
+          When we compare a proposed SLA against the &ldquo;current&rdquo; SLA, we replicate this same Ria-priority logic &mdash; so the &ldquo;current&rdquo; column always shows what a customer actually sees today (the active row), not just the first line we find in the file. Our new per-destination rows inherit the active row&rsquo;s values for anything they don&rsquo;t override.
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-probe">
+        <div style="margin-bottom:16px;font-size:13px;color:#8b949e">
+          Preview what <code style="background:#21262d;padding:2px 6px;border-radius:4px;font-family:monospace">q.LeadTime</code> will be in the Quote response. Replicates <code style="background:#21262d;padding:2px 6px;border-radius:4px;font-family:monospace">LeadTimesLoader.GetLeadTime(...)</code> logic.
+        </div>
+          <div class="probe-form">
+            <div class="probe-field">
+              <label>Send Region</label>
+              <select id="probe-region">
+                <option value="UK" selected>UK</option>
+              </select>
+            </div>
+            <div class="probe-field">
+              <label>Buy Currency</label>
+              <select id="probe-ccy"></select>
+            </div>
+            <div class="probe-field">
+              <label>Destination Country</label>
+              <select id="probe-dest"></select>
+            </div>
+            <div class="probe-field">
+              <label>Payment Method</label>
+              <select id="probe-pm">
+                <option value="BankTransfer" selected>BankTransfer</option>
+                <option value="DebitCard">DebitCard</option>
+                <option value="CreditCard">CreditCard</option>
+                <option value="OpenBanking">OpenBanking</option>
+              </select>
+            </div>
+            <div class="probe-field">
+              <label>Delivery Method</label>
+              <select id="probe-dm">
+                <option value="BankAccount" selected>BankAccount</option>
+                <option value="CashPayout">CashPayout</option>
+                <option value="MobileWallet">MobileWallet</option>
+              </select>
+            </div>
+            <div class="probe-field">
+              <label>Business Hours</label>
+              <select id="probe-bh">
+                <option value="IN" selected>IN (Mon–Fri &lt; 14:00 GMT)</option>
+                <option value="OUT">OUT (weekend or after 14:00)</option>
+              </select>
+            </div>
+          </div>
+          <div class="probe-result">
+            <div class="probe-result-label">Quote response q.LeadTime</div>
+            <div class="probe-result-value" id="probe-out">—</div>
+            <div class="probe-result-before" id="probe-before"></div>
+            <div class="probe-result-note" id="probe-note"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let DATA = null;
+
+    const TIER_TO_RAW_SAMPLE = {
+      'Typically minutes': '5mins',
+      'Typically hours': '2hrs',
+      'Typically same day': 'Same Day',
+      'Typically next day': 'Next Day',
+      'Typically within 24 hours': '<24hrs',
+      'Typically within 48 hours': '<48hrs',
+      'Up to 3 days': '<3 days',
+      'Typically 3 business days': 'Three Days',
+    };
+
+    function fmtUsd(n) {
+      if (!n) return '-';
+      if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+      if (n >= 1e3) return '$' + (n / 1e3).toFixed(0) + 'K';
+      return '$' + Math.round(n);
+    }
+
+    function fmtSec(s) {
+      if (s == null) return '-';
+      if (s < 60) return s + 's';
+      if (s < 3600) return Math.round(s / 60) + 'm';
+      if (s < 86400) return (s / 3600).toFixed(1) + 'h';
+      return (s / 86400).toFixed(1) + 'd';
+    }
+
+    function tierCell(oldTier, newTier) {
+      if (!newTier || newTier === oldTier) {
+        return `<span class="tier-new same">${oldTier || '-'}</span>`;
+      }
+      return `<span class="tier-old">${oldTier || '-'}</span><span class="arrow">→</span><span class="tier-new">${newTier}</span>`;
+    }
+
+    function renderSummary(d) {
+      const c = document.getElementById('summary');
+      const cards = [
+        { label: 'New Rows', value: d.stats.new_rows, cls: 'green', sub: `across ${d.stats.currencies_improved} currencies` },
+        { label: 'Existing Rows Preserved', value: d.stats.existing_rows, sub: 'none loosened or removed' },
+        { label: 'Total Rows in New UK.csv', value: d.stats.total_rows, sub: 'data-only + code-safe' },
+        { label: 'Payments Analysed', value: (d.stats.payments_analysed || 0).toLocaleString(), cls: 'blue', sub: 'from payout reports' },
+        { label: 'Tests Passing', value: '79 / 79', cls: 'green', sub: '+3 new destination tests' },
+      ];
+      c.innerHTML = cards.map(x => `
+        <div class="card">
+          <div class="card-label">${x.label}</div>
+          <div class="card-value ${x.cls || ''}">${x.value}</div>
+          <div class="card-sub">${x.sub}</div>
+        </div>`).join('');
+    }
+
+    function renderCodeChanges(d) {
+      document.getElementById('code-changes').innerHTML = d.code_changes.map(x => `
+        <div class="code-row">
+          <div class="code-file">${x.file}</div>
+          <div class="code-desc">${x.change}</div>
+        </div>`).join('');
+    }
+
+    function renderImprovements(d) {
+      const leg1 = (d.methodology && d.methodology.bank_to_bank_leg1_s) || 0;
+      const tb = document.getElementById('improvements-tbody');
+      tb.innerHTML = d.improvements.map(r => {
+        const isRia = r.ccyType && r.ccyType.toLowerCase().includes('ria');
+        const ccyPill = isRia
+          ? `<span class="pill pill-ria" title="Ria row wins via g.FirstOrDefault(x =&gt; x.IsRia)">Ria · wins</span>`
+          : `<span class="pill pill-standard" title="Only row for this currency, or first row in file">${r.ccyType || 'Standard'}</span>`;
+        const inE2e = r.in_p80_s != null ? r.in_p80_s + leg1 : null;
+        const outE2e = r.out_p80_s != null ? r.out_p80_s + leg1 : null;
+        return `
+          <tr>
+            <td class="ccy">UK → ${r.currency}</td>
+            <td class="dest">${r.destination}</td>
+            <td>${ccyPill}</td>
+            <td class="num">${(r.volume || 0).toLocaleString()}</td>
+            <td class="rev">${fmtUsd(r.revenue_usd)}</td>
+            <td class="p80">${fmtSec(r.in_p80_s)}</td>
+            <td class="p80" style="color:#3fb950">${fmtSec(inE2e)}</td>
+            <td>${tierCell(r.current.in_tier, r.proposed.in_tier)}</td>
+            <td class="p80">${fmtSec(r.out_p80_s)}</td>
+            <td class="p80" style="color:#3fb950">${fmtSec(outE2e)}</td>
+            <td>${tierCell(r.current.out_tier, r.proposed.out_tier)}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    function initProbe(d) {
+      const byCcy = {};
+      for (const r of d.improvements) {
+        if (!byCcy[r.currency]) byCcy[r.currency] = { current: r.current, destinations: [] };
+        byCcy[r.currency].destinations.push(r);
+      }
+      const ccySel = document.getElementById('probe-ccy');
+      const destSel = document.getElementById('probe-dest');
+      const allCcy = Array.from(new Set(d.improvements.map(r => r.currency))).sort();
+      ccySel.innerHTML = allCcy.map(c => `<option value="${c}">${c}</option>`).join('');
+      ccySel.value = 'EUR';
+
+      function updateDest() {
+        const c = ccySel.value;
+        const dests = byCcy[c] ? byCcy[c].destinations : [];
+        destSel.innerHTML = '<option value="">(currency default — no per-destination row)</option>' +
+          dests.map(dd => `<option value="${dd.destination}">${dd.destination}</option>`).join('');
+        updateResult();
+      }
+
+      function updateResult() {
+        const c = ccySel.value;
+        const dest = destSel.value;
+        const bh = document.getElementById('probe-bh').value;
+        const pm = document.getElementById('probe-pm').value;
+        const dm = document.getElementById('probe-dm').value;
+        const ccyData = byCcy[c];
+        if (!ccyData) return;
+        // For BankAccount, use IN_BankTransfer / OUT_BankTransfer (mapped columns). CashPayout/MobileWallet use CPO/MobileWallet column (unchanged per destination).
+        let currentTier, proposedTier;
+        if (dm === 'BankAccount') {
+          currentTier = bh === 'IN' ? ccyData.current.in_tier : ccyData.current.out_tier;
+          if (dest) {
+            const r = ccyData.destinations.find(x => x.destination === dest);
+            proposedTier = r ? (bh === 'IN' ? r.proposed.in_tier : r.proposed.out_tier) : currentTier;
+          } else {
+            proposedTier = currentTier;
+          }
+        } else {
+          currentTier = 'Typically minutes'; // CPO / MobileWallet columns are 5mins in all UK rows
+          proposedTier = 'Typically minutes';
+        }
+        const changed = currentTier !== proposedTier;
+        document.getElementById('probe-out').textContent = `"${proposedTier || '(no match)'}"`;
+        document.getElementById('probe-before').innerHTML = changed
+          ? `Before: <span>"${currentTier}"</span>`
+          : 'No change from current SLA';
+        document.getElementById('probe-note').textContent = dm !== 'BankAccount'
+          ? 'CashPayout / MobileWallet columns are per-currency only (no per-destination override in current CSV).'
+          : changed
+            ? `Per-destination row matched: UK.csv has a tightened row for (${c}, ${dest}).`
+            : dest
+              ? `No per-destination row for (${c}, ${dest}) — falls back to currency default.`
+              : '';
+      }
+
+      ccySel.addEventListener('change', updateDest);
+      destSel.addEventListener('change', updateResult);
+      document.getElementById('probe-bh').addEventListener('change', updateResult);
+      document.getElementById('probe-pm').addEventListener('change', updateResult);
+      document.getElementById('probe-dm').addEventListener('change', updateResult);
+      updateDest();
+      // Default to FR for EUR for a visible improvement on load.
+      setTimeout(() => { destSel.value = 'FR'; updateResult(); }, 0);
+    }
+
+    function renderMultiRow(d) {
+      const host = document.getElementById('multirow-list');
+      if (!host || !d.multiRowCurrencies) return;
+      host.innerHTML = d.multiRowCurrencies.map(entry => {
+        const variants = entry.variants.map(v => `
+          <div class="variant-row ${v.active ? 'active' : ''}">
+            <div>${v.active ? '<span class="badge-active">Active</span>' : '<span class="badge-dormant">Dormant</span>'}</div>
+            <div><div class="label">CCY cell (c[13])</div><div class="value">${v.ccyType || '(empty)'}</div></div>
+            <div><div class="label">IN_BankTransfer</div><div class="value">${v.in_raw || '-'}</div></div>
+            <div><div class="label">OUT_BankTransfer</div><div class="value">${v.out_raw || '-'}</div></div>
+          </div>`).join('');
+        return `
+          <div class="ccy-card">
+            <div class="ccy-card-head">
+              <span class="ccy-name">${entry.currency}</span>
+              <span style="font-size:12px;color:#8b949e">${entry.variants.length} rows in UK.csv — <strong style="color:#3fb950">Active wins via <code style="background:#21262d;padding:2px 6px;border-radius:4px;font-family:monospace;color:#c9d1d9">g.FirstOrDefault(x =&gt; x.IsRia) ?? g.First()</code></strong></span>
+            </div>
+            ${variants}
+          </div>`;
+      }).join('');
+    }
+
+    function renderRowLogicRefs(d) {
+      const sel = d.rowSelection;
+      if (!sel) return;
+      const detect = document.getElementById('ria-detect-ref');
+      const pick = document.getElementById('ria-pick-ref');
+      if (detect) detect.textContent = `${sel.is_ria_detection_file}:${sel.is_ria_detection_line}`;
+      if (pick) pick.textContent = `${sel.code_file}:${sel.code_line}`;
+    }
+
+    function initTabs() {
+      document.querySelectorAll('.tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+        });
+      });
+    }
+
+    fetch('../data/uk-launchpad-changes.json')
+      .then(r => r.json())
+      .then(d => {
+        DATA = d;
+        document.getElementById('header-sub').textContent = `Branch ${d.branch} · generated ${d.generated}`;
+        if (d.methodology) {
+          document.getElementById('methodology-body').innerHTML =
+            `<div style="margin-bottom:8px"><strong>E2E SLA = Leg 1 + Leg 2</strong></div>` +
+            `<div style="font-size:13px;line-height:1.6">` +
+            `<div><strong>Leg 1 (our processing):</strong> ${d.methodology.bank_to_bank_leg1_s}s (${Math.round(d.methodology.bank_to_bank_leg1_s/60*10)/10} min) &mdash; median of <em>Funds Received \u2192 Transaction Completed</em> from Amplitude (senderCountry=GB, paymentMethod=bank_account, last 30d, n=3,058). <a href="${d.methodology.leg1_chart}" target="_blank" style="color:#58a6ff">Open chart</a></div>` +
+            `<div><strong>Leg 2 (payout network):</strong> P80 per (currency, destination) across bank payout methods from the weekly UK payout report, volume-weighted.</div>` +
+            `<div style="margin-top:8px;color:#8b949e;font-style:italic">Why <em>Funds Received</em> as Leg 1 start: using Transaction Created would include the customer\'s bank-clearing time which we don\'t control. Funds Received fires after clearing, so it measures our actual post-funding processing.</div>` +
+            `</div>`;
+        }
+        renderSummary(d);
+        renderCodeChanges(d);
+        renderImprovements(d);
+        renderMultiRow(d);
+        renderRowLogicRefs(d);
+        initProbe(d);
+        initTabs();
+      })
+      .catch(err => {
+        document.getElementById('header-sub').textContent = 'Failed to load data';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

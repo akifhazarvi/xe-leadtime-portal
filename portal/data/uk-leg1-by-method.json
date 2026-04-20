@@ -1,0 +1,771 @@
+{
+  "generated": "2026-04-14",
+  "period": "Last 30 Days",
+  "note": "UK Leg 1 speed by payment method per corridor. Transaction Created -> Transaction Completed, senderCountry=GB, grouped by paymentMethod.",
+  "corridors": {
+    "EUR": {
+      "debit": {
+        "created": 4032,
+        "completed": 3983,
+        "conversion": 98.8,
+        "median_hrs": 0.19,
+        "avg_hrs": 3.56
+      },
+      "bank_account": {
+        "created": 2130,
+        "completed": 2053,
+        "conversion": 96.4,
+        "median_hrs": 0.75,
+        "avg_hrs": 12.6
+      },
+      "open_banking": {
+        "created": 603,
+        "completed": 595,
+        "conversion": 98.7,
+        "median_hrs": 0.47,
+        "avg_hrs": 2.83
+      },
+      "credit": {
+        "created": 361,
+        "completed": 358,
+        "conversion": 99.2,
+        "median_hrs": 0.18,
+        "avg_hrs": 4.51
+      },
+      "balance": {
+        "created": 4,
+        "completed": 4,
+        "conversion": 100,
+        "median_hrs": 0.38,
+        "avg_hrs": 0.87
+      }
+    },
+    "INR": {
+      "debit": {
+        "created": 1440,
+        "completed": 1418,
+        "conversion": 98.5,
+        "median_hrs": 0.17,
+        "avg_hrs": 1.22
+      },
+      "bank_account": {
+        "created": 396,
+        "completed": 387,
+        "conversion": 97.7,
+        "median_hrs": 0.51,
+        "avg_hrs": 2.1
+      },
+      "open_banking": {
+        "created": 368,
+        "completed": 342,
+        "conversion": 92.9,
+        "median_hrs": 0.76,
+        "avg_hrs": 10.96
+      },
+      "credit": {
+        "created": 177,
+        "completed": 176,
+        "conversion": 99.4,
+        "median_hrs": 0.18,
+        "avg_hrs": 0.84
+      }
+    },
+    "NAD": {
+      "debit": {
+        "created": 797,
+        "completed": 793,
+        "conversion": 99.5,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.33
+      },
+      "open_banking": {
+        "created": 177,
+        "completed": 176,
+        "conversion": 99.4,
+        "median_hrs": 0.46,
+        "avg_hrs": 0.67
+      },
+      "credit": {
+        "created": 17,
+        "completed": 14,
+        "conversion": 82.4,
+        "median_hrs": 2.04,
+        "avg_hrs": 10.4
+      },
+      "bank_account": {
+        "created": 14,
+        "completed": 14,
+        "conversion": 100,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.16
+      }
+    },
+    "GBP": {
+      "bank_account": {
+        "created": 1407,
+        "completed": 1261,
+        "conversion": 89.6,
+        "median_hrs": 6.59,
+        "avg_hrs": 23.96
+      },
+      "open_banking": {
+        "created": 118,
+        "completed": 116,
+        "conversion": 98.3,
+        "median_hrs": 0.17,
+        "avg_hrs": 1.11
+      },
+      "balance": {
+        "created": 26,
+        "completed": 21,
+        "conversion": 80.8,
+        "median_hrs": 121.29,
+        "avg_hrs": 114.93
+      },
+      "credit": {
+        "created": 25,
+        "completed": 25,
+        "conversion": 100,
+        "median_hrs": 0.18,
+        "avg_hrs": 0.33
+      },
+      "debit": {
+        "created": 20,
+        "completed": 20,
+        "conversion": 100,
+        "median_hrs": 0.96,
+        "avg_hrs": 5.56
+      },
+      "direct_debit": {
+        "created": 6,
+        "completed": 6,
+        "conversion": 100,
+        "median_hrs": 0.3,
+        "avg_hrs": 35.08
+      }
+    },
+    "THB": {
+      "debit": {
+        "created": 522,
+        "completed": 517,
+        "conversion": 99,
+        "median_hrs": 0.18,
+        "avg_hrs": 2.58
+      },
+      "open_banking": {
+        "created": 110,
+        "completed": 105,
+        "conversion": 95.5,
+        "median_hrs": 0.49,
+        "avg_hrs": 0.91
+      },
+      "bank_account": {
+        "created": 96,
+        "completed": 90,
+        "conversion": 93.8,
+        "median_hrs": 1.75,
+        "avg_hrs": 18.48
+      },
+      "credit": {
+        "created": 45,
+        "completed": 45,
+        "conversion": 100,
+        "median_hrs": 0.18,
+        "avg_hrs": 5.6
+      }
+    },
+    "ZAR": {
+      "debit": {
+        "created": 623,
+        "completed": 620,
+        "conversion": 99.5,
+        "median_hrs": 0.18,
+        "avg_hrs": 2.86
+      },
+      "open_banking": {
+        "created": 141,
+        "completed": 141,
+        "conversion": 100,
+        "median_hrs": 0.49,
+        "avg_hrs": 2
+      },
+      "bank_account": {
+        "created": 135,
+        "completed": 131,
+        "conversion": 97,
+        "median_hrs": 2.22,
+        "avg_hrs": 16.65
+      },
+      "credit": {
+        "created": 68,
+        "completed": 68,
+        "conversion": 100,
+        "median_hrs": 0.19,
+        "avg_hrs": 2.56
+      }
+    },
+    "PHP": {
+      "debit": {
+        "created": 335,
+        "completed": 330,
+        "conversion": 98.5,
+        "median_hrs": 0.18,
+        "avg_hrs": 1.12
+      },
+      "open_banking": {
+        "created": 53,
+        "completed": 52,
+        "conversion": 98.1,
+        "median_hrs": 0.43,
+        "avg_hrs": 1.01
+      },
+      "credit": {
+        "created": 51,
+        "completed": 51,
+        "conversion": 100,
+        "median_hrs": 0.18,
+        "avg_hrs": 0.17
+      },
+      "bank_account": {
+        "created": 48,
+        "completed": 48,
+        "conversion": 100,
+        "median_hrs": 0.8,
+        "avg_hrs": 11.11
+      }
+    },
+    "AUD": {
+      "debit": {
+        "created": 456,
+        "completed": 450,
+        "conversion": 98.7,
+        "median_hrs": 0.19,
+        "avg_hrs": 2.21
+      },
+      "bank_account": {
+        "created": 190,
+        "completed": 185,
+        "conversion": 97.4,
+        "median_hrs": 0.77,
+        "avg_hrs": 13.07
+      },
+      "open_banking": {
+        "created": 90,
+        "completed": 88,
+        "conversion": 97.8,
+        "median_hrs": 0.5,
+        "avg_hrs": 3.14
+      },
+      "credit": {
+        "created": 63,
+        "completed": 63,
+        "conversion": 100,
+        "median_hrs": 0.18,
+        "avg_hrs": 0.18
+      }
+    },
+    "USD": {
+      "bank_account": {
+        "created": 1226,
+        "completed": 1189,
+        "conversion": 97,
+        "median_hrs": 2.06,
+        "avg_hrs": 15.34
+      },
+      "debit": {
+        "created": 944,
+        "completed": 939,
+        "conversion": 99.5,
+        "median_hrs": 2.93,
+        "avg_hrs": 12.43
+      },
+      "open_banking": {
+        "created": 246,
+        "completed": 240,
+        "conversion": 97.6,
+        "median_hrs": 3.31,
+        "avg_hrs": 13.37
+      },
+      "credit": {
+        "created": 123,
+        "completed": 120,
+        "conversion": 97.6,
+        "median_hrs": 1.91,
+        "avg_hrs": 10.79
+      },
+      "balance": {
+        "created": 12,
+        "completed": 11,
+        "conversion": 91.7,
+        "median_hrs": 0.54,
+        "avg_hrs": 3.21
+      }
+    },
+    "PKR": {
+      "debit": {
+        "created": 304,
+        "completed": 299,
+        "conversion": 98.4,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.65
+      },
+      "bank_account": {
+        "created": 68,
+        "completed": 62,
+        "conversion": 91.2,
+        "median_hrs": 0.79,
+        "avg_hrs": 12.58
+      },
+      "credit": {
+        "created": 50,
+        "completed": 49,
+        "conversion": 98,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.17
+      },
+      "open_banking": {
+        "created": 39,
+        "completed": 37,
+        "conversion": 94.9,
+        "median_hrs": 0.53,
+        "avg_hrs": 4.2
+      },
+      "balance": {
+        "created": 3,
+        "completed": 2,
+        "conversion": 66.7,
+        "median_hrs": 4.73,
+        "avg_hrs": 4.73
+      }
+    },
+    "MAD": {
+      "debit": {
+        "created": 307,
+        "completed": 303,
+        "conversion": 98.7,
+        "median_hrs": 0.17,
+        "avg_hrs": 2.37
+      },
+      "open_banking": {
+        "created": 57,
+        "completed": 57,
+        "conversion": 100,
+        "median_hrs": 0.5,
+        "avg_hrs": 2.03
+      },
+      "bank_account": {
+        "created": 25,
+        "completed": 23,
+        "conversion": 92,
+        "median_hrs": 1.32,
+        "avg_hrs": 20.35
+      },
+      "credit": {
+        "created": 18,
+        "completed": 18,
+        "conversion": 100,
+        "median_hrs": 0.18,
+        "avg_hrs": 0.29
+      }
+    },
+    "BWP": {
+      "debit": {
+        "created": 194,
+        "completed": 194,
+        "conversion": 100,
+        "median_hrs": 0.17,
+        "avg_hrs": 2.77
+      },
+      "open_banking": {
+        "created": 30,
+        "completed": 30,
+        "conversion": 100,
+        "median_hrs": 0.51,
+        "avg_hrs": 3.09
+      },
+      "bank_account": {
+        "created": 3,
+        "completed": 3,
+        "conversion": 100,
+        "median_hrs": 2.33,
+        "avg_hrs": 51.48
+      }
+    },
+    "AED": {
+      "debit": {
+        "created": 179,
+        "completed": 174,
+        "conversion": 97.2,
+        "median_hrs": 0.18,
+        "avg_hrs": 0.7
+      },
+      "bank_account": {
+        "created": 87,
+        "completed": 75,
+        "conversion": 86.2,
+        "median_hrs": 1.37,
+        "avg_hrs": 13.83
+      },
+      "open_banking": {
+        "created": 69,
+        "completed": 68,
+        "conversion": 98.6,
+        "median_hrs": 0.46,
+        "avg_hrs": 4.87
+      },
+      "credit": {
+        "created": 28,
+        "completed": 28,
+        "conversion": 100,
+        "median_hrs": 0.16,
+        "avg_hrs": 0.55
+      }
+    },
+    "NZD": {
+      "debit": {
+        "created": 187,
+        "completed": 185,
+        "conversion": 98.9,
+        "median_hrs": 0.19,
+        "avg_hrs": 1.87
+      },
+      "bank_account": {
+        "created": 62,
+        "completed": 59,
+        "conversion": 95.2,
+        "median_hrs": 2.03,
+        "avg_hrs": 19.54
+      },
+      "open_banking": {
+        "created": 33,
+        "completed": 32,
+        "conversion": 97,
+        "median_hrs": 0.41,
+        "avg_hrs": 2.32
+      },
+      "credit": {
+        "created": 12,
+        "completed": 12,
+        "conversion": 100,
+        "median_hrs": 0.19,
+        "avg_hrs": 0.18
+      }
+    },
+    "TRY": {
+      "debit": {
+        "created": 152,
+        "completed": 147,
+        "conversion": 96.7,
+        "median_hrs": 0.19,
+        "avg_hrs": 0.78
+      },
+      "open_banking": {
+        "created": 44,
+        "completed": 44,
+        "conversion": 100,
+        "median_hrs": 0.48,
+        "avg_hrs": 5.42
+      },
+      "credit": {
+        "created": 18,
+        "completed": 18,
+        "conversion": 100,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.16
+      },
+      "bank_account": {
+        "created": 17,
+        "completed": 15,
+        "conversion": 88.2,
+        "median_hrs": 0.6,
+        "avg_hrs": 6.08
+      }
+    },
+    "LKR": {
+      "debit": {
+        "created": 141,
+        "completed": 141,
+        "conversion": 100,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.17
+      },
+      "bank_account": {
+        "created": 23,
+        "completed": 22,
+        "conversion": 95.7,
+        "median_hrs": 0.68,
+        "avg_hrs": 10.56
+      },
+      "credit": {
+        "created": 19,
+        "completed": 19,
+        "conversion": 100,
+        "median_hrs": 0.19,
+        "avg_hrs": 0.19
+      },
+      "open_banking": {
+        "created": 19,
+        "completed": 19,
+        "conversion": 100,
+        "median_hrs": 0.41,
+        "avg_hrs": 1.16
+      }
+    },
+    "SAR": {
+      "debit": {
+        "created": 115,
+        "completed": 111,
+        "conversion": 96.5,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.65
+      },
+      "bank_account": {
+        "created": 35,
+        "completed": 35,
+        "conversion": 100,
+        "median_hrs": 0.47,
+        "avg_hrs": 2.63
+      },
+      "open_banking": {
+        "created": 20,
+        "completed": 17,
+        "conversion": 85,
+        "median_hrs": 0.91,
+        "avg_hrs": 16.16
+      },
+      "credit": {
+        "created": 8,
+        "completed": 8,
+        "conversion": 100,
+        "median_hrs": 0.16,
+        "avg_hrs": 0.15
+      }
+    },
+    "PLN": {
+      "debit": {
+        "created": 89,
+        "completed": 88,
+        "conversion": 98.9,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.18
+      },
+      "bank_account": {
+        "created": 35,
+        "completed": 33,
+        "conversion": 94.3,
+        "median_hrs": 12.11,
+        "avg_hrs": 16.29
+      },
+      "credit": {
+        "created": 18,
+        "completed": 18,
+        "conversion": 100,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.17
+      },
+      "open_banking": {
+        "created": 12,
+        "completed": 12,
+        "conversion": 100,
+        "median_hrs": 0.45,
+        "avg_hrs": 0.51
+      }
+    },
+    "MUR": {
+      "debit": {
+        "created": 92,
+        "completed": 89,
+        "conversion": 96.7,
+        "median_hrs": 0.2,
+        "avg_hrs": 11.6
+      },
+      "bank_account": {
+        "created": 25,
+        "completed": 25,
+        "conversion": 100,
+        "median_hrs": 39.96,
+        "avg_hrs": 39.17
+      },
+      "open_banking": {
+        "created": 22,
+        "completed": 22,
+        "conversion": 100,
+        "median_hrs": 0.63,
+        "avg_hrs": 22.55
+      },
+      "credit": {
+        "created": 11,
+        "completed": 10,
+        "conversion": 90.9,
+        "median_hrs": 0.22,
+        "avg_hrs": 3.07
+      }
+    },
+    "COP": {
+      "debit": {
+        "created": 91,
+        "completed": 91,
+        "conversion": 100,
+        "median_hrs": 0.18,
+        "avg_hrs": 0.47
+      },
+      "bank_account": {
+        "created": 15,
+        "completed": 13,
+        "conversion": 86.7,
+        "median_hrs": 8.06,
+        "avg_hrs": 29.52
+      },
+      "open_banking": {
+        "created": 11,
+        "completed": 11,
+        "conversion": 100,
+        "median_hrs": 0.41,
+        "avg_hrs": 0.45
+      },
+      "credit": {
+        "created": 11,
+        "completed": 9,
+        "conversion": 81.8,
+        "median_hrs": 0.19,
+        "avg_hrs": 0.19
+      }
+    },
+    "MYR": {
+      "debit": {
+        "created": 55,
+        "completed": 54,
+        "conversion": 98.2,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.31
+      },
+      "bank_account": {
+        "created": 26,
+        "completed": 24,
+        "conversion": 92.3,
+        "median_hrs": 0.82,
+        "avg_hrs": 7.84
+      },
+      "open_banking": {
+        "created": 11,
+        "completed": 11,
+        "conversion": 100,
+        "median_hrs": 0.34,
+        "avg_hrs": 0.39
+      },
+      "credit": {
+        "created": 10,
+        "completed": 10,
+        "conversion": 100,
+        "median_hrs": 0.2,
+        "avg_hrs": 0.2
+      }
+    },
+    "XOF": {
+      "debit": {
+        "created": 79,
+        "completed": 78,
+        "conversion": 98.7,
+        "median_hrs": 0.17,
+        "avg_hrs": 1.98
+      },
+      "open_banking": {
+        "created": 13,
+        "completed": 12,
+        "conversion": 92.3,
+        "median_hrs": 0.47,
+        "avg_hrs": 0.51
+      },
+      "credit": {
+        "created": 5,
+        "completed": 5,
+        "conversion": 100,
+        "median_hrs": 0.18,
+        "avg_hrs": 0.17
+      },
+      "bank_account": {
+        "created": 5,
+        "completed": 5,
+        "conversion": 100,
+        "median_hrs": 21.13,
+        "avg_hrs": 21.89
+      }
+    },
+    "ETB": {
+      "debit": {
+        "created": 53,
+        "completed": 52,
+        "conversion": 98.1,
+        "median_hrs": 0.15,
+        "avg_hrs": 0.16
+      },
+      "open_banking": {
+        "created": 20,
+        "completed": 20,
+        "conversion": 100,
+        "median_hrs": 0.52,
+        "avg_hrs": 0.49
+      },
+      "bank_account": {
+        "created": 3,
+        "completed": 3,
+        "conversion": 100,
+        "median_hrs": 0.74,
+        "avg_hrs": 40.19
+      }
+    },
+    "IDR": {
+      "debit": {
+        "created": 47,
+        "completed": 47,
+        "conversion": 100,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.9
+      },
+      "bank_account": {
+        "created": 20,
+        "completed": 19,
+        "conversion": 95,
+        "median_hrs": 0.9,
+        "avg_hrs": 16.11
+      },
+      "open_banking": {
+        "created": 7,
+        "completed": 6,
+        "conversion": 85.7,
+        "median_hrs": 0.55,
+        "avg_hrs": 0.46
+      }
+    },
+    "GHS": {
+      "debit": {
+        "created": 31,
+        "completed": 31,
+        "conversion": 100,
+        "median_hrs": 0.17,
+        "avg_hrs": 0.19
+      },
+      "credit": {
+        "created": 8,
+        "completed": 7,
+        "conversion": 87.5,
+        "median_hrs": 0.16,
+        "avg_hrs": 6.14
+      },
+      "open_banking": {
+        "created": 3,
+        "completed": 2,
+        "conversion": 66.7,
+        "median_hrs": 0.47,
+        "avg_hrs": 0.47
+      },
+      "bank_account": {
+        "created": 3,
+        "completed": 3,
+        "conversion": 100,
+        "median_hrs": 0.68,
+        "avg_hrs": 12.31
+      }
+    }
+  }
+}

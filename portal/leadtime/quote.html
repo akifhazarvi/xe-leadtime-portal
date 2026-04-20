@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Lead Time Preview — Old vs New</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #58a6ff; }
+    .nav-links { display: flex; gap: 16px; margin-left: auto; }
+    .nav-links a { color: #58a6ff; text-decoration: none; font-size: 13px; }
+    .nav-links a:hover { text-decoration: underline; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+    /* Quote builder */
+    .builder { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+    .builder h2 { font-size: 16px; margin-bottom: 16px; color: #8b949e; font-weight: 500; }
+    .builder-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .field label { display: block; font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .field select { width: 100%; background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 10px 12px; border-radius: 8px; font-size: 14px; }
+    .field select:focus { outline: none; border-color: #58a6ff; }
+    .time-toggle { display: flex; gap: 8px; margin-top: 16px; }
+    .time-btn { padding: 8px 16px; border: 1px solid #30363d; background: #0d1117; color: #8b949e; border-radius: 8px; cursor: pointer; font-size: 13px; }
+    .time-btn.active { background: #58a6ff22; color: #58a6ff; border-color: #58a6ff; }
+
+    /* Side by side quotes */
+    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .quotes { grid-template-columns: 1fr; } }
+
+    .quote-card { border-radius: 12px; overflow: hidden; }
+    .quote-card.old { border: 2px solid #f8514944; }
+    .quote-card.new { border: 2px solid #3fb95044; }
+    .quote-header { padding: 12px 16px; font-weight: 600; font-size: 14px; }
+    .quote-card.old .quote-header { background: #f8514922; color: #f85149; }
+    .quote-card.new .quote-header { background: #3fb95022; color: #3fb950; }
+    .quote-body { background: #161b22; padding: 16px; }
+
+    /* Fake Xe quote UI */
+    .xe-quote { background: #0d1117; border-radius: 8px; padding: 16px; }
+    .xe-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #21262d; }
+    .xe-row:last-child { border-bottom: none; }
+    .xe-label { color: #8b949e; font-size: 13px; }
+    .xe-value { font-weight: 600; font-size: 14px; }
+    .xe-leadtime { padding: 12px 16px; border-radius: 8px; margin-top: 12px; text-align: center; }
+    .xe-leadtime.old-lt { background: #21262d; }
+    .xe-leadtime.new-lt { background: #21262d; }
+    .xe-lt-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    .xe-lt-value { font-size: 18px; font-weight: 700; margin-top: 4px; }
+    .xe-lt-translated { font-size: 13px; color: #8b949e; margin-top: 4px; }
+
+    .diff-banner { padding: 12px 16px; border-radius: 8px; margin-top: 16px; font-size: 13px; text-align: center; }
+    .diff-banner.same { background: #21262d; color: #8b949e; }
+    .diff-banner.tighten { background: #3fb95022; color: #3fb950; border: 1px solid #3fb95033; }
+    .diff-banner.loosen { background: #f8514922; color: #f85149; border: 1px solid #f8514933; }
+
+    /* All methods grid */
+    .methods-grid { margin-top: 24px; }
+    .methods-grid h3 { font-size: 14px; color: #8b949e; margin-bottom: 12px; font-weight: 500; }
+    .method-row { display: grid; grid-template-columns: 120px 1fr 1fr 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid #1c2128; font-size: 12px; }
+    .method-row.header { font-weight: 600; color: #8b949e; font-size: 10px; text-transform: uppercase; border-bottom: 2px solid #30363d; }
+    .method-name { color: #8b949e; }
+    .method-old { color: #f85149; }
+    .method-new { color: #3fb950; }
+    .method-same { color: #484f58; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>Quote <span>Lead Time Preview</span></h1>
+      <div class="nav-links">
+        <a href="index.html">SLA vs Reality</a>
+        <a href="compare.html">CSV Comparison</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="builder">
+      <h2>Configure Quote</h2>
+      <div class="builder-grid">
+        <div class="field">
+          <label>Send Currency</label>
+          <select id="send-ccy">
+            <option value="all">All EU (aggregate)</option>
+            <option value="EUR" selected>EUR (85%)</option>
+            <option value="GBP">GBP (9%)</option>
+            <option value="Other">DKK/SEK/CHF/NOK/PLN (3%)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Payout Currency</label>
+          <select id="payout-ccy"></select>
+        </div>
+        <div class="field">
+          <label>Payment Method</label>
+          <select id="payment-method">
+            <option value="DebitCard">Debit Card</option>
+            <option value="CreditCard">Credit Card</option>
+            <option value="BankTransfer">Bank Transfer</option>
+            <option value="OpenBanking">Open Banking</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Delivery Method</label>
+          <select id="delivery-method">
+            <option value="BankAccount">Bank Account</option>
+            <option value="CashPayout">Cash Pickup</option>
+            <option value="MobileWallet">Mobile Wallet</option>
+            <option value="FundsOnBalance">Balance</option>
+            <option value="PeerToPeer">Peer-to-Peer</option>
+          </select>
+        </div>
+      </div>
+      <div class="time-toggle">
+        <button class="time-btn active" data-time="weekday-bh">Weekday Business Hrs</button>
+        <button class="time-btn" data-time="weekday-ah">Weekday After Hrs</button>
+        <button class="time-btn" data-time="weekend">Weekend</button>
+      </div>
+    </div>
+
+    <div class="quotes">
+      <div class="quote-card old">
+        <div class="quote-header">Current EU.csv (Old)</div>
+        <div class="quote-body" id="old-quote"></div>
+      </div>
+      <div class="quote-card new">
+        <div class="quote-header">Updated EU.csv (New)</div>
+        <div class="quote-body" id="new-quote"></div>
+      </div>
+    </div>
+
+    <div id="diff-banner"></div>
+
+    <div class="methods-grid" id="methods-grid"></div>
+  </div>
+
+<script>
+let DATA = null;
+let AMP = null;
+let timeMode = 'weekday-bh'; // weekday-bh, weekday-ah, weekend
+
+Promise.all([
+  fetch('../data/eu-csv-comparison.json').then(r => r.json()),
+  fetch('../data/eu-payment-speed.json').then(r => r.json()),
+]).then(([comp, amp]) => {
+  DATA = comp;
+  AMP = amp;
+  populateCurrencies();
+  render();
+});
+
+function populateCurrencies() {
+  const sel = document.getElementById('payout-ccy');
+  const sorted = DATA.currencies.filter(c => c.volume > 0).sort((a, b) => b.volume - a.volume);
+  for (const c of sorted) {
+    const opt = document.createElement('option');
+    opt.value = c.currency;
+    opt.textContent = `${c.currency} — ${c.ccyType} (${c.volume.toLocaleString()} txns)`;
+    sel.appendChild(opt);
+  }
+  // Also add zero-volume ones
+  const zeroVol = DATA.currencies.filter(c => c.volume === 0).sort((a, b) => a.currency.localeCompare(b.currency));
+  for (const c of zeroVol) {
+    const opt = document.createElement('option');
+    opt.value = c.currency;
+    opt.textContent = `${c.currency} — ${c.ccyType} (no data)`;
+    sel.appendChild(opt);
+  }
+}
+
+// Translation logic (mirrors C# Translation.cs)
+function translateSLA(raw) {
+  if (!raw) return raw;
+  const s = raw.trim();
+  if (/^\s*<?\d+\s*(mins|minute|min|minutes)\s*$/i.test(s)) return 'Typically minutes';
+  if (/^\s*>?\d+-<\d+\s*(mins|minute|min|minutes)\s*$/i.test(s)) return 'Typically minutes';
+  if (/^\s*<?\s*24\s*(hrs|hours)\s*$/i.test(s)) return 'Typically within 24 hours';
+  if (/same\s*day/i.test(s)) return 'Typically same day';
+  if (/next\s*day/i.test(s)) return 'Typically next day';
+  if (/^\s*<?\s*48\s*(hrs|hours)\s*$/i.test(s)) return 'Typically within 48 hours';
+  if (/^\s*<?\s*(\d+)\s*(day|days)\s*$/i.test(s)) {
+    const m = s.match(/(\d+)/);
+    return `Up to ${m[1]} days`;
+  }
+  if (/^\s*>\s*48\s*(hrs|hours)\s*$/i.test(s)) return 'More than 3 days';
+  if (/three\s*days/i.test(s)) return 'Typically 3 business days';
+  if (/^\s*<?\d+\s*(hrs|hours|hr|hour)\s*$/i.test(s)) return 'Typically hours';
+  if (/^\s*\d+-\d+\s*(hrs|hours|hr|hour)\s*$/i.test(s)) return 'Typically hours';
+  return s;
+}
+
+function getLeadTime(csvRow, paymentMethod, deliveryMethod, isAfterHours) {
+  // Mirrors the C# LeadTimesLoader logic
+  const prefix = isAfterHours ? 'OUT_' : 'IN_';
+
+  // Check delivery method override (for card/OB payments)
+  if (['CreditCard','DebitCard','OpenBanking'].includes(paymentMethod)) {
+    switch (deliveryMethod) {
+      case 'CashPayout': if (csvRow['CPO']) return csvRow['CPO']; break;
+      case 'MobileWallet': if (csvRow['MobileWallet']) return csvRow['MobileWallet']; break;
+      case 'FundsOnBalance': if (csvRow['Balance']) return csvRow['Balance']; break;
+      case 'PeerToPeer': if (csvRow['PeerToPeer']) return csvRow['PeerToPeer']; break;
+    }
+  }
+
+  // FundsOnBalance payment → BankTransfer column (for BankAccount delivery)
+  if (paymentMethod === 'FundsOnBalance') {
+    if (deliveryMethod === 'CashPayout' && csvRow['CPO']) return csvRow['CPO'];
+    if (deliveryMethod === 'MobileWallet' && csvRow['MobileWallet']) return csvRow['MobileWallet'];
+    if (deliveryMethod === 'FundsOnBalance' && csvRow['Balance']) return csvRow['Balance'];
+    if (deliveryMethod === 'PeerToPeer' && csvRow['PeerToPeer']) return csvRow['PeerToPeer'];
+    return csvRow[prefix + 'BankTransfer'];
+  }
+
+  // DirectDebit → ACH column
+  if (paymentMethod === 'DirectDebit') return csvRow[prefix + 'ACH'];
+
+  // Default: payment method column
+  return csvRow[prefix + paymentMethod];
+}
+
+function render() {
+  if (!DATA) return;
+  const ccy = document.getElementById('payout-ccy').value;
+  const payMethod = document.getElementById('payment-method').value;
+  const delMethod = document.getElementById('delivery-method').value;
+
+  // Ria priority: if a Ria row exists for this currency, use it (mirrors C# ToMap logic)
+  const matches = DATA.currencies.filter(c => c.currency === ccy);
+  const entry = matches.find(c => c.ccyType.toLowerCase().includes('ria')) || matches[0];
+  if (!entry) return;
+
+  const isAfterHours = timeMode !== 'weekday-bh';
+
+  const oldLT = getLeadTime(entry.old, payMethod, delMethod, isAfterHours) || 'N/A';
+  const newLT = getLeadTime(entry.new, payMethod, delMethod, isAfterHours) || 'N/A';
+
+  const oldTranslated = translateSLA(oldLT);
+  const newTranslated = translateSLA(newLT);
+
+  const timeLabel = timeMode === 'weekday-bh' ? 'Weekday, Business Hours (before 14:00 GMT)'
+    : timeMode === 'weekday-ah' ? 'Weekday, After Hours (after 14:00 GMT)'
+    : 'Weekend (Saturday/Sunday)';
+
+  // Get actual Amplitude speed for this corridor
+  const sendCcy = document.getElementById('send-ccy').value;
+  const sendLabel = sendCcy === 'all' ? 'EU' : sendCcy === 'Other' ? 'DKK/SEK/..' : sendCcy;
+  let actualMed = null;
+  let actualVol = 0;
+  if (AMP && AMP.by_send_currency && AMP.by_send_currency[ccy]) {
+    if (sendCcy === 'all') {
+      const ampCcy = AMP.currencies[ccy];
+      if (ampCcy && ampCcy.overall) {
+        actualMed = ampCcy.overall.median_hrs;
+        actualVol = ampCcy.overall.volume || 0;
+      }
+    } else {
+      const scData = AMP.by_send_currency[ccy][sendCcy];
+      if (scData) {
+        actualMed = scData.median_hrs;
+        actualVol = scData.volume || 0;
+      }
+    }
+  }
+
+  function fmtHrs(h) {
+    if (h === null || h === undefined) return '-';
+    if (h < 0.08) return '<5 min';
+    if (h < 1) return Math.round(h * 60) + ' min';
+    if (h < 24) return h.toFixed(1) + ' hrs';
+    return (h / 24).toFixed(1) + ' days';
+  }
+
+  const actualColor = actualMed === null ? '#484f58' : actualMed <= 1 ? '#3fb950' : actualMed <= 24 ? '#58a6ff' : actualMed <= 48 ? '#d29922' : '#f85149';
+
+  const quoteHtml = (lt, translated, cls, isNew) => `
+    <div class="xe-quote">
+      <div class="xe-row">
+        <span class="xe-label">Send</span>
+        <span class="xe-value">${sendLabel}</span>
+      </div>
+      <div class="xe-row">
+        <span class="xe-label">Receive</span>
+        <span class="xe-value">${ccy}</span>
+      </div>
+      <div class="xe-row">
+        <span class="xe-label">Payment</span>
+        <span class="xe-value">${payMethod.replace(/([A-Z])/g, ' $1').trim()}</span>
+      </div>
+      <div class="xe-row">
+        <span class="xe-label">Delivery</span>
+        <span class="xe-value">${delMethod.replace(/([A-Z])/g, ' $1').trim()}</span>
+      </div>
+      <div class="xe-row">
+        <span class="xe-label">Time</span>
+        <span class="xe-value" style="font-size:12px">${timeLabel}</span>
+      </div>
+      <div class="xe-leadtime ${cls}">
+        <div class="xe-lt-label">SLA — What User Sees</div>
+        <div class="xe-lt-value">${lt}</div>
+        <div class="xe-lt-translated">${translated}</div>
+      </div>
+      <div class="xe-leadtime" style="background:#0d1117;border:1px solid #30363d;margin-top:8px">
+        <div class="xe-lt-label">Actual (Amplitude Median)</div>
+        <div class="xe-lt-value" style="color:${actualColor}">${fmtHrs(actualMed)}</div>
+        <div class="xe-lt-translated">${actualVol > 0 ? actualVol.toLocaleString() + ' transactions (90d)' : 'No data for this corridor'}</div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('old-quote').innerHTML = quoteHtml(oldLT, oldTranslated, 'old-lt', false);
+  document.getElementById('new-quote').innerHTML = quoteHtml(newLT, newTranslated, 'new-lt', true);
+
+  // Diff banner
+  const banner = document.getElementById('diff-banner');
+  if (oldLT === newLT) {
+    banner.innerHTML = `<div class="diff-banner same">No change for this combination</div>`;
+  } else {
+    const dir = slaRank(newLT) < slaRank(oldLT) ? 'tighten' : 'loosen';
+    const label = dir === 'tighten'
+      ? `Tightened: Users now see a faster promise (${oldTranslated} &rarr; ${newTranslated})`
+      : `Loosened: Users now see a slower but more accurate promise (${oldTranslated} &rarr; ${newTranslated})`;
+    banner.innerHTML = `<div class="diff-banner ${dir}">${label}</div>`;
+  }
+
+  // All methods grid
+  const methods = ['BankTransfer', 'CreditCard', 'DebitCard', 'OpenBanking'];
+  const deliveries = ['BankAccount', 'CashPayout', 'MobileWallet', 'FundsOnBalance', 'PeerToPeer'];
+
+  const riaNote = entry.ccyType.toLowerCase().includes('ria')
+    ? `<span style="color:#d29922;font-size:11px"> — Using Ria row (overrides Exotic)</span>`
+    : matches.length > 1
+    ? `<span style="color:#8b949e;font-size:11px"> — Using ${entry.ccyType} row</span>`
+    : '';
+  let gridHtml = `<h3>All Combinations for ${sendLabel} &rarr; ${ccy}${riaNote}</h3>
+    <div style="font-size:11px;color:#8b949e;margin-bottom:8px">${timeLabel} &mdash; Toggle above to see IN (business hrs) vs OUT (after hrs/weekend) values</div>`;
+  gridHtml += `<div class="method-row header"><div>Payment &darr; / Delivery &rarr;</div>`;
+  for (const d of deliveries) gridHtml += `<div>${d.replace(/([A-Z])/g, ' $1').trim()}</div>`;
+  gridHtml += `</div>`;
+
+  for (const m of methods) {
+    gridHtml += `<div class="method-row"><div class="method-name">${m.replace(/([A-Z])/g, ' $1').trim()}</div>`;
+    for (const d of deliveries) {
+      const o = getLeadTime(entry.old, m, d, isAfterHours) || 'N/A';
+      const n = getLeadTime(entry.new, m, d, isAfterHours) || 'N/A';
+      if (o === n) {
+        gridHtml += `<div class="method-same">${o}</div>`;
+      } else {
+        gridHtml += `<div><span class="method-old" style="text-decoration:line-through;font-size:10px">${o}</span><br><span class="method-new">${n}</span></div>`;
+      }
+    }
+    gridHtml += `</div>`;
+  }
+
+  document.getElementById('methods-grid').innerHTML = gridHtml;
+}
+
+function slaRank(sla) {
+  const s = (sla || '').toLowerCase().trim();
+  if (/5\s*min/.test(s)) return 1;
+  if (/<\s*30\s*min/.test(s)) return 2;
+  if (/<\s*1\s*hr/.test(s)) return 3;
+  if (/<\s*6\s*hr/.test(s)) return 4;
+  if (/1-12/.test(s)) return 5;
+  if (/same\s*day|next\s*day|<?\s*24/.test(s) || s === '24hrs') return 6;
+  if (/<?\s*48/.test(s) || s === '48hrs') return 7;
+  if (/three\s*day|<?\s*3\s*day|>\s*48/.test(s)) return 8;
+  if (/<?\s*4\s*day/.test(s)) return 9;
+  if (/>\s*4\s*day/.test(s)) return 10;
+  if (s === 'n/a') return 99;
+  return 11;
+}
+
+// Event handlers
+['send-ccy', 'payout-ccy', 'payment-method', 'delivery-method'].forEach(id => {
+  document.getElementById(id).addEventListener('change', render);
+});
+
+document.querySelectorAll('.time-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    timeMode = btn.dataset.time;
+    render();
+  });
+});
+</script>
+</body>
+</html>

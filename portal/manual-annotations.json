@@ -1,0 +1,592 @@
+{
+  "Quote Accessed": {
+    "category": "send_money",
+    "trigger": "User opens the send money form. On web: user navigates to SendMoneyAmount page (must be logged in). On mobile: user taps Send Money from home screen, converter, bottom nav tab, or even sign-in/signup prompts — fires for anonymous (not logged in) users too.",
+    "notes": "On mobile, this includes anonymous users browsing quotes without logging in. On web, users must be logged in first. This means mobile volume is 3-5x higher than web. Do NOT use this as funnel start for cross-platform comparison.",
+    "intelligence": {
+      "businessContext": "This is the top-of-funnel entry point for the entire money transfer business. High volume but low intent on mobile (anonymous browsing). On web, every user here is logged in and has some intent to send money.",
+      "whyItMatters": "Tracks demand — how many people are interested in sending money. Sudden drops could indicate app launch issues, marketing campaign changes, or seasonal patterns.",
+      "whatToWatchFor": [
+        "Mobile volume is 3-5x web because anonymous users are included. Don't compare raw counts.",
+        "A drop on one platform with stable others = app bug or deployment issue.",
+        "Spikes often correlate with marketing campaigns or currency volatility (users checking rates)."
+      ],
+      "platformDifferences": "Mobile: fires from 6+ entry points (home screen, converter, tabs, sign-in page, signup prompt, registration completion). Web: fires from 1 location only (SendMoneyAmount.vue). Mobile includes anonymous users; web requires login.",
+      "commonMistakes": [
+        "Don't use this as the start of a cross-platform conversion funnel — mobile anonymous browsing inflates the denominator.",
+        "Don't confuse with 'Non-Money Transfer Quote Accessed' (separate event for non-MT countries)."
+      ],
+      "analysisQuestions": [
+        "How many people are checking prices vs actually sending? → Compare Quote Accessed to Quote Confirmed ratio by platform.",
+        "Are marketing campaigns driving top-of-funnel? → Correlate spikes with campaign dates.",
+        "Which entry points on mobile drive the most quotes? → Group by 'location' and 'source' properties."
+      ]
+    }
+  },
+
+  "Quote Created": {
+    "category": "send_money",
+    "trigger": "Quote is generated after user enters amount, selects currencies, and the system calculates rates and fees for all available payment/delivery method combinations. Fires automatically when the quote response returns — user doesn't click anything specific for this event.",
+    "notes": "Fires on ALL platforms. Can fire multiple times per session as user changes amounts or currencies. Volume is higher than Quote Accessed because recalculations trigger new events. Do NOT use 'Quote Calculated' — that's a separate low-volume public site calculator event.",
+    "intelligence": {
+      "businessContext": "This event captures the moment the user sees their pricing options. The properties include a massive 84-property pricing matrix covering every delivery × payment method combination with fees, rates, and amounts.",
+      "whyItMatters": "The pricing data in this event is gold for understanding what users see before they decide. If conversion drops, check the rates/fees being shown in this event's properties.",
+      "whatToWatchFor": [
+        "Volume per user > 1 means users are shopping — changing amounts or currencies to compare. High shop-around rates could indicate rate dissatisfaction.",
+        "If Quote Created fires but Quote Confirmed drops, users don't like what they see (rates too high, fees too high, delivery too slow).",
+        "Mobile volume is 2-3x web because anonymous users can browse quotes freely."
+      ],
+      "platformDifferences": "Web: fires from SendMoneyAmount.vue and corporate quote flows. App: fires from check-prices-xe.ts. The property schema is nearly identical across platforms.",
+      "commonMistakes": [
+        "Don't use 'Quote Calculated' — that's a public site calculator event with ~1.8k/week volume, NOT part of the consumer send money flow.",
+        "Don't treat each Quote Created as a unique user — users recalculate multiple times."
+      ],
+      "analysisQuestions": [
+        "What rates/fees are users seeing for a specific corridor? → Filter by destination_country and check pricing properties.",
+        "Are certain payment methods unavailable for some corridors? → Check isBankDepositAvailable, isCreditCardAvailable, etc.",
+        "How many times do users recalculate before confirming? → Count Quote Created per user per session."
+      ]
+    }
+  },
+
+  "Quote Confirmed": {
+    "category": "send_money",
+    "trigger": "User taps the 'Confirm Quote' / 'Continue' button on the quote summary screen after reviewing the exchange rate, fees, and delivery time. On web: proceedContinue() in SendMoneyAmount.vue. On mobile: proceedContinue() in check-prices-xe.ts.",
+    "notes": "This is the INTENT SIGNAL. On mobile, only logged-in users who decided to transact reach this step. For fair cross-platform comparison, start funnels here. Post-intent conversion: iOS 78% > Android 74% > Web 70%.",
+    "intelligence": {
+      "businessContext": "This is the most important conversion signal in the send money flow. A user who confirms a quote has seen the exchange rate, fees, and delivery time and decided to proceed. This is where 'browsing' becomes 'buying'. On mobile, this filters out the ~85% of users who were just checking prices anonymously.",
+      "whyItMatters": "This event directly predicts revenue. Every user who reaches Quote Confirmed has ~78% chance of completing a transaction (iOS). Drops in this event mean fewer transactions tomorrow.",
+      "whatToWatchFor": [
+        "A sudden drop with stable Quote Created means something is wrong with the quote display — users see quotes but don't like what they see (rate changes, fee increases, slower delivery).",
+        "If Quote Confirmed drops on one platform but not others, check for app version regressions or UI bugs.",
+        "Weekend/holiday patterns: lower volumes Fri-Sat, higher Sun-Mon (payday remittance pattern)."
+      ],
+      "platformDifferences": "On mobile (iOS/Android), users can browse quotes anonymously without logging in — so Quote Accessed→Confirmed is ~11% (iOS), ~17% (Android). On web, users are already logged in, so conversion is ~60%. For fair cross-platform comparison, always start funnels at this event.",
+      "commonMistakes": [
+        "Don't compare raw Quote Confirmed counts across platforms — mobile has anonymous browsing inflating the top of funnel.",
+        "Don't use 'Quote Calculated' in funnels — that's a separate public site calculator event, not part of the send money flow."
+      ],
+      "analysisQuestions": [
+        "Are users confirming quotes at the same rate as last week? → Segment by platform, check for regression.",
+        "Is a specific corridor seeing lower confirmation rates? → Group by destination_country.",
+        "Are promo users more likely to confirm? → Compare promoApplied=true vs false."
+      ]
+    }
+  },
+
+  "Payment Method Selected": {
+    "category": "payment",
+    "trigger": "User selects how they want to pay (debit card, credit card, bank transfer, open banking, Interac, Apple Pay, Google Pay). On web: fires from sendMoney.ts when user picks a payment option. On mobile: fires from send-flow.ts at multiple selection points.",
+    "notes": "Fires for every payment method selection, including changes. The paymentType property tells you which method was chosen. On mobile, this fires from 7+ code locations covering different payment types.",
+    "intelligence": {
+      "businessContext": "Payment method selection directly impacts revenue margins. Different payment methods have different fee structures and processing costs. Understanding which methods users prefer — and which they switch away from — helps optimize the payment UX.",
+      "whyItMatters": "If users select a method but then don't confirm (Payment Method Selected → Transaction Summary Confirmed drops), there's friction in the payment step. This could be CVV entry failures, 3DS issues, or bank verification problems.",
+      "whatToWatchFor": [
+        "High rate of payment method changes (multiple Payment Method Selected per session) = user struggling to find a working method.",
+        "If one payment method's downstream conversion drops (e.g., card auth failures spike), it may not show in this event but in Card Authorisation Failed.",
+        "Apple Pay / Google Pay selection on mobile should have near-100% downstream conversion — if not, there's a wallet integration issue."
+      ],
+      "platformDifferences": "Web: supports debit card, credit card, bank transfer (staged), direct debit, open banking, Interac. Mobile: same plus Apple Pay (iOS only) and Google Pay (Android only). Mobile wallet payments skip CVV entry.",
+      "commonMistakes": [
+        "Don't assume paymentType values are consistent across platforms — web uses SEGMENT_PAYMENT_METHOD_TYPES constants (DebitCard, CreditCard, bank_transfer, DirectDebit, Interac), mobile may use slightly different strings.",
+        "This event fires on SELECTION, not on successful payment. Conversion to Transaction Created is what matters."
+      ],
+      "analysisQuestions": [
+        "Which payment methods are most popular per corridor? → Group by destination_country + paymentType.",
+        "Are users switching payment methods mid-flow? → Count Payment Method Selected per user per session.",
+        "Which payment methods have the best downstream conversion? → Funnel from this event to Transaction Created, segmented by paymentType."
+      ]
+    }
+  },
+
+  "Transaction Summary Confirmed": {
+    "category": "send_money",
+    "trigger": "User reviews the final transaction summary (amount, rate, fees, recipient, payment method) and taps 'Confirm' / 'Send'. On web: SendMoneySummary.vue. On mobile: send-summary-xe.ts. This is the last step before payment processing begins.",
+    "notes": "This is the point of no return. After this, the system attempts to process the payment. Properties include the full transaction details: currencies, amounts, rates, payment method, recipient country, liquidity manager, promo status.",
+    "intelligence": {
+      "businessContext": "Users at this step have completed the entire flow — they've quoted, selected recipient, chosen payment method, and are now confirming the final details. This is the highest-intent signal. The drop-off from here to Transaction Created is purely system-side (payment processing, fraud checks, API errors).",
+      "whyItMatters": "Drop-off after this step = payment/system failures, not user abandonment. If Transaction Summary Confirmed → Transaction Created conversion drops, look at Payment Failed and Transaction Failed events for root causes.",
+      "whatToWatchFor": [
+        "This event should be very close to Transaction Created in volume. If there's a gap > 5%, investigate Card Authorisation Failed and Payment Failed events.",
+        "The rateChanged property tells you if the rate changed between quote and summary — high rateChanged=true rates could indicate slow flow completion.",
+        "promoApplied=true users should have higher conversion — if not, check promo validation errors."
+      ],
+      "platformDifferences": "Properties are nearly identical across platforms. The isRiaTransfer flag indicates transactions routed through Ria's network. The liquidityManager property shows which provider is handling the transfer.",
+      "commonMistakes": [
+        "Don't confuse with 'Review Transfer' (REVIEW_TRANSFER) — that's when the user views the summary, not when they confirm it.",
+        "The userType property is hardcoded to 'Personal' on web — don't use it to segment corporate vs personal."
+      ],
+      "analysisQuestions": [
+        "What's the system failure rate after confirmation? → Compare this event to Transaction Created.",
+        "Which corridors have the worst post-confirmation failure rate? → Group by destination_country, compare to Transaction Created.",
+        "Are rate changes causing abandonment? → Filter by rateChanged=true and check downstream conversion."
+      ]
+    }
+  },
+
+  "Transaction Created": {
+    "category": "send_money",
+    "trigger": "Transaction is successfully created in the backend system. This is a SERVER-SIDE event — it fires when the Xe backend confirms the order was accepted. On mobile, there's also a 'Transaction Created - Client Side' event that fires from the app.",
+    "notes": "This is the primary success metric for the money transfer business. Server-side event that fires on all platforms. Use this (not 'Transaction Created - Client Side') for cross-platform funnels.",
+    "intelligence": {
+      "businessContext": "This is the revenue event. Every Transaction Created represents money being sent. This directly ties to Xe's core business — money transfer volume.",
+      "whyItMatters": "This is the north star metric. Everything else in the funnel exists to drive this number. Week-over-week changes in Transaction Created directly impact revenue.",
+      "whatToWatchFor": [
+        "Weekly patterns: Mon-Thu higher volume, Fri lower, Sat-Sun lowest (except Sun evening). Monthly patterns: higher around paydays (1st, 15th).",
+        "Platform breakdown: iOS ~40%, Web ~38%, Android ~22% of total transactions (validated March 2026).",
+        "Sudden drops on one platform = likely app/web deployment issue. Check for recent releases."
+      ],
+      "platformDifferences": "Server-side event fires for ALL platforms equally. Mobile also fires 'Transaction Created - Client Side' (app-specific confirmation). Use the server-side event for cross-platform analysis.",
+      "commonMistakes": [
+        "Don't use 'Transaction Created - Client Side' for cross-platform comparisons — it only fires on mobile.",
+        "Don't confuse volume drops with seasonal patterns — compare week-over-week same-day, not raw numbers.",
+        "This event doesn't tell you if the transaction was completed (money delivered) — only that it was created. Use 'Transaction Completed' (server-side) for end-to-end tracking."
+      ],
+      "analysisQuestions": [
+        "How is transaction volume trending? → Weekly timeseries grouped by platform.",
+        "Which corridors generate the most transactions? → Group by destination_country.",
+        "What's the average transaction value? → Use send_amount and send_currency properties.",
+        "First-time vs repeat senders? → Use 'First Time Transaction Created' event or segment by user history."
+      ]
+    }
+  },
+
+  "Something Went Wrong": {
+    "category": "error",
+    "trigger": "A generic error popup is displayed to the user. On web: fires from app.ts (global error handler), sendMoney.ts (ID verification errors), SendMoneyFailed.vue (payment errors), and useMobileWalletsWarning composable. On mobile: fires from send-failed-xe.ts, order.ts (card auth), onfido-uploading.ts, and registration-failed-xe.ts.",
+    "notes": "THIS IS THE MOST IMPORTANT ERROR EVENT TO MONITOR. It's the catch-all error — every user-facing error popup triggers it. The 'category', 'error', 'errorDescription', and 'location' properties tell you what went wrong and where.",
+    "issues": [
+      "This is a catch-all event — it captures errors from many different flows (payments, verification, registration, etc.). Always filter by 'location' and 'category' to isolate specific error types.",
+      "On mobile, the 'Error Popup' event (from RmtPopupComponent) also fires for some errors — these may double-count with Something Went Wrong."
+    ],
+    "intelligence": {
+      "businessContext": "Every Something Went Wrong event represents a user who hit a wall. These are lost transactions, frustrated users, and potential churn. This single event captures errors from every part of the product — payments, verification, registration, bank linking, and more.",
+      "whyItMatters": "This is your error early warning system. A spike in this event, segmented by location and category, tells you exactly which part of the product is breaking. Revenue impact is immediate — every error in the send money flow is a lost transaction.",
+      "whatToWatchFor": [
+        "SPIKE ALERT: Any 2x increase in daily volume means something broke. Immediately segment by 'location' to find which flow is affected.",
+        "location='sendMoney' + category='ID Verification' = Veriff/Onfido service issues. Check third-party status pages.",
+        "location='sendMoney' + category=payment-related = Payment gateway issues. Check Adyen/card processor status.",
+        "location='card_authorization' = 3DS failures. May correlate with specific card types or banks.",
+        "location='registration' = Registration flow broken. Critical for new user acquisition."
+      ],
+      "platformDifferences": "Web: fires from 4 locations (global handler, sendMoney store, SendMoneyFailed view, mobile wallets composable). Mobile: fires from 4 locations (send-failed-xe, order provider, onfido-uploading, registration-failed). Mobile also has a separate 'Error Popup' event from RmtPopupComponent that captures some errors web doesn't.",
+      "commonMistakes": [
+        "Don't look at total volume without segmenting — this event captures errors from completely unrelated flows.",
+        "Always pair with location + category to understand which error you're looking at.",
+        "Some errors here are expected (e.g., user enters wrong password) — focus on unexpected spikes, not baseline volume."
+      ],
+      "analysisQuestions": [
+        "What's breaking right now? → Last 24h, group by location + category, sort by count.",
+        "Is a specific corridor experiencing errors? → Filter by location='sendMoney', group by destination_country.",
+        "Are errors correlated with a release? → Timeseries of this event, overlay with deployment dates.",
+        "Which errors impact conversion most? → Correlate error volume with Transaction Created drops per day."
+      ]
+    }
+  },
+
+  "Quote Error": {
+    "category": "error",
+    "trigger": "Quote calculation fails — the system cannot generate a rate/fee quote for the requested currency pair. On web: fires from use-quote-error-analytics.ts (corporate) and sendMoney.ts (consumer). On mobile: fires from check-prices-xe.ts. User sees an error message instead of a quote.",
+    "notes": "Contains error codes that identify the specific failure. Key error codes: QUOTE015 (unsupported corridor), QUOTE018 (amount limits), QUOTE035 (currency pair unavailable), QUOTE050 (rate unavailable), QUOTE200/201 (system errors).",
+    "intelligence": {
+      "businessContext": "A quote error is a dead-end for the user — they wanted to send money and the system said no. This is a direct revenue blocker. The error codes in this event tell you exactly why the quote failed, which helps prioritize which corridors or features to fix.",
+      "whyItMatters": "Every quote error is a potential lost transaction. If error rates increase for a popular corridor (e.g., GBP→INR), the revenue impact is immediate and measurable.",
+      "whatToWatchFor": [
+        "QUOTE015 (unsupported corridor): users trying to send to countries/currencies Xe doesn't support. High volume = demand for new corridors.",
+        "QUOTE018 (amount limits): user's amount is too high or too low. Could indicate minimum/maximum needs adjustment.",
+        "QUOTE050/QUOTE200/QUOTE201 (system errors): backend issues. Correlate with infrastructure health.",
+        "Spikes usually correlate with backend deployment issues or third-party rate provider outages."
+      ],
+      "platformDifferences": "Web has a dedicated corporate quote error analytics composable (use-quote-error-analytics.ts) with richer error properties. Mobile fires from the check-prices page with similar properties.",
+      "commonMistakes": [
+        "Don't treat all quote errors the same — QUOTE015 (corridor not supported) is very different from QUOTE200 (system error).",
+        "Always check the errorCode property, not just the error message."
+      ],
+      "analysisQuestions": [
+        "Which corridors have the highest quote error rate? → Group by destinationCountry + sendCurrency, calculate error rate vs total Quote Accessed.",
+        "Are system errors (QUOTE200/201) trending up? → Filter by errorCode, timeseries.",
+        "What amount ranges trigger limit errors? → Filter by QUOTE018, check amountFrom/amountTo properties."
+      ]
+    }
+  },
+
+  "Payment Failed": {
+    "category": "error",
+    "trigger": "Payment processing fails after user confirms. On web: fires from SendMoneyCreating.vue when the payment API returns an error — covers card payments, bank transfers, and open banking. On mobile: fires from send-failed-update-payment-method.ts when the payment screen shows the error.",
+    "notes": "Contains rich error context: errorCode, errorDesc, paymentType, cardBrand, paymentProvider. On web, fires from 5+ locations in SendMoneyCreating.vue covering different payment flows (card, bank, open banking).",
+    "intelligence": {
+      "businessContext": "A payment failure means the user completed the entire funnel — quoted, selected recipient, chose payment method, confirmed summary — and then the payment was rejected. These are the highest-intent users hitting the worst possible error. Revenue lost at this step is the most painful.",
+      "whyItMatters": "Payment failures directly cost revenue. These users already committed to sending money. Every payment failure is a transaction that would have happened. Focus on reducing the error rate here before optimizing earlier funnel steps.",
+      "whatToWatchFor": [
+        "errorCode grouping reveals patterns: if one error code suddenly spikes, it's likely a specific processor/bank issue.",
+        "cardBrand breakdown: if Visa fails more than Mastercard, it could be a card network issue.",
+        "paymentProvider breakdown: if failures spike for one provider (e.g., Adyen), check their status page.",
+        "newCard=true failures: new card onboarding errors are especially bad for user experience — they just added a card and it failed."
+      ],
+      "platformDifferences": "Web fires from SendMoneyCreating.vue with detailed card properties (brand, billing country, isNew). Mobile fires from the send-failed page with payment type and failure reason. The web version has 5+ fire points covering different payment methods.",
+      "commonMistakes": [
+        "Don't confuse with 'Card Authorisation Failed' — Payment Failed is broader (covers all payment types), Card Auth Failed is specifically 3DS/card auth rejections.",
+        "Don't confuse with 'Transaction Failed' — Payment Failed is the payment step failing, Transaction Failed is the order creation failing after payment succeeded.",
+        "Always check paymentType to know which payment method failed — fixes are different for cards vs bank transfers vs open banking."
+      ],
+      "analysisQuestions": [
+        "Which payment method has the highest failure rate? → Group by paymentType, calculate failure rate vs total Payment Method Selected.",
+        "Is a specific card brand failing? → Filter by paymentType=DebitCard or CreditCard, group by cardBrand.",
+        "Are new cards failing more than saved cards? → Compare newCard=true vs newCard=false failure rates.",
+        "Which payment provider is causing failures? → Group by paymentProvider."
+      ]
+    }
+  },
+
+  "Card Authorisation Failed": {
+    "category": "error",
+    "trigger": "Card 3DS authentication is rejected by the card issuer or payment gateway. On web: fires from SendMoneyCreating.vue after the 3DS challenge fails. On mobile: fires from similar card authorization flows. User sees a 'card authorization failed' message.",
+    "notes": "Specifically for 3DS/card authorization failures. Contains authorisationType (type of 3DS challenge), cardBrand, cardBillingCountry, and paymentProvider. This is a subset of payment errors — only card-related.",
+    "intelligence": {
+      "businessContext": "3DS failures are a major pain point in card payments. The user's bank may reject the transaction for various reasons: insufficient funds, fraud suspicion, 3DS timeout, or network issues. These are often outside Xe's control but impact conversion significantly.",
+      "whyItMatters": "Card payments are the primary payment method for most corridors. A spike in card auth failures means a significant portion of users can't complete their transfers, even though they want to.",
+      "whatToWatchFor": [
+        "authorisationType tells you which 3DS flow failed — different flows have different failure modes.",
+        "cardBillingCountry patterns: if failures spike for one country's cards, it could be a bank-level issue.",
+        "Pair with Card Authorisation Started and Card Authorisation Completed to get the success/failure rate.",
+        "Compare against Payment Failed — if Card Auth Failed goes up but Payment Failed doesn't, users might be retrying with different cards."
+      ],
+      "platformDifferences": "Web and mobile have similar tracking. Web includes more card detail properties. The paymentProvider property shows which gateway processed the attempt (e.g., Adyen).",
+      "commonMistakes": [
+        "Don't assume all card auth failures are Xe's fault — many are bank-side rejections.",
+        "Don't look at this in isolation — pair with Card Authorisation Started to get the failure rate (not just count)."
+      ],
+      "analysisQuestions": [
+        "What's the card auth success rate? → (Card Auth Completed) / (Card Auth Started) by day.",
+        "Which card brands fail most? → Group by cardBrand.",
+        "Are failures concentrated in specific billing countries? → Group by cardBillingCountry.",
+        "Did a new Adyen integration change cause failures? → Timeseries, overlay with deployment dates."
+      ]
+    }
+  },
+
+  "Transaction Failed": {
+    "category": "error",
+    "trigger": "Order creation fails after payment authorization. On web: fires from SendMoneyCreating.vue — covers card, bank, and open banking payment flows. The payment may have succeeded but the order creation in Xe's backend failed. On mobile: fires from similar order creation flows.",
+    "notes": "This is a CRITICAL error — the user's payment may have been authorized but the transaction wasn't created. Contains full transaction details: errorCode, errorType, amounts, currencies, rates, recipient info. 5+ fire locations in SendMoneyCreating.vue covering different payment types.",
+    "intelligence": {
+      "businessContext": "Transaction Failed is more severe than Payment Failed. It means the payment step may have succeeded (money might be held), but the order couldn't be created in Xe's system. This can lead to support tickets and user confusion.",
+      "whyItMatters": "This directly impacts revenue AND user trust. A transaction failure after payment authorization is the worst user experience — their money might be held but the transfer didn't go through. This drives support contacts and churn.",
+      "whatToWatchFor": [
+        "ANY spike in this event is critical. Even a small increase should trigger investigation.",
+        "errorCode patterns: look for specific API validation errors like 'Card.CardHolderLastName: The CardHolderLastName field is required' — these indicate data mapping issues.",
+        "errorType=BadRequestFormat is the most common — usually means a field validation failed on the backend.",
+        "Compare sendCurrency/destinationCountry patterns — some corridor-specific backend issues only affect certain routes."
+      ],
+      "platformDifferences": "Web fires with very detailed properties including transactionId, transferReason, feeUSD, rate, payoutAmount, totalAmountPaid, sendAmountUSD. Mobile fires with similar but slightly less detailed properties.",
+      "commonMistakes": [
+        "Don't confuse with 'Payment Failed' — Transaction Failed is AFTER payment, Payment Failed is DURING payment.",
+        "This event might not fire for all failure modes — some backend errors might result in 'Something Went Wrong' instead."
+      ],
+      "analysisQuestions": [
+        "What error codes are causing failures? → Group by errorCode and errorType.",
+        "Which corridors have the highest transaction failure rate? → Group by destinationCountry, compare to Transaction Created.",
+        "Is this correlated with payment method? → Group by paymentType to see if card/bank/OB transactions fail differently.",
+        "What's the monetary impact? → Sum sendAmountUSD for all failed transactions."
+      ]
+    }
+  },
+
+  "Login Failed": {
+    "category": "login",
+    "trigger": "User attempts to log in but credentials are rejected. On web: fires from Login.vue when authentication returns an error. On mobile: fires from signin.ts when Cognito returns an error.",
+    "notes": "NAMING BUG: Web fires 'Login Failed' (capital F), mobile fires 'Login failed' (lowercase f). These appear as TWO SEPARATE EVENTS in Amplitude. Check both when analyzing login failures.",
+    "issues": [
+      "CRITICAL NAMING MISMATCH: Web='Login Failed', Mobile='Login failed' — casing differs, creating two events in Amplitude.",
+      "The xe-apollo code has '// CHECK !!!!!!!!!!!!!!' comment on this event, suggesting the team is aware of the issue."
+    ],
+    "intelligence": {
+      "businessContext": "Login failures block returning users from accessing their accounts and sending money. Each failed login is a potential lost transaction — the user wanted to use the product but couldn't get in.",
+      "whyItMatters": "Sustained high login failure rates = returning users can't transact. This directly impacts repeat transaction volume. Spikes could indicate Cognito issues, DDoS attempts, or password policy changes.",
+      "whatToWatchFor": [
+        "Cognito-specific error codes on mobile: MfaResendThrottleException, CustomerLoginAttemptsExceeded, InvalidSecurityQuestionAnswerAttempts — each has different user impact.",
+        "Brute force patterns: high login failure volume from similar IPs or devices could indicate account takeover attempts.",
+        "Post-password-change spike: if users recently changed passwords (e.g., forced rotation), expect a temporary spike."
+      ],
+      "platformDifferences": "Web: fires from Login.vue with errorType (error code like 10=UserNotFound, 20=InvalidPassword). Mobile: fires from signin.ts with method (login method), failReason (Cognito error name), and email. Due to casing mismatch, these are separate events in Amplitude.",
+      "commonMistakes": [
+        "MUST check both 'Login Failed' AND 'Login failed' in Amplitude — they're separate events due to casing bug.",
+        "Don't count login failures as a security metric without context — many are just mistyped passwords."
+      ],
+      "analysisQuestions": [
+        "What's the login success rate? → (Login Completed or Login Successful) / (Login Started) by day.",
+        "What types of failures are most common? → Group by errorType (web) or failReason (mobile).",
+        "Are failures concentrated on specific platforms? → Compare web vs mobile (remember to check both event name casings)."
+      ]
+    }
+  },
+
+  "Bank Verification Failed": {
+    "category": "error",
+    "trigger": "Bank account verification fails. On web: fires from PlaidOauth.vue when Plaid returns INVALID_CREDENTIALS or other errors, and from AddPaymentMethodModal.vue during manual bank verification. On mobile: fires from bank verification flows.",
+    "intelligence": {
+      "businessContext": "Bank verification is required for direct debit payments. Failures here block users from using bank transfer as a payment method, forcing them to use cards (higher friction, potentially higher fees).",
+      "whyItMatters": "If bank verification failures increase, more users are forced to card payments. This impacts the payment method distribution and could increase overall transaction costs.",
+      "whatToWatchFor": [
+        "INVALID_CREDENTIALS from Plaid = user entered wrong banking credentials. Expected baseline exists.",
+        "Plaid service outages cause spikes — check Plaid status page.",
+        "Country-specific patterns: some countries' banks have worse Plaid integration."
+      ],
+      "platformDifferences": "Web: fires from PlaidOauth.vue and AddPaymentMethodModal.vue. Properties include recipientCountry, paymentVerificationMethod ('Plaid' or 'Manual'). Mobile: similar Plaid integration.",
+      "commonMistakes": [
+        "There's a DUPLICATE STRING BUG: BANK_VERIFICATION_COMPLETED and BANK_VERIFICATION_SUCCESS both map to 'Bank Verification Completed'. Can't distinguish micro-deposit vs Plaid completions in Amplitude."
+      ],
+      "analysisQuestions": [
+        "What's the Plaid success rate? → (Bank Verification Completed) / (Bank Verification Started) by day.",
+        "Are specific banks failing? → If bank name is available in properties.",
+        "How does this affect payment method choice? → Users who fail bank verification — do they switch to card?"
+      ]
+    }
+  },
+
+  "Error Popup": {
+    "category": "error",
+    "trigger": "An error popup/modal is displayed to the user on the mobile app. This fires from the RmtPopupComponent's analytics callback, hardwired in segment.ts constructor. Every error popup shown to ANY user on mobile fires this event.",
+    "notes": "MOBILE ONLY. Contains error_message (popup text) and error_title (popup title). This is separate from Something Went Wrong — Error Popup catches ALL popups including ones that don't trigger SWW.",
+    "intelligence": {
+      "businessContext": "This is the mobile-specific catch-all for error popups. Unlike Something Went Wrong which is selectively tracked, Error Popup fires for EVERY error popup shown in the app — making it the most comprehensive error signal on mobile.",
+      "whyItMatters": "The error_message property contains the exact text users see. This is invaluable for understanding the user experience during errors — not just that an error happened, but what the user was told.",
+      "whatToWatchFor": [
+        "Group by error_title to categorize errors by type.",
+        "High-frequency error_messages indicate recurring issues users are hitting.",
+        "Pair with session replays to see the user's full journey before the error."
+      ],
+      "platformDifferences": "Mobile only (iOS + Android). Web does not have an equivalent catch-all error popup event.",
+      "commonMistakes": [
+        "May overlap with Something Went Wrong — some errors fire both events. Don't double-count.",
+        "Not all error popups are bad — some are informational (e.g., 'Your card has expired')."
+      ],
+      "analysisQuestions": [
+        "What are the top 10 error messages users see? → Group by error_message, sort by count.",
+        "Which screens generate the most errors? → Group by error_title.",
+        "Is error frequency increasing with new app versions? → Timeseries, segment by app version."
+      ]
+    }
+  },
+
+  "Recipient Selection Failed": {
+    "category": "error",
+    "trigger": "Recipient validation fails when user selects a recipient during the send money flow. On web: fires from send-flow.ts. On mobile: fires during recipient selection with quote error codes like QUOTE070.",
+    "intelligence": {
+      "businessContext": "The user picked a recipient and the system said something is wrong with it — maybe the recipient's bank details are invalid, the corridor is unavailable, or the payout method changed since the recipient was created.",
+      "whyItMatters": "This is a mid-funnel failure. The user already has a quote and a recipient but can't proceed. Very frustrating user experience.",
+      "whatToWatchFor": [
+        "QUOTE070 error code: means the recipient doesn't support the selected payout method.",
+        "Spikes after recipient management changes could indicate data migration issues."
+      ],
+      "commonMistakes": [
+        "This is different from recipient CREATION failures — this is SELECTION of an existing recipient failing."
+      ],
+      "analysisQuestions": [
+        "Which error codes cause the most selection failures? → Group by error code.",
+        "Are specific corridors more prone to recipient issues? → Group by recipient country."
+      ]
+    }
+  },
+
+  "Captcha Failed": {
+    "category": "error",
+    "trigger": "Captcha (hCaptcha/reCAPTCHA) validation fails on mobile. Fires from xe-captcha.ts when: token is not received within 30 seconds, validation API returns failure, or network error during captcha process.",
+    "notes": "MOBILE ONLY. Contains location (which flow), reason ('Token not received' or 'Validation Failed'), and timeTaken (how long the captcha took before failing).",
+    "intelligence": {
+      "businessContext": "Captcha is a security gate on mobile forms (registration, login, etc.). When captcha fails, the user cannot proceed — they're completely blocked. This is an invisible blocker because the user sees a generic error.",
+      "whyItMatters": "Captcha failures block registration and login flows. If captcha failure rates increase, new user acquisition and returning user access are both impacted.",
+      "whatToWatchFor": [
+        "reason='Token not received' with high timeTaken (30000ms+) = captcha service timeout. Check hCaptcha status.",
+        "reason='Validation Failed' = captcha solved but server rejected the token. Could be a key/config issue.",
+        "Location-specific spikes: if failures only happen in registration, the captcha integration in that flow may be misconfigured."
+      ],
+      "platformDifferences": "Mobile only (iOS + Android). Web does not use the same captcha component.",
+      "commonMistakes": [
+        "Don't confuse with 'Captcha Challenge Failed' — that's when the user-interactive challenge specifically fails, while Captcha Failed includes all captcha failures.",
+        "Don't confuse with 'Captcha Challenge Started/Finished' — those are lifecycle events, not errors."
+      ],
+      "analysisQuestions": [
+        "What's the captcha success rate? → (forms submitted successfully) / (Captcha Challenge Started) by day.",
+        "Is this a service outage? → Timeseries of Captcha Failed, check for spikes.",
+        "Which flow is affected? → Group by location."
+      ]
+    }
+  },
+
+  "New Card Added Error": {
+    "category": "error",
+    "trigger": "Error occurs when user tries to add a new credit/debit card to their account. On web: fires from payment method management flows. On mobile: similar card addition flows.",
+    "intelligence": {
+      "businessContext": "New card addition is the gateway to card payments. If users can't add cards, they can't pay — unless they switch to bank transfer or existing cards. This especially impacts new users who don't have any saved cards yet.",
+      "whyItMatters": "First-time senders almost always need to add a new card. If this fails, they may abandon the entire transfer. High error rates here directly impact new user conversion.",
+      "whatToWatchFor": [
+        "Card validation errors (invalid number, expired, unsupported card type).",
+        "Payment gateway integration issues — check if Adyen/processor is returning errors.",
+        "Browser/device-specific issues — some mobile browsers may have card input problems."
+      ],
+      "analysisQuestions": [
+        "What's the card addition success rate? → Compare New Payment Method Started to New Payment Method Added.",
+        "Which card types fail most? → If card type info is available.",
+        "Does this correlate with specific corridors? → Users from certain countries may have card compatibility issues."
+      ]
+    }
+  },
+
+  "Registration Started": {
+    "category": "registration",
+    "trigger": "User begins the registration/signup flow. On web: fires from Login.vue when user clicks 'Register'. On mobile: fires from multiple entry points including home screen banners, send money prompts, and rate alert sign-up screens.",
+    "intelligence": {
+      "businessContext": "This is the top of the acquisition funnel. Every new customer starts here. On mobile, registration can be triggered from multiple surfaces — understanding which entry points drive the most registrations helps optimize user acquisition.",
+      "whyItMatters": "Registration volume drives long-term business growth. Drops here mean fewer new users entering the ecosystem. Compare with 'Account Created' to get the registration completion rate.",
+      "whatToWatchFor": [
+        "Seasonality: higher registration around holiday money-sending periods.",
+        "Marketing campaign correlation: spikes should align with ad campaigns.",
+        "Mobile sources: check 'source' and 'component' properties to see which entry points drive registrations."
+      ],
+      "platformDifferences": "Web: single entry point from Login.vue. Mobile: multiple entry points (home banners, send money flow, rate alerts, add funds). Mobile tracks source/component/location properties to identify which surface triggered registration.",
+      "analysisQuestions": [
+        "Which entry points on mobile drive the most registrations? → Group by source + component.",
+        "What's the registration completion rate? → Registration Started to Account Created funnel.",
+        "How does registration volume correlate with marketing spend? → Timeseries overlay."
+      ]
+    }
+  },
+
+  "Profile Created": {
+    "category": "registration",
+    "trigger": "User completes their basic profile during registration — submits first name, last name, date of birth, and other personal details. On mobile: fires from profile creation pages. On web: may fire from registration views.",
+    "notes": "Listed as unused in galileo-site (constant defined but never referenced in web code). Fires primarily from xe-apollo. Check both codebases before assuming it's web-active.",
+    "intelligence": {
+      "businessContext": "Profile creation is a critical step in the registration funnel. Users who create a profile have provided personal details and are committed to the registration process.",
+      "whyItMatters": "Drop-off between Registration Started and Profile Created indicates friction in the personal details form — too many fields, confusing requirements, or validation errors.",
+      "analysisQuestions": [
+        "What's the conversion rate from Registration Started to Profile Created? → Registration funnel.",
+        "Where do users drop off during profile creation? → Check for associated error events."
+      ]
+    }
+  },
+
+  "Biometric Verification Started": {
+    "category": "kyc",
+    "trigger": "User initiates biometric identity verification (Veriff or Onfido). On web: fires from SendMoneyVerifyIdentity.vue when user is prompted for ID verification. On mobile: fires from Veriff provider when the verification SDK is launched.",
+    "intelligence": {
+      "businessContext": "eKYC (electronic Know Your Customer) verification is mandatory for money transfers above certain thresholds or for users from certain countries. This is a regulatory requirement — users MUST complete it to send money.",
+      "whyItMatters": "Every user who starts but doesn't complete biometric verification is blocked from transacting. This is a major conversion blocker, especially for first-time senders in high-verification countries.",
+      "whatToWatchFor": [
+        "Completion rate: (Biometric Verification Completed) / (Biometric Verification Started). Benchmark is 60-80%.",
+        "Platform comparison: mobile has camera access and is often a better experience than web webcam.",
+        "Veriff/Onfido service outages: if started events increase but completed stays flat, the verification service may be down."
+      ],
+      "platformDifferences": "Web: uses Veriff SDK in an iframe (SendMoneyVeriff.vue). Mobile: uses native Veriff SDK or Onfido SDK depending on region. The biometricPlatform property tells you which provider was used.",
+      "analysisQuestions": [
+        "What's the biometric completion rate? → Funnel: Started → Submitted → Completed.",
+        "How many users exit during verification? → Check 'Biometric Verification Exited' event.",
+        "Which provider has better success rates? → Segment by biometricPlatform (Veriff vs Onfido)."
+      ]
+    }
+  },
+
+  "Biometric Verification Completed [client-side]": {
+    "category": "kyc",
+    "trigger": "Client-side confirmation that biometric verification was submitted and is being processed. On web: fires from useVerifyUser composable when Veriff status is VERIFIED_PENDING. On mobile: fires from Veriff provider on completion callback.",
+    "notes": "The '[client-side]' suffix distinguishes this from the server-side 'eKYC Results Received' event. This fires when the user finishes the verification flow — results come later.",
+    "intelligence": {
+      "businessContext": "This confirms the user completed the verification process. The actual verification result (approved/rejected) comes later via server-side events. Users in 'pending' state may need to wait before they can transact.",
+      "whyItMatters": "Completion of the client-side flow is the user's last action. After this, it's all server-side processing. If users complete but don't get results, it's a Veriff/Onfido processing issue.",
+      "whatToWatchFor": [
+        "biometricStatus='VERIFIED_PENDING' means waiting for results. High pending rates may mean slow processing.",
+        "Compare with 'eKYC Results Received' (server-side) to measure processing time."
+      ],
+      "analysisQuestions": [
+        "How long between client completion and server result? → Compare timestamps.",
+        "What percentage of completed verifications get approved? → Cross-reference with server-side results."
+      ]
+    }
+  },
+
+  "Recipient Creation Started": {
+    "category": "recipient",
+    "trigger": "User begins adding a new recipient. On web: fires from Recipients.vue when user clicks 'Add Recipient', and from SendMoneyRecipient.vue and SendMoneyRecipientDelivery.vue in the send money flow. On mobile: fires from recipient-new.ts after user selects recipient type (Bank/Cash/MobileWallet).",
+    "notes": "Fires from multiple locations — the recipient list page AND within the send money flow. The 'location' property distinguishes: 'recipient-list' (standalone) vs 'sendMoney' (in-flow).",
+    "intelligence": {
+      "businessContext": "Recipient creation is a prerequisite for sending money to someone new. Users need to provide recipient bank details, address, and sometimes additional info. This is a friction point — complex bank details for international transfers.",
+      "whyItMatters": "Drop-off during recipient creation = users can't figure out the bank details for their recipient. This is especially painful for first-time senders.",
+      "whatToWatchFor": [
+        "location='sendMoney' has higher urgency — user is mid-transaction. location='recipient-list' is proactive setup.",
+        "recipientPayoutMethod breakdown: Bank requires the most detail (IBAN, SWIFT, etc.), Cash requires less, MobileWallet requires the least.",
+        "destinationCountry: some countries have more complex banking details."
+      ],
+      "platformDifferences": "Web: fires from 3+ locations (Recipients.vue, SendMoneyRecipient.vue, SendMoneyRecipientDelivery.vue). Mobile: fires from recipient-new.ts after type selection. Mobile tracks recipientPayoutMethod and destinationCountry.",
+      "analysisQuestions": [
+        "What's the recipient creation completion rate? → Funnel from Started to Recipient Created.",
+        "Which delivery method has the worst completion rate? → Segment by recipientPayoutMethod.",
+        "Which destination countries cause the most abandonment? → Group by destinationCountry."
+      ]
+    }
+  },
+
+  "Recipient Selected": {
+    "category": "recipient",
+    "trigger": "User selects an existing recipient from their list to send money to. On web: fires from SendMoneyRecipient.vue when user picks a saved recipient. On mobile: fires from send-flow.ts after recipient is chosen.",
+    "intelligence": {
+      "businessContext": "Repeat senders — the most valuable customer segment — typically select existing recipients. This event is a strong indicator of repeat transaction behavior.",
+      "whyItMatters": "High Recipient Selected volume relative to Recipient Creation Started means users are returning to send to the same people — healthy repeat behavior.",
+      "whatToWatchFor": [
+        "Ratio of Recipient Selected to Recipient Creation Started shows new vs repeat recipient usage.",
+        "If Recipient Selection Failed spikes, saved recipients may have stale/invalid data."
+      ],
+      "analysisQuestions": [
+        "What percentage of transactions go to existing vs new recipients? → Compare Recipient Selected vs Recipient Creation Started.",
+        "Which recipients/countries have the most repeat transactions? → Group by recipient properties."
+      ]
+    }
+  },
+
+  "Account Registration Failed": {
+    "category": "error",
+    "trigger": "Registration process fails. MOBILE ONLY. Fires when account creation API returns an error. User sees an error screen.",
+    "intelligence": {
+      "businessContext": "Registration failure blocks new user acquisition. These users wanted to create an account and couldn't. Direct impact on growth.",
+      "whyItMatters": "Every failed registration is a potential lifetime customer lost. Fixing registration failures has compounding returns.",
+      "whatToWatchFor": [
+        "Duplicate email errors: users may already have an account.",
+        "API validation errors: specific fields failing validation.",
+        "Country-specific failures: some registration flows have region-specific requirements."
+      ],
+      "analysisQuestions": [
+        "What error types cause registration failures? → Group by error details.",
+        "Is this platform-specific? → Compare iOS vs Android registration failure rates."
+      ]
+    }
+  },
+
+  "Recipient Info Added": {
+    "category": "recipient",
+    "trigger": "User submits the first page of recipient information (name, relationship, etc.) during recipient creation. On web: fires from Recipients.vue. On mobile: fires from recipient info page.",
+    "intelligence": {
+      "businessContext": "This is the first data submission step in recipient creation. Users who pass this point have committed the recipient's identity details.",
+      "whyItMatters": "Drop-off between Recipient Creation Started and Recipient Info Added indicates the info form is too complex or confusing.",
+      "analysisQuestions": [
+        "What's the drop-off rate at this step? → Compare Recipient Creation Started to Recipient Info Added."
+      ]
+    }
+  },
+
+  "Recipient Bank Details Added": {
+    "category": "recipient",
+    "trigger": "User submits the recipient's bank details (IBAN, SWIFT/BIC, account number, bank name). On web: fires from Recipients.vue. On mobile: fires from bank details page.",
+    "intelligence": {
+      "businessContext": "Bank details entry is the hardest step in recipient creation. Users need IBAN, SWIFT codes, and other details that vary by country. Many users abandon here because they don't have the recipient's bank details handy.",
+      "whyItMatters": "This is the highest-friction step in recipient creation. Improving the UX here (auto-fill, bank lookup, IBAN validation) directly improves conversion.",
+      "whatToWatchFor": [
+        "Country-specific drop-offs: some countries have more complex banking requirements.",
+        "If bank lookup features (Top Banks Accessed, Bank Lookup Started) correlate with better completion rates."
+      ],
+      "analysisQuestions": [
+        "Which countries have the worst bank detail completion rates? → Funnel from Recipient Info Added to Recipient Bank Details Added, group by destination country.",
+        "Does bank lookup help? → Compare completion rates for users who used bank lookup vs manual entry."
+      ]
+    }
+  }
+}

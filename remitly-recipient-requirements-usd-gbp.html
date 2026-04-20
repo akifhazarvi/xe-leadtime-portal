@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Remitly Recipient Requirements — USD & GBP Corridors</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 1200px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 28px; border-bottom: 3px solid #00754a; padding-bottom: 12px; }
+  h2 { font-size: 22px; margin-top: 48px; color: #00754a; border-top: 1px solid #eee; padding-top: 24px; }
+  h3 { font-size: 16px; margin-top: 0; color: #333; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  th { background: #f0f4f3; text-align: left; padding: 6px 10px; border: 1px solid #ddd; font-size: 12px; }
+  td { padding: 6px 10px; border: 1px solid #ddd; font-size: 12px; vertical-align: top; }
+  tr:nth-child(even) { background: #fafafa; }
+  code { font-family: 'SF Mono', Menlo, monospace; font-size: 11px; background: #f5f5f5; padding: 1px 4px; border-radius: 3px; }
+  .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0; }
+  .vs-card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; background: #fff; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  .summary-card { background: #f0f4f3; border-left: 4px solid #00754a; padding: 16px; border-radius: 0 8px 8px 0; }
+  .summary-card h3 { color: #00754a; margin: 0 0 8px 0; }
+  .metric { font-size: 28px; font-weight: 700; color: #00754a; }
+  .toc { background: #fafafa; border-left: 4px solid #ccc; padding: 12px 20px; border-radius: 0 8px 8px 0; }
+  .toc a { color: #00754a; text-decoration: none; margin-right: 12px; font-size: 13px; }
+  .toc a:hover { text-decoration: underline; }
+  .finding { background: #fff8e1; border-left: 4px solid #ffc107; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; }
+  .finding ul { margin: 4px 0 0 20px; padding: 0; font-size: 13px; }
+  .meta { color: #666; font-size: 13px; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Remitly Recipient Requirements — USD &amp; GBP Corridors</h1>
+<p class="meta">Generated 2026-04-20 · Source: <code>/v28/bootstrap</code> · Top 20 receive markets</p>
+
+<div class="summary-grid">
+  <div class="summary-card">
+    <h3>🇺🇸 USA source (USD)</h3>
+    <div class="metric">6,561</div>
+    <div>destinations across 124 corridors</div>
+    <div style="font-size:12px; margin-top:8px;">
+      BANK_DEPOSIT: 5413 ·
+      CASH_PICKUP: 726 ·
+      DIRECT_TO_PHONE: 315 ·
+      PUSH_TO_CARD: 78 ·
+      CRYPTO: 16
+    </div>
+  </div>
+  <div class="summary-card">
+    <h3>🇬🇧 GBR source (GBP)</h3>
+    <div class="metric">15,432</div>
+    <div>destinations across 124 corridors</div>
+    <div style="font-size:12px; margin-top:8px;">
+      BANK_DEPOSIT: 14297 ·
+      CASH_PICKUP: 731 ·
+      DIRECT_TO_PHONE: 315 ·
+      PUSH_TO_CARD: 76 ·
+      CRYPTO: 0
+    </div>
+  </div>
+</div>
+
+
+
+<div class="toc">
+  <strong>Jump to:</strong>
+  <a href="#IND">IND</a> <a href="#MEX">MEX</a> <a href="#PHL">PHL</a> <a href="#PAK">PAK</a> <a href="#NGA">NGA</a> <a href="#BGD">BGD</a> <a href="#NPL">NPL</a> <a href="#VNM">VNM</a> <a href="#LKA">LKA</a> <a href="#KEN">KEN</a> <a href="#ETH">ETH</a> <a href="#EGY">EGY</a> <a href="#COL">COL</a> <a href="#GTM">GTM</a> <a href="#DOM">DOM</a> <a href="#BRA">BRA</a> <a href="#ZAF">ZAF</a> <a href="#CHN">CHN</a> <a href="#IDN">IDN</a> <a href="#JPN">JPN</a>
+</div>
+
+<a id="IND"></a>
+    <h2>India 🇮🇳</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → IND</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (226)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>223</strong> — e.g. State Bank of India (SBI), HDFC Bank, Punjab National Bank (PNB)</td></tr>
+      <tr><td>Cash pickup</td><td><strong>2</strong> — e.g. Muthoot open network, Ria India Open network</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>UPI</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Required (default <code>PC02</code>)</td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;"><code>PC01</code> My NRE/NRO Account, <code>PC02</code> Savings &amp; Family Support, <code>PC05</code> Real Estate/Housing Societies, <code>PC06</code> Educational Institutions, <code>PC12</code> Tax Payment, <code>PC07</code> Hospitals/Healthcare Providers, <code>PC09</code> Travel/Tourism Partners, <code>PC11</code> Utility Bill Payments, <code>PC13</code> Loan Account Payment</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (State Bank of India (SBI))</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){11}[ ]*$|^2121PM20202$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → IND</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (226)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>223</strong> — e.g. State Bank of India (SBI), HDFC Bank, Punjab National Bank (PNB)</td></tr>
+      <tr><td>Cash pickup</td><td><strong>2</strong> — e.g. Muthoot open network, Ria India Open network</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>UPI</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Required (default <code>PC02</code>)</td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;"><code>PC01</code> My NRE/NRO Account, <code>PC02</code> Savings &amp; Family Support, <code>PC05</code> Real Estate/Housing Societies, <code>PC06</code> Educational Institutions, <code>PC12</code> Tax Payment, <code>PC07</code> Hospitals/Healthcare Providers, <code>PC09</code> Travel/Tourism Partners, <code>PC11</code> Utility Bill Payments, <code>PC13</code> Loan Account Payment</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (State Bank of India (SBI))</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){11}[ ]*$|^2121PM20202$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="MEX"></a>
+    <h2>Mexico 🇲🇽</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → MEX</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (106)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>64</strong> — e.g. Banco Azteca, BBVA Bancomer, BanCoppel</td></tr>
+      <tr><td>Cash pickup</td><td><strong>40</strong> — e.g. Elektra / Banco Azteca, BanCoppel, OXXO</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>2</strong> — e.g. Spin, Mercado Pago</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>45,700</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Banco Azteca)</th></tr>
+      <tr><td>Field label</td><td>Account, CLABE, Debit Card or Phone number</td></tr>
+      <tr><td>Example / placeholder</td><td><code></code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{10}$|^\d{14}$|^\d{20}$|^\d{16}$|^\d{18}$|^.+Token\_\d{4}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>CLABE</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → MEX</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (106)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>64</strong> — e.g. Banco Azteca, BBVA Bancomer, BanCoppel</td></tr>
+      <tr><td>Cash pickup</td><td><strong>40</strong> — e.g. Elektra / Banco Azteca, BanCoppel, OXXO</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>2</strong> — e.g. Spin, Mercado Pago</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Banco Azteca)</th></tr>
+      <tr><td>Field label</td><td>Account, CLABE, Debit Card or Phone number</td></tr>
+      <tr><td>Example / placeholder</td><td><code></code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{10}$|^\d{14}$|^\d{20}$|^\d{16}$|^\d{18}$|^.+Token\_\d{4}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>CLABE</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="PHL"></a>
+    <h2>Philippines 🇵🇭</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → PHL</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (188)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>146</strong> — e.g. BDO Unibank, BDO Unibank, Land Bank of the Philippines</td></tr>
+      <tr><td>Cash pickup</td><td><strong>10</strong> — e.g. PH Open Network V2, Philippine USD Open Network, Bank of the Philippine Islands (BPI)</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>29</strong> — e.g. GCash, Maya, PalawanPay</td></tr>
+      <tr><td>Push to card</td><td><strong>2</strong> — e.g. VISA, VISA</td></tr>
+      <tr><td>Other rails</td><td>HOME_DELIVERY</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>24,100</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (BDO Unibank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(0[0-9])?\d{10}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → PHL</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (188)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>146</strong> — e.g. BDO Unibank, BDO Unibank, Land Bank of the Philippines</td></tr>
+      <tr><td>Cash pickup</td><td><strong>10</strong> — e.g. PH Open Network V2, Philippine USD Open Network, Bank of the Philippine Islands (BPI)</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>29</strong> — e.g. GCash, Maya, PalawanPay</td></tr>
+      <tr><td>Push to card</td><td><strong>2</strong> — e.g. VISA, VISA</td></tr>
+      <tr><td>Other rails</td><td>HOME_DELIVERY</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      <tr><td>Cash pickup locations</td><td>24,100</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (BDO Unibank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(0[0-9])?\d{10}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="PAK"></a>
+    <h2>Pakistan 🇵🇰</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → PAK</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (72)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>43</strong> — e.g. Bank of Punjab, Meezan Bank, United Bank (UBL)</td></tr>
+      <tr><td>Cash pickup</td><td><strong>16</strong> — e.g. Pakistan Open Network, Dollar East Exchange Company, Paragon Exchange Limited</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>13</strong> — e.g. Easypaisa, JazzCash, SadaPay</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>No</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Bank of Punjab)</th></tr>
+      <tr><td>Field label</td><td>IBAN or account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>PK36SCBL0000001123456702</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^[Pp][. -]*[Kk][. -]*(?:\d[. -]*){2}[Bb][. -]*[Pp][. -]*[Uu][. -]*[Nn][. -]*(?:\d[. -]*){16}$|^(?:\d[. -]*){16}$|^(?:\d[. -]*){17}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → PAK</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (72)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>43</strong> — e.g. Bank of Punjab, Meezan Bank, United Bank (UBL)</td></tr>
+      <tr><td>Cash pickup</td><td><strong>16</strong> — e.g. Pakistan Open Network, Dollar East Exchange Company, Paragon Exchange Limited</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>13</strong> — e.g. Easypaisa, JazzCash, SadaPay</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>No</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      <tr><td>Cash pickup locations</td><td>10,800</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Bank of Punjab)</th></tr>
+      <tr><td>Field label</td><td>IBAN or account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>PK36SCBL0000001123456702</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^[Pp][. -]*[Kk][. -]*(?:\d[. -]*){2}[Bb][. -]*[Pp][. -]*[Uu][. -]*[Nn][. -]*(?:\d[. -]*){16}$|^(?:\d[. -]*){16}$|^(?:\d[. -]*){17}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="NGA"></a>
+    <h2>Nigeria 🇳🇬</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → NGA</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (879)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>785</strong> — e.g. Access Bank, GT Bank, First Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>11</strong> — e.g. Fidelity Bank, Polaris Bank, First City Monument Bank (FCMB)</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>75</strong> — e.g. MTN Mobile Money, Opay, MoniePoint</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>CRYPTO</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Required (default <code>PC02</code>)</td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;"><code>OP01</code> Savings, <code>PC02</code> Family Support, <code>PC03</code> Insurance Payment, <code>PC05</code> Real Estate Purchase, <code>PC06</code> Education, <code>PC07</code> Medical Payment, <code>PC09</code> Travel Payment, <code>PC10</code> Trade Transaction, <code>PC11</code> Utility Payment, <code>PC12</code> Tax Payment, <code>PC13</code> Loan Payment</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Access Bank)</th></tr>
+      <tr><td>Field label</td><td>NUBAN</td></tr>
+      <tr><td>Example / placeholder</td><td><code>1234567890</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){10}[ ]*$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → NGA</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (871)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>785</strong> — e.g. Access Bank, GT Bank, First Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>11</strong> — e.g. Fidelity Bank, Polaris Bank, First City Monument Bank (FCMB)</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>75</strong> — e.g. MTN Mobile Money, Opay, MoniePoint</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Required (default <code>PC02</code>)</td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;"><code>OP01</code> Savings, <code>PC02</code> Family Support, <code>PC03</code> Insurance Payment, <code>PC05</code> Real Estate Purchase, <code>PC06</code> Education, <code>PC07</code> Medical Payment, <code>PC09</code> Travel Payment, <code>PC10</code> Trade Transaction, <code>PC11</code> Utility Payment, <code>PC12</code> Tax Payment, <code>PC13</code> Loan Payment</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Access Bank)</th></tr>
+      <tr><td>Field label</td><td>NUBAN</td></tr>
+      <tr><td>Example / placeholder</td><td><code>1234567890</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){10}[ ]*$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="BGD"></a>
+    <h2>Bangladesh 🇧🇩</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → BGD</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (97)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>56</strong> — e.g. Islami Bank Bangladesh, Dutch-Bangla Bank, Sonali Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>37</strong> — e.g. Islami Bank Bangladesh, Dutch-Bangla Bank, Agrani Bank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>4</strong> — e.g. bKash, Nagad, Rocket</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>9,700</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Islami Bank Bangladesh)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{13,17}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → BGD</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (97)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>56</strong> — e.g. Islami Bank Bangladesh, Dutch-Bangla Bank, Sonali Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>37</strong> — e.g. Islami Bank Bangladesh, Dutch-Bangla Bank, Agrani Bank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>4</strong> — e.g. bKash, Nagad, Rocket</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      <tr><td>Cash pickup locations</td><td>9,700</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Islami Bank Bangladesh)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{13,17}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="NPL"></a>
+    <h2>Nepal 🇳🇵</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → NPL</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (275)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>61</strong> — e.g. Nabil Bank, NIC Asia Bank, Global IME Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>204</strong> — e.g. NepalRemit, City Express, IME Remit (Formerly GME Remit)</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>10</strong> — e.g. eSewa, Khalti, IME Pay</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>27,100</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Nabil Bank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{13,14}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → NPL</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (275)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>61</strong> — e.g. Nabil Bank, NIC Asia Bank, Global IME Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>204</strong> — e.g. NepalRemit, City Express, IME Remit (Formerly GME Remit)</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>10</strong> — e.g. eSewa, Khalti, IME Pay</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      <tr><td>Cash pickup locations</td><td>27,100</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Nabil Bank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{13,14}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="VNM"></a>
+    <h2>Vietnam 🇻🇳</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → VNM</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (106)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>82</strong> — e.g. Vietcombank, Agribank, Agribank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>15</strong> — e.g. Agribank, Agribank, Sacombank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>6</strong> — e.g. MOMO Mobile Money, VNPay, VNPTPay</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      <tr><td>Other rails</td><td>HOME_DELIVERY</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>Yes</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Vietcombank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{6,19}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → VNM</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (106)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>82</strong> — e.g. Vietcombank, Agribank, Agribank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>15</strong> — e.g. Agribank, Agribank, Sacombank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>6</strong> — e.g. MOMO Mobile Money, VNPay, VNPTPay</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      <tr><td>Other rails</td><td>HOME_DELIVERY</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>Yes</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Vietcombank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{6,19}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="LKA"></a>
+    <h2>Sri Lanka 🇱🇰</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → LKA</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (102)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>89</strong> — e.g. People&#39;s Bank, People&#39;s Bank, Commercial Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>10</strong> — e.g. Bank of Ceylon, Hatton National Bank (HNB), Cargills Bank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>1</strong> — e.g. Ez Cash</td></tr>
+      <tr><td>Push to card</td><td><strong>2</strong> — e.g. VISA, VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (People&#39;s Bank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){15}[ ]*$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → LKA</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (102)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>89</strong> — e.g. People&#39;s Bank, People&#39;s Bank, Commercial Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>10</strong> — e.g. Bank of Ceylon, Hatton National Bank (HNB), Cargills Bank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>1</strong> — e.g. Ez Cash</td></tr>
+      <tr><td>Push to card</td><td><strong>2</strong> — e.g. VISA, VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (People&#39;s Bank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){15}[ ]*$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="KEN"></a>
+    <h2>Kenya 🇰🇪</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → KEN</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (47)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>39</strong> — e.g. Kenya Commercial Bank (KCB), Co-operative Bank, Equity Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>4</strong> — e.g. Kenya Commercial Bank (KCB), PostBank, Ecobank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>3</strong> — e.g. M-Pesa, Airtel Money, Equitel Money</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Kenya Commercial Bank (KCB))</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){10}[ ]*$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → KEN</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (47)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>39</strong> — e.g. Kenya Commercial Bank (KCB), Co-operative Bank, Equity Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>4</strong> — e.g. Kenya Commercial Bank (KCB), PostBank, Ecobank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>3</strong> — e.g. M-Pesa, Airtel Money, Equitel Money</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Kenya Commercial Bank (KCB))</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){10}[ ]*$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="ETH"></a>
+    <h2>Ethiopia 🇪🇹</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → ETH</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (48)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>40</strong> — e.g. COMMERCIAL BANK OF ETHIOPIA, Awash Bank, Dashen Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>3</strong> — e.g. Awash Bank, Ethiopia Open Network, Ria Ethiopia Open Network</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>4</strong> — e.g. telebirr, CBE Birr, HCASH</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>5,000</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (COMMERCIAL BANK OF ETHIOPIA)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{8,16}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → ETH</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (48)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>40</strong> — e.g. COMMERCIAL BANK OF ETHIOPIA, Awash Bank, Dashen Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>3</strong> — e.g. Awash Bank, Ethiopia Open Network, Ria Ethiopia Open Network</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>4</strong> — e.g. telebirr, CBE Birr, HCASH</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (COMMERCIAL BANK OF ETHIOPIA)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{8,16}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="EGY"></a>
+    <h2>Egypt 🇪🇬</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → EGY</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (97)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>62</strong> — e.g. National Bank of Egypt, National Bank of Egypt, United Bank of Egypt</td></tr>
+      <tr><td>Cash pickup</td><td><strong>4</strong> — e.g. United Bank of Egypt, United Bank of Egypt, Banque Du Caire</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>30</strong> — e.g. Fawry, Vodafone Cash, Orange Cash</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (National Bank of Egypt)</th></tr>
+      <tr><td>Field label</td><td>IBAN or account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>EG800002000156789012345180002</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^[Ee][. -]*[Gg][. -]*(?:\d[. -]*){27}$|^(?:\d[. -]*){10,24}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → EGY</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (97)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>62</strong> — e.g. National Bank of Egypt, National Bank of Egypt, United Bank of Egypt</td></tr>
+      <tr><td>Cash pickup</td><td><strong>4</strong> — e.g. United Bank of Egypt, United Bank of Egypt, Banque Du Caire</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>30</strong> — e.g. Fawry, Vodafone Cash, Orange Cash</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (National Bank of Egypt)</th></tr>
+      <tr><td>Field label</td><td>IBAN or account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>EG800002000156789012345180002</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^[Ee][. -]*[Gg][. -]*(?:\d[. -]*){27}$|^(?:\d[. -]*){10,24}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="COL"></a>
+    <h2>Colombia 🇨🇴</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → COL</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (54)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>44</strong> — e.g. Banco Davivienda, Nu Bank, Bancolombia</td></tr>
+      <tr><td>Cash pickup</td><td><strong>5</strong> — e.g. Bancolombia, Banco Davivienda, Grupo Éxito Network</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>4</strong> — e.g. Nequi, Daviplata, Bancolombia A La Mano</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>BRE_B</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>3,900</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Banco Davivienda)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){12}[ ]*$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → COL</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (54)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>44</strong> — e.g. Banco Davivienda, Nu Bank, Bancolombia</td></tr>
+      <tr><td>Cash pickup</td><td><strong>5</strong> — e.g. Bancolombia, Banco Davivienda, Grupo Éxito Network</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>4</strong> — e.g. Nequi, Daviplata, Bancolombia A La Mano</td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>BRE_B</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      <tr><td>Cash pickup locations</td><td>3,900</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Banco Davivienda)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^(?: *\d){12}[ ]*$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="GTM"></a>
+    <h2>Guatemala 🇬🇹</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → GTM</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (34)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>20</strong> — e.g. Banrural, Banrural, Banco Industrial</td></tr>
+      <tr><td>Cash pickup</td><td><strong>11</strong> — e.g. Banrural, Banco Industrial, Banco G&amp;T Continental</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>2</strong> — e.g. Nequi, Zigi</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>7,000</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Banrural)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{10}$|^\d{14}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → GTM</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (34)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>20</strong> — e.g. Banrural, Banrural, Banco Industrial</td></tr>
+      <tr><td>Cash pickup</td><td><strong>11</strong> — e.g. Banrural, Banco Industrial, Banco G&amp;T Continental</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>2</strong> — e.g. Nequi, Zigi</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Banrural)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{10}$|^\d{14}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="DOM"></a>
+    <h2>Dominican Republic 🇩🇴</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → DOM</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (166)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>136</strong> — e.g. Banfondesa, Qik, Qik</td></tr>
+      <tr><td>Cash pickup</td><td><strong>24</strong> — e.g. Caribe Express, Caribe Express, BanReservas</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>1</strong> — e.g. Billet</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      <tr><td>Other rails</td><td>HOME_DELIVERY</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>1,500</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Banfondesa)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{1,28}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → DOM</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (166)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>136</strong> — e.g. Banfondesa, Qik, Qik</td></tr>
+      <tr><td>Cash pickup</td><td><strong>24</strong> — e.g. Caribe Express, Caribe Express, BanReservas</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>1</strong> — e.g. Billet</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      <tr><td>Other rails</td><td>HOME_DELIVERY</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      <tr><td>Cash pickup locations</td><td>1,500</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Banfondesa)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{1,28}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="BRA"></a>
+    <h2>Brazil 🇧🇷</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → BRA</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (73)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>72</strong> — e.g. Caixa Econômica Federal, Banco do Brasil, Nubank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>0</strong> </td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>PIX</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>No</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>500</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Caixa Econômica Federal)</th></tr>
+      <tr><td>Field label</td><td>Account Number (número da conta e dígito)</td></tr>
+      <tr><td>Example / placeholder</td><td><code>12345678-9</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{9,17}$|^1288(?:[ \-]*\d){13}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → BRA</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (73)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>72</strong> — e.g. Caixa Econômica Federal, Banco do Brasil, Nubank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>0</strong> </td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>PIX</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Required</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>No</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Caixa Econômica Federal)</th></tr>
+      <tr><td>Field label</td><td>Account Number (número da conta e dígito)</td></tr>
+      <tr><td>Example / placeholder</td><td><code>12345678-9</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{9,17}$|^1288(?:[ \-]*\d){13}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="ZAF"></a>
+    <h2>South Africa 🇿🇦</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → ZAF</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (19)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>17</strong> — e.g. Capitec Bank, Standard Bank, Nedbank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>2</strong> — e.g. Mukuru, Standard Bank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Capitec Bank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{10,11}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → ZAF</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (19)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>17</strong> — e.g. Capitec Bank, Standard Bank, Nedbank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>2</strong> — e.g. Mukuru, Standard Bank</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Capitec Bank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{10,11}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="CHN"></a>
+    <h2>China 🇨🇳</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → CHN</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (3)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>1</strong> — e.g. UnionPay / Other Bank Cards</td></tr>
+      <tr><td>Cash pickup</td><td><strong>0</strong> </td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>ALIPAY, WECHAT_PAY</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>Yes</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Required (default <code>PC02</code>)</td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;"><code>PC02</code> Family Support, <code>PC16</code> Salary</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (UnionPay / Other Bank Cards)</th></tr>
+      <tr><td>Field label</td><td>Account or card number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>6200000000000047</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{15,19}$|^.+Token\_\d{4}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>BANK_CARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → CHN</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (3)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>1</strong> — e.g. UnionPay / Other Bank Cards</td></tr>
+      <tr><td>Cash pickup</td><td><strong>0</strong> </td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      <tr><td>Other rails</td><td>ALIPAY, WECHAT_PAY</td></tr>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>Yes</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Required (default <code>PC02</code>)</td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;"><code>PC02</code> Family Support, <code>PC16</code> Salary</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (UnionPay / Other Bank Cards)</th></tr>
+      <tr><td>Field label</td><td>Account or card number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>6200000000000047</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{15,19}$|^.+Token\_\d{4}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>BANK_CARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="IDN"></a>
+    <h2>Indonesia 🇮🇩</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → IDN</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (119)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>106</strong> — e.g. Bank Central Asia (BCA), Bank Rakyat Indonesia (BRI), Bank Mandiri</td></tr>
+      <tr><td>Cash pickup</td><td><strong>5</strong> — e.g. Bank Negara Indonesia (BNI), Bank Negara Indonesia (BNI), Bank Rakyat Indonesia (BRI)</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>7</strong> — e.g. Gopay (Gojek E-Money), Dana, OVO</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      <tr><td>Cash pickup locations</td><td>32,200</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Bank Central Asia (BCA))</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{8,16}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → IDN</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (119)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>106</strong> — e.g. Bank Central Asia (BCA), Bank Rakyat Indonesia (BRI), Bank Mandiri</td></tr>
+      <tr><td>Cash pickup</td><td><strong>5</strong> — e.g. Bank Negara Indonesia (BNI), Bank Negara Indonesia (BNI), Bank Rakyat Indonesia (BRI)</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>7</strong> — e.g. Gopay (Gojek E-Money), Dana, OVO</td></tr>
+      <tr><td>Push to card</td><td><strong>1</strong> — e.g. VISA</td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Required</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>No</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (Bank Central Asia (BCA))</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{8,16}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+<a id="JPN"></a>
+    <h2>Japan 🇯🇵</h2>
+    <div class="vs-grid">
+      <div class="vs-card">
+        <h3>🇺🇸 USD → JPN</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (146)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>145</strong> — e.g. MUFG Bank, Japan Post Bank, Mizuho Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>1</strong> — e.g. Kyodai Remittance</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>Yes</td></tr>
+      <tr><td>Date format</td><td>MonthDayYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD, DISCOVER</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (MUFG Bank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{3,8}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+      <div class="vs-card">
+        <h3>🇬🇧 GBP → JPN</h3>
+        
+    <table>
+      <tr><th colspan="2" style="background:#00754a;color:white;">Destinations (146)</th></tr>
+      <tr><td>Bank deposit</td><td><strong>145</strong> — e.g. MUFG Bank, Japan Post Bank, Mizuho Bank</td></tr>
+      <tr><td>Cash pickup</td><td><strong>1</strong> — e.g. Kyodai Remittance</td></tr>
+      <tr><td>Mobile wallet (direct to phone)</td><td><strong>0</strong> </td></tr>
+      <tr><td>Push to card</td><td><strong>0</strong> </td></tr>
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Recipient rules</th></tr>
+      <tr><td>Middle name</td><td>Not collected</td></tr>
+      <tr><td>Second last name</td><td>Not collected</td></tr>
+      <tr><td>Last name first?</td><td>Yes</td></tr>
+      <tr><td>Date format</td><td>DayMonthYear</td></tr>
+      <tr><td>Mobile-only phone?</td><td>Yes</td></tr>
+      <tr><td>Send reason</td><td>Not collected </td></tr>
+      <tr><td>Reason options</td><td style="font-size:12px;">—</td></tr>
+      <tr><td>Supported bank types</td><td>CHECKING, SAVINGS</td></tr>
+      <tr><td>Supported cards</td><td>VISA, MASTERCARD</td></tr>
+      
+      
+      <tr><th colspan="2" style="background:#00754a;color:white;">Sample bank account format (MUFG Bank)</th></tr>
+      <tr><td>Field label</td><td>Account number</td></tr>
+      <tr><td>Example / placeholder</td><td><code>123456789</code></td></tr>
+      <tr><td>Validation regex</td><td><code style="font-size:11px;">^\d{3,8}$</code></td></tr>
+      <tr><td>Branch code</td><td>not required</td></tr>
+      <tr><td>Account type</td><td>STANDARD</td></tr>
+      
+    </table>
+  
+      </div>
+    </div>
+  
+
+</body>
+</html>

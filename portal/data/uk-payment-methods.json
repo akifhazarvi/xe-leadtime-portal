@@ -1,0 +1,55 @@
+{
+  "generated": "2026-04-14",
+  "period": "Last 30 Days",
+  "note": "UK consumer Leg 1 speed by payment method (how sender pays). senderCountry=GB.",
+  "paymentMethods": {
+    "debit": {
+      "label": "Debit Card",
+      "volume": 12296,
+      "completed": 12141,
+      "conversion": 98.7,
+      "median_hrs": 0.2,
+      "avg_hrs": 4.31
+    },
+    "bank_account": {
+      "label": "Bank Transfer",
+      "volume": 5713,
+      "completed": 5384,
+      "conversion": 94.2,
+      "median_hrs": 1.57,
+      "avg_hrs": 17.01
+    },
+    "open_banking": {
+      "label": "Open Banking",
+      "volume": 2458,
+      "completed": 2408,
+      "conversion": 98,
+      "median_hrs": 0.52,
+      "avg_hrs": 5.21
+    },
+    "credit": {
+      "label": "Credit Card",
+      "volume": 1220,
+      "completed": 1205,
+      "conversion": 98.8,
+      "median_hrs": 0.19,
+      "avg_hrs": 4.53
+    },
+    "balance": {
+      "label": "Balance",
+      "volume": 27,
+      "completed": 22,
+      "conversion": 81.5,
+      "median_hrs": 120.74,
+      "avg_hrs": 113.34
+    },
+    "direct_debit": {
+      "label": "Direct Debit",
+      "volume": 14,
+      "completed": 13,
+      "conversion": 92.9,
+      "median_hrs": 0.39,
+      "avg_hrs": 5.79
+    }
+  }
+}

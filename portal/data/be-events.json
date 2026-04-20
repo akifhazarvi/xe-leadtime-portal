@@ -1,0 +1,3701 @@
+{
+  "2FA Code Send Attempt": {
+    "name": "2FA Code Send Attempt",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "2FA Code Send Failed": {
+    "name": "2FA Code Send Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "login",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "2FA Code Sent": {
+    "name": "2FA Code Sent",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "login",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "2FA Email Verification Code Send Failure": {
+    "name": "2FA Email Verification Code Send Failure",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "login",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Accessed": {
+    "name": "Account Accessed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Approved": {
+    "name": "Account Approved",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Approved with STP": {
+    "name": "Account Approved with STP",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Closed": {
+    "name": "Account Closed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Closed One Compliance": {
+    "name": "Account Closed One Compliance",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Country Changed": {
+    "name": "Account Country Changed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Creation Complete": {
+    "name": "Account Creation Complete",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Event triggered when the backend \"cognito\" successfully creates an account for the user.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Creation Failed": {
+    "name": "Account Creation Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Event triggered when the backend \"cognito\" detects an errors for user Account Creation as an existing account.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Link Completed": {
+    "name": "Account Link Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Link Exited": {
+    "name": "Account Link Exited",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Link Failed": {
+    "name": "Account Link Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Link Started": {
+    "name": "Account Link Started",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Rejected with STP": {
+    "name": "Account Rejected with STP",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Restricted": {
+    "name": "Account Restricted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Type Changed": {
+    "name": "Account Type Changed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Type Started": {
+    "name": "Account Type Started",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Account Updated": {
+    "name": "Account Updated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Additional Information Requested": {
+    "name": "Additional Information Requested",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Event fired when a user switches between tiers and additional information is required to be provided by the user. The event captures specifically what properties the user needs to provide to us to allow for their transaction to continue.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Anonymous Quote Calculated": {
+    "name": "Anonymous Quote Calculated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Anonymous Quote Error": {
+    "name": "Anonymous Quote Error",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Authentication Attempted": {
+    "name": "Card Authentication Attempted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "This event fires when Cybersource attempts to verify a card prior to payment. Event will be followed by either a Card Authentication Successful or Card Authentication Failed event.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Authentication Failed": {
+    "name": "Card Authentication Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "This event fires when Cybersource fails to verify a card prior to payment.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Authentication Successful": {
+    "name": "Card Authentication Successful",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "This event fires when Cybersource successfully verifies a card prior to payment.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Payment Attempted": {
+    "name": "Card Payment Attempted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "This event fires when Cybersource or Apex attempts to process a card payment. Event will be followed by either a Card Payment Successful or Card Payment Failed event.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Payment Failed": {
+    "name": "Card Payment Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "This event fires when Cybersource or Apex fails to process a card payment.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Payment Max Attempts Reached": {
+    "name": "Card Payment Max Attempts Reached",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Payment Refund Email Required": {
+    "name": "Card Payment Refund Email Required",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Payment Successful": {
+    "name": "Card Payment Successful",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "This event fires when Cybersource or Apex successfully process a card payment.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Refund Payment Attempted": {
+    "name": "Card Refund Payment Attempted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Refund Payment Failed": {
+    "name": "Card Refund Payment Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Refund Payment Successful": {
+    "name": "Card Refund Payment Successful",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Transaction Authentication Required": {
+    "name": "Card Transaction Authentication Required",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Card Transaction Authorised": {
+    "name": "Card Transaction Authorised",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Case Sent To Compliance": {
+    "name": "Case Sent To Compliance",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Change Password Completed": {
+    "name": "Change Password Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "login",
+    "trigger": "Event triggered when the backend \"cognito\" successfully changes the password of the user's account.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Direct Debit Account Verified": {
+    "name": "Direct Debit Account Verified",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Event triggered when the user's ACH account is approved/verified.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Disbursement Sent": {
+    "name": "Disbursement Sent",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Duplicate Account Detected": {
+    "name": "Duplicate Account Detected",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Duplicate Account Error Triggered": {
+    "name": "Duplicate Account Error Triggered",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Email Address Verified": {
+    "name": "Email Address Verified",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "login",
+    "trigger": "Event triggered when the backend \"cognito\" successfully mark an email address of the user as verified. For normal scenarios, this happens directly after creating an account successfully and the use provides the correct verification code",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Exception on STP GET approval retry": {
+    "name": "Exception on STP GET approval retry",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "FTT Created SendAmountUSD": {
+    "name": "FTT Created SendAmountUSD",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "First Time Transaction Created": {
+    "name": "First Time Transaction Created",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Fraud Check Completed": {
+    "name": "Fraud Check Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Fraud Check Referred": {
+    "name": "Fraud Check Referred",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Fraud Check Started": {
+    "name": "Fraud Check Started",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Fraud Manual Check Completed": {
+    "name": "Fraud Manual Check Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Fraud StepUp": {
+    "name": "Fraud StepUp",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Funds Received": {
+    "name": "Funds Received",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Event triggered when the funds are received from the sender in the case of bank transfer. For other payment methods, the funds are received at the same time as when the transaction is created.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Hero Section Account Registration Started": {
+    "name": "Hero Section Account Registration Started",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "High Risk Compliance Tier Calculated": {
+    "name": "High Risk Compliance Tier Calculated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "High Risk Conditions Evaluated": {
+    "name": "High Risk Conditions Evaluated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Linkedin Connection Request Sent": {
+    "name": "Linkedin Connection Request Sent",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Linkedin Message Sent": {
+    "name": "Linkedin Message Sent",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "MPT Staged Payment Created": {
+    "name": "MPT Staged Payment Created",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "MT Profile Created": {
+    "name": "MT Profile Created",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Event triggered when the backend \"DFX\" successfully creates a profile for the user. This is after the user completes the money transfer registration step.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "MT Profile Updated": {
+    "name": "MT Profile Updated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Event triggered when the backend \"DFX\" successfully creates a profile for the user. This is after the user completes the money transfer registration step.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Marketing Consent Email Sent": {
+    "name": "Marketing Consent Email Sent",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "login",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Mass Payment Approved": {
+    "name": "Mass Payment Approved",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Mass Payment Completed": {
+    "name": "Mass Payment Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Mass Payment Created": {
+    "name": "Mass Payment Created",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Mass Payment Deleted": {
+    "name": "Mass Payment Deleted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Mass Payment Status Changed": {
+    "name": "Mass Payment Status Changed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Micro-Deposit Notification Sent": {
+    "name": "Micro-Deposit Notification Sent",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "MidMarket Send Money Viewed": {
+    "name": "MidMarket Send Money Viewed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Multiple Payment Transaction Completed": {
+    "name": "Multiple Payment Transaction Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Multiple Payment Transaction Created": {
+    "name": "Multiple Payment Transaction Created",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "New Payment Method Completed": {
+    "name": "New Payment Method Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Open Banking Payment Attempted": {
+    "name": "Open Banking Payment Attempted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Open Banking Payment Completed": {
+    "name": "Open Banking Payment Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Open Banking Payment Failed": {
+    "name": "Open Banking Payment Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Open Banking Payment Pending": {
+    "name": "Open Banking Payment Pending",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Open Banking Payment Started": {
+    "name": "Open Banking Payment Started",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "PEP SAN Check Recipient Completed": {
+    "name": "PEP SAN Check Recipient Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Payment Authorised": {
+    "name": "Payment Authorised",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Payment Completed": {
+    "name": "Payment Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Payment Created": {
+    "name": "Payment Created",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Payment Refund Attempted": {
+    "name": "Payment Refund Attempted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Payment Refund Successful": {
+    "name": "Payment Refund Successful",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Payment Rejected": {
+    "name": "Payment Rejected",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Payment Required Reminder": {
+    "name": "Payment Required Reminder",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Purpose Of Account Added": {
+    "name": "Purpose Of Account Added",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Quick Transaction Quote Calculated": {
+    "name": "Quick Transaction Quote Calculated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Quick Transaction Quote Confirmed": {
+    "name": "Quick Transaction Quote Confirmed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Quote Validated": {
+    "name": "Quote Validated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Event triggered when an existing quote is validated so a contract can be created.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Quote Validation Failed": {
+    "name": "Quote Validation Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Recipient Deleted": {
+    "name": "Recipient Deleted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "recipient",
+    "trigger": "Event triggered when the backend successfully deletes an existing recipient.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Recipient Name Updated": {
+    "name": "Recipient Name Updated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "recipient",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Recipient Updated": {
+    "name": "Recipient Updated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "recipient",
+    "trigger": "Event triggered when the backend successfully updates the details of an existing recipient.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Recipient Vop Check": {
+    "name": "Recipient Vop Check",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "recipient",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Risk Assessment Completed": {
+    "name": "Risk Assessment Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "STP GET approval successful": {
+    "name": "STP GET approval successful",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "STP START Approval Successful": {
+    "name": "STP START Approval Successful",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Scheduled Payment Failed": {
+    "name": "Scheduled Payment Failed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Scheduled Payment Reminder": {
+    "name": "Scheduled Payment Reminder",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Send Funds With Balance Completed": {
+    "name": "Send Funds With Balance Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Send Money Test Paticipant": {
+    "name": "Send Money Test Paticipant",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Suspicious Account Detected": {
+    "name": "Suspicious Account Detected",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "kyc",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transaction Completed": {
+    "name": "Transaction Completed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Event triggered when  the backend confirms that the transaction completed. Completed transaction means that we sent the money to the recipient. Works for both Web & App",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transaction Confirmed": {
+    "name": "Transaction Confirmed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transaction Recipient Updated": {
+    "name": "Transaction Recipient Updated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transaction Rejected": {
+    "name": "Transaction Rejected",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transaction Status Updated": {
+    "name": "Transaction Status Updated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transaction Unfrozen": {
+    "name": "Transaction Unfrozen",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transaction Updated": {
+    "name": "Transaction Updated",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transfer Confirmation Requested": {
+    "name": "Transfer Confirmation Requested",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transfer Confirmation Responded": {
+    "name": "Transfer Confirmation Responded",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Transfer Reviewed": {
+    "name": "Transfer Reviewed",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "send_money",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Update Account with Corporate Pending Actions Submitted": {
+    "name": "Update Account with Corporate Pending Actions Submitted",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "Update Account with STP": {
+    "name": "Update Account with STP",
+    "source": "server_side",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "registration",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Free Trial Account Created": {
+    "name": "XECD Free Trial Account Created",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Free Trial Create Account Clicked": {
+    "name": "XECD Free Trial Create Account Clicked",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Registration Account Activated": {
+    "name": "XECD Registration Account Activated",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Registration Account Created": {
+    "name": "XECD Registration Account Created",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Registration Account On Hold": {
+    "name": "XECD Registration Account On Hold",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "On the final step of registration after client clicks on \u2018Create account\u2019, and the BE creates the account, and goes on to place theaccount on HOLD.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Registration Create Account Clicked": {
+    "name": "XECD Registration Create Account Clicked",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Registration Payment Details Added": {
+    "name": "XECD Registration Payment Details Added",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Registration Payment Details Confirmed": {
+    "name": "XECD Registration Payment Details Confirmed",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "XECD Registration Payment Failed": {
+    "name": "XECD Registration Payment Failed",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "other",
+    "trigger": "When the BE returns a failure when attempting to process payment on behalf of the client",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[HubSpot] EMAIL_SENT": {
+    "name": "[HubSpot] EMAIL_SENT",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[Iterable] emailSend": {
+    "name": "[Iterable] emailSend",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[Iterable] emailSendSkip": {
+    "name": "[Iterable] emailSendSkip",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[Iterable] inAppSend": {
+    "name": "[Iterable] inAppSend",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[Iterable] inAppSendSkip": {
+    "name": "[Iterable] inAppSendSkip",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[Iterable] pushSend": {
+    "name": "[Iterable] pushSend",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[Iterable] pushSendSkip": {
+    "name": "[Iterable] pushSendSkip",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[Iterable] smsSend": {
+    "name": "[Iterable] smsSend",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "[Iterable] smsSendSkip": {
+    "name": "[Iterable] smsSendSkip",
+    "source": "third_party",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "third_party",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "af_payment_method": {
+    "name": "af_payment_method",
+    "source": "appsflyer",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "mobile_features",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "af_recipient": {
+    "name": "af_recipient",
+    "source": "appsflyer",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "mobile_features",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "af_review_transfer": {
+    "name": "af_review_transfer",
+    "source": "appsflyer",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "mobile_features",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "af_send_money_start": {
+    "name": "af_send_money_start",
+    "source": "appsflyer",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "mobile_features",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  },
+  "af_transfer_confirmed": {
+    "name": "af_transfer_confirmed",
+    "source": "appsflyer",
+    "platforms": [
+      "Server"
+    ],
+    "constants": {
+      "web": null,
+      "app": null
+    },
+    "codeLocations": {
+      "galileo": [],
+      "apollo": []
+    },
+    "properties": [],
+    "category": "mobile_features",
+    "trigger": "Backend/server-side event. Not fired from client code.",
+    "notes": "This event is fired by the backend system, not from galileo-site or xe-apollo client code. It appears in Amplitude but has no corresponding client-side tracking.",
+    "issues": [],
+    "funnels": [],
+    "flow": {
+      "previous": [],
+      "next": []
+    },
+    "intelligence": null,
+    "samplePayload": null
+  }
+}

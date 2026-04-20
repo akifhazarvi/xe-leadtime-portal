@@ -1,0 +1,2744 @@
+{
+  "LUX-VNM": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-VNM 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "88 Dong Khoi",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Ho Chi Minh",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province/Municipality",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-CHN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CHN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "No 10, Century Avenue Pudong",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Shanghai",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-EGY": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-EGY 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "20, Saad El Salah street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Cairo",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Governorate",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-COL": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-COL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Calle 99C #01-01",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Medell\u00edn",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Department",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-GTM": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-GTM 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "9 Calle D 91-70",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "GTM",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Department",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-DOM": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-DOM 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Uri\u00f3n 30",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Santo Domingo",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-SLV": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-SLV 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "123 Avenida Sur",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "San Salvador",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Department",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-HND": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-HND 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "111 Avenida Noroeste",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Tegucigalpa",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Department",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-NPL": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-NPL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Tusal Phutung 9, Balaju",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Kathmandu",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Zone",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-LKA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-LKA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "46, Galle Road, Wellawatta",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Colombo",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-JPN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-JPN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "3-23-5 Nishi-Shinbashi",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Apartment suite unit etc.",
+          "example": "Onarimon Yusen Bldg, 13F",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Minato-ku",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Prefecture",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Postcode",
+          "example": "105-0003",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postcode does not match the required pattern.",
+              "regex": "^\\s*\\d{3}\\-?\\d{4}\\s*$",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-KOR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-KOR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "102 Unit 304 Sajik-ro-3-gil",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Seoul",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-PER": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-PER 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Jr Recuay 156 Bre\u00f1a",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Lima",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ARG": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ARG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Calle Azurduy 158",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Rosario",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ECU": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ECU 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Calle Morales 1467",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Quito",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-BRA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BRA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Rua Visconde 123",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Sao Paulo",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "State",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-CHL": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CHL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Pasaje Anakena 3422",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Santiago",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-BOL": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BOL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Piedras No 623",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "La Paz",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Department",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-TTO": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-TTO 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "2 Lady Young Road",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Port of Spain",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-BRB": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BRB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Cheapside Main Rd",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Bridgetown",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Parish",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-BHS": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BHS 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "42 Queen Street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Nassau",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "District",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ZAF": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ZAF 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "497 Jacob Mare Street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Pretoria",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-UGA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-UGA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Plot 16 Parliament Avenue",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Kampala",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ETH": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ETH 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "House No.658, Bole Road",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Addis Ababa",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "State",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-TZA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-TZA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "14 Magore street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Dar es Salaam",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-RWA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-RWA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "12 Avenue Paul VI",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Kigali",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-SEN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-SEN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "12 Avenue Cheikh Diop",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Dakar",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-CIV": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CIV 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "10 Ave du General de Gaulle",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Abidjan",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "District",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-MDG": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MDG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "2 Ave Ramanantsoa",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Antananarivo",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-DZA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-DZA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "172 Rue Aissani Rachid",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Algiers",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-TUN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-TUN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "42 Avenue de La Liberte",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Tunis",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-JOR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-JOR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "48 Al-Hashemi Street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Amman",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Governorate",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-TUR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-TUR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Ismet Inonu Blv. No: 5",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Town",
+          "example": "Akyurt",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-LBN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-LBN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "12 Clemenceau Street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Beirut",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Governorate",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ISR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ISR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "205 Hayarkon street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Tel Aviv",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "District",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-UZB": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-UZB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "59 Mustakillik Avenue",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Tashkent",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-KAZ": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-KAZ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "97 Zholdasbekov Street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Almaty",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-TJK": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-TJK 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "34 Rudaki Street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Dushanbe",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-KGZ": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-KGZ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "19 Razzakov Street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Bishkek",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-MNG": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MNG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Gachuurt Road 10",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Ulaanbaatar",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-MMR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MMR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "56 Pyay Road",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Yangon",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-LAO": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-LAO 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "19 rue Bartholonie",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Vientiane",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-TWN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-TWN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "19, Minsheng West Road",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Taipei",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-NZL": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-NZL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "70 Crown Street, Apt 74",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Woodhaugh",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-HKG": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-HKG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "2 Salisbury Rd",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Tsim Sha Tsui",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "District",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-TON": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-TON 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Taufa'ahau Road",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Nuku'alofa",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Division",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-AUS": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-AUS 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "123 Spring Street",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Flat Suite Unit etc.",
+          "example": "APT 75",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Suburb",
+          "example": "Sydney",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "State",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "numeric",
+          "required": false,
+          "label": "Postcode",
+          "example": "2059",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postcode does not match the required pattern.",
+              "regex": "^\\s*\\d{4}\\s*$",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-DEU": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-DEU 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "Schulstrasse 4",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Apartment suite unit etc.",
+          "example": "Apt 74",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Friedberg",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "numeric",
+          "required": false,
+          "label": "Postcode",
+          "example": "61169",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postcode does not match the required pattern.",
+              "regex": "^\\s*\\d{5}\\s*$",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": true,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-CAN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CAN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "100 W Georgia St",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Apartment suite unit etc.",
+          "example": "Apt 74",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Vancouver",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Postal code",
+          "example": "V5Z 2M9",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postal code does not match the required pattern.",
+              "regex": "^\\s*[ABCEGHJKLMNPRSTVXYabceghjklmnprstvxy]\\d[A-Za-z][ ]?\\d[A-Za-z]\\d\\s*$",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-FRA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-FRA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "118 Boulevard Saint-Germain",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Apartment suite unit etc.",
+          "example": "Apt 74",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Paris",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "numeric",
+          "required": false,
+          "label": "Postcode",
+          "example": "75006",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postcode does not match the required pattern.",
+              "regex": "^\\s*\\d{5}\\s*$",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": true,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ITA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ITA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "Viale europa 22",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Apartment suite unit etc.",
+          "example": "Apt 74",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Roma",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Postcode",
+          "example": "00144",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postcode does not match the required pattern.",
+              "regex": "^\\s*\\d{5}\\s*$",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": true,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ESP": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ESP 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "Calle Aduana 29",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Apartment suite unit etc.",
+          "example": "Apt 74",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Madrid",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Postcode",
+          "example": "28070",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postcode does not match the required pattern.",
+              "regex": "^\\s*\\d{5}\\s*$",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": true,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-NOR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-NOR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "Revierstredet 2",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Apartment suite unit etc.",
+          "example": "Apt 74",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Oslo",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Postcode",
+          "example": "0104",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postcode does not match the required pattern.",
+              "regex": "^\\s*\\d{4}\\s*",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": true,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-FIN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-FIN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address line 1",
+          "example": "Albertinkatu 36",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "street2",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Apartment suite unit etc.",
+          "example": "Apt 74",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Helsinki",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "postal",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Postcode",
+          "example": "00180",
+          "validators": [
+            {
+              "type": "REGEX",
+              "field": "",
+              "message": "Postcode does not match the required pattern.",
+              "regex": "^\\s*\\d{5}\\s*$",
+              "validationVariant": null,
+              "__typename": "ValidatorConfig"
+            }
+          ],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": true,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-SVK": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-SVK 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Zamocka 30",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Bratislava",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-CZE": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CZE 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Prujezdna 9",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Prague",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-HUN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-HUN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Nagymez\u0151 utca 32",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Budapest",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "County",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ROU": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ROU 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Strada Maguricea 1, ap. 1",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Bucuresti",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Province",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-BGR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BGR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "ul. Aleksand\u016dr Ekzarkh 2",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Sofia",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-HRV": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-HRV 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Ul. Bra\u0107e Cviji\u0107a 18",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Zagreb",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "County",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-SVN": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-SVN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "10 Colnarjeva ulica",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Ljubljana",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-EST": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-EST 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Ravala street 10",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Tallinn",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "County",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-UKR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-UKR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Bohdan Khmelnytsky Str 15",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Kyiv",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ISL": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ISL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Adalstraeti 10, Grjotagata",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Reykjavik",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-LUX": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-LUX 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "10 Rue Jean Engling",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "LUX",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Canton",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-ALB": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ALB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Bulevardi Zhan D'Ark 1",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Tirana",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "County",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-RUS": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-RUS 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "ul. Lesnaya d. 5, kv. 176",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Moscow",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-BLR": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BLR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "ul. Kozlova, 10",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Minsk",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Region",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  },
+  "LUX-MDA": {
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MDA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "recipientAddressConfig": {
+      "autoCompleteFieldType": null,
+      "fieldConfigs": [
+        {
+          "type": "street1",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "Street address",
+          "example": "Str. Albisoara 38, Apt 1",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "city",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "City",
+          "example": "Chisinau",
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        },
+        {
+          "type": "subdivision",
+          "fieldType": "alpha-numeric",
+          "required": false,
+          "label": "District",
+          "example": null,
+          "validators": [],
+          "__typename": "AddressFieldConfig"
+        }
+      ],
+      "lineBreakBeforePostalCode": false,
+      "__typename": "AddressConfig"
+    }
+  }
+}

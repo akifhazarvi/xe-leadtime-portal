@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK SLA Builder — IN/OUT by Destination</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; font-size: 13px; }
+    a { color: #58a6ff; text-decoration: none; }
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1600px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #3fb950; }
+    .nav { margin-left: auto; display: flex; gap: 16px; font-size: 13px; }
+    .container { max-width: 1600px; margin: 0 auto; padding: 20px 24px; }
+
+    .info { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .info h3 { font-size: 14px; margin-bottom: 6px; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 8px; }
+    .info-box { padding: 8px; background: #0d1117; border-radius: 4px; }
+    .info-label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    .info-value { font-size: 20px; font-weight: 700; }
+
+    .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; padding: 10px 16px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
+    .filter-group { display: flex; align-items: center; gap: 6px; }
+    .filter-group label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    select, input[type=text] { background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 5px 8px; border-radius: 4px; font-size: 12px; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { padding: 6px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 10px; text-transform: uppercase; color: #8b949e; white-space: nowrap; position: sticky; top: 0; background: #0f1117; }
+    td { padding: 4px 6px; border-bottom: 1px solid #21262d; white-space: nowrap; }
+    th.sep, td.sep { border-left: 2px solid #30363d; }
+    tr:hover { background: #161b2266; }
+    tr.group-start { border-top: 2px solid #30363d; }
+
+    .c-fast { color: #3fb950; } .c-ok { color: #e1e4e8; } .c-warn { color: #d29922; } .c-slow { color: #f85149; font-weight: 700; } .c-muted { color: #484f58; }
+    .sla-tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+    .sla-fast { background: #3fb95022; color: #3fb950; }
+    .sla-ok { background: #21262d; color: #8b949e; }
+    .sla-slow { background: #f8514922; color: #f85149; }
+    .arrow { margin: 0 4px; color: #3fb950; font-weight: 700; }
+    .pill { display: inline-block; padding: 1px 6px; border-radius: 8px; font-size: 9px; font-weight: 600; }
+    .pill-green { background: #3fb95022; color: #3fb950; }
+    .pill-red { background: #f8514922; color: #f85149; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>UK SLA Builder <span>IN/OUT by Destination</span></h1>
+      <div class="nav"><a href="uk-launchpad-changes.html" style="color:#3fb950;font-weight:600">Launchpad Changes</a><a href="uk-sla-optimizer.html">SLA Optimizer</a><a href="uk.html">UK Dashboard</a></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="info">
+      <h3>Business Hours Rule (from launchpad code)</h3>
+      <div style="font-size:12px;color:#8b949e">UK region: <strong>IN</strong> = Mon-Fri before 14:00 GMT | <strong>OUT</strong> = Mon-Fri after 14:00 + all weekends. Applied to <code>Last Status Update Time</code> (when payment was sent).</div>
+      <div class="info-grid" id="kpis"></div>
+    </div>
+
+    <div class="controls">
+      <div class="filter-group"><label>Search</label><input type="text" id="f-search" placeholder="Currency or country..."></div>
+      <div class="filter-group"><label>Show</label><select id="f-show">
+        <option value="all">All Rows</option>
+        <option value="improve-in">Can Improve IN</option>
+        <option value="improve-out">Can Improve OUT</option>
+        <option value="breach-in">Breaching IN</option>
+        <option value="breach-out">Breaching OUT</option>
+        <option value="in-out-differ">IN ≠ OUT suggestion</option>
+      </select></div>
+      <div class="filter-group"><label>Min Vol</label><select id="f-vol">
+        <option value="0">All</option><option value="5">5+</option><option value="10" selected>10+</option><option value="50">50+</option><option value="100">100+</option>
+      </select></div>
+      <div class="filter-group"><label>Sort</label><select id="f-sort">
+        <option value="volume">Volume</option>
+        <option value="currency">Currency</option>
+        <option value="destination">Destination</option>
+        <option value="in-p80">IN P80 (slowest)</option>
+        <option value="out-p80">OUT P80 (slowest)</option>
+      </select></div>
+    </div>
+
+    <div id="corridors"></div>
+  </div>
+
+<script>
+let D = null;
+fetch('../data/uk-sla-complete.json').then(r => r.json()).then(d => { D = d; render(); });
+
+function fmtSec(s) { if (s==null) return '-'; s=Math.round(s); if (s<60) return s+'s'; if (s<3600){const m=Math.floor(s/60);const r2=s%60;return r2>0?m+'m '+r2+'s':m+'m';} if (s<86400){const h=Math.floor(s/3600);const m=Math.round((s%3600)/60);return m>0?h+'h '+m+'m':h+'h';} const d2=Math.floor(s/86400);const h=Math.round((s%86400)/3600);return h>0?d2+'d '+h+'h':d2+'d';}
+function cls(s) { if (s==null) return 'c-muted'; if (s<=1800) return 'c-fast'; if (s<=86400) return 'c-ok'; if (s<=172800) return 'c-warn'; return 'c-slow'; }
+function tierCls(t) { if (!t) return 'sla-ok'; if (t.includes('minutes') || t.includes('hours')) return 'sla-fast'; if (t.includes('24') || t.includes('48') || t.includes('same') || t.includes('next')) return 'sla-ok'; return 'sla-slow'; }
+
+function render() {
+  if (!D) return;
+  const search = document.getElementById('f-search').value.toUpperCase();
+  const show = document.getElementById('f-show').value;
+  const minVol = parseInt(document.getElementById('f-vol').value);
+  const sort = document.getElementById('f-sort').value;
+
+  let rows = D.rows.filter(r => {
+    if (search && !r.currency.toUpperCase().includes(search) && !r.destination.toUpperCase().includes(search)) return false;
+    if (minVol && r.all_volume < minVol) return false;
+    if (show === 'improve-in' && !r.can_improve_in) return false;
+    if (show === 'improve-out' && !r.can_improve_out) return false;
+    if (show === 'breach-in' && !r.breaching_in) return false;
+    if (show === 'breach-out' && !r.breaching_out) return false;
+    if (show === 'in-out-differ' && r.suggested_tier_in === r.suggested_tier_out) return false;
+    return true;
+  });
+
+  rows.sort((a, b) => {
+    if (sort === 'volume') return b.all_volume - a.all_volume;
+    if (sort === 'currency') return a.currency.localeCompare(b.currency) || b.all_volume - a.all_volume;
+    if (sort === 'destination') return a.destination.localeCompare(b.destination);
+    if (sort === 'in-p80') return (b.in_p80_s || 0) - (a.in_p80_s || 0);
+    if (sort === 'out-p80') return (b.out_p80_s || 0) - (a.out_p80_s || 0);
+    return 0;
+  });
+
+  // KPIs
+  document.getElementById('kpis').innerHTML = `
+    <div class="info-box"><div class="info-label">Total Rows</div><div class="info-value">${rows.length}</div><div style="font-size:11px;color:#8b949e">of ${D.total_rows}</div></div>
+    <div class="info-box"><div class="info-label">Can Improve</div><div class="info-value c-fast">${rows.filter(r => r.can_improve_in || r.can_improve_out).length}</div><div style="font-size:11px;color:#8b949e">show faster SLA</div></div>
+    <div class="info-box"><div class="info-label">Breaching</div><div class="info-value c-slow">${rows.filter(r => r.breaching_in || r.breaching_out).length}</div><div style="font-size:11px;color:#8b949e">actual exceeds SLA</div></div>
+  `;
+
+  function sugCell(current, suggested, breaching, canImprove) {
+    if (canImprove) {
+      return '<span class="sla-tag ' + tierCls(current) + '" style="text-decoration:line-through;opacity:0.5">' + current + '</span><span class="arrow">&rarr;</span><span class="sla-tag sla-fast">' + suggested + '</span>';
+    }
+    if (breaching) {
+      return '<span class="sla-tag sla-slow">Breaching: ' + (current || 'N/A') + '</span>';
+    }
+    return '<span class="sla-tag ' + tierCls(suggested) + '">' + (suggested || 'N/A') + '</span>';
+  }
+
+  // Group by corridor
+  const grouped = {};
+  rows.forEach(r => {
+    if (!grouped[r.currency]) grouped[r.currency] = [];
+    grouped[r.currency].push(r);
+  });
+
+  // Sort corridors by total volume
+  const sortedCcys = Object.entries(grouped).sort((a,b) => {
+    const aVol = a[1].reduce((s,r) => s + r.all_volume, 0);
+    const bVol = b[1].reduce((s,r) => s + r.all_volume, 0);
+    return bVol - aVol;
+  });
+
+  document.getElementById('corridors').innerHTML = sortedCcys.map(([ccy, ccyRows]) => {
+    const vol = ccyRows.reduce((s,r) => s + r.all_volume, 0);
+    const improveCount = ccyRows.filter(r => r.can_improve_in || r.can_improve_out).length;
+    const breachCount = ccyRows.filter(r => r.breaching_in || r.breaching_out).length;
+    const destCount = [...new Set(ccyRows.map(r => r.destination))].length;
+    const ccyType = ccyRows[0].ccyType || '';
+
+    let badges = '';
+    if (improveCount > 0) badges += '<span class="pill pill-green">' + improveCount + ' can improve</span> ';
+    if (breachCount > 0) badges += '<span class="pill pill-red">' + breachCount + ' breaching</span>';
+
+    // Sort rows: by destination, then payout method
+    ccyRows.sort((a,b) => a.destination.localeCompare(b.destination) || b.all_volume - a.all_volume);
+
+    let tableRows = '';
+    let lastDest = '';
+    for (const r of ccyRows) {
+      const isNewDest = r.destination !== lastDest;
+      lastDest = r.destination;
+
+      tableRows += '<tr' + (isNewDest ? ' class="group-start"' : '') + '>';
+      tableRows += '<td' + (isNewDest ? ' style="font-weight:600"' : ' style="color:#484f58"') + '>' + (isNewDest ? r.destination : '') + '</td>';
+      tableRows += '<td style="color:#8b949e">' + r.payoutMethod + '</td>';
+      tableRows += '<td style="text-align:right;color:#8b949e">' + r.all_volume + '</td>';
+
+      tableRows += '<td class="sep" style="text-align:right;color:#8b949e">' + r.in_volume + '</td>';
+      tableRows += '<td class="' + cls(r.in_median_s) + '">' + fmtSec(r.in_median_s) + '</td>';
+      tableRows += '<td class="' + cls(r.in_p80_s) + '" style="font-weight:700">' + fmtSec(r.in_p80_s) + '</td>';
+
+      tableRows += '<td class="sep" style="text-align:right;color:#8b949e">' + r.out_volume + '</td>';
+      tableRows += '<td class="' + cls(r.out_median_s) + '">' + fmtSec(r.out_median_s) + '</td>';
+      tableRows += '<td class="' + cls(r.out_p80_s) + '" style="font-weight:700">' + fmtSec(r.out_p80_s) + '</td>';
+
+      tableRows += '<td class="sep"><span class="sla-tag ' + tierCls(r.current_tier_in) + '">' + (r.current_tier_in || 'N/A') + '</span></td>';
+      tableRows += '<td><span class="sla-tag ' + tierCls(r.current_tier_out) + '">' + (r.current_tier_out || 'N/A') + '</span></td>';
+
+      tableRows += '<td class="sep">' + sugCell(r.current_tier_in, r.suggested_tier_in, r.breaching_in, r.can_improve_in) + '</td>';
+      tableRows += '<td>' + sugCell(r.current_tier_out, r.suggested_tier_out, r.breaching_out, r.can_improve_out) + '</td>';
+      tableRows += '</tr>';
+    }
+
+    return '<div style="background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:12px;overflow:hidden">' +
+      '<div style="padding:10px 16px;display:flex;align-items:center;gap:12px;cursor:pointer" onclick="const b=this.nextElementSibling;b.style.display=b.style.display===\'none\'?\'block\':\'none\';this.querySelector(\'.toggle\').classList.toggle(\'open\')">' +
+        '<span class="toggle" style="font-size:10px;color:#8b949e;transition:transform 0.2s;display:inline-block">&#9654;</span>' +
+        '<span style="font-size:15px;font-weight:600">UK &rarr; ' + ccy + '</span>' +
+        '<span style="font-size:12px;color:#8b949e">' + ccyType + ' | ' + vol + ' payments | ' + destCount + ' destinations</span>' +
+        '<span style="margin-left:auto">' + badges + '</span>' +
+      '</div>' +
+      '<div style="display:none;padding:0 16px 12px">' +
+        '<div class="table-wrap"><table>' +
+          '<tr><th>Dest</th><th>Payout</th><th style="text-align:right">Vol</th>' +
+          '<th class="sep" style="color:#58a6ff">IN Vol</th><th style="color:#58a6ff">IN Med</th><th style="color:#58a6ff;font-weight:700">IN P80</th>' +
+          '<th class="sep" style="color:#d29922">OUT Vol</th><th style="color:#d29922">OUT Med</th><th style="color:#d29922;font-weight:700">OUT P80</th>' +
+          '<th class="sep">Current IN</th><th>Current OUT</th>' +
+          '<th class="sep" style="color:#3fb950">Suggested IN</th><th style="color:#3fb950">Suggested OUT</th></tr>' +
+          tableRows +
+        '</table></div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+['f-search','f-show','f-vol','f-sort'].forEach(id => document.getElementById(id).addEventListener(id==='f-search'?'input':'change', render));
+</script>
+</body>
+</html>

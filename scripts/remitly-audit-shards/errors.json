@@ -1,0 +1,737 @@
+[
+  {
+    "key": "USA-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=USA-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "GBR-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=GBR-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "GBR-IRQ",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=GBR-IRQ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CAN-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CAN-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "AUS-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=AUS-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "AUS-IRQ",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=AUS-IRQ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "AUS-AFG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=AUS-AFG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "IRL-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=IRL-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "IRL-AFG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=IRL-AFG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "IRL-IRL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=IRL-IRL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "DEU-AFG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=DEU-AFG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "DEU-IRQ",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=DEU-IRQ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "ITA-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=ITA-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "ITA-AFG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=ITA-AFG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "ITA-IRQ",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=ITA-IRQ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "ESP-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=ESP-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "ESP-AFG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=ESP-AFG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "BEL-FRA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=BEL-FRA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "AUT-AFG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=AUT-AFG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "AUT-IRQ",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=AUT-IRQ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "AUT-AUT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=AUT-AUT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "POL-POL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=POL-POL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "POL-RUS",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=POL-RUS 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "POL-BLR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=POL-BLR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "NOR-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=NOR-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "NOR-KWT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=NOR-KWT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "NOR-BLR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=NOR-BLR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "DNK-KWT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=DNK-KWT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "DNK-BLR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=DNK-BLR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "FIN-TJK",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=FIN-TJK 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "FIN-FRA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=FIN-FRA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "FIN-FIN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=FIN-FIN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-IND",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-IND 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-PHL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-PHL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-MEX",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-MEX 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-SLV",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-SLV 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-NPL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-NPL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-LKA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-LKA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-GHA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-GHA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-KEN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-KEN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-MAR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-MAR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-KHM",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-KHM 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-ARG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-ARG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-CHL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-CHL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-PRY",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-PRY 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-URY",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-URY 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-VEN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-VEN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-CRI",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-CRI 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-NIC",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-NIC 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-PAN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-PAN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-TZA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-TZA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-CMR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-CMR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-SEN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-SEN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-JOR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-JOR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-LBN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-LBN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-ISR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-ISR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-TUR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-TUR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-SAU",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-SAU 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-ARE",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-ARE 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-QAT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-QAT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-KWT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-KWT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-TJK",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-TJK 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-MNG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-MNG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-MMR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-MMR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-LAO",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-LAO 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-SGP",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-SGP 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-TWN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-TWN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-HKG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-HKG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-AUS",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-AUS 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-ITA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-ITA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-FRA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-FRA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-DEU",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-DEU 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-ESP",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-ESP 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-PRT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-PRT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-POL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-POL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-NLD",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-NLD 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-GRC",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-GRC 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-HUN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-HUN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-ROU",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-ROU 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-BGR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-BGR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-HRV",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-HRV 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-LVA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-LVA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-EST",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-EST 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "CHE-SVN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=CHE-SVN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-PAK",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-PAK 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-PHL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-PHL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-IND",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-IND 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-MEX",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MEX 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-BGD",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BGD 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-NGA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-NGA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-KEN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-KEN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-GHA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-GHA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-MAR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MAR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-KHM",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-KHM 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-THA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-THA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-IDN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-IDN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-MYS",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MYS 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-PRY",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-PRY 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-VEN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-VEN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-URY",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-URY 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-CRI",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CRI 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-PAN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-PAN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-NIC",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-NIC 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-HTI",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-HTI 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-JAM",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-JAM 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-ZMB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ZMB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-CMR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CMR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-ZWE",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ZWE 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-MWI",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MWI 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-BWA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BWA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-MUS",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MUS 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-ARE",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ARE 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-QAT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-QAT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-SAU",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-SAU 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-KWT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-KWT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-BHR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BHR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-IRQ",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-IRQ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-OMN",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-OMN 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-AFG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-AFG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-GEO",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-GEO 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-ARM",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-ARM 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-AZE",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-AZE 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-SGP",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-SGP 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-FJI",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-FJI 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-PNG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-PNG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-WSM",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-WSM 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-GBR",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-GBR 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-USA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-USA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-PRT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-PRT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-NLD",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-NLD 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-POL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-POL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-AUT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-AUT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-GRC",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-GRC 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-IRL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-IRL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-BEL",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-BEL 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-CHE",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CHE 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-SWE",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-SWE 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-DNK",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-DNK 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-LVA",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-LVA 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-LTU",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-LTU 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-MLT",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-MLT 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "LUX-CYP",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=LUX-CYP 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "SGP-CUB",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=SGP-CUB 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "SGP-IRQ",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=SGP-IRQ 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  {
+    "key": "SGP-AFG",
+    "corridorConfigError": "GET https://api.remitly.io/v2/configs/corridor_config?corridor=SGP-AFG 500: [{\"error_key\":\"INTERNAL_SERVER_ERROR\",\"message\":\"We're sorry, we encountered an error processing your request. Please try again in a couple of minutes.\",\"text_markdown\":null,\"severity\":\"ERROR\",\"lang\":\"en-GB\",\"keypaths\":[]}]",
+    "addrError": "RecipientAddressConfig 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  }
+]

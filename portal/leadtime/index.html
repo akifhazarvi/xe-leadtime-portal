@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EU Lead Time Comparison — SLA vs Reality</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; white-space: nowrap; }
+    .header h1 span { color: #58a6ff; }
+    .header-stats { display: flex; gap: 16px; font-size: 13px; color: #8b949e; }
+    .stat-badge { background: #21262d; padding: 4px 10px; border-radius: 12px; }
+    .stat-badge.red { color: #f85149; border: 1px solid #f8514933; }
+    .stat-badge.green { color: #3fb950; border: 1px solid #3fb95033; }
+    .stat-badge.blue { color: #58a6ff; border: 1px solid #58a6ff33; }
+    .stat-badge.yellow { color: #d29922; border: 1px solid #d2992233; }
+
+    .controls { background: #161b22; border-bottom: 1px solid #30363d; padding: 12px 24px; }
+    .controls-inner { max-width: 1400px; margin: 0 auto; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .filter-group { display: flex; align-items: center; gap: 6px; }
+    .filter-group label { font-size: 12px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    select, input[type=text] { background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 6px 10px; border-radius: 6px; font-size: 13px; }
+    select:focus, input:focus { outline: none; border-color: #58a6ff; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px 24px; }
+
+    /* Summary cards */
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+    .card-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .card-value { font-size: 28px; font-weight: 700; }
+    .card-sub { font-size: 12px; color: #8b949e; margin-top: 4px; }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { background: #161b22; position: sticky; top: 0; padding: 10px 8px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #8b949e; white-space: nowrap; }
+    thead th.group { background: #1c2128; text-align: center; border-left: 2px solid #30363d; }
+    tbody tr { border-bottom: 1px solid #21262d; }
+    tbody tr:hover { background: #161b2266; }
+    tbody td { padding: 8px; white-space: nowrap; }
+    td.ccy { font-weight: 600; font-size: 14px; }
+    td.vol { text-align: right; color: #8b949e; }
+    td.rate { text-align: right; }
+
+    .sla-cell { font-size: 11px; color: #8b949e; }
+    .actual-cell { font-weight: 600; }
+    .method-group { border-left: 2px solid #30363d; padding-left: 8px !important; }
+
+    /* Status colors */
+    .st-much-faster { color: #3fb950; }
+    .st-faster { color: #56d364; }
+    .st-on-track { color: #e1e4e8; }
+    .st-slightly-over { color: #d29922; }
+    .st-exceeds { color: #f85149; font-weight: 700; }
+    .st-no-data { color: #484f58; }
+
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+    .pill-exceeds { background: #f8514922; color: #f85149; }
+    .pill-slightly-over { background: #d2992222; color: #d29922; }
+    .pill-on-track { background: #21262d; color: #8b949e; }
+    .pill-faster { background: #3fb95022; color: #3fb950; }
+    .pill-much-faster { background: #3fb95033; color: #3fb950; }
+    .pill-no-data { background: #21262d; color: #484f58; }
+
+    .bar-container { display: inline-block; width: 60px; height: 8px; background: #21262d; border-radius: 4px; vertical-align: middle; margin-left: 4px; }
+    .bar-fill { height: 100%; border-radius: 4px; }
+
+    /* Detail panel */
+    .detail-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0008; z-index: 200; }
+    .detail-panel { position: fixed; top: 0; right: 0; width: 500px; height: 100%; background: #161b22; border-left: 1px solid #30363d; padding: 24px; overflow-y: auto; z-index: 201; }
+    .detail-panel h2 { font-size: 20px; margin-bottom: 16px; }
+    .detail-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: #8b949e; font-size: 20px; cursor: pointer; }
+    .detail-table { width: 100%; margin-bottom: 16px; }
+    .detail-table td { padding: 6px 8px; border-bottom: 1px solid #21262d; }
+    .detail-table .label { color: #8b949e; font-size: 12px; width: 40%; }
+
+    .back-link { display: inline-block; margin-bottom: 16px; color: #58a6ff; text-decoration: none; font-size: 13px; }
+    .back-link:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .detail-panel { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>EU Lead Time <span>SLA vs Reality</span> <span style="font-size:13px;color:#8b949e;font-weight:400">EU region (EUR 85%, GBP 9%, DKK/SEK/CHF/NOK 3%)</span></h1>
+      <div class="header-stats" id="header-stats"></div>
+      <div style="margin-left:auto;display:flex;gap:16px">
+        <a href="uk.html" style="color:#3fb950;text-decoration:none;font-size:13px;font-weight:600">UK Dashboard</a>
+        <a href="compare.html" style="color:#58a6ff;text-decoration:none;font-size:13px">Old vs New CSV</a>
+        <a href="quote.html" style="color:#58a6ff;text-decoration:none;font-size:13px">Quote Preview</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <div class="filter-group">
+        <label>Search</label>
+        <input type="text" id="search" placeholder="Currency...">
+      </div>
+      <div class="filter-group">
+        <label>Status</label>
+        <select id="filter-status">
+          <option value="all">All</option>
+          <option value="exceeds">Exceeds SLA</option>
+          <option value="slightly-over">Slightly Over</option>
+          <option value="on-track">On Track</option>
+          <option value="faster">Faster</option>
+          <option value="much-faster">Much Faster</option>
+          <option value="no-data">No Data</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>CCY Type</label>
+        <select id="filter-ccy">
+          <option value="all">All</option>
+          <option value="Major">Major</option>
+          <option value="Standard">Standard</option>
+          <option value="Exotic">Exotic</option>
+          <option value="Ria">Ria</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Min Volume</label>
+        <select id="filter-vol">
+          <option value="0">All</option>
+          <option value="10">10+</option>
+          <option value="50" selected>50+</option>
+          <option value="100">100+</option>
+          <option value="500">500+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Hours</label>
+        <select id="filter-hours">
+          <option value="bh">Business Hours (IN)</option>
+          <option value="ah">After Hours (OUT)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Send CCY</label>
+        <select id="filter-send">
+          <option value="all">All (EU aggregate)</option>
+          <option value="EUR">EUR (85%)</option>
+          <option value="GBP">GBP (9%)</option>
+          <option value="Other">DKK/SEK/CHF/NOK/PLN (3%)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="summary" id="summary"></div>
+    <div class="table-wrap">
+      <table>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="detail-overlay" id="detail-overlay"></div>
+  <div class="detail-panel" id="detail-panel" style="display:none">
+    <button class="detail-close" id="detail-close">&times;</button>
+    <div id="detail-content"></div>
+  </div>
+
+<script>
+let DATA = null;
+let AMP = null;
+let hoursMode = 'bh'; // 'bh' or 'ah'
+
+Promise.all([
+  fetch('../data/leadtime-comparison.json').then(r => r.json()),
+  fetch('../data/eu-payment-speed.json').then(r => r.json()),
+]).then(([comp, amp]) => {
+  DATA = comp;
+  AMP = amp;
+  render();
+}).catch(e => { document.getElementById('tbody').innerHTML = `<tr><td colspan="20">Error loading data: ${e}</td></tr>`; });
+
+function fmt(h) {
+  if (h === null || h === undefined) return '-';
+  if (h < 0.08) return '<5m';
+  if (h < 1) return Math.round(h * 60) + 'm';
+  if (h < 24) return h.toFixed(1) + 'h';
+  if (h < 48) return (h / 24).toFixed(1) + 'd';
+  return Math.round(h / 24) + 'd';
+}
+
+function statusClass(s) { return 'st-' + s; }
+function pillClass(s) { return 'pill pill-' + s; }
+
+function statusLabel(s) {
+  const map = { 'much-faster': '10x faster', 'faster': 'Faster', 'on-track': 'OK', 'slightly-over': 'Slightly Over', 'exceeds': 'EXCEEDS', 'no-data': 'No Data' };
+  return map[s] || s;
+}
+
+function slaBar(slaHrs, actualHrs) {
+  if (slaHrs === null || actualHrs === null) return '';
+  const pct = Math.min((actualHrs / slaHrs) * 100, 100);
+  let color = '#3fb950';
+  if (pct > 100) color = '#f85149';
+  else if (pct > 75) color = '#d29922';
+  else if (pct > 50) color = '#58a6ff';
+  return `<span class="bar-container"><span class="bar-fill" style="width:${Math.min(pct, 100)}%;background:${color}"></span></span>`;
+}
+
+function methodCell(m, hMode) {
+  const sla = hMode === 'bh' ? m.sla_bh : m.sla_ah;
+  const slaHrs = hMode === 'bh' ? m.sla_bh_hrs : m.sla_ah_hrs;
+  const st = hMode === 'bh' ? m.status_bh : m.status_ah;
+  const actual = m.actual_median;
+  const vol = m.actual_volume;
+  if (!vol && actual === null) {
+    return `<td class="method-group"><span class="st-no-data">-</span></td>`;
+  }
+  return `<td class="method-group">
+    <span class="${statusClass(st)} actual-cell">${fmt(actual)}</span>
+    <span class="sla-cell"> / ${sla}</span>
+    ${slaBar(slaHrs, actual)}
+    <br><span class="${pillClass(st)}">${statusLabel(st)}</span>
+    <span class="sla-cell"> n=${vol}</span>
+  </td>`;
+}
+
+function render() {
+  if (!DATA) return;
+  const search = document.getElementById('search').value.toUpperCase();
+  const statusF = document.getElementById('filter-status').value;
+  const ccyF = document.getElementById('filter-ccy').value;
+  const volF = parseInt(document.getElementById('filter-vol').value);
+  hoursMode = document.getElementById('filter-hours').value;
+
+  let items = DATA.currencies.filter(c => {
+    if (search && !c.currency.toUpperCase().includes(search)) return false;
+    const sendF = document.getElementById('filter-send').value;
+    const effVol = sendF === 'all' ? c.volume : ((c.bySendCurrency || {})[sendF] || {}).volume || 0;
+    if (volF && effVol < volF) return false;
+    if (ccyF !== 'all' && !c.ccyType.includes(ccyF)) return false;
+    if (statusF !== 'all') {
+      const methods = Object.values(c.methods);
+      const key = hoursMode === 'bh' ? 'status_bh' : 'status_ah';
+      const hasStatus = methods.some(m => m[key] === statusF);
+      if (!hasStatus) return false;
+    }
+    return true;
+  });
+
+  // Summary cards
+  const s = DATA.summary;
+  const hLabel = hoursMode === 'bh' ? 'Business Hours' : 'After Hours';
+  document.getElementById('header-stats').innerHTML = `
+    <span class="stat-badge blue">${s.total_currencies} currencies</span>
+    <span class="stat-badge green">${s.with_data} with data</span>
+    <span class="stat-badge">${s.total_volume.toLocaleString()} txns (90d)</span>
+    <span class="stat-badge">${hLabel}</span>
+  `;
+
+  // Count statuses in filtered set
+  let exceeds = 0, over = 0, ok = 0, faster = 0, mfaster = 0, nodata = 0;
+  for (const c of items) {
+    for (const m of Object.values(c.methods)) {
+      const st = hoursMode === 'bh' ? m.status_bh : m.status_ah;
+      if (st === 'exceeds') exceeds++;
+      else if (st === 'slightly-over') over++;
+      else if (st === 'on-track') ok++;
+      else if (st === 'faster') faster++;
+      else if (st === 'much-faster') mfaster++;
+      else nodata++;
+    }
+  }
+
+  document.getElementById('summary').innerHTML = `
+    <div class="card"><div class="card-label">Showing</div><div class="card-value">${items.length}</div><div class="card-sub">of ${DATA.currencies.length} currencies</div></div>
+    <div class="card"><div class="card-label">Exceeds SLA</div><div class="card-value" style="color:#f85149">${exceeds}</div><div class="card-sub">${over} slightly over</div></div>
+    <div class="card"><div class="card-label">On Track</div><div class="card-value" style="color:#e1e4e8">${ok}</div><div class="card-sub">Within SLA</div></div>
+    <div class="card"><div class="card-label">Faster than SLA</div><div class="card-value" style="color:#3fb950">${faster + mfaster}</div><div class="card-sub">${mfaster} are 10x+ faster</div></div>
+    <div class="card"><div class="card-label">No Data</div><div class="card-value" style="color:#484f58">${nodata}</div><div class="card-sub">No Amplitude volume</div></div>
+  `;
+
+  const sendFilter = document.getElementById('filter-send').value;
+  const showSendBreakdown = sendFilter === 'all';
+
+  // Table header
+  const scCols = showSendBreakdown
+    ? `<th class="group">EUR</th><th class="group">GBP</th><th class="group">Other</th>`
+    : '';
+  document.getElementById('thead').innerHTML = `
+    <tr>
+      <th>Corridor</th>
+      <th>Type</th>
+      <th>Vol</th>
+      <th>Rate</th>
+      <th>Median</th>
+      <th class="group" title="Mon-Fri (maps to IN columns)">Weekday</th>
+      <th class="group" title="Sat-Sun (maps to OUT columns)">Weekend</th>
+      ${scCols}
+      <th class="group">Debit Card</th>
+      <th class="group">Credit Card</th>
+      <th class="group">Bank Transfer</th>
+      <th class="group">Open Banking</th>
+    </tr>
+  `;
+
+  // Table body
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = items.map(c => {
+    const worstStatus = getWorstStatus(c);
+    const sc = c.bySendCurrency || {};
+
+    // Determine corridor label and volume based on send filter
+    let corridorLabel, vol, rate, medianHrs;
+    if (sendFilter === 'all') {
+      corridorLabel = `EU &rarr; ${c.currency}`;
+      vol = c.volume;
+      rate = c.completionRate;
+      medianHrs = c.overall.median_hrs;
+    } else {
+      const scEntry = sc[sendFilter] || {};
+      const scLabel = sendFilter === 'Other' ? 'DKK/SEK/..' : sendFilter;
+      corridorLabel = `${scLabel} &rarr; ${c.currency}`;
+      vol = scEntry.volume || 0;
+      rate = scEntry.rate || 0;
+      medianHrs = scEntry.median_hrs ?? null;
+    }
+
+    // Send currency breakdown columns
+    let scColsHtml = '';
+    if (showSendBreakdown) {
+      for (const key of ['EUR', 'GBP', 'Other']) {
+        const d = sc[key];
+        if (d && d.volume > 0) {
+          const cls = d.median_hrs <= 1 ? 'st-much-faster' : d.median_hrs <= 24 ? 'st-on-track' : d.median_hrs <= 48 ? 'st-slightly-over' : 'st-exceeds';
+          scColsHtml += `<td class="method-group"><span class="${cls}">${fmt(d.median_hrs)}</span> <span class="sla-cell">n=${d.volume}</span></td>`;
+        } else {
+          scColsHtml += `<td class="method-group"><span class="st-no-data">-</span></td>`;
+        }
+      }
+    }
+
+    const medCls = medianHrs === null ? 'st-no-data' : medianHrs <= 1 ? 'st-much-faster' : medianHrs <= 24 ? 'st-on-track' : medianHrs <= 48 ? 'st-slightly-over' : 'st-exceeds';
+
+    // Weekday/Weekend cells
+    const wd = c.weekday || {};
+    const we = c.weekend || {};
+    const wdCls = wd.median_hrs != null ? (wd.median_hrs <= 1 ? 'st-much-faster' : wd.median_hrs <= 24 ? 'st-on-track' : 'st-exceeds') : 'st-no-data';
+    const weCls = we.median_hrs != null ? (we.median_hrs <= 1 ? 'st-much-faster' : we.median_hrs <= 24 ? 'st-on-track' : 'st-exceeds') : 'st-no-data';
+    const wdWeFlag = (wd.median_hrs && we.median_hrs && we.median_hrs > wd.median_hrs * 3) ? ' <span style="color:#f85149" title="Weekend much slower">&#9650;</span>' : '';
+
+    return `<tr class="row-${worstStatus}" data-ccy="${c.currency}" style="cursor:pointer">
+      <td class="ccy">${corridorLabel}</td>
+      <td><span class="sla-cell">${c.ccyType}${c.isRia ? ' *' : ''}</span></td>
+      <td class="vol">${vol.toLocaleString()}</td>
+      <td class="rate">${rate ? rate + '%' : '-'}</td>
+      <td class="${medCls}">${fmt(medianHrs)}</td>
+      <td class="method-group"><span class="${wdCls}">${fmt(wd.median_hrs)}</span> <span class="sla-cell">n=${wd.volume || 0}</span></td>
+      <td class="method-group"><span class="${weCls}">${fmt(we.median_hrs)}</span> <span class="sla-cell">n=${we.volume || 0}</span>${wdWeFlag}</td>
+      ${scColsHtml}
+      ${methodCell(c.methods.debitCard, hoursMode)}
+      ${methodCell(c.methods.creditCard, hoursMode)}
+      ${methodCell(c.methods.bankTransfer, hoursMode)}
+      ${methodCell(c.methods.openBanking, hoursMode)}
+    </tr>`;
+  }).join('');
+
+  // Row click handler
+  tbody.querySelectorAll('tr').forEach(tr => {
+    tr.addEventListener('click', () => showDetail(tr.dataset.ccy));
+  });
+}
+
+function getWorstStatus(c) {
+  const key = hoursMode === 'bh' ? 'status_bh' : 'status_ah';
+  const statuses = Object.values(c.methods).map(m => m[key]);
+  if (statuses.includes('exceeds')) return 'exceeds';
+  if (statuses.includes('slightly-over')) return 'slightly-over';
+  return 'ok';
+}
+
+function getOverallStatus(c) {
+  if (!c.overall.median_hrs) return 'no-data';
+  if (c.overall.median_hrs <= 1) return 'much-faster';
+  if (c.overall.median_hrs <= 24) return 'on-track';
+  if (c.overall.median_hrs <= 48) return 'slightly-over';
+  return 'exceeds';
+}
+
+function showDetail(ccy) {
+  const c = DATA.currencies.find(x => x.currency === ccy);
+  if (!c) return;
+
+  const panel = document.getElementById('detail-panel');
+  const overlay = document.getElementById('detail-overlay');
+
+  let html = `<h2>EU &rarr; ${c.currency} <span class="sla-cell">${c.ccyType}</span></h2>`;
+  html += `<table class="detail-table">
+    <tr><td class="label">Volume (90d)</td><td>${c.volume.toLocaleString()}</td></tr>
+    <tr><td class="label">Completed</td><td>${c.completed.toLocaleString()} (${c.completionRate}%)</td></tr>
+    <tr><td class="label">Overall Median</td><td>${fmt(c.overall.median_hrs)}</td></tr>
+    <tr><td class="label">Overall Avg</td><td>${fmt(c.overall.avg_hrs)}</td></tr>
+    <tr><td class="label">Ria Priority</td><td>${c.isRia ? 'Yes (Ria row used)' : 'No (Standard/Exotic)'}</td></tr>
+  </table>`;
+
+  // Weekday vs Weekend
+  const wd = c.weekday || {};
+  const we = c.weekend || {};
+  html += `<h3 style="margin:16px 0 8px;font-size:14px;">Weekday vs Weekend (IN vs OUT)</h3>`;
+  html += `<div style="font-size:11px;color:#8b949e;margin-bottom:8px">
+    CSV maps: IN columns = business hours (Mon-Fri before 14:00 GMT), OUT columns = after hours (evenings + weekends)
+  </div>`;
+  html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">`;
+
+  const wdMed = wd.median_hrs;
+  const weMed = we.median_hrs;
+  const wdCls2 = wdMed != null ? (wdMed <= 1 ? 'st-much-faster' : wdMed <= 24 ? 'st-on-track' : 'st-exceeds') : 'st-no-data';
+  const weCls2 = weMed != null ? (weMed <= 1 ? 'st-much-faster' : weMed <= 24 ? 'st-on-track' : 'st-exceeds') : 'st-no-data';
+
+  html += `<div style="padding:12px;background:#0d1117;border-radius:6px;border:1px solid #21262d">
+    <div style="font-weight:600;margin-bottom:6px">Weekday (IN)</div>
+    <div class="${wdCls2}" style="font-size:20px">${fmt(wdMed)}</div>
+    <div class="sla-cell">SLA: ${c.methods.debitCard.sla_bh}</div>
+    <div class="sla-cell">Vol: ${(wd.volume || 0).toLocaleString()} | Avg: ${fmt(wd.avg_hrs)}</div>
+  </div>`;
+  html += `<div style="padding:12px;background:#0d1117;border-radius:6px;border:1px solid #21262d">
+    <div style="font-weight:600;margin-bottom:6px">Weekend (OUT)</div>
+    <div class="${weCls2}" style="font-size:20px">${fmt(weMed)}</div>
+    <div class="sla-cell">SLA: ${c.methods.debitCard.sla_ah}</div>
+    <div class="sla-cell">Vol: ${(we.volume || 0).toLocaleString()} | Avg: ${fmt(we.avg_hrs)}</div>
+  </div>`;
+  html += `</div>`;
+
+  if (wdMed && weMed && weMed > wdMed * 3) {
+    html += `<div style="padding:8px 12px;background:#f8514922;border:1px solid #f8514944;border-radius:6px;margin-bottom:12px;font-size:12px;color:#f85149">
+      Weekend is ${(weMed/wdMed).toFixed(1)}x slower than weekday for this corridor
+    </div>`;
+  }
+
+  html += `<h3 style="margin:16px 0 8px;font-size:14px;">Payment Method Breakdown</h3>`;
+  const methods = [
+    ['Debit Card', c.methods.debitCard],
+    ['Credit Card', c.methods.creditCard],
+    ['Bank Transfer', c.methods.bankTransfer],
+    ['Open Banking', c.methods.openBanking],
+  ];
+
+  for (const [name, m] of methods) {
+    const st = hoursMode === 'bh' ? m.status_bh : m.status_ah;
+    html += `<div style="margin-bottom:12px;padding:12px;background:#0d1117;border-radius:6px;border:1px solid #21262d">
+      <div style="font-weight:600;margin-bottom:6px">${name} <span class="${pillClass(st)}">${statusLabel(st)}</span></div>
+      <table class="detail-table" style="margin:0">
+        <tr><td class="label">SLA (Biz Hrs)</td><td>${m.sla_bh} (${m.sla_bh_hrs !== null ? m.sla_bh_hrs + 'h' : 'N/A'})</td></tr>
+        <tr><td class="label">SLA (After Hrs)</td><td>${m.sla_ah} (${m.sla_ah_hrs !== null ? m.sla_ah_hrs + 'h' : 'N/A'})</td></tr>
+        <tr><td class="label">Actual Median</td><td class="${statusClass(st)}">${fmt(m.actual_median)}</td></tr>
+        <tr><td class="label">Actual Avg</td><td>${fmt(m.actual_avg)}</td></tr>
+        <tr><td class="label">Volume</td><td>${m.actual_volume.toLocaleString()}</td></tr>
+      </table>
+    </div>`;
+  }
+
+  // Show all CSV rows
+  if (c.allRows && c.allRows.length > 0) {
+    html += `<h3 style="margin:16px 0 8px;font-size:14px;">All CSV Rows</h3>`;
+    for (const row of c.allRows) {
+      html += `<div style="margin-bottom:8px;padding:8px;background:#0d1117;border-radius:4px;font-size:12px;border:1px solid #21262d">
+        <strong>${row.ccyType}</strong> ${row.isRia ? '(active)' : '(overridden)'}
+        <br>BH: BT=${row.businessHours.bankTransfer} CC=${row.businessHours.creditCard} DC=${row.businessHours.debitCard} OB=${row.businessHours.openBanking}
+        <br>AH: BT=${row.afterHours.bankTransfer} CC=${row.afterHours.creditCard} DC=${row.afterHours.debitCard} OB=${row.afterHours.openBanking}
+        <br>P2P: ${row.peerToPeer}
+      </div>`;
+    }
+  }
+
+  // Send currency breakdown
+  if (AMP && AMP.by_send_currency && AMP.by_send_currency[c.currency]) {
+    const scData = AMP.by_send_currency[c.currency];
+    const scVols = AMP.send_currency_volumes || {};
+    html += `<h3 style="margin:16px 0 8px;font-size:14px;">Speed by Send Currency</h3>`;
+    html += `<div style="padding:12px;background:#0d1117;border-radius:6px;border:1px solid #21262d;margin-bottom:12px">
+      <table class="detail-table" style="margin:0">
+        <tr><td class="label" style="font-weight:600">Send CCY</td><td style="font-weight:600">Volume</td><td style="font-weight:600">Median</td><td style="font-weight:600">Avg</td><td style="font-weight:600">Rate</td></tr>`;
+    const entries = Object.entries(scData).sort((a, b) => b[1].volume - a[1].volume);
+    for (const [sc, d] of entries) {
+      if (d.volume === 0) continue;
+      const scLabel = sc === 'Other' ? 'DKK/SEK/CHF/NOK/PLN' : sc;
+      const medClass = d.median_hrs <= 1 ? 'st-much-faster' : d.median_hrs <= 24 ? 'st-on-track' : d.median_hrs <= 48 ? 'st-slightly-over' : 'st-exceeds';
+      html += `<tr>
+        <td class="label">${scLabel} &rarr; ${c.currency}</td>
+        <td>${d.volume.toLocaleString()}</td>
+        <td class="${medClass}">${fmt(d.median_hrs)}</td>
+        <td>${fmt(d.avg_hrs)}</td>
+        <td>${d.rate}%</td>
+      </tr>`;
+    }
+    html += `</table></div>`;
+
+    // Flag if speeds differ significantly
+    const eurData = scData['EUR'];
+    const gbpData = scData['GBP'];
+    const othData = scData['Other'];
+    if (eurData && gbpData && gbpData.volume > 10) {
+      const ratio = eurData.median_hrs > 0 ? gbpData.median_hrs / eurData.median_hrs : 0;
+      if (ratio > 3 || ratio < 0.33) {
+        const faster = ratio > 1 ? 'EUR' : 'GBP';
+        html += `<div style="padding:8px 12px;background:#d2992222;border:1px solid #d2992244;border-radius:6px;margin-bottom:12px;font-size:12px;color:#d29922">
+          &#9888; Speed differs significantly by send currency: ${faster} is much faster for this corridor
+        </div>`;
+      }
+    }
+    if (eurData && othData && othData.volume > 10) {
+      const ratio = eurData.median_hrs > 0 ? othData.median_hrs / eurData.median_hrs : 0;
+      if (ratio > 3) {
+        html += `<div style="padding:8px 12px;background:#f8514922;border:1px solid #f8514944;border-radius:6px;margin-bottom:12px;font-size:12px;color:#f85149">
+          &#9888; Non-EUR send currencies (DKK/SEK/CHF/NOK/PLN) are significantly slower for this corridor
+        </div>`;
+      }
+    }
+  }
+
+  // Special delivery methods
+  html += `<h3 style="margin:16px 0 8px;font-size:14px;">Delivery Method Overrides (CSV)</h3>
+  <div style="font-size:11px;color:#8b949e;margin-bottom:8px">
+    When recipient receives via bank/wire, the payment method columns above apply (Debit, Credit, Bank, OB).<br>
+    These overrides replace the payment method speed when the recipient uses a non-bank delivery:
+  </div>
+  <table class="detail-table">
+    <tr><td class="label">Cash Pickup (CPO)</td><td>${c.special.cpo}</td></tr>
+    <tr><td class="label">Mobile Wallet</td><td>${c.special.mobileWallet}</td></tr>
+    <tr><td class="label">Balance (FundsOnBalance)</td><td>${c.special.balance}</td></tr>
+    <tr><td class="label">Peer-to-Peer</td><td>${c.special.peerToPeer}</td></tr>
+  </table>
+  <div style="font-size:11px;color:#8b949e;margin-top:8px">
+    Example: Sender pays by Debit Card, recipient receives via Cash Pickup &rarr; lead time = <strong>${c.special.cpo}</strong> (not the Debit Card column)
+  </div>`;
+
+  document.getElementById('detail-content').innerHTML = html;
+  panel.style.display = 'block';
+  overlay.style.display = 'block';
+}
+
+document.getElementById('detail-close').addEventListener('click', () => {
+  document.getElementById('detail-panel').style.display = 'none';
+  document.getElementById('detail-overlay').style.display = 'none';
+});
+document.getElementById('detail-overlay').addEventListener('click', () => {
+  document.getElementById('detail-panel').style.display = 'none';
+  document.getElementById('detail-overlay').style.display = 'none';
+});
+
+// Bind filters
+['search', 'filter-status', 'filter-ccy', 'filter-vol', 'filter-hours', 'filter-send'].forEach(id => {
+  document.getElementById(id).addEventListener(id === 'search' ? 'input' : 'change', render);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1275 @@
+﻿Section,Category,Sub-Category,Volume,Completed,Completion %,Median (hrs),Avg (hrs),% within 1h,% within 6h,% within 1d,% within 3d,% within 7d
+Overall,All,,81231,76258,93.9,1.6,31.2,47.2,57.6,69,80.5,98.7
+Payment Method,debit,,27003,26177,96.9,0.2,4,86.3,90.4,94.9,99.2,99.8
+Payment Method,bank_account,,26705,24870,93.1,5.2,19.7,28.1,51.8,77.5,94.4,99
+Payment Method,direct_debit,,19475,17214,88.4,113,103.3,0.7,2,4.6,21.2,95.9
+Payment Method,open_banking,,6750,6555,97.1,0.7,9.2,64.6,76.7,88.2,98,99.7
+Payment Method,credit,,4435,4286,96.6,0.2,3.9,87,90.8,95.2,99.1,99.8
+Payment Method,balance,,820,615,75,0.9,12.1,53,72.8,87,95.6,99.2
+Payout Method,Bank,,75905,71476,94.2,2.3,32.4,44.7,55.6,67.7,79.6,98.7
+Payout Method,Cash,,3702,3493,94.4,0.2,8.6,86.7,90,91.4,94.6,99.5
+Payout Method,Wallet,,1701,1429,84,0.2,7.4,86.5,89.9,91.3,95.9,99.7
+Send Currency,USD,,24895,22088,88.7,74.9,72.1,24,28.1,32.9,47.4,96.8
+Send Currency,GBP,,23845,23361,98,0.3,7.2,72.7,81.5,91.4,98.5,99.8
+Send Currency,EUR,,13521,13031,96.4,0.7,11.8,61.4,72.3,84.8,96.8,99.6
+Send Currency,AUD,,9386,9019,96.1,3.8,15.8,39.6,56.5,81,96.2,99.2
+Send Currency,CAD,,6103,5456,89.4,22.5,51,24.3,36.3,50.9,62.9,98.5
+Send Currency,NZD,,3342,3223,96.4,2.1,11.7,23.6,69.1,89,97.2,99.3
+Send Currency,SEK,,222,182,82,17.4,34.7,21.4,29.7,58.2,85.7,97.8
+Send Currency,DKK,,150,139,92.7,0.2,5.9,85.6,87.1,92.1,98.6,100
+Send Currency,CHF,,128,114,89.1,8.2,23.7,37.7,47.4,71.9,92.1,99.1
+Send Currency,AED,,126,94,74.6,11.8,22.3,21.3,38.3,66,91.5,100
+Send Currency,NOK,,86,74,86,15,27.4,39.2,44.6,58.1,89.2,100
+Send Currency,PLN,,56,46,82.1,33.6,43.9,13,17.4,41.3,87,97.8
+Send Currency,QAR,,21,7,33.3,70.2,55.4,0,0,28.6,71.4,100
+Send Currency,JPY,,21,19,90.5,34.7,60.7,21.1,31.6,36.8,73.7,89.5
+Send Currency,HKD,,14,8,57.1,36.3,51.4,12.5,12.5,25,87.5,87.5
+Send Currency,SGD,,13,11,84.6,23,40.4,18.2,27.3,63.6,81.8,100
+Send Currency,HUF,,13,10,76.9,25.1,45.7,10,50,50,70,100
+Send Currency,CZK,,11,9,81.8,12.5,16.5,11.1,33.3,66.7,100,100
+Send Currency,RON,,10,6,60,14,17.7,33.3,33.3,83.3,100,100
+Send Currency,MYR,,9,9,100,38.7,40.8,11.1,11.1,22.2,88.9,100
+Payout Currency,INR,,21155,19895,94,7.6,48.9,42.4,49.4,54.9,65.9,97
+Payout Currency,EUR,,13733,13129,95.6,0.6,20.6,57.5,67.3,78.5,88.4,99.1
+Payout Currency,USD,,9650,8886,92.1,10.6,30.2,23.1,43.3,69.1,84.9,99
+Payout Currency,GBP,,4447,4135,93,10.2,31.2,28.5,46,65.6,83.5,99.4
+Payout Currency,AUD,,3569,3386,94.9,3.3,23.3,33.8,55.5,75.5,89.1,98.8
+Payout Currency,CAD,,2808,2534,90.2,25.7,49.6,6.6,24.5,48.8,67.1,99.5
+Payout Currency,PHP,,2688,2484,92.4,0.4,24,58.1,67.7,75.4,84.1,99.8
+Payout Currency,MAD,,2621,2512,95.8,0.2,14.2,72.7,79,84.9,91.8,99.6
+Payout Currency,NZD,,2554,2433,95.3,8.3,20.9,17.8,47.2,76.3,93.5,99.4
+Payout Currency,THB,,2463,2369,96.2,0.4,19.9,62.1,70.5,78,88,99.6
+Payout Currency,ZAR,,2191,2137,97.5,0.3,15.2,67.1,74.6,84,92.2,99.7
+Payout Currency,MXN,,1899,1776,93.5,8.6,44.1,42.7,49.1,55.5,69.2,99.5
+Payout Currency,NAD,,1657,1639,98.9,0.2,5.6,89.4,92.6,94.7,97.7,99.6
+Payout Currency,PKR,,1302,1177,90.4,0.2,18.7,68.1,74.2,80.1,87.9,99.7
+Payout Currency,COP,,1164,1103,94.8,0.2,25.1,63.8,69.3,74.1,83.6,99.7
+Payout Currency,AED,,1043,976,93.6,0.7,29.3,53.5,60.8,70.7,80.8,99.3
+Payout Currency,XOF,,879,832,94.7,0.2,13.7,77.6,82.7,85,91.3,99.5
+Payout Currency,IDR,,595,560,94.1,0.4,17.9,60.4,71.2,81.1,89.5,99.5
+Payout Currency,LKR,,589,576,97.8,0.3,11.4,71.7,79.5,87.3,93.6,99.8
+Payout Currency,JPY,,508,454,89.4,21.4,43.8,22.7,31.1,54.4,76.2,98.7
+Corridor (30d),USD→INR,,10019,9066,90.5,110.8,95.1,13.8,15.3,16.2,29.6,93.8
+Corridor (30d),GBP→EUR,,8859,8730,98.5,0.3,5.9,76.2,84.1,92.8,99,99.8
+Corridor (30d),EUR→INR,,5632,5521,98,0.6,8.8,68.7,79.9,88.5,97.6,99.7
+Corridor (30d),USD→EUR,,2695,2433,90.3,69.4,65.9,15.1,22.9,35.6,54,97.2
+Corridor (30d),GBP→USD,,2589,2548,98.4,3,13.1,33.4,59.9,86.8,98.3,99.6
+Corridor (30d),GBP→INR,,2292,2238,97.6,0.2,3.5,89.7,93,95.6,99.4,99.8
+Corridor (30d),AUD→INR,,1885,1836,97.4,0.5,11.1,55.8,66.7,83.3,98.2,99.5
+Corridor (30d),AUD→USD,,1745,1686,96.6,10.9,24.7,14.8,34.9,74.2,93.1,98.6
+Corridor (30d),USD→GBP,,1664,1543,92.7,24.8,47.9,22.2,34.9,49.6,69.3,99.7
+Corridor (30d),CAD→USD,,1574,1420,90.2,70.8,63.5,3.9,17.3,38,51.6,99.1
+Corridor (30d),USD→CAD,,1491,1320,88.5,75.4,74,2.3,13.5,26.5,42.6,99.6
+Corridor (30d),GBP→AUD,,1395,1373,98.4,0.6,8.2,68.5,78.1,88.6,97.9,99.8
+Corridor (30d),AUD→NZD,,1369,1329,97.1,10.3,17.4,9.5,43,81.2,96.9,99.7
+Corridor (30d),USD→MXN,,1167,1082,92.7,61.9,52.1,39.6,43.9,47.6,64,99.5
+Corridor (30d),USD→USD,,1060,762,71.9,65.2,60.3,8.5,19.6,37.3,62.5,99
+Corridor (30d),GBP→ZAR,,1046,1040,99.4,0.2,5.2,84.6,87,94.1,99,99.8
+Corridor (30d),GBP→NAD,,1037,1035,99.8,0.2,1.7,97.2,97.9,98.4,99.6,99.8
+Corridor (30d),NZD→AUD,,1032,1004,97.3,4,14.8,5.9,56.2,85.3,97.3,99.5
+Corridor (30d),EUR→USD,,1010,954,94.5,15.3,22.6,14.3,31.2,70.1,95.4,99.7
+Corridor (30d),EUR→GBP,,1008,947,93.9,4.6,19.4,32.7,51.4,76.2,94.9,99.7
+Corridor (30d),AUD→EUR,,885,840,94.9,4.9,15.4,35.4,53.6,81.7,96.5,99
+Corridor (30d),AUD→GBP,,858,824,96,4.3,15.9,40,55.9,79.2,96.5,99.2
+Corridor (30d),GBP→THB,,770,758,98.4,0.2,4.8,88.3,91,92.3,98.8,99.9
+Corridor (30d),USD→PHP,,767,672,87.6,69.3,61.5,36,38.1,40.2,53.1,99.7
+Corridor (30d),EUR→MAD,,750,728,97.1,0.5,10.2,67.2,77.1,87.1,97.1,99.7
+Corridor (30d),GBP→NZD,,722,701,97.1,2.1,13,34.4,63.5,81,98.3,99.9
+Corridor (30d),NZD→INR,,702,684,97.4,1.3,5.3,38.5,80.8,94.9,99.3,100
+Corridor (30d),USD→AUD,,643,577,89.7,55.3,58.8,10.6,16.6,40.2,61.9,97.7
+Corridor (30d),GBP→CAD,,643,632,98.3,13.7,18,7,38.4,80.9,97.9,99.7
+Corridor (30d),CAD→EUR,,619,557,90,59.6,63,9,23.3,36.1,54.9,96.9
+Corridor (30d),NZD→USD,,607,594,97.9,2.8,14.7,12.6,67.3,85.5,95.6,99
+Corridor (30d),CAD→INR,,606,543,89.6,55,63.2,12.3,26.2,41.3,54.7,96.1
+Corridor (30d),AUD→THB,,599,587,98,0.4,10.5,58.9,71.7,87.1,97.8,99.5
+Corridor (30d),GBP→PKR,,528,515,97.5,0.2,4.9,86.2,89.7,93.6,98.6,99.8
+Corridor (30d),USD→COP,,520,484,93.1,0.9,44.5,50.6,53.3,55.2,68.4,99.8
+Corridor (30d),AUD→PHP,,509,503,98.8,0.5,10.8,55.9,68.2,87.1,97.2,99.6
+Corridor (30d),USD→THB,,473,429,90.7,71.8,63.3,34.3,35.7,38.5,50.3,99.5
+Corridor (30d),GBP→PHP,,406,404,99.5,0.2,4.4,89.6,93.1,94.8,98.3,99.8
+Corridor (30d),EUR→THB,,400,395,98.8,0.7,12.2,64.1,74.2,83.8,97,99
+Corridor (30d),USD→ZAR,,395,365,92.4,23.5,47.7,43.6,44.9,50.4,67.1,99.2
+Corridor (30d),EUR→NAD,,366,361,98.6,0.2,5.3,78.9,87.3,93.1,98.3,100
+Corridor (30d),GBP→AED,,343,339,98.8,0.2,4.2,82,89.1,94.4,99.1,100
+Corridor (30d),CAD→MXN,,306,291,95.1,69.3,60.3,12,25.4,41.2,53.6,99.3
+Corridor (30d),CAD→GBP,,296,273,92.2,23.8,52.7,11.7,30,50.2,63.4,97.8
+Corridor (30d),AUD→ZAR,,295,288,97.6,0.4,8.4,56.9,71.5,89.9,98.3,100
+Corridor (30d),EUR→COP,,281,274,97.5,0.2,9.5,71.5,79.6,88.7,97.1,99.3
+Corridor (30d),CAD→MAD,,277,247,89.2,11.8,45,18.2,37.2,57.5,69.6,98.4
+Corridor (30d),NZD→EUR,,268,256,95.5,2,10.7,18,70.7,87.1,97.7,99.6
+Corridor (30d),NZD→GBP,,262,254,96.9,2.1,10.4,17.7,69.7,88.2,97.2,100
+Corridor (30d),USD→PKR,,258,211,81.8,43.4,52.4,45.5,47.4,49.3,60.2,99.1
+Corridor (30d),USD→NZD,,251,231,92,32.2,55.3,11.7,25.1,44.6,66.7,97.8
+Corridor (30d),GBP→TRY,,234,231,98.7,0.2,2.8,93.1,95.2,96.5,99.6,99.6
+Corridor (30d),USD→AED,,230,205,89.1,101.8,85.4,12.2,17.1,21,36.6,98
+Corridor (30d),AUD→IDR,,226,216,95.6,0.4,7.1,60.2,72.7,89.8,99.5,100
+Corridor (30d),GBP→MAD,,216,211,97.7,0.2,2.5,92.4,94.3,96.7,99.5,100
+Corridor (30d),EUR→ETB,,210,210,100,0.2,8.5,74.3,81.9,88.6,97.6,99.5
+Corridor (30d),GBP→LKR,,206,204,99,0.2,2.3,90.7,92.6,97.1,100,100
+Corridor (30d),GBP→BWP,,203,202,99.5,0.2,0.5,99,99.5,99.5,100,100
+Corridor (30d),AUD→CAD,,201,195,97,12.8,21.5,10.8,39,68.2,96.9,99.5
+Corridor (30d),EUR→ZAR,,199,195,98,0.2,14.1,63.1,73.3,88.2,97.4,99
+Corridor (30d),NZD→PHP,,195,192,98.5,1.6,5.1,29.7,81.8,95.3,99,100
+Corridor (30d),GBP→SAR,,195,184,94.4,0.2,2.3,88,92.9,97.3,100,100
+Corridor (30d),EUR→CAD,,192,182,94.8,20.3,29.8,1.1,13.7,60.4,89.6,100
+Corridor (30d),EUR→AUD,,191,174,91.1,12.7,31,27.6,40.2,65.5,89.1,96.6
+Corridor (30d),GBP→PLN,,176,176,100,0.2,3.5,83.5,86.9,96.6,100,100
+Corridor (30d),AUD→MYR,,173,166,96,0.9,12,50.6,66.9,86.1,97.6,98.8
+Corridor (30d),CAD→NAD,,164,157,95.7,0.2,19.5,75.8,82.2,86,91.7,97.5
+Corridor (30d),CAD→PKR,,163,134,82.2,12.7,44.8,27.6,41,55.2,67.2,100
+Corridor (30d),EUR→AED,,160,145,90.6,0.8,10.7,57.9,66.9,86.2,97.2,100
+Corridor (30d),EUR→PHP,,153,146,95.4,0.7,9.3,60.3,73.3,87.7,98.6,100
+Corridor (30d),NZD→ZAR,,152,152,100,1.1,4.3,46.7,87.5,96.1,99.3,100
+Corridor (30d),GBP→GBP,,151,143,94.7,1.4,16.4,43.4,61.5,80.4,93.7,99.3
+Corridor (30d),USD→JPY,,149,128,85.9,82.9,80.1,4.7,6.2,23.4,45.3,99.2
+Corridor (30d),USD→NGN,,143,58,40.6,0.2,27.8,62.1,70.7,75.9,81,98.3
+Corridor (30d),USD→IDR,,142,128,90.1,20.1,51,46.1,47.7,51.6,62.5,97.7
+Corridor (30d),AUD→LKR,,141,140,99.3,0.4,7.6,67.1,77.9,89.3,98.6,99.3
+Corridor (30d),GBP→MUR,,136,128,94.1,0.2,17,69.5,70.3,76.6,93.8,99.2
+Corridor (30d),EUR→MUR,,131,124,94.7,0.7,15.1,61.3,68.5,79.8,93.5,100
+Corridor (30d),GBP→COP,,125,121,96.8,0.2,3.6,90.1,91.7,95,99.2,100
+Corridor (30d),CAD→AUD,,125,115,92,68.9,73.1,9.6,18.3,36.5,53.9,93
+Corridor (30d),USD→MAD,,120,104,86.7,94.8,79.4,19.2,22.1,24,34.6,100
+Corridor (30d),USD→ILS,,117,101,86.3,83.5,82.2,10.9,14.9,16.8,36.6,96
+Corridor (30d),EUR→PKR,,110,106,96.4,0.2,8,73.6,80.2,89.6,98.1,100
+Corridor (30d),AUD→AED,,110,106,96.4,0.5,14.1,52.8,59.4,81.1,97.2,99.1
+Corridor (30d),SEK→USD,,106,96,90.6,13.7,32.1,15.6,27.1,64.6,90.6,96.9
+Corridor (30d),CAD→THB,,106,99,93.4,22,46.4,17.2,36.4,52.5,64.6,100
+Corridor (30d),USD→MYR,,106,92,86.8,83.3,78.8,14.1,16.3,22.8,39.1,100
+Corridor (30d),GBP→CHF,,105,101,96.2,0.2,4.5,77.2,86.1,95,100,100
+Corridor (30d),CAD→CAD,,104,85,81.7,13.7,36.6,10.6,36.5,60,78.8,98.8
+Corridor (30d),AUD→JPY,,104,101,97.1,10.8,25.1,24.8,36.6,67.3,92.1,99
+Corridor (30d),EUR→TRY,,104,102,98.1,0.7,14.7,62.7,75.5,84.3,97.1,99
+Corridor (30d),EUR→EUR,,103,94,91.3,12.2,19.5,23.4,42.6,74.5,94.7,98.9
+Corridor (30d),GBP→SEK,,103,103,100,1.1,8.9,49.5,56.3,92.2,99,100
+Corridor (30d),CAD→AED,,102,86,84.3,72.5,65.6,14,25.6,37.2,48.8,98.8
+Corridor (30d),EUR→SAR,,102,100,98,0.2,7,70,82,92,99,100
+Corridor (30d),AUD→AUD,,101,96,95,7.6,22.1,15.6,45.8,79.2,92.7,99
+Corridor (30d),CAD→PHP,,101,92,91.1,10.9,37.8,22.8,39.1,59.8,73.9,100
+Corridor (30d),GBP→JPY,,99,96,97,0.6,16.6,57.3,62.5,79.2,93.8,100
+Corridor (30d),GBP→MYR,,95,94,98.9,0.2,4.3,89.4,91.5,95.7,96.8,100
+Corridor (30d),EUR→LKR,,94,93,98.9,0.4,7.5,75.3,78.5,88.2,97.8,100
+Corridor (30d),EUR→MXN,,94,92,97.9,1.2,13.7,48.9,63,78.3,96.7,100
+Corridor (30d),EUR→IDR,,91,88,96.7,0.2,7.4,67,80.7,88.6,98.9,100
+Corridor (30d),CAD→ZAR,,88,81,92,21.5,42.6,30.9,40.7,53.1,70.4,100
+Corridor (30d),AUD→PKR,,87,87,100,0.5,12.8,55.2,66.7,80.5,96.6,100
+Corridor (30d),EUR→NZD,,84,71,84.5,9.2,29.2,23.9,42.3,64.8,85.9,97.2
+Corridor (30d),USD→CHF,,84,78,92.9,22.2,45.5,20.5,26.9,53.8,75.6,100
+Corridor (30d),EUR→PEN,,83,79,95.2,0.2,13.3,69.6,75.9,83.5,92.4,100
+Corridor (30d),USD→SAR,,82,78,95.1,8.3,49.4,47.4,50,55.1,64.1,97.4
+Corridor (30d),USD→SEK,,78,73,93.6,63.9,57.5,21.9,26,45.2,61.6,98.6
+Corridor (30d),GBP→IDR,,74,71,95.9,0.2,3.4,87.3,95.8,95.8,98.6,100
+Corridor (30d),AUD→SGD,,72,70,97.2,3,12.1,42.9,60,85.7,97.1,100
+Corridor (30d),USD→NAD,,71,68,95.8,0.2,26.6,67.6,73.5,73.5,80.9,100
+Corridor (30d),NZD→THB,,70,69,98.6,1.7,6.3,21.7,78.3,95.7,97.1,100
+Corridor (30d),USD→XOF,,70,66,94.3,70.3,59.1,34.8,36.4,37.9,56.1,100
+Corridor (30d),USD→KRW,,69,58,84.1,71.4,63.3,25.9,31,37.9,50,100
+Corridor (30d),USD→PLN,,68,59,86.8,70.4,64.7,25.4,27.1,33.9,52.5,100
+Corridor (30d),GBP→ETB,,68,66,97.1,0.2,1.1,98.5,98.5,98.5,100,100
+Corridor (30d),USD→LKR,,68,63,92.6,68.3,57.8,39.7,44.4,46,55.6,100
+Corridor (30d),GBP→ILS,,68,67,98.5,0.2,4.7,76.1,83.6,95.5,98.5,100
+Corridor (30d),USD→ETB,,65,54,83.1,0.2,20,61.1,75.9,79.6,88.9,100
+Corridor (30d),USD→CLP,,64,62,96.9,70.3,61.6,35.5,35.5,38.7,53.2,100
+Corridor (30d),USD→BRL,,62,61,98.4,22.8,46,41,49.2,52.5,67.2,100
+Corridor (30d),USD→VND,,61,50,82,17.3,41.8,46,48,54,70,100
+Corridor (30d),GBP→MXN,,61,61,100,0.2,3,91.8,91.8,96.7,98.4,100
+Corridor (30d),EUR→PLN,,60,57,95,16.3,23.9,21.1,38.6,68.4,96.5,100
+Corridor (30d),CAD→XOF,,60,54,90,9.7,39.4,24.1,46.3,61.1,77.8,98.1
+Corridor (30d),AED→GBP,,60,53,88.3,7,17.7,32.1,49.1,71.7,94.3,100
+Corridor (30d),CAD→EGP,,59,51,86.4,8.2,41.3,25.5,45.1,68.6,80.4,98
+Corridor (30d),CAD→NZD,,59,50,84.7,42.1,55.6,8,20,38,68,100
+Corridor (30d),NZD→JPY,,59,57,96.6,10.6,21.3,5.3,33.3,78.9,94.7,98.2
+Corridor (30d),USD→SGD,,59,53,89.8,63.2,57.1,24.5,30.2,45.3,60.4,98.1
+Corridor (30d),GBP→BDT,,59,58,98.3,0.2,10.6,81,87.9,93.1,98.3,98.3
+Corridor (30d),GBP→NOK,,58,55,94.8,1.4,10.5,49.1,54.5,90.9,100,100
+Corridor (30d),GBP→NGN,,57,53,93,0.2,1.8,92.5,94.3,96.2,100,100
+Corridor (30d),USD→TRY,,55,49,89.1,1.5,39.7,49,59.2,61.2,69.4,100
+Corridor (30d),NZD→PKR,,55,53,96.4,0.2,3,64.2,88.7,96.2,100,100
+Corridor (30d),CAD→ETB,,55,52,94.5,0.2,15.4,73.1,84.6,88.5,92.3,98.1
+Corridor (30d),NZD→NZD,,54,49,90.7,3.1,14.2,14.3,59.2,85.7,95.9,100
+Corridor (30d),GBP→EGP,,54,52,96.3,0.2,4.1,92.3,94.2,96.2,98.1,100
+Corridor (30d),NZD→LKR,,53,53,100,1,4.3,49.1,81.1,96.2,100,100
+Corridor (30d),USD→DOP,,52,36,69.2,0.4,41.9,55.6,58.3,58.3,69.4,100
+Corridor (30d),AUD→COP,,52,51,98.1,0.3,12.2,70.6,78.4,86.3,94.1,98
+Corridor (30d),CAD→COP,,52,46,88.5,12.4,46.3,17.4,34.8,56.5,69.6,100
+Corridor (30d),USD→HKD,,52,47,90.4,58.3,57.1,19.1,23.4,42.6,61.7,100
+Corridor (30d),GBP→DKK,,51,51,100,3.9,20.6,49,52.9,70.6,96.1,100
+Corridor (30d),GBP→XCD,,51,44,86.3,64.2,74.7,0,0,2.3,61.4,95.5
+Corridor (30d),CAD→SAR,,49,47,95.9,5.2,48.1,36.2,51.1,61.7,72.3,93.6
+Corridor (30d),AUD→VND,,48,46,95.8,0.4,15,60.9,69.6,78.3,97.8,97.8
+Corridor (30d),GBP→BBD,,47,46,97.9,61.3,67.3,0,0,6.5,58.7,100
+Corridor (30d),GBP→CZK,,46,46,100,0.2,3.3,84.8,89.1,95.7,100,100
+Corridor (30d),EUR→BWP,,45,45,100,0.2,4.2,77.8,86.7,91.1,100,100
+Corridor (30d),GBP→RON,,45,44,97.8,0.2,1.7,90.9,95.5,97.7,100,100
+Corridor (30d),USD→NOK,,45,44,97.8,70.7,65.9,20.5,25,36.4,50,100
+Corridor (30d),AUD→SAR,,45,43,95.6,0.3,22.8,65.1,69.8,81.4,93,97.7
+Corridor (30d),EUR→NGN,,44,38,86.4,0.2,8,73.7,78.9,86.8,100,100
+Corridor (30d),USD→UGX,,44,41,93.2,110.2,90.4,7.3,7.3,14.6,34.1,97.6
+Corridor (30d),USD→BDT,,44,33,75,67.7,66.3,18.2,18.2,33.3,54.5,100
+Corridor (30d),DKK→INR,,44,44,100,0.2,2.3,95.5,95.5,95.5,100,100
+Corridor (30d),GBP→QAR,,44,44,100,0.3,2.2,81.8,88.6,97.7,100,100
+Corridor (30d),CAD→PLN,,43,39,90.7,90,81.2,2.6,10.3,23.1,30.8,100
+Corridor (30d),USD→CZK,,41,38,92.7,22.7,50,28.9,34.2,50,65.8,100
+Corridor (30d),GBP→ZMW,,41,41,100,0.2,2.9,90.2,92.7,95.1,100,100
+Corridor (30d),AED→EUR,,40,31,77.5,18.6,28.2,6.5,19.4,61.3,87.1,100
+Corridor (30d),GBP→TTD,,40,35,87.5,59.6,66.4,0,0,2.9,60,100
+Corridor (30d),GBP→KWD,,40,35,87.5,35.7,57.4,2.9,2.9,42.9,54.3,100
+Corridor (30d),USD→KES,,39,30,76.9,72.3,68.4,6.7,20,20,50,100
+Corridor (30d),EUR→ILS,,39,37,94.9,0.8,15.7,56.8,62.2,78.4,97.3,100
+Corridor (30d),AUD→MXN,,39,39,100,0.5,6.6,56.4,71.8,89.7,100,100
+Corridor (30d),NZD→CAD,,38,35,92.1,6.2,21,5.7,45.7,77.1,91.4,100
+Corridor (30d),EUR→XOF,,38,36,94.7,0.5,9,58.3,80.6,91.7,97.2,100
+Corridor (30d),AUD→JOD,,38,34,89.5,55.2,52.8,0,0,29.4,64.7,100
+Corridor (30d),CHF→EUR,,37,33,89.2,12.1,18.4,30.3,42.4,75.8,97,100
+Corridor (30d),AUD→HKD,,37,36,97.3,9.8,19.5,22.2,36.1,77.8,97.2,100
+Corridor (30d),GBP→SGD,,37,37,100,0.2,9.6,78.4,83.8,91.9,94.6,100
+Corridor (30d),USD→BWP,,36,29,80.6,0.5,33.4,58.6,65.5,72.4,82.8,96.6
+Corridor (30d),USD→NPR,,36,32,88.9,83.7,77.3,15.6,15.6,21.9,37.5,100
+Corridor (30d),GBP→NPR,,35,35,100,0.2,0.7,85.7,97.1,100,100,100
+Corridor (30d),USD→CNY,,34,27,79.4,92.1,83.5,3.7,3.7,18.5,37,100
+Corridor (30d),EUR→CHF,,34,32,94.1,1.2,15.3,40.6,59.4,78.1,100,100
+Corridor (30d),USD→HUF,,34,32,94.1,71.2,75,18.8,21.9,31.2,53.1,96.9
+Corridor (30d),GBP→HUF,,33,32,97,0.2,2.9,87.5,93.8,96.9,100,100
+Corridor (30d),EUR→BOB,,33,32,97,0.2,5.4,65.6,81.2,96.9,96.9,100
+Corridor (30d),GBP→BHD,,32,28,87.5,31.8,47.1,3.6,10.7,42.9,71.4,100
+Corridor (30d),EUR→JPY,,32,27,84.4,24.1,34.3,7.4,11.1,40.7,92.6,100
+Corridor (30d),AUD→FJD,,32,29,90.6,9,20.4,27.6,44.8,79.3,89.7,100
+Corridor (30d),CAD→BWP,,32,30,93.8,0.2,26.6,53.3,73.3,83.3,86.7,96.7
+Corridor (30d),GBP→XOF,,32,31,96.9,0.2,1.2,83.9,96.8,100,100,100
+Corridor (30d),AUD→PEN,,31,30,96.8,0.4,5.8,60,80,90,100,100
+Corridor (30d),USD→RON,,31,27,87.1,72.5,64.5,33.3,37,37,48.1,100
+Corridor (30d),CAD→TRY,,31,27,87.1,40.5,60.2,25.9,37,40.7,55.6,100
+Corridor (30d),CAD→RON,,31,28,90.3,72.7,60.5,10.7,32.1,39.3,50,100
+Corridor (30d),CAD→NGN,,31,20,64.5,0.1,13.1,60,75,85,95,100
+Corridor (30d),GBP→JOD,,31,25,80.6,22.4,40.9,0,8,64,84,96
+Corridor (30d),GBP→HKD,,31,30,96.8,19.2,24.6,16.7,16.7,76.7,100,100
+Corridor (30d),USD→DKK,,30,28,93.3,64.3,56.7,25,28.6,42.9,64.3,100
+Corridor (30d),CAD→MUR,,29,22,75.9,117.7,87.6,0,4.5,27.3,31.8,100
+Corridor (30d),USD→TWD,,29,26,89.7,94,93.8,0,0,7.7,30.8,100
+Corridor (30d),USD→JMD,,29,18,62.1,70.3,56.9,33.3,44.4,44.4,55.6,100
+Corridor (30d),EUR→DOP,,29,29,100,0.1,8.9,79.3,82.8,82.8,100,100
+Corridor (30d),GBP→UGX,,29,29,100,0.3,9.9,69,69,86.2,100,100
+Corridor (90d),USD→INR,,17417,16703,95.9,115.1,101.6,,,,,
+Corridor (90d),GBP→EUR,,15398,15201,98.7,0.4,6.7,,,,,
+Corridor (90d),EUR→INR,,11412,11231,98.4,0.7,10.8,,,,,
+Corridor (90d),GBP→USD,,5210,5135,98.6,3.9,17.7,,,,,
+Corridor (90d),USD→EUR,,4740,4378,92.4,74.2,74.7,,,,,
+Corridor (90d),GBP→INR,,4641,4516,97.3,0.2,3.8,,,,,
+Corridor (90d),AUD→INR,,3741,3622,96.8,0.9,17.7,,,,,
+Corridor (90d),GBP→AUD,,3190,3146,98.6,4.8,22.5,,,,,
+Corridor (90d),AUD→USD,,3139,3028,96.5,13.2,30.9,,,,,
+Corridor (90d),CAD→USD,,3057,2846,93.1,77.1,80.9,,,,,
+Corridor (90d),USD→GBP,,3055,2838,92.9,47.7,60.1,,,,,
+Corridor (90d),USD→CAD,,2563,2435,95,95.5,90.1,,,,,
+Corridor (90d),USD→USD,,2345,1447,61.7,64.7,65.7,,,,,
+Corridor (90d),AUD→NZD,,2323,2282,98.2,12,25,,,,,
+Corridor (90d),EUR→GBP,,2026,1931,95.3,6.3,25.4,,,,,
+Corridor (90d),EUR→USD,,1946,1831,94.1,17,30,,,,,
+Corridor (90d),NZD→AUD,,1887,1851,98.1,5,20.4,,,,,
+Corridor (90d),USD→MXN,,1836,1725,94,66.1,62.5,,,,,
+Corridor (90d),AUD→GBP,,1710,1620,94.7,5.2,21.3,,,,,
+Corridor (90d),AUD→EUR,,1629,1545,94.8,6.3,22,,,,,
+Corridor (90d),EUR→MAD,,1591,1559,98,0.5,12.7,,,,,
+Corridor (90d),GBP→ZAR,,1545,1537,99.5,0.2,6.1,,,,,
+Corridor (90d),GBP→NZD,,1428,1412,98.9,14.7,29.1,,,,,
+Corridor (90d),NZD→INR,,1424,1371,96.3,1.4,8,,,,,
+Corridor (90d),GBP→NAD,,1334,1324,99.3,0.2,2.5,,,,,
+Corridor (90d),CAD→INR,,1304,1186,91,71.3,70.7,,,,,
+Corridor (90d),GBP→CAD,,1292,1278,98.9,14.4,21,,,,,
+Corridor (90d),USD→AUD,,1202,1086,90.3,67,73.5,,,,,
+Corridor (90d),USD→PHP,,1161,1020,87.9,83,74.7,,,,,
+Corridor (90d),CAD→EUR,,1134,1055,93,70.2,69.7,,,,,
+Corridor (90d),GBP→THB,,1129,1101,97.5,0.2,5.6,,,,,
+Corridor (90d),NZD→USD,,1016,991,97.5,3.9,21.1,,,,,
+Corridor (90d),AUD→THB,,900,873,97,0.5,13.9,,,,,
+Corridor (90d),GBP→PKR,,859,804,93.6,0.2,7.7,,,,,
+Corridor (90d),GBP→AED,,815,797,97.8,0.2,4.8,,,,,
+Corridor (90d),AUD→PHP,,780,760,97.4,0.6,14,,,,,
+Corridor (90d),USD→COP,,762,717,94.1,40.8,57.4,,,,,
+Corridor (90d),USD→THB,,760,698,91.8,84.4,76.6,,,,,
+Corridor (90d),GBP→PHP,,610,600,98.4,0.2,6.2,,,,,
+Corridor (90d),EUR→THB,,609,595,97.7,0.7,14.5,,,,,
+Corridor (90d),USD→ZAR,,604,571,94.5,63.6,59.7,,,,,
+Corridor (90d),CAD→GBP,,600,541,90.2,36.4,66.1,,,,,
+Corridor (90d),CAD→MXN,,540,516,95.6,72.7,73.7,,,,,
+Corridor (90d),NZD→GBP,,513,493,96.1,2.1,16.6,,,,,
+Corridor (90d),EUR→NAD,,505,500,99,0.2,5.5,,,,,
+Corridor (90d),USD→AED,,497,460,92.6,106.7,91.2,,,,,
+Corridor (90d),CAD→MAD,,489,449,91.8,11.8,50.3,,,,,
+Corridor (90d),NZD→EUR,,476,454,95.4,1.9,16.4,,,,,
+Corridor (90d),USD→NZD,,475,451,94.9,53.6,65,,,,,
+Corridor (90d),USD→PKR,,457,345,75.5,68.9,66.9,,,,,
+Region,USD,name,,,,,,,,,,
+Region,USD,currency,,,,,,,,,,
+Region,USD,total_volume,,,,,,,,,,
+Region,USD,corridors,,,,,,,,,,
+Region,GBP,name,,,,,,,,,,
+Region,GBP,currency,,,,,,,,,,
+Region,GBP,total_volume,,,,,,,,,,
+Region,GBP,corridors,,,,,,,,,,
+Region,EUR,name,,,,,,,,,,
+Region,EUR,currency,,,,,,,,,,
+Region,EUR,total_volume,,,,,,,,,,
+Region,EUR,corridors,,,,,,,,,,
+Region,AUD,name,,,,,,,,,,
+Region,AUD,currency,,,,,,,,,,
+Region,AUD,total_volume,,,,,,,,,,
+Region,AUD,corridors,,,,,,,,,,
+Region,CAD,name,,,,,,,,,,
+Region,CAD,currency,,,,,,,,,,
+Region,CAD,total_volume,,,,,,,,,,
+Region,CAD,corridors,,,,,,,,,,
+Region,NZD,name,,,,,,,,,,
+Region,NZD,currency,,,,,,,,,,
+Region,NZD,total_volume,,,,,,,,,,
+Region,NZD,corridors,,,,,,,,,,
+Region,SEK,name,,,,,,,,,,
+Region,SEK,currency,,,,,,,,,,
+Region,SEK,total_volume,,,,,,,,,,
+Region,SEK,corridors,,,,,,,,,,
+Region,AED,name,,,,,,,,,,
+Region,AED,currency,,,,,,,,,,
+Region,AED,total_volume,,,,,,,,,,
+Region,AED,corridors,,,,,,,,,,
+Region,DKK,name,,,,,,,,,,
+Region,DKK,currency,,,,,,,,,,
+Region,DKK,total_volume,,,,,,,,,,
+Region,DKK,corridors,,,,,,,,,,
+Region,CHF,name,,,,,,,,,,
+Region,CHF,currency,,,,,,,,,,
+Region,CHF,total_volume,,,,,,,,,,
+Region,CHF,corridors,,,,,,,,,,
+Method x Corridor,debit,GBP→EUR,4628,4593,99.2,0.2,3.7,100,100,100,100,100
+Method x Corridor,debit,EUR→INR,2083,2065,99.1,0.1,2,100,100,100,100,100
+Method x Corridor,debit,GBP→INR,1463,1443,98.6,0.2,2.2,100,100,100,100,100
+Method x Corridor,debit,USD→INR,1400,1363,97.4,0.2,2,100,100,100,100,100
+Method x Corridor,debit,GBP→USD,851,842,98.9,3.3,11.2,100,100,100,100,100
+Method x Corridor,debit,GBP→NAD,843,843,100,0.2,1.3,100,100,100,100,100
+Method x Corridor,debit,GBP→ZAR,701,697,99.4,0.2,2.9,100,100,100,100,100
+Method x Corridor,debit,GBP→THB,537,530,98.7,0.2,2.9,100,100,100,100,100
+Method x Corridor,debit,USD→MXN,478,463,96.9,0.2,3.4,100,100,100,100,100
+Method x Corridor,debit,GBP→AUD,402,400,99.5,0.2,3.4,100,100,100,100,100
+Method x Corridor,debit,GBP→PKR,365,364,99.7,0.2,2.3,100,100,100,100,100
+Method x Corridor,debit,EUR→MAD,321,320,99.7,0.1,2.4,100,100,100,100,100
+Method x Corridor,debit,USD→EUR,305,281,92.1,0.2,3.1,100,100,100,100,100
+Method x Corridor,debit,GBP→PHP,271,270,99.6,0.2,3.6,100,100,100,100,100
+Method x Corridor,debit,USD→COP,252,245,97.2,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,USD→PHP,250,231,92.4,0.1,0.3,100,100,100,100,100
+Method x Corridor,debit,GBP→CAD,229,229,100,8.9,14.2,100,100,100,100,100
+Method x Corridor,debit,EUR→USD,227,216,95.2,9.9,15.1,100,100,100,100,100
+Method x Corridor,debit,EUR→GBP,215,208,96.7,0.2,4.5,100,100,100,100,100
+Method x Corridor,debit,AUD→INR,211,208,98.6,0.2,4.6,100,100,100,100,100
+Method x Corridor,debit,USD→GBP,189,182,96.3,0.2,0.6,100,100,100,100,100
+Method x Corridor,debit,USD→CAD,188,184,97.9,11.6,16.8,100,100,100,100,100
+Method x Corridor,debit,GBP→AED,184,182,98.9,0.2,1.5,100,100,100,100,100
+Method x Corridor,debit,GBP→NZD,173,167,96.5,0.2,5.5,100,100,100,100,100
+Method x Corridor,debit,EUR→NAD,168,168,100,0.1,0.8,100,100,100,100,100
+Method x Corridor,debit,GBP→BWP,166,165,99.4,0.2,0.5,100,100,100,100,100
+Method x Corridor,debit,USD→ZAR,164,155,94.5,0.1,0.7,100,100,100,100,100
+Method x Corridor,debit,GBP→TRY,158,157,99.4,0.2,1.2,100,100,100,100,100
+Method x Corridor,debit,GBP→LKR,146,144,98.6,0.2,1.2,100,100,100,100,100
+Method x Corridor,debit,USD→THB,140,136,97.1,0.1,2.9,100,100,100,100,100
+Method x Corridor,debit,GBP→MAD,130,129,99.2,0.2,0.9,100,100,100,100,100
+Method x Corridor,debit,EUR→ETB,126,126,100,0.1,3.3,100,100,100,100,100
+Method x Corridor,debit,EUR→COP,125,125,100,0.1,0.7,100,100,100,100,100
+Method x Corridor,debit,EUR→THB,123,121,98.4,0.2,8.4,100,100,100,100,100
+Method x Corridor,debit,CAD→NAD,122,121,99.2,0.2,1.7,100,100,100,100,100
+Method x Corridor,debit,USD→PKR,119,98,82.4,0.1,6.1,100,100,100,100,100
+Method x Corridor,debit,GBP→SAR,118,114,96.6,0.2,0.5,100,100,100,100,100
+Method x Corridor,debit,GBP→PLN,113,113,100,0.2,1.2,100,100,100,100,100
+Method x Corridor,debit,AUD→NZD,113,112,99.1,3.5,11.9,100,100,100,100,100
+Method x Corridor,debit,AUD→THB,113,111,98.2,0.2,1,100,100,100,100,100
+Method x Corridor,debit,NZD→INR,95,94,98.9,0.2,2.5,100,100,100,100,100
+Method x Corridor,debit,AUD→PHP,91,91,100,0.2,3.6,100,100,100,100,100
+Method x Corridor,debit,USD→NGN,85,35,41.2,0.2,0.4,100,100,100,100,100
+Method x Corridor,debit,GBP→COP,82,82,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,SEK→USD,81,77,95.1,11.5,21.9,100,100,100,100,100
+Method x Corridor,debit,AUD→GBP,78,78,100,0.2,3.9,100,100,100,100,100
+Method x Corridor,debit,GBP→MUR,77,74,96.1,0.2,6.3,100,100,100,100,100
+Method x Corridor,debit,AUD→ZAR,71,70,98.6,0.2,1.3,100,100,100,100,100
+Method x Corridor,debit,EUR→ZAR,69,69,100,0.1,2,100,100,100,100,100
+Method x Corridor,debit,USD→IDR,64,61,95.3,0.1,0.5,100,100,100,100,100
+Method x Corridor,debit,CAD→USD,63,61,96.8,2.3,7.4,100,100,100,100,100
+Method x Corridor,debit,EUR→PKR,59,59,100,0.1,4.6,100,100,100,100,100
+Method x Corridor,debit,USD→USD,58,26,44.8,0.4,9.9,100,100,100,100,100
+Method x Corridor,debit,AUD→IDR,55,52,94.5,0.2,1.4,100,100,100,100,100
+Method x Corridor,debit,GBP→MYR,55,55,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→CHF,54,53,98.1,0.2,1.5,100,100,100,100,100
+Method x Corridor,debit,EUR→MUR,54,54,100,0.1,5.3,100,100,100,100,100
+Method x Corridor,debit,CAD→INR,51,50,98,0.1,0.9,100,100,100,100,100
+Method x Corridor,debit,AUD→USD,51,51,100,1.8,10.5,100,100,100,100,100
+Method x Corridor,debit,GBP→ETB,50,48,96,0.2,1.2,100,100,100,100,100
+Method x Corridor,debit,USD→NAD,47,45,95.7,0.2,2.7,100,100,100,100,100
+Method x Corridor,debit,AUD→EUR,47,45,95.7,0.2,5.4,100,100,100,100,100
+Method x Corridor,debit,GBP→IDR,47,46,97.9,0.2,2.9,100,100,100,100,100
+Method x Corridor,debit,NZD→ZAR,44,44,100,0.2,0.4,100,100,100,100,100
+Method x Corridor,debit,NZD→AUD,42,41,97.6,12.5,17.2,100,100,100,100,100
+Method x Corridor,debit,EUR→AED,42,38,90.5,0.1,1.8,100,100,100,100,100
+Method x Corridor,debit,GBP→EGP,42,40,95.2,0.2,3.7,100,100,100,100,100
+Method x Corridor,debit,GBP→SEK,42,42,100,0.2,5.9,100,100,100,100,100
+Method x Corridor,debit,EUR→SAR,41,41,100,0.1,2.8,100,100,100,100,100
+Method x Corridor,debit,EUR→PHP,40,40,100,0.1,4.2,100,100,100,100,100
+Method x Corridor,debit,GBP→NGN,39,39,100,0.2,2,100,100,100,100,100
+Method x Corridor,debit,AUD→LKR,38,38,100,0.2,1.8,100,100,100,100,100
+Method x Corridor,debit,CAD→ETB,38,38,100,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,USD→SAR,38,37,97.4,0.2,1.5,100,100,100,100,100
+Method x Corridor,debit,USD→AED,38,34,89.5,0.2,15.2,100,100,100,100,100
+Method x Corridor,debit,EUR→PEN,37,35,94.6,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→BDT,37,37,100,0.2,0.6,100,100,100,100,100
+Method x Corridor,debit,USD→ETB,36,30,83.3,0.2,3.8,100,100,100,100,100
+Method x Corridor,debit,EUR→CAD,36,36,100,18.8,20,100,100,100,100,100
+Method x Corridor,debit,GBP→MXN,36,36,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→XCD,34,30,88.2,69.2,79.3,100,100,100,100,100
+Method x Corridor,debit,GBP→JPY,34,34,100,0.2,7.6,100,100,100,100,100
+Method x Corridor,debit,CAD→PKR,32,30,93.8,0.1,1.9,100,100,100,100,100
+Method x Corridor,debit,EUR→LKR,31,31,100,0.1,2.2,100,100,100,100,100
+Method x Corridor,debit,EUR→BWP,30,30,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→ILS,30,30,100,0.2,2.7,100,100,100,100,100
+Method x Corridor,debit,EUR→TRY,30,30,100,0.2,5.2,100,100,100,100,100
+Method x Corridor,debit,NZD→PHP,29,27,93.1,0.2,1.2,100,100,100,100,100
+Method x Corridor,debit,GBP→ZMW,29,29,100,0.2,1.5,100,100,100,100,100
+Method x Corridor,debit,USD→DOP,28,21,75,0.2,0.4,100,100,100,100,100
+Method x Corridor,debit,NZD→PKR,28,27,96.4,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→NOK,28,25,89.3,10.5,16.9,100,100,100,100,100
+Method x Corridor,debit,EUR→MXN,28,27,96.4,0.2,3.8,100,100,100,100,100
+Method x Corridor,debit,GBP→BBD,28,27,96.4,49.1,63.6,100,100,100,100,100
+Method x Corridor,debit,AUD→AED,28,27,96.4,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,EUR→NGN,27,24,88.9,0.2,2.4,100,100,100,100,100
+Method x Corridor,debit,USD→TRY,27,25,92.6,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,EUR→IDR,27,25,92.6,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,GBP→DKK,26,26,100,11.6,22.7,100,100,100,100,100
+Method x Corridor,debit,AUD→PKR,26,26,100,0.2,3.9,100,100,100,100,100
+Method x Corridor,debit,GBP→HUF,25,25,100,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,USD→BRL,25,24,96,0.1,0.3,100,100,100,100,100
+Method x Corridor,debit,USD→XOF,25,23,92,0.2,1.5,100,100,100,100,100
+Method x Corridor,debit,AUD→MYR,25,24,96,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,GBP→KWD,25,21,84,35.1,57.3,100,100,100,100,100
+Method x Corridor,debit,EUR→AUD,24,21,87.5,0.2,3.4,100,100,100,100,100
+Method x Corridor,debit,GBP→RON,24,24,100,0.2,2.1,100,100,100,100,100
+Method x Corridor,debit,CAD→EUR,24,24,100,0.2,3.4,100,100,100,100,100
+Method x Corridor,debit,USD→AUD,23,23,100,0.1,3.6,100,100,100,100,100
+Method x Corridor,debit,USD→BWP,23,20,87,0.2,1.8,100,100,100,100,100
+Method x Corridor,debit,USD→LKR,23,23,100,0.1,0.4,100,100,100,100,100
+Method x Corridor,debit,GBP→CZK,23,23,100,0.2,2.2,100,100,100,100,100
+Method x Corridor,debit,DKK→INR,23,23,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,USD→CLP,22,20,90.9,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→JOD,22,19,86.4,22.5,44.1,100,100,100,100,100
+Method x Corridor,debit,GBP→NPR,21,21,100,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,CAD→GBP,21,21,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,AUD→VND,21,20,95.2,0.1,3,100,100,100,100,100
+Method x Corridor,debit,GBP→BHD,20,18,90,24.7,42.5,100,100,100,100,100
+Method x Corridor,debit,CAD→MXN,20,20,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→TTD,20,18,90,61.1,68.2,100,100,100,100,100
+Method x Corridor,debit,USD→VND,20,18,90,0.2,1.4,100,100,100,100,100
+Method x Corridor,debit,GBP→VND,19,19,100,0.2,3.6,100,100,100,100,100
+Method x Corridor,debit,USD→MAD,19,19,100,0.2,0.4,100,100,100,100,100
+Method x Corridor,debit,USD→NZD,19,19,100,0.1,3,100,100,100,100,100
+Method x Corridor,debit,GBP→QAR,19,19,100,0.2,0.6,100,100,100,100,100
+Method x Corridor,debit,AUD→COP,18,18,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,GBP→OMR,18,17,94.4,22,28.2,100,100,100,100,100
+Method x Corridor,debit,GBP→XOF,18,18,100,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,AUD→SAR,17,17,100,0.2,4.7,100,100,100,100,100
+Method x Corridor,debit,EUR→BOB,17,17,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→SGD,17,17,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,USD→PLN,16,15,93.8,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,GBP→BRL,16,15,93.8,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,CAD→PHP,16,16,100,0.2,2.3,100,100,100,100,100
+Method x Corridor,debit,EUR→XOF,16,15,93.8,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,AUD→CAD,16,16,100,3.2,18.6,100,100,100,100,100
+Method x Corridor,debit,CAD→BWP,16,16,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,SEK→EUR,15,14,93.3,0.2,2.3,100,100,100,100,100
+Method x Corridor,debit,GBP→PEN,15,14,93.3,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,NZD→LKR,15,15,100,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,GBP→GHS,15,15,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,EUR→DOP,15,15,100,0.1,3.2,100,100,100,100,100
+Method x Corridor,debit,USD→KRW,14,14,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,USD→SEK,14,13,92.9,0.2,0.1,100,100,100,100,100
+Method x Corridor,debit,CAD→XOF,13,12,92.3,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,USD→JMD,13,9,69.2,0.2,0.7,100,100,100,100,100
+Method x Corridor,debit,EUR→BDT,13,13,100,0.1,7.9,100,100,100,100,100
+Method x Corridor,debit,USD→MYR,13,13,100,0.2,4.8,100,100,100,100,100
+Method x Corridor,debit,USD→ARS,12,11,91.7,0.2,2.1,100,100,100,100,100
+Method x Corridor,debit,CAD→ZAR,12,12,100,0.2,4.4,100,100,100,100,100
+Method x Corridor,debit,USD→HNL,12,11,91.7,0.2,0.5,100,100,100,100,100
+Method x Corridor,debit,USD→BDT,12,8,66.7,0.2,8.3,100,100,100,100,100
+Method x Corridor,debit,AUD→SGD,12,12,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→UGX,12,12,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,NZD→USD,11,10,90.9,6.8,17.9,100,100,100,100,100
+Method x Corridor,debit,CAD→EGP,11,11,100,0.1,0.3,100,100,100,100,100
+Method x Corridor,debit,GBP→CVE,11,10,90.9,0.2,5.3,100,100,100,100,100
+Method x Corridor,debit,NZD→GBP,11,11,100,0.1,0.8,100,100,100,100,100
+Method x Corridor,debit,AUD→BWP,11,11,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,CAD→MAD,11,11,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,USD→GHS,11,5,45.5,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,GBP→HKD,11,11,100,20.8,26.7,100,100,100,100,100
+Method x Corridor,debit,USD→BAM,11,10,90.9,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,GBP→CLP,10,10,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,CAD→SAR,10,10,100,0.2,2.3,100,100,100,100,100
+Method x Corridor,debit,NOK→GBP,10,10,100,0.2,1.4,100,100,100,100,100
+Method x Corridor,debit,EUR→ILS,10,10,100,0.1,4.8,100,100,100,100,100
+Method x Corridor,debit,EUR→JOD,10,10,100,67,56.8,100,100,100,100,100
+Method x Corridor,debit,USD→CZK,10,10,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,CAD→NGN,10,10,100,0.1,5.4,100,100,100,100,100
+Method x Corridor,debit,EUR→CHF,10,10,100,0.2,9.3,100,100,100,100,100
+Method x Corridor,debit,AUD→JOD,10,9,90,19.9,43.9,100,100,100,100,100
+Method x Corridor,debit,USD→CHF,10,10,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,NOK→EUR,10,10,100,0.2,4,100,100,100,100,100
+Method x Corridor,debit,AUD→NGN,9,9,100,0.2,0.1,100,100,100,100,100
+Method x Corridor,debit,USD→RON,9,9,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,USD→TTD,9,6,66.7,94.7,96.7,100,100,100,100,100
+Method x Corridor,debit,CAD→AED,9,8,88.9,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,DKK→ZAR,9,9,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,USD→ILS,9,7,77.8,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,USD→HKD,9,8,88.9,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,USD→EGP,9,8,88.9,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,NOK→USD,9,8,88.9,21.4,26.7,100,100,100,100,100
+Method x Corridor,debit,USD→SGD,9,9,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,SEK→MAD,9,9,100,50.5,67.8,100,100,100,100,100
+Method x Corridor,debit,NZD→COP,8,7,87.5,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,AUD→PGK,8,8,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,DKK→USD,8,8,100,12.1,17.5,100,100,100,100,100
+Method x Corridor,debit,USD→OMR,8,8,100,0.3,33.8,100,100,100,100,100
+Method x Corridor,debit,EUR→MYR,8,8,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,USD→ZMW,8,8,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,debit,USD→DKK,8,8,100,0.2,0.3,100,100,100,100,100
+Method x Corridor,debit,NZD→PEN,8,8,100,0.2,1.9,100,100,100,100,100
+Method x Corridor,debit,GBP→DOP,7,6,85.7,0.2,0.2,100,100,100,100,100
+Method x Corridor,debit,CAD→THB,7,7,100,0.1,3.5,100,100,100,100,100
+Method x Corridor,debit,CHF→EUR,7,7,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,EUR→EGP,7,7,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,debit,EUR→SEK,7,6,85.7,0.6,7.3,100,100,100,100,100
+Method x Corridor,debit,AUD→MXN,7,7,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→INR,546,540,98.9,0.1,0.8,100,100,100,100,100
+Method x Corridor,credit,GBP→EUR,397,391,98.5,0.2,2.1,100,100,100,100,100
+Method x Corridor,credit,GBP→INR,203,198,97.5,0.2,0.6,100,100,100,100,100
+Method x Corridor,credit,GBP→USD,108,106,98.1,2,9.6,100,100,100,100,100
+Method x Corridor,credit,GBP→ZAR,80,80,100,0.2,4.2,100,100,100,100,100
+Method x Corridor,credit,EUR→THB,75,74,98.7,0.1,4.6,100,100,100,100,100
+Method x Corridor,credit,EUR→GBP,74,72,97.3,0.2,5.4,100,100,100,100,100
+Method x Corridor,credit,USD→EUR,72,66,91.7,0.2,5.1,100,100,100,100,100
+Method x Corridor,credit,USD→INR,69,66,95.7,0.2,1.2,100,100,100,100,100
+Method x Corridor,credit,GBP→THB,63,61,96.8,0.2,8.5,100,100,100,100,100
+Method x Corridor,credit,EUR→USD,62,60,96.8,8.7,14.8,100,100,100,100,100
+Method x Corridor,credit,EUR→MAD,61,61,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→NAD,55,53,96.4,0.2,1.7,100,100,100,100,100
+Method x Corridor,credit,GBP→PHP,51,50,98,0.2,1.3,100,100,100,100,100
+Method x Corridor,credit,GBP→PKR,51,51,100,0.2,5.9,100,100,100,100,100
+Method x Corridor,credit,GBP→AUD,48,48,100,0.2,5.5,100,100,100,100,100
+Method x Corridor,credit,EUR→COP,44,42,95.5,0.1,2.2,100,100,100,100,100
+Method x Corridor,credit,NZD→INR,41,41,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→ZAR,40,40,100,0.1,4,100,100,100,100,100
+Method x Corridor,credit,CAD→MAD,38,38,100,0.1,0.6,100,100,100,100,100
+Method x Corridor,credit,CAD→USD,33,33,100,2.1,11.5,100,100,100,100,100
+Method x Corridor,credit,EUR→PHP,30,29,96.7,0.2,6.1,100,100,100,100,100
+Method x Corridor,credit,EUR→AED,29,27,93.1,0.1,5.6,100,100,100,100,100
+Method x Corridor,credit,USD→GBP,28,26,92.9,0.1,0.4,100,100,100,100,100
+Method x Corridor,credit,USD→MXN,23,20,87,0.2,2.6,100,100,100,100,100
+Method x Corridor,credit,GBP→NAD,22,22,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→IDR,22,22,100,0.2,0.5,100,100,100,100,100
+Method x Corridor,credit,GBP→CAD,22,22,100,7.5,13.6,100,100,100,100,100
+Method x Corridor,credit,EUR→LKR,22,22,100,0.1,2.2,100,100,100,100,100
+Method x Corridor,credit,GBP→NZD,22,22,100,0.2,9.8,100,100,100,100,100
+Method x Corridor,credit,CAD→EUR,21,21,100,0.1,0.5,100,100,100,100,100
+Method x Corridor,credit,USD→USD,21,12,57.1,6.2,13.8,100,100,100,100,100
+Method x Corridor,credit,GBP→TRY,21,21,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→AED,20,20,100,0.2,0.4,100,100,100,100,100
+Method x Corridor,credit,GBP→LKR,20,20,100,0.2,2.9,100,100,100,100,100
+Method x Corridor,credit,CAD→INR,20,20,100,0.1,2.5,100,100,100,100,100
+Method x Corridor,credit,DKK→INR,20,20,100,0.1,2.5,100,100,100,100,100
+Method x Corridor,credit,AUD→THB,20,20,100,0.2,3.4,100,100,100,100,100
+Method x Corridor,credit,EUR→ETB,20,20,100,0.1,5,100,100,100,100,100
+Method x Corridor,credit,EUR→SAR,19,18,94.7,0.1,1.1,100,100,100,100,100
+Method x Corridor,credit,USD→THB,19,18,94.7,0.1,2.9,100,100,100,100,100
+Method x Corridor,credit,GBP→MAD,18,18,100,0.2,0.3,100,100,100,100,100
+Method x Corridor,credit,EUR→MXN,17,17,100,0.2,8.1,100,100,100,100,100
+Method x Corridor,credit,AUD→PHP,17,16,94.1,0.1,0.5,100,100,100,100,100
+Method x Corridor,credit,AUD→INR,16,15,93.8,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→TRY,15,15,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,SEK→USD,14,13,92.9,10.3,37.9,100,100,100,100,100
+Method x Corridor,credit,EUR→MUR,14,13,92.9,0.2,4.9,100,100,100,100,100
+Method x Corridor,credit,CAD→ZAR,14,14,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,CAD→MXN,14,14,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,credit,USD→ZAR,14,14,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→CAD,13,13,100,8.4,14.4,100,100,100,100,100
+Method x Corridor,credit,EUR→PKR,13,12,92.3,0.1,0.7,100,100,100,100,100
+Method x Corridor,credit,CAD→PKR,13,13,100,0.2,4.4,100,100,100,100,100
+Method x Corridor,credit,USD→CAD,13,12,92.3,14.2,14.2,100,100,100,100,100
+Method x Corridor,credit,GBP→SAR,13,13,100,0.2,0.3,100,100,100,100,100
+Method x Corridor,credit,USD→PHP,12,10,83.3,0.2,5.4,100,100,100,100,100
+Method x Corridor,credit,USD→NGN,12,7,58.3,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,AUD→ZAR,12,12,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,USD→COP,11,10,90.9,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,USD→ETB,11,10,90.9,0.2,0.3,100,100,100,100,100
+Method x Corridor,credit,GBP→MUR,11,11,100,0.2,12.3,100,100,100,100,100
+Method x Corridor,credit,GBP→PLN,11,11,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→DOP,11,11,100,0.1,6.7,100,100,100,100,100
+Method x Corridor,credit,CAD→ETB,10,10,100,0.1,0.3,100,100,100,100,100
+Method x Corridor,credit,AUD→USD,10,9,90,10.9,15.3,100,100,100,100,100
+Method x Corridor,credit,CAD→PHP,9,8,88.9,0.1,13.6,100,100,100,100,100
+Method x Corridor,credit,EUR→NGN,9,9,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,NZD→ZAR,9,9,100,0.1,1.1,100,100,100,100,100
+Method x Corridor,credit,CAD→THB,9,9,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→PEN,9,8,88.9,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,NZD→AUD,9,9,100,9.5,8.4,100,100,100,100,100
+Method x Corridor,credit,CAD→NAD,9,9,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,AUD→GBP,8,8,100,0.2,5.5,100,100,100,100,100
+Method x Corridor,credit,CAD→SAR,8,8,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,AUD→EUR,8,8,100,0.4,5.5,100,100,100,100,100
+Method x Corridor,credit,GBP→COP,8,6,75,0.2,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→MYR,8,8,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→BWP,7,7,100,0.1,1,100,100,100,100,100
+Method x Corridor,credit,AUD→NZD,7,6,85.7,12.8,17,100,100,100,100,100
+Method x Corridor,credit,CAD→AED,7,6,85.7,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→IDR,6,5,83.3,0.2,10.1,100,100,100,100,100
+Method x Corridor,credit,GBP→CHF,6,6,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→EGP,6,6,100,0.1,5,100,100,100,100,100
+Method x Corridor,credit,SEK→EUR,6,5,83.3,0.2,0.4,100,100,100,100,100
+Method x Corridor,credit,GBP→RON,6,6,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,CAD→AUD,6,6,100,0.2,0.1,100,100,100,100,100
+Method x Corridor,credit,USD→AUD,6,6,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,CAD→GBP,6,6,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→BBD,6,6,100,52.7,54.6,100,100,100,100,100
+Method x Corridor,credit,NZD→GBP,6,6,100,0.2,0.9,100,100,100,100,100
+Method x Corridor,credit,EUR→ILS,6,6,100,0.2,10.2,100,100,100,100,100
+Method x Corridor,credit,AUD→IDR,6,6,100,0.2,0.6,100,100,100,100,100
+Method x Corridor,credit,GBP→CZK,5,5,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→QAR,5,5,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→XOF,5,5,100,0.2,10.4,100,100,100,100,100
+Method x Corridor,credit,CAD→EGP,5,5,100,0.1,1.8,100,100,100,100,100
+Method x Corridor,credit,USD→NZD,5,5,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→ILS,5,5,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,USD→IDR,5,5,100,0.1,1.5,100,100,100,100,100
+Method x Corridor,credit,AUD→VND,5,5,100,0.2,0.4,100,100,100,100,100
+Method x Corridor,credit,EUR→ZMW,5,5,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→SGD,5,5,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→JOD,5,4,80,22.2,33.5,100,100,100,100,100
+Method x Corridor,credit,GBP→BDT,5,4,80,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,CAD→COP,4,3,75,0.2,8.2,100,100,100,100,100
+Method x Corridor,credit,USD→ILS,4,4,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→BDT,4,4,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,USD→BOB,4,3,75,0.2,0.1,100,100,100,100,100
+Method x Corridor,credit,NZD→PKR,4,4,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,CAD→RON,4,4,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→CHF,4,4,100,0.1,3.2,100,100,100,100,100
+Method x Corridor,credit,EUR→AUD,4,4,100,0.2,12,100,100,100,100,100
+Method x Corridor,credit,EUR→CZK,4,4,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→EGP,4,4,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→NGN,4,4,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→TTD,4,3,75,51.2,60.6,100,100,100,100,100
+Method x Corridor,credit,USD→SEK,4,4,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,USD→VND,4,4,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→MXN,4,4,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→KWD,4,3,75,93,77.3,100,100,100,100,100
+Method x Corridor,credit,EUR→BOB,4,4,100,0.2,1.8,100,100,100,100,100
+Method x Corridor,credit,GBP→SEK,4,4,100,10.9,10,100,100,100,100,100
+Method x Corridor,credit,GBP→BWP,3,3,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→PLN,3,3,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→DKK,3,3,100,9.9,9.1,100,100,100,100,100
+Method x Corridor,credit,GBP→NOK,3,3,100,0.2,3.9,100,100,100,100,100
+Method x Corridor,credit,USD→NAD,3,3,100,0.1,0.3,100,100,100,100,100
+Method x Corridor,credit,GBP→VND,3,3,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→UGX,3,3,100,0.2,0.1,100,100,100,100,100
+Method x Corridor,credit,CAD→GHS,3,2,66.7,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,CAD→TRY,3,3,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→MGA,3,3,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→XCD,3,3,100,90.1,81.7,100,100,100,100,100
+Method x Corridor,credit,EUR→BRL,3,3,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,CAD→CAD,3,3,100,8.8,8.3,100,100,100,100,100
+Method x Corridor,credit,CAD→NGN,3,2,66.7,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,USD→KRW,3,2,66.7,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→VND,3,3,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→TZS,3,2,66.7,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→HKD,3,3,100,12.5,28.1,100,100,100,100,100
+Method x Corridor,credit,AUD→MXN,3,3,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,USD→TWD,3,2,66.7,99.8,99.8,100,100,100,100,100
+Method x Corridor,credit,GBP→ZMW,3,3,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,USD→BRL,3,3,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,USD→AED,3,2,66.7,0.7,0.7,100,100,100,100,100
+Method x Corridor,credit,GBP→BRL,3,3,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→KES,3,2,66.7,29.2,29.2,100,100,100,100,100
+Method x Corridor,credit,USD→LKR,3,3,100,0.1,0.3,100,100,100,100,100
+Method x Corridor,credit,GBP→QAR,3,3,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,CAD→PEN,3,3,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,AUD→LKR,3,3,100,0.1,0.2,100,100,100,100,100
+Method x Corridor,credit,NZD→USD,2,2,100,6.6,6.6,100,100,100,100,100
+Method x Corridor,credit,USD→CLP,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→KRW,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→JPY,2,2,100,50.4,50.4,100,100,100,100,100
+Method x Corridor,credit,CAD→DOP,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,DKK→SGD,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→HUF,2,1,50,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,SEK→JOD,2,2,100,80.9,80.9,100,100,100,100,100
+Method x Corridor,credit,EUR→NZD,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→ARS,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,USD→JOD,2,1,50,114,114,100,100,100,100,100
+Method x Corridor,credit,SEK→ZAR,2,2,100,7.8,7.8,100,100,100,100,100
+Method x Corridor,credit,USD→TRY,2,1,50,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→TWD,2,2,100,117.1,117.1,100,100,100,100,100
+Method x Corridor,credit,EUR→MYR,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,CAD→MUR,2,2,100,27.8,27.8,100,100,100,100,100
+Method x Corridor,credit,EUR→CVE,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→OMR,2,2,100,15,15,100,100,100,100,100
+Method x Corridor,credit,USD→ZMW,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,EUR→KES,2,2,100,28.2,28.2,100,100,100,100,100
+Method x Corridor,credit,AUD→NGN,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,AUD→CAD,2,2,100,102.5,102.5,100,100,100,100,100
+Method x Corridor,credit,EUR→KHR,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,GBP→ETB,2,2,100,0.4,0.4,100,100,100,100,100
+Method x Corridor,credit,NOK→SGD,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,AUD→TRY,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,NZD→FJD,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,EUR→SGD,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,USD→SAR,2,1,50,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,USD→TTD,2,1,50,57.3,57.3,100,100,100,100,100
+Method x Corridor,credit,GBP→BOB,2,2,100,5,5,100,100,100,100,100
+Method x Corridor,credit,CAD→BDT,2,2,100,32.9,32.9,100,100,100,100,100
+Method x Corridor,credit,EUR→NPR,2,2,100,0.4,0.4,100,100,100,100,100
+Method x Corridor,credit,CAD→KWD,2,2,100,97.1,97.1,100,100,100,100,100
+Method x Corridor,credit,DKK→USD,2,2,100,27.3,27.3,100,100,100,100,100
+Method x Corridor,credit,GBP→GHS,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,CAD→IDR,2,1,50,1.7,1.7,100,100,100,100,100
+Method x Corridor,credit,SEK→AED,2,2,100,17.8,17.8,100,100,100,100,100
+Method x Corridor,credit,AUD→MYR,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→JPY,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,GBP→TWD,2,2,100,104.4,104.4,100,100,100,100,100
+Method x Corridor,credit,USD→SGD,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,credit,USD→CHF,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,SEK→NAD,2,2,100,48.1,48.1,100,100,100,100,100
+Method x Corridor,credit,NZD→NPR,2,2,100,0.2,0.2,100,100,100,100,100
+Method x Corridor,credit,CAD→TND,2,2,100,14.8,14.8,100,100,100,100,100
+Method x Corridor,credit,EUR→JMD,2,2,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,bank_account,GBP→EUR,3195,3108,97.3,0.8,10.3,57.7,73,88.3,100,100
+Method x Corridor,bank_account,AUD→INR,1680,1635,97.3,0.7,12.1,51.3,63.5,81.7,100,100
+Method x Corridor,bank_account,AUD→USD,1633,1575,96.4,11.7,25.4,13.1,32.8,73.3,100,100
+Method x Corridor,bank_account,EUR→INR,1399,1322,94.5,8,21.6,24.6,48.5,71.9,100,100
+Method x Corridor,bank_account,GBP→USD,1385,1358,98.1,2.7,14.6,33.9,59.8,86.2,100,100
+Method x Corridor,bank_account,AUD→NZD,1249,1209,96.8,10.6,17.8,8.2,42.3,80.9,100,100
+Method x Corridor,bank_account,NZD→AUD,982,955,97.3,3.9,14.7,5,56.8,85.5,100,100
+Method x Corridor,bank_account,AUD→EUR,805,762,94.7,6,16.6,31.2,50.3,80.6,100,100
+Method x Corridor,bank_account,GBP→AUD,779,758,97.3,0.8,11.3,55.4,69.3,85.4,100,100
+Method x Corridor,bank_account,AUD→GBP,763,728,95.4,5.4,17.5,35.4,52.3,77.6,100,100
+Method x Corridor,bank_account,USD→GBP,680,630,92.6,5.3,19.1,25.1,51.3,76.5,100,100
+Method x Corridor,bank_account,EUR→GBP,654,605,92.5,17.1,26.8,12.9,37.2,67.3,100,100
+Method x Corridor,bank_account,CAD→USD,588,530,90.1,15.8,28.8,0.6,23.6,68.9,100,100
+Method x Corridor,bank_account,NZD→USD,583,571,97.9,2.8,14.8,11.9,67.4,85.6,100,100
+Method x Corridor,bank_account,NZD→INR,579,562,97.1,1.6,6.2,26,77.2,94.3,100,100
+Method x Corridor,bank_account,USD→EUR,571,489,85.6,11.2,29.2,12.7,42.3,66.5,100,100
+Method x Corridor,bank_account,EUR→USD,522,487,93.3,19.7,28.3,9,27.1,63,100,100
+Method x Corridor,bank_account,AUD→THB,479,469,97.9,2.2,13.1,49,65,83.8,100,100
+Method x Corridor,bank_account,GBP→NZD,458,446,97.4,4.2,16.5,12.8,53.4,77.1,100,100
+Method x Corridor,bank_account,AUD→PHP,406,402,99,2.4,13,46,61.4,84.1,100,100
+Method x Corridor,bank_account,GBP→INR,345,329,95.4,0.8,10.6,58.7,72.3,86.3,100,100
+Method x Corridor,bank_account,USD→AUD,320,283,88.4,17.5,34.9,11.3,21.9,61.5,100,100
+Method x Corridor,bank_account,GBP→CAD,303,290,95.7,16.6,22.1,3.8,30.7,77.6,100,100
+Method x Corridor,bank_account,USD→INR,294,224,76.2,11.4,37.5,15.6,41.5,63.8,100,100
+Method x Corridor,bank_account,CAD→INR,268,229,85.4,8.7,23.4,1.3,34.1,70.7,100,100
+Method x Corridor,bank_account,NZD→EUR,260,248,95.4,2,10.8,16.1,70.2,87.1,100,100
+Method x Corridor,bank_account,NZD→GBP,246,238,96.7,2.3,11.1,12.6,68.1,87.4,100,100
+Method x Corridor,bank_account,CAD→EUR,243,218,89.7,18.4,32.6,1.4,29.8,56.4,100,100
+Method x Corridor,bank_account,AUD→ZAR,214,207,96.7,3.8,10.7,42.5,61.8,87,100,100
+Method x Corridor,bank_account,EUR→MAD,193,183,94.8,18,28,20.2,36.1,63.4,100,100
+Method x Corridor,bank_account,AUD→CAD,186,180,96.8,13.2,20.8,9.4,37.8,68.3,100,100
+Method x Corridor,bank_account,AUD→IDR,169,162,95.9,1.1,8.9,49.4,65.4,87,100,100
+Method x Corridor,bank_account,NZD→PHP,168,166,98.8,1.8,5.9,18.1,78.9,94.6,100,100
+Method x Corridor,bank_account,USD→USD,164,94,57.3,18.3,41.4,16,33,58.5,100,100
+Method x Corridor,bank_account,GBP→ZAR,164,163,99.4,2.2,14.4,46.6,57.1,82.8,100,100
+Method x Corridor,bank_account,CAD→GBP,157,145,92.4,11.5,28.6,2.8,37.2,72.4,100,100
+Method x Corridor,bank_account,AUD→MYR,149,143,96,3.5,14.1,42,60.8,83.2,100,100
+Method x Corridor,bank_account,CAD→MAD,146,131,89.7,9.1,26.4,0.8,35.9,74.8,100,100
+Method x Corridor,bank_account,EUR→AUD,145,132,91,18.3,34.1,13.6,30.3,61.4,100,100
+Method x Corridor,bank_account,USD→CAD,141,118,83.7,19.3,42.5,0,25.4,62.7,100,100
+Method x Corridor,bank_account,GBP→GBP,137,130,94.9,1.4,17.7,39.2,59.2,79.2,100,100
+Method x Corridor,bank_account,USD→NZD,132,119,90.2,20.7,37.5,4.2,29.4,58.8,100,100
+Method x Corridor,bank_account,CAD→MXN,118,116,98.3,11.5,25.6,0.9,34.5,75,100,100
+Method x Corridor,bank_account,EUR→CAD,111,105,94.6,22.7,37.5,0,6.7,52.4,100,100
+Method x Corridor,bank_account,EUR→THB,110,108,98.2,7.3,17.8,23.1,49.1,75.9,100,100
+Method x Corridor,bank_account,AUD→LKR,106,104,98.1,0.5,10,57.7,71.2,85.6,100,100
+Method x Corridor,bank_account,AUD→JPY,102,99,97.1,10.8,25.4,24.2,36.4,66.7,100,100
+Method x Corridor,bank_account,NZD→ZAR,101,101,100,1.7,6.3,22.8,83.2,94.1,100,100
+Method x Corridor,bank_account,GBP→THB,98,95,96.9,0.8,14.1,54.7,70.5,75.8,100,100
+Method x Corridor,bank_account,AUD→AUD,90,86,95.6,7.9,23.7,12.8,44.2,76.7,100,100
+Method x Corridor,bank_account,AUD→AED,87,84,96.6,7,17.7,40.5,48.8,76.2,100,100
+Method x Corridor,bank_account,GBP→PKR,86,76,88.4,0.8,14.9,53.9,65.8,78.9,100,100
+Method x Corridor,bank_account,GBP→AED,85,83,97.6,1,12.2,48.2,67.5,85.5,100,100
+Method x Corridor,bank_account,EUR→EUR,83,76,91.6,15.5,22.6,15.8,38.2,69.7,100,100
+Method x Corridor,bank_account,NZD→THB,67,66,98.5,1.8,6.6,18.2,77.3,95.5,100,100
+Method x Corridor,bank_account,EUR→NZD,66,54,81.8,12.6,32.5,9.3,33.3,63,100,100
+Method x Corridor,bank_account,CAD→PKR,64,46,71.9,10.4,22.4,0,28.3,71.7,100,100
+Method x Corridor,bank_account,CAD→AUD,64,55,85.9,21,55.4,1.8,18.2,54.5,100,100
+Method x Corridor,bank_account,AUD→PKR,63,63,100,3,16.4,42.9,58.7,76.2,100,100
+Method x Corridor,bank_account,AED→GBP,60,53,88.3,7,17.7,32.1,49.1,71.7,100,100
+Method x Corridor,bank_account,AUD→SGD,60,58,96.7,5.3,14.5,31,51.7,82.8,100,100
+Method x Corridor,bank_account,GBP→PHP,59,59,100,0.7,11.5,61,78,88.1,100,100
+Method x Corridor,bank_account,NZD→JPY,59,57,96.6,10.6,21.3,5.3,33.3,78.9,100,100
+Method x Corridor,bank_account,USD→MXN,58,47,81,5.4,26.2,12.8,51.1,74.5,100,100
+Method x Corridor,bank_account,GBP→JPY,56,53,94.6,19.7,28.6,32.1,37.7,64.2,100,100
+Method x Corridor,bank_account,EUR→AED,53,44,83,9.8,19.3,22.7,40.9,77.3,100,100
+Method x Corridor,bank_account,EUR→COP,53,49,92.5,23.6,43.9,22.4,38.8,53.1,100,100
+Method x Corridor,bank_account,CAD→THB,49,47,95.9,8.5,18.3,2.1,42.6,74.5,100,100
+Method x Corridor,bank_account,CAD→PHP,49,43,87.8,9.2,17.8,0,34.9,76.7,100,100
+Method x Corridor,bank_account,EUR→NAD,48,45,93.8,5.7,18,17.8,51.1,77.8,100,100
+Method x Corridor,bank_account,NZD→NZD,45,41,91.1,2.9,12.7,14.6,63.4,87.8,100,100
+Method x Corridor,bank_account,EUR→PHP,44,40,90.9,5.7,15.5,20,50,80,100,100
+Method x Corridor,bank_account,EUR→PLN,41,40,97.6,21.2,31.9,2.5,20,57.5,100,100
+Method x Corridor,bank_account,EUR→ZAR,40,39,97.5,16.7,44.1,23.1,43.6,71.8,100,100
+Method x Corridor,bank_account,AED→EUR,40,31,77.5,18.6,28.2,6.5,19.4,61.3,100,100
+Method x Corridor,bank_account,NZD→LKR,38,38,100,1.7,5.9,31.6,73.7,94.7,100,100
+Method x Corridor,bank_account,GBP→SEK,38,38,100,6.2,13.2,34.2,47.4,84.2,100,100
+Method x Corridor,bank_account,GBP→CHF,37,34,91.9,1,9.2,50,73.5,88.2,100,100
+Method x Corridor,bank_account,GBP→PLN,37,37,100,15.7,12.8,32.4,43.2,89.2,100,100
+Method x Corridor,bank_account,EUR→MUR,37,32,86.5,22.4,34.5,12.5,31.2,56.2,100,100
+Method x Corridor,bank_account,CAD→NZD,36,29,80.6,23.2,33.8,3.4,20.7,51.7,100,100
+Method x Corridor,bank_account,CAD→XOF,36,30,83.3,11.1,27.4,0,40,70,100,100
+Method x Corridor,bank_account,CAD→AED,36,29,80.6,13.4,30.2,0,27.6,62.1,100,100
+Method x Corridor,bank_account,NZD→CAD,35,32,91.4,10.8,23.8,6.2,40.6,71.9,100,100
+Method x Corridor,bank_account,AUD→HKD,35,34,97.1,9.7,19,20.6,35.3,79.4,100,100
+Method x Corridor,bank_account,AUD→COP,33,32,97,0.5,19.4,53.1,65.6,78.1,100,100
+Method x Corridor,bank_account,USD→THB,31,26,83.9,16.6,31.6,19.2,26.9,61.5,100,100
+Method x Corridor,bank_account,EUR→MXN,30,30,100,12.1,21.4,13.3,33.3,66.7,100,100
+Method x Corridor,bank_account,AUD→MXN,30,30,100,1.8,8.6,43.3,63.3,86.7,100,100
+Method x Corridor,bank_account,CHF→EUR,29,25,86.2,19,24.2,8,24,68,100,100
+Method x Corridor,bank_account,AUD→JOD,29,25,86.2,55.7,56.1,0,0,20,100,100
+Method x Corridor,bank_account,AUD→SAR,29,27,93.1,0.7,33.3,51.9,59.3,77.8,100,100
+Method x Corridor,bank_account,AUD→FJD,28,25,89.3,9.4,22.9,20,40,76,100,100
+Method x Corridor,bank_account,AUD→PEN,27,26,96.3,0.4,6.7,53.8,76.9,88.5,100,100
+Method x Corridor,bank_account,CAD→EGP,27,26,96.3,8.1,30.7,0,38.5,84.6,100,100
+Method x Corridor,bank_account,CAD→NAD,27,25,92.6,10.8,68.4,8,40,64,100,100
+Method x Corridor,bank_account,CAD→COP,27,25,92.6,8.9,20.2,0,36,76,100,100
+Method x Corridor,bank_account,NZD→PKR,25,24,96,1.5,6.3,20.8,75,91.7,100,100
+Method x Corridor,bank_account,GBP→LKR,25,25,100,0.7,7.7,64,64,92,100,100
+Method x Corridor,bank_account,USD→PHP,24,18,75,17.6,30,16.7,33.3,55.6,100,100
+Method x Corridor,bank_account,GBP→MAD,24,21,87.5,0.8,16.7,61.9,61.9,76.2,100,100
+Method x Corridor,bank_account,GBP→MUR,24,19,79.2,46.1,60.9,10.5,10.5,21.1,100,100
+Method x Corridor,bank_account,GBP→SAR,24,19,79.2,0.8,11.8,63.2,68.4,84.2,100,100
+Method x Corridor,bank_account,AUD→VND,24,23,95.8,8.7,25,30.4,43.5,65.2,100,100
+Method x Corridor,bank_account,CHF→GBP,23,23,100,19.1,33,13,30.4,60.9,100,100
+Method x Corridor,bank_account,CAD→ZAR,23,22,95.7,11.1,20.9,0,36.4,72.7,100,100
+Method x Corridor,bank_account,USD→CHF,23,23,100,11.2,17.3,17.4,39.1,82.6,100,100
+Method x Corridor,bank_account,USD→ZAR,22,20,90.9,21.1,53.1,5,35,50,100,100
+Method x Corridor,bank_account,EUR→PKR,21,18,85.7,14.8,17.3,22.2,38.9,77.8,100,100
+Method x Corridor,bank_account,GBP→CNY,21,19,90.5,20.8,38.7,15.8,15.8,52.6,100,100
+Method x Corridor,bank_account,GBP→NOK,21,20,95.2,0.9,5.1,60,70,100,100,100
+Method x Corridor,bank_account,GBP→MYR,21,21,100,0.8,18,52.4,66.7,81,100,100
+Method x Corridor,bank_account,GBP→DKK,20,20,100,2.4,21.6,50,60,75,100,100
+Method x Corridor,bank_account,GBP→NAD,20,19,95,0.9,10,52.6,78.9,89.5,100,100
+Method x Corridor,bank_account,CAD→CAD,20,12,60,15.5,35.7,8.3,25,75,100,100
+Method x Corridor,bank_account,CAD→SAR,20,18,90,7.6,33.1,0,38.9,66.7,100,100
+Method x Corridor,bank_account,AUD→TRY,20,19,95,0.4,7.9,68.4,73.7,89.5,100,100
+Method x Corridor,bank_account,AUD→PLN,20,19,95,0.5,13.6,52.6,63.2,78.9,100,100
+Method x Corridor,bank_account,NZD→FJD,20,20,100,6.6,9.5,5,50,95,100,100
+Method x Corridor,bank_account,GBP→ILS,20,19,95,1.4,9.7,47.4,68.4,89.5,100,100
+Method x Corridor,bank_account,USD→COP,19,17,89.5,23.1,64,5.9,23.5,52.9,100,100
+Method x Corridor,bank_account,EUR→JPY,19,16,84.2,22.7,31.4,12.5,18.8,50,100,100
+Method x Corridor,bank_account,NZD→SGD,19,19,100,3.2,16.1,21.1,63.2,73.7,100,100
+Method x Corridor,bank_account,EUR→PEN,19,18,94.7,39.9,42.5,22.2,33.3,44.4,100,100
+Method x Corridor,bank_account,AUD→NGN,18,15,83.3,0.5,6.2,53.3,66.7,86.7,100,100
+Method x Corridor,bank_account,GBP→TRY,18,16,88.9,2.4,25.1,43.8,75,81.2,100,100
+Method x Corridor,bank_account,NZD→MYR,18,18,100,1.9,3.7,27.8,77.8,100,100,100
+Method x Corridor,bank_account,AUD→CHF,18,16,88.9,8.8,11.7,18.8,43.8,87.5,100,100
+Method x Corridor,bank_account,EUR→IDR,17,16,94.1,3.8,16.6,31.2,62.5,75,100,100
+Method x Corridor,bank_account,CAD→NGN,17,6,35.3,6.2,15.2,0,50,83.3,100,100
+Method x Corridor,bank_account,USD→JPY,17,14,82.4,17.8,38.9,7.1,7.1,71.4,100,100
+Method x Corridor,bank_account,AUD→EGP,17,16,94.1,13.8,30.2,31.2,37.5,56.2,100,100
+Method x Corridor,bank_account,GBP→HKD,17,17,100,17.5,22.9,23.5,23.5,76.5,100,100
+Method x Corridor,bank_account,SEK→USD,16,11,68.8,61.4,94.6,0,9.1,18.2,100,100
+Method x Corridor,bank_account,AUD→BWP,16,15,93.8,0.4,4.5,60,80,93.3,100,100
+Method x Corridor,bank_account,AUD→NOK,16,15,93.8,0.5,8.1,60,60,86.7,100,100
+Method x Corridor,bank_account,GBP→IDR,16,16,100,0.6,3.7,68.8,93.8,93.8,100,100
+Method x Corridor,bank_account,QAR→GBP,16,6,37.5,50.8,47,0,0,33.3,100,100
+Method x Corridor,bank_account,AUD→SEK,16,15,93.8,6.3,19.5,33.3,46.7,66.7,100,100
+Method x Corridor,bank_account,USD→AED,16,13,81.2,16.7,38.2,0,30.8,69.2,100,100
+Method x Corridor,bank_account,GBP→COP,15,13,86.7,0.9,20.9,53.8,61.5,69.2,100,100
+Method x Corridor,bank_account,EUR→ILS,15,13,86.7,22.2,33.2,15.4,23.1,53.8,100,100
+Method x Corridor,bank_account,EUR→CHF,15,13,86.7,4.8,23.2,7.7,53.8,69.2,100,100
+Method x Corridor,bank_account,GBP→MXN,15,15,100,0.7,10.5,73.3,73.3,86.7,100,100
+Method x Corridor,bank_account,NZD→PEN,15,13,86.7,1.7,1.6,23.1,100,100,100,100
+Method x Corridor,bank_account,USD→MAD,14,11,78.6,19.1,44.5,9.1,27.3,63.6,100,100
+Method x Corridor,bank_account,EUR→XOF,14,14,100,5,18.7,14.3,57.1,85.7,100,100
+Method x Corridor,bank_account,GBP→QAR,14,14,100,1.1,5.9,50,71.4,92.9,100,100
+Method x Corridor,bank_account,GBP→CZK,13,13,100,0.9,7.7,53.8,69.2,92.3,100,100
+Method x Corridor,bank_account,GBP→UGX,13,13,100,20.1,21.8,30.8,30.8,69.2,100,100
+Method x Corridor,bank_account,NZD→COP,12,12,100,1.2,1.4,41.7,100,100,100,100
+Method x Corridor,bank_account,AUD→CNH,12,11,91.7,9.6,11.3,9.1,36.4,90.9,100,100
+Method x Corridor,bank_account,USD→PKR,12,7,58.3,43.4,57.2,28.6,28.6,28.6,100,100
+Method x Corridor,bank_account,EUR→CZK,12,12,100,27.1,39.6,8.3,8.3,41.7,100,100
+Method x Corridor,bank_account,EUR→LKR,12,11,91.7,22.2,27.7,27.3,27.3,54.5,100,100
+Method x Corridor,bank_account,CAD→PEN,12,12,100,6.9,17.7,0,41.7,66.7,100,100
+Method x Corridor,bank_account,AUD→NPR,12,11,91.7,6.2,25.2,36.4,45.5,81.8,100,100
+Method x Corridor,bank_account,CAD→ETB,12,9,75,8.2,48.3,11.1,44.4,66.7,100,100
+Method x Corridor,bank_account,NZD→BDT,12,12,100,1.3,22.7,33.3,58.3,75,100,100
+Method x Corridor,bank_account,CAD→BWP,12,11,91.7,6.9,44.2,0,45.5,81.8,100,100
+Method x Corridor,bank_account,AUD→KWD,12,10,83.3,38.4,56,0,0,0,100,100
+Method x Corridor,bank_account,EUR→TRY,12,11,91.7,22.7,77.6,9.1,18.2,54.5,100,100
+Method x Corridor,bank_account,GBP→SGD,12,12,100,1.3,15.9,41.7,58.3,83.3,100,100
+Method x Corridor,bank_account,AUD→CLP,11,9,81.8,14.1,22,33.3,33.3,55.6,100,100
+Method x Corridor,bank_account,EUR→OMR,11,10,90.9,33.3,55.9,0,10,50,100,100
+Method x Corridor,bank_account,CHF→USD,11,11,100,28.4,40.4,9.1,9.1,36.4,100,100
+Method x Corridor,bank_account,EUR→JOD,11,11,100,24.2,47.7,0,0,45.5,100,100
+Method x Corridor,bank_account,GBP→KES,11,10,90.9,42.1,50.7,10,20,30,100,100
+Method x Corridor,bank_account,EUR→SEK,11,11,100,21.3,26,0,18.2,72.7,100,100
+Method x Corridor,bank_account,AUD→ILS,11,11,100,0.4,12.3,54.5,54.5,81.8,100,100
+Method x Corridor,bank_account,AUD→MUR,11,10,90.9,36.4,45.1,30,30,50,100,100
+Method x Corridor,bank_account,NZD→AED,11,10,90.9,2.1,6.2,30,70,90,100,100
+Method x Corridor,bank_account,USD→MYR,11,10,90.9,18.5,20.5,10,30,90,100,100
+Method x Corridor,bank_account,USD→SEK,11,11,100,14.5,37.5,0,18.2,72.7,100,100
+Method x Corridor,bank_account,AUD→BDT,11,10,90.9,1.1,2.5,50,80,100,100,100
+Method x Corridor,bank_account,AUD→DKK,11,10,90.9,7.3,10.3,30,30,90,100,100
+Method x Corridor,bank_account,GBP→BDT,11,11,100,1,14.5,45.5,63.6,81.8,100,100
+Method x Corridor,bank_account,NZD→IDR,10,10,100,1.7,1.5,20,100,100,100,100
+Method x Corridor,bank_account,AED→AUD,10,6,60,12.4,38.8,16.7,33.3,66.7,100,100
+Method x Corridor,bank_account,EUR→SAR,10,10,100,19.5,28.2,0,20,70,100,100
+Method x Corridor,bank_account,CAD→PLN,10,8,80,8.4,11.9,0,37.5,87.5,100,100
+Method x Corridor,bank_account,CAD→RON,10,10,100,5.1,27.9,0,60,70,100,100
+Method x Corridor,bank_account,CAD→IDR,10,10,100,6.7,7.7,0,40,100,100,100
+Method x Corridor,bank_account,NZD→CHF,10,10,100,5.2,10.6,0,50,80,100,100
+Method x Corridor,bank_account,AUD→WST,9,8,88.9,5.9,21.3,37.5,50,75,100,100
+Method x Corridor,bank_account,NZD→CNH,9,9,100,4.3,7.7,0,66.7,100,100,100
+Method x Corridor,bank_account,AUD→PGK,9,8,88.9,1.3,6.5,50,62.5,100,100,100
+Method x Corridor,bank_account,EUR→MGA,9,7,77.8,67.1,70.7,0,0,0,100,100
+Method x Corridor,bank_account,EUR→BWP,9,9,100,4.2,13.9,22.2,55.6,77.8,100,100
+Method x Corridor,bank_account,EUR→NPR,9,7,77.8,1.5,10,42.9,57.1,85.7,100,100
+Method x Corridor,bank_account,CAD→TRY,9,8,88.9,22.2,21.5,0,37.5,50,100,100
+Method x Corridor,bank_account,GBP→NPR,9,9,100,1.9,2,44.4,88.9,100,100,100
+Method x Corridor,bank_account,USD→SGD,9,9,100,2.5,7.3,44.4,55.6,88.9,100,100
+Method x Corridor,bank_account,CAD→KRW,8,7,87.5,11.3,23.8,0,14.3,71.4,100,100
+Method x Corridor,bank_account,AED→USD,8,6,75,49,57.4,0,0,33.3,100,100
+Method x Corridor,bank_account,GBP→RON,8,7,87.5,0.8,2.5,57.1,85.7,100,100,100
+Method x Corridor,bank_account,CAD→DOP,8,7,87.5,13.8,19.6,0,28.6,85.7,100,100
+Method x Corridor,bank_account,USD→BDT,8,4,50,20.3,38.3,0,0,75,100,100
+Method x Corridor,bank_account,CAD→NPR,8,7,87.5,21.6,28.2,0,28.6,57.1,100,100
+Method x Corridor,direct_debit,USD→INR,8639,7734,89.5,116,112.5,0.3,0.5,1.1,16.3,92.6
+Method x Corridor,direct_debit,USD→EUR,1803,1653,91.7,93.7,89.9,0.5,2.3,13.7,34.5,96.4
+Method x Corridor,direct_debit,USD→CAD,1181,1031,87.3,91.5,88.4,1.5,7,12.2,27.2,99.9
+Method x Corridor,direct_debit,CAD→USD,926,829,89.5,96.4,91.7,1.4,8.3,12.1,21.2,99.4
+Method x Corridor,direct_debit,USD→GBP,797,731,91.7,91.6,86.7,0.7,2.5,11.6,37.5,99.9
+Method x Corridor,direct_debit,USD→USD,704,571,81.1,71.4,72.2,2.1,10.9,25.6,51.5,99.6
+Method x Corridor,direct_debit,USD→MXN,671,606,90.3,109.2,94.3,0.5,2,5.1,32.8,99.3
+Method x Corridor,direct_debit,USD→PHP,495,419,84.6,111.8,100.2,0,1.7,4.3,23.4,99
+Method x Corridor,direct_debit,CAD→EUR,333,297,89.2,100.3,96.2,1.7,7.1,11.4,20.5,96
+Method x Corridor,direct_debit,USD→THB,296,262,88.5,112.2,100.5,0.4,1.1,2.7,19.5,99.6
+Method x Corridor,direct_debit,USD→AUD,296,266,89.9,91.1,91.2,1.1,1.9,10.5,30.5,97
+Method x Corridor,direct_debit,CAD→INR,293,262,89.4,117.4,112.6,0.4,0.8,1.9,7.6,93.1
+Method x Corridor,direct_debit,USD→COP,251,223,88.8,109,94.4,0,1.3,3.1,31.8,100
+Method x Corridor,direct_debit,USD→ZAR,215,192,89.3,87.8,86.2,2.1,2.1,9.9,38.5,100
+Method x Corridor,direct_debit,USD→AED,181,164,90.6,112.8,102.5,0.6,1.8,4.3,22.6,98.2
+Method x Corridor,direct_debit,CAD→MXN,162,150,92.6,116.3,101.3,0,0.7,2,12.7,100
+Method x Corridor,direct_debit,USD→PKR,133,112,84.2,100.7,94.1,3.6,3.6,7.1,24.1,100
+Method x Corridor,direct_debit,USD→JPY,126,110,87.3,104.3,88.6,0.9,1.8,13.6,39.1,99.1
+Method x Corridor,direct_debit,CAD→GBP,117,106,90.6,116,98.1,1.9,2.8,7.5,17,100
+Method x Corridor,direct_debit,USD→NZD,96,88,91.7,109.2,94.4,0,0,10.2,25,98.9
+Method x Corridor,direct_debit,USD→ILS,94,82,87.2,95.4,96.8,0,0,1.2,24.4,96.3
+Method x Corridor,direct_debit,USD→MAD,93,80,86,115.7,100.7,2.5,2.5,2.5,17.5,100
+Method x Corridor,direct_debit,CAD→MAD,90,74,82.2,116.7,105.1,0,0,0,6.8,100
+Method x Corridor,direct_debit,USD→MYR,83,69,83.1,109.6,101.1,0,0,0,20.3,100
+Method x Corridor,direct_debit,USD→IDR,75,66,88,109.2,99.6,3,3,4.5,25.8,95.5
+Method x Corridor,direct_debit,AUD→USD,58,57,98.3,1.4,20,42.1,63.2,86,94.7,96.5
+Method x Corridor,direct_debit,CAD→PKR,57,48,84.2,117.2,103,0,2.1,4.2,14.6,100
+Method x Corridor,direct_debit,CAD→AUD,55,53,96.4,108.2,103.9,1.9,3.8,5.7,22.6,94.3
+Method x Corridor,direct_debit,CAD→AED,55,47,85.5,110.6,106.8,0,4.3,4.3,10.6,97.9
+Method x Corridor,direct_debit,CAD→CAD,54,46,85.2,43.4,50.6,8.7,30.4,45.7,65.2,100
+Method x Corridor,direct_debit,USD→SEK,50,46,92,84.6,82.2,0,2.2,19.6,41.3,100
+Method x Corridor,direct_debit,USD→CHF,50,45,90,67.7,71.8,2.2,4.4,26.7,57.8,100
+Method x Corridor,direct_debit,USD→KRW,48,39,81.2,109.8,91.8,0,2.6,10.3,25.6,100
+Method x Corridor,direct_debit,USD→PLN,48,41,85.4,101.7,91.8,0,0,7.3,31.7,100
+Method x Corridor,direct_debit,USD→XOF,45,43,95.6,93.7,89.1,4.7,7,9.3,32.6,100
+Method x Corridor,direct_debit,CAD→THB,41,35,85.4,104.3,106,0,0,0,2.9,100
+Method x Corridor,direct_debit,USD→SGD,41,35,85.4,84.5,84.6,0,5.7,20,40,97.1
+Method x Corridor,direct_debit,CAD→ZAR,40,34,85,80.1,90.3,0,0,2.9,29.4,100
+Method x Corridor,direct_debit,USD→LKR,40,36,90,111.5,100.6,0,2.8,5.6,22.2,100
+Method x Corridor,direct_debit,USD→CLP,38,38,100,96.5,96.2,0,0,2.6,26.3,100
+Method x Corridor,direct_debit,USD→UGX,37,35,94.6,111.1,94.9,0,0,5.7,28.6,100
+Method x Corridor,direct_debit,USD→SAR,36,36,100,114.6,111.5,0,0,5.6,16.7,91.7
+Method x Corridor,direct_debit,USD→HKD,35,32,91.4,79.5,79.2,0,3.1,21.9,43.8,100
+Method x Corridor,direct_debit,AUD→EUR,33,33,100,1,10.3,51.5,69.7,87.9,97,100
+Method x Corridor,direct_debit,CAD→PHP,31,27,87.1,99,96.9,0,3.7,7.4,18.5,100
+Method x Corridor,direct_debit,CAD→PLN,31,29,93.5,99.7,105.4,0,0,0,6.9,100
+Method x Corridor,direct_debit,USD→BRL,30,30,100,91.2,89.5,0,3.3,6.7,36.7,100
+Method x Corridor,direct_debit,USD→VND,30,22,73.3,77.5,86.1,0,0,4.5,36.4,100
+Method x Corridor,direct_debit,USD→NOK,30,30,100,110.2,94.1,0,0,10,26.7,100
+Method x Corridor,direct_debit,USD→KES,28,24,85.7,83.4,81.1,0,8.3,8.3,37.5,100
+Method x Corridor,direct_debit,USD→NPR,28,25,89.3,96.3,98.2,0,0,0,20,100
+Method x Corridor,direct_debit,USD→HUF,27,25,92.6,115.6,93.4,0,4,16,40,96
+Method x Corridor,direct_debit,USD→TRY,25,23,92,110.6,88.3,0,8.7,17.4,30.4,100
+Method x Corridor,direct_debit,USD→NGN,25,14,56,107.4,98,0,0,7.1,28.6,92.9
+Method x Corridor,direct_debit,USD→CZK,25,23,92,82.5,79.9,0,8.7,17.4,43.5,100
+Method x Corridor,direct_debit,USD→TWD,23,22,95.7,101.4,97.1,0,0,9.1,27.3,100
+Method x Corridor,direct_debit,USD→BDT,23,21,91.3,94.1,93.2,0,0,4.8,33.3,100
+Method x Corridor,direct_debit,CAD→MUR,21,16,76.2,124.3,114.5,0,0,6.2,6.2,100
+Method x Corridor,direct_debit,CAD→EGP,21,14,66.7,125,104,0,0,7.1,28.6,100
+Method x Corridor,direct_debit,USD→CNY,20,16,80,110,98.8,0,0,6.2,25,100
+Method x Corridor,direct_debit,CAD→JPY,20,18,90,80,78.3,0,5.6,16.7,33.3,100
+Method x Corridor,direct_debit,USD→RON,20,17,85,114.8,102.1,0,0,0,17.6,100
+Method x Corridor,direct_debit,USD→DOP,19,14,73.7,111,102.4,0,0,0,21.4,100
+Method x Corridor,direct_debit,CAD→RON,19,16,84.2,98.7,96.4,0,0,6.2,12.5,100
+Method x Corridor,direct_debit,USD→NAD,18,17,94.4,116,105.8,0,0,0,17.6,100
+Method x Corridor,direct_debit,CAD→NZD,18,17,94.4,122.2,105.8,0,0,0,29.4,100
+Method x Corridor,direct_debit,USD→GTQ,17,16,94.1,115.4,99.8,6.2,6.2,6.2,25,100
+Method x Corridor,direct_debit,USD→DKK,17,15,88.2,113.1,95.6,0,0,6.7,33.3,100
+Method x Corridor,direct_debit,CAD→COP,16,14,87.5,130.1,120.7,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→NAD,16,12,75,125.2,113.8,0,0,8.3,16.7,91.7
+Method x Corridor,direct_debit,CAD→ILS,15,15,100,80.3,88.2,0,0,6.7,20,100
+Method x Corridor,direct_debit,CAD→TRY,15,12,80,122.6,120.9,0,0,0,0,100
+Method x Corridor,direct_debit,USD→JOD,15,9,60,114.2,104,0,0,11.1,11.1,100
+Method x Corridor,direct_debit,CAD→SAR,15,14,93.3,134.3,142.4,0,0,7.1,7.1,78.6
+Method x Corridor,direct_debit,USD→KWD,15,14,93.3,130.9,122.9,7.1,7.1,14.3,21.4,85.7
+Method x Corridor,direct_debit,CAD→KWD,14,10,71.4,132.4,146.9,0,0,0,0,70
+Method x Corridor,direct_debit,USD→OMR,14,12,85.7,117,106.5,0,0,8.3,16.7,100
+Method x Corridor,direct_debit,USD→QAR,14,13,92.9,117.4,105.2,0,0,7.7,15.4,100
+Method x Corridor,direct_debit,CAD→XOF,13,13,100,120.6,110.5,0,0,0,15.4,100
+Method x Corridor,direct_debit,USD→ARS,13,11,84.6,114.4,100.1,0,0,0,18.2,100
+Method x Corridor,direct_debit,USD→JMD,12,8,66.7,117.1,107.1,0,0,0,12.5,100
+Method x Corridor,direct_debit,USD→BHD,12,9,75,115.6,97.3,0,0,11.1,33.3,100
+Method x Corridor,direct_debit,NZD→USD,11,11,100,1.4,7.3,45.5,90.9,90.9,100,100
+Method x Corridor,direct_debit,AUD→GBP,11,11,100,1.1,3.9,45.5,81.8,100,100,100
+Method x Corridor,direct_debit,CAD→DOP,11,11,100,124,112,0,0,0,9.1,100
+Method x Corridor,direct_debit,CAD→KRW,11,11,100,107.8,100.8,0,0,9.1,18.2,100
+Method x Corridor,direct_debit,USD→ZMW,11,11,100,96.7,113.2,0,0,9.1,27.3,90.9
+Method x Corridor,direct_debit,USD→TTD,11,6,54.5,123.3,109.2,0,0,0,16.7,100
+Method x Corridor,direct_debit,USD→BWP,11,9,81.8,111.1,126.7,0,0,11.1,33.3,77.8
+Method x Corridor,direct_debit,CAD→JOD,10,8,80,108.1,103.1,0,0,0,25,100
+Method x Corridor,direct_debit,USD→GHS,10,8,80,105.8,89.1,0,0,12.5,37.5,100
+Method x Corridor,direct_debit,USD→ETB,10,10,100,114.9,104.7,0,0,0,30,100
+Method x Corridor,direct_debit,USD→EGP,10,7,70,118.5,122.3,0,0,0,0,100
+Method x Corridor,direct_debit,USD→FJD,10,8,80,75.7,74.4,0,0,25,37.5,100
+Method x Corridor,direct_debit,CAD→CHF,10,9,90,119.1,101.4,0,0,11.1,22.2,100
+Method x Corridor,direct_debit,AUD→NZD,9,9,100,17.9,32.6,11.1,44.4,66.7,77.8,100
+Method x Corridor,direct_debit,USD→HNL,9,9,100,110.3,102.3,0,0,0,22.2,100
+Method x Corridor,direct_debit,CAD→IDR,9,9,100,120,115.3,0,0,0,0,100
+Method x Corridor,direct_debit,USD→TND,8,7,87.5,71.7,80.9,0,0,0,57.1,100
+Method x Corridor,direct_debit,USD→PEN,8,8,100,104.1,89,0,12.5,12.5,25,100
+Method x Corridor,direct_debit,CAD→HKD,8,8,100,83.6,80.7,0,0,12.5,50,100
+Method x Corridor,direct_debit,USD→CRC,8,8,100,113.6,103.9,0,0,0,25,100
+Method x Corridor,direct_debit,CAD→SEK,8,8,100,80.2,117.8,0,0,12.5,50,87.5
+Method x Corridor,direct_debit,CAD→CLP,8,7,87.5,101,109,0,0,0,28.6,85.7
+Method x Corridor,direct_debit,CAD→BBD,7,7,100,118.5,104.6,0,0,0,14.3,100
+Method x Corridor,direct_debit,AUD→AUD,7,6,85.7,16.5,13.3,16.7,33.3,100,100,100
+Method x Corridor,direct_debit,CAD→PEN,7,6,85.7,97.7,103,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→PHP,6,6,100,11.3,10.9,33.3,50,100,100,100
+Method x Corridor,direct_debit,USD→BAM,6,6,100,97,93.6,0,0,0,33.3,100
+Method x Corridor,direct_debit,CAD→KES,6,6,100,93.4,89.6,0,0,0,50,100
+Method x Corridor,direct_debit,CAD→NPR,6,5,83.3,100.4,101.8,0,0,0,20,100
+Method x Corridor,direct_debit,CAD→XCD,6,5,83.3,117.4,93.6,0,20,20,20,100
+Method x Corridor,direct_debit,CAD→CNY,5,5,100,20.7,48.6,0,20,60,60,100
+Method x Corridor,direct_debit,CAD→BAM,5,5,100,104,101.4,0,0,0,0,100
+Method x Corridor,direct_debit,USD→MUR,5,4,80,69.2,128.3,0,0,0,75,75
+Method x Corridor,direct_debit,NZD→AUD,5,5,100,5.7,19,0,60,80,100,100
+Method x Corridor,direct_debit,CAD→LKR,5,4,80,81.1,88.5,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→CZK,5,3,60,96,82.5,0,0,33.3,33.3,100
+Method x Corridor,direct_debit,CAD→BHD,5,5,100,139.3,130,0,0,0,0,100
+Method x Corridor,direct_debit,NZD→CNH,4,4,100,2.7,3.1,0,100,100,100,100
+Method x Corridor,direct_debit,CAD→ZMW,4,4,100,99.7,97.9,0,0,0,25,100
+Method x Corridor,direct_debit,USD→ALL,4,4,100,94.6,94.9,0,0,0,50,100
+Method x Corridor,direct_debit,AUD→INR,4,4,100,14.8,12,25,25,100,100,100
+Method x Corridor,direct_debit,AUD→ZAR,4,4,100,9,27.4,0,50,75,75,100
+Method x Corridor,direct_debit,CAD→QAR,4,2,50,137.3,137.3,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→BWP,4,3,75,110.5,108,0,0,0,0,100
+Method x Corridor,direct_debit,USD→CVE,4,3,75,115.8,101.6,0,0,0,33.3,100
+Method x Corridor,direct_debit,USD→TZS,4,2,50,116,116,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→TND,4,4,100,77.3,77.3,0,0,0,25,100
+Method x Corridor,direct_debit,NZD→EUR,3,3,100,0.7,1,66.7,100,100,100,100
+Method x Corridor,direct_debit,CAD→ETB,3,3,100,135,116.7,0,0,0,0,100
+Method x Corridor,direct_debit,USD→AMD,3,2,66.7,113.8,113.8,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→CRC,3,3,100,95.4,110.6,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→UGX,3,2,66.7,99.4,99.4,0,0,0,0,100
+Method x Corridor,direct_debit,USD→BSD,3,3,100,112,106.3,0,0,0,0,100
+Method x Corridor,direct_debit,USD→MGA,3,1,33.3,67,67,0,0,0,100,100
+Method x Corridor,direct_debit,CAD→OMR,3,3,100,121.4,121.6,0,0,0,0,100
+Method x Corridor,direct_debit,USD→BBD,3,3,100,72.8,83.7,0,0,0,33.3,100
+Method x Corridor,direct_debit,USD→RWF,3,2,66.7,98.1,98.1,0,0,0,0,100
+Method x Corridor,direct_debit,USD→KHR,3,2,66.7,123,123,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→NOK,3,3,100,128.7,94.2,0,0,33.3,33.3,100
+Method x Corridor,direct_debit,USD→PGK,2,1,50,130.7,130.7,0,0,0,0,100
+Method x Corridor,direct_debit,USD→BND,2,1,50,113.4,113.4,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→TTD,2,2,100,123.3,123.3,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→HNL,2,2,100,106.3,106.3,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→RSD,2,1,50,74.4,74.4,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→JPY,2,2,100,11.3,11.3,50,50,100,100,100
+Method x Corridor,direct_debit,AUD→SEK,2,2,100,12.2,12.2,50,50,100,100,100
+Method x Corridor,direct_debit,CAD→DKK,2,1,50,96.3,96.3,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→SGD,2,2,100,58.8,58.8,0,50,50,50,100
+Method x Corridor,direct_debit,USD→MZN,2,2,100,81.9,81.9,0,0,0,50,100
+Method x Corridor,direct_debit,CAD→XAF,2,2,100,107.4,107.4,0,0,0,0,100
+Method x Corridor,direct_debit,USD→DZD,2,2,100,145.9,145.9,0,0,0,0,100
+Method x Corridor,direct_debit,USD→XAF,2,2,100,32.2,32.2,50,50,50,100,100
+Method x Corridor,direct_debit,USD→XCD,2,1,50,72.6,72.6,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→NAD,1,1,100,3.2,3.2,0,100,100,100,100
+Method x Corridor,direct_debit,NZD→PHP,1,1,100,0.6,0.6,100,100,100,100,100
+Method x Corridor,direct_debit,USD→SLE,1,1,100,21.3,21.3,0,0,100,100,100
+Method x Corridor,direct_debit,USD→KMF,1,1,100,118.9,118.9,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→NPR,1,1,100,15.6,15.6,0,0,100,100,100
+Method x Corridor,direct_debit,CAD→GEL,1,1,100,97.8,97.8,0,0,0,0,100
+Method x Corridor,direct_debit,USD→GEL,1,1,100,122.4,122.4,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→CNH,1,1,100,23.1,23.1,0,0,100,100,100
+Method x Corridor,direct_debit,USD→TOP,1,1,100,111.3,111.3,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→ALL,1,1,100,134.9,134.9,0,0,0,0,100
+Method x Corridor,direct_debit,USD→GYD,1,1,100,133.5,133.5,0,0,0,0,100
+Method x Corridor,direct_debit,USD→BOB,1,1,100,84.1,84.1,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→MWK,1,1,100,70.7,70.7,0,0,0,100,100
+Method x Corridor,direct_debit,CAD→LSL,1,1,100,124.8,124.8,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→NGN,1,1,100,117.1,117.1,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→PKR,1,1,100,27.5,27.5,0,0,0,100,100
+Method x Corridor,direct_debit,AUD→HKD,1,1,100,13.9,13.9,0,0,100,100,100
+Method x Corridor,direct_debit,NZD→NZD,1,1,100,65.6,65.6,0,0,0,100,100
+Method x Corridor,direct_debit,USD→LSL,1,1,100,142.7,142.7,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→BDT,1,1,100,122.3,122.3,0,0,0,0,100
+Method x Corridor,direct_debit,USD→RSD,1,1,100,73,73,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→FJD,1,1,100,19,19,0,0,100,100,100
+Method x Corridor,direct_debit,AUD→BRL,1,1,100,14.6,14.6,0,0,100,100,100
+Method x Corridor,direct_debit,CAD→ARS,1,1,100,119.2,119.2,0,0,0,0,100
+Method x Corridor,direct_debit,NZD→IDR,1,1,100,0.3,0.3,100,100,100,100,100
+Method x Corridor,direct_debit,CAD→VND,1,1,100,117.6,117.6,0,0,0,0,100
+Method x Corridor,direct_debit,CAD→TZS,1,1,100,120.5,120.5,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→THB,1,1,100,11.8,11.8,0,0,100,100,100
+Method x Corridor,direct_debit,AUD→SGD,1,1,100,0.1,0.1,100,100,100,100,100
+Method x Corridor,direct_debit,CAD→MNT,1,1,100,83.6,83.6,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→VND,1,1,100,70.3,70.3,0,0,0,100,100
+Method x Corridor,direct_debit,USD→MKD,1,1,100,119.9,119.9,0,0,0,0,100
+Method x Corridor,direct_debit,NZD→GBP,1,1,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,direct_debit,USD→MNT,1,1,100,118,118,0,0,0,0,100
+Method x Corridor,direct_debit,AUD→IDR,1,1,100,7.3,7.3,0,0,100,100,100
+Method x Corridor,open_banking,EUR→INR,1867,1842,98.7,0.8,9.4,62.4,78.6,87.6,100,100
+Method x Corridor,open_banking,GBP→EUR,837,827,98.8,0.5,3.6,86.7,91.2,95.6,100,100
+Method x Corridor,open_banking,GBP→INR,367,353,96.2,0.5,3.9,92.4,94.3,95.8,100,100
+Method x Corridor,open_banking,GBP→USD,296,292,98.6,4,12.6,23.3,56.5,86.6,100,100
+Method x Corridor,open_banking,EUR→USD,220,209,95,14.9,19.5,10,27.3,73.2,100,100
+Method x Corridor,open_banking,EUR→MAD,211,199,94.3,0.8,11,58.8,77.4,87.4,100,100
+Method x Corridor,open_banking,GBP→NAD,203,202,99.5,0.5,3.4,94.6,95.5,97,100,100
+Method x Corridor,open_banking,GBP→AUD,187,186,99.5,0.5,6.4,78,84.9,89.8,100,100
+Method x Corridor,open_banking,GBP→ZAR,157,155,98.7,0.5,5.5,85.2,87.7,94.8,100,100
+Method x Corridor,open_banking,EUR→THB,122,118,96.7,0.8,14.5,61,70.3,79.7,100,100
+Method x Corridor,open_banking,GBP→THB,114,113,99.1,0.5,3.2,90.3,92.9,93.8,100,100
+Method x Corridor,open_banking,EUR→NAD,105,104,99,0.8,8.8,65.4,78.8,88.5,100,100
+Method x Corridor,open_banking,GBP→CAD,103,102,99,11.8,15.9,4.9,41.2,84.3,100,100
+Method x Corridor,open_banking,GBP→NZD,80,77,96.2,1.3,8.8,46.8,71.4,87,100,100
+Method x Corridor,open_banking,EUR→GBP,79,74,93.7,1.8,13.6,37.8,54.1,81.1,100,100
+Method x Corridor,open_banking,EUR→COP,75,73,97.3,0.9,10.5,52.1,65.8,90.4,100,100
+Method x Corridor,open_banking,GBP→AED,70,69,98.6,0.5,2.5,88.4,94.2,95.7,100,100
+Method x Corridor,open_banking,EUR→ETB,70,70,100,1.6,16.4,45.7,62.9,80,100,100
+Method x Corridor,open_banking,EUR→ZAR,60,57,95,3,14.3,42.1,61.4,84.2,100,100
+Method x Corridor,open_banking,GBP→MAD,51,50,98,0.5,1.9,88,94,98,100,100
+Method x Corridor,open_banking,EUR→TRY,51,50,98,0.9,9.4,52,76,84,100,100
+Method x Corridor,open_banking,GBP→PKR,48,46,95.8,0.6,6.6,73.9,73.9,95.7,100,100
+Method x Corridor,open_banking,GBP→SAR,48,46,95.8,0.5,2.8,84.8,91.3,95.7,100,100
+Method x Corridor,open_banking,EUR→PHP,48,46,95.8,2.2,11.4,43.5,58.7,82.6,100,100
+Method x Corridor,open_banking,GBP→TRY,47,46,97.9,0.5,6.1,93.5,93.5,95.7,100,100
+Method x Corridor,open_banking,GBP→PHP,44,44,100,0.5,3.5,86.4,90.9,95.5,100,100
+Method x Corridor,open_banking,EUR→AED,41,40,97.6,4.6,12.5,37.5,52.5,82.5,100,100
+Method x Corridor,open_banking,GBP→BWP,38,38,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,EUR→CAD,37,33,89.2,20.8,25.7,0,18.2,54.5,100,100
+Method x Corridor,open_banking,EUR→SAR,36,35,97.2,0.9,8.4,57.1,77.1,88.6,100,100
+Method x Corridor,open_banking,EUR→LKR,34,34,100,0.9,9.7,61.8,70.6,85.3,100,100
+Method x Corridor,open_banking,EUR→MUR,33,29,87.9,0.9,16.9,55.2,69,79.3,100,100
+Method x Corridor,open_banking,EUR→IDR,33,32,97,1.4,12.1,40.6,65.6,81.2,100,100
+Method x Corridor,open_banking,GBP→MUR,28,27,96.4,0.6,15.3,66.7,66.7,85.2,100,100
+Method x Corridor,open_banking,EUR→MXN,24,23,95.8,2.2,16.4,43.5,65.2,82.6,100,100
+Method x Corridor,open_banking,GBP→COP,24,24,100,0.6,6.3,75,79.2,91.7,100,100
+Method x Corridor,open_banking,GBP→LKR,23,23,100,0.5,3.2,91.3,91.3,95.7,100,100
+Method x Corridor,open_banking,GBP→SEK,22,22,100,0.9,6,59.1,68.2,95.5,100,100
+Method x Corridor,open_banking,EUR→PKR,21,21,100,0.8,13,52.4,61.9,81,100,100
+Method x Corridor,open_banking,EUR→PEN,21,21,100,1.1,13.4,47.6,66.7,85.7,100,100
+Method x Corridor,open_banking,EUR→AUD,20,19,95,11.5,42.7,47.4,47.4,63.2,100,100
+Method x Corridor,open_banking,GBP→ETB,20,20,100,0.6,0.5,100,100,100,100,100
+Method x Corridor,open_banking,GBP→PLN,16,16,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,GBP→MYR,15,14,93.3,0.3,1.1,92.9,92.9,100,100,100
+Method x Corridor,open_banking,GBP→ILS,14,13,92.9,0.6,3.9,69.2,76.9,100,100,100
+Method x Corridor,open_banking,GBP→JPY,14,14,100,0.5,1.5,92.9,92.9,100,100,100
+Method x Corridor,open_banking,EUR→EGP,13,13,100,1.1,9.3,46.2,53.8,84.6,100,100
+Method x Corridor,open_banking,GBP→XCD,12,9,75,62.5,66.4,0,0,0,100,100
+Method x Corridor,open_banking,GBP→TTD,12,10,83.3,76.1,72.8,0,0,0,100,100
+Method x Corridor,open_banking,EUR→NZD,11,10,90.9,32.1,34.7,30,40,40,100,100
+Method x Corridor,open_banking,GBP→BDT,11,11,100,0.6,39,72.7,81.8,81.8,100,100
+Method x Corridor,open_banking,EUR→PLN,10,9,90,1.8,8.1,44.4,77.8,88.9,100,100
+Method x Corridor,open_banking,GBP→CHF,10,10,100,0.5,8.1,70,80,90,100,100
+Method x Corridor,open_banking,EUR→ILS,10,10,100,1,6.7,50,70,90,100,100
+Method x Corridor,open_banking,GBP→NGN,9,7,77.8,0.3,0.4,100,100,100,100,100
+Method x Corridor,open_banking,GBP→XOF,9,8,88.9,0.4,0.5,87.5,100,100,100,100
+Method x Corridor,open_banking,EUR→BOB,9,8,88.9,3.7,7.3,25,62.5,100,100,100
+Method x Corridor,open_banking,GBP→QAR,9,9,100,0.4,0.4,100,100,100,100,100
+Method x Corridor,open_banking,GBP→RON,8,8,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,GBP→EGP,8,8,100,0.5,6.5,87.5,87.5,87.5,100,100
+Method x Corridor,open_banking,GBP→BHD,8,7,87.5,40.4,50,14.3,28.6,28.6,100,100
+Method x Corridor,open_banking,EUR→BDT,8,8,100,0.8,20.7,75,87.5,87.5,100,100
+Method x Corridor,open_banking,EUR→MYR,8,8,100,1,33.9,50,62.5,62.5,100,100
+Method x Corridor,open_banking,GBP→MXN,8,8,100,0.4,2,87.5,87.5,100,100,100
+Method x Corridor,open_banking,GBP→KWD,8,8,100,27.6,49.7,0,0,50,100,100
+Method x Corridor,open_banking,GBP→IDR,7,6,85.7,0.3,0.4,100,100,100,100,100
+Method x Corridor,open_banking,EUR→JPY,7,5,71.4,36.9,43.6,0,0,20,100,100
+Method x Corridor,open_banking,GBP→NOK,7,7,100,0.6,5.9,71.4,71.4,100,100,100
+Method x Corridor,open_banking,EUR→NGN,7,7,100,15.7,25.2,28.6,42.9,57.1,100,100
+Method x Corridor,open_banking,GBP→CZK,7,7,100,0.3,0.4,100,100,100,100,100
+Method x Corridor,open_banking,GBP→BBD,7,7,100,85.2,73,0,0,0,100,100
+Method x Corridor,open_banking,EUR→SGD,7,7,100,2.2,8.9,42.9,57.1,85.7,100,100
+Method x Corridor,open_banking,EUR→NPR,6,6,100,0.8,10.6,66.7,66.7,66.7,100,100
+Method x Corridor,open_banking,GBP→ZMW,6,6,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,EUR→TND,6,5,83.3,25.2,39.6,0,0,40,100,100
+Method x Corridor,open_banking,GBP→NPR,6,6,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,GBP→PEN,6,6,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,EUR→BRL,5,5,100,5.4,14.2,40,60,60,100,100
+Method x Corridor,open_banking,EUR→CHF,5,5,100,21.4,16.6,20,20,80,100,100
+Method x Corridor,open_banking,EUR→VND,5,5,100,2.1,9.4,40,60,80,100,100
+Method x Corridor,open_banking,EUR→CZK,4,4,100,2.7,7.7,50,75,75,100,100
+Method x Corridor,open_banking,GBP→HUF,4,4,100,0.6,16.5,75,75,75,100,100
+Method x Corridor,open_banking,EUR→MGA,4,4,100,0.7,0.6,100,100,100,100,100
+Method x Corridor,open_banking,EUR→QAR,4,4,100,11.9,21.5,50,50,75,100,100
+Method x Corridor,open_banking,EUR→KWD,4,2,50,17,17,0,0,100,100,100
+Method x Corridor,open_banking,GBP→CVE,4,4,100,0.4,0.4,100,100,100,100,100
+Method x Corridor,open_banking,EUR→XOF,4,3,75,2.3,2.4,33.3,100,100,100,100
+Method x Corridor,open_banking,GBP→UGX,4,4,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,EUR→CVE,4,4,100,8.4,10.4,0,50,100,100,100
+Method x Corridor,open_banking,EUR→SEK,4,4,100,0.9,10,75,75,75,100,100
+Method x Corridor,open_banking,EUR→BWP,4,4,100,21.1,17.5,25,25,50,100,100
+Method x Corridor,open_banking,GBP→BOB,3,3,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,GBP→JOD,3,2,66.7,62.5,62.5,0,0,0,100,100
+Method x Corridor,open_banking,GBP→HKD,3,2,66.7,14.2,14.2,0,0,100,100,100
+Method x Corridor,open_banking,GBP→DKK,3,3,100,0.6,0.6,100,100,100,100,100
+Method x Corridor,open_banking,EUR→HUF,3,3,100,0.8,5.9,66.7,66.7,100,100,100
+Method x Corridor,open_banking,EUR→BHD,3,2,66.7,39.6,39.6,0,0,0,100,100
+Method x Corridor,open_banking,EUR→ARS,3,3,100,0.8,0.9,66.7,100,100,100,100
+Method x Corridor,open_banking,EUR→DOP,3,3,100,36.4,34.7,0,33.3,33.3,100,100
+Method x Corridor,open_banking,EUR→ZMW,3,3,100,14.7,10.4,33.3,33.3,100,100,100
+Method x Corridor,open_banking,GBP→SGD,3,3,100,0.4,54.1,66.7,66.7,66.7,100,100
+Method x Corridor,open_banking,EUR→JOD,3,3,100,90,74.8,0,0,0,100,100
+Method x Corridor,open_banking,GBP→OMR,3,3,100,19,17.2,0,33.3,66.7,100,100
+Method x Corridor,open_banking,GBP→KES,3,2,66.7,30.4,30.4,50,50,50,100,100
+Method x Corridor,open_banking,GBP→ARS,3,3,100,0.6,0.5,100,100,100,100,100
+Method x Corridor,open_banking,EUR→XAF,3,3,100,0.8,0.9,66.7,100,100,100,100
+Method x Corridor,open_banking,EUR→KRW,2,2,100,38.1,38.1,0,0,50,100,100
+Method x Corridor,open_banking,EUR→RWF,2,2,100,7.9,7.9,50,50,100,100,100
+Method x Corridor,open_banking,EUR→HKD,2,2,100,2.3,2.3,50,100,100,100,100
+Method x Corridor,open_banking,EUR→NOK,2,2,100,6.7,6.7,50,50,100,100,100
+Method x Corridor,open_banking,GBP→ALL,2,2,100,0.4,0.4,100,100,100,100,100
+Method x Corridor,open_banking,GBP→VND,2,2,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,EUR→GTQ,2,2,100,7.7,7.7,50,50,100,100,100
+Method x Corridor,open_banking,GBP→GBP,2,2,100,19.2,19.2,0,0,50,100,100
+Method x Corridor,open_banking,EUR→UGX,2,2,100,22.3,22.3,50,50,50,100,100
+Method x Corridor,open_banking,GBP→RSD,2,2,100,0.3,0.3,100,100,100,100,100
+Method x Corridor,open_banking,GBP→FJD,2,2,100,0.4,0.4,100,100,100,100,100
+Method x Corridor,open_banking,EUR→GHS,2,2,100,0.9,0.9,100,100,100,100,100
+Method x Corridor,open_banking,EUR→JMD,2,2,100,13,13,50,50,50,100,100
+Method x Corridor,open_banking,GBP→KHR,1,1,100,0.6,0.6,100,100,100,100,100
+Method x Corridor,open_banking,EUR→AOA,1,1,100,39.9,39.9,0,0,0,100,100
+Method x Corridor,open_banking,EUR→MNT,1,1,100,0.7,0.7,100,100,100,100,100
+Method x Corridor,open_banking,EUR→RON,1,1,100,9.2,9.2,0,0,100,100,100
+Method x Corridor,open_banking,EUR→XCD,1,1,100,42.5,42.5,0,0,0,100,100
+Method x Corridor,open_banking,GBP→TZS,1,1,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,GBP→GHS,1,1,100,0.4,0.4,100,100,100,100,100
+Method x Corridor,open_banking,EUR→HNL,1,1,100,0.8,0.8,100,100,100,100,100
+Method x Corridor,open_banking,EUR→CLP,1,1,100,0.7,0.7,100,100,100,100,100
+Method x Corridor,open_banking,GBP→MGA,1,1,100,0.7,0.7,100,100,100,100,100
+Method x Corridor,open_banking,GBP→CRC,1,1,100,94.8,94.8,0,0,0,100,100
+Method x Corridor,open_banking,EUR→BAM,1,1,100,0.7,0.7,100,100,100,100,100
+Method x Corridor,open_banking,GBP→KRW,1,1,100,0.3,0.3,100,100,100,100,100
+Method x Corridor,open_banking,EUR→MZN,1,1,100,3.7,3.7,0,100,100,100,100
+Method x Corridor,open_banking,EUR→CNY,1,1,100,2,2,0,100,100,100,100
+Method x Corridor,open_banking,GBP→TWD,1,1,100,64.5,64.5,0,0,0,100,100
+Method x Corridor,open_banking,GBP→DOP,1,1,100,0.5,0.5,100,100,100,100,100
+Method x Corridor,open_banking,EUR→TWD,1,1,100,64.4,64.4,0,0,0,100,100
+Method x Corridor,open_banking,EUR→RSD,1,1,100,2.6,2.6,0,100,100,100,100
+Method x Corridor,open_banking,GBP→BRL,1,1,100,0.6,0.6,100,100,100,100,100
+Method x Corridor,open_banking,EUR→OMR,1,1,100,24.2,24.2,0,0,0,100,100
+Method x Corridor,open_banking,GBP→TND,1,1,100,0.6,0.6,100,100,100,100,100
+Method x Corridor,open_banking,EUR→TZS,1,1,100,0.7,0.7,100,100,100,100,100
+Method x Corridor,open_banking,EUR→DZD,1,1,100,120,120,0,0,0,100,100
+Method x Corridor,open_banking,GBP→MZN,1,1,100,0.3,0.3,100,100,100,100,100
+Method x Corridor,open_banking,EUR→VUV,1,1,100,0.8,0.8,100,100,100,100,100
+Method x Corridor,open_banking,GBP→CNY,1,1,100,10.1,10.1,0,0,100,100,100

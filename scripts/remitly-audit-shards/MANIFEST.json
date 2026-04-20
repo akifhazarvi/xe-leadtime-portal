@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "timestamp": "2026-04-20T21:53:08.276Z",
+    "source": "remitly",
+    "sendAmount": "100.00",
+    "sendCountries": [
+      "USA",
+      "GBR",
+      "CAN",
+      "AUS",
+      "IRL",
+      "FRA",
+      "DEU",
+      "ITA",
+      "ESP",
+      "NLD",
+      "BEL",
+      "AUT",
+      "POL",
+      "SWE",
+      "NOR",
+      "DNK",
+      "FIN",
+      "CHE",
+      "LUX",
+      "SGP"
+    ],
+    "receiveCountriesCount": 128,
+    "corridorsQueried": 2560,
+    "successful": 2413,
+    "errorCount": 147
+  },
+  "shards": {
+    "AUS": {
+      "file": "results-AUS.json",
+      "corridors": 125,
+      "size_kb": 281
+    },
+    "AUT": {
+      "file": "results-AUT.json",
+      "corridors": 125,
+      "size_kb": 292
+    },
+    "BEL": {
+      "file": "results-BEL.json",
+      "corridors": 127,
+      "size_kb": 283
+    },
+    "CAN": {
+      "file": "results-CAN.json",
+      "corridors": 127,
+      "size_kb": 289
+    },
+    "CHE": {
+      "file": "results-CHE.json",
+      "corridors": 75,
+      "size_kb": 104
+    },
+    "DEU": {
+      "file": "results-DEU.json",
+      "corridors": 126,
+      "size_kb": 295
+    },
+    "DNK": {
+      "file": "results-DNK.json",
+      "corridors": 126,
+      "size_kb": 280
+    },
+    "ESP": {
+      "file": "results-ESP.json",
+      "corridors": 126,
+      "size_kb": 279
+    },
+    "FIN": {
+      "file": "results-FIN.json",
+      "corridors": 125,
+      "size_kb": 272
+    },
+    "FRA": {
+      "file": "results-FRA.json",
+      "corridors": 128,
+      "size_kb": 298
+    },
+    "GBR": {
+      "file": "results-GBR.json",
+      "corridors": 126,
+      "size_kb": 292
+    },
+    "IRL": {
+      "file": "results-IRL.json",
+      "corridors": 125,
+      "size_kb": 288
+    },
+    "ITA": {
+      "file": "results-ITA.json",
+      "corridors": 125,
+      "size_kb": 291
+    },
+    "LUX": {
+      "file": "results-LUX.json",
+      "corridors": 69,
+      "size_kb": 95
+    },
+    "NLD": {
+      "file": "results-NLD.json",
+      "corridors": 128,
+      "size_kb": 628
+    },
+    "NOR": {
+      "file": "results-NOR.json",
+      "corridors": 125,
+      "size_kb": 285
+    },
+    "POL": {
+      "file": "results-POL.json",
+      "corridors": 125,
+      "size_kb": 287
+    },
+    "SGP": {
+      "file": "results-SGP.json",
+      "corridors": 125,
+      "size_kb": 396
+    },
+    "SWE": {
+      "file": "results-SWE.json",
+      "corridors": 128,
+      "size_kb": 287
+    },
+    "USA": {
+      "file": "results-USA.json",
+      "corridors": 127,
+      "size_kb": 303
+    }
+  },
+  "subdivisions_file": "subdivisions.json",
+  "errors_file": "errors.json"
+}

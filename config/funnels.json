@@ -1,0 +1,483 @@
+{
+  "funnels": {
+    "send_money_existing_user": {
+      "name": "Send Money — Existing User (Saved Recipient + Card)",
+      "description": "Happy path for returning users who already have a saved recipient and payment method. This is the shortest and most common transaction path.",
+      "steps": [
+        { "event": "Quote Accessed", "note": "User opens send money. On mobile includes anonymous users." },
+        { "event": "Quote Created", "note": "System generates rate/fee quotes for all payment × delivery combinations. Can fire multiple times as user changes amounts." },
+        { "event": "Quote Payout Method Selected", "note": "User picks delivery method (Bank, Cash, Mobile Wallet)." },
+        { "event": "Quote Confirmed", "note": "INTENT SIGNAL. User accepts quote and proceeds. On mobile, filters out anonymous browsers." },
+        { "event": "Recipient Selected", "note": "User picks existing saved recipient." },
+        { "event": "Payment Method Selected", "note": "User picks saved payment method (card, bank, etc.)." },
+        { "event": "CVV Entered", "note": "User enters CVV for card payment. Conditional: card payments only." },
+        { "event": "Transaction Summary Confirmed", "note": "User reviews final details and taps Send." },
+        { "event": "Card Authorisation Started", "note": "3DS/card auth initiated. Conditional: card payments only." },
+        { "event": "Card Authorisation Completed", "note": "Card auth succeeds. Conditional: card payments only." },
+        { "event": "Transaction Created", "note": "Server-side: transaction accepted. Revenue event." }
+      ],
+      "validated_conversion_7d": { "iOS": "0.10%", "Android": "0.43%", "Web": "0.41%" },
+      "platforms": ["Web", "iOS", "Android"],
+      "platform_context": "Mobile top-of-funnel includes anonymous users. Fair comparison starts at Quote Confirmed. Post-intent: iOS 78% > Android 74% > Web 70%.",
+      "critical_dropoffs": [
+        "Quote Created → Quote Payout Method Selected: massive drop on mobile because most are anonymous browsers",
+        "Payment Method Selected → CVV Entered: many users use non-card methods (open banking, Apple Pay)"
+      ]
+    },
+
+    "send_money_recipient_first": {
+      "name": "Send Money — Recipient First (Existing User, Mobile)",
+      "description": "User starts from their recipient list (not the quote page). This is the highest-converting funnel because these are returning users with saved recipients who know who they want to send to. Mobile only (iOS + Android).",
+      "chart_id": "3oociujs",
+      "steps": [
+        { "event": "Recipients Accessed", "note": "User opens recipient list. flowName distinguishes entry point: 'recipientFirstHome' (home page 'see all'), 'sendMoneyQuoteFirst' (via send money), or location='recipient-list' (Account → Recipients)." },
+        { "event": "Quote Created", "note": "Quote generated for selected corridor." },
+        { "event": "Quote Confirmed", "note": "User accepts the quote." },
+        { "event": "Recipient Selected", "note": "User picks their saved recipient. flowName attribute matches the flow entry." },
+        { "event": "Recipient Reason for Transfer", "note": "User provides transfer reason (required for compliance in many corridors)." },
+        { "event": "Payment Method Selected", "note": "User picks payment method (saved card, Apple Pay, bank transfer, etc.)." },
+        { "event": "Transaction Summary Confirmed", "note": "Final review and confirmation." },
+        { "event": "Transaction Created", "note": "Transaction accepted." }
+      ],
+      "validated_conversion_30d": { "iOS+Android": "41.8%" },
+      "note": "This is the BEST converting funnel (41.8%) because it's existing users who already know who they're sending to. The flowName attribute on Recipients Accessed and Recipient Selected was enhanced in the current release to distinguish entry points: 'recipientFirstHome' = home page recent recipients, 'sendMoneyQuoteFirst' = via send money flow, location='recipient-list' = Account → Recipients.",
+      "platforms": ["iOS", "Android"],
+      "new_attributes": {
+        "Recipients Accessed": { "flowName": ["recipientFirstHome", "sendMoneyQuoteFirst"], "location": ["recipient-list"] },
+        "Recipient Selected": { "flowName": ["recipientFirstHome", "sendMoneyQuoteFirst"], "location": ["recipient-list"] }
+      },
+      "critical_dropoffs": [
+        "Recipients Accessed → Quote Created: 77,699 → 58,108 (75%) — some users browse recipients without proceeding",
+        "Quote Created → Quote Confirmed: 58,108 → 38,957 (67%) — rate/fee review step, some users don't like what they see",
+        "Rest of funnel is tight: 97%+ step-to-step after Recipient Selected"
+      ]
+    },
+
+    "send_money_new_user": {
+      "name": "Send Money — New User (Creates Recipient)",
+      "description": "Path for users who need to create a new recipient. Longer funnel with bank details entry — the hardest step.",
+      "steps": [
+        { "event": "Quote Accessed", "note": "User opens send money." },
+        { "event": "Quote Created", "note": "Quote generated." },
+        { "event": "Quote Confirmed", "note": "User confirms quote — intent signal." },
+        { "event": "Recipient Creation Started", "note": "User starts adding a new recipient." },
+        { "event": "Recipient Type Selected", "note": "User picks: Self, Individual, or Business." },
+        { "event": "Recipient Info Added", "note": "User enters recipient name and basic info." },
+        { "event": "Recipient Bank Details Added", "note": "User enters IBAN/SWIFT/account number. HARDEST STEP — many users don't have these details handy." },
+        { "event": "Recipient Selected", "note": "Recipient saved and selected for the transfer." },
+        { "event": "Payment Method Selected", "note": "User picks payment method." },
+        { "event": "Transaction Summary Confirmed", "note": "Final review and confirmation." },
+        { "event": "Transaction Created", "note": "Transaction accepted." }
+      ],
+      "validated_conversion_7d": { "iOS": "0.38%", "Android": "0.65%", "Web": "0.59%" },
+      "platforms": ["Web", "iOS", "Android"],
+      "critical_dropoffs": [
+        "Quote Confirmed → Recipient Creation Started: many users go to recipient list instead",
+        "Recipient Type Selected → Recipient Info Added: form friction",
+        "Recipient Info Added → Recipient Bank Details Added: users don't have bank details"
+      ]
+    },
+
+    "registration": {
+      "name": "Registration",
+      "description": "New user registration from account creation to MT profile. Events fire on all platforms but the journey differs (mobile has more granular steps).",
+      "steps": [
+        { "event": "Account Registration Started", "note": "User begins signup. Web: 22k/week, iOS: 8k, Android: 8k." },
+        { "event": "Account Registration Credentials Submitted", "note": "Email + password submitted." },
+        { "event": "Email Verification Started", "note": "Verification email sent." },
+        { "event": "Email Verified", "note": "User clicks email verification link. BE event." },
+        { "event": "Personal Details Completed", "note": "Name, DOB, address entered. MAJOR DROP-OFF: iOS 4,371 → 1,333." },
+        { "event": "Phone Number Completed", "note": "Phone verified. Another drop — mobile: 1,284 → 14 to Country Confirmed." },
+        { "event": "Country Confirmed", "note": "Country selected for MT profile." },
+        { "event": "Profile Created", "note": "Profile submitted. Drops to 0 after this — MT Profile Created is BE-side." },
+        { "event": "Account Creation Complete", "note": "BE event: Cognito confirms account creation." },
+        { "event": "MT Profile Created", "note": "BE event: DFX creates money transfer profile. Required to send money." }
+      ],
+      "validated_conversion_7d": { "iOS": "0%", "Android": "0%", "Web": "0%" },
+      "note": "0% end-to-end in 7-day funnel because Profile Created → Account Creation Complete → MT Profile Created involves BE processing with variable timing. Check each step individually.",
+      "platforms": ["Web", "iOS", "Android"],
+      "critical_dropoffs": [
+        "Email Verified → Personal Details: major form friction",
+        "Phone Number Completed → Country Confirmed: massive drop (1,284 → 14 on iOS) — possible tracking gap or flow difference"
+      ]
+    },
+
+    "login": {
+      "name": "Login",
+      "description": "User authentication flow including 2FA. Login Accessed fires on app open (mobile) and page view (web).",
+      "steps": [
+        { "event": "Login Accessed", "note": "Login screen viewed. Mobile: fires on every app open. Web: login page loaded." },
+        { "event": "Login Started", "note": "User submits credentials." },
+        { "event": "2FA Required", "note": "Server requires 2FA. Conditional — not all logins need 2FA." },
+        { "event": "2FA Successful", "note": "2FA code validated." },
+        { "event": "Login Successful", "note": "Authentication complete. MOBILE ONLY event name — web may use a different name." }
+      ],
+      "validated_conversion_7d": { "iOS": "0.58%", "Android": "0.83%", "Web": "0.93%" },
+      "note": "Low end-to-end because: (1) Login Accessed fires on every app open, most users are already logged in, (2) 2FA is conditional — most users don't need it, (3) Login Successful may not fire for all login methods on web.",
+      "platforms": ["Web", "iOS", "Android"],
+      "issues": [
+        "NAMING BUG: Web fires 'Login Failed' (capital F), mobile fires 'Login failed' (lowercase f) — TWO SEPARATE EVENTS in Amplitude",
+        "Login Successful fires mainly on mobile. Verify web equivalent."
+      ],
+      "critical_dropoffs": [
+        "Login Accessed → Login Started: most app opens don't need login (already authenticated)",
+        "2FA Required → 2FA Successful: 2FA friction — iOS: 3,806 → 439 (11.5% success)"
+      ]
+    },
+
+    "ekyc_verification": {
+      "name": "eKYC / Biometric Verification",
+      "description": "Identity verification via Veriff or Onfido. Required for first-time senders or users exceeding transfer limits. Triggered mid-send-money flow.",
+      "steps": [
+        { "event": "Biometric Verification Started", "note": "Verification SDK launched. iOS: 367, Web: 270, Android: 263 per week." },
+        { "event": "Biometric Consent Provided", "note": "User consents to biometric data collection." },
+        { "event": "Biometric Verification Submitted", "note": "User completes document/selfie capture in Veriff/Onfido." },
+        { "event": "Biometric Verification Completed [client-side]", "note": "Client-side confirmation. Server result comes separately via 'eKYC Results Received'." },
+        { "event": "Transaction Summary Confirmed", "note": "After verification, user returns to send money flow." },
+        { "event": "Transaction Created", "note": "Transaction accepted." }
+      ],
+      "validated_conversion_7d": { "iOS": "1.6%", "Android": "1.1%", "Web": "3.0%" },
+      "platforms": ["Web", "iOS", "Android"],
+      "note": "Low volume but critical for new user conversion. Web has better completion rate, likely because desktop cameras/uploading is easier.",
+      "critical_dropoffs": [
+        "Started → Consent: massive drop (367 → 35 on iOS) — users abandon when asked for biometric consent",
+        "Consent → Submitted: SDK capture process — some users fail to complete photo/selfie"
+      ]
+    },
+
+    "open_banking_payment": {
+      "name": "Open Banking Payment",
+      "description": "Payment via open banking (Volt/PayTo). User is redirected to their bank to authorize payment. Backend events track the lifecycle.",
+      "steps": [
+        { "event": "Transaction Summary Confirmed", "note": "User confirms transaction with open banking as payment method." },
+        { "event": "Open Banking Payment Started", "note": "BE: payment request sent to open banking provider." },
+        { "event": "Open Banking Payment Attempted", "note": "BE: provider processes the payment." },
+        { "event": "Open Banking Payment Completed", "note": "BE: payment confirmed by bank." },
+        { "event": "Transaction Created", "note": "Transaction accepted." }
+      ],
+      "validated_conversion_7d": { "iOS": "6.6%", "Android": "7.4%", "Web": "3.3%" },
+      "note": "OB starter → completer is very high: iOS 67%, Android 56%, Web 60%. The drop is Transaction Summary → OB Started — most users chose a different payment method. Of those who start OB, most complete.",
+      "platforms": ["Web", "iOS", "Android"],
+      "critical_dropoffs": [
+        "Summary → OB Started: most users don't choose open banking",
+        "OB Attempted → OB Completed: bank-side failures (~10% drop)"
+      ]
+    },
+
+    "apple_pay": {
+      "name": "Apple Pay Payment",
+      "description": "Apple Pay payment path on iOS. Extremely high success rate (94%) once attempted.",
+      "steps": [
+        { "event": "Transaction Summary Confirmed", "note": "User confirms with Apple Pay selected." },
+        { "event": "Apple Pay Payment Attempted", "note": "Apple Pay modal presented and user authenticates." },
+        { "event": "Apple Pay Modal Success", "note": "Apple Pay authorization succeeds." },
+        { "event": "Transaction Created", "note": "Transaction accepted." }
+      ],
+      "validated_conversion_7d": { "iOS": "18.2%" },
+      "note": "Apple Pay has 94% success rate (2,280 attempted → 2,138 created). The 18.2% from Summary → Created is because most iOS users don't use Apple Pay — but those who do almost always complete.",
+      "platforms": ["iOS"],
+      "critical_dropoffs": [
+        "Summary → Apple Pay Attempted: most users use other payment methods",
+        "Apple Pay Attempted → Success: near-perfect (99.4%)"
+      ]
+    },
+
+    "repeat_transfer": {
+      "name": "Repeat Transfer",
+      "description": "User sends money to the same recipient again. Skips recipient creation and often uses saved payment method.",
+      "steps": [
+        { "event": "Repeat Transfer Started", "note": "User taps 'Send Again' on a previous transfer." },
+        { "event": "Quote Accessed", "note": "Quote page opens with pre-filled details." },
+        { "event": "Quote Confirmed", "note": "User confirms the new quote." },
+        { "event": "Transaction Summary Confirmed", "note": "Reviews and confirms." },
+        { "event": "Transaction Created", "note": "Transaction accepted." }
+      ],
+      "validated_conversion_7d": { "iOS": "1.8%", "Android": "2.0%", "Web": "14.9%" },
+      "note": "Web repeat transfers convert much better (15%) because web users are logged in and have established payment methods. Mobile repeat transfer → Quote Accessed has a big gap (2,887 → 136 on iOS) suggesting many users start but don't complete the quote page.",
+      "platforms": ["Web", "iOS", "Android"],
+      "critical_dropoffs": [
+        "Repeat Started → Quote Accessed: massive drop on mobile (2,887 → 136 on iOS)",
+        "Quote Accessed → Quote Confirmed: rate/amount review step"
+      ]
+    },
+
+    "error_recovery": {
+      "name": "Error Recovery (Payment Failed → Retry)",
+      "description": "When a payment fails, the user can change payment method and retry. Measures how well the app recovers from errors.",
+      "steps": [
+        { "event": "Payment Failed", "note": "Payment processing fails." },
+        { "event": "Change Payment Method Triggered", "note": "User taps 'Try Different Payment Method'." },
+        { "event": "Payment Method Selected", "note": "User picks a new payment method." },
+        { "event": "Transaction Summary Confirmed", "note": "Confirms with new method." },
+        { "event": "Transaction Created", "note": "Transaction succeeds on retry." }
+      ],
+      "validated_conversion_7d": { "iOS": "10.4%", "Android": "11.7%", "Web": "41.3%" },
+      "note": "Web recovers 41% of failed payments — excellent. Mobile recovers only 10-12%. The gap is Change Payment Method → Payment Selected: web users are better at switching methods. Improving mobile error recovery UX could recapture 20-30% more failed transactions.",
+      "platforms": ["Web", "iOS", "Android"],
+      "critical_dropoffs": [
+        "Payment Failed → Change Method: many users abandon instead of retrying (iOS: 587 failed, only 102 try another method)",
+        "Mobile recovery rate (10%) vs Web (41%): huge gap — mobile error recovery UX needs improvement"
+      ]
+    },
+
+    "backend_transaction_lifecycle": {
+      "name": "Backend Transaction Lifecycle",
+      "description": "Server-side processing after client creates transaction. Fraud screening, payment processing, disbursement.",
+      "steps": [
+        { "event": "Transaction Created", "note": "Transaction accepted (server-side). All platforms." },
+        { "event": "Fraud Check Started", "note": "BE: fraud screening begins. Not all transactions are screened." },
+        { "event": "Fraud Check Completed", "note": "BE: screening passes." },
+        { "event": "Payment Completed", "note": "BE: funds received from sender (card charged, bank transfer received)." },
+        { "event": "Disbursement Sent", "note": "BE: money sent to recipient." },
+        { "event": "Transaction Completed", "note": "BE: recipient receives money. End of lifecycle." }
+      ],
+      "validated_conversion_7d": "Disbursement and Transaction Completed don't appear in 7-day funnel — likely due to processing delays (bank transfers can take 3-5 business days). Use 30-day window.",
+      "note": "Fraud Check Started fires for ~9% of transactions (1,038 out of 11,437 on iOS). Payment Completed fires for ~7% of Txn Created. The low percentage suggests most payments are processed differently or these BE events have tracking gaps.",
+      "platforms": ["Server"],
+      "critical_dropoffs": [
+        "Transaction Created → Fraud Check Started: only ~9% of transactions get fraud-checked",
+        "Payment Completed → Disbursement: processing delay, not a real drop-off"
+      ]
+    },
+
+    "plaid_bank_linking": {
+      "name": "Plaid Bank Linking",
+      "description": "US/Canada bank account linking via Plaid. Required for direct debit payments.",
+      "steps": [
+        { "event": "Bank Verification Started", "note": "Plaid verification begins — user authenticates with their bank." },
+        { "event": "Bank Verification Completed", "note": "Bank account verified through Plaid." },
+        { "event": "New Payment Method Added", "note": "Verified bank account saved as payment method." }
+      ],
+      "platforms": ["Web", "iOS", "Android"],
+      "critical_dropoffs": [
+        "Bank Verification Started → Completed: Plaid credential failures, user drops off during bank auth"
+      ]
+    },
+
+    "bank_transfer_payment": {
+      "name": "Bank Transfer / Wire Payment",
+      "description": "User pays via bank transfer (wire/ACH). In countries where Xe has multiple receiving banks, user must pick which bank to transfer to.",
+      "steps": [
+        { "event": "Bank Account Selection Started", "note": "User sees Xe's receiving bank options. Shows in countries where Xe has more than 1 bank (e.g., EU has 2). Properties: numberOfAccounts, sendCurrency." },
+        { "event": "Bank Account Selection Completed", "note": "User selects which Xe bank to wire to. Properties: bankAccountChosen (bank name). Alternative: 'Bank Selected Other Country' fires if user picks the alternate country's bank." },
+        { "event": "Bank Transfer Instructions Accepted", "note": "User acknowledges the wire transfer instructions (account number, reference, etc.)." },
+        { "event": "Transaction Summary Confirmed", "note": "User confirms the transfer." },
+        { "event": "Transaction Created", "note": "Transaction created — user must now send the wire to Xe's bank." }
+      ],
+      "platforms": ["Web", "iOS", "Android"],
+      "note": "Bank transfers are staged payments — the transaction is created but Xe waits for the wire to arrive. 'Funds Received' (BE event) fires when Xe receives the money. User sees bank details and must initiate the transfer from their own banking app.",
+      "related_events": ["Bank Selected Other Country", "Bank Details Viewed", "Bank Details Copied", "Payment Made Clicked", "Bank Details Page Dismissed"],
+      "critical_dropoffs": [
+        "Bank Account Selection: user may not understand which bank to choose",
+        "Instructions Accepted → actual wire: user must leave Xe and go to their bank — this is where many drop off (unmeasurable in Amplitude)"
+      ]
+    },
+
+    "zero_day_conversion": {
+      "name": "Zero-Day Conversion (Registration → First Transaction)",
+      "description": "New user registers and completes their first transaction on the same day. The ultimate acquisition metric.",
+      "steps": [
+        { "event": "Account Creation Complete", "note": "BE: account created." },
+        { "event": "MT Profile Created", "note": "BE: money transfer profile ready." },
+        { "event": "Quote Accessed", "note": "User starts their first send money flow." },
+        { "event": "Quote Confirmed", "note": "User confirms first quote." },
+        { "event": "Transaction Created", "note": "First transaction created." }
+      ],
+      "validated_conversion_7d": { "iOS": "1.3%", "Android": "1.5%", "Web": "5.7%", "(none)": "2.7%" },
+      "note": "Most zero-day conversions show platform=(none) suggesting the Account Creation and MT Profile events don't carry the platform property. 476 out of 17,741 account creations resulted in same-day transactions (2.7%). Web is highest at 5.7% (9 out of 157).",
+      "platforms": ["Web", "iOS", "Android", "Server"],
+      "critical_dropoffs": [
+        "Account Creation → MT Profile: 17,741 → 4,646 (26%) — many accounts created but never set up MT profile",
+        "MT Profile → Quote Accessed: 4,646 → 2,263 (49%) — half of profile creators don't try to send same day",
+        "Quote Accessed → Quote Confirmed: 2,263 → 1,463 (65%) — decent for intent",
+        "Quote Confirmed → Transaction Created: 1,463 → 476 (33%) — recipient/payment/KYC friction"
+      ]
+    },
+
+    "card_payment": {
+      "name": "Card Payment (New Card Addition)",
+      "description": "User adds a new debit/credit card and pays with it. Includes card validation, billing address, and 3DS authentication.",
+      "steps": [
+        { "event": "Payment Method Selected", "note": "User selects card payment." },
+        { "event": "New Payment Method Started", "note": "User begins adding a new card." },
+        { "event": "New Payment Method Added", "note": "Card validated and saved." },
+        { "event": "CVV Entered", "note": "User enters CVV for the new card." },
+        { "event": "Card Authorisation Started", "note": "3DS challenge presented." },
+        { "event": "Card Authorisation Completed", "note": "Card authorized." },
+        { "event": "Transaction Created", "note": "Transaction accepted." }
+      ],
+      "validated_conversion_7d": { "iOS": "0.13%", "Android": "0.22%", "Web": "0.20%" },
+      "note": "Very low end-to-end because most Payment Method Selected users don't add new cards — they use saved ones. The real metric is New PM Started → Transaction Created. New PM Started → Added: 676 → 358 (53% on iOS) — card validation failures kill half of new card additions.",
+      "platforms": ["Web", "iOS", "Android"],
+      "critical_dropoffs": [
+        "New PM Started → New PM Added: 53% success (card validation errors)",
+        "New PM Added → CVV Entered: big gap (358 → 26 on iOS) — users may switch to other payment methods after adding card"
+      ]
+    },
+
+    "recipient_creation": {
+      "name": "Recipient Creation (Bank Transfer)",
+      "description": "Creating a new bank transfer recipient. The hardest part of sending money — requires IBAN, SWIFT, and bank details that users often don't have.",
+      "steps": [
+        { "event": "Recipient Creation Started", "note": "User starts adding recipient." },
+        { "event": "Recipient Type Selected", "note": "Self, Individual, or Business." },
+        { "event": "Recipient Info Added", "note": "Name and basic info submitted." },
+        { "event": "Recipient Bank Details Added", "note": "IBAN/SWIFT/account number entered. HARDEST STEP." },
+        { "event": "Recipient Selected", "note": "Recipient saved and selected." }
+      ],
+      "validated_conversion_7d": "Included in send_money_new_user funnel. Type Selected → Info Added: ~80%. Info Added → Bank Details: ~75%. Bank Details → Selected: ~70%.",
+      "platforms": ["Web", "iOS", "Android"],
+      "critical_dropoffs": [
+        "Bank Details Added is the key friction point — users need IBAN/SWIFT which they may not have",
+        "Mobile bank lookup features (Top Banks, IFSC Lookup) help — check if users who use lookup have better completion"
+      ]
+    },
+
+    "add_funds_web": {
+      "name": "Add Funds to Balance (Web Consumer)",
+      "description": "Web consumer adds money to their Xe currency balance. Reuses SendMoney components but fires separate Add Funds events. Differentiated by TRANSFER_TYPE.FUND_BALANCE.",
+      "steps": [
+        { "event": "Add Funds Accessed", "note": "User opens Add Funds page. Properties: currencyAccount, availableBalance, accountType, brand." },
+        { "event": "Currency Account Changed", "note": "Optional: user switches target currency. Properties: previousCurrency, newCurrency, availableBalance." },
+        { "event": "Quote Confirmed", "note": "User confirms the funding quote. Same event as Send Money but with balance-specific traits (send_currency, payout_currency)." },
+        { "event": "Add Funds Summary Confirmed", "note": "User confirms on summary. Properties: fundCurrency (array of from+to), balanceAddedAmount, totalBalance, availableBalance, paymentMethod." },
+        { "event": "Add Funds Completed", "note": "Funds added. Same properties as summary confirmed." }
+      ],
+      "validated_conversion_7d": { "Web": "17.4%" },
+      "platforms": ["Web"],
+      "code_path": "galileo-site/src/views/SendMoney/SendMoneyEntryPoints/SendMoneyAddFunds.vue → SendMoneySummary.vue (conditional: TRANSFER_TYPE.FUND_BALANCE) → AppCardSendMoneyFinishedFunding.vue",
+      "note": "Web uses the shared SendMoney flow but sets transferType=FUND_BALANCE, which triggers Add Funds-specific events on the summary and completion pages. QUOTE_CONFIRMED fires in this flow (same event as send money)."
+    },
+
+    "add_funds_mobile": {
+      "name": "Add Funds to Balance (Mobile)",
+      "description": "Mobile Add Funds flow — enters through check-prices-xe.ts with balanceFlow=AddBalance. Different from web: does NOT fire QUOTE_CONFIRMED separately.",
+      "steps": [
+        { "event": "Add Funds Accessed", "note": "check-prices-xe.ts:548. Properties: location ('Currency account home' or 'Home'), accountType, brand, availableBalance, currencyAccount." },
+        { "event": "Add Funds Summary confirmed", "note": "NOTE LOWERCASE 'confirmed'. send-summary-xe.ts:744. Properties: sendCurrency, payoutCurrency, balanceAddedAmount, totalBalance, availableBalance, paymentmethod. Conditional: deliveryMethod=FundsOnBalance AND paymentMethod≠FundsOnBalance." },
+        { "event": "Add Funds Completed", "note": "send-finish.ts:498. Same properties as summary. Fires when orderNumber exists." }
+      ],
+      "validated_conversion_7d": { "iOS": "0.4%", "Android": "0.2%" },
+      "platforms": ["iOS", "Android"],
+      "code_path": "xe-apollo/src/pages/check-prices-xe/check-prices-xe.ts → send-summary-xe.ts → send-finish.ts",
+      "note": "Mobile near-zero conversion in funnel analysis likely because the Add Funds events use a shared quote flow — users who access Add Funds may complete via Transaction Created instead of Add Funds Completed if the flow routing doesn't properly distinguish balance adds from sends. Also note: mobile event is 'Add Funds Summary confirmed' (lowercase c) vs web 'Add Funds Summary Confirmed' — may be TWO SEPARATE EVENTS in Amplitude.",
+      "issues": [
+        "POSSIBLE NAMING MISMATCH: Mobile fires 'Add Funds Summary confirmed' (lowercase c), web fires 'Add Funds Summary Confirmed' (capital C) — verify in Amplitude if these are separate events"
+      ]
+    },
+
+    "convert_balance_web": {
+      "name": "Convert Balance (Web Consumer)",
+      "description": "Web consumer converts between currency balances. Reuses SendMoney components with TRANSFER_TYPE.CONVERT_BALANCE.",
+      "steps": [
+        { "event": "Convert Funds Accessed", "note": "SendMoneyExchangeBalance.vue:536. Properties: location, accountType, brand, availableBalance." },
+        { "event": "Currency Account Changed", "note": "Optional: user switches currency. Properties: previousCurrency, newCurrency." },
+        { "event": "Quote Confirmed", "note": "User confirms conversion rate." },
+        { "event": "Convert Funds Summary Confirmed", "note": "Summary page. Conditional: TRANSFER_TYPE.CONVERT_BALANCE." },
+        { "event": "Convert Funds Completed", "note": "Conversion done. Note: web constant is CONVERT_BALANCE_COMPLETED but actual event string needs verification." }
+      ],
+      "validated_conversion_7d": { "Web": "10.7%" },
+      "platforms": ["Web"],
+      "code_path": "galileo-site/src/views/SendMoney/SendMoneyEntryPoints/SendMoneyExchangeBalance.vue → SendMoneySummary.vue → AppCardSendMoneyFinishedFunding.vue",
+      "note": "Very low volume (28/week). NAMING INCONSISTENCY: Web constant is CONVERT_BALANCE_COMPLETED but the event string value may differ from mobile's 'Convert Funds Completed'."
+    },
+
+    "convert_balance_mobile": {
+      "name": "Convert Balance (Mobile)",
+      "description": "Mobile currency conversion. Shorter flow than web — NO summary confirmation event.",
+      "steps": [
+        { "event": "Convert Funds Accessed", "note": "check-prices-xe.ts:548. Properties: location, accountType, brand, availableBalance, currencyAccount." },
+        { "event": "Convert Funds Completed", "note": "send-finish.ts:498. Properties: sendCurrency, payoutCurrency, balanceAddedAmount, totalBalance, availableBalance, paymentmethod. Conditional: deliveryMethod=FundsOnBalance AND paymentMethod=FundsOnBalance (both sides are balance)." }
+      ],
+      "platforms": ["iOS", "Android"],
+      "code_path": "xe-apollo/src/pages/check-prices-xe/check-prices-xe.ts → send-finish.ts",
+      "note": "Mobile Convert Balance has NO summary confirmation event — goes directly from quote to completion. This is different from web which fires Convert Funds Summary Confirmed."
+    },
+
+    "fund_balance_corporate": {
+      "name": "Fund Balance (Corporate ONLY)",
+      "description": "Corporate-only flow for funding balance via bank transfer. Completely separate from consumer Add Funds. Uses FUND_BALANCE events, NOT ADD_FUNDS events.",
+      "steps": [
+        { "event": "Fund Balance Accessed", "note": "FundBalance.vue:343. Properties: fundCurrency, location, tbuId, region." },
+        { "event": "Payment Method Selected", "note": "Optional: user selects bank provider. Properties: paymentType='bank_transfer'." },
+        { "event": "Fund Balance Completed", "note": "FundBalance.vue:752. Properties: fundCurrency (array), amount, tbuId, region." }
+      ],
+      "platforms": ["Web"],
+      "code_path": "galileo-site/src/views/FundBalance.vue (corporate route only)",
+      "note": "FUND_BALANCE_ACCESSED ≠ ADD_FUNDS_ACCESSED. These are DIFFERENT events from DIFFERENT flows. Fund Balance = corporate bank transfer to Xe. Add Funds = consumer adding money to balance via card/bank."
+    },
+
+    "convert_balance_corporate": {
+      "name": "Convert Balance (Corporate ONLY)",
+      "description": "Corporate-only currency conversion. Separate from consumer Convert Balance.",
+      "steps": [
+        { "event": "Convert Balance Accessed", "note": "corporate/pages/convert: Properties: location, tbuId, tbuRegion." },
+        { "event": "Convert Balance Completed", "note": "Properties: convertCurrencies (from+to), convertAmount, tbuId, tbuRegion." }
+      ],
+      "platforms": ["Web"],
+      "code_path": "galileo-site/src/corporate/pages/convert/ui/convert-balances-page.vue + use-convert-balances-analytics.ts",
+      "note": "Corporate uses CONVERT_BALANCE events, consumer uses CONVERT_FUNDS events. Different naming, different properties (corporate has tbuId/tbuRegion)."
+    },
+
+    "currency_account_activation": {
+      "name": "Currency Account Activation",
+      "description": "User activates a new currency account (e.g., opens a USD balance). High conversion — users who start this are committed.",
+      "steps": [
+        { "event": "Currency Account Activation Started", "note": "User begins activating a new currency." },
+        { "event": "Currency Account Activation Completed", "note": "Currency account active." }
+      ],
+      "validated_conversion_7d": { "iOS": "77.8%", "Android": "85.5%", "Web": "72.8%" },
+      "platforms": ["Web", "iOS", "Android"],
+      "note": "High conversion across all platforms. Android highest at 85.5%. Simple 2-step process with minimal friction."
+    },
+
+    "revenue_pipeline": {
+      "name": "Revenue Pipeline (Backend Transaction Lifecycle)",
+      "description": "The full server-side lifecycle from transaction creation to money delivered to recipient. These are ALL backend events — no client code involved.",
+      "steps": [
+        { "event": "Transaction Created", "note": "Transaction accepted. Client-side success + server-side creation." },
+        { "event": "Fraud Check Started", "note": "BE: fraud screening begins. Only ~11% of transactions are screened." },
+        { "event": "Fraud Check Completed", "note": "BE: fraud screening passes." },
+        { "event": "Funds Received", "note": "BE: Xe receives the sender's money (card charged, bank transfer received, open banking payment). For bank transfers, this can take days." },
+        { "event": "Payment Completed", "note": "BE: payment processing complete. Triggers disbursement." },
+        { "event": "Disbursement Sent", "note": "BE: money sent to recipient's bank/wallet/cash agent." },
+        { "event": "Transaction Completed", "note": "BE: recipient receives money. END OF LIFECYCLE. This is the TRUE revenue event — the transfer is done." }
+      ],
+      "validated_conversion_30d": "82,079 Created → 9,103 Fraud Checked → 2,047 Funds Received → 0 Disbursement/Completed in funnel",
+      "platforms": ["Server"],
+      "note": "Disbursement Sent and Transaction Completed don't appear in the funnel likely because: (1) they fire under different user IDs (system events), (2) processing delays exceed the conversion window, or (3) they're tracked on a different Amplitude identity. Transaction Completed has 57k+ events per week independently, so they DO fire — just not linkable in a user-level funnel.",
+      "transaction_completed_breakdown": {
+        "by_payment_method_7d": {
+          "bank_account": 19790,
+          "debit": 17358,
+          "direct_debit": 13619,
+          "open_banking": 3505,
+          "credit": 2686,
+          "balance": 573
+        },
+        "total_7d": 57531,
+        "note": "bank_account (34%) is the biggest — mostly bank/wire transfers. debit (30%) and direct_debit (24%) are card-based. Transaction Completed has 149 properties including revenueUSD, fee, totalCost, rate — the richest backend event."
+      },
+      "key_properties": {
+        "revenueUSD": "Revenue in USD — THE key financial metric",
+        "sendAmountUSD": "Send amount in USD for standardization",
+        "feeUSD": "Fee in USD",
+        "totalCost": "Total cost to sender",
+        "rate": "Exchange rate applied",
+        "isFirstTransaction": "First-time sender flag",
+        "isRiaTransfer": "Ria network transfer flag",
+        "isMassPayment": "Mass/batch payment flag",
+        "sameCurrency": "Same-currency transfer (no FX)",
+        "disbursementStatus": "Disbursement status",
+        "paymentMethod": "bank_account, debit, direct_debit, open_banking, credit, balance",
+        "payoutMethod": "Bank, Cash, Mobile Wallet",
+        "liquidityManager": "Which liquidity provider handled it"
+      },
+      "critical_dropoffs": [
+        "Transaction Created → Fraud Check: only 11% get fraud-checked — most pass without screening",
+        "Funds Received appears low (2,047) relative to Created (82,079) — bank transfers take days, card payments are instant",
+        "Disbursement/Completed not in funnel — likely identity linking issue, use these events independently"
+      ]
+    }
+  }
+}

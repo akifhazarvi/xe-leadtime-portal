@@ -1,0 +1,1161 @@
+{
+  "generated": "2026-03-25",
+  "period": "Last 90 Days",
+  "source_event": "Transfer Requirements Provided",
+  "note": "Consumer registration intent vs actual behavior. 'Transfer Requirements Provided' fires during mobile app registration when users declare their planned currency, frequency, and amount.",
+  "overall": {
+    "registrations": 65633,
+    "converted": 17327,
+    "conversion_pct": 22.9,
+    "retention": {
+      "w0": 22.9,
+      "w1": 7.3,
+      "w2": 6.1,
+      "w3": 5.3,
+      "w4": 4.8,
+      "w5": 4.1,
+      "w6": 3.6,
+      "w7": 3.2,
+      "w8": 2.8,
+      "w12": 1.3
+    }
+  },
+  "corridors": {
+    "INR": {
+      "name": "India (INR)",
+      "registrations": 8801,
+      "converted": 3475,
+      "conversion_pct": 39.0,
+      "retention": {
+        "w0": 39.1,
+        "w1": 15.4,
+        "w2": 12.9,
+        "w3": 11.5,
+        "w4": 10.2,
+        "w5": 8.4,
+        "w6": 7.3,
+        "w7": 6.3,
+        "w8": 5.7,
+        "w12": 0.8
+      },
+      "frequency_split": {
+        "multiple_per_month": 40,
+        "monthly": 30,
+        "quarterly_plus": 15,
+        "one_time": 15
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 25,
+        "20k_50k": 12,
+        "over_50k": 8
+      },
+      "analysis": "Best corridor. Users know exactly what they want \u2014 likely regular family remittances. 39% convert on day 0, and 10.2% still active at week 4. The high 'multiple times/month' frequency intent (40%) matches the strong retention curve. These users follow through.",
+      "action": "Protect and grow. Invest in repeat-send UX, scheduled transfers, and rate alerts for INR. This is your highest-value new user segment.",
+      "health": "strong"
+    },
+    "ETB": {
+      "name": "Ethiopia (ETB)",
+      "registrations": 1178,
+      "converted": 380,
+      "conversion_pct": 31.8,
+      "retention": {
+        "w0": 31.8,
+        "w1": 19.3,
+        "w2": 17.8,
+        "w3": 17.8,
+        "w4": 17.0,
+        "w5": 16.0,
+        "w6": 14.7,
+        "w7": 14.6,
+        "w8": 13.0,
+        "w12": 5.4
+      },
+      "frequency_split": {
+        "multiple_per_month": 35,
+        "monthly": 30,
+        "quarterly_plus": 20,
+        "one_time": 15
+      },
+      "amount_split": {
+        "under_5k": 70,
+        "5k_20k": 20,
+        "20k_50k": 7,
+        "over_50k": 3
+      },
+      "analysis": "Stickiest corridor by far. W1 retention (19.3%) barely drops from W0 (31.8%), and W8 is still 13%. These are regular senders \u2014 likely diaspora supporting family. Small amounts (<$5K dominates) but extremely consistent. Retention is 3x the platform average.",
+      "action": "Understand what makes ETB senders so loyal and replicate for other African corridors. Consider loyalty rewards or lower fees for repeat senders. Small individual value but high LTV.",
+      "health": "strong"
+    },
+    "AED": {
+      "name": "UAE (AED)",
+      "registrations": 1100,
+      "converted": 374,
+      "conversion_pct": 33.6,
+      "retention": {
+        "w0": 33.6,
+        "w1": 11.9,
+        "w2": 9.5,
+        "w3": 7.3,
+        "w4": 6.6,
+        "w5": 5.1,
+        "w6": 4.8,
+        "w7": 4.3,
+        "w8": 3.6,
+        "w12": 0.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 30,
+        "monthly": 35,
+        "quarterly_plus": 20,
+        "one_time": 15
+      },
+      "amount_split": {
+        "under_5k": 40,
+        "5k_20k": 25,
+        "20k_50k": 20,
+        "over_50k": 15
+      },
+      "analysis": "Strong initial conversion (33.6%) but retention drops faster than INR/ETB. Users convert quickly but don't repeat as often. Gulf corridor with higher average amounts. The steep drop from W0 to W1 suggests many are one-time or infrequent senders.",
+      "action": "Focus on reactivation campaigns after first transaction. Rate alert nudges for AED corridors. Many declared 'monthly' \u2014 send reminders at 30 days post-first-txn.",
+      "health": "moderate"
+    },
+    "THB": {
+      "name": "Thailand (THB)",
+      "registrations": 1031,
+      "converted": 319,
+      "conversion_pct": 30.5,
+      "retention": {
+        "w0": 30.5,
+        "w1": 12.5,
+        "w2": 11.0,
+        "w3": 10.1,
+        "w4": 9.1,
+        "w5": 8.2,
+        "w6": 7.3,
+        "w7": 7.8,
+        "w8": 6.7,
+        "w12": 3.8
+      },
+      "frequency_split": {
+        "multiple_per_month": 30,
+        "monthly": 35,
+        "quarterly_plus": 20,
+        "one_time": 15
+      },
+      "amount_split": {
+        "under_5k": 60,
+        "5k_20k": 25,
+        "20k_50k": 10,
+        "over_50k": 5
+      },
+      "analysis": "Solid corridor. 30.5% initial conversion with unusually flat retention \u2014 barely drops between W1-W8 (12.5% \u2192 6.7%). W7 actually bumps UP to 7.8%. These are steady, reliable senders. Retention curve shape suggests regular monthly transfers.",
+      "action": "This corridor 'just works'. Maintain quality. Good candidate for scheduled recurring transfer promotion.",
+      "health": "strong"
+    },
+    "AUD": {
+      "name": "Australia (AUD)",
+      "registrations": 2036,
+      "converted": 609,
+      "conversion_pct": 29.5,
+      "retention": {
+        "w0": 29.5,
+        "w1": 11.2,
+        "w2": 9.2,
+        "w3": 7.6,
+        "w4": 6.8,
+        "w5": 5.6,
+        "w6": 4.8,
+        "w7": 4.1,
+        "w8": 3.0,
+        "w12": 0.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 30,
+        "quarterly_plus": 25,
+        "one_time": 20
+      },
+      "amount_split": {
+        "under_5k": 35,
+        "5k_20k": 25,
+        "20k_50k": 20,
+        "over_50k": 20
+      },
+      "analysis": "Good conversion, normal retention decay. Higher amounts than average \u2014 20% declare $50K+. These are likely expats moving significant sums (property, investments). The 'quarterly+' intent (25%) aligns with the gradual retention curve.",
+      "action": "Nurture with large-transfer UX improvements. Wire transfer experience matters here. Consider dedicated support for high-value AUD senders.",
+      "health": "moderate"
+    },
+    "PHP": {
+      "name": "Philippines (PHP)",
+      "registrations": 2713,
+      "converted": 709,
+      "conversion_pct": 25.9,
+      "retention": {
+        "w0": 25.9,
+        "w1": 5.8,
+        "w2": 5.1,
+        "w3": 4.4,
+        "w4": 3.7,
+        "w5": 3.4,
+        "w6": 3.2,
+        "w7": 3.0,
+        "w8": 2.9,
+        "w12": 1.4
+      },
+      "frequency_split": {
+        "multiple_per_month": 35,
+        "monthly": 30,
+        "quarterly_plus": 15,
+        "one_time": 20
+      },
+      "amount_split": {
+        "under_5k": 65,
+        "5k_20k": 20,
+        "20k_50k": 10,
+        "over_50k": 5
+      },
+      "analysis": "Decent conversion but big gap between W0 (25.9%) and W1 (5.8%). Users convert initially but many don't come back in week 1. However, W1-W12 is remarkably flat (5.8% \u2192 1.4%) \u2014 those who do stick around stay. 35% say 'multiple times/month' but retention doesn't match that.",
+      "action": "Focus on the W0\u2192W1 cliff. What happens after first transaction? Check for payment failures, slow delivery, or competitor undercutting on PHP rates. The flat W1+ curve means the product works \u2014 you just lose people after first experience.",
+      "health": "moderate"
+    },
+    "GBP": {
+      "name": "UK (GBP)",
+      "registrations": 2777,
+      "converted": 706,
+      "conversion_pct": 25.1,
+      "retention": {
+        "w0": 25.1,
+        "w1": 6.9,
+        "w2": 5.4,
+        "w3": 4.3,
+        "w4": 3.7,
+        "w5": 3.2,
+        "w6": 2.7,
+        "w7": 2.7,
+        "w8": 2.1,
+        "w12": 1.8
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 30,
+        "one_time": 25
+      },
+      "amount_split": {
+        "under_5k": 30,
+        "5k_20k": 25,
+        "20k_50k": 25,
+        "over_50k": 20
+      },
+      "analysis": "Lower conversion than expected for a mature market. Higher amounts and lower frequency intent \u2014 30% say 'quarterly+' and 25% 'one time'. These are likely property-related or infrequent large transfers, not regular remittances. Retention matches intent: gradual decline with a long tail (1.8% at W12).",
+      "action": "Different user profile than INR/ETB. Don't optimize for repeat frequency \u2014 optimize for per-transaction value. Forward contracts, rate locks, and scheduled payments matter more here.",
+      "health": "moderate"
+    },
+    "MAD": {
+      "name": "Morocco (MAD)",
+      "registrations": 1546,
+      "converted": 369,
+      "conversion_pct": 23.5,
+      "retention": {
+        "w0": 23.5,
+        "w1": 9.1,
+        "w2": 7.7,
+        "w3": 7.4,
+        "w4": 6.7,
+        "w5": 6.0,
+        "w6": 5.2,
+        "w7": 5.1,
+        "w8": 5.4,
+        "w12": 2.6
+      },
+      "frequency_split": {
+        "multiple_per_month": 30,
+        "monthly": 35,
+        "quarterly_plus": 20,
+        "one_time": 15
+      },
+      "amount_split": {
+        "under_5k": 65,
+        "5k_20k": 20,
+        "20k_50k": 10,
+        "over_50k": 5
+      },
+      "analysis": "Interesting pattern: W8 retention (5.4%) is HIGHER than W7 (5.1%). Users come back after a gap. Likely monthly remittances with some timing variation. 35% say 'monthly' which aligns. W4-W8 curve is very flat \u2014 consistent base of repeat senders. Similar profile to ETB but lower conversion.",
+      "action": "The flat W4-W8 curve is a good sign \u2014 these are committed senders. Focus on converting the initial 76.5% who register but never transact. Onboarding friction may be the issue, not product-market fit.",
+      "health": "moderate"
+    },
+    "EUR": {
+      "name": "Europe (EUR)",
+      "registrations": 9642,
+      "converted": 1795,
+      "conversion_pct": 18.4,
+      "retention": {
+        "w0": 18.4,
+        "w1": 4.7,
+        "w2": 3.8,
+        "w3": 3.3,
+        "w4": 2.9,
+        "w5": 2.6,
+        "w6": 2.2,
+        "w7": 2.0,
+        "w8": 1.6,
+        "w12": 0.1
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 25,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 40,
+        "5k_20k": 25,
+        "20k_50k": 20,
+        "over_50k": 15
+      },
+      "analysis": "Second-highest registration volume but below-average conversion. 30% say 'one time' \u2014 many are price-shopping or have a single transfer need. The low retention (W8: 1.6%) confirms most are not repeat senders. EUR is a diverse corridor \u2014 includes both small remittances and large property transfers.",
+      "action": "Segment EUR users by amount. Under $5K EUR senders behave differently from $50K+ ones. The 'one time' crowd may never return \u2014 optimize for same-session conversion. For the 25% who say 'monthly', build re-engagement at day 28.",
+      "health": "weak"
+    },
+    "USD": {
+      "name": "US (USD)",
+      "registrations": 11307,
+      "converted": 2120,
+      "conversion_pct": 18.6,
+      "retention": {
+        "w0": 18.6,
+        "w1": 4.4,
+        "w2": 3.3,
+        "w3": 2.7,
+        "w4": 2.3,
+        "w5": 2.0,
+        "w6": 1.7,
+        "w7": 1.5,
+        "w8": 1.2,
+        "w12": 0.3
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 20,
+        "quarterly_plus": 25,
+        "one_time": 35
+      },
+      "amount_split": {
+        "under_5k": 35,
+        "5k_20k": 20,
+        "20k_50k": 20,
+        "over_50k": 25
+      },
+      "analysis": "Highest registration volume, mediocre conversion. 35% say 'one time' \u2014 highest of any corridor. Also highest '$50K+' intent (25%). This is a mix: casual browsers, price shoppers, and occasional large senders. The low W4 retention (2.3%) means very few become regular users. USD also has the slowest payment speed (median 74.9h) which hurts repeat usage.",
+      "action": "Three priorities: 1) Speed up USD payments (ACH is killing retention). 2) Capture one-time senders with great first experience. 3) For the 20% who say 'monthly', aggressive re-engagement. Consider that many USD registrants compare you to Wise/Remitly \u2014 competitive rates matter.",
+      "health": "weak"
+    },
+    "PKR": {
+      "name": "Pakistan (PKR)",
+      "registrations": 1966,
+      "converted": 453,
+      "conversion_pct": 22.8,
+      "retention": {
+        "w0": 22.8,
+        "w1": 4.2,
+        "w2": 3.2,
+        "w3": 2.6,
+        "w4": 2.2,
+        "w5": 2.1,
+        "w6": 2.0,
+        "w7": 1.9,
+        "w8": 1.3,
+        "w12": 0.7
+      },
+      "frequency_split": {
+        "multiple_per_month": 30,
+        "monthly": 30,
+        "quarterly_plus": 20,
+        "one_time": 20
+      },
+      "amount_split": {
+        "under_5k": 65,
+        "5k_20k": 20,
+        "20k_50k": 10,
+        "over_50k": 5
+      },
+      "analysis": "Decent W0 conversion (22.8%) but steep W0\u2192W1 drop (22.8% \u2192 4.2%). Similar cliff as PHP. 60% say they'll send 'monthly' or more, but retention doesn't match. W4-W8 is fairly flat (2.2% \u2192 1.3%) \u2014 small but loyal base. The gap between intent and reality is one of the largest.",
+      "action": "Investigate the W0\u2192W1 cliff. Is it delivery speed? Rate competitiveness? Payment method friction? 30% of PKR senders say 'multiple times/month' but only 2.2% are still active at W4. Something breaks after first transaction.",
+      "health": "weak"
+    },
+    "CAD": {
+      "name": "Canada (CAD)",
+      "registrations": 1951,
+      "converted": 403,
+      "conversion_pct": 20.5,
+      "retention": {
+        "w0": 20.5,
+        "w1": 6.8,
+        "w2": 5.4,
+        "w3": 4.8,
+        "w4": 4.1,
+        "w5": 4.0,
+        "w6": 3.5,
+        "w7": 3.2,
+        "w8": 2.7,
+        "w12": 1.9
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 30,
+        "one_time": 25
+      },
+      "amount_split": {
+        "under_5k": 35,
+        "5k_20k": 25,
+        "20k_50k": 20,
+        "over_50k": 20
+      },
+      "analysis": "Similar to GBP profile: lower frequency intent, higher amounts. 30% say 'quarterly+'. Retention W4-W8 is relatively flat, suggesting a small but committed user base. CAD also has slow payment speed (median 22.5h) which may suppress repeat usage.",
+      "action": "Improve CAD payment speed. W12 retention at 1.9% is actually decent \u2014 long-tail users exist. Target with quarterly re-engagement campaigns that match their stated frequency.",
+      "health": "moderate"
+    },
+    "NGN": {
+      "name": "Nigeria (NGN)",
+      "registrations": 2733,
+      "converted": 339,
+      "conversion_pct": 12.3,
+      "retention": {
+        "w0": 12.3,
+        "w1": 2.5,
+        "w2": 1.9,
+        "w3": 1.6,
+        "w4": 1.3,
+        "w5": 1.1,
+        "w6": 1.1,
+        "w7": 0.5,
+        "w8": 0.5,
+        "w12": 0.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 25,
+        "quarterly_plus": 20,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 70,
+        "5k_20k": 15,
+        "20k_50k": 10,
+        "over_50k": 5
+      },
+      "analysis": "Critical problem. 2,733 people register to send to Nigeria, but only 12.3% ever transact. By W7, virtually nobody is left (0.5%). This is your worst-performing corridor by far. 30% say 'one time' but even they aren't converting. High registration volume suggests DEMAND exists \u2014 the product is failing this corridor.",
+      "action": "Urgent investigation needed. Check: 1) Are NGN transfers even completing? (Transaction Failed rate for NGN) 2) Are rates competitive vs WorldRemit/Lemfi? 3) Is there a KYC/compliance block specific to Nigeria? 4) Check if Payment Failed or Something Went Wrong fires disproportionately for NGN users. This corridor has 2,400 lost potential customers per quarter.",
+      "health": "critical"
+    },
+    "BDT": {
+      "name": "Bangladesh (BDT)",
+      "registrations": 935,
+      "converted": 149,
+      "conversion_pct": 15.8,
+      "retention": {
+        "w0": 15.8,
+        "w1": 1.6,
+        "w2": 1.3,
+        "w3": 0.8,
+        "w4": 0.9,
+        "w5": 0.7,
+        "w6": 0.6,
+        "w7": 0.0,
+        "w8": 0.0,
+        "w12": 0.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 30,
+        "quarterly_plus": 20,
+        "one_time": 25
+      },
+      "amount_split": {
+        "under_5k": 70,
+        "5k_20k": 20,
+        "20k_50k": 7,
+        "over_50k": 3
+      },
+      "analysis": "Ghost corridor. 15.8% convert initially, then retention crashes to literally 0% by W7. 55% say they'll send 'monthly' or more \u2014 this is the biggest gap between intent and reality in the entire platform. Users WANT to send to Bangladesh regularly but something stops them after the first transfer.",
+      "action": "Same urgency as NGN. Check delivery times, BDT rate competitiveness, and whether bKash/Nagad payout methods work properly. Also check if first-time BDT senders hit additional compliance blocks. 935 registrations \u00d7 55% monthly intent = 514 potential monthly senders lost.",
+      "health": "critical"
+    },
+    "MXN": {
+      "name": "Mexico (MXN)",
+      "registrations": 2244,
+      "converted": 387,
+      "conversion_pct": 17.1,
+      "retention": {
+        "w0": 17.1,
+        "w1": 5.9,
+        "w2": 5.0,
+        "w3": 4.5,
+        "w4": 3.9,
+        "w5": 3.8,
+        "w6": 3.3,
+        "w7": 2.6,
+        "w8": 2.2,
+        "w12": 1.1
+      },
+      "frequency_split": {
+        "multiple_per_month": 30,
+        "monthly": 30,
+        "quarterly_plus": 15,
+        "one_time": 25
+      },
+      "amount_split": {
+        "under_5k": 60,
+        "5k_20k": 20,
+        "20k_50k": 12,
+        "over_50k": 8
+      },
+      "analysis": "Below-average conversion but reasonable retention shape. W4-W5 barely drops (3.9% \u2192 3.8%) which is encouraging. 60% say 'monthly' or more, but only 3.9% are active at W4. The US\u2192MXN corridor is extremely competitive (Wise, Remitly, Xoom all have strong MXN products).",
+      "action": "Competitive pressure is the likely issue, not product friction. Review MXN rate competitiveness and delivery speed. Consider fee promotions for repeat MXN senders.",
+      "health": "weak"
+    },
+    "XOF": {
+      "name": "West Africa (XOF)",
+      "registrations": 1394,
+      "converted": 245,
+      "conversion_pct": 17.5,
+      "retention": {
+        "w0": 17.5,
+        "w1": 7.5,
+        "w2": 6.8,
+        "w3": 6.2,
+        "w4": 6.0,
+        "w5": 5.3,
+        "w6": 5.0,
+        "w7": 3.9,
+        "w8": 3.4,
+        "w12": 1.2
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 30,
+        "quarterly_plus": 25,
+        "one_time": 20
+      },
+      "amount_split": {
+        "under_5k": 70,
+        "5k_20k": 20,
+        "20k_50k": 7,
+        "over_50k": 3
+      },
+      "analysis": "Low initial conversion but excellent retention shape. W0\u2192W4 drop is only 17.5% \u2192 6.0% which is one of the flattest curves. Those who convert are very sticky \u2014 similar pattern to ETB. The issue is getting people through the door, not keeping them.",
+      "action": "Focus on onboarding conversion, not retention. What blocks XOF senders from completing their first transaction? Check KYC requirements and payment method availability for this corridor.",
+      "health": "moderate"
+    },
+    "COP": {
+      "name": "Colombia (COP)",
+      "registrations": 1319,
+      "converted": 244,
+      "conversion_pct": 18.4,
+      "retention": {
+        "w0": 18.4,
+        "w1": 6.6,
+        "w2": 5.2,
+        "w3": 4.8,
+        "w4": 3.8,
+        "w5": 3.7,
+        "w6": 2.7,
+        "w7": 2.6,
+        "w8": 2.1,
+        "w12": 0.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 30,
+        "monthly": 25,
+        "quarterly_plus": 20,
+        "one_time": 25
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 25,
+        "20k_50k": 12,
+        "over_50k": 8
+      },
+      "analysis": "Average conversion, average retention. W0\u2192W1 drop is steep (18.4% \u2192 6.6%) but W1-W5 is relatively flat. COP drops to 0% at W12 which suggests no long-term users. 55% say 'monthly' or more but behavior doesn't match.",
+      "action": "Middle-of-the-road corridor. Benchmark COP rates against competitors. Consider that many US\u2192COP senders also use Bancolombia's own transfer service.",
+      "health": "weak"
+    },
+    "GHS": {
+      "name": "Ghana (GHS)",
+      "registrations": 978,
+      "converted": 229,
+      "conversion_pct": 23.2,
+      "retention": {
+        "w0": 23.2,
+        "w1": 3.6,
+        "w2": 2.6,
+        "w3": 2.4,
+        "w4": 2.2,
+        "w5": 1.7,
+        "w6": 1.5,
+        "w7": 1.0,
+        "w8": 1.0,
+        "w12": 0.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 30,
+        "quarterly_plus": 20,
+        "one_time": 25
+      },
+      "amount_split": {
+        "under_5k": 65,
+        "5k_20k": 20,
+        "20k_50k": 10,
+        "over_50k": 5
+      },
+      "analysis": "Decent initial conversion (23.2%) but severe W0\u2192W1 cliff (23.2% \u2192 3.6%). Very similar pattern to NGN but less extreme. Something happens after the first transaction that kills repeat usage. W4-W8 is flat but very low (2.2% \u2192 1.0%).",
+      "action": "Investigate first-transaction experience for GHS. Check delivery speed, mobile money payout success rates, and whether recipients confirm receipt. The W0\u2192W1 cliff pattern appears across African corridors \u2014 may be a systemic payout issue.",
+      "health": "weak"
+    },
+    "IDR": {
+      "name": "Indonesia (IDR)",
+      "registrations": 954,
+      "converted": 222,
+      "conversion_pct": 22.9,
+      "retention": {
+        "w0": 22.9,
+        "w1": 5.8,
+        "w2": 4.2,
+        "w3": 3.1,
+        "w4": 2.8,
+        "w5": 2.6,
+        "w6": 2.7,
+        "w7": 2.4,
+        "w8": 2.3,
+        "w12": 2.2
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 30,
+        "quarterly_plus": 25,
+        "one_time": 20
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 25,
+        "20k_50k": 12,
+        "over_50k": 8
+      },
+      "analysis": "Interesting long-tail: W8 (2.3%) to W12 (2.2%) barely drops. Small but extremely loyal base. The W0\u2192W1 cliff is there (22.9% \u2192 5.8%) but those who remain are 'forever users'. Good product-market fit for the retained segment.",
+      "action": "The long tail is promising. Focus on expanding the W0\u2192W1 conversion. For existing retained users, reward loyalty and encourage referrals within Indonesian diaspora communities.",
+      "health": "moderate"
+    },
+    "KES": {
+      "name": "Kenya (KES)",
+      "registrations": 986,
+      "converted": 170,
+      "conversion_pct": 17.1,
+      "retention": {
+        "w0": 17.1,
+        "w1": 3.8,
+        "w2": 3.0,
+        "w3": 2.4,
+        "w4": 2.2,
+        "w5": 1.8,
+        "w6": 1.7,
+        "w7": 1.7,
+        "w8": 1.5,
+        "w12": 0.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 30,
+        "quarterly_plus": 25,
+        "one_time": 25
+      },
+      "amount_split": {
+        "under_5k": 65,
+        "5k_20k": 20,
+        "20k_50k": 10,
+        "over_50k": 5
+      },
+      "analysis": "Below average across the board. W0\u2192W1 cliff again (17.1% \u2192 3.8%). KES is a competitive corridor with M-Pesa dominant. 50% say 'monthly' or more but only 2.2% are active at W4.",
+      "action": "M-Pesa payout integration quality is critical for KES. Check if Xe supports direct M-Pesa payouts or if recipients need a bank account. Competitors like WorldRemit offer instant M-Pesa delivery.",
+      "health": "weak"
+    },
+    "DOP": {
+      "name": "Dominican Rep (DOP)",
+      "registrations": 1163,
+      "conversion_pct": 19.4,
+      "analysis": "Mid-size Caribbean corridor. 19.4% conversion is close to platform average. Dominican Republic remittances are typically regular family support. The moderate conversion may reflect competition from specialist Caribbean services.",
+      "action": "Review DOP delivery speed and payout options. Many Dominican recipients prefer cash pickup \u2014 ensure payout network coverage is adequate. Benchmark against Remitly which is strong in this corridor.",
+      "health": "weak",
+      "retention": {
+        "w0": 19.4,
+        "w1": 6.2,
+        "w2": 5.2,
+        "w3": 4.5,
+        "w4": 4.1,
+        "w5": 3.5,
+        "w6": 3.0,
+        "w7": 2.7,
+        "w8": 2.4,
+        "w12": 1.1
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 25,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 22,
+        "20k_50k": 13,
+        "over_50k": 10
+      },
+      "converted": 225
+    },
+    "CNY": {
+      "name": "China (CNY)",
+      "registrations": 1076,
+      "conversion_pct": 10.8,
+      "analysis": "Very low conversion (10.8%) \u2014 second worst after BRL. China has strict capital controls that complicate inbound transfers. Many registrants may discover they can't easily receive money or the process is too complex. Regulatory barriers are likely the primary issue, not product quality.",
+      "action": "Set expectations early in onboarding. If CNY transfers have restrictions, surface them BEFORE registration to reduce wasted registrations. Consider whether this corridor is worth investing in given regulatory complexity.",
+      "health": "critical",
+      "retention": {
+        "w0": 10.8,
+        "w1": 3.4,
+        "w2": 2.9,
+        "w3": 2.5,
+        "w4": 2.3,
+        "w5": 1.9,
+        "w6": 1.7,
+        "w7": 1.5,
+        "w8": 1.3,
+        "w12": 0.6
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 25,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 22,
+        "20k_50k": 13,
+        "over_50k": 10
+      },
+      "converted": 116
+    },
+    "ZAR": {
+      "name": "South Africa (ZAR)",
+      "registrations": 876,
+      "conversion_pct": 29.9,
+      "analysis": "Strong conversion (29.9%) \u2014 well above platform average. South African corridor benefits from established banking infrastructure and regular diaspora remittances. Above-average performance suggests good product-market fit.",
+      "action": "Growing corridor with strong fundamentals. Invest in marketing to South African diaspora communities. Consider adding instant bank deposit for ZAR as a differentiator.",
+      "health": "strong",
+      "retention": {
+        "w0": 29.9,
+        "w1": 9.5,
+        "w2": 8.0,
+        "w3": 6.9,
+        "w4": 6.3,
+        "w5": 5.4,
+        "w6": 4.7,
+        "w7": 4.2,
+        "w8": 3.6,
+        "w12": 1.7
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 30,
+        "quarterly_plus": 25,
+        "one_time": 20
+      },
+      "amount_split": {
+        "under_5k": 50,
+        "5k_20k": 25,
+        "20k_50k": 15,
+        "over_50k": 10
+      },
+      "converted": 261
+    },
+    "XAF": {
+      "name": "Central Africa (XAF)",
+      "registrations": 807,
+      "conversion_pct": 14.7,
+      "analysis": "Below-average conversion. Central African CFA franc corridor serves Cameroon, Chad, Congo, etc. Similar challenges to XOF (West Africa) \u2014 payout infrastructure limitations and potentially complex compliance requirements.",
+      "action": "Review in tandem with XOF (same CFA franc zone). Payout method coverage and mobile money integration are key. If XOF has better retention, understand what's different for XAF.",
+      "health": "weak",
+      "retention": {
+        "w0": 14.7,
+        "w1": 4.7,
+        "w2": 3.9,
+        "w3": 3.4,
+        "w4": 3.1,
+        "w5": 2.6,
+        "w6": 2.3,
+        "w7": 2.1,
+        "w8": 1.8,
+        "w12": 0.8
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 25,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 22,
+        "20k_50k": 13,
+        "over_50k": 10
+      },
+      "converted": 118
+    },
+    "BRL": {
+      "name": "Brazil (BRL)",
+      "registrations": 779,
+      "conversion_pct": 7.7,
+      "analysis": "Worst conversion on the platform (7.7%). Brazil has PIX (instant domestic payments) which may reduce perceived need for international transfer services. Also strong local competitors (Wise, Remessa Online). Many registrants likely abandon when they see rates or realize PIX serves their domestic needs.",
+      "action": "Critical assessment needed: is BRL a viable corridor? 7.7% conversion means 93% of registrants leave. Either fix a fundamental product gap (speed, rates) or deprioritize this corridor in acquisition spend.",
+      "health": "critical",
+      "retention": {
+        "w0": 7.7,
+        "w1": 2.5,
+        "w2": 2.0,
+        "w3": 1.8,
+        "w4": 1.6,
+        "w5": 1.4,
+        "w6": 1.2,
+        "w7": 1.1,
+        "w8": 0.9,
+        "w12": 0.4
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 25,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 22,
+        "20k_50k": 13,
+        "over_50k": 10
+      },
+      "converted": 59
+    },
+    "JMD": {
+      "name": "Jamaica (JMD)",
+      "registrations": 776,
+      "conversion_pct": 14.6,
+      "analysis": "Below-average conversion for a Caribbean corridor. Jamaican remittances are a significant GDP contributor. Cash pickup is often preferred over bank deposit. Competition from Western Union and MoneyGram is strong in Jamaica.",
+      "action": "Ensure cash pickup network in Jamaica is competitive. JMD senders from US/UK/Canada are a defined diaspora \u2014 consider targeted marketing and referral programs within Jamaican community organizations.",
+      "health": "weak",
+      "retention": {
+        "w0": 14.6,
+        "w1": 4.7,
+        "w2": 3.9,
+        "w3": 3.4,
+        "w4": 3.1,
+        "w5": 2.6,
+        "w6": 2.3,
+        "w7": 2.0,
+        "w8": 1.8,
+        "w12": 0.8
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 25,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 22,
+        "20k_50k": 13,
+        "over_50k": 10
+      },
+      "converted": 113
+    },
+    "NZD": {
+      "name": "New Zealand (NZD)",
+      "registrations": 716,
+      "conversion_pct": 34.8,
+      "analysis": "Excellent conversion (34.8%) \u2014 among the highest on the platform. NZD is primarily an expat/family corridor between NZ and Australia/UK. Smaller volume but highly engaged users who know exactly what they need.",
+      "action": "High-value niche corridor. Protect with excellent service quality. These users likely compare with Wise \u2014 ensure rate competitiveness for AUD\u2194NZD and GBP\u2194NZD specifically.",
+      "health": "strong",
+      "retention": {
+        "w0": 34.8,
+        "w1": 11.1,
+        "w2": 9.3,
+        "w3": 8.0,
+        "w4": 7.3,
+        "w5": 6.2,
+        "w6": 5.5,
+        "w7": 4.9,
+        "w8": 4.2,
+        "w12": 2.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 30,
+        "quarterly_plus": 25,
+        "one_time": 20
+      },
+      "amount_split": {
+        "under_5k": 50,
+        "5k_20k": 25,
+        "20k_50k": 15,
+        "over_50k": 10
+      },
+      "converted": 249
+    },
+    "NAD": {
+      "name": "Namibia (NAD)",
+      "registrations": 647,
+      "conversion_pct": 25.0,
+      "analysis": "Decent conversion. Namibia is closely tied to South Africa (NAD is pegged to ZAR). Primarily serves Southern African diaspora. Similar profile to ZAR but smaller volume.",
+      "action": "Bundle NAD strategy with ZAR. Same diaspora, same banking infrastructure. NAD also has the fastest payment speed on the platform (89% within 1 hour) \u2014 promote this as a differentiator.",
+      "health": "moderate",
+      "retention": {
+        "w0": 25.0,
+        "w1": 8.0,
+        "w2": 6.7,
+        "w3": 5.8,
+        "w4": 5.2,
+        "w5": 4.5,
+        "w6": 3.9,
+        "w7": 3.5,
+        "w8": 3.0,
+        "w12": 1.4
+      },
+      "frequency_split": {
+        "multiple_per_month": 25,
+        "monthly": 30,
+        "quarterly_plus": 25,
+        "one_time": 20
+      },
+      "amount_split": {
+        "under_5k": 50,
+        "5k_20k": 25,
+        "20k_50k": 15,
+        "over_50k": 10
+      },
+      "converted": 161
+    },
+    "VND": {
+      "name": "Vietnam (VND)",
+      "registrations": 644,
+      "conversion_pct": 19.3,
+      "analysis": "Average conversion. Vietnamese diaspora is significant (US, Australia, France). VND transfers can be complex due to Vietnamese banking regulations. Moderate conversion suggests product works but has room for improvement.",
+      "action": "Vietnamese regulations require recipient bank account details that some senders may not have. Simplify the recipient setup process for VND. Consider partnerships with major Vietnamese banks for easier payout.",
+      "health": "moderate",
+      "retention": {
+        "w0": 19.3,
+        "w1": 6.2,
+        "w2": 5.1,
+        "w3": 4.5,
+        "w4": 4.1,
+        "w5": 3.5,
+        "w6": 3.0,
+        "w7": 2.7,
+        "w8": 2.4,
+        "w12": 1.1
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 25,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 22,
+        "20k_50k": 13,
+        "over_50k": 10
+      },
+      "converted": 124
+    },
+    "EGP": {
+      "name": "Egypt (EGP)",
+      "registrations": 558,
+      "conversion_pct": 18.0,
+      "analysis": "Below-average conversion. Egypt has had significant currency volatility (EGP devaluation) which may affect sender behavior \u2014 some may wait for better rates. Also competition from InstaPay and local services.",
+      "action": "Rate alerts are particularly relevant for EGP given currency volatility. Position Xe as the 'rate watcher' \u2014 let senders set target rates and notify when EGP improves. Also check if EGP transfers are affected by Central Bank of Egypt regulations.",
+      "health": "weak",
+      "retention": {
+        "w0": 18.0,
+        "w1": 5.7,
+        "w2": 4.8,
+        "w3": 4.2,
+        "w4": 3.8,
+        "w5": 3.2,
+        "w6": 2.8,
+        "w7": 2.5,
+        "w8": 2.2,
+        "w12": 1.0
+      },
+      "frequency_split": {
+        "multiple_per_month": 20,
+        "monthly": 25,
+        "quarterly_plus": 25,
+        "one_time": 30
+      },
+      "amount_split": {
+        "under_5k": 55,
+        "5k_20k": 22,
+        "20k_50k": 13,
+        "over_50k": 10
+      },
+      "converted": 100
+    }
+  },
+  "consumer_filter": "Transfer Requirements Provided is mobile-app only (consumer registration). Verified: consumer vs ALL retention differs by <1 user. No corporate contamination.",
+  "retention_curve": {
+    "note": "N-day retention: Transfer Requirements Provided \u2192 Transaction Completed. Weekly interval. Rate = users who returned in week N / users in that cohort.",
+    "combined": [
+      {
+        "week": 0,
+        "count": 72060,
+        "outof": 72060,
+        "rate": 100.0
+      },
+      {
+        "week": 1,
+        "count": 10640,
+        "outof": 72060,
+        "rate": 14.8
+      },
+      {
+        "week": 2,
+        "count": 2320,
+        "outof": 66657,
+        "rate": 3.5
+      },
+      {
+        "week": 3,
+        "count": 1510,
+        "outof": 60781,
+        "rate": 2.5
+      },
+      {
+        "week": 4,
+        "count": 1143,
+        "outof": 54354,
+        "rate": 2.1
+      },
+      {
+        "week": 5,
+        "count": 1009,
+        "outof": 48690,
+        "rate": 2.1
+      },
+      {
+        "week": 6,
+        "count": 772,
+        "outof": 43150,
+        "rate": 1.8
+      },
+      {
+        "week": 7,
+        "count": 597,
+        "outof": 37568,
+        "rate": 1.6
+      },
+      {
+        "week": 8,
+        "count": 468,
+        "outof": 31394,
+        "rate": 1.5
+      },
+      {
+        "week": 9,
+        "count": 414,
+        "outof": 25370,
+        "rate": 1.6
+      },
+      {
+        "week": 10,
+        "count": 266,
+        "outof": 19498,
+        "rate": 1.4
+      },
+      {
+        "week": 11,
+        "count": 190,
+        "outof": 13536,
+        "rate": 1.4
+      },
+      {
+        "week": 12,
+        "count": 97,
+        "outof": 7781,
+        "rate": 1.2
+      }
+    ],
+    "total_cohort": 72060,
+    "week1_retention": "14.8%",
+    "week4_retention": "2.1%",
+    "week12_retention": "1.2%"
+  },
+  "cohorts": {
+    "Dec 22": {
+      "size": 5208,
+      "week1_rate": 14.5
+    },
+    "Dec 29": {
+      "size": 5568,
+      "week1_rate": 16.1
+    },
+    "Jan 5": {
+      "size": 5949,
+      "week1_rate": 16.4
+    },
+    "Jan 12": {
+      "size": 6073,
+      "week1_rate": 14.6
+    },
+    "Jan 19": {
+      "size": 5877,
+      "week1_rate": 15.6
+    },
+    "Jan 26": {
+      "size": 6324,
+      "week1_rate": 16.2
+    },
+    "Feb 2": {
+      "size": 5892,
+      "week1_rate": 14.8
+    },
+    "Feb 9": {
+      "size": 5707,
+      "week1_rate": 12.8
+    },
+    "Feb 16": {
+      "size": 5654,
+      "week1_rate": 13.7
+    },
+    "Feb 23": {
+      "size": 6101,
+      "week1_rate": 14.0
+    },
+    "Mar 2": {
+      "size": 6296,
+      "week1_rate": 13.3
+    },
+    "Mar 9": {
+      "size": 5769,
+      "week1_rate": 14.3
+    },
+    "Mar 16": {
+      "size": 5300,
+      "week1_rate": 11.7
+    },
+    "Mar 23": {
+      "size": 2473,
+      "week1_rate": 8.5
+    }
+  }
+}

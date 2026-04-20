@@ -1,0 +1,2182 @@
+{
+  "generated": "2026-04-20",
+  "branch": "feature/uk-leadtime-destination-country",
+  "repo_path": "/Users/akif.hazarvi/Xe-AI-Projects/launchpad-api",
+  "methodology": {
+    "bank_to_bank_sla": "Leg1 (Funds Received → Transaction Completed median, 397s) + Leg2 (payout network P80 per destination)",
+    "bank_to_bank_leg1_s": 397,
+    "leg1_source": "Amplitude funnel: Funds Received (senderAddressCountryCode=GB) → Transaction Completed (senderCountry=GB, paymentMethod=bank_account). Last 30 days. n=3058. Median 397s, average 32,357s.",
+    "leg1_chart": "https://app.amplitude.com/analytics/ria/chart/new/xx1fx9ni",
+    "leg2_source": "Weekly UK payout report (Jimmy), P80 per (currency, destination) across bank payout methods (Sepa/Swift/FPS/RIA/Domestic), volume-weighted.",
+    "rationale": "Transaction Created → Transaction Completed would include the customer's bank-clearing time which we don't control. Using Funds Received as Leg 1 start excludes bank clearing, so the measured Leg 1 is our actual post-funding processing time. Adding this to Leg 2 P80 gives a realistic end-to-end SLA."
+  },
+  "code_changes": [
+    {
+      "file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/LeadTimeEntry.cs",
+      "change": "Add optional DestinationCountry property (kept old ctor for backward compat)"
+    },
+    {
+      "file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/LeadTimeMap.cs",
+      "change": "Composite key (ccy, country) + TryFindEntry with fallback to currency default"
+    },
+    {
+      "file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/EmbeddedLeadTimeProvider.cs",
+      "change": "Read optional DestinationCountry column; group by (ccy, country); preserve Ria priority per group"
+    },
+    {
+      "file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/LeadTimesLoader.cs",
+      "change": "Overloads accept destinationCountry; fallback to currency default if no match"
+    },
+    {
+      "file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/ILeadTimeProvider.cs",
+      "change": "New overload with destinationCountry parameter"
+    },
+    {
+      "file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/LeadTimeProvider.cs",
+      "change": "New overload threads destinationCountry through; old signature delegates with null (back-compat)"
+    },
+    {
+      "file": "src/Xe.Api.Launchpad/Controllers/QuoteControllerV2.cs",
+      "change": "Pass quote.Quote.CountryTo to _leadTimes.GetLeadTime"
+    },
+    {
+      "file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/Data/UK.csv",
+      "change": "156 existing rows preserved + 35 per-destination improvement rows + trailing DestinationCountry column"
+    },
+    {
+      "file": "test/UnitTest/Xe.Api.BackOfficeIntegration.UnitTest/LeadTimes/LeadTimeLoaderTests.cs",
+      "change": "3 new tests: destination-specific match, unknown-country fallback, no-country backward compat"
+    },
+    {
+      "file": "NuGet.config",
+      "change": "Added Xe artifactory feeds (xemt, gdt-nuget) alongside nuget.org so restore works locally"
+    },
+    {
+      "file": "tools/LeadTimeProbe/",
+      "change": "New CLI to preview Quote-response lead-time string for any (country, ccy, dest, pm, dm, time)"
+    }
+  ],
+  "stats": {
+    "existing_rows": 156,
+    "new_rows": 35,
+    "total_rows": 191,
+    "payments_analysed": 28967,
+    "currencies_improved": 18,
+    "multi_row_currencies": 58
+  },
+  "improvements": [
+    {
+      "currency": "EUR",
+      "destination": "FR",
+      "ccyType": "Major CCY",
+      "volume": 3336,
+      "in_volume": 382,
+      "out_volume": 2954,
+      "in_p80_s": 17,
+      "out_p80_s": 68,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "ES",
+      "ccyType": "Major CCY",
+      "volume": 2576,
+      "in_volume": 529,
+      "out_volume": 2047,
+      "in_p80_s": 2383,
+      "out_p80_s": 452,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "THB",
+      "destination": "TH",
+      "ccyType": "Ria CCY",
+      "volume": 1618,
+      "in_volume": 506,
+      "out_volume": 1112,
+      "in_p80_s": 1209,
+      "out_p80_s": 4351,
+      "revenue_usd": 22147,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "2hrs",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "ZAR",
+      "destination": "ZA",
+      "ccyType": "Standard CCY",
+      "volume": 1447,
+      "in_volume": 384,
+      "out_volume": 1063,
+      "in_p80_s": 5995,
+      "out_p80_s": 11707,
+      "revenue_usd": 30585,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "2hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "PT",
+      "ccyType": "Major CCY",
+      "volume": 619,
+      "in_volume": 122,
+      "out_volume": 497,
+      "in_p80_s": 13,
+      "out_p80_s": 21,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "IE",
+      "ccyType": "Major CCY",
+      "volume": 350,
+      "in_volume": 81,
+      "out_volume": 269,
+      "in_p80_s": 13,
+      "out_p80_s": 882,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "IT",
+      "ccyType": "Major CCY",
+      "volume": 327,
+      "in_volume": 51,
+      "out_volume": 276,
+      "in_p80_s": 19,
+      "out_p80_s": 87,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "TRY",
+      "destination": "TR",
+      "ccyType": "Ria CCY",
+      "volume": 318,
+      "in_volume": 83,
+      "out_volume": 235,
+      "in_p80_s": 48331,
+      "out_p80_s": 29421,
+      "revenue_usd": 3956,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "<24hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": false,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "DE",
+      "ccyType": "Major CCY",
+      "volume": 257,
+      "in_volume": 47,
+      "out_volume": 210,
+      "in_p80_s": 12,
+      "out_p80_s": 7418,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "2hrs",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "GR",
+      "ccyType": "Major CCY",
+      "volume": 236,
+      "in_volume": 34,
+      "out_volume": 202,
+      "in_p80_s": 19,
+      "out_p80_s": 7243,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "2hrs",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "MUR",
+      "destination": "MU",
+      "ccyType": "Standard CCY",
+      "volume": 182,
+      "in_volume": 19,
+      "out_volume": 163,
+      "in_p80_s": 57050,
+      "out_p80_s": 138133,
+      "revenue_usd": 11342,
+      "current": {
+        "in_raw": "<48hrs",
+        "out_raw": "<48hrs",
+        "in_tier": "Typically within 48 hours",
+        "out_tier": "Typically within 48 hours"
+      },
+      "proposed": {
+        "in_raw": "<24hrs",
+        "out_raw": "<48hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 48 hours"
+      },
+      "improveIn": true,
+      "improveOut": false
+    },
+    {
+      "currency": "ETB",
+      "destination": "ET",
+      "ccyType": "Ria CCY",
+      "volume": 178,
+      "in_volume": 75,
+      "out_volume": 103,
+      "in_p80_s": 22160,
+      "out_p80_s": 22092,
+      "revenue_usd": 172,
+      "current": {
+        "in_raw": "24hrs",
+        "out_raw": "24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "2hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "CY",
+      "ccyType": "Major CCY",
+      "volume": 152,
+      "in_volume": 24,
+      "out_volume": 128,
+      "in_p80_s": 18,
+      "out_p80_s": 24,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "GB",
+      "ccyType": "Major CCY",
+      "volume": 149,
+      "in_volume": 30,
+      "out_volume": 119,
+      "in_p80_s": 46529,
+      "out_p80_s": 7082,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "<24hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": false,
+      "improveOut": true
+    },
+    {
+      "currency": "MYR",
+      "destination": "MY",
+      "ccyType": "Ria CCY",
+      "volume": 124,
+      "in_volume": 26,
+      "out_volume": 98,
+      "in_p80_s": 5897,
+      "out_p80_s": 44140,
+      "revenue_usd": 2375,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "2hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "improveIn": true,
+      "improveOut": false
+    },
+    {
+      "currency": "EUR",
+      "destination": "NL",
+      "ccyType": "Major CCY",
+      "volume": 118,
+      "in_volume": 27,
+      "out_volume": 91,
+      "in_p80_s": 12,
+      "out_p80_s": 18,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "BE",
+      "ccyType": "Major CCY",
+      "volume": 106,
+      "in_volume": 22,
+      "out_volume": 84,
+      "in_p80_s": 12,
+      "out_p80_s": 16,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "SEK",
+      "destination": "SE",
+      "ccyType": "Standard CCY",
+      "volume": 94,
+      "in_volume": 9,
+      "out_volume": 85,
+      "in_p80_s": 12178,
+      "out_p80_s": 9212,
+      "revenue_usd": 5099,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "2hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "USD",
+      "destination": "US",
+      "ccyType": "Major CCY",
+      "volume": 62,
+      "in_volume": 10,
+      "out_volume": 52,
+      "in_p80_s": 43110,
+      "out_p80_s": 4496,
+      "revenue_usd": 347129,
+      "current": {
+        "in_raw": "Same Day",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically same day",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "Same Day",
+        "out_raw": "2hrs",
+        "in_tier": "Typically same day",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": false,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "BG",
+      "ccyType": "Major CCY",
+      "volume": 61,
+      "in_volume": 22,
+      "out_volume": 39,
+      "in_p80_s": 11,
+      "out_p80_s": 12,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "BDT",
+      "destination": "BD",
+      "ccyType": "Ria CCY",
+      "volume": 56,
+      "in_volume": 15,
+      "out_volume": 41,
+      "in_p80_s": 217563,
+      "out_p80_s": 63324,
+      "revenue_usd": 762,
+      "current": {
+        "in_raw": "<48hrs",
+        "out_raw": "<48hrs",
+        "in_tier": "Typically within 48 hours",
+        "out_tier": "Typically within 48 hours"
+      },
+      "proposed": {
+        "in_raw": "<48hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 48 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "improveIn": false,
+      "improveOut": true
+    },
+    {
+      "currency": "EGP",
+      "destination": "EG",
+      "ccyType": "Ria CCY",
+      "volume": 56,
+      "in_volume": 17,
+      "out_volume": 39,
+      "in_p80_s": 60797,
+      "out_p80_s": 28683,
+      "revenue_usd": 527,
+      "current": {
+        "in_raw": "48hrs",
+        "out_raw": "48hrs",
+        "in_tier": "Typically within 48 hours",
+        "out_tier": "Typically within 48 hours"
+      },
+      "proposed": {
+        "in_raw": "<24hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "BBD",
+      "destination": "BB",
+      "ccyType": "Standard CCY",
+      "volume": 55,
+      "in_volume": 0,
+      "out_volume": 55,
+      "in_p80_s": null,
+      "out_p80_s": 41101,
+      "revenue_usd": 2021,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "<24hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": false,
+      "improveOut": true
+    },
+    {
+      "currency": "CHF",
+      "destination": "CH",
+      "ccyType": "Standard CCY",
+      "volume": 54,
+      "in_volume": 13,
+      "out_volume": 41,
+      "in_p80_s": 37364,
+      "out_p80_s": 214284,
+      "revenue_usd": 9952,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "2hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "improveIn": true,
+      "improveOut": false
+    },
+    {
+      "currency": "EUR",
+      "destination": "AT",
+      "ccyType": "Major CCY",
+      "volume": 54,
+      "in_volume": 10,
+      "out_volume": 44,
+      "in_p80_s": 12,
+      "out_p80_s": 597,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "CAD",
+      "destination": "GB",
+      "ccyType": "Major CCY",
+      "volume": 47,
+      "in_volume": 8,
+      "out_volume": 39,
+      "in_p80_s": 29638,
+      "out_p80_s": 405,
+      "revenue_usd": 24857,
+      "current": {
+        "in_raw": "Same Day",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically same day",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "2hrs",
+        "out_raw": "5mins",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "LT",
+      "ccyType": "Major CCY",
+      "volume": 47,
+      "in_volume": 12,
+      "out_volume": 35,
+      "in_p80_s": 19,
+      "out_p80_s": 11,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "MT",
+      "ccyType": "Major CCY",
+      "volume": 45,
+      "in_volume": 8,
+      "out_volume": 37,
+      "in_p80_s": 17,
+      "out_p80_s": 75,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "SK",
+      "ccyType": "Major CCY",
+      "volume": 44,
+      "in_volume": 12,
+      "out_volume": 32,
+      "in_p80_s": 23761,
+      "out_p80_s": 12,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "2hrs",
+        "out_raw": "5mins",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "DKK",
+      "destination": "DK",
+      "ccyType": "Standard CCY",
+      "volume": 42,
+      "in_volume": 2,
+      "out_volume": 40,
+      "in_p80_s": 639,
+      "out_p80_s": 5995,
+      "revenue_usd": 1489,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "2hrs",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "HR",
+      "ccyType": "Major CCY",
+      "volume": 37,
+      "in_volume": 6,
+      "out_volume": 31,
+      "in_p80_s": 14,
+      "out_p80_s": 14,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "SGD",
+      "destination": "SG",
+      "ccyType": "Standard CCY",
+      "volume": 35,
+      "in_volume": 6,
+      "out_volume": 29,
+      "in_p80_s": 72,
+      "out_p80_s": 111,
+      "revenue_usd": 6253,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<48 hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 48 hours"
+      },
+      "proposed": {
+        "in_raw": "5mins",
+        "out_raw": "5mins",
+        "in_tier": "Typically minutes",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": true,
+      "improveOut": true
+    },
+    {
+      "currency": "EUR",
+      "destination": "JE",
+      "ccyType": "Major CCY",
+      "volume": 33,
+      "in_volume": 0,
+      "out_volume": 33,
+      "in_p80_s": null,
+      "out_p80_s": 31449,
+      "revenue_usd": 508464,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "<24hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": false,
+      "improveOut": true
+    },
+    {
+      "currency": "NOK",
+      "destination": "NO",
+      "ccyType": "Standard CCY",
+      "volume": 33,
+      "in_volume": 0,
+      "out_volume": 33,
+      "in_p80_s": null,
+      "out_p80_s": 1329,
+      "revenue_usd": 4352,
+      "current": {
+        "in_raw": "<24hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "<24hrs",
+        "out_raw": "5mins",
+        "in_tier": "Typically within 24 hours",
+        "out_tier": "Typically minutes"
+      },
+      "improveIn": false,
+      "improveOut": true
+    },
+    {
+      "currency": "BRL",
+      "destination": "BR",
+      "ccyType": "Ria CCY",
+      "volume": 30,
+      "in_volume": 8,
+      "out_volume": 22,
+      "in_p80_s": 77189,
+      "out_p80_s": 41651,
+      "revenue_usd": 554,
+      "current": {
+        "in_raw": "2hrs",
+        "out_raw": "<24hrs",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically within 24 hours"
+      },
+      "proposed": {
+        "in_raw": "2hrs",
+        "out_raw": "2hrs",
+        "in_tier": "Typically hours",
+        "out_tier": "Typically hours"
+      },
+      "improveIn": false,
+      "improveOut": true
+    }
+  ],
+  "multiRowCurrencies": [
+    {
+      "currency": "ARS",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "BAM",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "BDT",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<48hrs",
+          "out_raw": "<48hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "BGN",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "BOB",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5 mins",
+          "out_raw": "<5 mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "BRL",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "2hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "BTN",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "BWP",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "48hrs",
+          "out_raw": "48hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "CLP",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": ">5-<60minutes",
+          "out_raw": ">5-<60minutes",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "COP",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5mins",
+          "out_raw": "<5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "CRC",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "5mins",
+          "out_raw": "5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "CVE",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "DOP",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "1-12 Hours",
+          "out_raw": "1-12 Hours",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "EGP",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "48hrs",
+          "out_raw": "48hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "ETB",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "GHS",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5 mins",
+          "out_raw": "<5 mins",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<48hrs",
+          "out_raw": "<48hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "GMD",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "GNF",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "GTQ",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "15mins",
+          "out_raw": "15mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "GYD",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "10mins",
+          "out_raw": "10mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "HNL",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5mins",
+          "out_raw": "<5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "HTG",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "1hr",
+          "out_raw": "1hr",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "IDR",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5mins",
+          "out_raw": "<5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "INR",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "5mins",
+          "out_raw": "5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "KHR",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "48hrs",
+          "out_raw": "48hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "KMF",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "KRW",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "LKR",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5mins",
+          "out_raw": "<5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<48hrs",
+          "out_raw": "<48hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "MAD",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "MMK",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": ">5-<60minutes",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "MNT",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "MRU",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "MXN",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "30 Mins",
+          "out_raw": "15 Mins",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "Next Day",
+          "out_raw": "Next Day",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "MYR",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "MZN",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "NAD",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "NGN",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "5 Mins",
+          "out_raw": "5 Mins",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<24hrs",
+          "out_raw": "<48hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "NPR",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5mins",
+          "out_raw": "<5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "PEN",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "1-12 Hours",
+          "out_raw": "1-12 Hours",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "PHP",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5mins",
+          "out_raw": "<5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<48hrs",
+          "out_raw": "<48hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "PKR",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5mins",
+          "out_raw": "<5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "PLN",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "PYG",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "1-12 Hours",
+          "out_raw": "1-12 Hours",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "QAR",
+      "variants": [
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<24hrs",
+          "out_raw": "<48 hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "RON",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "RWF",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "SAR",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "THB",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<48hrs",
+          "out_raw": "<48hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "TOP",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "TRY",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "TZS",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "UGX",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "<48hrs",
+          "out_raw": "<48hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "UYU",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "VND",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<5mins",
+          "out_raw": "<5mins",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "WST",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "<3 days",
+          "out_raw": "<4days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "XAF",
+      "variants": [
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        },
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        }
+      ]
+    },
+    {
+      "currency": "XOF",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "<24hrs",
+          "out_raw": "<24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Exotic CCY",
+          "isRia": false,
+          "in_raw": "Three Days",
+          "out_raw": "Three Days",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    },
+    {
+      "currency": "ZMW",
+      "variants": [
+        {
+          "ccyType": "Ria CCY",
+          "isRia": true,
+          "in_raw": "24hrs",
+          "out_raw": "24hrs",
+          "cpo_raw": "5mins",
+          "active": true
+        },
+        {
+          "ccyType": "Standard CCY",
+          "isRia": false,
+          "in_raw": "48hrs",
+          "out_raw": "48hrs",
+          "cpo_raw": "5mins",
+          "active": false
+        }
+      ]
+    }
+  ],
+  "rowSelection": {
+    "description": "When UK.csv has multiple rows for the same currency, the launchpad loader picks one — Ria variant wins.",
+    "code_snippet": "map[key] = g.FirstOrDefault(x => x.IsRia) ?? g.First();",
+    "code_file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/EmbeddedLeadTimeProvider.cs",
+    "code_line": 59,
+    "is_ria_detection": "c[13].Contains(\"Ria\", StringComparison.InvariantCultureIgnoreCase)",
+    "is_ria_detection_file": "src/Xe.Api.BackOfficeIntegration/LeadTimes/EmbeddedLeadTimeProvider.cs",
+    "is_ria_detection_line": 152,
+    "is_ria_explanation": "c[13] is the CCY column. If the cell contains \"Ria\" (case-insensitive) — i.e. \"Ria CCY\" — the row is flagged IsRia=true."
+  }
+}

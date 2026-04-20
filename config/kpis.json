@@ -1,0 +1,129 @@
+{
+  "kpis": {
+    "transactions_created": {
+      "name": "Transactions Created",
+      "description": "Total number of money transfer transactions created",
+      "amplitude_event": "Transaction Created",
+      "chart_id": "f7zaeg0",
+      "metric": "totals",
+      "alert_threshold_wow": -10,
+      "owner": "Product",
+      "segments": ["platform", "country", "accountType"],
+      "related_events": ["Transaction Created - Client Side", "First Time Transaction Created"]
+    },
+    "active_users": {
+      "name": "Active Users (DAU/WAU/MAU)",
+      "description": "Unique users performing any active event",
+      "amplitude_event": "_active",
+      "chart_id": "cvmn241",
+      "metric": "uniques",
+      "alert_threshold_wow": -5,
+      "owner": "Product",
+      "segments": ["platform", "country"]
+    },
+    "mt_profile_created": {
+      "name": "MT Profile Created",
+      "description": "Users completing money transfer profile setup",
+      "amplitude_event": "MT Profile Created",
+      "chart_id": "wo2ytol",
+      "metric": "uniques",
+      "alert_threshold_wow": -15,
+      "owner": "Growth",
+      "segments": ["platform", "country"]
+    },
+    "zero_day_conversions": {
+      "name": "0-Day Conversions",
+      "description": "Users who register and transact on the same day",
+      "amplitude_event": null,
+      "chart_id": "tfmh89d",
+      "metric": "uniques",
+      "alert_threshold_wow": -10,
+      "owner": "Growth",
+      "note": "Composite metric — requires querying the existing chart"
+    },
+    "payment_method_added": {
+      "name": "Payment Method Added Conversion",
+      "description": "Funnel conversion for adding a payment method",
+      "amplitude_event": "New Payment Method Added",
+      "chart_id": "57ornik",
+      "metric": "conversion",
+      "alert_threshold_wow": -10,
+      "owner": "Payments",
+      "segments": ["platform", "payment_method_type"]
+    },
+    "registration_rate": {
+      "name": "Registration Conversion Rate",
+      "description": "End-to-end registration funnel conversion",
+      "amplitude_event": null,
+      "chart_id": "gb4ye0pp",
+      "metric": "conversion",
+      "alert_threshold_wow": -10,
+      "owner": "Growth",
+      "segments": ["platform", "country"]
+    },
+    "send_money_conversion": {
+      "name": "Send Money Conversion Rate",
+      "description": "Quote-to-transaction conversion rate",
+      "amplitude_event": null,
+      "chart_id": "q6zkbdob",
+      "metric": "conversion",
+      "alert_threshold_wow": -5,
+      "owner": "Product",
+      "segments": ["platform", "payment_method_type", "country"]
+    },
+    "card_payment_success_rate": {
+      "name": "Card Payment Success Rate",
+      "description": "Percentage of card payments that succeed",
+      "amplitude_event": null,
+      "chart_id": "bwvmoe4",
+      "metric": "conversion",
+      "alert_threshold_wow": -5,
+      "owner": "Payments",
+      "segments": ["platform"]
+    }
+  },
+  "error_events": {
+    "something_went_wrong": {
+      "event": "Something Went Wrong",
+      "severity": "high",
+      "code_constant": "SEGMENT_EVENTS.SOMETHING_WENT_WRONG",
+      "description": "Generic error event — investigate specific error type in properties"
+    },
+    "quote_error": {
+      "event": "Quote Error",
+      "severity": "high",
+      "code_constant": "SEGMENT_EVENTS.QUOTE_ERROR",
+      "description": "Error during quote calculation — blocks transaction flow"
+    },
+    "payment_failed": {
+      "event": "Payment Failed",
+      "severity": "critical",
+      "code_constant": "SEGMENT_EVENTS.PAYMENT_FAILED",
+      "description": "Payment processing failure"
+    },
+    "card_authorisation_failed": {
+      "event": "Card Authorisation Failed",
+      "severity": "high",
+      "code_constant": "SEGMENT_EVENTS.CARD_AUTHORISATION_FAILED",
+      "description": "Card authorization rejected"
+    },
+    "login_failed": {
+      "event": "Login Failed",
+      "severity": "medium",
+      "code_constant": "SEGMENT_EVENTS.LOGIN_FAILED",
+      "description": "Failed login attempt"
+    },
+    "open_banking_payment_failed": {
+      "event": "Open Banking Payment Failed",
+      "severity": "high",
+      "code_constant": null,
+      "description": "Open banking payment processing failure"
+    },
+    "transaction_failed": {
+      "event": "Transaction Failed",
+      "severity": "critical",
+      "code_constant": "SEGMENT_EVENTS.TRANSACTION_FAILED",
+      "description": "Transaction processing failure after payment"
+    }
+  }
+}

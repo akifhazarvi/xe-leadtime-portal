@@ -1,0 +1,2017 @@
+{
+  "generatedAt": "2026-03-25T12:00:00Z",
+  "amplitudeDashboard": "https://app.amplitude.com/analytics/ria/dashboard/j1cg52w6",
+  "revenueDashboard": "https://app.amplitude.com/analytics/ria/dashboard/1wk6mzb9",
+  "revenue": {
+    "filter": "Consumer only: accountType = Private or (none). Excludes corporate.",
+    "weekly": {
+      "dates": [
+        "Sep 15",
+        "Sep 22",
+        "Sep 29",
+        "Oct 6",
+        "Oct 13",
+        "Oct 20",
+        "Oct 27",
+        "Nov 3",
+        "Nov 10",
+        "Nov 17",
+        "Nov 24",
+        "Dec 1",
+        "Dec 8",
+        "Dec 15",
+        "Dec 22",
+        "Dec 29",
+        "Jan 5",
+        "Jan 12",
+        "Jan 19",
+        "Jan 26",
+        "Feb 2",
+        "Feb 9",
+        "Feb 16",
+        "Feb 23",
+        "Mar 2",
+        "Mar 9",
+        "Mar 16",
+        "Mar 23"
+      ],
+      "revenueUSD": [
+        770784,
+        776280,
+        930598,
+        790267,
+        830675,
+        735977,
+        837861,
+        925992,
+        674356,
+        717993,
+        808863,
+        886827,
+        778710,
+        813342,
+        549667,
+        582384,
+        795135,
+        734136,
+        743397,
+        922947,
+        814297,
+        670145,
+        637622,
+        754332,
+        834565,
+        792362,
+        711366,
+        470137
+      ],
+      "sendVolumeUSD": [
+        109827296,
+        109547729,
+        130373521,
+        130403166,
+        121916996,
+        101218646,
+        119147631,
+        133723491,
+        97647826,
+        102315567,
+        120113502,
+        130455824,
+        121291142,
+        117360857,
+        82319575,
+        82718849,
+        111711033,
+        104834867,
+        109427147,
+        134662435,
+        118417847,
+        99716757,
+        92956571,
+        109964833,
+        113912033,
+        110984910,
+        102234798,
+        68488313
+      ],
+      "txnCount": [
+        25553,
+        26268,
+        32537,
+        26427,
+        24312,
+        23124,
+        29469,
+        28675,
+        23657,
+        23583,
+        29401,
+        36412,
+        28838,
+        29812,
+        24200,
+        28453,
+        29328,
+        24157,
+        27338,
+        34818,
+        29671,
+        23635,
+        22516,
+        29807,
+        30229,
+        27805,
+        23683,
+        15401
+      ],
+      "uniqueSenders": [
+        21468,
+        22222,
+        27298,
+        22267,
+        20439,
+        19605,
+        24559,
+        24181,
+        19868,
+        19855,
+        24591,
+        29916,
+        24002,
+        24815,
+        20305,
+        23837,
+        24630,
+        20196,
+        22636,
+        28746,
+        24828,
+        19619,
+        18872,
+        24627,
+        25121,
+        22857,
+        19509,
+        13625
+      ]
+    },
+    "monthly": [
+      {
+        "month": "Sep 2025",
+        "revenueUSD": 3555200,
+        "sendVolumeUSD": 502610874,
+        "feesUSD": 252216,
+        "txnCount": 121869,
+        "uniqueSenders": 73784
+      },
+      {
+        "month": "Oct 2025",
+        "revenueUSD": 3690190,
+        "sendVolumeUSD": 539689546,
+        "feesUSD": 255280,
+        "txnCount": 120400,
+        "uniqueSenders": 71954
+      },
+      {
+        "month": "Nov 2025",
+        "revenueUSD": 3170533,
+        "sendVolumeUSD": 460604319,
+        "feesUSD": 234368,
+        "txnCount": 108765,
+        "uniqueSenders": 67092
+      },
+      {
+        "month": "Dec 2025",
+        "revenueUSD": 3416315,
+        "sendVolumeUSD": 504992930,
+        "feesUSD": 297796,
+        "txnCount": 135926,
+        "uniqueSenders": 79704
+      },
+      {
+        "month": "Jan 2026",
+        "revenueUSD": 3356212,
+        "sendVolumeUSD": 483987607,
+        "feesUSD": 279493,
+        "txnCount": 125107,
+        "uniqueSenders": 74559
+      },
+      {
+        "month": "Feb 2026",
+        "revenueUSD": 2874780,
+        "sendVolumeUSD": 420990457,
+        "feesUSD": 248685,
+        "txnCount": 105455,
+        "uniqueSenders": 65018
+      },
+      {
+        "month": "Mar 2026*",
+        "revenueUSD": 2455126,
+        "sendVolumeUSD": 346529510,
+        "feesUSD": 195800,
+        "txnCount": 86952,
+        "uniqueSenders": 55000,
+        "note": "Partial month (23 days)"
+      }
+    ],
+    "new_vs_repeat": {
+      "first_time_volume_monthly": 48000000,
+      "repeat_volume_monthly": 420000000,
+      "first_time_share": "10.2%",
+      "repeat_share": "89.8%",
+      "first_time_senders_weekly": 1715,
+      "insight": "Repeat consumer senders generate 90% of send volume. Consumer avg txn is ~$4,000 vs $27K for corporate. Retention drives consumer revenue."
+    },
+    "by_platform": {
+      "Web": {
+        "revenueUSD": 1236623,
+        "share": "43%",
+        "avgTxnUSD": 5533
+      },
+      "iOS": {
+        "revenueUSD": 892698,
+        "share": "31%",
+        "avgTxnUSD": 2789
+      },
+      "Android": {
+        "revenueUSD": 380755,
+        "share": "13%",
+        "avgTxnUSD": 2431
+      },
+      "unknown": {
+        "revenueUSD": 364704,
+        "share": "13%",
+        "avgTxnUSD": "varies",
+        "note": "Unknown platform \u2014 may include some API/partner traffic"
+      }
+    },
+    "frequency": {
+      "Web": 3.4,
+      "iOS": 3.2,
+      "Android": 3.2,
+      "note": "Consumer transactions per user per month."
+    },
+    "retention_brackets": {
+      "day_0_7": {
+        "rate": "100%",
+        "note": "Same week"
+      },
+      "day_7_14": {
+        "rate": "25.5%",
+        "note": "1 in 4 return next week"
+      },
+      "day_14_30": {
+        "rate": "33.5%",
+        "note": "Monthly senders start appearing"
+      },
+      "day_30_60": {
+        "rate": "55.2%",
+        "note": "Strong monthly retention"
+      },
+      "day_60_90": {
+        "rate": "56.9%",
+        "note": "Stabilizing \u2014 long-term senders"
+      },
+      "insight": "Retention improves at 30+ days \u2014 most senders are monthly, not weekly. The 7\u219214 day 25% drop-off is the 'one-time sender' cliff. Users who survive past 30 days become sticky (55%+ retention)."
+    }
+  },
+  "balance_health": {
+    "summary": "Balance product (US/CA/NZ) is growing fast. Track actual completions via Transaction Completed with transactionType filter, not client-side events. Currency Activation +178% over 12 weeks. NZ just launched and growing rapidly.",
+    "existingDashboard": "https://app.amplitude.com/analytics/ria/dashboard/ivnlco7j",
+    "note": "Consumer only (accountType=Private or none). Balance is fully live in US and NZ only. CA shows partial activity (may be limited rollout).",
+    "transaction_completed_breakdown": {
+      "fund_balance_weekly": {
+        "US": 278,
+        "CA": 40,
+        "NZ": 36
+      },
+      "convert_balance_weekly": {
+        "US": 28,
+        "CA": 12,
+        "NZ": 2
+      },
+      "send_via_balance_weekly": {
+        "US": 191,
+        "CA": 38,
+        "NZ": 21
+      },
+      "note": "Source: Transaction Completed filtered by transactionType + accountType=Private. This is the server-side source of truth."
+    },
+    "weekly_trends_6mo": {
+      "dates": [
+        "Sep 15",
+        "Sep 22",
+        "Sep 29",
+        "Oct 6",
+        "Oct 13",
+        "Oct 20",
+        "Oct 27",
+        "Nov 3",
+        "Nov 10",
+        "Nov 17",
+        "Nov 24",
+        "Dec 1",
+        "Dec 8",
+        "Dec 15",
+        "Dec 22",
+        "Dec 29",
+        "Jan 5",
+        "Jan 12",
+        "Jan 19",
+        "Jan 26",
+        "Feb 2",
+        "Feb 9",
+        "Feb 16",
+        "Feb 23",
+        "Mar 2",
+        "Mar 9",
+        "Mar 16"
+      ],
+      "fund_balance_users": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        25,
+        197,
+        95,
+        147,
+        164,
+        160,
+        96,
+        127,
+        118,
+        143,
+        165,
+        189,
+        210,
+        193,
+        126
+      ],
+      "send_via_balance_users": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        3,
+        3,
+        20,
+        30,
+        41,
+        50,
+        41,
+        19,
+        29,
+        57,
+        76,
+        82,
+        108,
+        119,
+        137,
+        81
+      ],
+      "convert_balance_users": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        1,
+        4,
+        6,
+        5,
+        7,
+        10,
+        10,
+        9,
+        8,
+        10,
+        12,
+        12,
+        16,
+        21,
+        16
+      ],
+      "fund_balance_txns": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        38,
+        275,
+        126,
+        217,
+        226,
+        218,
+        125,
+        160,
+        142,
+        191,
+        232,
+        253,
+        291,
+        254,
+        193
+      ],
+      "send_via_balance_txns": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        0,
+        6,
+        3,
+        23,
+        35,
+        49,
+        55,
+        45,
+        21,
+        31,
+        78,
+        112,
+        102,
+        142,
+        146,
+        172,
+        98
+      ],
+      "fund_balance_volume_usd": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        167,
+        73645,
+        874296,
+        1165164,
+        612298,
+        822346,
+        527120,
+        268123,
+        244034,
+        269938,
+        241029,
+        297901,
+        440042,
+        485717,
+        519599,
+        438055
+      ],
+      "send_via_balance_volume_usd": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        21,
+        1419,
+        0,
+        86,
+        351,
+        50370,
+        41255,
+        164474,
+        127728,
+        114741,
+        54751,
+        73073,
+        345080,
+        269874,
+        555161,
+        436834,
+        814912,
+        920276,
+        271305
+      ],
+      "note": "Balance product launched Dec 2025. Zero activity before that. Rapid growth since."
+    },
+    "daily_volume_usd": {
+      "fund_balance": "$70-155K/day",
+      "send_via_balance": "$50-275K/day (high variance)",
+      "note": "From chart ba2fkaid on existing dashboard"
+    },
+    "registration_to_activation": {
+      "description": "Users who registered specifically for balance (source=banner/exchange/add funds)",
+      "conversion": {
+        "US": "24.6%",
+        "CA": "29.8%",
+        "NZ": "36.5%"
+      },
+      "funnel_steps": [
+        "Account Registration Started",
+        "Account Created",
+        "MT Registration Started",
+        "MT Profile Created",
+        "Currency Account Activation Started",
+        "Currency Account Activation Completed"
+      ],
+      "note": "NZ has highest conversion \u2014 new market enthusiasm"
+    },
+    "add_funds": {
+      "weekly_trend": [
+        2017,
+        2049,
+        2116,
+        2538,
+        2023,
+        2206,
+        2638,
+        3149,
+        3123,
+        3293,
+        4182,
+        3809,
+        1943
+      ],
+      "growth": "+89% over 12 weeks",
+      "completions_weekly": 350,
+      "by_platform": {
+        "iOS": {
+          "accessed": 1610,
+          "completed": 132,
+          "conversion": "8.2%"
+        },
+        "Android": {
+          "accessed": 1570,
+          "completed": 83,
+          "conversion": "5.3%"
+        },
+        "Web": {
+          "accessed": 629,
+          "completed": 135,
+          "conversion": "21.5%"
+        }
+      },
+      "by_currency": [
+        {
+          "currency": "USD",
+          "volume": 16291,
+          "share": "72.4%"
+        },
+        {
+          "currency": "CAD",
+          "volume": 2388,
+          "share": "10.6%"
+        },
+        {
+          "currency": "EUR",
+          "volume": 1355,
+          "share": "6.0%"
+        },
+        {
+          "currency": "AUD",
+          "volume": 812,
+          "share": "3.6%"
+        },
+        {
+          "currency": "GBP",
+          "volume": 686,
+          "share": "3.0%"
+        },
+        {
+          "currency": "NZD",
+          "volume": 628,
+          "share": "2.8%"
+        },
+        {
+          "currency": "JPY",
+          "volume": 285,
+          "share": "1.3%"
+        }
+      ],
+      "entry_points": {
+        "Home": {
+          "volume": 2667,
+          "share": "70%"
+        },
+        "Currency account home": {
+          "volume": 728,
+          "share": "19%"
+        },
+        "Currency account Home": {
+          "volume": 414,
+          "share": "11%",
+          "note": "CASING ISSUE: 'home' vs 'Home' \u2014 same entry point tracked as two values"
+        }
+      },
+      "issues": [
+        {
+          "issue": "CASING BUG CONFIRMED: Two separate events in Amplitude",
+          "status": "CONFIRMED",
+          "detail": "'Add Funds Summary Confirmed' (capital C): 1,232 events/month. 'Add Funds Summary confirmed' (lowercase c): 3,771 events/month. The funnel breaks because it only matches one casing.",
+          "impact": "Mobile Add Funds funnel shows <1% conversion but actual completion is 8% on iOS \u2014 the events are just split across two names.",
+          "fix": "Change xe-apollo analytics.const.ts line 460: 'Add Funds Summary confirmed' \u2192 'Add Funds Summary Confirmed'"
+        },
+        {
+          "issue": "Location property casing inconsistency",
+          "status": "minor",
+          "detail": "'Currency account home' (728/week) vs 'Currency account Home' (414/week) \u2014 same page, two values."
+        }
+      ]
+    },
+    "currency_activation": {
+      "weekly_trend": [
+        774,
+        807,
+        862,
+        1026,
+        912,
+        1006,
+        1617,
+        2345,
+        2084,
+        2053,
+        2299,
+        2156,
+        1127
+      ],
+      "growth": "+178% over 12 weeks",
+      "by_platform": {
+        "iOS": {
+          "started": 798,
+          "completed": 621,
+          "conversion": "77.8%"
+        },
+        "Android": {
+          "started": 530,
+          "completed": 463,
+          "conversion": "87.4%"
+        },
+        "Web": {
+          "started": 828,
+          "completed": 497,
+          "conversion": "60.0%"
+        }
+      },
+      "insight": "Massive growth in currency account adoption. Android has the highest activation rate (87%). Web is lowest (60%) \u2014 investigate if web activation flow has extra friction."
+    },
+    "convert_balance": {
+      "volume": "Very low \u2014 55 accesses/week",
+      "naming_issue": "Consumer uses 'Convert Funds Accessed/Completed', Corporate uses 'Convert Balance Accessed/Completed' \u2014 DIFFERENT event names for similar actions",
+      "by_platform": {
+        "Convert Balance Accessed (corporate)": {
+          "Web": 131,
+          "period": "30 days"
+        },
+        "Convert Funds Accessed (consumer)": {
+          "Web": 106,
+          "iOS": 29,
+          "Android": 27,
+          "period": "30 days"
+        },
+        "Convert Funds Completed (consumer)": {
+          "iOS": 22,
+          "Android": 22,
+          "Web": 17,
+          "period": "30 days"
+        }
+      }
+    },
+    "balance_usage": {
+      "title": "Balance Usage & Idle Money",
+      "fund_then_send_rate": "16.7%",
+      "fund_then_send_detail": "Of 1,735 users who funded balance (90 days), only 289 (16.7%) used it to send within 30 days. 83% of funded balance sits idle.",
+      "user_growth_by_region": {
+        "months": [
+          "Sep 25",
+          "Oct 25",
+          "Nov 25",
+          "Dec 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26*"
+        ],
+        "US": {
+          "new_activated": [
+            0,
+            0,
+            1,
+            2214,
+            3625,
+            4709,
+            3117
+          ],
+          "cumulative_pool": [
+            0,
+            0,
+            1,
+            2215,
+            5840,
+            10549,
+            13666
+          ],
+          "funded_users": [
+            0,
+            0,
+            0,
+            377,
+            540,
+            464,
+            398
+          ],
+          "sent_users": [
+            0,
+            0,
+            1,
+            69,
+            129,
+            233,
+            230
+          ],
+          "convert_users": [
+            0,
+            0,
+            0,
+            12,
+            28,
+            27,
+            33
+          ],
+          "balance_registrations": [
+            0,
+            0,
+            0,
+            86,
+            130,
+            103,
+            87
+          ],
+          "funding_rate_feb": "9.9%",
+          "note": "13.7K total activated users, but only 464 funded in Feb (9.9% activation-to-fund rate). Large inactive pool."
+        },
+        "CA": {
+          "new_activated": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            590,
+            494
+          ],
+          "cumulative_pool": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            590,
+            1084
+          ],
+          "funded_users": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            46,
+            62
+          ],
+          "sent_users": [
+            0,
+            0,
+            2,
+            1,
+            0,
+            24,
+            43
+          ],
+          "convert_users": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            9
+          ],
+          "balance_registrations": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            18,
+            19
+          ],
+          "funding_rate_feb": "7.8%",
+          "note": "Launched Feb 26. 1K users activated in 2 months."
+        },
+        "NZ": {
+          "new_activated": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            243
+          ],
+          "cumulative_pool": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            244
+          ],
+          "funded_users": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            19
+          ],
+          "sent_users": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            20
+          ],
+          "convert_users": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            3
+          ],
+          "balance_registrations": [
+            0,
+            0,
+            0,
+            1,
+            5,
+            2,
+            5
+          ],
+          "note": "Just launched Mar 26. 243 users activated in first partial month."
+        },
+        "fraud_and_closures": {
+          "title": "Fraud & Account Closures Among Balance Users",
+          "US": {
+            "total_activated": 13580,
+            "account_closed_within_30d": 1451,
+            "closure_rate": "10.7%",
+            "fraud_checked": 3219,
+            "fraud_check_rate": "23.7%",
+            "fraud_referred": 875,
+            "fraud_referral_rate": "6.4%",
+            "monthly_closures": [
+              1364,
+              1284,
+              1151,
+              1369,
+              1508,
+              1439,
+              1021
+            ],
+            "monthly_closures_months": [
+              "Sep 25",
+              "Oct 25",
+              "Nov 25",
+              "Dec 25",
+              "Jan 26",
+              "Feb 26",
+              "Mar 26*"
+            ],
+            "note": "1,451 of 13,580 activated users (10.7%) had accounts CLOSED within 30 days. 875 (6.4%) were fraud-referred. This explains a big chunk of the 'inactive' pool \u2014 they were removed, not inactive."
+          },
+          "CA": {
+            "total_activated": 1081,
+            "account_closed_within_30d": 15,
+            "closure_rate": "1.4%",
+            "fraud_referred": 16,
+            "note": "Much lower closure rate than US."
+          },
+          "NZ": {
+            "total_activated": 244,
+            "account_closed_within_30d": 0,
+            "closure_rate": "0%",
+            "fraud_referred": 1,
+            "note": "Clean so far \u2014 new market."
+          },
+          "insight": "In US: 10.7% of balance users get closed + 6.4% fraud-referred = ~17% of activated users are fraud-related. Monthly US closures run ~1,300-1,500. The real 'available' user pool in US is ~13.6K activated minus ~1.5K closed = ~12.1K, of which ~464 fund (3.8% of available, not 9.9% of all activated). The fraud issue inflates activation numbers significantly."
+        },
+        "insight": "US: 13.7K activated but ~1.5K were fraud-closed (10.7%). Real available pool ~12.1K, of which 464 fund monthly (3.8%). CA launched Feb, NZ launched Mar. Balance is fully live in US and NZ only."
+      },
+      "unique_users_monthly_all_regions": {
+        "fund_balance": [
+          0,
+          0,
+          0,
+          377,
+          540,
+          510,
+          479
+        ],
+        "send_via_balance": [
+          0,
+          0,
+          4,
+          71,
+          130,
+          257,
+          293
+        ],
+        "convert_balance": [
+          0,
+          0,
+          0,
+          13,
+          29,
+          37,
+          45
+        ],
+        "months": [
+          "Sep 25",
+          "Oct 25",
+          "Nov 25",
+          "Dec 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26*"
+        ],
+        "insight": "Send-via-Balance users grew from 71 (Dec) to 293 (Mar) \u2014 4x in 3 months. Balance is becoming a real payment method."
+      },
+      "frequency": {
+        "fund_balance_per_user_per_month": 1.5,
+        "send_via_balance_per_user_per_month": 1.4,
+        "note": "Users top up ~1.5x/month and send ~1.4x/month. Low frequency \u2014 mostly one-off usage."
+      },
+      "avg_amounts": {
+        "avg_topup_usd": [
+          4070,
+          2803,
+          1542,
+          1900
+        ],
+        "avg_send_via_balance_usd": [
+          1731,
+          2689,
+          3720,
+          4771
+        ],
+        "months": [
+          "Dec 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26*"
+        ],
+        "insight": "Top-up amounts declining ($4K\u2192$1.9K) as more small users join. But send-via-balance amounts GROWING ($1.7K\u2192$4.8K) \u2014 power users sending bigger amounts through balance."
+      },
+      "idle_money_insight": "$5.82M held in balances (49.2% utilization). Converts ($1.38M) are internal currency exchanges \u2014 money stays in the system. Real outflows are Send via Balance only. Over half of funded money sits idle. Users may be: (1) using balance for rate speculation (fund when rate is good, send later), (2) not understanding they can send from balance, (3) waiting for a specific rate. This is a major growth opportunity \u2014 prompt funded users to send.",
+      "balance_remaining_by_region": {
+        "title": "Money Held in Balances (Funded - Sent)",
+        "period": "Cumulative since balance launch (Dec 2025). Updated Mar 24.",
+        "note": "Consumer only (accountType != Corporate). Convert Balance is internal (USD\u2192CAD etc.) \u2014 money stays in the system. Only Send via Balance is a true outflow. Regions by senderCountry.",
+        "US": {
+          "total_funded": 7338754,
+          "total_sent": 4129845,
+          "total_converted": 780443,
+          "remaining": 3208909,
+          "utilization": "56.3%",
+          "note": "$3.21M sitting in US consumer balances."
+        },
+        "CA": {
+          "total_funded": 337496,
+          "total_sent": 270702,
+          "total_converted": 50689,
+          "remaining": 66794,
+          "utilization": "80.2%",
+          "note": "$67K held in CA consumer balances."
+        },
+        "NZ": {
+          "total_funded": 11609,
+          "total_sent": 95493,
+          "total_converted": 11139,
+          "remaining": -83884,
+          "utilization": "822.6%",
+          "note": "NZ shows negative remaining \u2014 users sending more than funded in this window. Balance launched ~1 month ago. Users may have funded from a different senderCountry."
+        },
+        "total": {
+          "total_funded": 7687859,
+          "total_sent": 4496040,
+          "total_converted": 842271,
+          "remaining": 3191819,
+          "utilization": "58.5%",
+          "insight": "$3.2M held in consumer balances (58.5% utilization). Converts ($0.8M) are internal currency exchanges \u2014 money stays in the system."
+        }
+      }
+    },
+    "fund_balance_corporate": {
+      "weekly_trend": [
+        138,
+        172,
+        227,
+        260,
+        222,
+        289,
+        287,
+        255,
+        231,
+        325,
+        282,
+        332,
+        194
+      ],
+      "growth": "+140% over 12 weeks",
+      "completions_weekly": 58,
+      "conversion": "17.5%",
+      "note": "Corporate-only. Growing steadily. Uses separate FUND_BALANCE events."
+    }
+  },
+  "kpis": {
+    "transactions_this_week": {
+      "label": "Transactions Created (This Week)",
+      "value": 25707,
+      "platform_breakdown": {
+        "iOS": 13333,
+        "Web": 12049,
+        "Android": 6839,
+        "unknown": 831
+      },
+      "trend": "stable",
+      "wow_change": "-9.5%",
+      "benchmark_note": "Typical week: 35-45k. Peak: 48k (Jan 26). Low: 28k (Feb 16 holiday)",
+      "source": "Transaction Created, accountType != Corporate, week Mar 16"
+    },
+    "transactions_completed": {
+      "label": "Transactions Completed",
+      "value": 23683,
+      "trend": "stable",
+      "wow_change": "-13.4%",
+      "benchmark_note": "57k/week by paymentMethod: bank_account 34%, debit 30%, direct_debit 24%, open_banking 6%, credit 5%",
+      "source": "Transaction Completed, accountType != Corporate, week Mar 16"
+    },
+    "first_time_senders": {
+      "label": "First Time Transactions",
+      "value": 1354,
+      "trend": "stable",
+      "wow_change": "-20.4%",
+      "benchmark_note": "~1,700-1,900/week. New customer acquisition metric.",
+      "source": "Transaction Created, isFirstTransaction=true, accountType != Corporate, week Mar 16"
+    },
+    "registration_starts": {
+      "label": "Registration Started",
+      "value": 178,
+      "trend": "stable",
+      "wow_change": "+7.2%"
+    },
+    "mt_profiles_created": {
+      "label": "MT Profile Created",
+      "value": 2462,
+      "trend": "stable",
+      "wow_change": "-6.3%",
+      "benchmark_note": "Only 14% of registration starters become MT profiles."
+    }
+  },
+  "funnel_health": {
+    "send_money_web": {
+      "label": "Send Money (Web)",
+      "conversion": "51.4%",
+      "volume": 25276,
+      "completed": 12983,
+      "status": "healthy",
+      "note": "Quote Confirmed \u2192 Recipient Selected \u2192 Txn Summary Confirmed \u2192 Txn Created \u2192 Txn Completed. 5-day window. Consumer only (accountType != Corporate).",
+      "steps": [
+        {
+          "name": "Quote Confirmed",
+          "users": 25276
+        },
+        {
+          "name": "Recipient Selected",
+          "users": 22120
+        },
+        {
+          "name": "Txn Summary Confirmed",
+          "users": 20400
+        },
+        {
+          "name": "Transaction Created",
+          "users": 15259
+        },
+        {
+          "name": "Transaction Completed",
+          "users": 12983
+        }
+      ]
+    },
+    "send_money_ios": {
+      "label": "Send Money (iOS)",
+      "conversion": "69.6%",
+      "volume": 37307,
+      "completed": 25958,
+      "status": "healthy",
+      "note": "Same funnel steps. iOS has highest conversion because users are more committed at Quote Confirmed. Consumer only.",
+      "steps": [
+        {
+          "name": "Quote Confirmed",
+          "users": 37307
+        },
+        {
+          "name": "Recipient Selected",
+          "users": 34175
+        },
+        {
+          "name": "Txn Summary Confirmed",
+          "users": 31723
+        },
+        {
+          "name": "Transaction Created",
+          "users": 29951
+        },
+        {
+          "name": "Transaction Completed",
+          "users": 25958
+        }
+      ]
+    },
+    "send_money_android": {
+      "label": "Send Money (Android)",
+      "conversion": "67.2%",
+      "volume": 20281,
+      "completed": 13620,
+      "status": "healthy",
+      "note": "Same funnel steps. Consumer only.",
+      "steps": [
+        {
+          "name": "Quote Confirmed",
+          "users": 20281
+        },
+        {
+          "name": "Recipient Selected",
+          "users": 18057
+        },
+        {
+          "name": "Txn Summary Confirmed",
+          "users": 16703
+        },
+        {
+          "name": "Transaction Created",
+          "users": 15313
+        },
+        {
+          "name": "Transaction Completed",
+          "users": 13620
+        }
+      ]
+    },
+    "recipient_first": {
+      "label": "Recipient First (Mobile)",
+      "conversion": "41.8%",
+      "status": "healthy",
+      "note": "Best funnel."
+    },
+    "biometric_ios": {
+      "label": "eKYC (iOS)",
+      "conversion": "6.8%",
+      "status": "WARNING",
+      "note": "367\u219235 at consent."
+    },
+    "registration": {
+      "label": "Registration \u2192 MT Profile",
+      "conversion": "14%",
+      "status": "WARNING"
+    },
+    "apple_pay": {
+      "label": "Apple Pay Success",
+      "conversion": "77.5%",
+      "status": "healthy"
+    },
+    "google_pay": {
+      "label": "Google Pay Success",
+      "conversion": "75.6%",
+      "status": "healthy"
+    },
+    "send_money_consumer": {
+      "conversion": 0.6384,
+      "steps": {
+        "Quote Confirmed": 82332,
+        "Recipient Selected": 73918,
+        "Transaction Summary Confirmed": 68539,
+        "Transaction Created": 60336,
+        "Transaction Completed": 52559
+      },
+      "step_rates": {
+        "Quote Confirmed \u2192 Recipient Selected": "89.8%",
+        "Recipient Selected \u2192 Txn Summary Confirmed": "92.7%",
+        "Txn Summary Confirmed \u2192 Txn Created": "88.0%",
+        "Txn Created \u2192 Txn Completed": "87.1%"
+      },
+      "window": "5-day",
+      "period": "Last 30 days"
+    },
+    "zero_day_consumer": {
+      "conversion": 0.2084,
+      "steps": {
+        "MT Profile Created": 22515,
+        "Transaction Created": 4692
+      },
+      "window": "24-hour",
+      "period": "Last 30 days"
+    }
+  },
+  "error_health": {
+    "something_went_wrong": {
+      "event": "Something Went Wrong",
+      "total_last_week": 15117,
+      "trend": "ELEVATED (15.1K vs 9.5K baseline). Investigate.",
+      "cases": [
+        {
+          "case": "No location (untagged)",
+          "weekly": [
+            54613,
+            28720,
+            9309,
+            9546,
+            5631
+          ],
+          "last_week": 9546,
+          "status": "DECLINING",
+          "note": "Was 54k during Feb 16 spike. Now ~9k. Still high \u2014 86% of SWW events have no location. Most are from mobile Error Popup handler that doesn't tag location.",
+          "action": "Fix: Add location property to RmtPopupComponent.analyticsErrorCallback in xe-apollo segment.ts"
+        },
+        {
+          "case": "location=sendMoney, category=DELTA (card errors)",
+          "weekly": [
+            364,
+            440,
+            425,
+            419,
+            271
+          ],
+          "last_week": 419,
+          "status": "stable",
+          "note": "Delta card network failures during send money. Consistent ~400/week."
+        },
+        {
+          "case": "location=sendMoney, category=MCD (Mastercard Debit)",
+          "weekly": [
+            171,
+            247,
+            209,
+            233,
+            157
+          ],
+          "last_week": 233,
+          "status": "stable",
+          "note": "Mastercard Debit card failures."
+        },
+        {
+          "case": "location=sendMoney, category=VISA",
+          "weekly": [
+            122,
+            149,
+            137,
+            118,
+            82
+          ],
+          "last_week": 118,
+          "status": "stable"
+        },
+        {
+          "case": "location=sendMoney, category=MCC (Mastercard Credit)",
+          "weekly": [
+            115,
+            128,
+            145,
+            125,
+            76
+          ],
+          "last_week": 125,
+          "status": "stable"
+        },
+        {
+          "case": "location=sendMoney, category=Open Banking",
+          "last_week": 367,
+          "status": "monitor",
+          "note": "Open banking failures during send money."
+        },
+        {
+          "case": "location=sendMoney, category=[Bank Names]",
+          "last_week": "~300",
+          "status": "stable",
+          "note": "Bank transfer instruction failures. Category contains the bank name (Bank of America, Barclays, HSBC, etc.). Indicates user couldn't complete wire transfer instructions for that specific receiving bank."
+        },
+        {
+          "case": "location=card_authorization",
+          "weekly": [
+            978,
+            1176,
+            1183,
+            990,
+            621
+          ],
+          "last_week": 990,
+          "status": "stable",
+          "note": "3DS card auth failures. Consistent ~1k/week. These overlap with Card Authorisation Failed event."
+        },
+        {
+          "case": "location=send_money (mobile naming)",
+          "weekly": [
+            177,
+            393,
+            345,
+            356,
+            383
+          ],
+          "last_week": 356,
+          "status": "RISING",
+          "note": "Mobile-only variant (note underscore vs camelCase). Doubled from 177 to 383 over 4 weeks. Investigate mobile send money errors.",
+          "action": "Check mobile app versions \u2014 this could be a regression in recent release."
+        },
+        {
+          "case": "location=registration",
+          "last_week": 523,
+          "status": "monitor",
+          "note": "Registration flow errors."
+        }
+      ],
+      "this_week": 10771,
+      "prior_week": 11630,
+      "consumer_filter": "accountType != Corporate"
+    },
+    "error_popup": {
+      "event": "Error Popup (Mobile Only)",
+      "note": "Every error popup shown to any mobile user. The error_title is what the user sees.",
+      "cases": [
+        {
+          "case": "Action timed out - please try it again later.",
+          "weekly": [
+            1038,
+            1103,
+            1238,
+            1128,
+            4768
+          ],
+          "last_week": 1128,
+          "status": "SPIKE THIS WEEK",
+          "note": "4,768 this partial week vs ~1,100 baseline. 4x SPIKE \u2014 something is timing out. Likely API latency or backend slowness.",
+          "action": "URGENT: Investigate what API calls are timing out. Check backend health, Segment delivery latency, payment processor response times."
+        },
+        {
+          "case": "Session expired",
+          "weekly": [
+            1626,
+            1829,
+            2279,
+            2293,
+            1101
+          ],
+          "last_week": 2293,
+          "status": "stable",
+          "note": "~2k/week. Users left the app idle and their session expired. Normal mobile behavior."
+        },
+        {
+          "case": "Failed to continue, please try again",
+          "weekly": [
+            263,
+            316,
+            321,
+            337,
+            578
+          ],
+          "last_week": 337,
+          "status": "RISING",
+          "note": "578 this partial week vs ~300 baseline. Generic flow continuation failure."
+        },
+        {
+          "case": "Failed to verify order - please try again",
+          "weekly": [
+            152,
+            353,
+            406,
+            462,
+            431
+          ],
+          "last_week": 462,
+          "status": "ELEVATED",
+          "note": "3x higher than 4 weeks ago (152\u2192462). Order verification is failing more often.",
+          "action": "Investigate order verification endpoint. This correlates with the Transaction Failed spike."
+        },
+        {
+          "case": "Failed to enable biometrics",
+          "last_week": 1360,
+          "status": "monitor",
+          "note": "Biometric (TouchID/FaceID) enablement failures. High volume."
+        },
+        {
+          "case": "Something went wrong",
+          "last_week": 825,
+          "status": "monitor",
+          "note": "Generic catch-all error popup."
+        },
+        {
+          "case": "Failed to create recipient.",
+          "last_week": 606,
+          "status": "monitor",
+          "note": "Recipient creation API failures."
+        },
+        {
+          "case": "Failed to send again - please try again",
+          "last_week": 474,
+          "status": "monitor",
+          "note": "Repeat transfer failures."
+        },
+        {
+          "case": "Failed to resend code",
+          "last_week": 426,
+          "status": "monitor",
+          "note": "2FA/verification code resend failures."
+        },
+        {
+          "case": "Something went wrong with this location - please select another location",
+          "last_week": 414,
+          "status": "monitor",
+          "note": "Cash payout location errors."
+        },
+        {
+          "case": "Unable to validate recipient",
+          "last_week": 401,
+          "status": "monitor",
+          "note": "Recipient validation failures."
+        },
+        {
+          "case": "Failed to load wallet",
+          "last_week": 300,
+          "status": "monitor",
+          "note": "Mobile wallet loading failures."
+        },
+        {
+          "case": "Failed to change email / password",
+          "last_week": 497,
+          "status": "monitor",
+          "note": "Account settings change failures (283 email + 214 password)."
+        }
+      ]
+    },
+    "payment_failed": {
+      "event": "Payment Failed",
+      "total_last_week": 2101,
+      "cases": [
+        {
+          "case": "ApplePay + Card_Transactions",
+          "weekly": [
+            494,
+            710,
+            582,
+            547,
+            332
+          ],
+          "last_week": 547,
+          "status": "stable",
+          "note": "Apple Pay failures. Card_Transactions is the generic failure code from Apple Pay."
+        },
+        {
+          "case": "DebitCard (all failure codes)",
+          "weekly": [
+            659,
+            855,
+            796,
+            707,
+            416
+          ],
+          "last_week": 707,
+          "status": "stable",
+          "note": "Top codes: (none)=bulk, PSAPI_007=declined (~180/week), PSAPI_015=insufficient funds (~45/week), PSAPI_006=expired/invalid."
+        },
+        {
+          "case": "CreditCard (all failure codes)",
+          "weekly": [
+            347,
+            374,
+            319,
+            297,
+            181
+          ],
+          "last_week": 297,
+          "status": "stable",
+          "note": "Similar distribution as debit but lower volume."
+        },
+        {
+          "case": "GooglePay + Card_Transactions",
+          "weekly": [
+            122,
+            168,
+            108,
+            110,
+            91
+          ],
+          "last_week": 110,
+          "status": "stable"
+        },
+        {
+          "case": "failure=PSAPI_007 (Declined)",
+          "weekly": [
+            231,
+            280,
+            215,
+            183,
+            107
+          ],
+          "last_week": 183,
+          "status": "DECLINING",
+          "note": "Authorization declined by issuer. Declining trend \u2014 good."
+        },
+        {
+          "case": "failure=PSAPI_015 (Insufficient Funds)",
+          "weekly": [
+            79,
+            98,
+            64,
+            45,
+            39
+          ],
+          "last_week": 45,
+          "status": "stable"
+        },
+        {
+          "case": "failure=ConnectionError",
+          "last_week": 39,
+          "status": "monitor",
+          "note": "Network errors connecting to payment processor. Low but watch for spikes."
+        }
+      ],
+      "this_week": 1620,
+      "prior_week": 1668,
+      "consumer_filter": "accountType != Corporate"
+    },
+    "transaction_failed": {
+      "event": "Transaction Failed",
+      "total_last_week": 1051,
+      "trend": "ELEVATED (1,051 vs 748 prior period)",
+      "cases": [
+        {
+          "case": "PSP unsuccessful response creating transaction",
+          "weekly": [
+            270,
+            316,
+            281,
+            294,
+            165
+          ],
+          "last_week": 294,
+          "status": "ELEVATED",
+          "note": "Payment processor rejected transaction creation. ~300/week \u2014 this is the main driver of the spike. Was near 0 before Feb 2.",
+          "action": "Check Adyen/Cybersource integration changes around Feb 2."
+        },
+        {
+          "case": "PSP unsuccessful validating payer authentication",
+          "weekly": [
+            209,
+            258,
+            252,
+            234,
+            154
+          ],
+          "last_week": 234,
+          "status": "ELEVATED",
+          "note": "3DS validation failing server-side. ~230/week."
+        },
+        {
+          "case": "Max card failed auth attempts",
+          "weekly": [
+            45,
+            62,
+            48,
+            39,
+            33
+          ],
+          "last_week": 39,
+          "status": "stable",
+          "note": "Users locked out after too many failed 3DS attempts."
+        },
+        {
+          "case": "Max card failed authorisation attempts",
+          "last_week": 58,
+          "status": "monitor"
+        },
+        {
+          "case": "Client account restricted",
+          "last_week": 38,
+          "status": "stable",
+          "note": "Compliance/fraud-restricted accounts trying to transact."
+        },
+        {
+          "case": "Card transaction reuse (invalid status)",
+          "last_week": 36,
+          "status": "monitor",
+          "note": "Stale card transaction being reused. Possible code bug."
+        },
+        {
+          "case": "CardTypeId must be provided",
+          "last_week": 23,
+          "status": "monitor",
+          "note": "Missing card type in request. LIKELY A CODE BUG \u2014 card type should always be set.",
+          "action": "Fix: check card type mapping in payment flow, ensure CardTypeId is always populated."
+        },
+        {
+          "case": "Quote expired",
+          "last_week": 18,
+          "status": "stable"
+        },
+        {
+          "case": "UpdateContract amount mismatch",
+          "last_week": 14,
+          "status": "monitor",
+          "note": "Amount changed between quote and contract. Edge case where rate moved."
+        }
+      ],
+      "this_week": 794,
+      "prior_week": 748,
+      "consumer_filter": "accountType != Corporate"
+    },
+    "quote_error": {
+      "event": "Quote Error",
+      "total_last_week": 37232,
+      "trend": "STABLE-HIGH (37.2K, was 35K)",
+      "cases": [
+        {
+          "case": "errorCode=(none)",
+          "weekly": [
+            17128,
+            20277,
+            20738,
+            18243,
+            8766
+          ],
+          "last_week": 18243,
+          "status": "stable",
+          "note": "No error code set \u2014 generic failures or error object sent instead of code. 52% of all quote errors. Poor observability.",
+          "action": "Fix: ensure all quote error paths set errorCode property."
+        },
+        {
+          "case": "NonFixedAmountBelowMinAmount",
+          "weekly": [
+            7117,
+            7485,
+            7860,
+            4256,
+            2283
+          ],
+          "last_week": 4256,
+          "status": "DECLINING",
+          "note": "User's amount below minimum. Expected \u2014 users testing small amounts."
+        },
+        {
+          "case": "QUOTE062 (service error)",
+          "weekly": [
+            6050,
+            5787,
+            4889,
+            2138,
+            712
+          ],
+          "last_week": 2138,
+          "status": "DECLINING",
+          "note": "Quote calculation service error. Dropping significantly from 6k to 2k. Improvement or less traffic?"
+        },
+        {
+          "case": "FixedAmountBelowMinAmount",
+          "weekly": [
+            3721,
+            3589,
+            3636,
+            1932,
+            981
+          ],
+          "last_week": 1932,
+          "status": "DECLINING"
+        },
+        {
+          "case": "QUOTE008 (Market Closed)",
+          "last_week": 12169,
+          "status": "monitor",
+          "note": "Trading hours exceeded. Expected for out-of-hours users."
+        },
+        {
+          "case": "QUOTE063 (client restriction)",
+          "last_week": 9117,
+          "status": "monitor"
+        },
+        {
+          "case": "QUOTE019 (corridor unavailable)",
+          "last_week": 6785,
+          "status": "monitor",
+          "note": "Users trying to send to unsupported corridors. Demand signal for new corridor expansion."
+        },
+        {
+          "case": "QUOTE070 (payout method not supported)",
+          "last_week": 2798,
+          "status": "monitor",
+          "note": "Recipient's payout method not available for this quote. Triggers Recipient Selection Failed."
+        }
+      ],
+      "consumer_filter": "accountType != Corporate"
+    },
+    "card_auth_failed": {
+      "event": "Card Authorisation Failed",
+      "total_last_week": 1414,
+      "cases": [
+        {
+          "case": "cardBrand=(none) / Cybersource",
+          "weekly": [
+            424,
+            535,
+            528,
+            497,
+            307
+          ],
+          "last_week": 497,
+          "status": "stable",
+          "note": "Cybersource doesn't report card brand. US/Canada processor."
+        },
+        {
+          "case": "Visa / Adyen",
+          "weekly": [
+            269,
+            451,
+            335,
+            322,
+            197
+          ],
+          "last_week": 322,
+          "status": "stable"
+        },
+        {
+          "case": "Mastercard / Adyen",
+          "weekly": [
+            263,
+            307,
+            282,
+            219,
+            157
+          ],
+          "last_week": 219,
+          "status": "stable"
+        }
+      ],
+      "consumer_filter": "accountType != Corporate"
+    },
+    "open_banking_failed": {
+      "event": "Open Banking Payment Failed (Backend)",
+      "total_last_week": 1751,
+      "cases": [
+        {
+          "case": "Abandoned (user didn't complete in bank app)",
+          "weekly": [
+            757,
+            960,
+            677,
+            860,
+            572
+          ],
+          "last_week": 860,
+          "status": "stable",
+          "note": "63% of OB failures. User started but didn't complete in their bank app. Expected \u2014 not all users follow through."
+        },
+        {
+          "case": "Error (bank-side processing failure)",
+          "weekly": [
+            320,
+            506,
+            343,
+            309,
+            187
+          ],
+          "last_week": 309,
+          "status": "stable",
+          "note": "Bank rejected the payment. Top banks: Deutsche Bank (369), ING Bank (186), BNP Paribas (128)."
+        },
+        {
+          "case": "Cancelled (user actively cancelled)",
+          "weekly": [
+            198,
+            299,
+            288,
+            180,
+            154
+          ],
+          "last_week": 180,
+          "status": "stable"
+        }
+      ]
+    },
+    "volumes_30d": {
+      "Quote Error": 178101,
+      "Something Went Wrong": 73100,
+      "Payment Failed": 7983,
+      "Login Failed": 147377,
+      "Login failed": 0,
+      "Transaction Failed": 3576,
+      "Card Authorisation Failed": 5233
+    }
+  },
+  "top_corridors": [
+    {
+      "country": "GBP\u2192EUR",
+      "name": "GBP \u2192 EUR",
+      "volume": 237249,
+      "share": "15.7%"
+    },
+    {
+      "country": "USD\u2192EUR",
+      "name": "USD \u2192 EUR",
+      "volume": 105527,
+      "share": "7.0%"
+    },
+    {
+      "country": "USD\u2192GBP",
+      "name": "USD \u2192 GBP",
+      "volume": 103553,
+      "share": "6.9%"
+    },
+    {
+      "country": "AUD\u2192NZD",
+      "name": "AUD \u2192 NZD",
+      "volume": 60513,
+      "share": "4.0%"
+    },
+    {
+      "country": "USD\u2192INR",
+      "name": "USD \u2192 INR",
+      "volume": 54205,
+      "share": "3.6%"
+    },
+    {
+      "country": "EUR\u2192GBP",
+      "name": "EUR \u2192 GBP",
+      "volume": 54186,
+      "share": "3.6%"
+    },
+    {
+      "country": "GBP\u2192USD",
+      "name": "GBP \u2192 USD",
+      "volume": 53798,
+      "share": "3.6%"
+    },
+    {
+      "country": "GBP\u2192AUD",
+      "name": "GBP \u2192 AUD",
+      "volume": 53487,
+      "share": "3.5%"
+    },
+    {
+      "country": "USD\u2192CAD",
+      "name": "USD \u2192 CAD",
+      "volume": 51889,
+      "share": "3.4%"
+    },
+    {
+      "country": "NZD\u2192AUD",
+      "name": "NZD \u2192 AUD",
+      "volume": 49433,
+      "share": "3.3%"
+    }
+  ],
+  "growth_opportunities": [
+    {
+      "id": 1,
+      "title": "Mobile Error Recovery",
+      "impact": "HIGH",
+      "category": "conversion",
+      "metric": "~300 extra txns/week",
+      "description": "Web recovers 41% of failed payments. Mobile only 10%.",
+      "action": "Improve mobile retry UX: prominent 'Try Different Method' button, auto-suggest alternatives."
+    },
+    {
+      "id": 2,
+      "title": "Biometric Consent Drop-off",
+      "impact": "HIGH",
+      "category": "conversion",
+      "metric": "367\u219235 at consent (9.5%)",
+      "description": "91% of users who start biometric verification on iOS abandon at the consent screen.",
+      "action": "Redesign consent: explain why, show trust signals, simplify language."
+    },
+    {
+      "id": 3,
+      "title": "Transaction Failed \u2014 PSP Errors Still Elevated",
+      "impact": "HIGH",
+      "category": "incident",
+      "metric": "~530/week PSP failures (was ~0 before Feb 2)",
+      "description": "PSP create transaction (294/week) + PSP payer auth validation (234/week) = 528 failures/week that didn't exist before Feb 2.",
+      "action": "Check Adyen/Cybersource integration changes around Feb 2. CardTypeId bug (23/week) is likely fixable in code."
+    },
+    {
+      "id": 4,
+      "title": "Error Popup: 'Action timed out' SPIKING",
+      "impact": "HIGH",
+      "category": "incident",
+      "metric": "4,768 this week vs 1,100 baseline (4x spike)",
+      "description": "Mobile users seeing 'Action timed out' errors at 4x the normal rate this week.",
+      "action": "URGENT: Check API response times, backend health, network connectivity."
+    },
+    {
+      "id": 5,
+      "title": "'Failed to verify order' ELEVATED",
+      "impact": "MEDIUM",
+      "category": "incident",
+      "metric": "462/week vs 152 four weeks ago (3x)",
+      "description": "Order verification failures tripled in 4 weeks. Correlates with Transaction Failed spike.",
+      "action": "Investigate order verification endpoint \u2014 likely same root cause as PSP failures."
+    },
+    {
+      "id": 6,
+      "title": "Quote Error Observability Gap",
+      "impact": "MEDIUM",
+      "category": "observability",
+      "metric": "52% of quote errors have no errorCode",
+      "description": "18,243 quote errors/week with errorCode=(none). Impossible to diagnose.",
+      "action": "Fix: ensure all code paths that fire Quote Error set the errorCode property."
+    },
+    {
+      "id": 7,
+      "title": "SWW location=send_money RISING",
+      "impact": "MEDIUM",
+      "category": "regression",
+      "metric": "383/week, doubled from 177 in 4 weeks",
+      "description": "Mobile send money errors (location=send_money with underscore) doubled. Different from web's location=sendMoney (camelCase).",
+      "action": "Check recent mobile app releases for send money flow regressions."
+    },
+    {
+      "id": 8,
+      "title": "Registration Funnel Leak",
+      "impact": "HIGH",
+      "category": "conversion",
+      "metric": "38k start \u2192 5k MT Profile (14%)",
+      "description": "86% of registration starters never become money transfer profiles.",
+      "action": "Simplify Personal Details\u2192Phone Number step (biggest drop)."
+    },
+    {
+      "id": 9,
+      "title": "India Corridor Optimization",
+      "impact": "MEDIUM",
+      "category": "growth",
+      "metric": "12,291 txns/week (25% of total)",
+      "description": "India is 2-4x the next corridor. Any GBP/USD\u2192INR improvement has outsized ROI.",
+      "action": "Corridor-specific deep dive: quote error rates, payment method distribution, fee competitiveness."
+    },
+    {
+      "id": 10,
+      "title": "QUOTE019 Corridor Demand Signal",
+      "impact": "MEDIUM",
+      "category": "growth",
+      "metric": "6,785 'corridor unavailable' errors/month",
+      "description": "Users trying to send to unsupported corridors. This is unmet demand.",
+      "action": "Analyze which destination countries drive QUOTE019 errors \u2014 prioritize for corridor expansion."
+    }
+  ],
+  "top_corridors_note": "Consumer only (accountType != Corporate). Ranked by revenueUSD. Volume column shows revenue in USD.",
+  "audit_note": "Audited 2026-03-24. All Transaction Created/Completed data filtered accountType != Corporate. Error events filtered for consumer. Revenue verified correct. Balance health synced from balance-tracker.json."
+}

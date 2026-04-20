@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Payout Speed Report — Where We're Slow</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1600px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #f85149; }
+    .nav { margin-left: auto; display: flex; gap: 16px; }
+    .nav a { color: #58a6ff; text-decoration: none; font-size: 13px; }
+
+    .controls { background: #161b22; border-bottom: 1px solid #30363d; padding: 12px 24px; }
+    .controls-inner { max-width: 1600px; margin: 0 auto; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .filter-group { display: flex; align-items: center; gap: 6px; }
+    .filter-group label { font-size: 12px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    select, input[type=text] { background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 6px 10px; border-radius: 6px; font-size: 13px; }
+
+    .container { max-width: 1600px; margin: 0 auto; padding: 20px 24px; }
+
+    .methodology { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 13px; }
+    .methodology h3 { font-size: 14px; margin-bottom: 8px; color: #bc8cff; }
+    .methodology .field { display: flex; gap: 8px; margin-bottom: 4px; }
+    .methodology .field-label { color: #8b949e; min-width: 180px; }
+    .methodology .status-legend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
+    .methodology .status-item { padding: 6px 10px; background: #0d1117; border-radius: 4px; border: 1px solid #21262d; }
+    .methodology .status-item .name { font-weight: 600; font-size: 12px; }
+    .methodology .status-item .desc { font-size: 11px; color: #8b949e; }
+    .methodology .status-item .count { font-size: 16px; font-weight: 700; margin-top: 2px; }
+
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+    .card-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .card-value { font-size: 28px; font-weight: 700; }
+    .card-sub { font-size: 12px; color: #8b949e; margin-top: 4px; }
+
+    .section-title { font-size: 16px; font-weight: 600; margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid #30363d; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th { background: #161b22; position: sticky; top: 0; padding: 10px 8px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #8b949e; white-space: nowrap; }
+    thead th.group { text-align: center; border-left: 2px solid #30363d; }
+    tbody tr { border-bottom: 1px solid #21262d; cursor: pointer; }
+    tbody tr:hover { background: #161b2266; }
+    tbody td { padding: 8px; white-space: nowrap; }
+    td.ccy { font-weight: 600; font-size: 14px; }
+    td.vol { text-align: right; color: #8b949e; }
+    td.grp { border-left: 2px solid #30363d; }
+
+    .st-much-faster { color: #3fb950; }
+    .st-faster { color: #56d364; }
+    .st-on-track { color: #e1e4e8; }
+    .st-slightly-over { color: #d29922; }
+    .st-exceeds { color: #f85149; font-weight: 700; }
+    .st-no-data { color: #484f58; }
+
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+    .pill-red { background: #f8514922; color: #f85149; }
+    .pill-yellow { background: #d2992222; color: #d29922; }
+    .pill-green { background: #3fb95022; color: #3fb950; }
+    .pill-gray { background: #21262d; color: #8b949e; }
+    .pill-purple { background: #bc8cff22; color: #bc8cff; }
+
+    .bar { display: inline-block; height: 8px; border-radius: 4px; vertical-align: middle; }
+
+    .detail-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0008; z-index: 200; }
+    .detail-panel { position: fixed; top: 0; right: 0; width: 580px; height: 100%; background: #161b22; border-left: 1px solid #30363d; padding: 24px; overflow-y: auto; z-index: 201; display: none; }
+    .detail-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: #8b949e; font-size: 20px; cursor: pointer; }
+    .detail-table { width: 100%; margin-bottom: 12px; }
+    .detail-table td { padding: 6px 8px; border-bottom: 1px solid #21262d; }
+    .detail-table .label { color: #8b949e; font-size: 12px; width: 40%; }
+    .section-box { margin-bottom: 12px; padding: 12px; background: #0d1117; border-radius: 6px; border: 1px solid #21262d; }
+
+    .alert-box { padding: 10px 14px; border-radius: 6px; margin-bottom: 12px; font-size: 12px; }
+    .alert-red { background: #f8514915; border: 1px solid #f8514933; color: #f85149; }
+    .alert-yellow { background: #d2992215; border: 1px solid #d2992233; color: #d29922; }
+
+    @media (max-width: 768px) {
+      .detail-panel { width: 100%; }
+      .methodology .status-legend { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>UK Payout Speed <span>Where We're Slow</span></h1>
+      <div style="font-size:12px;color:#8b949e">Payment Sent → Received | Last 30 days | Source: Jimmy's payout report</div>
+      <div class="nav">
+        <a href="uk.html">UK End-to-End</a>
+        <a href="index.html">EU Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <div class="filter-group">
+        <label>Search</label>
+        <input type="text" id="search" placeholder="Currency...">
+      </div>
+      <div class="filter-group">
+        <label>Show</label>
+        <select id="filter-show">
+          <option value="all">All Corridors</option>
+          <option value="exceeds">Exceeds SLA Only</option>
+          <option value="slow">Slow (Median > 24h)</option>
+          <option value="weekend-pain">Weekend Pain (3x+ slower)</option>
+          <option value="high-volume">High Volume (500+)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>CCY Type</label>
+        <select id="filter-ccy">
+          <option value="all">All</option>
+          <option value="Major">Major</option>
+          <option value="Standard">Standard</option>
+          <option value="Exotic">Exotic</option>
+          <option value="Ria">Ria</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Min Volume</label>
+        <select id="filter-vol">
+          <option value="0">All</option>
+          <option value="10">10+</option>
+          <option value="50" selected>50+</option>
+          <option value="100">100+</option>
+          <option value="500">500+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Payout Method</label>
+        <select id="filter-method">
+          <option value="all">All</option>
+          <option value="Sepa">SEPA</option>
+          <option value="RIA">RIA</option>
+          <option value="Swift">Swift</option>
+          <option value="FPS">FPS</option>
+          <option value="Cash">Cash</option>
+          <option value="MobileWallet">Mobile Wallet</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort</label>
+        <select id="sort-by">
+          <option value="worst-first">Worst First (Median)</option>
+          <option value="worst-avg">Worst First (Avg)</option>
+          <option value="volume">Volume</option>
+          <option value="sla-breach">SLA Breach %</option>
+          <option value="weekend-ratio">Weekend Slowdown</option>
+          <option value="alpha">A-Z</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="methodology" id="methodology"></div>
+
+    <!-- Payment Method Summary (Leg 1 — how sender pays) -->
+    <div class="section-title" style="color:#58a6ff">Payment Method — How Sender Pays (Leg 1, Amplitude)</div>
+    <div id="payment-method-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:24px"></div>
+
+    <!-- Payout Method Summary (Leg 2 — how recipient receives) -->
+    <div class="section-title" style="color:#bc8cff">Payout Method — How Recipient Receives (Leg 2, Payout Data)</div>
+    <div id="payout-method-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:24px"></div>
+
+    <div class="summary" id="summary"></div>
+    <div class="section-title" id="table-title">All Corridors</div>
+    <div class="table-wrap">
+      <table>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="detail-overlay" id="detail-overlay"></div>
+  <div class="detail-panel" id="detail-panel">
+    <button class="detail-close" id="detail-close">&times;</button>
+    <div id="detail-content"></div>
+  </div>
+
+<script>
+let DATA = null;
+let PAY_METHODS = null;
+
+Promise.all([
+  fetch('../data/uk-payout-report.json').then(r => r.json()),
+  fetch('../data/uk-payment-methods.json').then(r => r.json()),
+]).then(([report, payMethods]) => {
+  DATA = report;
+  PAY_METHODS = payMethods;
+  renderMethodology();
+  renderPaymentMethodCards();
+  renderPayoutMethodCards();
+  render();
+}).catch(e => { document.getElementById('tbody').innerHTML = `<tr><td colspan="20">Error: ${e}</td></tr>`; });
+
+function fmt(h) {
+  if (h === null || h === undefined) return '-';
+  if (h < 0.08) return '<5m';
+  if (h < 1) return Math.round(h * 60) + 'm';
+  if (h < 24) return h.toFixed(1) + 'h';
+  if (h < 48) return (h / 24).toFixed(1) + 'd';
+  return Math.round(h / 24) + 'd';
+}
+
+function speedClass(h) {
+  if (h === null || h === undefined) return 'st-no-data';
+  if (h <= 0.5) return 'st-much-faster';
+  if (h <= 1) return 'st-faster';
+  if (h <= 24) return 'st-on-track';
+  if (h <= 48) return 'st-slightly-over';
+  return 'st-exceeds';
+}
+
+function renderPaymentMethodCards() {
+  if (!PAY_METHODS) return;
+  const el = document.getElementById('payment-method-cards');
+  const methods = Object.entries(PAY_METHODS.paymentMethods).filter(([k, d]) => d.volume > 10);
+  el.innerHTML = methods.map(([key, d]) => {
+    const medCls = speedClass(d.median_hrs);
+    const avgCls = speedClass(d.avg_hrs);
+    return `<div class="card">
+      <div class="card-label">${d.label}</div>
+      <div style="display:flex;align-items:baseline;gap:12px">
+        <div class="card-value ${medCls}">${fmt(d.median_hrs)}</div>
+        <div style="font-size:13px;color:#8b949e">median</div>
+      </div>
+      <div style="margin-top:6px;font-size:13px">
+        <span class="${avgCls}">avg ${fmt(d.avg_hrs)}</span>
+      </div>
+      <div class="card-sub">${d.volume.toLocaleString()} txns | ${d.conversion}% completed</div>
+    </div>`;
+  }).join('');
+}
+
+function renderPayoutMethodCards() {
+  if (!DATA) return;
+  const el = document.getElementById('payout-method-cards');
+  const methodOrder = ['Sepa', 'RIA', 'Swift', 'FPS', 'Cash', 'MobileWallet'];
+  const methodLabels = { Sepa: 'SEPA', RIA: 'RIA', Swift: 'Swift', FPS: 'FPS', Cash: 'Cash', MobileWallet: 'Mobile Wallet' };
+
+  // Aggregate per payout method
+  const globalMethods = {};
+  for (const c of DATA.corridors) {
+    for (const [m, s] of Object.entries(c.byMethod)) {
+      if (!globalMethods[m]) globalMethods[m] = { n: 0, corridors: 0, topCorridors: [] };
+      globalMethods[m].n += s.n;
+      globalMethods[m].corridors++;
+      globalMethods[m].topCorridors.push({ ccy: c.currency, n: s.n, median_hrs: s.median_hrs, avg_hrs: s.avg_hrs, p60_hrs: s.p60_hrs, p80_hrs: s.p80_hrs, p90_hrs: s.p90_hrs });
+    }
+  }
+
+  el.innerHTML = methodOrder.filter(m => globalMethods[m] && globalMethods[m].n > 10).map(m => {
+    const d = globalMethods[m];
+    d.topCorridors.sort((a, b) => b.n - a.n);
+    const top = d.topCorridors.slice(0, 5);
+
+    return `<div class="card" style="cursor:pointer" onclick="document.getElementById('filter-method').value='${m}';render()">
+      <div class="card-label">${methodLabels[m] || m}</div>
+      <div style="font-size:12px;color:#8b949e">${d.n.toLocaleString()} payments | ${d.corridors} corridors</div>
+      <div style="margin-top:8px">
+        <table style="width:100%;font-size:11px;border-collapse:collapse">
+          <tr style="color:#8b949e"><td>Corridor</td><td style="text-align:right">Vol</td><td style="text-align:right">Median</td><td style="text-align:right">Avg</td><td style="text-align:right;color:#58a6ff">P60</td><td style="text-align:right;color:#bc8cff">P80</td><td style="text-align:right;color:#f85149">P90</td></tr>
+          ${top.map(tc => `<tr>
+            <td style="color:#8b949e">${tc.ccy}</td>
+            <td style="text-align:right;color:#8b949e">${tc.n}</td>
+            <td style="text-align:right" class="${speedClass(tc.median_hrs)}">${fmt(tc.median_hrs)}</td>
+            <td style="text-align:right;color:#8b949e">${fmt(tc.avg_hrs)}</td>
+            <td style="text-align:right" class="${speedClass(tc.p60_hrs)}">${fmt(tc.p60_hrs)}</td>
+            <td style="text-align:right" class="${speedClass(tc.p80_hrs)}">${fmt(tc.p80_hrs)}</td>
+            <td style="text-align:right" class="${speedClass(tc.p90_hrs)}">${fmt(tc.p90_hrs)}</td>
+          </tr>`).join('')}
+        </table>
+      </div>
+      <div style="margin-top:6px;font-size:11px;color:#58a6ff">Click to filter table below &darr;</div>
+    </div>`;
+  }).join('');
+}
+
+function renderMethodology() {
+  const m = DATA.methodology;
+  const s = DATA.summary;
+  document.getElementById('methodology').innerHTML = `
+    <h3>Data Methodology</h3>
+    <div class="field"><span class="field-label">Timestamps used:</span><span><strong>Last Status Update Time</strong> (payment sent by us) → <strong>Status Timestamp</strong> (external confirmation received)</span></div>
+    <div class="field"><span class="field-label">What it measures:</span><span>Time from when we sent the payment to when we received a status update from the payout network</span></div>
+    <div class="field"><span class="field-label">Data excluded:</span><span>${m.excluded}</span></div>
+    <div style="margin-top:10px;font-size:12px;font-weight:600">External Payload Status — all mean delivered/confirmed:</div>
+    <div class="status-legend">
+      <div class="status-item">
+        <div class="name" style="color:#3fb950">Delivery Confirmed</div>
+        <div class="desc">Bank confirmed money in recipient's account. SEPA payments.</div>
+        <div class="count" style="color:#3fb950">${DATA.corridors.reduce((a,c) => a + (c.statusDist['Delivery Confirmed'] || 0), 0).toLocaleString()}</div>
+      </div>
+      <div class="status-item">
+        <div class="name" style="color:#58a6ff">Paid</div>
+        <div class="desc">Payout partner (RIA/Cash/MobileWallet) confirmed paid to recipient.</div>
+        <div class="count" style="color:#58a6ff">${DATA.corridors.reduce((a,c) => a + (c.statusDist['Paid'] || 0), 0).toLocaleString()}</div>
+      </div>
+      <div class="status-item">
+        <div class="name" style="color:#bc8cff">Processed</div>
+        <div class="desc">Payment processed and delivered by network (FPS/Swift/Domestic).</div>
+        <div class="count" style="color:#bc8cff">${s.payments_processed_only.toLocaleString()}</div>
+      </div>
+    </div>
+    <div style="margin-top:8px;font-size:11px;color:#8b949e">All ${s.total_payments.toLocaleString()} payments have confirmed delivery. The status name varies by payout method but all represent money received.</div>
+  `;
+}
+
+function getMethodStats(c, method) {
+  if (method === 'all') return c.overall;
+  return c.byMethod[method] || { n: 0, median_hrs: null, avg_hrs: null, p90_hrs: null };
+}
+
+function render() {
+  if (!DATA) return;
+  const search = document.getElementById('search').value.toUpperCase();
+  const showF = document.getElementById('filter-show').value;
+  const ccyF = document.getElementById('filter-ccy').value;
+  const volF = parseInt(document.getElementById('filter-vol').value);
+  const methodF = document.getElementById('filter-method').value;
+  const sortBy = document.getElementById('sort-by').value;
+
+  let items = DATA.corridors.filter(c => {
+    if (search && !c.currency.toUpperCase().includes(search)) return false;
+    const s = getMethodStats(c, methodF);
+    if (volF && s.n < volF) return false;
+    if (ccyF !== 'all' && !(c.ccyType || '').includes(ccyF)) return false;
+    if (showF === 'exceeds' && !(c.exceedsSlaPct > 0)) return false;
+    if (showF === 'slow' && !(s.median_hrs > 24)) return false;
+    if (showF === 'weekend-pain' && !(c.weekendSlower >= 3)) return false;
+    if (showF === 'high-volume' && s.n < 500) return false;
+    return true;
+  });
+
+  items.sort((a, b) => {
+    const sa = getMethodStats(a, methodF);
+    const sb = getMethodStats(b, methodF);
+    if (sortBy === 'worst-first') return (sb.median_hrs ?? -1) - (sa.median_hrs ?? -1);
+    if (sortBy === 'worst-avg') return (sb.avg_hrs ?? -1) - (sa.avg_hrs ?? -1);
+    if (sortBy === 'volume') return (sb.n || 0) - (sa.n || 0);
+    if (sortBy === 'sla-breach') return (b.exceedsSlaPct ?? -1) - (a.exceedsSlaPct ?? -1);
+    if (sortBy === 'weekend-ratio') return (b.weekendSlower ?? -1) - (a.weekendSlower ?? -1);
+    if (sortBy === 'alpha') return a.currency.localeCompare(b.currency);
+    return 0;
+  });
+
+  // Summary cards
+  const exceeding = items.filter(c => c.exceedsSlaPct > 10);
+  const slow24h = items.filter(c => {
+    const s = getMethodStats(c, methodF);
+    return s.median_hrs > 24;
+  });
+  const weekendPain = items.filter(c => c.weekendSlower >= 3);
+  const p90Bad = items.filter(c => {
+    const s = getMethodStats(c, methodF);
+    return s.p90_hrs > 48;
+  });
+
+  document.getElementById('summary').innerHTML = `
+    <div class="card"><div class="card-label">Showing</div><div class="card-value">${items.length}</div><div class="card-sub">of ${DATA.corridors.length} corridors${methodF !== 'all' ? ' ('+methodF+')' : ''}</div></div>
+    <div class="card"><div class="card-label">Exceeding SLA</div><div class="card-value" style="color:#f85149">${exceeding.length}</div><div class="card-sub">>10% of payments breach SLA</div></div>
+    <div class="card"><div class="card-label">Slow (>24h median)</div><div class="card-value" style="color:#d29922">${slow24h.length}</div><div class="card-sub">Median payout >1 day</div></div>
+    <div class="card"><div class="card-label">P90 > 2 days</div><div class="card-value" style="color:#f85149">${p90Bad.length}</div><div class="card-sub">10% of payments take >2 days</div></div>
+    <div class="card"><div class="card-label">Weekend Pain</div><div class="card-value" style="color:#bc8cff">${weekendPain.length}</div><div class="card-sub">Weekend 3x+ slower</div></div>
+  `;
+
+  // Table
+  document.getElementById('thead').innerHTML = `
+    <tr>
+      <th>Corridor</th>
+      <th>Type</th>
+      <th>SLA</th>
+      <th>Vol</th>
+      <th>Median</th>
+      <th>Average</th>
+      <th class="group" style="color:#58a6ff">P60</th>
+      <th class="group" style="color:#bc8cff">P80</th>
+      <th class="group" style="color:#f85149">P90</th>
+      <th class="group">Under 5m</th>
+      <th class="group">Under 1h</th>
+      <th class="group">Under 1d</th>
+      <th class="group">SLA Breach</th>
+      <th class="group">Weekday</th>
+      <th class="group">Weekend</th>
+    </tr>
+  `;
+
+  document.getElementById('tbody').innerHTML = items.map(c => {
+    const s = getMethodStats(c, methodF);
+    const medCls = speedClass(s.median_hrs);
+    const avgCls = speedClass(s.avg_hrs);
+
+    // SLA breach pill
+    let slaPill = '<span class="pill pill-gray">N/A</span>';
+    if (c.exceedsSlaPct !== null) {
+      if (c.exceedsSlaPct > 20) slaPill = `<span class="pill pill-red">${c.exceedsSlaPct}%</span>`;
+      else if (c.exceedsSlaPct > 5) slaPill = `<span class="pill pill-yellow">${c.exceedsSlaPct}%</span>`;
+      else if (c.exceedsSlaPct > 0) slaPill = `<span class="pill pill-gray">${c.exceedsSlaPct}%</span>`;
+      else slaPill = `<span class="pill pill-green">0%</span>`;
+    }
+
+    // Weekday/weekend
+    const wdMed = c.weekday.median_hrs;
+    const weMed = c.weekend.median_hrs;
+    const weFlag = c.weekendSlower >= 3 ? ' <span style="color:#f85149" title="Weekend much slower">&#9650;</span>' : '';
+
+    return `<tr data-ccy="${c.currency}">
+      <td class="ccy">GBP &rarr; ${c.currency}</td>
+      <td><span style="font-size:11px;color:#8b949e">${c.ccyType}${c.isRia ? ' *' : ''}</span></td>
+      <td><span style="font-size:11px;color:#8b949e">${c.sla_label}</span></td>
+      <td class="vol">${s.n.toLocaleString()}</td>
+      <td class="${medCls}" style="font-weight:700">${fmt(s.median_hrs)}</td>
+      <td class="${avgCls}">${fmt(s.avg_hrs)}</td>
+      <td class="grp ${speedClass(s.p60_hrs)}">${fmt(s.p60_hrs)}</td>
+      <td class="grp ${speedClass(s.p80_hrs)}" style="font-weight:600">${fmt(s.p80_hrs)}</td>
+      <td class="grp ${speedClass(s.p90_hrs)}" style="font-weight:700">${fmt(s.p90_hrs)}</td>
+      <td class="grp" style="text-align:center">${s.pct_5m !== undefined ? s.pct_5m + '%' : '-'}</td>
+      <td class="grp" style="text-align:center">${s.pct_1h !== undefined ? s.pct_1h + '%' : '-'}</td>
+      <td class="grp" style="text-align:center">${s.pct_1d !== undefined ? s.pct_1d + '%' : '-'}</td>
+      <td class="grp" style="text-align:center">${slaPill}</td>
+      <td class="grp ${speedClass(wdMed)}">${fmt(wdMed)}</td>
+      <td class="grp ${speedClass(weMed)}">${fmt(weMed)}${weFlag}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('tbody').querySelectorAll('tr').forEach(tr => {
+    tr.addEventListener('click', () => showDetail(tr.dataset.ccy));
+  });
+}
+
+function showDetail(ccy) {
+  const c = DATA.corridors.find(x => x.currency === ccy);
+  if (!c) return;
+
+  let html = `<h2 style="margin-bottom:16px">GBP &rarr; ${c.currency} <span style="font-size:13px;color:#8b949e">${c.ccyType}</span></h2>`;
+
+  // Alerts
+  if (c.exceedsSlaPct > 10) {
+    html += `<div class="alert-box alert-red"><strong>${c.exceedsSlaPct}% of payments exceed SLA</strong> (${c.exceedsSla} of ${c.overall.n} payments breach the ${c.sla_label} target)</div>`;
+  }
+  if (c.weekendSlower >= 3) {
+    html += `<div class="alert-box alert-yellow"><strong>Weekend is ${c.weekendSlower}x slower</strong> — Median: weekday ${fmt(c.weekday.median_hrs)} vs weekend ${fmt(c.weekend.median_hrs)}</div>`;
+  }
+  // Status distribution summary
+  const statusParts = [];
+  if (c.statusDist['Delivery Confirmed']) statusParts.push('Delivery Confirmed: ' + c.statusDist['Delivery Confirmed']);
+  if (c.statusDist['Paid']) statusParts.push('Paid: ' + c.statusDist['Paid']);
+  if (c.statusDist['Processed']) statusParts.push('Processed: ' + c.statusDist['Processed']);
+
+  // Overview
+  html += `<div class="section-box">
+    <div style="font-weight:600;margin-bottom:8px">Overview</div>
+    <table class="detail-table" style="margin:0">
+      <tr><td class="label">Volume (30d)</td><td>${c.overall.n.toLocaleString()}</td></tr>
+      <tr><td class="label">Total Amount</td><td>${c.currency} ${c.totalAmount.toLocaleString()}</td></tr>
+      <tr><td class="label">SLA Target</td><td>${c.sla_label}</td></tr>
+      <tr><td class="label">Median</td><td class="${speedClass(c.overall.median_hrs)}" style="font-weight:700">${fmt(c.overall.median_hrs)}</td></tr>
+      <tr><td class="label">Average</td><td class="${speedClass(c.overall.avg_hrs)}">${fmt(c.overall.avg_hrs)}</td></tr>
+      <tr><td class="label">P60</td><td class="${speedClass(c.overall.p60_hrs)}">${fmt(c.overall.p60_hrs)}</td></tr>
+      <tr><td class="label">P80</td><td class="${speedClass(c.overall.p80_hrs)}" style="font-weight:600">${fmt(c.overall.p80_hrs)}</td></tr>
+      <tr><td class="label">P90</td><td class="${speedClass(c.overall.p90_hrs)}" style="font-weight:700">${fmt(c.overall.p90_hrs)}</td></tr>
+      <tr><td class="label">P95</td><td>${fmt(c.overall.p95_hrs)}</td></tr>
+      <tr><td class="label">Under 5 min</td><td>${c.overall.pct_5m}%</td></tr>
+      <tr><td class="label">Under 1 hour</td><td>${c.overall.pct_1h}%</td></tr>
+      <tr><td class="label">Under 6 hours</td><td>${c.overall.pct_6h}%</td></tr>
+      <tr><td class="label">Under 1 day</td><td>${c.overall.pct_1d}%</td></tr>
+      <tr><td class="label">Under 3 days</td><td>${c.overall.pct_3d}%</td></tr>
+      <tr><td class="label">SLA Breach Rate</td><td>${c.exceedsSlaPct !== null ? c.exceedsSlaPct + '%' : 'N/A'} (${c.exceedsSla} payments)</td></tr>
+    </table>
+  </div>`;
+
+  // By Payout Method
+  const methods = Object.entries(c.byMethod).sort((a, b) => b[1].n - a[1].n);
+  if (methods.length > 0) {
+    html += `<div class="section-box">
+      <div style="font-weight:600;margin-bottom:8px">By Payout Method</div>
+      <table class="detail-table" style="margin:0">
+        <tr><td class="label" style="font-weight:600">Method</td><td style="font-weight:600">Vol</td><td style="font-weight:600">Median</td><td style="font-weight:600">Average</td><td style="font-weight:600;color:#58a6ff">P60</td><td style="font-weight:600;color:#bc8cff">P80</td><td style="font-weight:600;color:#f85149">P90</td></tr>`;
+    for (const [m, d] of methods) {
+      html += `<tr>
+        <td class="label">${m}</td>
+        <td>${d.n}</td>
+        <td class="${speedClass(d.median_hrs)}" style="font-weight:600">${fmt(d.median_hrs)}</td>
+        <td class="${speedClass(d.avg_hrs)}">${fmt(d.avg_hrs)}</td>
+        <td class="${speedClass(d.p60_hrs)}">${fmt(d.p60_hrs)}</td>
+        <td class="${speedClass(d.p80_hrs)}" style="font-weight:600">${fmt(d.p80_hrs)}</td>
+        <td class="${speedClass(d.p90_hrs)}" style="font-weight:700">${fmt(d.p90_hrs)}</td>
+      </tr>`;
+    }
+    html += `</table></div>`;
+  }
+
+  // By External Payload Status
+  const statuses = Object.entries(c.byStatus).sort((a, b) => b[1].n - a[1].n);
+  if (statuses.length > 0) {
+    html += `<div class="section-box">
+      <div style="font-weight:600;margin-bottom:8px">By Confirmation Status</div>
+      <table class="detail-table" style="margin:0">
+        <tr><td class="label" style="font-weight:600">Status</td><td style="font-weight:600">Vol</td><td style="font-weight:600">Median</td><td style="font-weight:600">Average</td></tr>`;
+    for (const [s, d] of statuses) {
+      const statusColor = s === 'Delivery Confirmed' ? '#3fb950' : s === 'Paid' ? '#58a6ff' : '#d29922';
+      html += `<tr>
+        <td class="label"><span style="color:${statusColor}">${s}</span></td>
+        <td>${d.n}</td>
+        <td class="${speedClass(d.median_hrs)}" style="font-weight:600">${fmt(d.median_hrs)}</td>
+        <td class="${speedClass(d.avg_hrs)}">${fmt(d.avg_hrs)}</td>
+      </tr>`;
+    }
+    html += `</table></div>`;
+  }
+
+  // Weekday vs Weekend
+  html += `<div class="section-box">
+    <div style="font-weight:600;margin-bottom:8px">Weekday vs Weekend</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="padding:10px;background:#161b22;border-radius:4px">
+        <div style="color:#8b949e;font-size:12px">Weekday</div>
+        <div class="${speedClass(c.weekday.median_hrs)}" style="font-size:18px;font-weight:700">${fmt(c.weekday.median_hrs)}</div>
+        <div style="color:#8b949e;font-size:11px">avg ${fmt(c.weekday.avg_hrs)} | n=${c.weekday.n}</div>
+      </div>
+      <div style="padding:10px;background:#161b22;border-radius:4px">
+        <div style="color:#8b949e;font-size:12px">Weekend</div>
+        <div class="${speedClass(c.weekend.median_hrs)}" style="font-size:18px;font-weight:700">${fmt(c.weekend.median_hrs)}</div>
+        <div style="color:#8b949e;font-size:11px">avg ${fmt(c.weekend.avg_hrs)} | n=${c.weekend.n}</div>
+      </div>
+    </div>
+  </div>`;
+
+  // Top destination countries
+  const countries = Object.entries(c.byCountry).sort((a, b) => b[1].n - a[1].n).slice(0, 10);
+  if (countries.length > 0) {
+    html += `<div class="section-box">
+      <div style="font-weight:600;margin-bottom:8px">By Destination Country</div>
+      <table class="detail-table" style="margin:0">
+        <tr><td class="label" style="font-weight:600">Country</td><td style="font-weight:600">Vol</td><td style="font-weight:600">Median</td><td style="font-weight:600">Average</td><td style="font-weight:600;color:#58a6ff">P60</td><td style="font-weight:600;color:#bc8cff">P80</td><td style="font-weight:600;color:#f85149">P90</td></tr>`;
+    for (const [co, d] of countries) {
+      html += `<tr>
+        <td class="label">${co}</td>
+        <td>${d.n}</td>
+        <td class="${speedClass(d.median_hrs)}" style="font-weight:600">${fmt(d.median_hrs)}</td>
+        <td class="${speedClass(d.avg_hrs)}">${fmt(d.avg_hrs)}</td>
+        <td class="${speedClass(d.p60_hrs)}">${fmt(d.p60_hrs)}</td>
+        <td class="${speedClass(d.p80_hrs)}" style="font-weight:600">${fmt(d.p80_hrs)}</td>
+        <td class="${speedClass(d.p90_hrs)}" style="font-weight:700">${fmt(d.p90_hrs)}</td>
+      </tr>`;
+    }
+    html += `</table></div>`;
+  }
+
+  document.getElementById('detail-content').innerHTML = html;
+  document.getElementById('detail-panel').style.display = 'block';
+  document.getElementById('detail-overlay').style.display = 'block';
+}
+
+document.getElementById('detail-close').addEventListener('click', () => {
+  document.getElementById('detail-panel').style.display = 'none';
+  document.getElementById('detail-overlay').style.display = 'none';
+});
+document.getElementById('detail-overlay').addEventListener('click', () => {
+  document.getElementById('detail-panel').style.display = 'none';
+  document.getElementById('detail-overlay').style.display = 'none';
+});
+
+['search', 'filter-show', 'filter-ccy', 'filter-vol', 'filter-method', 'sort-by'].forEach(id => {
+  document.getElementById(id).addEventListener(id === 'search' ? 'input' : 'change', render);
+});
+</script>
+</body>
+</html>

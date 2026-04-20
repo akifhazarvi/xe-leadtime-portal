@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipients Accessed → Quote Created: Drop Analysis</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #f85149; }
+    .back-link { color: #58a6ff; text-decoration: none; font-size: 13px; }
+    .back-link:hover { text-decoration: underline; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+    .summary-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .stat { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; }
+    .stat-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-value { font-size: 24px; font-weight: 700; margin-top: 4px; }
+    .stat-sub { font-size: 11px; color: #484f58; margin-top: 4px; }
+
+    .section { margin-bottom: 36px; }
+    .section h2 { font-size: 16px; font-weight: 600; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+    .section h2 span { color: #8b949e; font-weight: 400; font-size: 13px; margin-left: 8px; }
+
+    .flow-diagram { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin-bottom: 24px; overflow-x: auto; }
+
+    .phase { margin-bottom: 28px; }
+    .phase-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .phase-num { width: 28px; height: 28px; background: #58a6ff22; border: 1px solid #58a6ff44; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #58a6ff; flex-shrink: 0; }
+    .phase-title { font-size: 14px; font-weight: 600; }
+    .phase-file { font-size: 11px; color: #8b949e; font-family: 'SF Mono', monospace; }
+
+    .friction-list { display: flex; flex-direction: column; gap: 10px; margin-left: 38px; }
+    .friction { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 12px 16px; border-left: 3px solid; }
+    .friction.critical { border-left-color: #f85149; }
+    .friction.high { border-left-color: #d29922; }
+    .friction.medium { border-left-color: #58a6ff; }
+    .friction.low { border-left-color: #484f58; }
+
+    .friction-top { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .friction-type { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 6px; border-radius: 3px; }
+    .friction-type.silent-fail { background: #f8514922; color: #f85149; }
+    .friction-type.blocking { background: #d2992222; color: #d29922; }
+    .friction-type.extra-step { background: #58a6ff22; color: #58a6ff; }
+    .friction-type.exit-path { background: #bc8cff22; color: #bc8cff; }
+    .friction-type.async { background: #3fb95022; color: #3fb950; }
+
+    .friction-title { font-size: 13px; font-weight: 500; }
+    .friction-desc { font-size: 12px; color: #8b949e; line-height: 1.6; }
+    .friction-code { font-size: 11px; color: #bc8cff; font-family: 'SF Mono', monospace; margin-top: 4px; }
+    .friction-impact { font-size: 11px; margin-top: 6px; padding: 4px 8px; background: #21262d; border-radius: 4px; display: inline-block; }
+
+    .arrow-down { text-align: center; color: #30363d; font-size: 20px; margin: 8px 0; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 800px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+    .card h3 { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    thead th { background: #1c2128; padding: 8px 10px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #8b949e; }
+    tbody tr { border-bottom: 1px solid #21262d; }
+    tbody tr:hover { background: #161b2266; }
+    tbody td { padding: 6px 10px; }
+
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+    .pill-red { background: #f8514922; color: #f85149; }
+    .pill-yellow { background: #d2992222; color: #d29922; }
+    .pill-blue { background: #58a6ff22; color: #58a6ff; }
+    .pill-green { background: #3fb95022; color: #3fb950; }
+    .pill-purple { background: #bc8cff22; color: #bc8cff; }
+
+    code { background: #21262d; padding: 1px 5px; border-radius: 3px; font-size: 11px; font-family: 'SF Mono', monospace; }
+
+    .quote-errors { margin-top: 16px; }
+    .quote-error { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid #21262d; font-size: 12px; }
+    .quote-error:last-child { border-bottom: none; }
+    .quote-error code { color: #f85149; }
+
+    .amplitude-query { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 16px; margin-top: 12px; }
+    .amplitude-query pre { font-size: 11px; color: #e1e4e8; font-family: 'SF Mono', monospace; line-height: 1.5; overflow-x: auto; white-space: pre; }
+    .copy-btn { background: #21262d; border: 1px solid #30363d; color: #e1e4e8; padding: 4px 10px; border-radius: 4px; font-size: 11px; cursor: pointer; margin-top: 8px; }
+    .copy-btn:hover { background: #30363d; }
+
+    .recommendation { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .recommendation h4 { font-size: 13px; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .recommendation p { font-size: 12px; color: #8b949e; line-height: 1.6; }
+    .rec-impact { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; }
+    .rec-impact.high { background: #3fb95022; color: #3fb950; }
+    .rec-impact.medium { background: #58a6ff22; color: #58a6ff; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <a href="index.html" class="back-link">&larr; Dashboard</a>
+    <h1>Recipients Accessed → Quote Created <span>-25% Drop Analysis</span></h1>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Summary Bar -->
+  <div class="summary-bar">
+    <div class="stat">
+      <div class="stat-label">Drop Rate</div>
+      <div class="stat-value" style="color:#f85149;">-25%</div>
+      <div class="stat-sub">77,699 → 58,108 (30d)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Users Lost</div>
+      <div class="stat-value" style="color:#d29922;">19,591</div>
+      <div class="stat-sub">Per 30-day window</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Friction Points Found</div>
+      <div class="stat-value" style="color:#58a6ff;">25</div>
+      <div class="stat-sub">Across 4 code phases</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Silent Failures</div>
+      <div class="stat-value" style="color:#f85149;">8</div>
+      <div class="stat-sub">No error shown to user</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Quote Error Codes</div>
+      <div class="stat-value" style="color:#d29922;">15+</div>
+      <div class="stat-sub">That block Quote Created</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Audience</div>
+      <div class="stat-value" style="color:#3fb950;font-size:14px;padding-top:6px;">Returning users</div>
+      <div class="stat-sub">Must have previous orders</div>
+    </div>
+  </div>
+
+  <!-- Key Finding -->
+  <div class="section">
+    <div class="card" style="border-left:3px solid #f85149;padding:20px;">
+      <h3 style="color:#f85149;margin-bottom:8px;">Key Finding</h3>
+      <p style="font-size:14px;line-height:1.7;">
+        Quote Created fires in <strong>exactly one place</strong> — <code>check-prices-xe.ts:731</code> inside the <code>calculate()</code> promise chain. It requires: (1) successful API quote calculation, (2) <code>pageLeft === false</code>, (3) <code>checkCalculateResult()</code> passes, and (4) quote parameters changed from last fire. <strong>Any failure in the chain — including 15+ quote error codes, network timeouts, silent errors, and page exits — blocks the event entirely.</strong>
+      </p>
+      <p style="font-size:13px;color:#8b949e;margin-top:12px;">
+        The drop isn't just "users browsing and leaving." It's a cascade of async operations, validation checks, and error conditions across <strong>two full page transitions</strong> (Recipient List → Quote Page) with <strong>8 points where errors are caught but not surfaced to the user.</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- Phase-by-phase breakdown -->
+  <div class="section">
+    <h2>Phase-by-Phase Friction Map <span>Every code path from event A to event B</span></h2>
+
+    <!-- PHASE 1 -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-num">1</div>
+        <div>
+          <div class="phase-title">Recipient List Page Load & Display</div>
+          <div class="phase-file">recipient-list-xe.ts:104-334</div>
+        </div>
+      </div>
+      <div class="friction-list">
+        <div class="friction high">
+          <div class="friction-top">
+            <span class="friction-type silent-fail">SILENT FAIL</span>
+            <span class="friction-title">Recipient fetch fails silently</span>
+          </div>
+          <div class="friction-desc">
+            <code>getRecipients()</code>, <code>getCashRecipients()</code>, and <code>getMobileWalletRecipients()</code> are called in <code>ionViewDidLoad()</code>. The try/catch only logs the error — page shows empty list or stays in loading state indefinitely.
+          </div>
+          <div class="friction-code">recipient-list-xe.ts:308-332 — catch(ex) { LoggerProvider.exception(...) }</div>
+          <div class="friction-impact" style="color:#f85149;">User sees empty list or infinite spinner → leaves</div>
+        </div>
+
+        <div class="friction medium">
+          <div class="friction-top">
+            <span class="friction-type extra-step">EMPTY STATE</span>
+            <span class="friction-title">Currency filter shows no matching recipients</span>
+          </div>
+          <div class="friction-desc">
+            When a currency is set via navParams, <code>setRecipients()</code> filters recipients to only show those matching the currency. If the user has recipients in INR but the filter is EUR, they see an empty list.
+          </div>
+          <div class="friction-code">recipient-list-xe.ts:279-291 — recipients.filter(r => r.currency.toLowerCase() === this.currency.toLowerCase())</div>
+          <div class="friction-impact" style="color:#d29922;">User has recipients but can't see them → confused → leaves</div>
+        </div>
+
+        <div class="friction low">
+          <div class="friction-top">
+            <span class="friction-type async">ASYNC DELAY</span>
+            <span class="friction-title">Recent recipients 1-second timeout</span>
+          </div>
+          <div class="friction-desc">
+            <code>sortRecentRecipients()</code> calls <code>refreshRecentRecipients()</code> then waits 1000ms before updating the display. During this time, the list may appear incomplete or re-order suddenly.
+          </div>
+          <div class="friction-code">recipient-list-xe.ts:1088 — setTimeout(() => {...}, 1000)</div>
+          <div class="friction-impact" style="color:#8b949e;">Perceived slowness, list reordering confuses users</div>
+        </div>
+
+        <div class="friction low">
+          <div class="friction-top">
+            <span class="friction-type exit-path">EXIT PATH</span>
+            <span class="friction-title">Search with no results</span>
+          </div>
+          <div class="friction-desc">
+            User searches for a recipient name that doesn't match any saved recipients. "No results" state shown. User may leave instead of clearing search.
+          </div>
+          <div class="friction-code">recipient-list-xe.html:45-48 — empty search results template</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-down">↓</div>
+
+    <!-- PHASE 2 -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-num">2</div>
+        <div>
+          <div class="phase-title">Recipient Selection & Validation</div>
+          <div class="phase-file">recipient-list-xe.ts:468-613</div>
+        </div>
+      </div>
+      <div class="friction-list">
+        <div class="friction high">
+          <div class="friction-top">
+            <span class="friction-type blocking">BLOCKING MODAL</span>
+            <span class="friction-title">Name split validation blocks selection</span>
+          </div>
+          <div class="friction-desc">
+            <code>checkRecipient()</code> validates the recipient has a proper last name. If <code>splitNameEnabled</code> and the name hasn't been verified/split, a confirmation modal pops up forcing the user to review and confirm their name. This is an unexpected interruption mid-flow.
+          </div>
+          <div class="friction-code">recipient-list-xe.ts:468-471 — if (!this.checkRecipient(recipient)) { this.recipientnameSplit.toggle() }</div>
+          <div class="friction-code">recipient-list-xe.ts:898-912 — checkRecipient() returns false conditions</div>
+          <div class="friction-impact" style="color:#d29922;">Unexpected modal → user doesn't understand → taps back → leaves</div>
+        </div>
+
+        <div class="friction high">
+          <div class="friction-top">
+            <span class="friction-type extra-step">EXTRA SCREEN</span>
+            <span class="friction-title">Unvalidated recipients go to Details page first</span>
+          </div>
+          <div class="friction-desc">
+            <code>navigateToRecipientDetails()</code> has 6 different paths depending on context. When a bank recipient isn't validated, the user is pushed to <strong>RecipientDetailsXePage</strong> (a full separate screen with edit/delete/back) before reaching the quote page. This adds an entire extra page to the flow.
+          </div>
+          <div class="friction-code">recipient-list-xe.ts:605-610 — routeProvider.push(RecipientDetailsPage) if not validated</div>
+          <div class="friction-impact" style="color:#f85149;">Extra screen with delete button = user edits/deletes instead of sending</div>
+        </div>
+
+        <div class="friction medium">
+          <div class="friction-top">
+            <span class="friction-type silent-fail">SILENT FAIL</span>
+            <span class="friction-title">validateRecipient() async failure hangs the flow</span>
+          </div>
+          <div class="friction-desc">
+            For unvalidated recipients, <code>sendFlowProvider.validateRecipient()</code> is called. If this async call fails or returns false, the <code>onContinue</code> callback never fires and the user is stuck on the recipient list with no error message.
+          </div>
+          <div class="friction-code">recipient-list-xe.ts:606 — sendFlowProvider.validateRecipient(recipient, onContinue)</div>
+          <div class="friction-impact" style="color:#f85149;">User taps recipient, nothing happens → confused → leaves</div>
+        </div>
+
+        <div class="friction medium">
+          <div class="friction-top">
+            <span class="friction-type silent-fail">SILENT FAIL</span>
+            <span class="friction-title">New recipient re-fetch loading spinner stuck</span>
+          </div>
+          <div class="friction-desc">
+            When selecting a newly created recipient, the code shows a loading spinner and calls <code>getRecipients()</code> to refresh data. If this network call fails, <code>loadingProvider.hide()</code> is never called — spinner is stuck forever.
+          </div>
+          <div class="friction-code">recipient-list-xe.ts:474-484 — loadingProvider.show() ... no catch block</div>
+          <div class="friction-impact" style="color:#f85149;">Infinite spinner → force close app → drop</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-down">↓</div>
+
+    <!-- PHASE 3 -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-num">3</div>
+        <div>
+          <div class="phase-title">Quote Flow Initiation & Navigation</div>
+          <div class="phase-file">recipient-list-xe.ts:489-583 → order.ts:949-1060</div>
+        </div>
+      </div>
+      <div class="friction-list">
+        <div class="friction critical">
+          <div class="friction-top">
+            <span class="friction-type silent-fail">SILENT FAIL</span>
+            <span class="friction-title">getUserCurrency() + getActiveBalanceAccounts() fail with no error handling</span>
+          </div>
+          <div class="friction-desc">
+            <code>startQuoteFlow()</code> calls two async methods with NO try/catch: <code>getUserCurrency()</code> (gets customer profile → currency) and <code>balanceProvider.getActiveBalanceAccounts()</code>. If either fails, currency variables are undefined, causing downstream NPEs or wrong quotes.
+          </div>
+          <div class="friction-code">recipient-list-xe.ts:513-514 — const homeCurrency = await this.getUserCurrency(); const activeBalances = await this.balanceProvider.getActiveBalanceAccounts();</div>
+          <div class="friction-impact" style="color:#f85149;">Unhandled exception → crash or silent failure → user sees nothing</div>
+        </div>
+
+        <div class="friction high">
+          <div class="friction-top">
+            <span class="friction-type blocking">BLOCKING</span>
+            <span class="friction-title">Country support check blocks unsupported corridors</span>
+          </div>
+          <div class="friction-desc">
+            <code>openCheckPrices()</code> loops through all supported countries. If the user's country isn't in the list and they don't have a profile, they're redirected to <code>CountryNotSupportedPage</code> — a dead end. They never reach the quote page.
+          </div>
+          <div class="friction-code">order.ts:966-981 — supportedCountries loop + !supported check</div>
+          <div class="friction-impact" style="color:#d29922;">Dead end page → user must navigate back → likely abandons</div>
+        </div>
+
+        <div class="friction medium">
+          <div class="friction-top">
+            <span class="friction-type async">RECURSIVE ROUTING</span>
+            <span class="friction-title">openCheckPrices() calls itself recursively</span>
+          </div>
+          <div class="friction-desc">
+            When the feature flag is on and user has no pre-selected recipient, the function opens RecipientListPage as a modal. When user selects, the <code>onQuoteRecipientAdd</code> callback calls <code>openCheckPrices()</code> again. Any failure in the second call (network, loading) silently drops the user.
+          </div>
+          <div class="friction-code">order.ts:1001-1018 — onQuoteRecipientAdd → this.openCheckPrices(analyticsLocation, loggedIn, countryTo, params, replacePage, ...)</div>
+          <div class="friction-impact" style="color:#d29922;">Network failure between two calls = user stuck on modal</div>
+        </div>
+
+        <div class="friction medium">
+          <div class="friction-top">
+            <span class="friction-type blocking">BLOCKING</span>
+            <span class="friction-title">Malaysia users blocked entirely</span>
+          </div>
+          <div class="friction-desc">
+            If <code>defaultCountryFrom === 'MY'</code>, the function immediately redirects to <code>SignupSendMoneyPage</code> instead of the quote page. These users fire Recipients Accessed but never reach Quote Created.
+          </div>
+          <div class="friction-code">order.ts:953-958 — if (userCountry == 'MY') { routeProvider.openModal(SignupSendMoneyPage) }</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-down">↓</div>
+
+    <!-- PHASE 4 -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-num">4</div>
+        <div>
+          <div class="phase-title">Quote Page Load & Calculation</div>
+          <div class="phase-file">check-prices-xe.ts:440-940, 3045-3344</div>
+        </div>
+      </div>
+      <div class="friction-list">
+        <div class="friction critical">
+          <div class="friction-top">
+            <span class="friction-type silent-fail">SILENT FAIL</span>
+            <span class="friction-title">calculate() has 5 early-return conditions that prevent Quote Created</span>
+          </div>
+          <div class="friction-desc">
+            The <code>calculate()</code> function (630-940) starts with guard checks. If <code>lastOrder !== order</code>, currency isn't set, or the currency pair hasn't changed, it returns early. Quote Created never fires. No error shown.
+          </div>
+          <div class="friction-code">check-prices-xe.ts:668-695 — 5 early return conditions before any API call</div>
+          <div class="friction-impact" style="color:#f85149;">User sees quote page but no quote loads → confused → leaves</div>
+        </div>
+
+        <div class="friction critical">
+          <div class="friction-top">
+            <span class="friction-type blocking">15+ QUOTE ERROR CODES</span>
+            <span class="friction-title">API errors block Quote Created and show modals</span>
+          </div>
+          <div class="friction-desc">
+            The <code>.catch()</code> handler has 11 error branches handling 15+ error codes. Each one prevents Quote Created from firing. Some show blocking modals, others set <code>callUs = true</code>.
+          </div>
+          <div class="friction-code">check-prices-xe.ts:734-939 — 11 catch branches, 15+ error codes</div>
+          <div class="quote-errors">
+            <div class="quote-error"><code>QUOTE006/007</code> <span style="color:#8b949e;">— Currency not supported → "Unable to send" modal</span></div>
+            <div class="quote-error"><code>QUOTE051/066/070</code> <span style="color:#8b949e;">— Unable to send to recipient → blocking modal</span></div>
+            <div class="quote-error"><code>QUOTE015/018</code> <span style="color:#8b949e;">— Amount validation error → "Call us" shown</span></div>
+            <div class="quote-error"><code>QUOTE030/031</code> <span style="color:#8b949e;">— Amount below/above limits → error shown</span></div>
+            <div class="quote-error"><code>QUOTE035</code> <span style="color:#8b949e;">— Fixed amount above max</span></div>
+            <div class="quote-error"><code>QUOTE049/062/063</code> <span style="color:#8b949e;">— Corridor/method not available</span></div>
+            <div class="quote-error"><code>QUOTE068/101/102</code> <span style="color:#8b949e;">— Service errors</span></div>
+            <div class="quote-error"><code>QUOTE200/201/210</code> <span style="color:#8b949e;">— Additional validation failures</span></div>
+            <div class="quote-error"><code>status -3/-4</code> <span style="color:#8b949e;">— Network timeout / request aborted</span></div>
+            <div class="quote-error"><code>status 404</code> <span style="color:#8b949e;">— "Rate extraction prohibited" error</span></div>
+          </div>
+          <div class="friction-impact" style="color:#f85149;">Quote Created never fires. QuoteError event fires instead.</div>
+        </div>
+
+        <div class="friction high">
+          <div class="friction-top">
+            <span class="friction-type silent-fail">SILENT FAIL</span>
+            <span class="friction-title">silentQuote mode suppresses all events</span>
+          </div>
+          <div class="friction-desc">
+            When <code>silentQuote = true</code>, the quote calculates in the background. If an error occurs, <code>validQuoteError</code> is set to true and the function returns — <code>trackQuoteCreated()</code> is never called. The user may not even know a quote was attempted.
+          </div>
+          <div class="friction-code">check-prices-xe.ts:761-767 — if (this.silentQuote) { this.validQuoteError = true; return; }</div>
+        </div>
+
+        <div class="friction high">
+          <div class="friction-top">
+            <span class="friction-type exit-path">PAGE EXIT</span>
+            <span class="friction-title">pageLeft = true kills in-progress calculations</span>
+          </div>
+          <div class="friction-desc">
+            If the user navigates away (back button, app switch) while the quote API call is in progress, <code>pageLeft</code> is set to true in <code>ionViewWillLeave()</code>. The calculation may complete but <code>trackQuoteCreated()</code> checks <code>pageLeft</code> and returns early. The user got a quote but the event never fired.
+          </div>
+          <div class="friction-code">check-prices-xe.ts:574-582 — ionViewWillLeave() sets pageLeft = true</div>
+          <div class="friction-code">check-prices-xe.ts:3062 — if (fireEvent && !this.pageLeft) {...} else return;</div>
+          <div class="friction-impact" style="color:#d29922;">Users who navigate quickly or have slow connections miss the event</div>
+        </div>
+
+        <div class="friction medium">
+          <div class="friction-top">
+            <span class="friction-type blocking">DEDUP GUARD</span>
+            <span class="friction-title">Quote Created deduplication suppresses repeat fires</span>
+          </div>
+          <div class="friction-desc">
+            <code>trackQuoteCreated()</code> checks if amount, currencies, country, and quoteId are all unchanged from the last fire. If so, it returns without firing. This prevents duplicate events but can also suppress legitimate first fires if state is initialized incorrectly.
+          </div>
+          <div class="friction-code">check-prices-xe.ts:3054-3072 — quoteCreatedTrackPreviousData comparison</div>
+        </div>
+
+        <div class="friction medium">
+          <div class="friction-top">
+            <span class="friction-type silent-fail">SILENT FAIL</span>
+            <span class="friction-title">checkCalculateResult() has 300+ lines of validation</span>
+          </div>
+          <div class="friction-desc">
+            Before <code>trackQuoteCreated()</code> is called, <code>checkCalculateResult()</code> runs 300+ lines of validation (1000-1384). It checks delivery methods, payment methods, amounts, and more. If any check fails, it returns false and Quote Created never fires — but the user may still see the quote page.
+          </div>
+          <div class="friction-code">check-prices-xe.ts:1000-1384 — complex validation chain</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Paths -->
+  <div class="section">
+    <h2>User Navigation Paths <span>Not all paths lead to Quote Created</span></h2>
+    <div class="grid-2">
+      <div class="card" style="border-left:3px solid #3fb950;">
+        <h3 style="color:#3fb950;">Happy Path (fastest)</h3>
+        <div style="font-size:12px;line-height:2;color:#8b949e;">
+          <div>Recipients Accessed fires on page load</div>
+          <div style="color:#30363d;">↓</div>
+          <div>User taps <strong>validated</strong> recipient</div>
+          <div style="color:#30363d;">↓</div>
+          <div>selectRecipient() → checkRecipient() passes</div>
+          <div style="color:#30363d;">↓</div>
+          <div>navigateToRecipientDetails() → <strong>startQuoteFlow()</strong> directly</div>
+          <div style="color:#30363d;">↓</div>
+          <div>Balance/currency logic resolves</div>
+          <div style="color:#30363d;">↓</div>
+          <div>openCheckPrices() → CheckPricesXePage loads</div>
+          <div style="color:#30363d;">↓</div>
+          <div>calculate() → API succeeds</div>
+          <div style="color:#30363d;">↓</div>
+          <div style="color:#3fb950;font-weight:600;">Quote Created fires</div>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #f85149;">
+        <h3 style="color:#f85149;">Friction Path (extra screen)</h3>
+        <div style="font-size:12px;line-height:2;color:#8b949e;">
+          <div>Recipients Accessed fires on page load</div>
+          <div style="color:#30363d;">↓</div>
+          <div>User taps <strong>unvalidated</strong> recipient</div>
+          <div style="color:#30363d;">↓</div>
+          <div>checkRecipient() fails → <span style="color:#d29922;">name split modal</span></div>
+          <div style="color:#30363d;">↓</div>
+          <div>navigateToRecipientDetails() → <span style="color:#d29922;">RecipientDetailsPage</span></div>
+          <div style="color:#30363d;">↓</div>
+          <div>User sees Edit / Delete / Back / Continue buttons</div>
+          <div style="color:#30363d;">↓</div>
+          <div style="color:#f85149;">User edits, deletes, or taps back → DROP</div>
+          <div style="color:#30363d;">— or —</div>
+          <div>User taps Continue → validateRecipient()</div>
+          <div style="color:#30363d;">↓</div>
+          <div>If validation passes → startQuoteFlow()</div>
+          <div style="color:#30363d;">↓</div>
+          <div style="color:#d29922;">Quote page loads (if all async succeeds)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions on Recipient List -->
+  <div class="section">
+    <h2>All User Actions on Recipient List <span>Not all lead to quotes</span></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>User Action</th>
+          <th>Code Path</th>
+          <th>Leads to Quote?</th>
+          <th>Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tap validated recipient</td>
+          <td><code>selectRecipient → startQuoteFlow()</code></td>
+          <td><span class="pill pill-green">YES</span></td>
+          <td>Happy path — fastest route</td>
+        </tr>
+        <tr>
+          <td>Tap unvalidated recipient</td>
+          <td><code>selectRecipient → RecipientDetailsPage</code></td>
+          <td><span class="pill pill-yellow">MAYBE</span></td>
+          <td>Extra screen with edit/delete options</td>
+        </tr>
+        <tr>
+          <td>Tap recipient needing name split</td>
+          <td><code>checkRecipient() fails → modal</code></td>
+          <td><span class="pill pill-yellow">MAYBE</span></td>
+          <td>Unexpected modal interruption</td>
+        </tr>
+        <tr>
+          <td>Tap "Add new recipient"</td>
+          <td><code>selectRecipientType() → RecipientNewPage</code></td>
+          <td><span class="pill pill-red">NO</span></td>
+          <td>Exits to recipient creation flow</td>
+        </tr>
+        <tr>
+          <td>Search with no results</td>
+          <td><code>searchRecipients() → empty state</code></td>
+          <td><span class="pill pill-red">NO</span></td>
+          <td>Dead end — user must clear search or leave</td>
+        </tr>
+        <tr>
+          <td>Tap back / swipe back</td>
+          <td><code>ionViewDidLeave()</code></td>
+          <td><span class="pill pill-red">NO</span></td>
+          <td>User exits the flow entirely</td>
+        </tr>
+        <tr>
+          <td>App goes to background</td>
+          <td><code>pageLeft = true</code></td>
+          <td><span class="pill pill-red">NO</span></td>
+          <td>In-progress calculations killed</td>
+        </tr>
+        <tr>
+          <td>Tap "Start a Transfer" CTA</td>
+          <td><code>Goes to home, not quote</code></td>
+          <td><span class="pill pill-red">NO</span></td>
+          <td>User exits to different flow</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- How to Measure -->
+  <div class="section">
+    <h2>How to Measure Each Drop Reason <span>Amplitude queries</span></h2>
+
+    <div class="card" style="margin-bottom:12px;">
+      <h3>1. Quote Errors (biggest measurable cause)</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:8px;">When calculate() fails, a <code>Quote Error</code> event fires instead of <code>Quote Created</code>. Count these to see how many users reach the quote page but get blocked.</p>
+      <div class="amplitude-query">
+        <pre>{
+  "type": "segmentation",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "interval": "week",
+    "events": [
+      { "event_type": "Quote Error",
+        "group_by": [
+          { "type": "event", "value": "errorCode" },
+          { "type": "user", "value": "platform" }
+        ]
+      }
+    ],
+    "segments": [{
+      "conditions": [{
+        "type": "property", "group_type": "User",
+        "prop_type": "user", "prop": "platform",
+        "op": "is", "values": ["iOS", "Android"]
+      }]
+    }]
+  }
+}</pre>
+        <button class="copy-btn" onclick="copyQuery(this)">Copy JSON</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:12px;">
+      <h3>2. Browse-only vs Send-intent users</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:8px;">Split Recipients Accessed by <code>location</code> property: <code>sendMoney</code> = user is in send flow, <code>recipient-list</code> = user is browsing from Account tab.</p>
+      <div class="amplitude-query">
+        <pre>{
+  "type": "segmentation",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Recipients Accessed",
+        "group_by": [{ "type": "event", "value": "location" }]
+      }
+    ],
+    "segments": [{
+      "conditions": [{
+        "type": "property", "group_type": "User",
+        "prop_type": "user", "prop": "platform",
+        "op": "is", "values": ["iOS", "Android"]
+      }]
+    }]
+  }
+}</pre>
+        <button class="copy-btn" onclick="copyQuery(this)">Copy JSON</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:12px;">
+      <h3>3. Users who reach quote page but don't get Quote Created</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:8px;">Use <code>Quote Accessed</code> as a proxy — it fires when the quote page loads. Compare Quote Accessed vs Quote Created to see how many users reach the page but the quote calculation fails.</p>
+      <div class="amplitude-query">
+        <pre>{
+  "type": "funnels",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Recipients Accessed", "group_by": [] },
+      { "event_type": "Quote Accessed", "group_by": [] },
+      { "event_type": "Quote Created", "group_by": [] }
+    ],
+    "countGroup": "User",
+    "segments": [{
+      "conditions": [{
+        "type": "property", "group_type": "User",
+        "prop_type": "user", "prop": "platform",
+        "op": "is", "values": ["iOS", "Android"]
+      }]
+    }]
+  }
+}</pre>
+        <button class="copy-btn" onclick="copyQuery(this)">Copy JSON</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>4. Recipient validation failures</h3>
+      <p style="font-size:12px;color:#8b949e;margin-bottom:8px;">Check if users hit the RecipientDetails page (the extra screen for unvalidated recipients) by looking at <code>Recipient Selected</code> with location context.</p>
+      <div class="amplitude-query">
+        <pre>{
+  "type": "segmentation",
+  "app": "295336",
+  "params": {
+    "range": "Last 30 Days",
+    "events": [
+      { "event_type": "Recipient Selected",
+        "group_by": [{ "type": "event", "value": "location" }]
+      }
+    ],
+    "segments": [{
+      "conditions": [{
+        "type": "property", "group_type": "User",
+        "prop_type": "user", "prop": "platform",
+        "op": "is", "values": ["iOS", "Android"]
+      }]
+    }]
+  }
+}</pre>
+        <button class="copy-btn" onclick="copyQuery(this)">Copy JSON</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div class="section">
+    <h2>Recommendations <span>Ordered by estimated impact</span></h2>
+
+    <div class="recommendation">
+      <h4><span class="rec-impact high">HIGH IMPACT</span> Add error handling to startQuoteFlow() async calls</h4>
+      <p>
+        <code>getUserCurrency()</code> and <code>getActiveBalanceAccounts()</code> at recipient-list-xe.ts:513-514 have zero error handling. Wrapping them in try/catch with fallback values would prevent silent crashes. This is likely the single biggest fixable cause of drops.
+      </p>
+    </div>
+
+    <div class="recommendation">
+      <h4><span class="rec-impact high">HIGH IMPACT</span> Insert Quote Accessed between Recipients Accessed and Quote Created</h4>
+      <p>
+        Adding <code>Quote Accessed</code> to the funnel would split the 25% into two measurable segments: "didn't reach quote page" vs "reached quote page but calculation failed." This is the #1 diagnostic step — run the 3-step funnel query above.
+      </p>
+    </div>
+
+    <div class="recommendation">
+      <h4><span class="rec-impact high">HIGH IMPACT</span> Track Quote Error events grouped by errorCode</h4>
+      <p>
+        <code>Quote Error</code> fires when <code>calculate()</code> fails. Grouping by <code>errorCode</code> will reveal which of the 15+ error codes are hitting recipient-first users most. The top 2-3 error codes likely explain 50%+ of the quote-page drops.
+      </p>
+    </div>
+
+    <div class="recommendation">
+      <h4><span class="rec-impact medium">MEDIUM IMPACT</span> Fix the loading spinner stuck on new recipient re-fetch</h4>
+      <p>
+        recipient-list-xe.ts:474-484 shows <code>loadingProvider.show()</code> with no catch block. Adding a try/catch with <code>loadingProvider.hide()</code> in the catch prevents infinite spinners.
+      </p>
+    </div>
+
+    <div class="recommendation">
+      <h4><span class="rec-impact medium">MEDIUM IMPACT</span> Skip RecipientDetailsPage for returning users</h4>
+      <p>
+        Unvalidated bank recipients are routed to a full details page before the quote. For returning users in the recipient-first flow, consider auto-validating or showing a lightweight inline confirmation instead of a full page with edit/delete options.
+      </p>
+    </div>
+
+    <div class="recommendation">
+      <h4><span class="rec-impact medium">MEDIUM IMPACT</span> Track the name-split modal as an event</h4>
+      <p>
+        The name-split validation modal (checkRecipient → recipientnameSplit.toggle()) fires with no analytics. Adding a tracking event would quantify how many users hit this unexpected interruption.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function copyQuery(btn) {
+  const pre = btn.previousElementSibling;
+  navigator.clipboard.writeText(pre.textContent.trim()).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy JSON', 2000);
+  });
+}
+</script>
+</body>
+</html>

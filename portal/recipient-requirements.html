@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipient Requirements — Xe vs Wise vs Remitly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/recipient-requirements.css">
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="index.html" class="back-link">← Portal</a>
+    <h1>Recipient Requirements <span class="h1-accent">·</span> <span class="h1-sub">Xe vs Wise vs Remitly</span></h1>
+    <p class="tagline">What each provider asks the sender to fill in — across 305 corridors.</p>
+  </div>
+</header>
+
+<section class="hero-band" id="hero-band">
+  <div class="hero-inner">
+    <div class="hero-metric">
+      <div class="hero-label">Xe asks on average</div>
+      <div class="hero-value"><span id="hero-avg-wise">+2.4</span></div>
+      <div class="hero-unit">more required fields than Wise</div>
+    </div>
+    <div class="hero-metric hero-metric-alt">
+      <div class="hero-label">Xe asks on average</div>
+      <div class="hero-value"><span id="hero-avg-remitly">+3.4</span></div>
+      <div class="hero-unit">more required fields than Remitly</div>
+    </div>
+    <div class="hero-metric hero-metric-alt">
+      <div class="hero-label">Biggest friction driver</div>
+      <div class="hero-value"><span id="hero-top-extra">Bank Name</span></div>
+      <div class="hero-unit"><span id="hero-top-extra-pct">—</span> of corridors ask for it (Wise/Remitly don't)</div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="controls">
+    <div class="control-group">
+      <label for="country-select">Destination country</label>
+      <input type="text" id="country-search" placeholder="Search country..." autocomplete="off">
+      <select id="country-select" size="1"></select>
+    </div>
+    <div class="control-group">
+      <label for="currency-select">Currency</label>
+      <select id="currency-select"></select>
+    </div>
+    <div class="meta-summary" id="meta-summary"></div>
+  </section>
+
+  <section id="gap-spotlight" class="gap-spotlight"></section>
+
+  <section id="comparison-summary" class="comparison-summary"></section>
+
+  <section id="field-matrix" class="field-matrix"></section>
+
+  <div class="pane-toggle-wrapper">
+    <button id="pane-toggle" class="pane-toggle">▼ Show provider detail views</button>
+  </div>
+
+  <div class="results-split" id="results-split" style="display:none;">
+    <section class="pane pane-xe">
+      <div class="pane-header">
+        <div class="pane-brand">
+          <span class="pane-logo pane-logo-xe">Xe</span>
+          <span class="pane-subtitle" id="xe-subtitle">Bank transfer</span>
+        </div>
+        <div class="pane-stats" id="xe-stats"></div>
+      </div>
+      <section id="results" class="results"></section>
+    </section>
+
+    <section class="pane pane-wise">
+      <div class="pane-header">
+        <div class="pane-brand">
+          <span class="pane-logo pane-logo-wise">Wise</span>
+          <span class="pane-subtitle" id="wise-subtitle">Bank transfer</span>
+        </div>
+        <div class="pane-stats" id="wise-stats"></div>
+      </div>
+      <div id="wise-branch-tabs" class="branch-tabs"></div>
+      <section id="results-wise" class="results"></section>
+    </section>
+
+    <section class="pane pane-remitly">
+      <div class="pane-header">
+        <div class="pane-brand">
+          <span class="pane-logo pane-logo-remitly">Remitly</span>
+          <span class="pane-subtitle" id="remitly-subtitle">Bank deposit (default)</span>
+        </div>
+        <div class="pane-stats" id="remitly-stats"></div>
+      </div>
+      <div id="remitly-meta" class="remitly-meta"></div>
+      <section id="results-remitly" class="results"></section>
+    </section>
+  </div>
+
+  <section id="global-insights" class="global-insights"></section>
+
+  <section class="footer-note">
+    <p>
+      <strong>Xe</strong>: <span id="audit-timestamp"></span> · 305 corridors ·
+      <strong>Wise</strong>: <span id="wise-timestamp"></span> · <span id="wise-coverage"></span> ·
+      <strong>Remitly</strong>: <span id="remitly-timestamp"></span> · <span id="remitly-coverage"></span>.
+      Wise is keyed by currency; Remitly by target country (send currency doesn't affect recipient requirements).
+    </p>
+  </section>
+</main>
+
+<script src="js/recipient-requirements.js"></script>
+</body>
+</html>

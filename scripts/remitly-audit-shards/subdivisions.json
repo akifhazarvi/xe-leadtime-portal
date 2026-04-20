@@ -1,0 +1,386 @@
+{
+  "PHL": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "IND": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "MEX": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "PAK": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "CHN": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "BGD": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "VNM": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "NGA": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "DOM": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "COL": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "GTM": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "EGY": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "HND": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "LKA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "NPL": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "SLV": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "KEN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "MAR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "KHM": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "GHA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "THA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "IDN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "JPN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "MYS": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "PER": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ECU": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "KOR": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "BRA": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "ARG": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "BOL": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "CHL": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "PRY": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "VEN": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "CRI": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "PAN": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "URY": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "CUB": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "NIC": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "JAM": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "HTI": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "TTO": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ZAF": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "BHS": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "BRB": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "UGA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ETH": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "TZA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "RWA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "SEN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "CMR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ZMB": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "CIV": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ZWE": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "MUS": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "MDG": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "MWI": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "BWA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "LBN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "JOR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "DZA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "TUN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ISR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "TUR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "SAU": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ARE": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "QAT": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "KWT": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "BHR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "OMN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "IRQ": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "ARM": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "AFG": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "GEO": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "UZB": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "KGZ": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "KAZ": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "AZE": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "TJK": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "MNG": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "LAO": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "MMR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "TWN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "HKG": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "SGP": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "NZL": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "FJI": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "WSM": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "TON": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "PNG": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "CAN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "GBR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "USA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "AUS": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "DEU": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ITA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "FRA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ESP": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "PRT": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "POL": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "NLD": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "GRC": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "BEL": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "CHE": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "IRL": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "AUT": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "FIN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "NOR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "SWE": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "DNK": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "SVK": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "CZE": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "ROU": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "HUN": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "BGR": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "SVN": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "HRV": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "EST": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "LTU": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "LVA": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "MLT": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "CYP": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "LUX": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "ISL": {
+    "error": "SubdivisionDetailsForAlpha3Country 400: {\"errors\":[{\"message\":\"Field \\\"subdivisionDetailsForAlpha3Country\\\" argument \\\"alpha3CountryCode\\\" of type \\\"String!\\\" is required, but it was not provided.\",\"locations\":[{\"line\":2,\"column\":3}],\"extensions\":{\"code\":\"GRAPHQL_VALIDATION_FAILED\"}},{\"message\":\"Unknown argument \\\"alpha3Country\\\" on field"
+  },
+  "ALB": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "UKR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "RUS": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "BLR": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  },
+  "MDA": {
+    "error": "SubdivisionDetailsForAlpha3Country 429: {\"errors\":[{\"message\":\"Too many requests\",\"extensions\":{\"code\":\"TOO_MANY_REQUESTS\"}}]}"
+  }
+}

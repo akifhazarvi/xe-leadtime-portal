@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xe Corridor & Mobile Web Intelligence</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-title">Xe <span>Corridor Intelligence</span></div>
+      <nav class="header-nav">
+        <button class="nav-btn active" data-view="corridors">Corridors</button>
+        <button class="nav-btn" data-view="mobile-web">Mobile Web Health</button>
+        <button class="nav-btn" data-view="worst">Worst Performers</button>
+      </nav>
+      <div id="header-stats" class="header-stats">Loading...</div>
+    </div>
+  </header>
+
+  <div class="main">
+    <!-- Corridor View -->
+    <section id="view-corridors" class="view active">
+      <div class="view-header">
+        <h2>Corridor Performance Matrix</h2>
+        <p class="subtitle">TBU Region + sendCurrency &rarr; payoutCurrency. Funnel: Quote Confirmed &rarr; Transaction Completed (7-day window, same users).</p>
+
+        <!-- Region Summary Cards -->
+        <div id="region-summary" class="region-summary-grid"></div>
+
+        <div class="controls">
+          <div class="sort-group">
+            <label>Sort by:</label>
+            <select id="sort-by">
+              <option value="completed">Completed Users</option>
+              <option value="quoted">Quoted Users</option>
+              <option value="conversion">Conversion Rate</option>
+              <option value="medianTimeSeconds">Median Time</option>
+              <option value="errorRate">Error Rate</option>
+              <option value="demand">Demand (Quote Created)</option>
+              <option value="trend.wow">Week-over-Week Trend</option>
+              <option value="severity">Severity Score</option>
+            </select>
+            <button id="sort-dir" class="sort-dir-btn" title="Toggle sort direction">&#9660;</button>
+          </div>
+          <div class="filter-group">
+            <label>TBU Region:</label>
+            <select id="filter-region"></select>
+          </div>
+          <div class="filter-group">
+            <label>Send Currency:</label>
+            <select id="filter-currency"></select>
+          </div>
+        </div>
+      </div>
+      <div id="corridor-table-wrap" class="table-wrap">
+        <table id="corridor-table" class="data-table">
+          <thead>
+            <tr>
+              <th class="rank-col">#</th>
+              <th>Corridor</th>
+              <th class="num-col">Quoted</th>
+              <th class="num-col">Completed</th>
+              <th class="num-col">Conversion</th>
+              <th class="num-col">Median Time</th>
+              <th class="num-col">WoW</th>
+              <th>Issues</th>
+            </tr>
+          </thead>
+          <tbody id="corridor-tbody"></tbody>
+        </table>
+      </div>
+      <div id="corridor-detail" class="detail-panel hidden">
+        <button class="close-detail">&times;</button>
+        <div id="detail-content"></div>
+      </div>
+    </section>
+
+    <!-- Mobile Web Health Check View -->
+    <section id="view-mobile-web" class="view">
+      <div class="view-header">
+        <h2>Mobile Web Health Check</h2>
+        <p class="subtitle">Users accessing xe.com via mobile browser (same galileo-site codebase as desktop, different UX)</p>
+      </div>
+      <div id="mw-overview" class="card-grid"></div>
+      <div id="mw-funnel" class="section-block"></div>
+      <div id="mw-errors" class="section-block"></div>
+      <div id="mw-issues" class="section-block"></div>
+      <div id="mw-corridors" class="section-block"></div>
+      <div id="mw-recommendations" class="section-block"></div>
+      <div style="margin-top:12px;padding:8px 12px;background:#f0fdf4;border-radius:6px;font-size:12px;color:#166534">
+        Data source: Amplitude Project 295336 (Xe [Prod] Web &amp; App) | Generated: 2026-03-25 | Period: Last 30 Days | Mobile web filter: platform=Web, device NOT IN (Windows, Mac, Linux, tablets)
+      </div>
+    </section>
+
+    <!-- Worst Performers View -->
+    <section id="view-worst" class="view">
+      <div class="view-header">
+        <h2>Worst Performing Corridors</h2>
+        <p class="subtitle">Corridors ranked by severity: low conversion + multi-day settlement + high error rate + declining trends</p>
+      </div>
+      <div id="worst-list"></div>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

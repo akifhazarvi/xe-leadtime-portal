@@ -1,0 +1,157 @@
+Currency,IN_BankTransfer,IN_CreditCard,IN_DebitCard,IN_OpenBanking,IN_ACH,OUT_BankTransfer,OUT_CreditCard,OUT_DebitCard,OUT_OpenBanking,OUT_ACH,CPO,MobileWallet,CCY,Balance,PeerToPeer
+GBP,<6hrs,5mins,5mins,<6hrs,N/A,>4days,<6hrs,<6hrs,<48hrs,N/A,5mins,5mins,Major CCY,1-12 Hours,<24hrs
+EUR,<6hrs,<30mins,<30mins,<1hr,N/A,<48hrs,<6hrs,<6hrs,<24hrs,N/A,5mins,5mins,Major CCY,<1hr,<6hrs
+USD,<24hrs,<6hrs,1-12 Hours,1-12 Hours,N/A,Three Days,1-12 Hours,<24hrs,<48hrs,N/A,5mins,5mins,Major CCY,1-12 Hours,<24hrs
+CAD,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<48hrs,<48hrs,<48hrs,<48hrs,N/A,5mins,5mins,Major CCY,<24hrs,<24hrs
+AUD,<1hr,5mins,<30mins,<1hr,N/A,<48hrs,<30mins,<6hrs,<24hrs,N/A,5mins,5mins,Major CCY,<24hrs,<24hrs
+NZD,<6hrs,5mins,<6hrs,1-12 Hours,N/A,<48hrs,<30mins,<24hrs,<48hrs,N/A,5mins,5mins,Major CCY,<24hrs,<48hrs
+AED,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<1hr,<6hrs
+ARS,<3 days,<3 days,<30mins,<6hrs,N/A,<4days,<4days,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+ARS,24hrs,24hrs,<30mins,<6hrs,N/A,24hrs,24hrs,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+BAM,<3 days,<3 days,<30mins,<3 days,N/A,<4days,<4days,<30mins,<4days,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+BAM,24hrs,24hrs,<30mins,24hrs,N/A,24hrs,24hrs,<30mins,24hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+BBD,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Standard CCY,5mins,<24hrs
+BDT,<48hrs,<30mins,<30mins,<6hrs,N/A,>4days,<24hrs,<24hrs,>4days,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+BDT,<48hrs,<30mins,<30mins,<6hrs,N/A,>4days,<24hrs,<24hrs,>4days,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+BGN,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Ria CCY,5mins,<24hrs
+BGN,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Standard CCY,5mins,<24hrs
+BHD,<24hrs,<24hrs,<48hrs,<48hrs,N/A,<48 hrs,<48 hrs,Three Days,Three Days,N/A,5mins,5mins,Standard CCY,<48hrs,<48hrs
+BOB,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+BOB,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+BRL,<3 days,<30mins,<30mins,<6hrs,N/A,<4days,<30mins,<1hr,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+BRL,2hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<1hr,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+BTN,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<4days
+BTN,24hrs,24hrs,24hrs,24hrs,N/A,24hrs,24hrs,24hrs,24hrs,N/A,5mins,5mins,Ria CCY,5mins,24hrs
+CHF,<24hrs,<6hrs,<30mins,1-12 Hours,N/A,<48hrs,1-12 Hours,<1hr,<24hrs,N/A,5mins,5mins,Standard CCY,1-12 Hours,1-12 Hours
+CLP,<6hrs,<3 days,<30mins,<1hr,N/A,1-12 Hours,<4days,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<1hr,<6hrs
+CLP,<6hrs,>5-<60minutes,<30mins,<1hr,N/A,1-12 Hours,>5-<60minutes,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<1hr,<6hrs
+COP,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+COP,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+CRC,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<4days
+CRC,5mins,5mins,5mins,5mins,N/A,5mins,5mins,5mins,5mins,N/A,5mins,5mins,Ria CCY,5mins,5mins
+CZK,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<1hr,<6hrs
+DKK,<6hrs,<24hrs,5mins,5mins,N/A,Three Days,<24hrs,<1hr,<6hrs,N/A,5mins,5mins,Standard CCY,1-12 Hours,<24hrs
+DOP,<24hrs,<30mins,5mins,<1hr,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+DOP,<24hrs,<30mins,5mins,<1hr,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+EGP,<1hr,5mins,5mins,<30mins,N/A,<6hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<1hr,<6hrs
+EGP,<1hr,5mins,5mins,<30mins,N/A,<6hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<1hr,<6hrs
+FJD,<48hrs,<48hrs,<48hrs,<48hrs,N/A,<48hrs,<48hrs,<48hrs,<48hrs,N/A,5mins,5mins,Standard CCY,5mins,<48hrs
+GHS,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+GHS,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+GMD,Three Days,5mins,<30mins,<30mins,N/A,>4days,<30mins,<30mins,<1hr,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+GMD,Three Days,5mins,<30mins,<30mins,N/A,>4days,<30mins,<30mins,<1hr,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+GNF,<3 days,<3 days,<30mins,<3 days,N/A,<4days,<4days,<30mins,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<30mins
+GNF,24hrs,24hrs,<30mins,24hrs,N/A,24hrs,24hrs,<30mins,24hrs,N/A,5mins,5mins,Ria CCY,5mins,<30mins
+GTQ,1-12 Hours,<3 days,<30mins,<3 days,N/A,1-12 Hours,<4days,<30mins,<4days,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+GTQ,1-12 Hours,15mins,<30mins,15mins,N/A,1-12 Hours,15mins,<30mins,15mins,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+GYD,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<4days
+GYD,10mins,10mins,10mins,10mins,N/A,10mins,10mins,10mins,10mins,N/A,5mins,5mins,Ria CCY,5mins,10mins
+HKD,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Standard CCY,<6hrs,1-12 Hours
+HNL,<3 days,<3 days,5mins,<3 days,N/A,<4days,<4days,<30mins,<4days,N/A,5mins,5mins,Exotic CCY,<30mins,<1hr
+HNL,<5 mins,<5 mins,5mins,<5 mins,N/A,<5 mins,<5 mins,<30mins,<5 mins,N/A,5mins,5mins,Ria CCY,<30mins,<1hr
+HRK,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Standard CCY,5mins,<24hrs
+HUF,<48hrs,<24hrs,<24hrs,<24hrs,N/A,Three Days,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Standard CCY,<24hrs,<24hrs
+IDR,1-12 Hours,<30mins,5mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<1hr
+IDR,1-12 Hours,<30mins,5mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<1hr
+ILS,<24hrs,<30mins,<30mins,<6hrs,N/A,>4days,1-12 Hours,<6hrs,<48hrs,N/A,5mins,5mins,Standard CCY,<1hr,<6hrs
+INR,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<1hr,<6hrs
+INR,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<1hr,<6hrs
+JMD,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Standard CCY,<6hrs,<6hrs
+JOD,<6hrs,5mins,5mins,<1hr,N/A,<48hrs,<30mins,<30mins,<48hrs,N/A,5mins,5mins,Standard CCY,1-12 Hours,<24hrs
+JPY,<24hrs,<24hrs,<24hrs,<48hrs,N/A,<48hrs,<48 hrs,Three Days,Three Days,N/A,5mins,5mins,Standard CCY,<24hrs,<24hrs
+KES,<24hrs,<30mins,<30mins,<1hr,N/A,<48 hrs,<24hrs,<24hrs,<4days,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+KHR,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,<30mins,<1hr
+KHR,48hrs,48hrs,48hrs,48hrs,N/A,48hrs,48hrs,48hrs,48hrs,N/A,5mins,5mins,Ria CCY,<30mins,<1hr
+KMF,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<4days
+KMF,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Ria CCY,5mins,<24hrs
+KWD,<24hrs,<24hrs,<24hrs,1-12 Hours,N/A,<48 hrs,<48 hrs,<4days,<48hrs,N/A,5mins,5mins,Standard CCY,<48hrs,<48hrs
+LKR,1-12 Hours,<30mins,<30mins,<6hrs,N/A,1-12 Hours,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+LKR,1-12 Hours,<30mins,<30mins,<6hrs,N/A,1-12 Hours,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+MAD,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+MAD,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+MMK,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<4days
+MMK,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Ria CCY,5mins,<4days
+MUR,<30mins,5mins,5mins,<30mins,N/A,<48hrs,<6hrs,<30mins,<24hrs,N/A,5mins,5mins,Standard CCY,<24hrs,<24hrs
+MXN,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<1hr
+MXN,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<1hr
+MYR,<24hrs,<30mins,<30mins,<6hrs,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+MYR,<24hrs,<30mins,<30mins,<6hrs,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+MZN,<3 days,<3 days,<30mins,<3 days,N/A,<4days,<4days,<30mins,<4days,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+MZN,24hrs,24hrs,<30mins,24hrs,N/A,24hrs,24hrs,<30mins,24hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+NGN,1-12 Hours,5mins,<30mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+NGN,1-12 Hours,5mins,<30mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+NOK,1-12 Hours,<24hrs,<6hrs,1-12 Hours,N/A,>4days,<24hrs,<24hrs,>4days,N/A,5mins,5mins,Standard CCY,<6hrs,<6hrs
+NPR,<48hrs,<30mins,<30mins,<6hrs,N/A,Three Days,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+NPR,<48hrs,<30mins,<30mins,<6hrs,N/A,Three Days,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+OMR,<48hrs,<24hrs,<24hrs,<48hrs,N/A,<48hrs,<48 hrs,<48hrs,Three Days,N/A,5mins,5mins,Standard CCY,<24hrs,<24hrs
+PEN,<48hrs,<30mins,<30mins,<6hrs,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+PEN,<48hrs,<30mins,<30mins,<6hrs,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+PHP,1-12 Hours,<30mins,<30mins,<6hrs,N/A,1-12 Hours,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+PHP,1-12 Hours,<30mins,<30mins,<6hrs,N/A,1-12 Hours,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+PKR,1-12 Hours,<30mins,<30mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+PKR,1-12 Hours,<30mins,<30mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+PLN,<6hrs,<30mins,<30mins,<1hr,N/A,<4days,<6hrs,<6hrs,<24hrs,N/A,5mins,5mins,Ria CCY,<1hr,<6hrs
+PLN,<6hrs,<30mins,<30mins,<1hr,N/A,<4days,<6hrs,<6hrs,<24hrs,N/A,5mins,5mins,Standard CCY,<1hr,<6hrs
+PYG,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,<24hrs,<24hrs
+PYG,1-12 Hours,1-12 Hours,1-12 Hours,1-12 Hours,N/A,1-12 Hours,1-12 Hours,1-12 Hours,1-12 Hours,N/A,5mins,5mins,Ria CCY,<24hrs,<24hrs
+QAR,<48hrs,<30mins,<30mins,<6hrs,N/A,Three Days,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+RON,<6hrs,<24hrs,<30mins,<6hrs,N/A,<6hrs,<24hrs,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+RON,<6hrs,<24hrs,<30mins,<6hrs,N/A,<6hrs,<24hrs,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+RSD,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<48 hrs,<48 hrs,<48 hrs,<48 hrs,N/A,5mins,5mins,Standard CCY,<6hrs,<6hrs
+RUB,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<48 hrs,<48 hrs,<48 hrs,<48 hrs,N/A,5mins,5mins,Standard CCY,5mins,<48 hrs
+RWF,<24hrs,<3 days,<3 days,<3 days,N/A,<24hrs,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,<1hr,<6hrs
+RWF,<24hrs,24hrs,24hrs,24hrs,N/A,<24hrs,24hrs,24hrs,24hrs,N/A,5mins,5mins,Ria CCY,<1hr,<6hrs
+SEK,<6hrs,5mins,<30mins,<30mins,N/A,>4days,<6hrs,1-12 Hours,<48hrs,N/A,5mins,5mins,Standard CCY,<1hr,<6hrs
+SGD,<6hrs,5mins,<24hrs,<30mins,N/A,<4days,<1hr,<48 hrs,1-12 Hours,N/A,5mins,5mins,Standard CCY,<1hr,<6hrs
+THB,<6hrs,<30mins,<30mins,<30mins,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<1hr,<6hrs
+THB,<6hrs,<30mins,<30mins,<30mins,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<1hr,<6hrs
+TND,1-12 Hours,<30mins,<30mins,<6hrs,N/A,>4days,<48hrs,<48hrs,>4days,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+TOP,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<4days
+TOP,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Ria CCY,5mins,<24hrs
+TRY,1-12 Hours,<30mins,<30mins,<6hrs,N/A,1-12 Hours,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<1hr
+TRY,1-12 Hours,<30mins,<30mins,<6hrs,N/A,1-12 Hours,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<1hr
+TTD,<24hrs,<24hrs,<4days,<24hrs,N/A,<24hrs,<24hrs,>4days,<24hrs,N/A,5mins,5mins,Standard CCY,<48hrs,<4days
+TWD,<3 days,<3 days,<3 days,<4days,N/A,<4days,<4days,<4days,>4days,N/A,5mins,5mins,Exotic CCY,Three Days,>4days
+TZS,<3 days,5mins,<30mins,<6hrs,N/A,<4days,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+TZS,24hrs,5mins,<30mins,<6hrs,N/A,24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+UGX,<24hrs,<30mins,5mins,<6hrs,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+UGX,<24hrs,<30mins,5mins,<6hrs,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+UYU,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<4days
+UYU,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Ria CCY,5mins,<24hrs
+VND,<6hrs,<30mins,<30mins,<6hrs,N/A,1-12 Hours,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+VND,<6hrs,<30mins,<30mins,<6hrs,N/A,1-12 Hours,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+WST,<3 days,<3 days,<3 days,<3 days,N/A,<4days,<4days,<4days,<4days,N/A,5mins,5mins,Exotic CCY,5mins,<4days
+WST,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Ria CCY,5mins,<24hrs
+XCD,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Standard CCY,<48hrs,<4days
+XOF,1-12 Hours,5mins,5mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+ZAR,<6hrs,5mins,5mins,<30mins,N/A,<48hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<1hr
+ZWD,<24hrs,<24hrs,<24hrs,<24hrs,N/A,<24hrs,<24hrs,<24hrs,<24hrs,N/A,5mins,5mins,Ria CCY,5mins,<24hrs
+ETB,1-12 Hours,5mins,5mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+ETB,1-12 Hours,5mins,5mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+SAR,1-12 Hours,<30mins,5mins,<1hr,N/A,Three Days,<1hr,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<1hr
+SAR,1-12 Hours,<30mins,5mins,<1hr,N/A,Three Days,<1hr,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<1hr
+XAF,Three Days,Three Days,<30mins,<30mins,N/A,Three Days,Three Days,<30mins,<1hr,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+XAF,24hrs,24hrs,<30mins,<30mins,N/A,24hrs,24hrs,<30mins,<1hr,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+ZMW,24hrs,<30mins,<30mins,1-12 Hours,N/A,24hrs,<30mins,<30mins,<24hrs,N/A,5mins,5mins,Ria CCY,5mins,<30mins
+ZMW,48hrs,<30mins,<30mins,1-12 Hours,N/A,48hrs,<30mins,<30mins,<24hrs,N/A,5mins,5mins,Standard CCY,5mins,<30mins
+NAD,<6hrs,<30mins,<30mins,<1hr,N/A,<6hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+NAD,<6hrs,<30mins,<30mins,<1hr,N/A,<6hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+XOF,1-12 Hours,5mins,5mins,<1hr,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+ALL,Three Days,Three Days,Three Days,Three Days,N/A,Three Days,Three Days,Three Days,Three Days,N/A,5mins,5mins,Exotic CCY,5mins,Three Days
+KRW,24hrs,24hrs,<30mins,<1hr,N/A,24hrs,24hrs,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+KRW,Three Days,Three Days,<30mins,<1hr,N/A,Three Days,Three Days,<30mins,<6hrs,N/A,5mins,5mins,Exotic CCY,<30mins,<30mins
+BWP,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+BWP,<24hrs,<30mins,<30mins,<6hrs,N/A,<24hrs,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+MNT,24hrs,24hrs,24hrs,24hrs,N/A,24hrs,24hrs,24hrs,24hrs,N/A,5mins,5mins,Ria CCY,5mins,24hrs
+MNT,Three Days,Three Days,Three Days,Three Days,N/A,Three Days,Three Days,Three Days,Three Days,N/A,5mins,5mins,Exotic CCY,5mins,Three Days
+CVE,<24hrs,24hrs,<30mins,1-12 Hours,N/A,<24hrs,24hrs,<30mins,<24hrs,N/A,5mins,5mins,Ria CCY,<1hr,<6hrs
+CVE,<24hrs,Three Days,<30mins,1-12 Hours,N/A,<24hrs,Three Days,<30mins,<24hrs,N/A,5mins,5mins,Exotic CCY,<1hr,<6hrs
+HTG,1hr,1hr,1hr,1hr,N/A,1hr,1hwr,1hr,1hr,N/A,5mins,5mins,Ria CCY,5mins,1hr
+HTG,Three Days,Three Days,Three Days,Three Days,N/A,Three Days,Three Days,Three Days,Three Days,N/A,5mins,5mins,Exotic CCY,5mins,Three Days
+QAR,<48hrs,<30mins,<30mins,<6hrs,N/A,Three Days,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+QAR,<48hrs,<30mins,<30mins,<6hrs,N/A,Three Days,<30mins,<30mins,<6hrs,N/A,5mins,5mins,Standard CCY,<30mins,<30mins
+CNY,<30mins,24hrs,<30mins,5mins,N/A,<24hrs,24hrs,<24hrs,<6hrs,N/A,5mins,5mins,Standard CCY,<24hrs,<24hrs
+SLE,24hrs,5mins,<30mins,24hrs,N/A,24hrs,<30mins,<30mins,24hrs,N/A,5mins,5mins,Ria CCY,<30mins,<30mins
+MRU,24hrs,24hrs,24hrs,24hrs,N/A,24hrs,24hrs,24hrs,24hrs,N/A,5mins,5mins,Ria CCY,5mins,24hrs
+MRU,Three Days,Three Days,Three Days,Three Days,N/A,Three Days,Three Days,Three Days,Three Days,N/A,5mins,5mins,Exotic CCY,5mins,Three Days
+BSD,24hrs,24hrs,24hrs,24hrs,N/A,24hrs,24hrs,24hrs,24hrs,N/A,5mins,5mins,Standard CCY,5mins,24hrs

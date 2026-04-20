@@ -1,0 +1,1145 @@
+{
+  "meta": {
+    "generatedAt": "2026-03-25",
+    "source": "Amplitude event properties API + query_dataset for actual values",
+    "period": "Last 30 days (Feb 23 - Mar 25, 2026)"
+  },
+  "errors": {
+    "Quote Error": {
+      "volume_30d": "~178,101 events",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Quote calculation fails \u2014 the system cannot generate a rate/fee quote. This is the most common error by volume.",
+      "attributes": {
+        "errorCode": {
+          "type": "string",
+          "description": "Error code identifying the failure type",
+          "values": {
+            "(none)": {
+              "count": 129791,
+              "meaning": "No specific error code \u2014 generic failure or error object sent instead of code"
+            },
+            "NonFixedAmountBelowMinAmount": {
+              "count": 47762,
+              "meaning": "User's send amount is below the minimum for this corridor"
+            },
+            "QUOTE062": {
+              "count": 33185,
+              "meaning": "Quote calculation service error"
+            },
+            "FixedAmountBelowMinAmount": {
+              "count": 23014,
+              "meaning": "Fixed (locked) amount is below minimum"
+            },
+            "QUOTE008": {
+              "count": 19925,
+              "meaning": "Market is closed \u2014 trading hours exceeded for this currency pair"
+            },
+            "QUOTE063": {
+              "count": 14559,
+              "meaning": "Client-specific quote restriction"
+            },
+            "QUOTE019": {
+              "count": 9150,
+              "meaning": "Corridor not available"
+            },
+            "FixedAmountAboveMaxAmount": {
+              "count": 6560,
+              "meaning": "Amount exceeds maximum for this corridor"
+            },
+            "QUOTE006": {
+              "count": 5349,
+              "meaning": "Currency pair not supported"
+            },
+            "QUOTE070": {
+              "count": 4645,
+              "meaning": "Recipient payout method not supported for this quote"
+            },
+            "NonFixedAmountAboveMaxAmount": {
+              "count": 2740,
+              "meaning": "Send amount exceeds maximum"
+            },
+            "DailyTradeAmountExceeded": {
+              "count": 2423,
+              "meaning": "User has exceeded daily trading limit"
+            },
+            "QUOTE049": {
+              "count": 2062,
+              "meaning": "Quote service timeout or unavailable"
+            },
+            "InsufficientBalanceFunds": {
+              "count": 1882,
+              "meaning": "Not enough balance funds for this transfer"
+            },
+            "QUOTE051": {
+              "count": 1707,
+              "meaning": "Quote expired during processing"
+            },
+            "SellAmountAboveCashDeliverySendingMaxAmount": {
+              "count": 1395,
+              "meaning": "Amount too high for cash delivery"
+            },
+            "QUOTE007": {
+              "count": 1305,
+              "meaning": "Currency not available for trading"
+            },
+            "QUOTE067": {
+              "count": 1227,
+              "meaning": "Delivery method restriction"
+            },
+            "QUOTE100": {
+              "count": 956,
+              "meaning": "Service unavailable"
+            },
+            "QUOTE009": {
+              "count": 952,
+              "meaning": "Market closed for this region/timezone"
+            },
+            "QUOTE050": {
+              "count": 701,
+              "meaning": "Rate unavailable"
+            },
+            "QUOTE068": {
+              "count": 677,
+              "meaning": "Additional quote restriction"
+            },
+            "BuyAmountAboveCashDeliveryMaxAmount": {
+              "count": 425,
+              "meaning": "Recipient amount exceeds cash delivery max"
+            },
+            "QUOTE101": {
+              "count": 357,
+              "meaning": "Temporary service issue"
+            },
+            "Delivery method not supported": {
+              "count": 321,
+              "meaning": "Selected delivery method unavailable for this corridor"
+            },
+            "QUOTE010": {
+              "count": 289,
+              "meaning": "Invalid quote fields"
+            },
+            "QUOTE103": {
+              "count": 272,
+              "meaning": "Service error"
+            },
+            "QUOTE102": {
+              "count": 166,
+              "meaning": "Service error"
+            },
+            "QUOTE001": {
+              "count": 161,
+              "meaning": "General quote failure"
+            },
+            "DailyTradeCountExceeded": {
+              "count": 155,
+              "meaning": "User exceeded max number of daily transactions"
+            }
+          }
+        },
+        "quoteError": {
+          "type": "string",
+          "description": "Human-readable error message"
+        },
+        "errorDescription": {
+          "type": "string",
+          "description": "Detailed error description"
+        },
+        "codeError": {
+          "type": "string",
+          "description": "Error code (alternate property name)"
+        },
+        "destinationCountry": {
+          "type": "string",
+          "description": "Recipient country code"
+        },
+        "senderCountry": {
+          "type": "string",
+          "description": "Sender country code"
+        },
+        "sendCurrency": {
+          "type": "string",
+          "description": "Send currency code"
+        },
+        "payoutCurrency": {
+          "type": "string",
+          "description": "Payout currency code"
+        },
+        "amountFrom": {
+          "type": "number",
+          "description": "Send amount"
+        },
+        "amountTo": {
+          "type": "number",
+          "description": "Payout amount"
+        },
+        "sendAmount": {
+          "type": "number",
+          "description": "Send amount (alternate)"
+        },
+        "payoutAmount": {
+          "type": "number",
+          "description": "Payout amount (alternate)"
+        },
+        "sendMethod": {
+          "type": "string",
+          "description": "Payment method"
+        },
+        "payoutMethod": {
+          "type": "string",
+          "description": "Delivery method"
+        },
+        "userId": {
+          "type": "string",
+          "description": "User ID"
+        },
+        "fixedAmountInUsd": {
+          "type": "number",
+          "description": "Fixed amount in USD"
+        },
+        "fixedCurrency": {
+          "type": "string",
+          "description": "Currency that was fixed (from/to)"
+        },
+        "valueDate": {
+          "type": "string",
+          "description": "Settlement date"
+        },
+        "recipientAdded": {
+          "type": "boolean",
+          "description": "Whether recipient was already added"
+        }
+      }
+    },
+    "Something Went Wrong": {
+      "volume_30d": "~73,100 events",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Catch-all error popup. The location+category combination tells you what went wrong and where.",
+      "attributes": {
+        "location": {
+          "type": "string",
+          "description": "Which part of the app the error occurred in",
+          "values": {
+            "(none)": {
+              "count": 128881,
+              "meaning": "No location set \u2014 mostly from mobile Error Popup or generic handlers"
+            },
+            "card_authorization": {
+              "count": 7140,
+              "meaning": "During card 3DS authentication"
+            },
+            "sendMoney": {
+              "count": 7000,
+              "meaning": "During send money flow \u2014 category tells you specifically what failed"
+            },
+            "send_money": {
+              "count": 2110,
+              "meaning": "Send money flow (alternate naming from mobile)"
+            },
+            "registration": {
+              "count": 696,
+              "meaning": "During registration flow"
+            },
+            "Sign in": {
+              "count": 2,
+              "meaning": "During login flow"
+            }
+          }
+        },
+        "category": {
+          "type": "string",
+          "description": "Error category \u2014 when location=sendMoney, this shows what specifically failed",
+          "values": {
+            "(none)": {
+              "count": "majority",
+              "meaning": "No category \u2014 generic error"
+            },
+            "DELTA": {
+              "count": 2760,
+              "meaning": "Delta card network errors"
+            },
+            "MCD": {
+              "count": 1439,
+              "meaning": "Mastercard Debit errors"
+            },
+            "MCC": {
+              "count": 844,
+              "meaning": "Mastercard Credit errors"
+            },
+            "VISA": {
+              "count": 823,
+              "meaning": "Visa card errors"
+            },
+            "Open Banking": {
+              "count": 537,
+              "meaning": "Open banking payment errors"
+            },
+            "Bank transfer": {
+              "count": 106,
+              "meaning": "Bank/wire transfer errors"
+            },
+            "ID Verification": {
+              "count": 4,
+              "meaning": "Veriff/Onfido verification failed"
+            },
+            "Interac": {
+              "count": 19,
+              "meaning": "Interac e-Transfer errors (Canada)"
+            },
+            "[Bank Names]": {
+              "count": "varies",
+              "meaning": "When category contains a bank name (e.g., 'Bank of America - New York'), it means the bank transfer instructions failed for that specific receiving bank"
+            }
+          }
+        },
+        "error": {
+          "type": "any",
+          "description": "Error object \u2014 can be string or nested object with quote error details"
+        },
+        "errorDescription": {
+          "type": "string",
+          "description": "Human-readable error description"
+        },
+        "error.message": {
+          "type": "string",
+          "description": "Error message (when error is an object)"
+        },
+        "error.statusCode": {
+          "type": "number",
+          "description": "HTTP status code (when error is an object)"
+        },
+        "error.quote.errorMessages.*": {
+          "type": "object",
+          "description": "Nested quote error details \u2014 contains QUOTE006, QUOTE007, QUOTE008, QUOTE010, QUOTE037, QUOTE049, QUOTE063, QUOTE070 with their internal_description"
+        },
+        "referenceSource": {
+          "type": "string",
+          "description": "Reference source identifier"
+        }
+      }
+    },
+    "Payment Failed": {
+      "volume_30d": "~7,983 events",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Payment processing fails after user confirms transaction. The paymentType+failure combination identifies what went wrong.",
+      "attributes": {
+        "paymentType": {
+          "type": "string",
+          "description": "Which payment method failed",
+          "values": {
+            "ApplePay": {
+              "count": 3914,
+              "meaning": "Apple Pay payment failed \u2014 usually Card_Transactions error"
+            },
+            "DebitCard": {
+              "count": 5120,
+              "meaning": "Debit card payment failed"
+            },
+            "CreditCard": {
+              "count": 2267,
+              "meaning": "Credit card payment failed"
+            },
+            "GooglePay": {
+              "count": 833,
+              "meaning": "Google Pay payment failed"
+            },
+            "OpenBanking": {
+              "count": 11,
+              "meaning": "Open banking payment failed"
+            },
+            "BankTransfer": {
+              "count": 9,
+              "meaning": "Bank transfer failed"
+            },
+            "DirectDebit": {
+              "count": 3,
+              "meaning": "Direct debit failed"
+            }
+          }
+        },
+        "failure": {
+          "type": "string",
+          "description": "Failure reason code from payment processor",
+          "values": {
+            "Card_Transactions": {
+              "count": 4749,
+              "meaning": "Generic card transaction failure (Apple Pay + Google Pay)"
+            },
+            "(none)": {
+              "count": 4613,
+              "meaning": "No specific failure code \u2014 check errorCode/errorDesc for details"
+            },
+            "PSAPI_007": {
+              "count": 1447,
+              "meaning": "Payment processor rejection \u2014 authorization declined"
+            },
+            "PSAPI_015": {
+              "count": 474,
+              "meaning": "Payment processor \u2014 insufficient funds or card limit exceeded"
+            },
+            "PSAPI_006": {
+              "count": 187,
+              "meaning": "Payment processor \u2014 card expired or invalid"
+            },
+            "PSAPI_012": {
+              "count": 124,
+              "meaning": "Payment processor \u2014 card restricted"
+            },
+            "PSAPI_017": {
+              "count": 90,
+              "meaning": "Payment processor \u2014 suspected fraud"
+            },
+            "PSAPI_008": {
+              "count": 108,
+              "meaning": "Payment processor \u2014 CVV mismatch"
+            },
+            "ConnectionError": {
+              "count": 66,
+              "meaning": "Network error connecting to payment processor"
+            },
+            "PSAPI_011": {
+              "count": 45,
+              "meaning": "Payment processor \u2014 card not supported"
+            },
+            "PSAPI_004": {
+              "count": 24,
+              "meaning": "Payment processor \u2014 general decline"
+            },
+            "PSAPI_001": {
+              "count": 21,
+              "meaning": "Payment processor \u2014 invalid card number"
+            },
+            "PSAPI_009": {
+              "count": 3,
+              "meaning": "Payment processor \u2014 3DS authentication failed"
+            },
+            "PSAPI_014": {
+              "count": 4,
+              "meaning": "Payment processor \u2014 issuer unavailable"
+            },
+            "PSAPI_013": {
+              "count": 2,
+              "meaning": "Payment processor \u2014 card blocked"
+            },
+            "PSAPI_016": {
+              "count": 2,
+              "meaning": "Payment processor \u2014 transaction limit exceeded"
+            },
+            "PSAPI_005": {
+              "count": 1,
+              "meaning": "Payment processor \u2014 do not honor"
+            },
+            "QUOTE001": {
+              "count": 5,
+              "meaning": "Quote failure during payment"
+            }
+          }
+        },
+        "errorCode": {
+          "type": "string",
+          "description": "Error code from API"
+        },
+        "errorDesc": {
+          "type": "string",
+          "description": "Error description"
+        },
+        "cardBrand": {
+          "type": "string",
+          "description": "Card brand (Visa, Mastercard, etc.)"
+        },
+        "cardBillingCountry": {
+          "type": "string",
+          "description": "Card billing address country"
+        },
+        "newCard": {
+          "type": "boolean",
+          "description": "Whether card was just added (true) or saved (false)"
+        },
+        "paymentProvider": {
+          "type": "string",
+          "description": "Payment gateway (Adyen, Cybersource)"
+        },
+        "authorisationType": {
+          "type": "string",
+          "description": "Type of card authorization (3DS, etc.)"
+        },
+        "navigatedFrom": {
+          "type": "string",
+          "description": "Which page the user came from"
+        },
+        "subType": {
+          "type": "string",
+          "description": "Sub-classification of the failure"
+        }
+      }
+    },
+    "Card Authorisation Failed": {
+      "volume_30d": "~5,233 events",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Card 3DS authentication rejected. Card-specific error for authorization failures.",
+      "attributes": {
+        "cardBrand": {
+          "type": "string",
+          "description": "Card brand that failed",
+          "values": {
+            "(none)": {
+              "count": 2422,
+              "meaning": "Card brand not detected \u2014 usually Cybersource processor"
+            },
+            "Visa": {
+              "count": 2337,
+              "meaning": "Visa card"
+            },
+            "Mastercard": {
+              "count": 1729,
+              "meaning": "Mastercard"
+            },
+            "Visa Debit": {
+              "count": 147,
+              "meaning": "Visa debit card"
+            },
+            "Mastercard Debit": {
+              "count": 86,
+              "meaning": "Mastercard debit"
+            },
+            "Mastercard Credit": {
+              "count": 54,
+              "meaning": "Mastercard credit"
+            },
+            "Visa Credit": {
+              "count": 35,
+              "meaning": "Visa credit"
+            }
+          }
+        },
+        "paymentProvider": {
+          "type": "string",
+          "description": "Payment processor",
+          "values": {
+            "Cybersource": {
+              "count": 2422,
+              "meaning": "Cybersource processor (US/Canada)"
+            },
+            "Adyen": {
+              "count": 5296,
+              "meaning": "Adyen processor (EU/UK/ANZ)"
+            }
+          }
+        },
+        "authorisationType": {
+          "type": "string",
+          "description": "Type of 3DS challenge"
+        },
+        "paymentType": {
+          "type": "string",
+          "description": "DebitCard or CreditCard"
+        },
+        "newCard": {
+          "type": "boolean",
+          "description": "Was this a newly added card"
+        },
+        "cardBillingCountry": {
+          "type": "string",
+          "description": "Billing address country"
+        },
+        "error": {
+          "type": "any",
+          "description": "Error details from processor"
+        },
+        "subType": {
+          "type": "string",
+          "description": "Sub-classification"
+        }
+      }
+    },
+    "Transaction Failed": {
+      "volume_30d": "~3,576 events",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Order creation fails AFTER payment authorization. Most severe client-side error \u2014 payment may be held but transaction not created.",
+      "attributes": {
+        "errorType": {
+          "type": "string",
+          "description": "Error message from the API \u2014 very detailed, often contains raw error responses",
+          "top_values": [
+            {
+              "value": "An unsuccessful response was returned from the PSP when trying to create the transaction.",
+              "count": 1698,
+              "meaning": "Payment processor rejected the transaction creation"
+            },
+            {
+              "value": "An unsuccessful response was returned from the PSP when trying to validate the payer authentication result.",
+              "count": 1595,
+              "meaning": "3DS validation failed on the server side"
+            },
+            {
+              "value": "User has reached their max card failed authentication attempts.",
+              "count": 310,
+              "meaning": "Too many failed 3DS attempts \u2014 user is locked out"
+            },
+            {
+              "value": "User has reached their max card failed authorisation attempts.",
+              "count": 77,
+              "meaning": "Too many card auth failures"
+            },
+            {
+              "value": "An existing card transaction cannot be reused for initialization, as it has an invalid status.",
+              "count": 46,
+              "meaning": "Stale card transaction being reused"
+            },
+            {
+              "value": "The request contains the following invalid data : CardTypeId must be provided and greater than zero",
+              "count": 30,
+              "meaning": "Missing card type in request \u2014 likely a bug"
+            },
+            {
+              "value": "Client account has been restricted.",
+              "count": 52,
+              "meaning": "Account restricted by compliance/fraud"
+            },
+            {
+              "value": "Quote expired",
+              "count": 17,
+              "meaning": "Quote expired before transaction could be created"
+            },
+            {
+              "value": "UpdateContract: Failed to update contract... Amount greater than available",
+              "count": "varies",
+              "meaning": "Amount changed between quote and transaction \u2014 insufficient funds on contract"
+            },
+            {
+              "value": "An invalid cvv result was returned from the PSP",
+              "count": 12,
+              "meaning": "CVV validation failed server-side"
+            }
+          ]
+        },
+        "paymentType": {
+          "type": "string",
+          "description": "DebitCard, CreditCard, etc."
+        },
+        "errorCode": {
+          "type": "string",
+          "description": "Error code"
+        },
+        "transactionId": {
+          "type": "string",
+          "description": "Transaction ID (if created before failure)"
+        },
+        "destinationCountry": {
+          "type": "string",
+          "description": "Recipient country"
+        },
+        "senderCountry": {
+          "type": "string",
+          "description": "Sender country"
+        },
+        "sendCurrency": {
+          "type": "string",
+          "description": "Send currency"
+        },
+        "payoutCurrency": {
+          "type": "string",
+          "description": "Payout currency"
+        },
+        "sendAmount": {
+          "type": "string",
+          "description": "Send amount"
+        },
+        "payoutAmount": {
+          "type": "string",
+          "description": "Payout amount"
+        },
+        "sendAmountUSD": {
+          "type": "number",
+          "description": "Send amount in USD"
+        },
+        "feeUSD": {
+          "type": "number",
+          "description": "Fee in USD"
+        },
+        "rate": {
+          "type": "number",
+          "description": "Exchange rate"
+        },
+        "totalAmountPaid": {
+          "type": "number",
+          "description": "Total charged to user"
+        },
+        "liquidityManager": {
+          "type": "string",
+          "description": "Liquidity provider"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "description": "Payment method used"
+        },
+        "payoutMethod": {
+          "type": "string",
+          "description": "Delivery method"
+        },
+        "platformType": {
+          "type": "string",
+          "description": "Platform identifier"
+        },
+        "transferReason": {
+          "type": "string",
+          "description": "Transfer reason"
+        },
+        "senderTbu": {
+          "type": "string",
+          "description": "Sender TBU"
+        },
+        "fee": {
+          "type": "number",
+          "description": "Fee amount"
+        },
+        "deliveryMethod": {
+          "type": "string",
+          "description": "Delivery method (alternate)"
+        }
+      }
+    },
+    "Login Failed": {
+      "volume_30d": "~147,377 events",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Login authentication fails. NAMING BUG: Web='Login Failed' (capital F), Mobile='Login failed' (lowercase f).",
+      "issues": [
+        "CRITICAL: Two separate events in Amplitude due to casing mismatch. Must query BOTH."
+      ],
+      "attributes_web": {
+        "errorType": {
+          "type": "string",
+          "description": "Error code from web auth system. Values: numeric codes like 10 (UserNotFound), 20 (InvalidPassword), etc."
+        },
+        "failReason": {
+          "type": "string",
+          "description": "Failure reason"
+        },
+        "loginMethod": {
+          "type": "string",
+          "description": "How user tried to log in"
+        },
+        "referenceSource": {
+          "type": "string",
+          "description": "Reference source"
+        }
+      },
+      "attributes_mobile": {
+        "method": {
+          "type": "string",
+          "description": "Login method used"
+        },
+        "failReason": {
+          "type": "string",
+          "description": "Cognito error name (e.g., MfaResendThrottleException, CustomerLoginAttemptsExceeded)"
+        }
+      }
+    },
+    "Card Payment Failed": {
+      "volume_30d": "~18,700 events",
+      "source": "server_side",
+      "platforms": [
+        "Server"
+      ],
+      "description": "BACKEND event \u2014 card payment processing fails on the server. Very rich attributes from the payment processor (Adyen/Cybersource).",
+      "attributes": {
+        "failureReasonCode": {
+          "type": "string",
+          "description": "Failure reason from payment processor",
+          "note": "Currently all show (none) in groupBy \u2014 the detailed failure info may be in failureReasonDescription instead"
+        },
+        "cardProvider": {
+          "type": "string",
+          "description": "Card network",
+          "values": {
+            "Visa": {
+              "count": 10882,
+              "meaning": "Visa transactions"
+            },
+            "Mastercard": {
+              "count": 7697,
+              "meaning": "Mastercard transactions"
+            },
+            "Unrecognised": {
+              "count": 128,
+              "meaning": "Card type not recognized"
+            }
+          }
+        },
+        "failedStep": {
+          "type": "string",
+          "description": "Which step in the payment process failed"
+        },
+        "failureReasonDescription": {
+          "type": "string",
+          "description": "Human-readable failure reason"
+        },
+        "failureAcquirerDescription": {
+          "type": "string",
+          "description": "Acquirer bank's failure description"
+        },
+        "paymentProvider": {
+          "type": "string",
+          "description": "Payment gateway (Adyen, Cybersource)"
+        },
+        "paymentProviderErrorCode": {
+          "type": "string",
+          "description": "Gateway-specific error code"
+        },
+        "paymentProviderErrorDescription": {
+          "type": "string",
+          "description": "Gateway error description"
+        },
+        "internalErrorCode": {
+          "type": "string",
+          "description": "Xe internal error code"
+        },
+        "internalErrorDescription": {
+          "type": "string",
+          "description": "Xe internal error description"
+        },
+        "cardType": {
+          "type": "string",
+          "description": "Credit or Debit"
+        },
+        "issuerCountry": {
+          "type": "string",
+          "description": "Card issuer country"
+        },
+        "issuerName": {
+          "type": "string",
+          "description": "Card issuing bank name"
+        },
+        "3dsNeeded": {
+          "type": "boolean",
+          "description": "Whether 3DS was required"
+        },
+        "threeDsAttempted": {
+          "type": "boolean",
+          "description": "Whether 3DS was attempted"
+        },
+        "authenticationType": {
+          "type": "string",
+          "description": "Auth type used"
+        },
+        "liabilityShift": {
+          "type": "string",
+          "description": "Liability shift status"
+        },
+        "merchantId": {
+          "type": "string",
+          "description": "Merchant ID"
+        },
+        "paymentAmount": {
+          "type": "number",
+          "description": "Payment amount"
+        },
+        "paymentCurrency": {
+          "type": "string",
+          "description": "Payment currency"
+        },
+        "sendCurrency": {
+          "type": "string",
+          "description": "Send currency"
+        },
+        "senderCountry": {
+          "type": "string",
+          "description": "Sender country"
+        }
+      }
+    },
+    "Open Banking Payment Failed": {
+      "volume_30d": "~12,000+ events",
+      "source": "server_side",
+      "platforms": [
+        "Server"
+      ],
+      "description": "BACKEND event \u2014 open banking payment fails. Very detailed with bank-specific information. Most failures are user-initiated (Abandoned/Cancelled), not system errors.",
+      "attributes": {
+        "detailedStatus": {
+          "type": "string",
+          "description": "Why the payment failed",
+          "values": {
+            "Abandoned": {
+              "count": "~5,000",
+              "meaning": "User started OB flow but didn't complete it in their bank app. Largest category."
+            },
+            "Error": {
+              "count": "~3,500",
+              "meaning": "Bank-side error during payment processing"
+            },
+            "Cancelled": {
+              "count": "~2,500",
+              "meaning": "User actively cancelled the payment in their bank app"
+            }
+          }
+        },
+        "senderBankName": {
+          "type": "string",
+          "description": "Which bank the user tried to pay from. TOP BANKS BY FAILURE COUNT:",
+          "top_values": [
+            "Deutsche Bank (369 errors)",
+            "Barclays (311 abandoned)",
+            "Commerzbank (311 abandoned)",
+            "HSBC (277 abandoned, 237 cancelled)",
+            "Lloyds Bank (257 abandoned, 169 cancelled)",
+            "ING Bank (186 errors)",
+            "BNP Paribas (128 errors)",
+            "Nationwide (154 abandoned)",
+            "Santander (148 abandoned)",
+            "Revolut (141 abandoned)",
+            "NatWest (108 abandoned)",
+            "ING (107 abandoned)",
+            "BoursoBank (105 abandoned)",
+            "Halifax (98 abandoned)",
+            "La Banque Postale (97 errors)",
+            "BNP Paribas Fortis (98 errors)"
+          ]
+        },
+        "senderBankCountry": {
+          "type": "string",
+          "description": "Bank's country"
+        },
+        "paymentProvider": {
+          "type": "string",
+          "description": "OB provider (Volt, etc.)"
+        },
+        "providerReasonCode": {
+          "type": "string",
+          "description": "Provider-specific error code"
+        },
+        "status": {
+          "type": "string",
+          "description": "Payment status"
+        },
+        "bankReference": {
+          "type": "string",
+          "description": "Bank's reference number"
+        },
+        "contractNumber": {
+          "type": "string",
+          "description": "Xe contract number"
+        },
+        "paymentAmount": {
+          "type": "number",
+          "description": "Payment amount"
+        },
+        "paymentCurrency": {
+          "type": "string",
+          "description": "Payment currency"
+        },
+        "sendAmount": {
+          "type": "number",
+          "description": "Send amount"
+        },
+        "platformType": {
+          "type": "string",
+          "description": "Platform type"
+        }
+      }
+    },
+    "Bank Verification Failed": {
+      "volume_30d": "low volume",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Plaid bank verification fails. User tried to link their bank account but verification was rejected.",
+      "attributes": {
+        "verificationMethod": {
+          "type": "string",
+          "description": "Verification method (Plaid, Manual)"
+        },
+        "paymentVerificationMethod": {
+          "type": "string",
+          "description": "Same as above (alternate name)"
+        },
+        "error": {
+          "type": "any",
+          "description": "Error details from Plaid"
+        },
+        "location": {
+          "type": "string",
+          "description": "Where in the app this happened"
+        },
+        "recipientCountry": {
+          "type": "string",
+          "description": "Recipient country (US/Canada)"
+        }
+      }
+    },
+    "Error Popup": {
+      "volume_30d": "varies",
+      "source": "client_side",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "description": "MOBILE ONLY \u2014 every error popup shown in the app fires this event. Contains the exact text the user sees.",
+      "attributes": {
+        "error_title": {
+          "type": "string",
+          "description": "Popup title \u2014 use this to categorize errors"
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Popup message text \u2014 what the user actually reads"
+        }
+      }
+    },
+    "New Card Added Error": {
+      "volume_30d": "low-medium volume",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Error when user tries to add a new credit/debit card. Contains card BIN and brand for debugging.",
+      "attributes": {
+        "bin": {
+          "type": "string",
+          "description": "Card BIN (first 6 digits) \u2014 identifies issuing bank"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Card brand (Visa, Mastercard, etc.)"
+        },
+        "category": {
+          "type": "string",
+          "description": "Card category"
+        },
+        "paymentType": {
+          "type": "string",
+          "description": "Debit or Credit"
+        },
+        "error": {
+          "type": "any",
+          "description": "Error details"
+        },
+        "errorDescription": {
+          "type": "string",
+          "description": "Human-readable error"
+        },
+        "location": {
+          "type": "string",
+          "description": "Where the card was being added"
+        }
+      }
+    },
+    "Recipient Selection Failed": {
+      "volume_30d": "low volume",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "User selected an existing recipient but validation failed \u2014 usually a quote error for that recipient's corridor.",
+      "attributes": {
+        "quoteError": {
+          "type": "string",
+          "description": "Quote error code that caused the failure (e.g., QUOTE070 = payout method not supported)"
+        }
+      }
+    },
+    "Captcha Failed": {
+      "volume_30d": "varies",
+      "source": "client_side",
+      "platforms": [
+        "Web",
+        "iOS",
+        "Android"
+      ],
+      "description": "Captcha verification fails. Blocks user from proceeding with registration or login.",
+      "attributes": {
+        "reason": {
+          "type": "string",
+          "description": "Why captcha failed (Token not received, Validation Failed)"
+        },
+        "provider": {
+          "type": "string",
+          "description": "Captcha provider (hCaptcha, reCAPTCHA)"
+        },
+        "attemptCount": {
+          "type": "number",
+          "description": "How many times user attempted captcha"
+        },
+        "platform": {
+          "type": "string",
+          "description": "Platform (additional platform property)"
+        },
+        "location": {
+          "type": "string/object",
+          "description": "Where in the app \u2014 on web this is the full window.location object (href, hostname, pathname, etc.)"
+        },
+        "error": {
+          "type": "any",
+          "description": "Error details"
+        },
+        "error.message": {
+          "type": "string",
+          "description": "Error message text"
+        },
+        "error.cause": {
+          "type": "string",
+          "description": "Root cause"
+        }
+      }
+    },
+    "Account Registration Failed": {
+      "volume_30d": "low volume",
+      "source": "client_side",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "description": "MOBILE ONLY \u2014 registration process fails.",
+      "attributes": {
+        "residentCountry": {
+          "type": "string",
+          "description": "User's country of residence"
+        },
+        "language": {
+          "type": "string",
+          "description": "App language"
+        },
+        "location": {
+          "type": "string",
+          "description": "Where in registration flow"
+        }
+      }
+    }
+  }
+}

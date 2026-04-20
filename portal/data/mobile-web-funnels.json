@@ -1,0 +1,3234 @@
+{
+  "generated": "2026-03-25",
+  "period": "Last 90 Days",
+  "status": "ready",
+  "note": "4-step consumer funnel (accountType != Corporate on all steps). Payment Method Selected removed. Mobile web = platform=Web, device NOT desktop. 5d = 432000s window, 0d = 86400s window. Updated 2026-03-25.",
+  "funnel_steps": [
+    "Quote Confirmed",
+    "Transaction Summary Confirmed",
+    "Transaction Created",
+    "Transaction Completed"
+  ],
+  "overall": {
+    "conversion": 0.5145,
+    "steps": {
+      "Quote Confirmed": 54464,
+      "Recipient Selected": 46168,
+      "Transaction Summary Confirmed": 41876,
+      "Transaction Created": 32973,
+      "Transaction Completed": 28020
+    },
+    "step_rates": {
+      "Quote Confirmed \u2192 Recipient Selected": 84.8,
+      "Recipient Selected \u2192 Txn Summary Confirmed": 90.7,
+      "Txn Summary Confirmed \u2192 Txn Created": 78.7,
+      "Txn Created \u2192 Txn Completed": 85.0
+    },
+    "window": "5-day",
+    "avg_time_to_complete": {
+      "Quote Confirmed \u2192 Recipient Selected": "4437s (avg), 95s (median)",
+      "Recipient Selected \u2192 Txn Summary": "3612s (avg), 142s (median)",
+      "Txn Summary \u2192 Txn Created": "3182s (avg), 105s (median)",
+      "Txn Created \u2192 Txn Completed": "91556s (avg), 8605s (median)"
+    },
+    "mobile_web_5d": {
+      "steps": [
+        14579,
+        8933,
+        7207,
+        5683
+      ],
+      "step_rates": [
+        100.0,
+        61.3,
+        80.7,
+        78.9
+      ],
+      "conversion": 39.0
+    },
+    "mobile_web_0d": {
+      "steps": [
+        14579,
+        8757,
+        7003,
+        4334
+      ],
+      "step_rates": [
+        100.0,
+        60.1,
+        80.0,
+        61.9
+      ],
+      "conversion": 29.7
+    },
+    "desktop": {
+      "steps": [
+        41469,
+        35494,
+        33042,
+        29088
+      ],
+      "step_rates": [
+        100.0,
+        85.6,
+        93.1,
+        88.0
+      ],
+      "conversion": 70.1
+    },
+    "desktop_0d": {
+      "steps": [
+        41469,
+        35337,
+        32816,
+        21906
+      ],
+      "step_rates": [
+        100.0,
+        85.2,
+        92.9,
+        66.8
+      ],
+      "conversion": 52.8
+    },
+    "gap_pp": -31.1
+  },
+  "by_corridor": {
+    "full": {
+      "USD": {
+        "steps": [
+          3542,
+          1632,
+          1121,
+          654
+        ],
+        "conversion": 18.5,
+        "step_rates": [
+          100.0,
+          46.1,
+          68.7,
+          58.3
+        ]
+      },
+      "EUR": {
+        "steps": [
+          2317,
+          1889,
+          1717,
+          1574
+        ],
+        "conversion": 67.9,
+        "step_rates": [
+          100.0,
+          81.5,
+          90.9,
+          91.7
+        ]
+      },
+      "INR": {
+        "steps": [
+          1659,
+          1227,
+          1097,
+          855
+        ],
+        "conversion": 51.5,
+        "step_rates": [
+          100.0,
+          74.0,
+          89.4,
+          77.9
+        ]
+      },
+      "GBP": {
+        "steps": [
+          653,
+          462,
+          404,
+          323
+        ],
+        "conversion": 49.5,
+        "step_rates": [
+          100.0,
+          70.8,
+          87.4,
+          80.0
+        ]
+      },
+      "PHP": {
+        "steps": [
+          508,
+          325,
+          207,
+          137
+        ],
+        "conversion": 27.0,
+        "step_rates": [
+          100.0,
+          64.0,
+          63.7,
+          66.2
+        ]
+      },
+      "AUD": {
+        "steps": [
+          474,
+          360,
+          328,
+          296
+        ],
+        "conversion": 62.4,
+        "step_rates": [
+          100.0,
+          75.9,
+          91.1,
+          90.2
+        ]
+      },
+      "CAD": {
+        "steps": [
+          411,
+          255,
+          225,
+          168
+        ],
+        "conversion": 40.9,
+        "step_rates": [
+          100.0,
+          62.0,
+          88.2,
+          74.7
+        ]
+      },
+      "MXN": {
+        "steps": [
+          364,
+          169,
+          125,
+          84
+        ],
+        "conversion": 23.1,
+        "step_rates": [
+          100.0,
+          46.4,
+          74.0,
+          67.2
+        ]
+      },
+      "NZD": {
+        "steps": [
+          296,
+          242,
+          227,
+          210
+        ],
+        "conversion": 70.9,
+        "step_rates": [
+          100.0,
+          81.8,
+          93.8,
+          92.5
+        ]
+      },
+      "MAD": {
+        "steps": [
+          266,
+          157,
+          122,
+          110
+        ],
+        "conversion": 41.4,
+        "step_rates": [
+          100.0,
+          59.0,
+          77.7,
+          90.2
+        ]
+      },
+      "NGN": {
+        "steps": [
+          238,
+          89,
+          53,
+          17
+        ],
+        "conversion": 7.1,
+        "step_rates": [
+          100.0,
+          37.4,
+          59.6,
+          32.1
+        ]
+      },
+      "PKR": {
+        "steps": [
+          233,
+          134,
+          91,
+          67
+        ],
+        "conversion": 28.8,
+        "step_rates": [
+          100.0,
+          57.5,
+          67.9,
+          73.6
+        ]
+      },
+      "THB": {
+        "steps": [
+          225,
+          162,
+          146,
+          130
+        ],
+        "conversion": 57.8,
+        "step_rates": [
+          100.0,
+          72.0,
+          90.1,
+          89.0
+        ]
+      },
+      "AED": {
+        "steps": [
+          198,
+          122,
+          107,
+          85
+        ],
+        "conversion": 42.9,
+        "step_rates": [
+          100.0,
+          61.6,
+          87.7,
+          79.4
+        ]
+      },
+      "ZAR": {
+        "steps": [
+          178,
+          135,
+          125,
+          120
+        ],
+        "conversion": 67.4,
+        "step_rates": [
+          100.0,
+          75.8,
+          92.6,
+          96.0
+        ]
+      },
+      "ETB": {
+        "steps": [
+          166,
+          96,
+          73,
+          64
+        ],
+        "conversion": 38.6,
+        "step_rates": [
+          100.0,
+          57.8,
+          76.0,
+          87.7
+        ]
+      },
+      "COP": {
+        "steps": [
+          154,
+          74,
+          60,
+          47
+        ],
+        "conversion": 30.5,
+        "step_rates": [
+          100.0,
+          48.1,
+          81.1,
+          78.3
+        ]
+      },
+      "IDR": {
+        "steps": [
+          145,
+          107,
+          49,
+          37
+        ],
+        "conversion": 25.5,
+        "step_rates": [
+          100.0,
+          73.8,
+          45.8,
+          75.5
+        ]
+      },
+      "XOF": {
+        "steps": [
+          136,
+          57,
+          39,
+          36
+        ],
+        "conversion": 26.5,
+        "step_rates": [
+          100.0,
+          41.9,
+          68.4,
+          92.3
+        ]
+      },
+      "JMD": {
+        "steps": [
+          129,
+          78,
+          19,
+          9
+        ],
+        "conversion": 7.0,
+        "step_rates": [
+          100.0,
+          60.5,
+          24.4,
+          47.4
+        ]
+      },
+      "SAR": {
+        "steps": [
+          115,
+          73,
+          59,
+          45
+        ],
+        "conversion": 39.1,
+        "step_rates": [
+          100.0,
+          63.5,
+          80.8,
+          76.3
+        ]
+      },
+      "DOP": {
+        "steps": [
+          106,
+          46,
+          22,
+          13
+        ],
+        "conversion": 12.3,
+        "step_rates": [
+          100.0,
+          43.4,
+          47.8,
+          59.1
+        ]
+      },
+      "TRY": {
+        "steps": [
+          93,
+          55,
+          43,
+          31
+        ],
+        "conversion": 33.3,
+        "step_rates": [
+          100.0,
+          59.1,
+          78.2,
+          72.1
+        ]
+      },
+      "BDT": {
+        "steps": [
+          89,
+          28,
+          12,
+          3
+        ],
+        "conversion": 3.4,
+        "step_rates": [
+          100.0,
+          31.5,
+          42.9,
+          25.0
+        ]
+      },
+      "NAD": {
+        "steps": [
+          81,
+          62,
+          44,
+          40
+        ],
+        "conversion": 49.4,
+        "step_rates": [
+          100.0,
+          76.5,
+          71.0,
+          90.9
+        ]
+      },
+      "JPY": {
+        "steps": [
+          75,
+          50,
+          48,
+          39
+        ],
+        "conversion": 52.0,
+        "step_rates": [
+          100.0,
+          66.7,
+          96.0,
+          81.2
+        ]
+      },
+      "GHS": {
+        "steps": [
+          73,
+          36,
+          22,
+          11
+        ],
+        "conversion": 15.1,
+        "step_rates": [
+          100.0,
+          49.3,
+          61.1,
+          50.0
+        ]
+      },
+      "CNY": {
+        "steps": [
+          70,
+          22,
+          19,
+          9
+        ],
+        "conversion": 12.9,
+        "step_rates": [
+          100.0,
+          31.4,
+          86.4,
+          47.4
+        ]
+      },
+      "BRL": {
+        "steps": [
+          70,
+          11,
+          6,
+          4
+        ],
+        "conversion": 5.7,
+        "step_rates": [
+          100.0,
+          15.7,
+          54.5,
+          66.7
+        ]
+      },
+      "KES": {
+        "steps": [
+          64,
+          29,
+          23,
+          10
+        ],
+        "conversion": 15.6,
+        "step_rates": [
+          100.0,
+          45.3,
+          79.3,
+          43.5
+        ]
+      }
+    },
+    "zero_day": {
+      "USD": {
+        "steps": [
+          3543,
+          1597,
+          1085,
+          482
+        ],
+        "conversion": 13.6,
+        "step_rates": [
+          100.0,
+          45.1,
+          67.9,
+          44.4
+        ]
+      },
+      "EUR": {
+        "steps": [
+          2319,
+          1877,
+          1696,
+          1377
+        ],
+        "conversion": 59.4,
+        "step_rates": [
+          100.0,
+          80.9,
+          90.4,
+          81.2
+        ]
+      },
+      "INR": {
+        "steps": [
+          1659,
+          1204,
+          1067,
+          534
+        ],
+        "conversion": 32.2,
+        "step_rates": [
+          100.0,
+          72.6,
+          88.6,
+          50.0
+        ]
+      },
+      "GBP": {
+        "steps": [
+          653,
+          450,
+          391,
+          220
+        ],
+        "conversion": 33.7,
+        "step_rates": [
+          100.0,
+          68.9,
+          86.9,
+          56.3
+        ]
+      },
+      "PHP": {
+        "steps": [
+          508,
+          317,
+          199,
+          116
+        ],
+        "conversion": 22.8,
+        "step_rates": [
+          100.0,
+          62.4,
+          62.8,
+          58.3
+        ]
+      },
+      "AUD": {
+        "steps": [
+          475,
+          352,
+          315,
+          214
+        ],
+        "conversion": 45.1,
+        "step_rates": [
+          100.0,
+          74.1,
+          89.5,
+          67.9
+        ]
+      },
+      "CAD": {
+        "steps": [
+          411,
+          250,
+          220,
+          96
+        ],
+        "conversion": 23.4,
+        "step_rates": [
+          100.0,
+          60.8,
+          88.0,
+          43.6
+        ]
+      },
+      "MXN": {
+        "steps": [
+          365,
+          166,
+          122,
+          62
+        ],
+        "conversion": 17.0,
+        "step_rates": [
+          100.0,
+          45.5,
+          73.5,
+          50.8
+        ]
+      },
+      "NZD": {
+        "steps": [
+          294,
+          239,
+          222,
+          164
+        ],
+        "conversion": 55.8,
+        "step_rates": [
+          100.0,
+          81.3,
+          92.9,
+          73.9
+        ]
+      },
+      "MAD": {
+        "steps": [
+          265,
+          154,
+          119,
+          95
+        ],
+        "conversion": 35.8,
+        "step_rates": [
+          100.0,
+          58.1,
+          77.3,
+          79.8
+        ]
+      },
+      "NGN": {
+        "steps": [
+          238,
+          85,
+          49,
+          16
+        ],
+        "conversion": 6.7,
+        "step_rates": [
+          100.0,
+          35.7,
+          57.6,
+          32.7
+        ]
+      },
+      "PKR": {
+        "steps": [
+          232,
+          131,
+          87,
+          57
+        ],
+        "conversion": 24.6,
+        "step_rates": [
+          100.0,
+          56.5,
+          66.4,
+          65.5
+        ]
+      },
+      "THB": {
+        "steps": [
+          225,
+          158,
+          140,
+          106
+        ],
+        "conversion": 47.1,
+        "step_rates": [
+          100.0,
+          70.2,
+          88.6,
+          75.7
+        ]
+      },
+      "AED": {
+        "steps": [
+          198,
+          118,
+          102,
+          61
+        ],
+        "conversion": 30.8,
+        "step_rates": [
+          100.0,
+          59.6,
+          86.4,
+          59.8
+        ]
+      },
+      "ZAR": {
+        "steps": [
+          178,
+          132,
+          122,
+          101
+        ],
+        "conversion": 56.7,
+        "step_rates": [
+          100.0,
+          74.2,
+          92.4,
+          82.8
+        ]
+      },
+      "ETB": {
+        "steps": [
+          166,
+          93,
+          68,
+          56
+        ],
+        "conversion": 33.7,
+        "step_rates": [
+          100.0,
+          56.0,
+          73.1,
+          82.4
+        ]
+      },
+      "COP": {
+        "steps": [
+          154,
+          71,
+          58,
+          36
+        ],
+        "conversion": 23.4,
+        "step_rates": [
+          100.0,
+          46.1,
+          81.7,
+          62.1
+        ]
+      },
+      "IDR": {
+        "steps": [
+          145,
+          107,
+          49,
+          27
+        ],
+        "conversion": 18.6,
+        "step_rates": [
+          100.0,
+          73.8,
+          45.8,
+          55.1
+        ]
+      },
+      "XOF": {
+        "steps": [
+          137,
+          55,
+          38,
+          32
+        ],
+        "conversion": 23.4,
+        "step_rates": [
+          100.0,
+          40.1,
+          69.1,
+          84.2
+        ]
+      },
+      "JMD": {
+        "steps": [
+          129,
+          78,
+          18,
+          5
+        ],
+        "conversion": 3.9,
+        "step_rates": [
+          100.0,
+          60.5,
+          23.1,
+          27.8
+        ]
+      },
+      "SAR": {
+        "steps": [
+          115,
+          71,
+          56,
+          34
+        ],
+        "conversion": 29.6,
+        "step_rates": [
+          100.0,
+          61.7,
+          78.9,
+          60.7
+        ]
+      },
+      "DOP": {
+        "steps": [
+          105,
+          45,
+          22,
+          10
+        ],
+        "conversion": 9.5,
+        "step_rates": [
+          100.0,
+          42.9,
+          48.9,
+          45.5
+        ]
+      },
+      "TRY": {
+        "steps": [
+          94,
+          56,
+          43,
+          26
+        ],
+        "conversion": 27.7,
+        "step_rates": [
+          100.0,
+          59.6,
+          76.8,
+          60.5
+        ]
+      },
+      "BDT": {
+        "steps": [
+          89,
+          28,
+          12,
+          3
+        ],
+        "conversion": 3.4,
+        "step_rates": [
+          100.0,
+          31.5,
+          42.9,
+          25.0
+        ]
+      },
+      "NAD": {
+        "steps": [
+          82,
+          62,
+          44,
+          37
+        ],
+        "conversion": 45.1,
+        "step_rates": [
+          100.0,
+          75.6,
+          71.0,
+          84.1
+        ]
+      },
+      "JPY": {
+        "steps": [
+          75,
+          49,
+          47,
+          22
+        ],
+        "conversion": 29.3,
+        "step_rates": [
+          100.0,
+          65.3,
+          95.9,
+          46.8
+        ]
+      },
+      "GHS": {
+        "steps": [
+          73,
+          32,
+          20,
+          10
+        ],
+        "conversion": 13.7,
+        "step_rates": [
+          100.0,
+          43.8,
+          62.5,
+          50.0
+        ]
+      },
+      "CNY": {
+        "steps": [
+          70,
+          20,
+          17,
+          7
+        ],
+        "conversion": 10.0,
+        "step_rates": [
+          100.0,
+          28.6,
+          85.0,
+          41.2
+        ]
+      },
+      "BRL": {
+        "steps": [
+          70,
+          10,
+          6,
+          3
+        ],
+        "conversion": 4.3,
+        "step_rates": [
+          100.0,
+          14.3,
+          60.0,
+          50.0
+        ]
+      },
+      "KES": {
+        "steps": [
+          64,
+          29,
+          23,
+          6
+        ],
+        "conversion": 9.4,
+        "step_rates": [
+          100.0,
+          45.3,
+          79.3,
+          26.1
+        ]
+      }
+    }
+  },
+  "by_payment_method": {
+    "full": {
+      "debit": {
+        "entered": 2483,
+        "completed": 2273,
+        "conv": 91.5
+      },
+      "bank_account": {
+        "entered": 2139,
+        "completed": 1594,
+        "conv": 74.5
+      },
+      "direct_debit": {
+        "entered": 953,
+        "completed": 815,
+        "conv": 85.5
+      },
+      "credit": {
+        "entered": 387,
+        "completed": 351,
+        "conv": 90.7
+      },
+      "open_banking": {
+        "entered": 223,
+        "completed": 206,
+        "conv": 92.4
+      }
+    },
+    "zero_day": {
+      "debit": {
+        "entered": 2373,
+        "completed": 2013,
+        "conv_0d": 84.8
+      },
+      "bank_account": {
+        "entered": 2014,
+        "completed": 1120,
+        "conv_0d": 55.6
+      },
+      "direct_debit": {
+        "entered": 857,
+        "completed": 56,
+        "conv_0d": 6.5
+      },
+      "credit": {
+        "entered": 366,
+        "completed": 303,
+        "conv_0d": 82.8
+      },
+      "open_banking": {
+        "entered": 145,
+        "completed": 108,
+        "conv_0d": 74.5
+      }
+    },
+    "five_day": {
+      "debit": {
+        "entered": 2421,
+        "completed": 2197,
+        "conv": 90.7
+      },
+      "bank_account": {
+        "entered": 2076,
+        "completed": 1508,
+        "conv": 72.6
+      },
+      "direct_debit": {
+        "entered": 904,
+        "completed": 501,
+        "conv": 55.4
+      },
+      "credit": {
+        "entered": 375,
+        "completed": 339,
+        "conv": 90.4
+      },
+      "open_banking": {
+        "entered": 188,
+        "completed": 166,
+        "conv": 88.3
+      }
+    }
+  },
+  "by_region": {
+    "full": {
+      "New Zealand": {
+        "steps": [
+          277,
+          217,
+          207,
+          189,
+          181
+        ],
+        "conversion": 65.3,
+        "desktop_conv": 87.4,
+        "gap": -22.1
+      },
+      "Canada": {
+        "steps": [
+          712,
+          453,
+          422,
+          355,
+          303
+        ],
+        "conversion": 42.6,
+        "desktop_conv": 69.7,
+        "gap": -27.1
+      },
+      "United States": {
+        "steps": [
+          5053,
+          2573,
+          2309,
+          1728,
+          1209
+        ],
+        "conversion": 23.9,
+        "desktop_conv": 62.0,
+        "gap": -38.1
+      },
+      "Australia": {
+        "steps": [
+          900,
+          735,
+          698,
+          652,
+          598
+        ],
+        "conversion": 66.4,
+        "desktop_conv": 85.1,
+        "gap": -18.7
+      },
+      "United Kingdom": {
+        "steps": [
+          2858,
+          2173,
+          2071,
+          1893,
+          1809
+        ],
+        "conversion": 63.3,
+        "desktop_conv": 80.8,
+        "gap": -17.5
+      },
+      "Europe (EU)": {
+        "steps": [
+          1911,
+          1121,
+          1061,
+          873,
+          794
+        ],
+        "conversion": 41.5,
+        "desktop_conv": 67.0,
+        "gap": -25.5
+      }
+    },
+    "zero_day": {
+      "New Zealand": {
+        "steps": [
+          277,
+          210,
+          196,
+          180,
+          134
+        ],
+        "conv_0d": 48.4
+      },
+      "Canada": {
+        "steps": [
+          712,
+          440,
+          403,
+          337,
+          162
+        ],
+        "conv_0d": 22.8
+      },
+      "United States": {
+        "steps": [
+          5053,
+          2419,
+          2162,
+          1590,
+          542
+        ],
+        "conv_0d": 10.7
+      },
+      "Australia": {
+        "steps": [
+          900,
+          712,
+          664,
+          615,
+          438
+        ],
+        "conv_0d": 48.7
+      },
+      "United Kingdom": {
+        "steps": [
+          2858,
+          2093,
+          1990,
+          1780,
+          1498
+        ],
+        "conv_0d": 52.4
+      },
+      "Europe (EU)": {
+        "steps": [
+          1911,
+          1056,
+          981,
+          794,
+          605
+        ],
+        "conv_0d": 31.7
+      }
+    },
+    "five_day": {
+      "United States": {
+        "entered": 5057,
+        "completed": 957,
+        "conv": 18.9
+      },
+      "United Kingdom": {
+        "entered": 2858,
+        "completed": 1733,
+        "conv": 60.6
+      },
+      "Europe (EU)": {
+        "entered": 1911,
+        "completed": 740,
+        "conv": 38.7
+      },
+      "Australia": {
+        "entered": 900,
+        "completed": 567,
+        "conv": 63.0
+      },
+      "Canada": {
+        "entered": 712,
+        "completed": 244,
+        "conv": 34.3
+      },
+      "New Zealand": {
+        "entered": 277,
+        "completed": 174,
+        "conv": 62.8
+      }
+    }
+  },
+  "insights": {
+    "overall": "39.0% of mobile web consumer users who confirm a quote complete the transaction (5d). 0-day conversion is 29.7%. Desktop converts at 70.1% \u2014 a 31.1pp gap.",
+    "us_problem": "US: only 18.5% mobile web conversion (5d). 0-day is 13.6%. Worst major corridor. ACH delays destroy mobile experience.",
+    "uk_strong": "UK: 63.3% conversion (desktop: 80.8%). Gap is -17.5pp. Best mobile web region by volume. Open Banking + debit cards = faster flows.",
+    "ngn_broken": "Nigeria: 7.1% (5d), 6.7% (0d). Only 17 of 238 complete. Catastrophically broken.",
+    "direct_debit_0d": "Direct debit 0-day conversion: 6.5% vs full window 85.5%. This payment method simply cannot convert within a day \u2014 it takes 4-5 days for ACH/DD to settle.",
+    "debit_best": "Debit cards: 91.5% full conversion, 84.8% 0-day. Best payment method on mobile web. Instant authorization = instant completion."
+  },
+  "corridor_comparison": {
+    "GBP": {
+      "mobile_web": {
+        "entered": 654,
+        "completed": 281,
+        "conv": 43.0
+      },
+      "native_app": {
+        "entered": 4176,
+        "completed": 2671,
+        "conv": 64.0
+      },
+      "desktop": {
+        "entered": 3415,
+        "completed": 2406,
+        "conv": 70.5
+      }
+    },
+    "COP": {
+      "mobile_web": {
+        "entered": 152,
+        "completed": 41,
+        "conv": 27.0
+      },
+      "native_app": {
+        "entered": 2017,
+        "completed": 1190,
+        "conv": 59.0
+      },
+      "desktop": {
+        "entered": 390,
+        "completed": 216,
+        "conv": 55.4
+      }
+    },
+    "GHS": {
+      "mobile_web": {
+        "entered": 74,
+        "completed": 10,
+        "conv": 13.5
+      },
+      "native_app": {
+        "entered": 759,
+        "completed": 222,
+        "conv": 29.2
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      }
+    },
+    "PHP": {
+      "mobile_web": {
+        "entered": 513,
+        "completed": 128,
+        "conv": 25.0
+      },
+      "native_app": {
+        "entered": 3768,
+        "completed": 2384,
+        "conv": 63.3
+      },
+      "desktop": {
+        "entered": 1074,
+        "completed": 572,
+        "conv": 53.3
+      }
+    },
+    "BRL": {
+      "mobile_web": {
+        "entered": 71,
+        "completed": 3,
+        "conv": 4.2
+      },
+      "native_app": {
+        "entered": 437,
+        "completed": 84,
+        "conv": 19.2
+      },
+      "desktop": {
+        "entered": 141,
+        "completed": 49,
+        "conv": 34.8
+      }
+    },
+    "ETB": {
+      "mobile_web": {
+        "entered": 169,
+        "completed": 62,
+        "conv": 36.7
+      },
+      "native_app": {
+        "entered": 1065,
+        "completed": 591,
+        "conv": 55.5
+      },
+      "desktop": {
+        "entered": 111,
+        "completed": 57,
+        "conv": 51.4
+      }
+    },
+    "TRY": {
+      "mobile_web": {
+        "entered": 96,
+        "completed": 30,
+        "conv": 31.3
+      },
+      "native_app": {
+        "entered": 820,
+        "completed": 567,
+        "conv": 69.1
+      },
+      "desktop": {
+        "entered": 188,
+        "completed": 106,
+        "conv": 56.4
+      }
+    },
+    "AUD": {
+      "mobile_web": {
+        "entered": 462,
+        "completed": 255,
+        "conv": 55.2
+      },
+      "native_app": {
+        "entered": 4462,
+        "completed": 2970,
+        "conv": 66.6
+      },
+      "desktop": {
+        "entered": 2713,
+        "completed": 2103,
+        "conv": 77.5
+      }
+    },
+    "MAD": {
+      "mobile_web": {
+        "entered": 268,
+        "completed": 100,
+        "conv": 37.3
+      },
+      "native_app": {
+        "entered": 5361,
+        "completed": 3724,
+        "conv": 69.5
+      },
+      "desktop": {
+        "entered": 462,
+        "completed": 257,
+        "conv": 55.6
+      }
+    },
+    "MXN": {
+      "mobile_web": {
+        "entered": 349,
+        "completed": 74,
+        "conv": 21.2
+      },
+      "native_app": {
+        "entered": 2978,
+        "completed": 1725,
+        "conv": 57.9
+      },
+      "desktop": {
+        "entered": 801,
+        "completed": 471,
+        "conv": 58.8
+      }
+    },
+    "USD": {
+      "mobile_web": {
+        "entered": 3695,
+        "completed": 593,
+        "conv": 16.0
+      },
+      "native_app": {
+        "entered": 13568,
+        "completed": 5180,
+        "conv": 38.2
+      },
+      "desktop": {
+        "entered": 8421,
+        "completed": 5173,
+        "conv": 61.4
+      }
+    },
+    "NZD": {
+      "mobile_web": {
+        "entered": 280,
+        "completed": 176,
+        "conv": 62.9
+      },
+      "native_app": {
+        "entered": 2468,
+        "completed": 2014,
+        "conv": 81.6
+      },
+      "desktop": {
+        "entered": 1533,
+        "completed": 1252,
+        "conv": 81.7
+      }
+    },
+    "SAR": {
+      "mobile_web": {
+        "entered": 123,
+        "completed": 38,
+        "conv": 30.9
+      },
+      "native_app": {
+        "entered": 868,
+        "completed": 600,
+        "conv": 69.1
+      },
+      "desktop": {
+        "entered": 114,
+        "completed": 64,
+        "conv": 56.1
+      }
+    },
+    "ZAR": {
+      "mobile_web": {
+        "entered": 175,
+        "completed": 107,
+        "conv": 61.1
+      },
+      "native_app": {
+        "entered": 2228,
+        "completed": 1822,
+        "conv": 81.8
+      },
+      "desktop": {
+        "entered": 849,
+        "completed": 638,
+        "conv": 75.1
+      }
+    },
+    "KES": {
+      "mobile_web": {
+        "entered": 74,
+        "completed": 12,
+        "conv": 16.2
+      },
+      "native_app": {
+        "entered": 669,
+        "completed": 192,
+        "conv": 28.7
+      },
+      "desktop": {
+        "entered": 221,
+        "completed": 71,
+        "conv": 32.1
+      }
+    },
+    "EUR": {
+      "mobile_web": {
+        "entered": 2140,
+        "completed": 1307,
+        "conv": 61.1
+      },
+      "native_app": {
+        "entered": 10870,
+        "completed": 7755,
+        "conv": 71.3
+      },
+      "desktop": {
+        "entered": 9851,
+        "completed": 7719,
+        "conv": 78.4
+      }
+    },
+    "CAD": {
+      "mobile_web": {
+        "entered": 420,
+        "completed": 144,
+        "conv": 34.3
+      },
+      "native_app": {
+        "entered": 3160,
+        "completed": 1788,
+        "conv": 56.6
+      },
+      "desktop": {
+        "entered": 2045,
+        "completed": 1226,
+        "conv": 60.0
+      }
+    },
+    "PKR": {
+      "mobile_web": {
+        "entered": 240,
+        "completed": 71,
+        "conv": 29.6
+      },
+      "native_app": {
+        "entered": 2313,
+        "completed": 1182,
+        "conv": 51.1
+      },
+      "desktop": {
+        "entered": 543,
+        "completed": 254,
+        "conv": 46.8
+      }
+    },
+    "JPY": {
+      "mobile_web": {
+        "entered": 79,
+        "completed": 34,
+        "conv": 43.0
+      },
+      "native_app": {
+        "entered": 424,
+        "completed": 212,
+        "conv": 50.0
+      },
+      "desktop": {
+        "entered": 359,
+        "completed": 267,
+        "conv": 74.4
+      }
+    },
+    "XOF": {
+      "mobile_web": {
+        "entered": 147,
+        "completed": 35,
+        "conv": 23.8
+      },
+      "native_app": {
+        "entered": 2002,
+        "completed": 976,
+        "conv": 48.8
+      },
+      "desktop": {
+        "entered": 257,
+        "completed": 119,
+        "conv": 46.3
+      }
+    },
+    "CNY": {
+      "mobile_web": {
+        "entered": 69,
+        "completed": 7,
+        "conv": 10.1
+      },
+      "native_app": {
+        "entered": 203,
+        "completed": 81,
+        "conv": 39.9
+      },
+      "desktop": {
+        "entered": 203,
+        "completed": 81,
+        "conv": 39.9
+      }
+    },
+    "THB": {
+      "mobile_web": {
+        "entered": 220,
+        "completed": 111,
+        "conv": 50.5
+      },
+      "native_app": {
+        "entered": 3090,
+        "completed": 2348,
+        "conv": 76.0
+      },
+      "desktop": {
+        "entered": 771,
+        "completed": 556,
+        "conv": 72.1
+      }
+    },
+    "NGN": {
+      "mobile_web": {
+        "entered": 263,
+        "completed": 16,
+        "conv": 6.1
+      },
+      "native_app": {
+        "entered": 1525,
+        "completed": 297,
+        "conv": 19.5
+      },
+      "desktop": {
+        "entered": 151,
+        "completed": 43,
+        "conv": 28.5
+      }
+    },
+    "DOP": {
+      "mobile_web": {
+        "entered": 115,
+        "completed": 10,
+        "conv": 8.7
+      },
+      "native_app": {
+        "entered": 907,
+        "completed": 208,
+        "conv": 22.9
+      },
+      "desktop": {
+        "entered": 136,
+        "completed": 32,
+        "conv": 23.5
+      }
+    },
+    "AED": {
+      "mobile_web": {
+        "entered": 209,
+        "completed": 76,
+        "conv": 36.4
+      },
+      "native_app": {
+        "entered": 1853,
+        "completed": 1230,
+        "conv": 66.4
+      },
+      "desktop": {
+        "entered": 572,
+        "completed": 352,
+        "conv": 61.5
+      }
+    },
+    "BDT": {
+      "mobile_web": {
+        "entered": 92,
+        "completed": 3,
+        "conv": 3.3
+      },
+      "native_app": {
+        "entered": 622,
+        "completed": 216,
+        "conv": 34.7
+      },
+      "desktop": {
+        "entered": 169,
+        "completed": 53,
+        "conv": 31.4
+      }
+    },
+    "NAD": {
+      "mobile_web": {
+        "entered": 76,
+        "completed": 32,
+        "conv": 42.1
+      },
+      "native_app": {
+        "entered": 2191,
+        "completed": 1891,
+        "conv": 86.3
+      },
+      "desktop": {
+        "entered": 138,
+        "completed": 99,
+        "conv": 71.7
+      }
+    },
+    "JMD": {
+      "mobile_web": {
+        "entered": 134,
+        "completed": 11,
+        "conv": 8.2
+      },
+      "native_app": {
+        "entered": 452,
+        "completed": 80,
+        "conv": 17.7
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      }
+    },
+    "IDR": {
+      "mobile_web": {
+        "entered": 149,
+        "completed": 33,
+        "conv": 22.1
+      },
+      "native_app": {
+        "entered": 1103,
+        "completed": 626,
+        "conv": 56.8
+      },
+      "desktop": {
+        "entered": 324,
+        "completed": 155,
+        "conv": 47.8
+      }
+    },
+    "INR": {
+      "mobile_web": {
+        "entered": 1648,
+        "completed": 740,
+        "conv": 44.9
+      },
+      "native_app": {
+        "entered": 34557,
+        "completed": 25231,
+        "conv": 73.0
+      },
+      "desktop": {
+        "entered": 7334,
+        "completed": 4373,
+        "conv": 59.6
+      }
+    }
+  },
+  "payment_method_summary": {
+    "note": "Payment Method Selected removed from main funnel. Main drop-offs: Quote Confirmed \u2192 Txn Summary Confirmed, and Txn Created \u2192 Txn Completed.",
+    "did_not_reach_txn_created": {
+      "mobile_web": {
+        "total_summary_confirmed": 9143,
+        "did_not_reach": 1518,
+        "drop_pct": 16.6
+      },
+      "native_app": {
+        "total_summary_confirmed": 95187,
+        "did_not_reach": 7601,
+        "drop_pct": 8.0
+      },
+      "desktop": {
+        "total_summary_confirmed": 40419,
+        "did_not_reach": 2328,
+        "drop_pct": 5.8
+      }
+    }
+  },
+  "plaid_funnel": {
+    "note": "Plaid = connecting US bank account via Bank Verification. Bank Transfer = ACH settlement (Transaction Created \u2192 Completed, typically 3-5 days).",
+    "plaid_connection": {
+      "title": "Plaid Connection (Bank Verification Started \u2192 Completed)",
+      "description": "User connects their bank account through Plaid OAuth flow",
+      "platforms": {
+        "Web (all)": {
+          "started": 5987,
+          "completed": 3478,
+          "conv": 58.1
+        },
+        "iOS App": {
+          "started": 4956,
+          "completed": 3180,
+          "conv": 64.2
+        },
+        "Android App": {
+          "started": 2581,
+          "completed": 1182,
+          "conv": 45.8
+        }
+      },
+      "key_finding": "Web 58.1% vs iOS 64.2% vs Android 45.8%. Android loses 54% of users during Plaid bank connection \u2014 the OAuth redirect flow breaks on many Android browsers."
+    },
+    "bank_transfer_completion": {
+      "title": "Bank Transfer Completion (Txn Created \u2192 Completed, 5-day window)",
+      "description": "After transaction is created with bank_account payment method, does ACH settle within 5 days?",
+      "platforms": {
+        "Web (all)": {
+          "created": 26112,
+          "completed": 23881,
+          "conv": 91.5
+        },
+        "iOS App": {
+          "created": 15520,
+          "completed": 13894,
+          "conv": 89.5
+        },
+        "Android App": {
+          "created": 8970,
+          "completed": 7889,
+          "conv": 87.9
+        }
+      },
+      "key_finding": "Once the transaction is created, 88-92% complete within 5 days across all platforms. Web actually has the best rate (91.5%). The problem is getting TO transaction creation, not after."
+    }
+  },
+  "corridor_pairs": {
+    "GBP\u2192SAR": {
+      "mobile_web": {
+        "entered": 56,
+        "completed": 22,
+        "conv": 39.3
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 56,
+      "revenue_usd": 30953
+    },
+    "USD\u2192AED": {
+      "mobile_web": {
+        "entered": 56,
+        "completed": 12,
+        "conv": 21.4
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 56,
+      "revenue_usd": 182833
+    },
+    "GBP\u2192PKR": {
+      "mobile_web": {
+        "entered": 77,
+        "completed": 35,
+        "conv": 45.5
+      },
+      "native_app": {
+        "entered": 918,
+        "completed": 588,
+        "conv": 64.1
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 995,
+      "revenue_usd": 40036
+    },
+    "USD\u2192GBP": {
+      "mobile_web": {
+        "entered": 207,
+        "completed": 71,
+        "conv": 34.3
+      },
+      "native_app": {
+        "entered": 1444,
+        "completed": 820,
+        "conv": 56.8
+      },
+      "desktop": {
+        "entered": 1332,
+        "completed": 900,
+        "conv": 67.6
+      },
+      "total_volume": 2983,
+      "revenue_usd": 2567504
+    },
+    "EUR\u2192USD": {
+      "mobile_web": {
+        "entered": 286,
+        "completed": 56,
+        "conv": 19.6
+      },
+      "native_app": {
+        "entered": 2070,
+        "completed": 968,
+        "conv": 46.8
+      },
+      "desktop": {
+        "entered": 838,
+        "completed": 471,
+        "conv": 56.2
+      },
+      "total_volume": 3194,
+      "revenue_usd": 863116
+    },
+    "GBP\u2192EUR": {
+      "mobile_web": {
+        "entered": 1431,
+        "completed": 1098,
+        "conv": 76.7
+      },
+      "native_app": {
+        "entered": 6507,
+        "completed": 5609,
+        "conv": 86.2
+      },
+      "desktop": {
+        "entered": 6015,
+        "completed": 5157,
+        "conv": 85.7
+      },
+      "total_volume": 13953,
+      "revenue_usd": 4256664
+    },
+    "GBP\u2192AUD": {
+      "mobile_web": {
+        "entered": 209,
+        "completed": 141,
+        "conv": 67.5
+      },
+      "native_app": {
+        "entered": 1772,
+        "completed": 1501,
+        "conv": 84.7
+      },
+      "desktop": {
+        "entered": 1146,
+        "completed": 954,
+        "conv": 83.2
+      },
+      "total_volume": 3127,
+      "revenue_usd": 1039396
+    },
+    "CAD\u2192INR": {
+      "mobile_web": {
+        "entered": 107,
+        "completed": 30,
+        "conv": 28.0
+      },
+      "native_app": {
+        "entered": 1226,
+        "completed": 638,
+        "conv": 52.0
+      },
+      "desktop": {
+        "entered": 313,
+        "completed": 175,
+        "conv": 55.9
+      },
+      "total_volume": 1646,
+      "revenue_usd": 69329
+    },
+    "USD\u2192COP": {
+      "mobile_web": {
+        "entered": 83,
+        "completed": 18,
+        "conv": 21.7
+      },
+      "native_app": {
+        "entered": 1011,
+        "completed": 553,
+        "conv": 54.7
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 1094,
+      "revenue_usd": 63353
+    },
+    "AUD\u2192THB": {
+      "mobile_web": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "native_app": {
+        "entered": 723,
+        "completed": 608,
+        "conv": 84.1
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 723,
+      "revenue_usd": 99492
+    },
+    "USD\u2192PHP": {
+      "mobile_web": {
+        "entered": 269,
+        "completed": 52,
+        "conv": 19.3
+      },
+      "native_app": {
+        "entered": 1524,
+        "completed": 801,
+        "conv": 52.6
+      },
+      "desktop": {
+        "entered": 408,
+        "completed": 186,
+        "conv": 45.6
+      },
+      "total_volume": 2201,
+      "revenue_usd": 189599
+    },
+    "AUD\u2192USD": {
+      "mobile_web": {
+        "entered": 151,
+        "completed": 73,
+        "conv": 48.3
+      },
+      "native_app": {
+        "entered": 1060,
+        "completed": 683,
+        "conv": 64.4
+      },
+      "desktop": {
+        "entered": 1575,
+        "completed": 1342,
+        "conv": 85.2
+      },
+      "total_volume": 2786,
+      "revenue_usd": 2232009
+    },
+    "USD\u2192IDR": {
+      "mobile_web": {
+        "entered": 89,
+        "completed": 7,
+        "conv": 7.9
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 89,
+      "revenue_usd": 16840
+    },
+    "GBP\u2192AED": {
+      "mobile_web": {
+        "entered": 66,
+        "completed": 27,
+        "conv": 40.9
+      },
+      "native_app": {
+        "entered": 686,
+        "completed": 546,
+        "conv": 79.6
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 752,
+      "revenue_usd": 205271
+    },
+    "AUD\u2192GBP": {
+      "mobile_web": {
+        "entered": 108,
+        "completed": 71,
+        "conv": 65.7
+      },
+      "native_app": {
+        "entered": 915,
+        "completed": 749,
+        "conv": 81.9
+      },
+      "desktop": {
+        "entered": 617,
+        "completed": 521,
+        "conv": 84.4
+      },
+      "total_volume": 1640,
+      "revenue_usd": 497716
+    },
+    "USD\u2192INR": {
+      "mobile_web": {
+        "entered": 773,
+        "completed": 293,
+        "conv": 37.9
+      },
+      "native_app": {
+        "entered": 13691,
+        "completed": 8262,
+        "conv": 60.3
+      },
+      "desktop": {
+        "entered": 3828,
+        "completed": 2005,
+        "conv": 52.4
+      },
+      "total_volume": 18292,
+      "revenue_usd": 1010745
+    },
+    "USD\u2192AUD": {
+      "mobile_web": {
+        "entered": 101,
+        "completed": 31,
+        "conv": 30.7
+      },
+      "native_app": {
+        "entered": 1097,
+        "completed": 383,
+        "conv": 34.9
+      },
+      "desktop": {
+        "entered": 527,
+        "completed": 340,
+        "conv": 64.5
+      },
+      "total_volume": 1725,
+      "revenue_usd": 836509
+    },
+    "CAD\u2192USD": {
+      "mobile_web": {
+        "entered": 236,
+        "completed": 77,
+        "conv": 32.6
+      },
+      "native_app": {
+        "entered": 1719,
+        "completed": 844,
+        "conv": 49.1
+      },
+      "desktop": {
+        "entered": 1289,
+        "completed": 700,
+        "conv": 54.3
+      },
+      "total_volume": 3244,
+      "revenue_usd": 1049301
+    },
+    "USD\u2192DOP": {
+      "mobile_web": {
+        "entered": 95,
+        "completed": 6,
+        "conv": 6.3
+      },
+      "native_app": {
+        "entered": 680,
+        "completed": 90,
+        "conv": 13.2
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 775,
+      "revenue_usd": 5387
+    },
+    "GBP\u2192NZD": {
+      "mobile_web": {
+        "entered": 86,
+        "completed": 57,
+        "conv": 66.3
+      },
+      "native_app": {
+        "entered": 704,
+        "completed": 620,
+        "conv": 88.1
+      },
+      "desktop": {
+        "entered": 509,
+        "completed": 436,
+        "conv": 85.7
+      },
+      "total_volume": 1299,
+      "revenue_usd": 475120
+    },
+    "EUR\u2192MAD": {
+      "mobile_web": {
+        "entered": 170,
+        "completed": 54,
+        "conv": 31.8
+      },
+      "native_app": {
+        "entered": 3286,
+        "completed": 2255,
+        "conv": 68.6
+      },
+      "desktop": {
+        "entered": 276,
+        "completed": 152,
+        "conv": 55.1
+      },
+      "total_volume": 3732,
+      "revenue_usd": 205016
+    },
+    "NZD\u2192USD": {
+      "mobile_web": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 602,
+        "completed": 515,
+        "conv": 85.5
+      },
+      "total_volume": 602,
+      "revenue_usd": 670391
+    },
+    "GBP\u2192NAD": {
+      "mobile_web": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "native_app": {
+        "entered": 1409,
+        "completed": 1252,
+        "conv": 88.9
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 1409,
+      "revenue_usd": 65871
+    },
+    "GBP\u2192CAD": {
+      "mobile_web": {
+        "entered": 71,
+        "completed": 46,
+        "conv": 64.8
+      },
+      "native_app": {
+        "entered": 727,
+        "completed": 614,
+        "conv": 84.5
+      },
+      "desktop": {
+        "entered": 468,
+        "completed": 388,
+        "conv": 82.9
+      },
+      "total_volume": 1266,
+      "revenue_usd": 303641
+    },
+    "USD\u2192MXN": {
+      "mobile_web": {
+        "entered": 310,
+        "completed": 57,
+        "conv": 18.4
+      },
+      "native_app": {
+        "entered": 2311,
+        "completed": 1272,
+        "conv": 55.0
+      },
+      "desktop": {
+        "entered": 528,
+        "completed": 303,
+        "conv": 57.4
+      },
+      "total_volume": 3149,
+      "revenue_usd": 505062
+    },
+    "EUR\u2192INR": {
+      "mobile_web": {
+        "entered": 303,
+        "completed": 132,
+        "conv": 43.6
+      },
+      "native_app": {
+        "entered": 10883,
+        "completed": 9325,
+        "conv": 85.7
+      },
+      "desktop": {
+        "entered": 1508,
+        "completed": 882,
+        "conv": 58.5
+      },
+      "total_volume": 12694,
+      "revenue_usd": 517564
+    },
+    "NZD\u2192AUD": {
+      "mobile_web": {
+        "entered": 92,
+        "completed": 60,
+        "conv": 65.2
+      },
+      "native_app": {
+        "entered": 938,
+        "completed": 760,
+        "conv": 81.0
+      },
+      "desktop": {
+        "entered": 744,
+        "completed": 635,
+        "conv": 85.3
+      },
+      "total_volume": 1774,
+      "revenue_usd": 770659
+    },
+    "USD\u2192CAD": {
+      "mobile_web": {
+        "entered": 195,
+        "completed": 58,
+        "conv": 29.7
+      },
+      "native_app": {
+        "entered": 1480,
+        "completed": 687,
+        "conv": 46.4
+      },
+      "desktop": {
+        "entered": 1083,
+        "completed": 569,
+        "conv": 52.5
+      },
+      "total_volume": 2758,
+      "revenue_usd": 1242291
+    },
+    "AUD\u2192EUR": {
+      "mobile_web": {
+        "entered": 85,
+        "completed": 46,
+        "conv": 54.1
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 756,
+        "completed": 636,
+        "conv": 84.1
+      },
+      "total_volume": 841,
+      "revenue_usd": 722544
+    },
+    "GBP\u2192PHP": {
+      "mobile_web": {
+        "entered": 122,
+        "completed": 38,
+        "conv": 31.1
+      },
+      "native_app": {
+        "entered": 743,
+        "completed": 553,
+        "conv": 74.4
+      },
+      "desktop": {
+        "entered": 274,
+        "completed": 103,
+        "conv": 37.6
+      },
+      "total_volume": 1139,
+      "revenue_usd": 48171
+    },
+    "NZD\u2192INR": {
+      "mobile_web": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "native_app": {
+        "entered": 1396,
+        "completed": 1147,
+        "conv": 82.2
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 1396,
+      "revenue_usd": 58658
+    },
+    "CAD\u2192CAD": {
+      "mobile_web": {
+        "entered": 80,
+        "completed": 12,
+        "conv": 15.0
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 80,
+      "revenue_usd": null
+    },
+    "EUR\u2192ETB": {
+      "mobile_web": {
+        "entered": 78,
+        "completed": 32,
+        "conv": 41.0
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 78,
+      "revenue_usd": null
+    },
+    "USD\u2192THB": {
+      "mobile_web": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "native_app": {
+        "entered": 661,
+        "completed": 379,
+        "conv": 57.3
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 661,
+      "revenue_usd": 93089
+    },
+    "USD\u2192USD": {
+      "mobile_web": {
+        "entered": 2618,
+        "completed": 160,
+        "conv": 6.1
+      },
+      "native_app": {
+        "entered": 6017,
+        "completed": 628,
+        "conv": 10.4
+      },
+      "desktop": {
+        "entered": 1914,
+        "completed": 358,
+        "conv": 18.7
+      },
+      "total_volume": 10549,
+      "revenue_usd": null
+    },
+    "USD\u2192EUR": {
+      "mobile_web": {
+        "entered": 469,
+        "completed": 120,
+        "conv": 25.6
+      },
+      "native_app": {
+        "entered": 2711,
+        "completed": 1210,
+        "conv": 44.6
+      },
+      "desktop": {
+        "entered": 2254,
+        "completed": 1403,
+        "conv": 62.2
+      },
+      "total_volume": 5434,
+      "revenue_usd": 3333296
+    },
+    "AUD\u2192NZD": {
+      "mobile_web": {
+        "entered": 125,
+        "completed": 99,
+        "conv": 79.2
+      },
+      "native_app": {
+        "entered": 1336,
+        "completed": 1171,
+        "conv": 87.6
+      },
+      "desktop": {
+        "entered": 694,
+        "completed": 613,
+        "conv": 88.3
+      },
+      "total_volume": 2155,
+      "revenue_usd": 842005
+    },
+    "USD\u2192PKR": {
+      "mobile_web": {
+        "entered": 92,
+        "completed": 17,
+        "conv": 18.5
+      },
+      "native_app": {
+        "entered": 668,
+        "completed": 209,
+        "conv": 31.3
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 760,
+      "revenue_usd": 21001
+    },
+    "CAD\u2192MAD": {
+      "mobile_web": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "native_app": {
+        "entered": 875,
+        "completed": 586,
+        "conv": 67.0
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 875,
+      "revenue_usd": 31917
+    },
+    "EUR\u2192GBP": {
+      "mobile_web": {
+        "entered": 233,
+        "completed": 94,
+        "conv": 40.3
+      },
+      "native_app": {
+        "entered": 1046,
+        "completed": 668,
+        "conv": 63.9
+      },
+      "desktop": {
+        "entered": 930,
+        "completed": 628,
+        "conv": 67.5
+      },
+      "total_volume": 2209,
+      "revenue_usd": 1525725
+    },
+    "USD\u2192NGN": {
+      "mobile_web": {
+        "entered": 154,
+        "completed": 8,
+        "conv": 5.2
+      },
+      "native_app": {
+        "entered": 858,
+        "completed": 98,
+        "conv": 11.4
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 1012,
+      "revenue_usd": 7580
+    },
+    "CAD\u2192EUR": {
+      "mobile_web": {
+        "entered": 64,
+        "completed": 24,
+        "conv": 37.5
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 463,
+        "completed": 282,
+        "conv": 60.9
+      },
+      "total_volume": 527,
+      "revenue_usd": 286589
+    },
+    "GBP\u2192USD": {
+      "mobile_web": {
+        "entered": 366,
+        "completed": 215,
+        "conv": 58.7
+      },
+      "native_app": {
+        "entered": 2490,
+        "completed": 1857,
+        "conv": 74.6
+      },
+      "desktop": {
+        "entered": 2210,
+        "completed": 1796,
+        "conv": 81.3
+      },
+      "total_volume": 5066,
+      "revenue_usd": 2643318
+    },
+    "GBP\u2192THB": {
+      "mobile_web": {
+        "entered": 67,
+        "completed": 42,
+        "conv": 62.7
+      },
+      "native_app": {
+        "entered": 905,
+        "completed": 782,
+        "conv": 86.4
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 972,
+      "revenue_usd": 136689
+    },
+    "GBP\u2192ZAR": {
+      "mobile_web": {
+        "entered": 96,
+        "completed": 70,
+        "conv": 72.9
+      },
+      "native_app": {
+        "entered": 1094,
+        "completed": 955,
+        "conv": 87.3
+      },
+      "desktop": {
+        "entered": 357,
+        "completed": 288,
+        "conv": 80.7
+      },
+      "total_volume": 1547,
+      "revenue_usd": 150009
+    },
+    "USD\u2192JMD": {
+      "mobile_web": {
+        "entered": 117,
+        "completed": 5,
+        "conv": 4.3
+      },
+      "native_app": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 117,
+      "revenue_usd": 32644
+    },
+    "GBP\u2192INR": {
+      "mobile_web": {
+        "entered": 271,
+        "completed": 146,
+        "conv": 53.9
+      },
+      "native_app": {
+        "entered": 4234,
+        "completed": 3340,
+        "conv": 78.9
+      },
+      "desktop": {
+        "entered": 781,
+        "completed": 568,
+        "conv": 72.7
+      },
+      "total_volume": 5286,
+      "revenue_usd": 182925
+    },
+    "AUD\u2192INR": {
+      "mobile_web": {
+        "entered": 161,
+        "completed": 112,
+        "conv": 69.6
+      },
+      "native_app": {
+        "entered": 3221,
+        "completed": 2572,
+        "conv": 79.9
+      },
+      "desktop": {
+        "entered": 732,
+        "completed": 601,
+        "conv": 82.1
+      },
+      "total_volume": 4114,
+      "revenue_usd": 207605
+    },
+    "GBP\u2192MAD": {
+      "mobile_web": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "native_app": {
+        "entered": 746,
+        "completed": 614,
+        "conv": 82.3
+      },
+      "desktop": {
+        "entered": 0,
+        "completed": 0,
+        "conv": 0
+      },
+      "total_volume": 746,
+      "revenue_usd": 33975
+    }
+  },
+  "issues": [
+    {
+      "id": "MW-001",
+      "severity": "critical",
+      "category": "funnel-gap",
+      "title": "Quote Confirmed -> Payment Method Selection: 20.7pp gap",
+      "description": "2,093 mobile web users/month confirm a quote but never select a payment method. Root cause: recipient creation (38.6% vs 56.5% desktop) and KYC prompts between these steps.",
+      "data": {
+        "mwRate": "61.7%",
+        "desktopRate": "82.2%",
+        "gap": "-20.5pp",
+        "usersLost": 2089
+      },
+      "impact": "~1,000 lost transactions/month",
+      "codeRef": "galileo-site/src/views/SendMoney/, Recipients.vue",
+      "recommendation": "Break recipient creation into mobile-optimized steps. Pre-fill where possible. Add progress indicator."
+    },
+    {
+      "id": "MW-002",
+      "severity": "critical",
+      "category": "funnel-gap",
+      "title": "Txn Summary -> Transaction Created: 12.3pp gap",
+      "description": "552 users confirm summary but transaction never creates. 3DS redirect failures, open banking redirect issues, and session timeouts on mobile.",
+      "data": {
+        "mwRate": "82.3%",
+        "desktopRate": "94.5%",
+        "gap": "-12.2pp",
+        "usersLost": 554
+      },
+      "impact": "~400 lost transactions/month",
+      "codeRef": "galileo-site/src/views/SendMoney/SendMoneyPayment.vue",
+      "recommendation": "Investigate 3DS redirect failures on Safari/Chrome. Add mobile-specific error handling for redirect flows."
+    },
+    {
+      "id": "MW-003",
+      "severity": "critical",
+      "category": "funnel-gap",
+      "title": "Recipient Creation: 17.9pp gap (38.6% vs 56.5%)",
+      "description": "2,229 users start creating a recipient but fail. Bank details forms with IBAN, routing numbers, country-specific formats are painful on mobile.",
+      "data": {
+        "mwRate": "38.8%",
+        "desktopRate": "56.2%",
+        "gap": "-17.4pp"
+      },
+      "impact": "~1,100 users blocked from transacting",
+      "codeRef": "galileo-site/src/views/Recipients.vue",
+      "recommendation": "IBAN scanner, auto-detect routing format by country, break multi-field forms into single-input steps."
+    },
+    {
+      "id": "MW-004",
+      "severity": "critical",
+      "category": "error-recovery",
+      "title": "Error Recovery: 12.5% vs 41.3% desktop (-28.8pp)",
+      "description": "When payment fails on mobile web, only 12.5% retry vs 41.3% on desktop. Error recovery CTA is below the fold.",
+      "data": {
+        "mwRecovery": "12.5%",
+        "desktopRecovery": "41.3%",
+        "gap": "-28.8pp"
+      },
+      "impact": "~500 recoverable transactions lost/month",
+      "codeRef": "galileo-site/src/views/SendMoney/SendMoneyPayment.vue",
+      "recommendation": "Make error recovery CTA sticky at bottom. Show \"Try Again\" ABOVE error details."
+    },
+    {
+      "id": "MW-005",
+      "severity": "high",
+      "category": "funnel-gap",
+      "title": "Biometric Verification (KYC): 15.2pp gap (63.1% vs 78.3%)",
+      "description": "138 mobile web users start KYC but never submit. Veriff/Onfido document capture performs worse in mobile browsers.",
+      "data": {
+        "mwRate": "63.1%",
+        "desktopRate": "78.3%",
+        "gap": "-15.2pp"
+      },
+      "impact": "~138 users blocked from first transaction/month",
+      "recommendation": "Deep-link to native app for KYC. Use Veriff mobile SDK. Add \"Continue on desktop\" QR code option."
+    },
+    {
+      "id": "MW-006",
+      "severity": "high",
+      "category": "funnel-gap",
+      "title": "Login Page Bounce: 14.8pp gap (47.5% vs 62.3%)",
+      "description": "19,253 mobile users see login page but never attempt login. Over half bounce immediately.",
+      "data": {
+        "mwAccessed": 36672,
+        "mwStarted": 17419,
+        "desktopRate": "62.3%"
+      },
+      "impact": "~19,253 abandoned sessions/month",
+      "codeRef": "galileo-site/src/views/Login.vue",
+      "recommendation": "Check mobile load time, autofill support, social login prominence. Consider passkeys/WebAuthn."
+    },
+    {
+      "id": "MW-007",
+      "severity": "high",
+      "category": "error-rate",
+      "title": "Login Failure Rate: 30.3% vs 22.7% desktop (+7.6pp)",
+      "description": "11,117 unique mobile users fail login/month. Mobile keyboards increase typo rates.",
+      "data": {
+        "mwFailed": 11117,
+        "desktopFailed": 15418,
+        "mwRate": "30.3%",
+        "desktopRate": "22.7%"
+      },
+      "impact": "11,117 failed logins/month on mobile web",
+      "recommendation": "Password visibility toggle. Proper autocomplete attributes. Inline errors. Prominent \"Forgot Password\"."
+    },
+    {
+      "id": "MW-008",
+      "severity": "high",
+      "category": "payment-failure",
+      "title": "3DS Card Auth Failures on Mobile",
+      "description": "Card payment funnel: 26.1% MW vs 30.3% desktop. 3DS popup/redirect flows fail more on Safari and Chrome mobile.",
+      "data": {
+        "mwConversion": "26.0%",
+        "desktopConversion": "30.0%",
+        "gap": "-4.0pp"
+      },
+      "impact": "~200 lost card transactions/month",
+      "codeRef": "galileo-site/src/views/SendMoney/SendMoneyPayment.vue",
+      "recommendation": "Implement 3DS2 inline challenge instead of popup/redirect."
+    },
+    {
+      "id": "MW-009",
+      "severity": "high",
+      "category": "geo-specific",
+      "title": "US Market: Worst Mobile Web Conversion (24.8%)",
+      "description": "US converts at 24.8% on mobile web. Plaid bank linking adds friction. Complex recipient forms for intl transfers.",
+      "data": {
+        "mwUsers": 2869,
+        "mwConversion": "24.8%",
+        "transactions": 712
+      },
+      "impact": "US is the largest sender market",
+      "codeRef": "galileo-site/src/views/PlaidOauth.vue",
+      "recommendation": "Optimize Plaid for mobile browsers. Simplify US recipient forms."
+    },
+    {
+      "id": "MW-010",
+      "severity": "high",
+      "category": "funnel-gap",
+      "title": "Quote Created -> Quote Confirmed: 8.9pp gap",
+      "description": "2,439 users see a quote but dont confirm. Rate/fee comparison harder on small screens.",
+      "data": {
+        "mwRate": "69.0%",
+        "desktopRate": "77.9%",
+        "gap": "-8.9pp"
+      },
+      "impact": "~700 users with intent lost at quote stage",
+      "recommendation": "Card layout instead of table for quote comparison. Highlight cheapest/fastest. inputmode=decimal for amounts."
+    },
+    {
+      "id": "MW-011",
+      "severity": "medium",
+      "category": "geo-specific",
+      "title": "Nigeria: 8.1% Mobile Web Conversion",
+      "description": "Only 9 transactions from 111 users. KYC + limited payment options = near-impossible mobile journey.",
+      "data": {
+        "mwUsers": 111,
+        "mwConversion": "8.1%",
+        "transactions": 9
+      }
+    },
+    {
+      "id": "MW-012",
+      "severity": "medium",
+      "category": "geo-specific",
+      "title": "Germany: 20.5% Mobile Web Conversion",
+      "description": "SEPA payment flows + stricter KYC create friction on mobile.",
+      "data": {
+        "mwUsers": 302,
+        "mwConversion": "20.5%",
+        "transactions": 62
+      }
+    },
+    {
+      "id": "MW-013",
+      "severity": "medium",
+      "category": "tracking",
+      "title": "Consent Gate: MW Tracking Blind Spot",
+      "description": "Web tracks ZERO events until cookie consent. Larger banner on mobile may cause higher reject rate, understating MW conversion."
+    },
+    {
+      "id": "MW-014",
+      "severity": "medium",
+      "category": "tracking",
+      "title": "Card Auth Failed: Error Property Always Empty",
+      "description": "All 243 Card Authorisation Failed events on MW have empty error property. Cannot diagnose WHY card auth fails.",
+      "data": {
+        "mwEvents": 243
+      },
+      "codeRef": "galileo-site/src/views/SendMoney/SendMoneyPayment.vue",
+      "recommendation": "Fix error property population. Capture 3DS error code, issuer decline reason, timeout flag."
+    },
+    {
+      "id": "MW-015",
+      "severity": "medium",
+      "category": "tracking",
+      "title": "Login Completed: Tracking Bug (119 completions from 17K attempts)",
+      "description": "Login Completed shows 119 on MW and 820 on desktop \u2014 clearly wrong. Event may be gated behind a redirect that drops it on mobile.",
+      "data": {
+        "mwCompleted": 119,
+        "desktopCompleted": 820
+      },
+      "recommendation": "Audit Login Completed firing conditions. Check redirect/callback paths."
+    },
+    {
+      "id": "MW-016",
+      "severity": "medium",
+      "category": "tracking",
+      "title": "Registration: 0% Completion (Both Platforms)",
+      "description": "343 MW starts, 0 completions. Account Creation Complete event not firing. Only 2% reach Country Selection.",
+      "data": {
+        "mwStarted": 343,
+        "mwCompleted": 0
+      },
+      "recommendation": "Verify event name in code. Check if renamed or using different completion event."
+    },
+    {
+      "id": "MW-017",
+      "severity": "medium",
+      "category": "funnel-gap",
+      "title": "2,126 Users Stuck Between Quote and Payment",
+      "description": "39.2% of users who confirmed a quote never reach payment method selection. Stuck in recipient creation, KYC, or navigation.",
+      "data": {
+        "usersStuck": 2126,
+        "percentOfQuoteConfirmed": "39.2%"
+      }
+    },
+    {
+      "id": "MW-018",
+      "severity": "low",
+      "category": "adoption",
+      "title": "Open Banking: Low Mobile Web Adoption",
+      "description": "Only 546 MW users start open banking vs 2,432 desktop. Users may not trust bank redirect on phone.",
+      "data": {
+        "mwStarted": 546,
+        "desktopStarted": 2432
+      }
+    },
+    {
+      "id": "MW-019",
+      "severity": "low",
+      "category": "geo-specific",
+      "title": "EU Markets Underperform: Spain 22.7%, Netherlands 17.6%, Italy 21.1%",
+      "description": "EU sender countries consistently underperform on mobile web. SEPA/bank transfer flows may not be mobile-optimized."
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": 1,
+      "action": "Fix Quote Confirmed -> Payment Method gap: mobile-optimize recipient creation + KYC",
+      "impact": "+1,000 txns/mo (~$200K+)",
+      "effort": "High (3-4 sprints)",
+      "team": "Product + Engineering"
+    },
+    {
+      "priority": 2,
+      "action": "Sticky error recovery CTA on mobile error screens",
+      "impact": "+500 recovered txns/mo (~$100K)",
+      "effort": "Low (< 1 sprint)",
+      "team": "Product"
+    },
+    {
+      "priority": 3,
+      "action": "Fix 3DS redirect/popup for mobile browsers (inline 3DS2)",
+      "impact": "+600 txns/mo at final step + card payments",
+      "effort": "Medium (2-3 sprints)",
+      "team": "Payments"
+    },
+    {
+      "priority": 4,
+      "action": "Mobile-optimize recipient bank detail forms",
+      "impact": "+1,100 recipient completions/mo",
+      "effort": "Medium (2 sprints)",
+      "team": "Product + Engineering"
+    },
+    {
+      "priority": 5,
+      "action": "Fix login page mobile UX (autofill, passkeys, social login)",
+      "impact": "Unlock 19K+ bouncing users/mo",
+      "effort": "Medium (1-2 sprints)",
+      "team": "Identity"
+    },
+    {
+      "priority": 6,
+      "action": "Improve biometric verification mobile experience",
+      "impact": "+138 KYC completions/mo",
+      "effort": "Medium (2 sprints)",
+      "team": "Identity + Compliance"
+    },
+    {
+      "priority": 7,
+      "action": "Fix tracking: Card Auth error prop, Login Completed, Registration completion",
+      "impact": "Enables diagnosis",
+      "effort": "Low (1 sprint)",
+      "team": "Analytics"
+    },
+    {
+      "priority": 8,
+      "action": "US market: Plaid mobile browser + simplified recipient forms",
+      "impact": "Improve US from 24.8%",
+      "effort": "Medium (2 sprints)",
+      "team": "Payments + Product"
+    }
+  ],
+  "consumer_filter": "Transaction Created: accountType is not Corporate",
+  "by_corridor_consumer": {
+    "USD": {
+      "entered": 6064,
+      "completed": 2937,
+      "conversion": 16.1
+    },
+    "GBP": {
+      "entered": 3358,
+      "completed": 2525,
+      "conversion": 61.0
+    },
+    "EUR": {
+      "entered": 1914,
+      "completed": 912,
+      "conversion": 28.2
+    },
+    "AUD": {
+      "entered": 900,
+      "completed": 708,
+      "conversion": 52.9
+    },
+    "CAD": {
+      "entered": 822,
+      "completed": 523,
+      "conversion": 28.3
+    },
+    "NZD": {
+      "entered": 234,
+      "completed": 183,
+      "conversion": 55.1
+    },
+    "SEK": {
+      "entered": 80,
+      "completed": 41,
+      "conversion": 15.0
+    },
+    "AED": {
+      "entered": 34,
+      "completed": 23,
+      "conversion": 26.5
+    },
+    "NOK": {
+      "entered": 30,
+      "completed": 12,
+      "conversion": 16.7
+    },
+    "CHF": {
+      "entered": 26,
+      "completed": 15,
+      "conversion": 23.1
+    }
+  },
+  "by_corridor_consumer_note": "Consumer only (accountType != Corporate). By sendCurrency. Last 90 days.",
+  "payment_method_consumer": {
+    "debit": {
+      "txns": 2364,
+      "conversion": "100%",
+      "note": "All who reach Txn Summary confirm with debit complete"
+    },
+    "bank_account": {
+      "txns": 1884,
+      "conversion": "100%"
+    },
+    "direct_debit": {
+      "txns": 1136,
+      "conversion": "100%"
+    },
+    "open_banking": {
+      "txns": 493,
+      "conversion": "100%"
+    },
+    "credit": {
+      "txns": 369,
+      "conversion": "100%"
+    },
+    "balance": {
+      "txns": 24,
+      "conversion": "100%"
+    },
+    "did_not_select": {
+      "txns": 7310,
+      "note": "Dropped before selecting payment method"
+    }
+  },
+  "payment_method_consumer_note": "Consumer only. Txn Summary Confirmed \u2192 Txn Created by paymentMethod. 100% conversion means all who reach this step with a method selected complete.",
+  "weekly_trend": [
+    {
+      "week_start": "Dec 25",
+      "avg_conversion": 0.481,
+      "days": 7
+    },
+    {
+      "week_start": "Jan 1",
+      "avg_conversion": 0.548,
+      "days": 7
+    },
+    {
+      "week_start": "Jan 8",
+      "avg_conversion": 0.485,
+      "days": 7
+    },
+    {
+      "week_start": "Jan 15",
+      "avg_conversion": 0.455,
+      "days": 7
+    },
+    {
+      "week_start": "Jan 22",
+      "avg_conversion": 0.503,
+      "days": 7
+    },
+    {
+      "week_start": "Jan 29",
+      "avg_conversion": 0.519,
+      "days": 7
+    },
+    {
+      "week_start": "Feb 5",
+      "avg_conversion": 0.468,
+      "days": 7
+    },
+    {
+      "week_start": "Feb 12",
+      "avg_conversion": 0.45,
+      "days": 7
+    },
+    {
+      "week_start": "Feb 19",
+      "avg_conversion": 0.482,
+      "days": 7
+    },
+    {
+      "week_start": "Feb 26",
+      "avg_conversion": 0.51,
+      "days": 7
+    },
+    {
+      "week_start": "Mar 5",
+      "avg_conversion": 0.495,
+      "days": 7
+    },
+    {
+      "week_start": "Mar 12",
+      "avg_conversion": 0.472,
+      "days": 7
+    },
+    {
+      "week_start": "Mar 19",
+      "avg_conversion": 0.41,
+      "days": 7
+    }
+  ]
+}

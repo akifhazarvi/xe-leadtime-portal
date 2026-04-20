@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK SLA Optimizer — Customer Experience</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; }
+    a { color: #58a6ff; text-decoration: none; }
+    .header { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header h1 span { color: #3fb950; }
+    .nav { margin-left: auto; display: flex; gap: 16px; font-size: 13px; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px 24px; }
+
+    .info { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 13px; }
+    .info h3 { font-size: 14px; margin-bottom: 8px; }
+    .tier-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-top: 12px; }
+    .tier-item { padding: 8px 12px; background: #0d1117; border: 1px solid #21262d; border-radius: 6px; font-size: 12px; }
+    .tier-text { font-weight: 600; margin-bottom: 2px; }
+    .tier-range { color: #8b949e; font-size: 11px; }
+
+    .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; padding: 12px 16px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
+    .filter-group { display: flex; align-items: center; gap: 6px; }
+    .filter-group label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; }
+    select, input[type=text] { background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; padding: 6px 10px; border-radius: 6px; font-size: 13px; }
+
+    .corridor-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+    .corridor-header { padding: 12px 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; }
+    .corridor-header:hover { background: #1c2128; }
+    .corridor-name { font-size: 15px; font-weight: 600; min-width: 120px; }
+    .corridor-meta { font-size: 12px; color: #8b949e; }
+    .corridor-badges { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+
+    .corridor-body { display: none; padding: 0 16px 16px; }
+    .corridor-body.open { display: block; }
+
+    .delivery-section { margin-bottom: 16px; }
+    .delivery-header { font-size: 13px; font-weight: 600; padding: 8px 0; display: flex; align-items: center; gap: 8px; }
+    .delivery-icon { font-size: 16px; }
+    .delivery-stats { display: flex; gap: 16px; font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { padding: 6px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 10px; text-transform: uppercase; color: #8b949e; white-space: nowrap; }
+    td { padding: 5px 6px; border-bottom: 1px solid #21262d; white-space: nowrap; }
+    th.sep, td.sep { border-left: 2px solid #30363d; }
+
+    .c-fast { color: #3fb950; } .c-ok { color: #e1e4e8; } .c-warn { color: #d29922; } .c-slow { color: #f85149; font-weight: 700; } .c-muted { color: #484f58; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600; }
+    .pill-green { background: #3fb95022; color: #3fb950; }
+    .pill-red { background: #f8514922; color: #f85149; }
+    .pill-yellow { background: #d2992222; color: #d29922; }
+    .pill-blue { background: #58a6ff22; color: #58a6ff; }
+
+    .sla-box { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+    .sla-current { background: #21262d; color: #8b949e; }
+    .sla-improved { background: #3fb95022; border: 1px solid #3fb95044; color: #3fb950; }
+    .sla-breaching { background: #f8514922; border: 1px solid #f8514944; color: #f85149; }
+    .sla-same { background: #21262d; color: #484f58; }
+    .arrow { color: #3fb950; font-weight: 700; margin: 0 6px; }
+    .arrow-bad { color: #f85149; }
+
+    .toggle { font-size: 10px; color: #8b949e; transition: transform 0.2s; display: inline-block; }
+    .toggle.open { transform: rotate(90deg); }
+
+    .dest-section { margin-top: 16px; padding-top: 16px; border-top: 2px solid #30363d; }
+    .dest-header { font-size: 13px; font-weight: 600; color: #bc8cff; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .bar { display: inline-block; height: 10px; border-radius: 2px; vertical-align: middle; min-width: 2px; }
+
+    .quote-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0008; z-index: 300; align-items: center; justify-content: center; }
+    .quote-overlay.open { display: flex; }
+    .quote-box { background: #fff; color: #333; border-radius: 12px; padding: 32px; max-width: 440px; width: 90%; }
+    .quote-title { font-size: 13px; color: #666; margin-bottom: 2px; }
+    .quote-amount { font-size: 26px; font-weight: 700; color: #1a1a2e; margin-bottom: 16px; }
+    .quote-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 13px; }
+    .quote-label { color: #666; }
+    .quote-value { font-weight: 600; color: #1a1a2e; }
+    .quote-delivery { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 14px; border-radius: 8px; }
+    .quote-old { background: #fef2f2; border: 1px solid #fecaca; }
+    .quote-new { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .quote-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .quote-time { font-size: 15px; font-weight: 700; }
+    .quote-close { margin-top: 16px; text-align: center; }
+    .quote-close button { background: #1a1a2e; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; cursor: pointer; font-size: 13px; }
+    .quote-btn { background: none; border: 1px solid #30363d; color: #58a6ff; padding: 2px 8px; border-radius: 4px; font-size: 10px; cursor: pointer; }
+    .quote-btn:hover { background: #58a6ff22; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <h1>UK SLA Optimizer <span>Customer Experience</span></h1>
+      <div class="nav"><a href="uk.html">UK Dashboard</a><a href="index.html">Portal</a></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="info">
+      <h3>What customers see — 9 possible messages</h3>
+      <div style="font-size:12px;color:#8b949e;margin-bottom:8px">The UK.csv has many values (5mins, <30mins, 1hr, etc.) but the Translation.cs code groups them into these tiers. Changing from 5mins to <30mins changes nothing for the customer.</div>
+      <div class="tier-grid">
+        <div class="tier-item"><div class="tier-text c-fast">Typically minutes</div><div class="tier-range">covers: 5mins, <30mins, >5-<60min</div></div>
+        <div class="tier-item"><div class="tier-text c-fast">Typically hours</div><div class="tier-range">covers: 1hr, 2hrs, 1-12 Hours</div></div>
+        <div class="tier-item"><div class="tier-text c-ok">Typically same day</div><div class="tier-range">covers: Same Day</div></div>
+        <div class="tier-item"><div class="tier-text c-ok">Typically next day</div><div class="tier-range">covers: Next Day</div></div>
+        <div class="tier-item"><div class="tier-text c-ok">Within 24 hours</div><div class="tier-range">covers: <24hrs, 24hrs</div></div>
+        <div class="tier-item"><div class="tier-text c-warn">Within 48 hours</div><div class="tier-range">covers: <48hrs, 48hrs</div></div>
+        <div class="tier-item"><div class="tier-text c-warn">3 business days</div><div class="tier-range">covers: Three Days</div></div>
+        <div class="tier-item"><div class="tier-text c-slow">Up to N days</div><div class="tier-range">covers: <3 days, <4days, <5 days</div></div>
+        <div class="tier-item"><div class="tier-text c-slow">More than N days</div><div class="tier-range">covers: >48hrs</div></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="filter-group"><label>Search</label><input type="text" id="f-search" placeholder="Currency..."></div>
+      <div class="filter-group"><label>Show</label><select id="f-show">
+        <option value="all">All Corridors</option>
+        <option value="improvable">Can Improve (customer sees better text)</option>
+        <option value="breaching">Breaching SLA</option>
+      </select></div>
+      <div class="filter-group"><label>Min Vol</label><select id="f-vol">
+        <option value="0">All</option><option value="50" selected>50+</option><option value="100">100+</option><option value="500">500+</option>
+      </select></div>
+      <div class="filter-group">
+        <button onclick="toggleAll(true)" style="background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px">Open All</button>
+        <button onclick="toggleAll(false)" style="background:#21262d;border:1px solid #30363d;color:#e1e4e8;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px">Close All</button>
+      </div>
+    </div>
+    <div id="corridors"></div>
+  </div>
+
+  <div class="quote-overlay" id="quote-overlay">
+    <div class="quote-box" id="quote-box"></div>
+  </div>
+
+<script>
+let D = null, DEST = null, LEG1 = null, DASH = null;
+Promise.all([
+  fetch('../data/uk-sla-optimization.json').then(r => r.json()),
+  fetch('../data/uk-destination-speed.json').then(r => r.json()),
+  fetch('../data/uk-leg1-by-method.json').then(r => r.json()),
+  fetch('../data/uk-dashboard.json').then(r => r.json()),
+]).then(([d, dest, leg1, dash]) => { D = d; DEST = dest; LEG1 = leg1; DASH = dash; render(); });
+
+function fmtSec(s) { if (s==null) return '-'; s=Math.round(s); if (s<60) return s+'s'; if (s<3600){const m=Math.floor(s/60);const r=s%60;return r>0?m+'m '+r+'s':m+'m';} if (s<86400){const h=Math.floor(s/3600);const m=Math.round((s%3600)/60);return m>0?h+'h '+m+'m':h+'h';} const d=Math.floor(s/86400);const h=Math.round((s%86400)/3600);return h>0?d+'d '+h+'h':d+'d';}
+function cls(s) { if (s==null) return 'c-muted'; if (s<=1800) return 'c-fast'; if (s<=86400) return 'c-ok'; if (s<=172800) return 'c-warn'; return 'c-slow'; }
+
+const PM = { debit: 'Debit Card', bank_account: 'Bank Transfer', open_banking: 'Open Banking', credit: 'Credit Card' };
+const DM = { BankAccount: 'Bank Account', CashPayout: 'Cash Pickup', MobileWallet: 'Mobile Wallet' };
+const DM_ICON = { BankAccount: '&#127974;', CashPayout: '&#128181;', MobileWallet: '&#128241;' };
+
+// Customer-visible tiers ordered fastest to slowest
+const TIERS = [
+  { text: 'Typically minutes', maxSec: 3600 },
+  { text: 'Typically hours', maxSec: 43200 },
+  { text: 'Typically same day', maxSec: 43200 },
+  { text: 'Typically within 24 hours', maxSec: 86400 },
+  { text: 'Typically within 48 hours', maxSec: 172800 },
+  { text: 'Up to 3 days', maxSec: 259200 },
+  { text: 'Up to 4 days', maxSec: 345600 },
+  { text: 'Up to 5 days', maxSec: 432000 },
+];
+function tierIndex(text) { return TIERS.findIndex(t => t.text === text); }
+
+function csvToTier(csv) {
+  if (!csv || csv === 'N/A') return null;
+  const s = csv.trim().toLowerCase();
+  if (s.match(/^\s*>?\d+-<\d+\s*(mins|minute|min|minutes)/i)) return 'Typically minutes';
+  if (s.match(/^\s*<?\d+\s*(mins|minute|min|minutes)/i)) return 'Typically minutes';
+  if (s.match(/^\s*<?\s*24\s*(hrs|hours)/i)) return 'Typically within 24 hours';
+  if (s.match(/same day/i)) return 'Typically same day';
+  if (s.match(/next day/i)) return 'Typically within 24 hours';
+  if (s.match(/^\s*<?\s*48\s*(hrs|hours)/i)) return 'Typically within 48 hours';
+  if (s.match(/three days/i)) return 'Up to 3 days';
+  if (s.match(/^\s*<?\s*(\d+)\s*(day|days)/i)) { const d = s.match(/(\d+)/)[1]; return 'Up to ' + d + ' days'; }
+  if (s.match(/^\s*\d+-\d+\s*(hrs|hours|hr|hour)/i)) return 'Typically hours';
+  if (s.match(/^\s*<?\d+\s*(hrs|hours|hr|hour)/i)) return 'Typically hours';
+  return null;
+}
+
+function suggestTier(p80Sec) {
+  if (p80Sec == null) return null;
+  for (const t of TIERS) { if (p80Sec <= t.maxSec) return t.text; }
+  return 'Up to 5 days';
+}
+
+function render() {
+  if (!D) return;
+  const search = document.getElementById('f-search').value.toUpperCase();
+  const show = document.getElementById('f-show').value;
+  const minVol = parseInt(document.getElementById('f-vol').value);
+
+  // Group combos by delivery method per corridor
+  let items = D.corridors.map(c => {
+    const deliveries = {};
+    for (const cb of c.combos) {
+      if (!deliveries[cb.deliveryMethod]) deliveries[cb.deliveryMethod] = { combos: [], leg2_median_s: cb.leg2_median_s, leg2_p80_s: cb.leg2_p80_s, leg2_p90_s: cb.leg2_p90_s, leg2_volume: cb.leg2_volume };
+      deliveries[cb.deliveryMethod].combos.push(cb);
+    }
+
+    // Compute improvement flags
+    let canImprove = 0, breaching = 0;
+    for (const [dm, dData] of Object.entries(deliveries)) {
+      const isBankDel = dm === 'BankAccount';
+      for (const cb of dData.combos) {
+        const currentTier = csvToTier(cb.sla_in);
+        const p80 = isBankDel ? cb.leg2_p80_s : cb.e2e_p80_s;
+        const sugTier = suggestTier(p80);
+        const currentIdx = tierIndex(currentTier);
+        const sugIdx = tierIndex(sugTier);
+        cb._currentTier = currentTier;
+        cb._currentTierOut = csvToTier(cb.sla_out);
+        cb._sugTier = sugTier;
+        cb._p80ForSla = p80;
+        cb._isBankDel = isBankDel;
+        if (currentIdx >= 0 && sugIdx >= 0 && sugIdx < currentIdx) canImprove++;
+        if (currentTier && p80 > (TIERS[currentIdx]||{}).maxSec) breaching++;
+      }
+    }
+    return { ...c, deliveries, canImprove, breaching };
+  });
+
+  items = items.filter(c => {
+    if (search && !c.currency.toUpperCase().includes(search)) return false;
+    const vol = c.combos.reduce((s, cb) => s + cb.leg1_volume, 0);
+    if (minVol && vol < minVol) return false;
+    if (show === 'improvable' && c.canImprove === 0) return false;
+    if (show === 'breaching' && c.breaching === 0) return false;
+    return true;
+  });
+
+  const el = document.getElementById('corridors');
+  el.innerHTML = items.map(c => {
+    // Count destination improvements
+    let destFasterCount = 0, destBreachCount = 0;
+    const destDataBadge = DEST && DEST.corridors[c.currency];
+    if (destDataBadge && destDataBadge.destinations.length > 1) {
+      const oTierText = suggestTier(destDataBadge.overall_p80_s);
+      const oIdx = tierIndex(oTierText);
+      destDataBadge.destinations.filter(d => d.volume >= 3).forEach(d => {
+        const dTier = suggestTier(d.p80_s);
+        const dIdx = tierIndex(dTier);
+        if (oIdx >= 0 && dIdx >= 0 && dIdx < oIdx) destFasterCount++;
+        if (oIdx >= 0 && dIdx >= 0 && dIdx > oIdx) destBreachCount++;
+      });
+    }
+
+    let badges = '';
+    if (c.canImprove > 0) badges += '<span class="pill pill-green">' + c.canImprove + ' SLA can improve</span>';
+    if (c.breaching > 0) badges += '<span class="pill pill-red">' + c.breaching + ' SLA breaching</span>';
+    if (destFasterCount > 0) badges += '<span class="pill pill-green">' + destFasterCount + ' destinations can be faster</span>';
+    if (destBreachCount > 0) badges += '<span class="pill pill-red">' + destBreachCount + ' destinations slower</span>';
+
+    let body = '';
+    const destData = DEST && DEST.corridors[c.currency];
+    const leg1Data = LEG1 && LEG1.corridors[c.currency];
+    const pmOrder = ['debit', 'bank_account', 'open_banking', 'credit'];
+    const pmAvailable = leg1Data ? pmOrder.filter(pm => leg1Data[pm] && leg1Data[pm].created >= 3) : [];
+
+    // Get destinations sorted by speed (for bank delivery)
+    const sortedDests = destData ? destData.destinations.filter(d => d.volume >= 3).sort((a,b) => a.median_s - b.median_s) : [];
+    const overallTier = destData ? suggestTier(destData.overall_p80_s) : null;
+    const overallTierIdx = overallTier ? tierIndex(overallTier) : -1;
+
+    // Single unified table — every flow on one line
+    body += '<table><tr>';
+    body += '<th>Payment Method</th><th>Destination</th><th style="text-align:right">Vol</th><th>Payout</th>';
+    body += '<th style="color:#58a6ff">Leg 1</th><th style="color:#bc8cff">Leg 2 Med</th><th style="color:#bc8cff;font-weight:700">Leg 2 P80</th><th style="color:#3fb950">E2E Med</th>';
+    body += '<th>Customer Sees Now</th><th>Suggested (Leg2 P80)</th><th></th></tr>';
+
+    for (const pm of pmAvailable) {
+      const l1 = leg1Data[pm];
+      const l1Sec = Math.round(l1.median_hrs * 3600);
+
+      // Get the current SLA tier for this payment method from the combos
+      const bankCombo = c.combos.find(cb => cb.paymentMethod === pm && cb.deliveryMethod === 'BankAccount');
+      const currentTier = bankCombo ? bankCombo._currentTier : (overallTier || 'N/A');
+
+      if (sortedDests.length > 1) {
+        // Multiple destinations — one row per destination
+        let isFirstPm = true;
+        for (const dest of sortedDests) {
+          const e2eSec = l1Sec + dest.median_s;
+          const destTierText = suggestTier(dest.p80_s);
+          const destTierIdx = tierIndex(destTierText);
+          const currentIdx = tierIndex(currentTier);
+          const isFaster = currentIdx >= 0 && destTierIdx >= 0 && destTierIdx < currentIdx;
+          const isSlower = currentIdx >= 0 && destTierIdx >= 0 && destTierIdx > currentIdx;
+          const methods = Object.entries(dest.methods).sort((a,b) => b[1].n - a[1].n).map(([m]) => m).join('+');
+
+          let sugCell;
+          if (isFaster) {
+            sugCell = '<span class="sla-current" style="text-decoration:line-through;opacity:0.5">' + currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + destTierText + '</span>';
+          } else if (isSlower) {
+            sugCell = '<span class="sla-breaching">' + destTierText + '</span>';
+          } else {
+            sugCell = '<span class="sla-same">' + destTierText + '</span>';
+          }
+
+          body += '<tr' + (isFirstPm ? ' style="border-top:2px solid #30363d"' : '') + '>';
+          body += '<td' + (isFirstPm ? ' style="font-weight:600"' : '') + '>' + (isFirstPm ? PM[pm] + ' <span style="color:#484f58;font-size:10px">(' + l1.created + ')</span>' : '') + '</td>';
+          body += '<td style="font-weight:600">' + dest.country + '</td>';
+          body += '<td style="text-align:right;color:#8b949e">' + dest.volume + '</td>';
+          body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
+          body += '<td class="' + cls(l1Sec) + '">' + fmtSec(l1Sec) + '</td>';
+          body += '<td class="' + cls(dest.median_s) + '">' + fmtSec(dest.median_s) + '</td>';
+          body += '<td class="' + cls(dest.p80_s) + '" style="font-weight:700">' + fmtSec(dest.p80_s) + '</td>';
+          body += '<td class="' + cls(e2eSec) + '">' + fmtSec(e2eSec) + '</td>';
+          body += '<td><span class="sla-current">' + currentTier + '</span></td>';
+          body += '<td>' + sugCell + '</td>';
+          body += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + pm + '\',\'BankAccount\')">Quote</button></td>';
+          body += '</tr>';
+          isFirstPm = false;
+        }
+      } else {
+        // Single destination — clean row, no destination column clutter
+        const showMed = bankCombo ? bankCombo.leg2_median_s : 0;
+        const showP80Val = bankCombo ? bankCombo.leg2_p80_s : 0;
+        const e2eSec = l1Sec + showMed;
+        const dest = sortedDests[0];
+        const methods = dest ? Object.keys(dest.methods).join('+') : '-';
+        const sugTier = bankCombo ? bankCombo._sugTier : null;
+        const currentIdx = tierIndex(currentTier);
+        const sugIdx = tierIndex(sugTier);
+        const improved = currentIdx >= 0 && sugIdx >= 0 && sugIdx < currentIdx;
+        const breach = currentTier && bankCombo && bankCombo._p80ForSla > (TIERS[currentIdx]||{}).maxSec;
+
+        let sugCell;
+        if (improved) {
+          sugCell = '<span class="sla-current" style="text-decoration:line-through;opacity:0.5">' + currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + sugTier + '</span>';
+        } else if (breach) {
+          sugCell = '<span class="sla-breaching">Breaching: ' + currentTier + '</span>';
+        } else {
+          sugCell = '<span class="sla-same">' + (currentTier || 'N/A') + '</span>';
+        }
+
+        body += '<tr style="border-top:2px solid #30363d">';
+        body += '<td style="font-weight:600">' + PM[pm] + ' <span style="color:#484f58;font-size:10px">(' + l1.created + ')</span></td>';
+        body += '<td style="color:#8b949e">' + (dest ? dest.country : '-') + '</td>';
+        body += '<td style="text-align:right;color:#8b949e">' + (bankCombo ? bankCombo.leg2_volume : '-') + '</td>';
+        body += '<td style="font-size:11px;color:#8b949e">' + methods + '</td>';
+        body += '<td class="' + cls(l1Sec) + '">' + fmtSec(l1Sec) + '</td>';
+        body += '<td class="' + cls(showMed) + '">' + fmtSec(showMed) + '</td>';
+        body += '<td class="' + cls(showP80Val) + '" style="font-weight:700">' + fmtSec(showP80Val) + '</td>';
+        body += '<td class="' + cls(e2eSec) + '">' + fmtSec(e2eSec) + '</td>';
+        body += '<td><span class="sla-current">' + currentTier + '</span></td>';
+        body += '<td>' + sugCell + '</td>';
+        body += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + pm + '\',\'BankAccount\')">Quote</button></td>';
+        body += '</tr>';
+      }
+
+      // Also add Cash Pickup and Mobile Wallet rows for this payment method
+      for (const dm of ['CashPayout', 'MobileWallet']) {
+        const cb = c.combos.find(x => x.paymentMethod === pm && x.deliveryMethod === dm);
+        if (!cb) continue;
+        const e2eMed = cb.e2e_median_s;
+        const currentIdx2 = tierIndex(cb._currentTier);
+        const sugIdx2 = tierIndex(cb._sugTier);
+        const improved2 = currentIdx2 >= 0 && sugIdx2 >= 0 && sugIdx2 < currentIdx2;
+        const breach2 = cb._currentTier && cb._p80ForSla > (TIERS[currentIdx2]||{}).maxSec;
+        let sugCell2;
+        if (improved2) {
+          sugCell2 = '<span class="sla-current" style="text-decoration:line-through;opacity:0.5">' + cb._currentTier + '</span><span class="arrow">&rarr;</span><span class="sla-improved">' + cb._sugTier + '</span>';
+        } else if (breach2) {
+          sugCell2 = '<span class="sla-breaching">Breaching: ' + cb._currentTier + '</span>';
+        } else {
+          sugCell2 = '<span class="sla-same">' + (cb._currentTier || 'N/A') + '</span>';
+        }
+
+        body += '<tr>';
+        body += '<td></td>';
+        body += '<td style="font-weight:600;color:#d29922">' + DM[dm] + '</td>';
+        body += '<td style="text-align:right;color:#8b949e">' + cb.leg2_volume + '</td>';
+        body += '<td style="font-size:11px;color:#8b949e">' + dm.replace('Payout','').replace('Mobile','') + '</td>';
+        body += '<td class="' + cls(cb.leg1_median_s) + '">' + fmtSec(cb.leg1_median_s) + '</td>';
+        body += '<td class="' + cls(cb.leg2_median_s) + '">' + fmtSec(cb.leg2_median_s) + '</td>';
+        body += '<td class="' + cls(cb.leg2_p80_s) + '" style="font-weight:700">' + fmtSec(cb.leg2_p80_s) + '</td>';
+        body += '<td class="' + cls(e2eMed) + '">' + fmtSec(e2eMed) + '</td>';
+        body += '<td><span class="sla-current">' + (cb._currentTier || 'N/A') + '</span></td>';
+        body += '<td>' + sugCell2 + '</td>';
+        body += '<td><button class="quote-btn" onclick="event.stopPropagation();showQuote(\'' + c.currency + '\',\'' + pm + '\',\'' + dm + '\')">Quote</button></td>';
+        body += '</tr>';
+      }
+    }
+    body += '</table>';
+
+    return '<div class="corridor-card">' +
+      '<div class="corridor-header" onclick="toggleCorridor(this)">' +
+        '<span class="toggle">&#9654;</span>' +
+        '<span class="corridor-name">UK &rarr; ' + c.currency + '</span>' +
+        '<span class="corridor-meta">' + c.ccyType + (c.isRia ? ' (Ria)' : '') + (function(){ const dc = DASH && DASH.corridors.find(x => x.currency === c.currency); return dc && dc.revenue_usd ? ' | $' + dc.revenue_usd.toLocaleString() + ' revenue' : ''; })() + '</span>' +
+        '<span class="corridor-badges">' + badges + '</span>' +
+      '</div>' +
+      '<div class="corridor-body">' + body + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function toggleCorridor(h) { h.nextElementSibling.classList.toggle('open'); h.querySelector('.toggle').classList.toggle('open'); }
+function toggleAll(o) { document.querySelectorAll('.corridor-body').forEach(b => o?b.classList.add('open'):b.classList.remove('open')); document.querySelectorAll('.toggle').forEach(t => o?t.classList.add('open'):t.classList.remove('open')); }
+
+function showQuote(ccy, pm, dm) {
+  const c = D.corridors.find(x => x.currency === ccy);
+  const cb = c.combos.find(x => x.paymentMethod === pm && x.deliveryMethod === dm);
+  if (!cb) return;
+  const currentTier = csvToTier(cb.sla_in);
+  const isBankDel = dm === 'BankAccount';
+  const p80 = isBankDel ? cb.leg2_p80_s : cb.e2e_p80_s;
+  const sugTier = suggestTier(p80);
+  const improved = tierIndex(sugTier) < tierIndex(currentTier);
+
+  document.getElementById('quote-box').innerHTML =
+    '<div class="quote-title">You send</div><div class="quote-amount">1,000.00 GBP</div>' +
+    '<div class="quote-row"><span class="quote-label">Recipient gets</span><span class="quote-value">' + ccy + '</span></div>' +
+    '<div class="quote-row"><span class="quote-label">Payment method</span><span class="quote-value">' + (PM[pm]||pm) + '</span></div>' +
+    '<div class="quote-row"><span class="quote-label">Delivery</span><span class="quote-value">' + (DM[dm]||dm) + '</span></div>' +
+    (improved ?
+      '<div class="quote-delivery quote-old"><span style="font-size:18px">&#9203;</span><div><div class="quote-tag" style="color:#991b1b">Current</div><div class="quote-time" style="color:#991b1b;text-decoration:line-through">' + currentTier + '</div></div></div>' +
+      '<div class="quote-delivery quote-new"><span style="font-size:18px">&#9889;</span><div><div class="quote-tag" style="color:#166534">Improved</div><div class="quote-time" style="color:#166534">' + sugTier + '</div></div></div>'
+    :
+      '<div class="quote-delivery quote-new"><span style="font-size:18px">&#9203;</span><div><div class="quote-tag" style="color:#166534">Estimated delivery</div><div class="quote-time" style="color:#166534">' + currentTier + '</div></div></div>'
+    ) +
+    '<div style="margin-top:12px;padding:10px;background:#f8f9fa;border-radius:6px;font-size:11px;color:#666">' +
+      '<strong>Data:</strong> Leg 1: ' + fmtSec(cb.leg1_median_s) + ' | Leg 2: ' + fmtSec(cb.leg2_median_s) + '<br>' +
+      (isBankDel ? 'Leg 2 ' : 'E2E ') + 'P80: ' + fmtSec(p80) + ' (basis for suggestion)' +
+    '</div>' +
+    '<div class="quote-close"><button onclick="document.getElementById(\'quote-overlay\').classList.remove(\'open\')">Close</button></div>';
+  document.getElementById('quote-overlay').classList.add('open');
+}
+document.getElementById('quote-overlay').addEventListener('click', e => { if (e.target.id === 'quote-overlay') e.target.classList.remove('open'); });
+['f-search','f-show','f-vol'].forEach(id => document.getElementById(id).addEventListener(id==='f-search'?'input':'change', render));
+</script>
+</body>
+</html>

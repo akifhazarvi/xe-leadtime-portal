@@ -1,0 +1,1044 @@
+{
+  "period": "2026-02-23 to 2026-03-25",
+  "filter": "Transaction Completed WHERE paymentMethod=balance AND transactionType=Transfer AND accountType IN (Private, (none))",
+  "note": "Send money via balance = paymentMethod=balance + transactionType=Transfer. accountType includes Private + (none) for consumer. Balance product only in US, CA, NZ.",
+  "summary": {
+    "total_transactions": 1009,
+    "total_send_volume_usd": 2797141,
+    "avg_transaction_usd": 4078,
+    "total_revenue_usd": 11772,
+    "revenue_margin_pct": 0.4,
+    "cross_currency_pct": 73.2,
+    "same_currency_pct": 26.8,
+    "repeat_sender_pct": 44.6,
+    "period": "2026-02-23 to 2026-03-25"
+  },
+  "platform": {
+    "iOS": {
+      "count": 481,
+      "pct": 50.3
+    },
+    "Web": {
+      "count": 299,
+      "pct": 31.3
+    },
+    "Android": {
+      "count": 176,
+      "pct": 18.4
+    }
+  },
+  "weekly_trend": {
+    "weeks": [
+      "Jan 26",
+      "Feb 2",
+      "Feb 9",
+      "Feb 16",
+      "Feb 23",
+      "Mar 2",
+      "Mar 9",
+      "Mar 16",
+      "Mar 23"
+    ],
+    "counts": [
+      31,
+      78,
+      112,
+      102,
+      142,
+      146,
+      172,
+      143,
+      83
+    ]
+  },
+  "transfer_reasons": [
+    {
+      "reason": "Family Support",
+      "count": 148,
+      "pct": 22.4
+    },
+    {
+      "reason": "Family of NRI Payment",
+      "count": 73,
+      "pct": 11.0
+    },
+    {
+      "reason": "Credit to NRE in INR",
+      "count": 61,
+      "pct": 9.2
+    },
+    {
+      "reason": "Living Expenses",
+      "count": 56,
+      "pct": 8.5
+    },
+    {
+      "reason": "Bill Payment",
+      "count": 53,
+      "pct": 8.0
+    },
+    {
+      "reason": "Gift",
+      "count": 40,
+      "pct": 6.0
+    },
+    {
+      "reason": "EMI payments",
+      "count": 29,
+      "pct": 4.4
+    },
+    {
+      "reason": "Goods/Services",
+      "count": 26,
+      "pct": 3.9
+    },
+    {
+      "reason": "Test Transfer",
+      "count": 25,
+      "pct": 3.8
+    },
+    {
+      "reason": "Investment",
+      "count": 21,
+      "pct": 3.2
+    },
+    {
+      "reason": "Holiday/Vacation",
+      "count": 17,
+      "pct": 2.6
+    },
+    {
+      "reason": "Medical Expenses",
+      "count": 15,
+      "pct": 2.3
+    },
+    {
+      "reason": "Overseas Relocation",
+      "count": 14,
+      "pct": 2.1
+    },
+    {
+      "reason": "Business Payment",
+      "count": 13,
+      "pct": 2.0
+    },
+    {
+      "reason": "Wedding",
+      "count": 11,
+      "pct": 1.7
+    },
+    {
+      "reason": "Loan Repayment",
+      "count": 8,
+      "pct": 1.2
+    },
+    {
+      "reason": "Charity Donation",
+      "count": 7,
+      "pct": 1.1
+    },
+    {
+      "reason": "Travel Expenses",
+      "count": 7,
+      "pct": 1.1
+    },
+    {
+      "reason": "Tuition",
+      "count": 7,
+      "pct": 1.1
+    },
+    {
+      "reason": "Property Purchase/Sale",
+      "count": 6,
+      "pct": 0.9
+    },
+    {
+      "reason": "Tax",
+      "count": 6,
+      "pct": 0.9
+    },
+    {
+      "reason": "Housing Society Payment",
+      "count": 5,
+      "pct": 0.8
+    },
+    {
+      "reason": "Mortgage/Rental",
+      "count": 5,
+      "pct": 0.8
+    },
+    {
+      "reason": "Other",
+      "count": 9,
+      "pct": 1.4
+    }
+  ],
+  "regions": {
+    "US": {
+      "name": "United States",
+      "currency": "USD",
+      "transactions": 716,
+      "volume_usd": 3085512,
+      "avg_txn_usd": 4309,
+      "transfer_reasons": [
+        {
+          "reason": "Family Support",
+          "count": 153,
+          "pct": 21.4
+        },
+        {
+          "reason": "Family of NRI Payment",
+          "count": 102,
+          "pct": 14.2
+        },
+        {
+          "reason": "Credit to NRE in INR",
+          "count": 80,
+          "pct": 11.2
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 41,
+          "pct": 5.7
+        },
+        {
+          "reason": "Gift",
+          "count": 41,
+          "pct": 5.7
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 41,
+          "pct": 5.7
+        },
+        {
+          "reason": "Goods/Services",
+          "count": 39,
+          "pct": 5.4
+        },
+        {
+          "reason": "EMI payments",
+          "count": 37,
+          "pct": 5.2
+        },
+        {
+          "reason": "Investment",
+          "count": 18,
+          "pct": 2.5
+        },
+        {
+          "reason": "Medical Expenses",
+          "count": 18,
+          "pct": 2.5
+        },
+        {
+          "reason": "Property Purchase/Sale",
+          "count": 13,
+          "pct": 1.8
+        },
+        {
+          "reason": "Holiday/Vacation",
+          "count": 12,
+          "pct": 1.7
+        },
+        {
+          "reason": "Business Payment",
+          "count": 11,
+          "pct": 1.5
+        },
+        {
+          "reason": "Test Transfer",
+          "count": 11,
+          "pct": 1.5
+        },
+        {
+          "reason": "Tuition",
+          "count": 10,
+          "pct": 1.4
+        },
+        {
+          "reason": "Travel Expenses",
+          "count": 8,
+          "pct": 1.1
+        },
+        {
+          "reason": "Other",
+          "count": 31,
+          "pct": 4.3
+        }
+      ],
+      "corridors": [
+        {
+          "payout": "INR",
+          "count": 268,
+          "volume_usd": 1918862
+        },
+        {
+          "payout": "USD",
+          "count": 99,
+          "volume_usd": 460435
+        },
+        {
+          "payout": "MXN",
+          "count": 43,
+          "volume_usd": 86368
+        },
+        {
+          "payout": "EUR",
+          "count": 36,
+          "volume_usd": 169825
+        },
+        {
+          "payout": "COP",
+          "count": 33,
+          "volume_usd": 32416
+        },
+        {
+          "payout": "PHP",
+          "count": 31,
+          "volume_usd": 28643
+        },
+        {
+          "payout": "ETH",
+          "count": 17,
+          "volume_usd": 53274
+        },
+        {
+          "payout": "GBP",
+          "count": 17,
+          "volume_usd": 44199
+        },
+        {
+          "payout": "THB",
+          "count": 14,
+          "volume_usd": 14426
+        },
+        {
+          "payout": "CAD",
+          "count": 11,
+          "volume_usd": 43039
+        },
+        {
+          "payout": "SLE",
+          "count": 11,
+          "volume_usd": 1006
+        },
+        {
+          "payout": "KES",
+          "count": 9,
+          "volume_usd": 10277
+        },
+        {
+          "payout": "TRY",
+          "count": 8,
+          "volume_usd": 12050
+        },
+        {
+          "payout": "XOF",
+          "count": 8,
+          "volume_usd": 6813
+        },
+        {
+          "payout": "AUD",
+          "count": 7,
+          "volume_usd": 82555
+        },
+        {
+          "payout": "IDR",
+          "count": 7,
+          "volume_usd": 3076
+        },
+        {
+          "payout": "AED",
+          "count": 5,
+          "volume_usd": 5584
+        },
+        {
+          "payout": "EGP",
+          "count": 5,
+          "volume_usd": 7195
+        },
+        {
+          "payout": "PKR",
+          "count": 5,
+          "volume_usd": 1654
+        },
+        {
+          "payout": "ZAR",
+          "count": 5,
+          "volume_usd": 1683
+        },
+        {
+          "payout": "Other",
+          "count": 27,
+          "volume_usd": 53632
+        }
+      ]
+    },
+    "CA": {
+      "name": "Canada",
+      "currency": "CAD",
+      "transactions": 120,
+      "volume_usd": 274188,
+      "avg_txn_usd": 2285,
+      "transfer_reasons": [
+        {
+          "reason": "Family Support",
+          "count": 34,
+          "pct": 28.3
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 15,
+          "pct": 12.5
+        },
+        {
+          "reason": "Wedding",
+          "count": 15,
+          "pct": 12.5
+        },
+        {
+          "reason": "Test Transfer",
+          "count": 14,
+          "pct": 11.7
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 8,
+          "pct": 6.7
+        },
+        {
+          "reason": "Gift",
+          "count": 6,
+          "pct": 5.0
+        },
+        {
+          "reason": "Holiday/Vacation",
+          "count": 5,
+          "pct": 4.2
+        },
+        {
+          "reason": "Goods/Services",
+          "count": 4,
+          "pct": 3.3
+        },
+        {
+          "reason": "Charity Donation",
+          "count": 3,
+          "pct": 2.5
+        },
+        {
+          "reason": "Loan Repayment",
+          "count": 3,
+          "pct": 2.5
+        },
+        {
+          "reason": "Other",
+          "count": 13,
+          "pct": 10.8
+        }
+      ],
+      "corridors": [
+        {
+          "payout": "CAD",
+          "count": 45,
+          "volume_usd": 101021
+        },
+        {
+          "payout": "EUR",
+          "count": 17,
+          "volume_usd": 71405
+        },
+        {
+          "payout": "USD",
+          "count": 14,
+          "volume_usd": 56762
+        },
+        {
+          "payout": "MWK",
+          "count": 7,
+          "volume_usd": 1173
+        },
+        {
+          "payout": "LKR",
+          "count": 6,
+          "volume_usd": 9465
+        },
+        {
+          "payout": "NAD",
+          "count": 5,
+          "volume_usd": 904
+        },
+        {
+          "payout": "COP",
+          "count": 3,
+          "volume_usd": 267
+        },
+        {
+          "payout": "ZAR",
+          "count": 3,
+          "volume_usd": 8745
+        },
+        {
+          "payout": "GMD",
+          "count": 2,
+          "volume_usd": 194
+        },
+        {
+          "payout": "NGN",
+          "count": 2,
+          "volume_usd": 212
+        },
+        {
+          "payout": "PKR",
+          "count": 2,
+          "volume_usd": 70
+        },
+        {
+          "payout": "THB",
+          "count": 2,
+          "volume_usd": 2707
+        },
+        {
+          "payout": "XOF",
+          "count": 2,
+          "volume_usd": 314
+        },
+        {
+          "payout": "Other",
+          "count": 10,
+          "volume_usd": 20949
+        }
+      ]
+    },
+    "NZ": {
+      "name": "New Zealand",
+      "currency": "NZD",
+      "transactions": 20,
+      "volume_usd": 17122,
+      "avg_txn_usd": 856,
+      "transfer_reasons": [
+        {
+          "reason": "Family Support",
+          "count": 6,
+          "pct": 30.0
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 2,
+          "pct": 10.0
+        },
+        {
+          "reason": "Loan Repayment",
+          "count": 2,
+          "pct": 10.0
+        },
+        {
+          "reason": "Test Transfer",
+          "count": 2,
+          "pct": 10.0
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 1,
+          "pct": 5.0
+        },
+        {
+          "reason": "Business Payment",
+          "count": 1,
+          "pct": 5.0
+        },
+        {
+          "reason": "Family of NRI Payment",
+          "count": 1,
+          "pct": 5.0
+        },
+        {
+          "reason": "Gift",
+          "count": 1,
+          "pct": 5.0
+        },
+        {
+          "reason": "Goods/Services",
+          "count": 1,
+          "pct": 5.0
+        },
+        {
+          "reason": "Other",
+          "count": 3,
+          "pct": 15.0
+        }
+      ],
+      "corridors": [
+        {
+          "payout": "NZD",
+          "count": 8,
+          "volume_usd": 11556
+        },
+        {
+          "payout": "KES",
+          "count": 2,
+          "volume_usd": 179
+        },
+        {
+          "payout": "PEN",
+          "count": 2,
+          "volume_usd": 875
+        },
+        {
+          "payout": "PHP",
+          "count": 2,
+          "volume_usd": 1321
+        },
+        {
+          "payout": "AUD",
+          "count": 1,
+          "volume_usd": 142
+        },
+        {
+          "payout": "BWP",
+          "count": 1,
+          "volume_usd": 684
+        },
+        {
+          "payout": "INR",
+          "count": 1,
+          "volume_usd": 579
+        },
+        {
+          "payout": "MYR",
+          "count": 1,
+          "volume_usd": 20
+        },
+        {
+          "payout": "USD",
+          "count": 1,
+          "volume_usd": 1647
+        },
+        {
+          "payout": "ZAR",
+          "count": 1,
+          "volume_usd": 119
+        }
+      ]
+    }
+  },
+  "insights": [
+    "956 consumer balance sends (30d) = $3.9M volume, $17.2K revenue. Avg txn $4,048 \u2014 high-value power users.",
+    "US dominates with 716 txns (74.9%) and $3.1M volume. USD\u2192INR is #1 corridor (268 txns, $1.9M) \u2014 NRI family remittances drive balance usage.",
+    "NRI-related reasons (Family of NRI + Credit to NRE in INR + EMI) = 30.6% of US sends. Balance is primarily a remittance tool for India corridor.",
+    "Family Support is #1 overall (22.2%) and across all 3 regions.",
+    "CA has 120 txns \u2014 notably high Wedding (12.5%) and Test Transfer (11.7%). Test transfers may indicate onboarding friction.",
+    "NZ is tiny at 20 txns ($17K volume). Balance sends barely used.",
+    "99.8% are repeat senders \u2014 balance is a power-user feature, virtually no first-time users.",
+    "iOS leads at 50.3% \u2014 native app accounts for 68.7% of all balance sends.",
+    "UK, EU, AU have ZERO consumer balance sends \u2014 product not available in these regions.",
+    "Weekly trend shows 5.5x growth: 31/week (Jan 26) \u2192 172/week (Mar 9)."
+  ],
+  "corridor_reasons": {
+    "USD_INR": {
+      "corridor": "USD \u2192 INR",
+      "txns": 268,
+      "reasons": [
+        {
+          "reason": "Family of NRI Payment",
+          "count": 102
+        },
+        {
+          "reason": "Credit to NRE in INR",
+          "count": 80
+        },
+        {
+          "reason": "EMI payments",
+          "count": 37
+        },
+        {
+          "reason": "Medical Expenses",
+          "count": 14
+        },
+        {
+          "reason": "Tuition",
+          "count": 10
+        },
+        {
+          "reason": "Investment",
+          "count": 9
+        },
+        {
+          "reason": "Housing Society Payment",
+          "count": 6
+        },
+        {
+          "reason": "Utility Payments",
+          "count": 5
+        },
+        {
+          "reason": "LIC/UTI/Post Master",
+          "count": 3
+        },
+        {
+          "reason": "Other",
+          "count": 2
+        }
+      ]
+    },
+    "USD_USD": {
+      "corridor": "USD \u2192 USD",
+      "txns": 99,
+      "reasons": [
+        {
+          "reason": "Family Support",
+          "count": 27
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 8
+        },
+        {
+          "reason": "Goods/Services",
+          "count": 8
+        },
+        {
+          "reason": "Gift",
+          "count": 6
+        },
+        {
+          "reason": "Investment",
+          "count": 5
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 5
+        },
+        {
+          "reason": "Test Transfer",
+          "count": 4
+        },
+        {
+          "reason": "Charity Donation",
+          "count": 3
+        },
+        {
+          "reason": "Holiday/Vacation",
+          "count": 3
+        },
+        {
+          "reason": "Other",
+          "count": 30
+        }
+      ]
+    },
+    "USD_MXN": {
+      "corridor": "USD \u2192 MXN",
+      "txns": 43,
+      "reasons": [
+        {
+          "reason": "Family Support",
+          "count": 12
+        },
+        {
+          "reason": "Property Purchase/Sale",
+          "count": 5
+        },
+        {
+          "reason": "Goods/Services",
+          "count": 4
+        },
+        {
+          "reason": "Business Payment",
+          "count": 3
+        },
+        {
+          "reason": "Gift",
+          "count": 3
+        },
+        {
+          "reason": "Holiday/Vacation",
+          "count": 3
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 2
+        },
+        {
+          "reason": "Test Transfer",
+          "count": 2
+        },
+        {
+          "reason": "Travel Expenses",
+          "count": 2
+        },
+        {
+          "reason": "Other",
+          "count": 7
+        }
+      ]
+    },
+    "USD_EUR": {
+      "corridor": "USD \u2192 EUR",
+      "txns": 36,
+      "reasons": [
+        {
+          "reason": "Family Support",
+          "count": 9
+        },
+        {
+          "reason": "Goods/Services",
+          "count": 9
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 4
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 3
+        },
+        {
+          "reason": "Gift",
+          "count": 2
+        },
+        {
+          "reason": "Property Purchase/Sale",
+          "count": 2
+        },
+        {
+          "reason": "Test Transfer",
+          "count": 2
+        },
+        {
+          "reason": "Other",
+          "count": 5
+        }
+      ]
+    },
+    "USD_COP": {
+      "corridor": "USD \u2192 COP",
+      "txns": 33,
+      "reasons": [
+        {
+          "reason": "Bill Payment",
+          "count": 14
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 6
+        },
+        {
+          "reason": "Family Support",
+          "count": 5
+        },
+        {
+          "reason": "Gift",
+          "count": 3
+        },
+        {
+          "reason": "Goods/Services",
+          "count": 3
+        },
+        {
+          "reason": "Other",
+          "count": 2
+        }
+      ]
+    },
+    "USD_PHP": {
+      "corridor": "USD \u2192 PHP",
+      "txns": 31,
+      "reasons": [
+        {
+          "reason": "Goods/Services",
+          "count": 12
+        },
+        {
+          "reason": "Family Support",
+          "count": 11
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 3
+        },
+        {
+          "reason": "Investment",
+          "count": 2
+        },
+        {
+          "reason": "Other",
+          "count": 3
+        }
+      ]
+    },
+    "GBP_USD": {
+      "corridor": "GBP \u2192 USD",
+      "txns": 25,
+      "reasons": [
+        {
+          "reason": "Living Expenses",
+          "count": 17
+        },
+        {
+          "reason": "Pension",
+          "count": 3
+        },
+        {
+          "reason": "Family Support",
+          "count": 2
+        },
+        {
+          "reason": "Gift",
+          "count": 2
+        },
+        {
+          "reason": "Mortgage/Rental",
+          "count": 1
+        }
+      ]
+    },
+    "EUR_EUR": {
+      "corridor": "EUR \u2192 EUR",
+      "txns": 24,
+      "reasons": [
+        {
+          "reason": "Family Support",
+          "count": 7
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 6
+        },
+        {
+          "reason": "Consultation",
+          "count": 3
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 3
+        },
+        {
+          "reason": "Other",
+          "count": 5
+        }
+      ]
+    },
+    "CAD_CAD": {
+      "corridor": "CAD \u2192 CAD",
+      "txns": 45,
+      "reasons": [
+        {
+          "reason": "Test Transfer",
+          "count": 11
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 5
+        },
+        {
+          "reason": "Family Support",
+          "count": 5
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 4
+        },
+        {
+          "reason": "Gift",
+          "count": 3
+        },
+        {
+          "reason": "Goods/Services",
+          "count": 3
+        },
+        {
+          "reason": "Loan Repayment",
+          "count": 3
+        },
+        {
+          "reason": "Holiday/Vacation",
+          "count": 2
+        },
+        {
+          "reason": "Other",
+          "count": 9
+        }
+      ]
+    },
+    "CAD_EUR": {
+      "corridor": "CAD \u2192 EUR",
+      "txns": 17,
+      "reasons": [
+        {
+          "reason": "Wedding",
+          "count": 12
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 2
+        },
+        {
+          "reason": "Bill Payment",
+          "count": 1
+        },
+        {
+          "reason": "Family Support",
+          "count": 1
+        },
+        {
+          "reason": "Test Transfer",
+          "count": 1
+        }
+      ]
+    },
+    "USD_ETB": {
+      "corridor": "USD \u2192 ETB",
+      "txns": 17,
+      "reasons": [
+        {
+          "reason": "Family Support",
+          "count": 12
+        },
+        {
+          "reason": "Gift",
+          "count": 3
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 2
+        }
+      ]
+    },
+    "USD_GBP": {
+      "corridor": "USD \u2192 GBP",
+      "txns": 17,
+      "reasons": [
+        {
+          "reason": "Bill Payment",
+          "count": 6
+        },
+        {
+          "reason": "Family Support",
+          "count": 5
+        },
+        {
+          "reason": "Property Purchase/Sale",
+          "count": 2
+        },
+        {
+          "reason": "Gift",
+          "count": 1
+        },
+        {
+          "reason": "Holiday/Vacation",
+          "count": 1
+        },
+        {
+          "reason": "Living Expenses",
+          "count": 1
+        },
+        {
+          "reason": "Salary",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

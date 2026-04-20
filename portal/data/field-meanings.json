@@ -1,0 +1,259 @@
+{
+  "ACCOUNT_NAME": {
+    "shortName": "Recipient Name",
+    "description": "The recipient's full legal name as it appears on their bank account. Must match the bank's records exactly or the transfer will be rejected or returned.",
+    "example": "John Smith",
+    "category": "recipient"
+  },
+  "ACCOUNT_NUM": {
+    "shortName": "Account Number",
+    "description": "The recipient's bank account number. Format varies by country — can be local account number, BBAN, or similar national identifier. For some countries this field also accepts IBAN.",
+    "example": "1234567890",
+    "category": "bank"
+  },
+  "IBAN": {
+    "shortName": "IBAN",
+    "description": "International Bank Account Number. A standardized alphanumeric code (up to 34 characters) that uniquely identifies a bank account across borders. Starts with the 2-letter country code, then check digits, then the basic account number. Used in 70+ countries (all EU plus AE, IL, JO, KW, PK, QA, SA, TR and others).",
+    "example": "DE89 3704 0044 0532 0130 00",
+    "category": "bank"
+  },
+  "IBAN_OR_ACCOUNT_NUM": {
+    "shortName": "IBAN or Account Number",
+    "description": "A hybrid field that accepts either an IBAN or a local account number. Used for countries that are in IBAN-partial adoption — some banks have IBAN, others don't. The system auto-detects which you entered.",
+    "example": "BR12 0000 0000 1234 5678 901C 1 or plain account number",
+    "category": "bank"
+  },
+  "NAT_CLEAR_CODE": {
+    "shortName": "National Clearing Code",
+    "description": "The country-specific routing code that identifies the recipient's bank branch. The label and format change per country — Xe uses ONE field ID (NAT_CLEAR_CODE) with different country labels.",
+    "countrySpecific": {
+      "IN": { "label": "IFSC", "description": "11-character Indian Financial System Code that identifies the bank branch. First 4 chars = bank, 5th = 0, last 6 = branch.", "example": "HDFC0001234" },
+      "GB": { "label": "Sort Code", "description": "6-digit UK sort code identifying the bank and branch, usually written XX-XX-XX.", "example": "20-00-00" },
+      "US": { "label": "ABA / Routing Number", "description": "9-digit American Bankers Association routing number for US banks (used for ACH and wire transfers).", "example": "021000021" },
+      "AU": { "label": "BSB Number", "description": "6-digit Bank State Branch code identifying Australian bank branches.", "example": "062-000" },
+      "CA": { "label": "Bank Code & Transit", "description": "8-digit Canadian routing code: 3-digit institution number + 5-digit transit (branch) number.", "example": "00412345" },
+      "HK": { "label": "Hong Kong Bank Code", "description": "Hong Kong clearing code — 3-digit bank code + 3-digit branch code.", "example": "024001" },
+      "NP": { "label": "Nepal Bank Code", "description": "Nepal's national bank identifier.", "example": "NIC001" },
+      "PR": { "label": "Routing Number", "description": "9-digit ABA routing number (Puerto Rico uses US system).", "example": "021502011" },
+      "AS": { "label": "Routing Number", "description": "US ABA routing number (American Samoa uses US system).", "example": "021000021" },
+      "GU": { "label": "Routing Number", "description": "US ABA routing number (Guam uses US system).", "example": "021000021" },
+      "FM": { "label": "Routing Number", "description": "US ABA routing number (Micronesia uses US system).", "example": "021000021" },
+      "MP": { "label": "Routing Number", "description": "US ABA routing number (Northern Mariana Islands uses US system).", "example": "021000021" },
+      "VI": { "label": "Routing Number", "description": "US ABA routing number (US Virgin Islands uses US system).", "example": "021000021" }
+    },
+    "category": "bank"
+  },
+  "BANK_BIC": {
+    "shortName": "BIC / SWIFT Code",
+    "description": "Bank Identifier Code (also called SWIFT code). 8 or 11 characters identifying the recipient's bank globally. Used for international wires. In many countries Xe auto-fills this from the IBAN or account number — it appears as a read-only confirmation of which bank detected.",
+    "example": "DEUTDEFFXXX",
+    "category": "bank"
+  },
+  "BANK_NAME": {
+    "shortName": "Bank Name",
+    "description": "The name of the recipient's bank. In most corridors this is auto-filled by Xe after the IBAN, BIC, or clearing code is entered — users see it as a confirmation, not an input. Auto-population prevents user error.",
+    "example": "Deutsche Bank AG",
+    "category": "bank"
+  },
+  "BANK_BRANCH_NUMBER": {
+    "shortName": "Bank Branch Number",
+    "description": "Additional branch identifier required in specific corridors. For Bangladesh, this is a branch code required alongside the account number and bank name.",
+    "example": "BD123",
+    "category": "bank"
+  },
+  "BANK_ACCOUNT_TYPE_CODE": {
+    "shortName": "Bank Account Type",
+    "description": "Whether the account is Checking or Savings. Required in several LATAM corridors where bank routing differs by account type.",
+    "example": "CHECKING | SAVINGS",
+    "category": "bank"
+  },
+  "BANK_ADDRESS_LINE1": {
+    "shortName": "Bank Address (Line 1)",
+    "description": "Street address of the recipient's bank branch. Usually optional, required only in a few corridors for compliance / wire routing purposes.",
+    "example": "1 Churchill Place",
+    "category": "bank"
+  },
+  "BANK_ADDRESS_LINE2": {
+    "shortName": "Bank Address (Line 2)",
+    "description": "Second line of the bank's street address (e.g., suite, floor).",
+    "example": "Floor 10",
+    "category": "bank"
+  },
+  "ADDRESS_LINE1": {
+    "shortName": "Recipient Address (Line 1)",
+    "description": "The recipient's street address, line 1. This is their home address, not the bank's. Required in most corridors for compliance. PO boxes are rejected.",
+    "example": "221B Baker Street",
+    "category": "address"
+  },
+  "ADDRESS_LINE2": {
+    "shortName": "Recipient Address (Line 2)",
+    "description": "Second line of the recipient's address (e.g., apartment, suite). Optional almost everywhere.",
+    "example": "Apt 3",
+    "category": "address"
+  },
+  "ADDRESS_COUNTRY_CODE": {
+    "shortName": "Address Country",
+    "description": "The country where the recipient lives. Auto-set by Xe based on the destination country — users don't see this as an input field.",
+    "example": "GB",
+    "category": "address",
+    "hidden": true
+  },
+  "RECIPIENT_CITY": {
+    "shortName": "City",
+    "description": "The city where the recipient lives. Required in most corridors.",
+    "example": "London",
+    "category": "address"
+  },
+  "RECIPIENT_STATE": {
+    "shortName": "State / Province",
+    "description": "The state, province, or equivalent administrative region. Uses a predefined dropdown — only required in countries where the state affects banking/compliance: AU, CA, CN, MX, US.",
+    "example": "NSW | CA | SP",
+    "category": "address"
+  },
+  "RECIPIENT_POST_CODE": {
+    "shortName": "Post Code / ZIP",
+    "description": "Recipient's postal code. Mandatory only in ~10 specific corridors (including AU, CA, GB, MX, NZ); optional elsewhere.",
+    "example": "SW1A 1AA",
+    "category": "address"
+  },
+  "RECIPIENT_PHONE": {
+    "shortName": "Recipient Phone",
+    "description": "Recipient's phone number. Required in 12 corridors — mostly LATAM (BR, AR, CL, CO, PE, GT, DO) plus KR, TR, PL, ZA, EG — for fraud prevention and local compliance.",
+    "example": "+55 11 91234-5678",
+    "category": "recipient"
+  },
+  "EMAIL": {
+    "shortName": "Recipient Email",
+    "description": "Recipient's email address. Required in 5 specific corridors, optional elsewhere.",
+    "example": "recipient@example.com",
+    "category": "additional"
+  },
+  "RECIPIENT_ID_NUMBER": {
+    "shortName": "ID Number",
+    "description": "Recipient's national ID / government-issued identifier. The type is chosen via ID_NUMBER_TYPE_CODE dropdown. Required in 4 corridors: PK (CNIC), CL (RUT), PE (DNI), DO.",
+    "example": "PK: 3520212345678 (CNIC)",
+    "category": "id"
+  },
+  "ID_NUMBER_TYPE_CODE": {
+    "shortName": "ID Number Type",
+    "description": "Dropdown specifying which type of ID document the recipient provides. Different countries accept different ID types.",
+    "countrySpecific": {
+      "PK": {
+        "label": "ID Type",
+        "description": "Pakistan accepts: CNIC (Computerized National ID Card) — 13 digits; NICOP (NID for Overseas Pakistanis); Passport; Driving License; Residence Permit.",
+        "options": ["CNIC", "NICOP", "Passport", "Driving License of Pakistan", "Residence Permit"]
+      },
+      "CL": {
+        "label": "ID Type",
+        "description": "Chile accepts: RUT (Rol Único Tributario) — standard Chilean tax ID.",
+        "options": ["RUT"]
+      },
+      "PE": {
+        "label": "ID Type",
+        "description": "Peru accepts: DNI (Documento Nacional de Identidad), CE (Carnet de Extranjería), Passport.",
+        "options": ["DNI", "CE", "Passport"]
+      },
+      "DO": {
+        "label": "ID Type",
+        "description": "Dominican Republic accepts: Cédula (national ID), Passport.",
+        "options": ["Cédula", "Passport"]
+      }
+    },
+    "category": "id"
+  },
+  "RECIPIENT_TAX_NUMBER": {
+    "shortName": "Tax Number",
+    "description": "Recipient's tax/fiscal identifier. Required in 5 LATAM corridors.",
+    "countrySpecific": {
+      "BR": { "label": "CPF / CNPJ", "description": "Brazilian tax ID. 11 digits for individuals (CPF — Cadastro de Pessoas Físicas) or 14 digits for businesses (CNPJ).", "example": "123.456.789-00 (CPF) or 12.345.678/0001-00 (CNPJ)" },
+      "AR": { "label": "CUIL / CUIT", "description": "Argentine tax ID. 11 digits for individuals (CUIL) or businesses (CUIT).", "example": "20-12345678-9" },
+      "CO": { "label": "NIT / Cédula", "description": "Colombian tax ID — NIT for businesses, Cédula (national ID) for individuals.", "example": "1234567890" },
+      "GT": { "label": "NIT", "description": "Guatemala NIT (Número de Identificación Tributaria).", "example": "1234567" },
+      "DO": { "label": "RNC", "description": "Dominican Republic tax ID (Registro Nacional de Contribuyentes).", "example": "123456789" }
+    },
+    "category": "id"
+  },
+  "INDUSTRY_TYPE": {
+    "shortName": "Industry Type",
+    "description": "Business/industry classification code. Required only in Oman (OM) — used for sanctions screening.",
+    "category": "recipient"
+  },
+  "CA_TRANSIT_INSTITUTION": {
+    "shortName": "Institution Number (Canada)",
+    "description": "3-digit Canadian institution number that identifies the bank. First half of the Canadian routing code, combined with the transit (branch) number.",
+    "example": "004",
+    "category": "bank"
+  },
+  "CA_TRANSIT_BRANCH": {
+    "shortName": "Transit Number (Canada)",
+    "description": "5-digit Canadian transit number identifying the specific branch. Second half of the Canadian routing code. Xe splits what banks show as an 8-digit NAT_CLEAR_CODE into these two composite inputs in the UI.",
+    "example": "12345",
+    "category": "bank"
+  },
+  "NICKNAME": {
+    "shortName": "Nickname",
+    "description": "A label the sender can set to recognize this recipient in their list (e.g., 'Mum', 'Flat rent'). Optional everywhere, Xe-only — not sent to the bank.",
+    "example": "Mum",
+    "category": "additional"
+  },
+  "OTHER_PARTY_REF": {
+    "shortName": "Reference / Memo",
+    "description": "Free-text reference that appears on the recipient's bank statement. Optional. Useful for invoices, rent payments, etc.",
+    "example": "Invoice 2026-04",
+    "category": "additional"
+  },
+  "IS_BUSINESS": {
+    "shortName": "Is Business",
+    "description": "Whether the recipient is a business (company) vs individual. Auto-set based on the form flow — not shown to users as an input.",
+    "category": "additional",
+    "hidden": true
+  },
+  "INT_BANK_NAME": {
+    "shortName": "Intermediary Bank Name",
+    "description": "Name of a correspondent (intermediary) bank used to route SWIFT payments in some corridors. Always optional — for sophisticated users who know their bank requires a specific intermediary.",
+    "category": "intermediary",
+    "hidden": true
+  },
+  "INT_BANK_BIC": {
+    "shortName": "Intermediary Bank BIC",
+    "description": "SWIFT/BIC code of the intermediary bank. Always optional.",
+    "category": "intermediary",
+    "hidden": true
+  },
+  "INT_BANK_NAT_CLEAR_CODE": {
+    "shortName": "Intermediary Clearing Code",
+    "description": "National clearing code of the intermediary bank. Always optional.",
+    "category": "intermediary",
+    "hidden": true
+  },
+  "INT_BANK_IBAN_OR_ACCOUNT_NUM": {
+    "shortName": "Intermediary Account / IBAN",
+    "description": "Intermediary bank's account number or IBAN. Always optional.",
+    "category": "intermediary",
+    "hidden": true
+  },
+  "INT_BANK_ADDRESS_LINE1": {
+    "shortName": "Intermediary Bank Address (Line 1)",
+    "description": "Street address of the intermediary bank. Always optional.",
+    "category": "intermediary",
+    "hidden": true
+  },
+  "INT_BANK_ADDRESS_LINE2": {
+    "shortName": "Intermediary Bank Address (Line 2)",
+    "description": "Second line of intermediary bank address. Always optional.",
+    "category": "intermediary",
+    "hidden": true
+  },
+  "INT_BANK_ADDRESS_LINE3": {
+    "shortName": "Intermediary Bank Address (Line 3)",
+    "description": "Third line of intermediary bank address. Always optional.",
+    "category": "intermediary",
+    "hidden": true
+  },
+  "INT_BANK_ADDRESS_COUNTRY_CODE": {
+    "shortName": "Intermediary Bank Country",
+    "description": "Country where the intermediary bank is located. Always optional.",
+    "category": "intermediary",
+    "hidden": true
+  }
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GBP → USD Corridor Deep Analysis</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e1e4e8; line-height: 1.5; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h1 span { color: #f85149; }
+    .subtitle { color: #8b949e; font-size: 13px; margin-bottom: 24px; }
+    a { color: #58a6ff; text-decoration: none; }
+    h2 { font-size: 16px; font-weight: 600; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #30363d; }
+    h2 span { font-weight: 400; color: #8b949e; font-size: 13px; }
+    .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .kpi { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; }
+    .kpi-label { font-size: 11px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .kpi-value { font-size: 24px; font-weight: 700; }
+    .kpi-sub { font-size: 12px; color: #8b949e; margin-top: 2px; }
+    .finding { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .finding-title { font-weight: 600; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .finding-num { background: #58a6ff; color: #fff; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+    .finding-body { font-size: 13px; color: #c9d1d9; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+    th { background: #161b22; padding: 8px; text-align: left; border-bottom: 2px solid #30363d; font-weight: 600; font-size: 11px; text-transform: uppercase; color: #8b949e; }
+    td { padding: 6px 8px; border-bottom: 1px solid #21262d; }
+    .c-fast { color: #3fb950; } .c-ok { color: #e1e4e8; } .c-warn { color: #d29922; } .c-slow { color: #f85149; font-weight: 700; } .c-muted { color: #484f58; }
+    .alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; }
+    .alert-red { background: #f8514915; border: 1px solid #f8514933; color: #f85149; }
+    .alert-green { background: #3fb95015; border: 1px solid #3fb95033; color: #3fb950; }
+    .highlight { background: #d2992215; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+    .vs-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin: 12px 0; }
+    .vs-card { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 16px; text-align: center; }
+    .vs-label { font-size: 12px; color: #8b949e; margin-bottom: 4px; }
+    .vs-value { font-size: 28px; font-weight: 800; }
+    .vs-sub { font-size: 11px; color: #8b949e; margin-top: 4px; }
+    .vs-arrow { font-size: 24px; color: #30363d; }
+    .matrix { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .actions { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .action-item { display: flex; gap: 12px; margin-bottom: 12px; }
+    .action-priority { width: 24px; height: 24px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .p-high { background: #f85149; } .p-med { background: #d29922; } .p-low { background: #8b949e; }
+    .back { margin-bottom: 16px; font-size: 13px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="back"><a href="uk.html">&larr; Back to UK Dashboard</a></div>
+  <h1>GBP &rarr; USD <span>Corridor Deep Analysis</span></h1>
+  <div class="subtitle">Revenue: $347,129 (30d) | 3rd highest UK corridor | SLA: <24hrs | Generated: 2026-04-14</div>
+
+  <!-- KPIs -->
+  <div class="kpi-row">
+    <div class="kpi"><div class="kpi-label">Leg 1 Median</div><div class="kpi-value c-warn">2.4h</div><div class="kpi-sub">Avg: 13.8h | 2,553 txns</div></div>
+    <div class="kpi"><div class="kpi-label">Leg 2 Median</div><div class="kpi-value c-warn">12.5h</div><div class="kpi-sub">Avg: 1.2d | 671 payouts</div></div>
+    <div class="kpi"><div class="kpi-label">E2E Median</div><div class="kpi-value c-warn">14.9h</div><div class="kpi-sub">Best: 2.0h | Worst: 19.7h</div></div>
+    <div class="kpi"><div class="kpi-label">Conversion</div><div class="kpi-value">97.9%</div><div class="kpi-sub">2,499 of 2,553 completed</div></div>
+    <div class="kpi"><div class="kpi-label">SLA Status</div><div class="kpi-value c-fast">Within</div><div class="kpi-sub">14.9h median vs <24h SLA</div></div>
+    <div class="kpi"><div class="kpi-label">Weekend</div><div class="kpi-value c-slow">3.9x</div><div class="kpi-sub">slower than weekday</div></div>
+  </div>
+
+  <!-- Key Findings -->
+  <h2>Key Findings</h2>
+
+  <div class="finding">
+    <div class="finding-title"><div class="finding-num">1</div> Leg 1 is slow for ALL payment methods — unlike every other corridor</div>
+    <div class="finding-body">
+      <p>Most corridors show Debit Card at 10-11 minutes. USD has Debit Card at <strong class="c-warn">2.9 hours</strong>. Even Credit Card takes 1.9 hours. This is not a customer funding issue — it's a USD-specific processing delay on our side.</p>
+      <table>
+        <tr><th>Payment Method</th><th>Vol</th><th>Median</th><th>Average</th><th>vs EUR benchmark</th></tr>
+        <tr><td>Credit Card</td><td>123</td><td class="c-warn" style="font-weight:700">1.9h</td><td>10.8h</td><td class="c-slow">10x slower (EUR: 11m)</td></tr>
+        <tr><td>Bank Transfer</td><td>1,226</td><td class="c-warn" style="font-weight:700">2.1h</td><td>15.3h</td><td class="c-slow">3x slower (EUR: 45m)</td></tr>
+        <tr><td>Debit Card</td><td>944</td><td class="c-warn" style="font-weight:700">2.9h</td><td>12.4h</td><td class="c-slow">16x slower (EUR: 11m)</td></tr>
+        <tr><td>Open Banking</td><td>246</td><td class="c-warn" style="font-weight:700">3.3h</td><td>13.4h</td><td class="c-slow">7x slower (EUR: 28m)</td></tr>
+        <tr><td>Balance</td><td>12</td><td class="c-fast">32m</td><td>3.2h</td><td>Balance is fast (no funding wait)</td></tr>
+      </table>
+      <p style="margin-top:8px;color:#8b949e">Hypothesis: USD requires additional compliance/AML/OFAC screening that holds all transactions ~2h before release, regardless of how the customer funded.</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-title"><div class="finding-num">2</div> Friday/Saturday creates 44-hour delays — batch processing confirmed</div>
+    <div class="finding-body">
+      <p>Bank Transfer transactions created on Friday have a <strong class="c-slow">1.8 day median</strong> vs 53 minutes on Monday. Saturday is 19 hours. This is classic batch processing — Friday transactions queue until Monday.</p>
+      <table>
+        <tr><th>Day</th><th>Vol</th><th>Median</th><th>Status</th></tr>
+        <tr><td>Monday</td><td>108</td><td class="c-fast">53m</td><td>Normal</td></tr>
+        <tr><td>Tuesday</td><td>101</td><td class="c-ok">1.5h</td><td>Normal</td></tr>
+        <tr><td>Wednesday</td><td>82</td><td class="c-ok">1.3h</td><td>Normal</td></tr>
+        <tr><td>Thursday</td><td>85</td><td class="c-ok">1.7h</td><td>Normal</td></tr>
+        <tr><td style="color:#f85149;font-weight:700">Friday</td><td>9</td><td class="c-slow">1.8d</td><td class="c-slow">44x slower</td></tr>
+        <tr><td style="color:#f85149;font-weight:700">Saturday</td><td>14</td><td class="c-slow">19.3h</td><td class="c-slow">23x slower</td></tr>
+        <tr><td>Sunday</td><td>128</td><td class="c-ok">1.7h</td><td>Normal</td></tr>
+      </table>
+      <p style="margin-top:8px;color:#8b949e">Note: Friday volume drops to 9 (vs 80-128 other days) suggesting many transactions wait until Sunday batch.</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-title"><div class="finding-num">3</div> Destination country matters hugely — US domestic is 16 minutes, Palestine is 2.2 days</div>
+    <div class="finding-body">
+      <p>USD is used as a global intermediary currency. The destination determines payout speed:</p>
+      <table>
+        <tr><th>Country</th><th>Vol</th><th>Median</th><th>P80</th><th>P90</th></tr>
+        <tr><td>US (domestic)</td><td>65</td><td class="c-fast" style="font-weight:700">16m</td><td>2.5h</td><td>10.4h</td></tr>
+        <tr><td>Lebanon</td><td>30</td><td class="c-fast" style="font-weight:700"><5m</td><td>11.6h</td><td>1.2d</td></tr>
+        <tr><td>Georgia</td><td>28</td><td class="c-ok">8.1h</td><td>19.2h</td><td>1.7d</td></tr>
+        <tr><td>China</td><td>29</td><td class="c-warn">15.5h</td><td>1.4d</td><td>2.6d</td></tr>
+        <tr><td>Cambodia</td><td>26</td><td class="c-warn">17.6h</td><td>1.5d</td><td>2.7d</td></tr>
+        <tr><td>Zimbabwe</td><td>38</td><td class="c-warn">18.9h</td><td>2.7d</td><td>3.1d</td></tr>
+        <tr><td>Turkey</td><td>22</td><td class="c-ok">7.8h</td><td>2.8d</td><td>4.2d</td></tr>
+        <tr><td>Uzbekistan</td><td>25</td><td class="c-warn">15.8h</td><td>2.8d</td><td class="c-slow">7.4d</td></tr>
+        <tr><td style="color:#f85149">Palestine</td><td>52</td><td class="c-slow" style="font-weight:700">2.2d</td><td class="c-slow">5.2d</td><td class="c-slow">6.4d</td></tr>
+        <tr><td style="color:#f85149">Egypt</td><td>24</td><td class="c-slow" style="font-weight:700">2.2d</td><td class="c-slow">4.9d</td><td class="c-slow">5.4d</td></tr>
+      </table>
+      <div class="alert alert-green" style="margin-top:12px"><strong>US domestic (ACH/wire) is only 16 minutes</strong> — the corridor is fast when the money stays in the US banking system.</div>
+      <div class="alert alert-red"><strong>Palestine and Egypt take 2+ days</strong> — likely sanctions screening delays and limited correspondent banking.</div>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-title"><div class="finding-num">4</div> Mobile Wallet is 180x faster than Swift but only 7% of volume</div>
+    <div class="finding-body">
+      <div class="vs-grid">
+        <div class="vs-card">
+          <div class="vs-label">Swift (Bank Wire)</div>
+          <div class="vs-value c-warn">15.1h</div>
+          <div class="vs-sub">520 payments (78%) | P90: 3.6d</div>
+        </div>
+        <div class="vs-arrow">&harr;</div>
+        <div class="vs-card" style="border-color:#3fb95044">
+          <div class="vs-label">Mobile Wallet</div>
+          <div class="vs-value c-fast"><5m</div>
+          <div class="vs-sub">49 payments (7%) | P90: 7m</div>
+        </div>
+      </div>
+      <p>Cash Pickup (102 payments, 15%) has a 16.4h median — similar to Swift. Mobile Wallet is the only fast payout channel for USD.</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-title"><div class="finding-num">5</div> Large transfers ($50K+) are paradoxically faster</div>
+    <div class="finding-body">
+      <table>
+        <tr><th>Amount Bucket</th><th>Vol</th><th>Median</th><th>P80</th><th>P90</th></tr>
+        <tr><td>< $500</td><td>218</td><td class="c-warn">12.5h</td><td>2.2d</td><td>3.4d</td></tr>
+        <tr><td>$500 - $2K</td><td>208</td><td class="c-warn">14.7h</td><td>2.2d</td><td>3.8d</td></tr>
+        <tr><td>$2K - $10K</td><td>190</td><td class="c-warn">16.8h</td><td>2.6d</td><td>3.8d</td></tr>
+        <tr><td>$10K - $50K</td><td>46</td><td class="c-ok" style="font-weight:600">2.9h</td><td>17.8h</td><td>2.7d</td></tr>
+        <tr><td style="color:#3fb950;font-weight:600">$50K+</td><td>9</td><td class="c-fast" style="font-weight:700">53m</td><td>2.5h</td><td>3.0h</td></tr>
+      </table>
+      <p style="margin-top:8px;color:#8b949e">Large transfers may get priority processing or use faster payment rails (e.g., direct wire vs. batch ACH).</p>
+    </div>
+  </div>
+
+  <div class="finding">
+    <div class="finding-title"><div class="finding-num">6</div> Apr 3-6 system-wide outage inflated all numbers</div>
+    <div class="finding-body">
+      <p>On Apr 3 (Thursday), <strong>all payment methods simultaneously</strong> spiked to 3.7-3.9 day medians. This wasn't corridor-specific — it affected Bank Transfer, Debit Card, Open Banking, and Credit Card equally. Apr 4-6 were also affected.</p>
+      <div class="alert alert-red" style="margin-top:8px"><strong>Apr 3-6 was a system outage or processing hold.</strong> Both Bank Transfer (median 3.9d) and Debit Card (median 3.7d) showed identical delays — proving this was on our infrastructure, not payment-method dependent.</div>
+      <p style="margin-top:8px">Excluding this anomaly, normal weekday Debit Card median is still <strong class="c-warn">1.7-2.8 hours</strong> — the structural delay is real, the anomaly just made it worse.</p>
+    </div>
+  </div>
+
+  <!-- 6 Month Trend -->
+  <h2>6-Month Trend <span>Oct 2025 — Apr 2026 (26 weeks)</span></h2>
+  <div class="finding">
+    <div class="finding-body">
+      <div class="alert alert-red"><strong>This is not a recent issue.</strong> GBP→USD Leg 1 has been 1.7–5.1 hours every single week for 6 months. The average has never dropped below 10.5 hours. This is structural.</div>
+      <div style="margin:16px 0;overflow-x:auto">
+        <div style="display:flex;align-items:flex-end;gap:3px;height:120px;padding-bottom:20px;position:relative">
+          <div style="position:absolute;left:0;bottom:16px;right:0;border-top:1px dashed #f8514944;"></div>
+          <div style="position:absolute;left:0;bottom:16px;font-size:10px;color:#f85149;transform:translateY(50%)">5h</div>
+          <div style="position:absolute;left:0;bottom:56px;right:0;border-top:1px dashed #d2992244;"></div>
+          <div style="position:absolute;left:0;bottom:56px;font-size:10px;color:#d29922;transform:translateY(50%)">3h</div>
+          <div style="position:absolute;left:0;bottom:96px;right:0;border-top:1px dashed #3fb95044;"></div>
+          <div style="position:absolute;left:0;bottom:96px;font-size:10px;color:#3fb950;transform:translateY(50%)">1h</div>
+        </div>
+      </div>
+      <table>
+        <tr><th>Week</th><th>Vol</th><th>Median</th><th>Average</th><th>Conv%</th><th style="width:200px">Median (visual)</th></tr>
+        <tr><td>Oct 13</td><td>848</td><td class="c-warn">3.6h</td><td>16.4h</td><td>98.0%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:72%"></div></td></tr>
+        <tr><td>Oct 20</td><td>832</td><td class="c-warn">2.1h</td><td>13.7h</td><td>98.2%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:42%"></div></td></tr>
+        <tr><td>Oct 27</td><td>949</td><td class="c-warn">2.5h</td><td>15.4h</td><td>98.2%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:50%"></div></td></tr>
+        <tr><td>Nov 03</td><td>908</td><td class="c-ok">1.9h</td><td>12.9h</td><td>99.1%</td><td><div style="background:#58a6ff;height:12px;border-radius:2px;width:38%"></div></td></tr>
+        <tr><td>Nov 10</td><td>843</td><td class="c-warn">3.9h</td><td>17.3h</td><td>98.3%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:78%"></div></td></tr>
+        <tr><td>Nov 17</td><td>793</td><td class="c-warn">2.4h</td><td>16.5h</td><td>98.9%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:48%"></div></td></tr>
+        <tr><td style="color:#f85149">Nov 24</td><td>1058</td><td class="c-warn">4.5h</td><td>17.5h</td><td>98.7%</td><td><div style="background:#f85149;height:12px;border-radius:2px;width:90%"></div></td></tr>
+        <tr><td>Dec 01</td><td>1092</td><td class="c-ok">2.0h</td><td>13.5h</td><td>98.0%</td><td><div style="background:#58a6ff;height:12px;border-radius:2px;width:40%"></div></td></tr>
+        <tr><td>Dec 08</td><td>956</td><td class="c-ok">2.1h</td><td>12.6h</td><td>98.8%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:42%"></div></td></tr>
+        <tr><td>Dec 15</td><td>1057</td><td class="c-warn">2.4h</td><td>14.5h</td><td>99.0%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:48%"></div></td></tr>
+        <tr><td style="color:#d29922">Dec 22</td><td>768</td><td class="c-warn">3.4h</td><td class="c-slow">1.1d</td><td>98.3%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:68%"></div></td></tr>
+        <tr><td>Dec 29</td><td>719</td><td class="c-warn">3.2h</td><td>18.3h</td><td>98.9%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:64%"></div></td></tr>
+        <tr><td>Jan 05</td><td>877</td><td class="c-ok">1.7h</td><td>13.1h</td><td>98.4%</td><td><div style="background:#58a6ff;height:12px;border-radius:2px;width:34%"></div></td></tr>
+        <tr><td>Jan 12</td><td>850</td><td class="c-ok">2.2h</td><td>17.1h</td><td>99.6%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:44%"></div></td></tr>
+        <tr><td style="color:#f85149">Jan 19</td><td>905</td><td class="c-slow">5.1h</td><td>16.7h</td><td>98.5%</td><td><div style="background:#f85149;height:12px;border-radius:2px;width:100%"></div></td></tr>
+        <tr><td>Jan 26</td><td>1111</td><td class="c-warn">2.9h</td><td>18.2h</td><td>98.1%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:58%"></div></td></tr>
+        <tr><td>Feb 02</td><td>872</td><td class="c-ok">2.0h</td><td>16.6h</td><td>98.2%</td><td><div style="background:#58a6ff;height:12px;border-radius:2px;width:40%"></div></td></tr>
+        <tr><td>Feb 09</td><td>714</td><td class="c-ok">1.8h</td><td>15.9h</td><td>98.2%</td><td><div style="background:#58a6ff;height:12px;border-radius:2px;width:36%"></div></td></tr>
+        <tr><td style="color:#f85149">Feb 16</td><td>573</td><td class="c-warn">4.4h</td><td>14.8h</td><td>98.4%</td><td><div style="background:#f85149;height:12px;border-radius:2px;width:88%"></div></td></tr>
+        <tr><td>Feb 23</td><td>849</td><td class="c-ok">2.0h</td><td>14.6h</td><td>98.6%</td><td><div style="background:#58a6ff;height:12px;border-radius:2px;width:40%"></div></td></tr>
+        <tr><td>Mar 02</td><td>895</td><td class="c-ok">2.3h</td><td>14.3h</td><td>99.0%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:46%"></div></td></tr>
+        <tr><td>Mar 09</td><td>780</td><td class="c-ok">1.7h</td><td>14.3h</td><td>99.2%</td><td><div style="background:#58a6ff;height:12px;border-radius:2px;width:34%"></div></td></tr>
+        <tr><td>Mar 16</td><td>754</td><td class="c-ok">2.1h</td><td>13.7h</td><td>99.2%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:42%"></div></td></tr>
+        <tr><td>Mar 23</td><td>861</td><td class="c-ok">2.1h</td><td>11.9h</td><td>98.8%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:42%"></div></td></tr>
+        <tr><td>Mar 30</td><td>855</td><td class="c-warn">2.6h</td><td>21.1h</td><td>98.2%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:52%"></div></td></tr>
+        <tr><td>Apr 06</td><td>824</td><td class="c-warn">2.6h</td><td>10.5h</td><td>98.1%</td><td><div style="background:#d29922;height:12px;border-radius:2px;width:52%"></div></td></tr>
+      </table>
+      <div style="margin-top:12px;font-size:13px">
+        <strong>6-month stats:</strong> Median of weekly medians = <strong class="c-warn">2.4h</strong> | Best week = 1.7h (Jan 5, Mar 9) | Worst week = 5.1h (Jan 19) | Never below 1.7h in 26 weeks
+      </div>
+      <div style="margin-top:8px;font-size:13px;color:#8b949e">
+        No improvement trend visible. The weeks with higher medians (Nov 24, Jan 19, Feb 16) correlate with holiday periods — suggesting even longer batch processing delays when staffing is reduced.
+      </div>
+    </div>
+  </div>
+
+  <!-- Leg 1 Deep Dive -->
+  <h2>Leg 1 Deep Dive <span>Our Processing — Day by Day</span></h2>
+  <div class="finding">
+    <div class="finding-body">
+      <p>Even after removing the Apr 3-6 anomaly, USD Leg 1 is <strong>structurally 10-16x slower</strong> than other corridors. Here's the full day-by-day pattern:</p>
+      <table>
+        <tr><th>Day Type</th><th>Bank Transfer</th><th>Debit Card</th><th>Avg Daily Vol</th></tr>
+        <tr><td>Weekday (normal)</td><td class="c-warn">1.3-2.3h median</td><td class="c-warn">1.7-2.8h median</td><td>100-130 txns</td></tr>
+        <tr><td style="color:#d29922">Friday</td><td class="c-slow">1.8 days</td><td class="c-slow">1.5 days</td><td>16-23 txns (volume drops)</td></tr>
+        <tr><td style="color:#f85149">Saturday</td><td class="c-slow">19.3h</td><td class="c-slow">12.3h</td><td>12-18 txns</td></tr>
+        <tr><td>Sunday</td><td class="c-ok">1.5-1.7h</td><td class="c-ok">1.7h</td><td>110-128 txns (batch processes)</td></tr>
+        <tr><td style="color:#f85149">Apr 3-6 (anomaly)</td><td class="c-slow">3.9 days</td><td class="c-slow">3.7 days</td><td>System-wide hold</td></tr>
+      </table>
+      <div style="margin-top:12px">
+        <p><strong>Key insight:</strong> The Friday pattern is striking — volume drops from ~100 to ~16, and those remaining transactions take 1.8 days. This strongly suggests a <span class="highlight">cut-off time</span> after which USD transactions queue until Monday processing.</p>
+        <p style="margin-top:8px">Sunday shows high volume (128) at 1.7h median — this is the Monday batch processing catching up on queued weekend transactions.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- E2E Matrix -->
+  <h2>E2E Matrix <span>Payment Method x Payout Channel</span></h2>
+  <div class="matrix">
+    <table>
+      <tr>
+        <th>Customer Pays With</th><th style="color:#58a6ff">Leg 1</th>
+        <th style="text-align:center">Swift (Bank)<br><span style="font-weight:400;font-size:10px;color:#484f58">Leg2: 15.1h (520)</span></th>
+        <th style="text-align:center">Cash Pickup<br><span style="font-weight:400;font-size:10px;color:#484f58">Leg2: 16.4h (102)</span></th>
+        <th style="text-align:center">Mobile Wallet<br><span style="font-weight:400;font-size:10px;color:#484f58">Leg2: <5m (49)</span></th>
+      </tr>
+      <tr><td>Credit Card (123)</td><td class="c-warn">1.9h</td><td class="c-warn" style="text-align:center;font-weight:700">17.0h</td><td class="c-warn" style="text-align:center;font-weight:700">18.3h</td><td class="c-ok" style="text-align:center;font-weight:700;color:#3fb950">2.0h</td></tr>
+      <tr><td>Bank Transfer (1,226)</td><td class="c-warn">2.1h</td><td class="c-warn" style="text-align:center;font-weight:700">17.2h</td><td class="c-warn" style="text-align:center;font-weight:700">18.4h</td><td class="c-ok" style="text-align:center;font-weight:700;color:#3fb950">2.1h</td></tr>
+      <tr><td>Debit Card (944)</td><td class="c-warn">2.9h</td><td class="c-warn" style="text-align:center;font-weight:700">18.0h</td><td class="c-warn" style="text-align:center;font-weight:700">19.3h</td><td class="c-ok" style="text-align:center;font-weight:700">3.0h</td></tr>
+      <tr><td>Open Banking (246)</td><td class="c-warn">3.3h</td><td class="c-warn" style="text-align:center;font-weight:700">18.4h</td><td class="c-warn" style="text-align:center;font-weight:700">19.7h</td><td class="c-ok" style="text-align:center;font-weight:700">3.4h</td></tr>
+      <tr><td>Balance (12)</td><td class="c-fast">32m</td><td class="c-warn" style="text-align:center;font-weight:700">15.6h</td><td class="c-warn" style="text-align:center;font-weight:700">16.9h</td><td class="c-fast" style="text-align:center;font-weight:700">35m</td></tr>
+      <tr style="border-top:2px solid #30363d"><td colspan="2" style="font-weight:600;color:#bc8cff">Payout Percentiles (Leg 2)</td><td></td><td></td><td></td></tr>
+      <tr><td style="color:#58a6ff">P60</td><td></td><td style="text-align:center" class="c-warn">21.2h</td><td style="text-align:center" class="c-warn">20.4h</td><td style="text-align:center" class="c-fast"><5m</td></tr>
+      <tr><td style="color:#bc8cff;font-weight:600">P80</td><td></td><td style="text-align:center;font-weight:600" class="c-slow">2.3d</td><td style="text-align:center;font-weight:600" class="c-slow">1.8d</td><td style="text-align:center;font-weight:600" class="c-fast">5m</td></tr>
+      <tr><td style="color:#f85149;font-weight:700">P90</td><td></td><td style="text-align:center;font-weight:700" class="c-slow">3.6d</td><td style="text-align:center;font-weight:700" class="c-slow">4.2d</td><td style="text-align:center;font-weight:700" class="c-fast">7m</td></tr>
+    </table>
+    <div style="margin-top:8px;font-size:12px;color:#8b949e">Best path: Balance + Mobile Wallet = <strong style="color:#3fb950">35 minutes</strong> | Worst common path: Open Banking + Cash Pickup = <strong style="color:#f85149">19.7 hours</strong></div>
+  </div>
+
+  <!-- Recommended Actions -->
+  <h2>Recommended Actions</h2>
+  <div class="actions">
+    <div class="action-item">
+      <div class="action-priority p-high">P1</div>
+      <div>
+        <div style="font-weight:600">Investigate the ~2h Leg 1 hold on USD transactions</div>
+        <div style="font-size:12px;color:#8b949e">This is a $347K/month revenue corridor with a unique processing delay. Even Debit Card (instant funding) takes 2.9h. Is this OFAC screening? AML queue? Manual review? The delay is consistent across all payment methods, suggesting a post-funding compliance step.</div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-priority p-high">P2</div>
+      <div>
+        <div style="font-weight:600">Eliminate Friday/Saturday batch processing gap</div>
+        <div style="font-size:12px;color:#8b949e">Friday transactions take 44x longer (1.8 days vs 53 minutes). This means Friday evening transfers arrive Tuesday. If we process on weekends, we could recover ~20 hours for 5% of volume.</div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-priority p-med">P3</div>
+      <div>
+        <div style="font-weight:600">Promote Mobile Wallet payout for USD corridors</div>
+        <div style="font-size:12px;color:#8b949e">Mobile Wallet is <5m vs Swift's 15.1h — 180x faster. Currently only 7% of volume. If we shifted even 20% of Swift volume to Mobile Wallet, average E2E would improve significantly. Check which destination countries support Mobile Wallet.</div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-priority p-med">P4</div>
+      <div>
+        <div style="font-weight:600">Review Palestine and Egypt corridors specifically</div>
+        <div style="font-size:12px;color:#8b949e">2.2 day median with P90 at 5-6 days. These may have additional sanctions screening. 52 Palestine + 24 Egypt = 76 payments (11% of USD). If these are pulling the corridor average up, separating them could reveal the "normal" USD speed is better.</div>
+      </div>
+    </div>
+    <div class="action-item">
+      <div class="action-priority p-low">P5</div>
+      <div>
+        <div style="font-weight:600">Investigate why large transfers ($10K+) are faster</div>
+        <div style="font-size:12px;color:#8b949e">$50K+ transfers complete in 53 minutes median vs 12-17h for smaller amounts. Are large transfers routed through different payment rails? If so, can we apply the same fast processing to smaller amounts?</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
