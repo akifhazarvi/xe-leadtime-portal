@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xe Event Documentation Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-title">Xe <span>Event Docs</span></div>
+      <div class="search-wrapper">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" id="search-input" class="search-input" placeholder="Search events... (e.g. &quot;quote confirmed&quot;, &quot;payment failed&quot;)" autocomplete="off">
+        <div id="search-dropdown" class="search-dropdown"></div>
+      </div>
+      <div id="header-stats" class="header-stats">Loading...</div>
+    </div>
+  </header>
+
+  <div class="main">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Categories</div>
+        <ul id="category-list" class="category-list">
+          <li class="loading">Loading...</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main id="content" class="content">
+      <div class="loading">Loading event data...</div>
+    </main>
+  </div>
+
+  <script src="js/fuse.min.js"></script>
+  <script src="js/app2.js?v=7"></script>
+</body>
+</html>
